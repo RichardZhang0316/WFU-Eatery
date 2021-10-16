@@ -1,0 +1,41 @@
+{
+  "pages": [
+    "pages/HomePage/HomePage",
+    "pages/IncomingMenu/IncomingMenu",
+    "pages/Favorites/Favorites"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#9E7E38",
+    "navigationBarTitleText": "WFU Eatery",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2",
+  "tabBar": {
+    "color": "#959394",  
+    "selectedColor": "#FDC314",
+    "backgroundColor":"#FFFFFF",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/HomePage/HomePage",
+        "iconPath": "images/home-no.png",
+        "selectedIconPath": "images/home-yes.png",
+        "text":"Eateries"
+      },
+      {
+        "pagePath": "pages/IncomingMenu/IncomingMenu",
+        "iconPath": "images/me-no.png",
+        "selectedIconPath": "images/me-yes.png",
+        "text":"Incoming Menu"
+      },
+      {
+        "pagePath": "pages/Favorites/Favorites",
+        "iconPath": "images/shit.png",
+        "selectedIconPath": "images/third-yes.png",
+        "text":"Favorites"
+      }
+    ]
+  }
+}
