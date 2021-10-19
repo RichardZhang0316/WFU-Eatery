@@ -2,7 +2,12 @@
   "pages": [
     "pages/HomePage/HomePage",
     "pages/IncomingMenu/IncomingMenu",
-    "pages/Favorites/Favorites"
+    "pages/Favorites/Favorites",
+    "pages/Zick's/Zick's",
+    "pages/Subway/Subway",
+    "pages/chickFilA/chickFilA",
+    "pages/NorthPit/NorthPit",
+    "pages/starbucks/starbucks"
   ],
   "window": {
     "backgroundTextStyle": "light",

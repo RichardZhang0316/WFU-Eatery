@@ -1,2 +1,39 @@
-<!--pages/HomePage/HomePage.wxml-->
-<text>pages/HomePage/HomePage.wxml</text>
+<view class="root">
+<view class="maxTitle">美食与温暖，我们都有</view><!-- 以后做成随机选择欢迎语 -->
+<view class="input">搜索餐厅或美食</view>
+</view>
+
+<view class="title">营业中</view>
+<navigator class="resturantCard" url="/pages/Zick's/Zick's">
+<image class="resturantImage" src="https://prod.wp.cdn.aws.wfu.edu/sites/22/2013/08/620x350.20130823.students3048.jpg"></image>
+<view class="cardResturantNameFont">Zick's</view>
+<view class="flex">
+<view class="locationFont">Poteat Residence Hall</view>
+<view class="timeFont">营业至12PM</view>
+</view>
+</navigator>
+
+<navigator class="resturantCard" url="/pages/Subway/Subway">
+<image class="resturantImage" src="https://restaurants.subway.com/permanent-b0b701/assets/images/hero_fallback.50bb3276.jpg"></image>
+<view class="cardResturantNameFont">Subway</view>
+<view class="locationFont">Davis Residence Hall</view>
+</navigator>
+
+<navigator class="resturantCard" url="/pages/chickFilA/chickFilA">
+<image class="resturantImage" src="https://www.chick-fil-a.com/-/media/images/cfacom/default-images/chick-fil-a-logo-vector.ashx"></image>
+<view class="cardResturantNameFont">Chick-fil-A</view>
+<view class="locationFont">Benson University Center</view>
+</navigator>
+
+<navigator class="resturantCard" url="/pages/starbucks/starbucks">
+<image class="resturantImage" src="https://s3.amazonaws.com/secretsaucefiles/photos/images/000/112/260/large/IMG_4506-copy.jpg?1485385027"></image>
+<view class="cardResturantNameFont">Starbucks</view>
+<view class="locationFont">North Dinning Hall</view>
+</navigator>
+
+<view class="title">已打烊</view>
+<navigator class="resturantCard" url="/pages/NorthPit/NorthPit">
+<image class="resturantImage" src="https://dining.wfu.edu/wp-content/uploads/2019/10/111-Philip-Gabriel-Photography-Aramark-HT-WakeForest-2.27.18-2100x900-c-default.jpg"></image>
+<view class="cardResturantNameFont">North Pit</view>
+<view class="locationFont">North Dining Hall</view>
+</navigator>
