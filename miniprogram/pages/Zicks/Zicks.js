@@ -1,4 +1,4 @@
-// pages/Zick's/Zick's.js
+// pages/Zicks/Zicks.js
 Page({
 
     /**

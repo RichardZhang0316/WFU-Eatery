@@ -4,7 +4,7 @@
 </view>
 
 <view class="title">营业中</view>
-<navigator class="resturantCard" url="/pages/Zick's/Zick's">
+<navigator class="resturantCard" url="/pages/Zicks/Zicks">
 <image class="resturantImage" src="https://prod.wp.cdn.aws.wfu.edu/sites/22/2013/08/620x350.20130823.students3048.jpg"></image>
 <view class="cardResturantNameFont">Zick's</view>
 <view class="flex">
