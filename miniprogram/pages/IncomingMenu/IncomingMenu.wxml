@@ -1,2 +1,21 @@
 <!--pages/IncomingMenu/IncomingMenu.wxml-->
-<text>我破防了 搜索框有点难啊感觉呜呜呜呜</text>
+<view class="root">
+<view class="maxTitle">Upcoming Menus</view>
+</view>
+
+<view class='topTabSwiper'>
+   
+   <view class='tab  {{currentData == 0 ? "tabBorer" : "abc"}}'  data-current = "0" bindtap='checkCurrent'>Today</view>
+   <view class='tab  {{currentData == 1 ? "tabBorer" : ""}}'  data-current = "1" bindtap='checkCurrent'>Mon</view>
+   <view class='tab  {{currentData == 2 ? "tabBorer" : ""}}'  data-current = "2" bindtap='checkCurrent'>Tue</view>
+   <view class='tab  {{currentData == 3 ? "tabBorer" : ""}}'  data-current = "3" bindtap='checkCurrent'>Wed</view>
+   <view class='tab  {{currentData == 4 ? "tabBorer" : ""}}'  data-current = "4" bindtap='checkCurrent'>Thur</view>
+   <view class='tab  {{currentData == 5 ? "tabBorer" : ""}}'  data-current = "5" bindtap='checkCurrent'>Fri</view>
+   <view class='tab  {{currentData == 6 ? "tabBorer" : ""}}'  data-current = "6" bindtap='checkCurrent'>Sat</view>
+</view>
+
+<swiper current="{{currentData}}" class='swiper' style="height:600px;" duration="300" bindchange="bindchange">
+ <swiper-item><view class='swiper_con'>welcome come to Today</view></swiper-item> 
+ <swiper-item><view class='swiper_con'>welcome come to Sunday</view></swiper-item>
+ <swiper-item><view class='swiper_con'>welcome come to Monday</view></swiper-item>  
+</swiper>

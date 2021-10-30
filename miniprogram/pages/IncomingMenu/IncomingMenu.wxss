@@ -1,1 +1,23 @@
-/* pages/IncomingMenu/IncomingMenu.wxss */
+page{
+    background-color:  #ececec ;
+  } 
+  .root {
+    height: 40%;
+    background: #9E7E38;
+    padding-bottom: 20rpx;
+  }
+  .maxTitle{
+    color:white;
+    font-weight: bold;
+    padding: 20px;
+    font-size: 22px; /* 大标题字号标准 */
+
+}
+
+.tab{float: left; width: 14.2857143%;text-align: center;padding: 10rpx 0; }
+.topTabSwiper{border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; zoom: 1;}
+.topTabSwiper:after{content: ""; clear: both;display: block;}
+.tabBorer{border-bottom: 1px solid #f00; color: #f00;}
+.swiper{width: 100%;}
+.swiper_con{text-align: center; width: 100%; height: 100%; padding: 80rpx 0;}
+.checkCurrent{color:#ccc}

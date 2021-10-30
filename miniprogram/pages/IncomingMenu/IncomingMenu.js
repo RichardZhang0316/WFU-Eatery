@@ -62,5 +62,27 @@ Page({
      */
     onShareAppMessage: function () {
 
-    }
+    },
+    checkCurrent:function(e){
+        const that = this;
+    
+        if (that.data.currentData === e.target.dataset.current){
+            return false;
+        }else{
+    
+          that.setData({
+            currentData: e.target.dataset.current
+          })
+        }
+    },
 })
+function getDay(num) {
+    var today = new Date();
+    var nowTime = today.getTime();
+    var ms = 24 * 3600 * 1000 * num;
+    today.setTime(parseInt(nowTime + ms));
+  
+    var oMoth = (today.getMonth() + 1).toString();
+    var oDay = today.getDate().toString();
+    return oMoth + '月' + oDay + '日';
+  }

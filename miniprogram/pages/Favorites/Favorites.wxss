@@ -1,1 +1,15 @@
-/* pages/Favorites/Favorites.wxss */
+page{
+    background-color:  #ececec ;
+  } 
+  .root {
+    height: 40%;
+    background: #9E7E38;
+    padding-bottom: 20rpx;
+  }
+  .maxTitle{
+    color:white;
+    font-weight: bold;
+    padding: 20px;
+    font-size: 22px; /* 大标题字号标准 */
+
+}

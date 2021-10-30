@@ -1,6 +1,9 @@
 <view class="root">
-<view class="maxTitle">美食与温暖，我们都有</view><!-- 以后做成随机选择欢迎语 -->
-<view class="input">搜索餐厅或美食</view>
+<view class="maxTitle">美食与温暖，我们都有</view><!-- 做成随机选择欢迎语 -->
+<navigator url="/pages/Search/Search" class="input">
+    <icon type="search" size="17" ></icon>
+ 搜索餐厅或美食</navigator>
+<!--微信搜索框组件 <mp-searchbar class="input" bindselectresult="selectResult" search="{{search}}"></mp-searchbar> -->
 </view>
 
 <view class="title">营业中</view>

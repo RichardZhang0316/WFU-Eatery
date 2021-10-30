@@ -1,6 +1,11 @@
 {
+    "useExtendedLib": {
+      "weui": true
+    },
+  
   "pages": [
     "pages/HomePage/HomePage",
+    "pages/Search/Search",
     "pages/IncomingMenu/IncomingMenu",
     "pages/Favorites/Favorites",
     "pages/Zicks/Zicks",
@@ -15,6 +20,7 @@
     "navigationBarTitleText": "WFU Eatery",
     "navigationBarTextStyle": "black"
   },
+  
   "sitemapLocation": "sitemap.json",
   "style": "v2",
   "tabBar": {
@@ -33,7 +39,7 @@
         "pagePath": "pages/IncomingMenu/IncomingMenu",
         "iconPath": "images/me-no.png",
         "selectedIconPath": "images/me-yes.png",
-        "text":"Incoming Menu"
+        "text":"Upcoming Menu"
       },
       {
         "pagePath": "pages/Favorites/Favorites",

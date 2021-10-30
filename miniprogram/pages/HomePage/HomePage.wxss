@@ -50,12 +50,12 @@ page{
     border-top-right-radius: 10px;
     height: 70%;
     width: 100%;
+   
   }
   .cardResturantNameFont{
       padding-left: 10px; 
       font-size: 16px;
       font-weight: bold;
-
   }
   .locationFont{
       padding-left: 10px;
@@ -65,7 +65,7 @@ page{
   .flex{
     display: flex;
     flex-direction: row;
-    
+    padding-bottom: 2px;
   }
   .timeFont{
       text-align: right;
@@ -73,5 +73,5 @@ page{
       font-size: 12px;
       color:rgb(196, 196, 196);
       margin-left:auto;
-      /* 上面这行怎么做到放到最右边的 我不理解 但我大受震撼 百度出来的*/
+      /* 上面这行怎么做到放到最右边的 我不理解 但我大受震撼*/
   }

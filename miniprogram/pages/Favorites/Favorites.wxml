@@ -1,2 +1,3 @@
-<!--pages/Favorites/Favorites.wxml-->
-<text>pages/Favorites/Favorites.wxml</text>
+<view class="root">
+<view class="maxTitle">Favorites</view>
+</view>
