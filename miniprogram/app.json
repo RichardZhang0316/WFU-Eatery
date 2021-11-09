@@ -12,13 +12,15 @@
     "pages/Subway/Subway",
     "pages/chickFilA/chickFilA",
     "pages/NorthPit/NorthPit",
-    "pages/starbucks/starbucks"
+    "pages/starbucks/starbucks",
+    "pages/Pit/Pit"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#9E7E38",
     "navigationBarTitleText": "WFU Eatery",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
   },
   
   "sitemapLocation": "sitemap.json",

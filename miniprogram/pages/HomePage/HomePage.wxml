@@ -8,7 +8,7 @@
 
 <view class="title">营业中</view>
 <navigator class="resturantCard" url="/pages/Zicks/Zicks">
-<image class="resturantImage" src="https://prod.wp.cdn.aws.wfu.edu/sites/22/2013/08/620x350.20130823.students3048.jpg"></image>
+<image class="resturantImage" mode="aspectFill" src="https://prod.wp.cdn.aws.wfu.edu/sites/22/2013/08/620x350.20130823.students3048.jpg"></image>
 <view class="cardResturantNameFont">Zick's</view>
 <view class="flex">
 <view class="locationFont">Poteat Residence Hall</view>
@@ -17,26 +17,47 @@
 </navigator>
 
 <navigator class="resturantCard" url="/pages/Subway/Subway">
-<image class="resturantImage" src="https://restaurants.subway.com/permanent-b0b701/assets/images/hero_fallback.50bb3276.jpg"></image>
+<image class="resturantImage" mode="aspectFill" src="https://restaurants.subway.com/permanent-b0b701/assets/images/hero_fallback.50bb3276.jpg"></image>
 <view class="cardResturantNameFont">Subway</view>
+<view class="flex">
 <view class="locationFont">Davis Residence Hall</view>
+<view class="timeFont">营业至12PM</view>
+</view>
 </navigator>
 
 <navigator class="resturantCard" url="/pages/chickFilA/chickFilA">
-<image class="resturantImage" src="https://www.chick-fil-a.com/-/media/images/cfacom/default-images/chick-fil-a-logo-vector.ashx"></image>
+<image class="resturantImage" mode="aspectFill" src="https://www.chick-fil-a.com/-/media/images/cfacom/default-images/chick-fil-a-logo-vector.ashx"></image>
 <view class="cardResturantNameFont">Chick-fil-A</view>
+<view class="flex">
 <view class="locationFont">Benson University Center</view>
+<view class="timeFont">营业至12PM</view>
+</view>
 </navigator>
 
 <navigator class="resturantCard" url="/pages/starbucks/starbucks">
-<image class="resturantImage" src="https://s3.amazonaws.com/secretsaucefiles/photos/images/000/112/260/large/IMG_4506-copy.jpg?1485385027"></image>
+<image class="resturantImage" mode="aspectFill" src="https://s3.amazonaws.com/secretsaucefiles/photos/images/000/112/260/large/IMG_4506-copy.jpg?1485385027"></image>
 <view class="cardResturantNameFont">Starbucks</view>
-<view class="locationFont">North Dinning Hall</view>
+<view class="flex">
+<view class="locationFont">North Dining Hall</view>
+<view class="timeFont">营业至12PM</view>
+</view>
 </navigator>
 
 <view class="title">已打烊</view>
 <navigator class="resturantCard" url="/pages/NorthPit/NorthPit">
-<image class="resturantImage" src="https://dining.wfu.edu/wp-content/uploads/2019/10/111-Philip-Gabriel-Photography-Aramark-HT-WakeForest-2.27.18-2100x900-c-default.jpg"></image>
+<image class="resturantImage" mode="aspectFill" src="https://dining.wfu.edu/wp-content/uploads/2019/10/111-Philip-Gabriel-Photography-Aramark-HT-WakeForest-2.27.18-2100x900-c-default.jpg"></image>
 <view class="cardResturantNameFont">North Pit</view>
+<view class="flex">
 <view class="locationFont">North Dining Hall</view>
+<view class="timeFont">营业至12PM</view>
+</view>
+</navigator>
+
+<navigator class="resturantCard" url="/pages/Pit/Pit">
+<image class="resturantImage" mode="aspectFill" src="https://dining.wfu.edu/wp-content/uploads/2021/02/Breakfast-Chef-400x0-c-default.jpg"></image>
+<view class="cardResturantNameFont">Pit</view>
+<view class="flex">
+<view class="locationFont">Reynolda Hall Ground Floor</view>
+<view class="timeFont">营业至12PM</view>
+</view>
 </navigator>
