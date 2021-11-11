@@ -1,3 +1,9 @@
 <view class="root">
-<view class="maxTitle">Favorites</view>
-</view>
+
+<view class="maxTitle" > Deacon Dining 🥢🥄 </view> </view>
+<navigator class="FoodDollar" url="/pages/FoodDollar/FoodDollar"> Food Dollar Balance </navigator>
+
+<navigator class="DeaconDollar" url="/pages/AddDeaconDolllar/AddDeaconDollar"> Add Deacon Dollar </navigator>
+
+<navigator class="ChangeMealPlan" url="/pages/ChangeMealPlan/ChangeMealPlan"> Change Meal Plan </navigator>
+

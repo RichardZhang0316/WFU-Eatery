@@ -13,7 +13,10 @@
     "pages/chickFilA/chickFilA",
     "pages/NorthPit/NorthPit",
     "pages/starbucks/starbucks",
-    "pages/Pit/Pit"
+    "pages/Pit/Pit",
+    "pages/FoodDollar/FoodDollar",
+    "pages/AddDeaconDolllar/AddDeaconDollar",
+    "pages/ChangeMealPlan/ChangeMealPlan"
   ],
   "window": {
     "backgroundTextStyle": "light",
