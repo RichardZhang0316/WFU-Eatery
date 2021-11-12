@@ -1,1 +1,9 @@
 /* pages/Pit/Pit.wxss */
+/**index.wxss**/
+ec-canvas {
+  width: 100%;
+  height: 100%;
+}
+.container{
+  height: 400px;
+}
