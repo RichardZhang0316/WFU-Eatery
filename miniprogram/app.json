@@ -12,18 +12,28 @@
     "pages/Subway/Subway",
     "pages/chickFilA/chickFilA",
     "pages/NorthPit/NorthPit",
-    "pages/starbucks/starbucks",
     "pages/Pit/Pit",
     "pages/FoodDollar/FoodDollar",
     "pages/AddDeaconDolllar/AddDeaconDollar",
-    "pages/ChangeMealPlan/ChangeMealPlan"
+    "pages/ChangeMealPlan/ChangeMealPlan",
+    "pages/MagnoliaRoom/MagnoliaRoom",
+    "pages/EinsteinBrosBagels/EinsteinBrosBagels",
+    "pages/CaminoBakery/CaminoBakery",
+    "pages/LegalGroundsCafé/LegalGroundsCafé",
+    "pages/Shorty's/Shorty's",
+    "pages/Bento/Bento",
+    "pages/ForestGreens/ForestGreens",
+    "pages/YamasMediterraneanStreetFood/YamasMediterraneanStreetFood",
+    "pages/336Market/336Market",
+    "pages/VillageJuice/VillageJuice",
+    "pages/starbucks/starbucks",
+    "pages/P.O.D.Market/P.O.D.Market"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#9E7E38",
     "navigationBarTitleText": "WFU Eatery",
-    "navigationBarTextStyle": "black",
-    "navigationStyle": "custom"
+    "navigationBarTextStyle": "black"
   },
   
   "sitemapLocation": "sitemap.json",
