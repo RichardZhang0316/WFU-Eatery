@@ -1,0 +1,17 @@
+<!--pages/AddDeaconDolllar/AddDeaconDollar.wxml-->
+<view class="maxTitle"> 🎩 Deacon Dollar怎么充值？</view> 
+<view class = "box">
+<view class = "website"> 四种充值方式：</view>
+  <view>  1. Deacon Dining: https://wakeforest.campuscardcenter
+  .com/ch/quick_revalue.html 
+  </view>
+<view> 2. 拨打 336.758.5607 或 800.528.5778登陆gmail,找到 Deacon Dining。</view>
+<view>  3. 周一至周五上午8:30至下午4:30，参观位于Reynolda一楼（Pit旁边）服务窗口进行充值，充值完可直接使用.</view>
+
+</view>
+
+
+
+
+
+

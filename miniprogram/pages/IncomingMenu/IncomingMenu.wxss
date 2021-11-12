@@ -11,10 +11,19 @@ page{
     font-weight: bold;
     padding: 20px;
     font-size: 22px; /* 大标题字号标准 */
-
 }
 
-.tab{float: left; width: 14.2857143%;text-align: center;padding: 10rpx 0; word-wrap: break-word;word-break: break-all;white-space: pre-line; }
+.l1{
+  font-size:10px;
+}
+
+.l2{
+  font-size:20px;
+}
+
+
+
+.tab{float: left; width: 14.2857143%;text-align: center;padding: 20rpx 0; word-wrap: break-word;word-break: break-all;white-space: pre-line; }
 .topTabSwiper{border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; zoom: 1;}
 .topTabSwiper:after{content: ""; clear: both;display: block;}
 .tabBorer{border-bottom: 1px solid #f00; color: #f00;}

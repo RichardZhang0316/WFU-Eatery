@@ -14,6 +14,7 @@ Page({
     onLoad: function (options) {
       //获取当前日期
       var time = util.formatDate(new Date());
+      
       var day1 = util.getTimeLastWeek1(new Date());//1天后时间
       var day2 = util.getTimeLastWeek2(new Date());
       var day3 = util.getTimeLastWeek3(new Date());
@@ -27,13 +28,21 @@ Page({
       var week5=util.getWeekByDate5(new Date());
       var week6=util.getWeekByDate6(new Date());
       this.setData({
-        time:'Today\n'+time,
-        day1:week1+'\n'+day1,
-        day2:week2+'\n'+day2,
-        day3:week3+' \n'+day3,
-        day4:week4+' \n'+day4,
-        day5:week5+'\n'+day5,
-        day6:week6+'\n'+day6,
+        time1:'Today\n',
+        time2:time,
+        day11:week1+'\n',
+        day12:day1,
+        day21:week2+'\n',
+        day22:day2,
+        day31:week3+' \n',
+        day32:day3,
+        day41:week4+' \n',
+        day42:day4,
+        day51:week5+'\n',
+        day52:day5,
+        day61:week6+'\n',
+        day62:day6,
+        
       });
     },
 

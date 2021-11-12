@@ -1,6 +1,48 @@
 page{
     background-color:  #ececec ;
   } 
+  view {
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  .custom-bar {
+    /* background-color: #aaa; */
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color:#9E7E38 ;
+    padding-bottom: 10px;
+    height: auto !important;
+  }
+  .custom-bar__wrapper {
+    padding: 0 10rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+  .search-group {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border: 1px solid rgb(226, 226, 226);
+    border-radius: 60rpx;
+    padding: 0 10rpx;
+    color: grey;
+    background: rgba(255, 255, 255,0.8);
+  }
+  .search-group > input {
+    font-size: 25rpx;
+  }
+  .search-group > image {
+    height: 32rpx;
+    width: 32rpx;
+    margin-right: 20rpx
+  }
+
   .root {
     height: 40%;
     background: #9E7E38;
@@ -10,6 +52,7 @@ page{
       color:white;
       font-weight: bold;
       padding: 20px;
+      margin-top: 30px;
       font-size: 22px; /* 大标题字号标准 */
 
   }
