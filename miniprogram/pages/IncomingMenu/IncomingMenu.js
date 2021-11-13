@@ -103,9 +103,35 @@ Page({
     
           that.setData({
             currentData: e.target.dataset.current
+           
           })
         }
     },
+
+    currentCheck:function(e){
+      const that = this;
+  
+      if (that.data.dataCurrent === e.target.dataset.current){
+          return false;
+      }else{
+  
+        that.setData({
+          dataCurrent: e.target.dataset.current
+         
+        })
+      }
+  },
+
+  set:function(e){
+    const that = this;
+
+      that.setData({
+        num: [0,1,2,3,4,5,6,7,8,9]
+       
+      })
+    
+},
+
 })
 // function getDay(num) {
 //     var today = new Date();

@@ -5,7 +5,8 @@
 
 <view class='topTabSwiper'>
    
-   <view class='tab  {{currentData == 0 ? "tabBorer" : "abc"}}'  data-current = "0" bindtap='checkCurrent'><text class="l1">{{time1}}</text><text class="l2">{{time2}}</text></view>
+   <view class='tab  {{currentData == 0 ? "tabBorer" : "abc"}}'  data-current = "0" bindtap='checkCurrent'><text class="l1">{{time1}}</text><text class="l2">{{time2}}</text>
+   </view>
    <view class='tab  {{currentData == 1 ? "tabBorer" : ""}}'  data-current = "1" bindtap='checkCurrent'><text class="l1">{{day11}}</text><text class="l2">{{day12}}</text></view>
    <view class='tab  {{currentData == 2 ? "tabBorer" : ""}}'  data-current = "2" bindtap='checkCurrent'><text class="l1">{{day21}}</text><text class="l2">{{day22}}</text></view>
    <view class='tab  {{currentData == 3 ? "tabBorer" : ""}}'  data-current = "3" bindtap='checkCurrent'><text class="l1">{{day31}}</text><text class="l2">{{day32}}</text></view>
@@ -14,8 +15,59 @@
    <view class='tab  {{currentData == 6 ? "tabBorer" : ""}}'  data-current = "6" bindtap='checkCurrent'><text class="l1">{{day61}}</text><text class="l2">{{day62}}</text></view>
 </view>
 
-<swiper current="{{currentData}}" class='swiper' style="height:600px;" duration="300" bindchange="bindchange">
- <swiper-item><view class='swiper_con'>welcome come to Today</view></swiper-item> 
- <swiper-item><view class='swiper_con'>welcome come to Sunday</view></swiper-item>
- <swiper-item><view class='swiper_con'>welcome come to Monday</view></swiper-item>  
-</swiper>
+<view class='topTabSwiper'>
+   <view class='tab1  {{dataCurrent==0? "tabBorer" : "abc"}}'  data-current = "0" bindtap='currentCheck'><text class="l3">Breakfast</text></view>
+   <view class='tab1  {{dataCurrent==1 ? "tabBorer" : "abc" }}'  data-current = "1" bindtap='currentCheck'><text class="l3">Lunch</text></view>
+   <view class='tab1  {{dataCurrent==2 ? "tabBorer" : "abc"}}'  data-current = "2" bindtap='currentCheck'><text class="l3">Dinner</text></view>
+  
+
+</view>
+
+<view wx:if="{{currentData==0}}">
+   <swiper current="{{dataCurrent}}" class='swiper' style="height:600px;" duration="300" bindchange="bindchange">
+ <swiper-item> <view wx:if="{{dataCurrent==0}}"><view class='swiper_con'>page1</view></view></swiper-item>
+ <swiper-item> <view wx:if="{{dataCurrent==1}}"><view class='swiper_con'>page2</view></view></swiper-item>
+ <swiper-item> <view wx:if="{{dataCurrent==2}}"><view class='swiper_con'>page3</view></view></swiper-item>
+</swiper></view>
+
+<view wx:if="{{currentData==1}}">
+   <swiper current="{{dataCurrent}}" class='swiper' style="height:600px;" duration="300" bindchange="bindchange">
+ <swiper-item> <view wx:if="{{ dataCurrent==0}}"><view class='swiper_con'>page4</view></view></swiper-item>
+ <swiper-item> <view wx:if="{{dataCurrent==1}}"><view class='swiper_con'>page5</view></view></swiper-item>
+ <swiper-item> <view wx:if="{{dataCurrent==2}}"><view class='swiper_con'>page6</view></view></swiper-item>
+</swiper></view>
+
+<view wx:if="{{currentData==2}}">
+   <swiper current="{{dataCurrent}}" class='swiper' style="height:600px;" duration="300" bindchange="bindchange">
+ <swiper-item> <view wx:if="{{ dataCurrent==0}}"><view class='swiper_con'>page7</view></view></swiper-item>
+ <swiper-item> <view wx:if="{{dataCurrent==1}}"><view class='swiper_con'>page8</view></view></swiper-item>
+ <swiper-item> <view wx:if="{{dataCurrent==2}}"><view class='swiper_con'>page9</view></view></swiper-item>
+</swiper></view>
+
+<view wx:if="{{currentData==3}}">
+   <swiper current="{{dataCurrent}}" class='swiper' style="height:600px;" duration="300" bindchange="bindchange">
+ <swiper-item> <view wx:if="{{ dataCurrent==0}}"><view class='swiper_con'>page10</view></view></swiper-item>
+ <swiper-item> <view wx:if="{{dataCurrent==1}}"><view class='swiper_con'>page11</view></view></swiper-item>
+ <swiper-item> <view wx:if="{{dataCurrent==2}}"><view class='swiper_con'>page12</view></view></swiper-item>
+</swiper></view>
+
+<view wx:if="{{currentData==4}}">
+   <swiper current="{{dataCurrent}}" class='swiper' style="height:600px;" duration="300" bindchange="bindchange">
+ <swiper-item> <view wx:if="{{ dataCurrent==0}}"><view class='swiper_con'>page13</view></view></swiper-item>
+ <swiper-item> <view wx:if="{{dataCurrent==1}}"><view class='swiper_con'>page14</view></view></swiper-item>
+ <swiper-item> <view wx:if="{{dataCurrent==2}}"><view class='swiper_con'>page15</view></view></swiper-item>
+</swiper></view>
+
+<view wx:if="{{currentData==5}}">
+   <swiper current="{{dataCurrent}}" class='swiper' style="height:600px;" duration="300" bindchange="bindchange">
+ <swiper-item> <view wx:if="{{ dataCurrent==0}}"><view class='swiper_con'>page16</view></view></swiper-item>
+ <swiper-item> <view wx:if="{{dataCurrent==1}}"><view class='swiper_con'>page17</view></view></swiper-item>
+ <swiper-item> <view wx:if="{{dataCurrent==2}}"><view class='swiper_con'>page18</view></view></swiper-item>
+</swiper></view>
+
+<view wx:if="{{currentData==6}}">
+   <swiper current="{{dataCurrent}}" class='swiper' style="height:600px;" duration="300" bindchange="bindchange">
+ <swiper-item> <view wx:if="{{ dataCurrent==0}}"><view class='swiper_con'>page19</view></view></swiper-item>
+ <swiper-item> <view wx:if="{{dataCurrent==1}}"><view class='swiper_con'>page20</view></view></swiper-item>
+ <swiper-item> <view wx:if="{{dataCurrent==2}}"><view class='swiper_con'>page21</view></view></swiper-item>
+</swiper></view>
