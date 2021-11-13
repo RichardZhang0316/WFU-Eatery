@@ -212,7 +212,7 @@ Page({
 //   });
 //   canvas.setChart(chart);
 
-<<<<<<< Updated upstream
+
   var option = { //点击时的option小界面
     tooltip: {
       trigger: 'axis',
@@ -276,7 +276,6 @@ Page({
       },
     ]
   };
-=======
 //   var option = { //点击时的option小界面
 //     tooltip: {
 //       trigger: 'axis',
@@ -358,7 +357,6 @@ Page({
 //       },
 //     ]
 //   };
->>>>>>> Stashed changes
 
 //   chart.setOption(option);
 //   return chart;
