@@ -194,5 +194,5 @@
     height: 100%;
   }
   .container{
-    height: 270px;
+    height: 250px;
   }

@@ -220,9 +220,7 @@ function initChart(canvas, width, height, dpr) {  // initial Chart的function
       },
       confine: true
     },
-    legend: {
-      data: ['Pit','North Pit']
-    },
+
     grid: {
       left: 20,
       right: 20,
@@ -247,7 +245,7 @@ function initChart(canvas, width, height, dpr) {  // initial Chart的function
       {
         type: 'category',
         axisTick: { show: false },
-        data: ['8:00', '9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00'],
+        data: ['8:00', '9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00'],
         axisLine: {
           lineStyle: {
             color: '#999'
@@ -268,26 +266,10 @@ function initChart(canvas, width, height, dpr) {  // initial Chart的function
             position: 'inside'
           }
         },
-        data: [70, 80, 60, 30, 25, 40, 60, 70, 80, 60, 30, 25, 40, 60],
+        data: [70, 80, 60, 30, 25, 40, 60, 70, 80, 60, 30, 25, 40, 60, 10],
         itemStyle: {
           // emphasis: {
            color: '#9E7E38'
-          // }
-        }
-      },
-      {
-        name: 'North Pit',
-        type: 'bar',
-        label: {
-          normal: {
-            show: true,
-            position: 'inside'
-          }
-        },
-        data: [50, 30, 90, 20, 25, 30, 40, 50, 30, 90, 20, 25, 30, 40],
-        itemStyle: {
-          // emphasis: {
-           color: '#53565A'
           // }
         }
       },
