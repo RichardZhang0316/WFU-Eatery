@@ -107,13 +107,3 @@ Page({
         }
     },
 })
-// function getDay(num) {
-//     var today = new Date();
-//     var nowTime = today.getTime();
-//     var ms = 24 * 3600 * 1000 * num;
-//     today.setTime(parseInt(nowTime + ms));
-  
-//     // var oMoth = (today.getMonth() + 1).toString();
-//     var oDay = today.getDate().toString();
-//     return oDay ;
-//   }

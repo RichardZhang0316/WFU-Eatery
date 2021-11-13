@@ -4,14 +4,13 @@
 </view>
 
 <view class='topTabSwiper'>
-   
-   <view class='tab  {{currentData == 0 ? "tabBorer" : "abc"}}'  data-current = "0" bindtap='checkCurrent'><text class="l1">{{time1}}</text><text class="l2">{{time2}}</text></view>
-   <view class='tab  {{currentData == 1 ? "tabBorer" : ""}}'  data-current = "1" bindtap='checkCurrent'><text class="l1">{{day11}}</text><text class="l2">{{day12}}</text></view>
-   <view class='tab  {{currentData == 2 ? "tabBorer" : ""}}'  data-current = "2" bindtap='checkCurrent'><text class="l1">{{day21}}</text><text class="l2">{{day22}}</text></view>
-   <view class='tab  {{currentData == 3 ? "tabBorer" : ""}}'  data-current = "3" bindtap='checkCurrent'><text class="l1">{{day31}}</text><text class="l2">{{day32}}</text></view>
-   <view class='tab  {{currentData == 4 ? "tabBorer" : ""}}'  data-current = "4" bindtap='checkCurrent'><text class="l1">{{day41}}</text><text class="l2">{{day42}}</text></view>
-   <view class='tab  {{currentData == 5 ? "tabBorer" : ""}}'  data-current = "5" bindtap='checkCurrent'><text class="l1">{{day51}}</text><text class="l2">{{day52}}</text></view>
-   <view class='tab  {{currentData == 6 ? "tabBorer" : ""}}'  data-current = "6" bindtap='checkCurrent'><text class="l1">{{day61}}</text><text class="l2">{{day62}}</text></view>
+   <view class='tab  {{currentData == 0 ? "tabBorer" : "abc"}}'  data-current = "0" bindtap='checkCurrent' ><text class="l1"  data-current = "0" >{{time1}}</text><text class="l2"  data-current = "0" >{{time2}}</text></view>
+   <view class='tab  {{currentData == 1 ? "tabBorer" : ""}}'  data-current = "1" bindtap='checkCurrent'><text class="l1" data-current = "1">{{day11}}</text><text class="l2" data-current = "1">{{day12}}</text></view>
+   <view class='tab  {{currentData == 2 ? "tabBorer" : ""}}'  data-current = "2" bindtap='checkCurrent'><text class="l1" data-current = "2">{{day21}}</text><text class="l2" data-current = "2">{{day22}}</text></view>
+   <view class='tab  {{currentData == 3 ? "tabBorer" : ""}}'  data-current = "3" bindtap='checkCurrent'><text class="l1" data-current = "3">{{day31}}</text><text class="l2" data-current = "3">{{day32}}</text></view>
+   <view class='tab  {{currentData == 4 ? "tabBorer" : ""}}'  data-current = "4" bindtap='checkCurrent'><text class="l1"  data-current = "4">{{day41}}</text><text class="l2"  data-current = "4">{{day42}}</text></view>
+   <view class='tab  {{currentData == 5 ? "tabBorer" : ""}}'  data-current = "5" bindtap='checkCurrent'><text class="l1" data-current = "5">{{day51}}</text><text class="l2" data-current = "5">{{day52}}</text></view>
+   <view class='tab  {{currentData == 6 ? "tabBorer" : ""}}'  data-current = "6" bindtap='checkCurrent'><text class="l1" data-current = "6">{{day61}}</text><text class="l2" data-current = "6">{{day62}}</text></view>
 </view>
 
 <swiper current="{{currentData}}" class='swiper' style="height:600px;" duration="300" bindchange="bindchange">

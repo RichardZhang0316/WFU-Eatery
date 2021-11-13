@@ -39,7 +39,7 @@
           <block wx:for-items="{{item.pages}}" wx:for-item="page" wx:key="*item">
             <navigator url="pages/{{page}}/{{page}}" class="navigator">
              <view class="navigator-text">{{page}}</view>
-             <!-- icon -->
+             
              <view class="navigator-arrow"></view>
            </navigator>
          </block>
