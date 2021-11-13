@@ -1,15 +1,67 @@
 page{
-    background-color:  #ececec ;
-  } 
-  .root {
-    height: 40%;
-    background: #9E7E38;
-    padding-bottom: 20rpx;
-  }
-  .maxTitle{
-    color:white;
-    font-weight: bold;
-    padding: 20px;
-    font-size: 22px; /* 大标题字号标准 */
+  background-color:  #ececec ;
+}
+.root {
+  background: #9E7E38;
+}
 
+.maxTitle{
+  color:white;
+  font-weight: bold;
+  padding: 15px;
+  font-size: 25px;
+}
+
+.FoodDollar {
+  height: 40px;
+    width: 80%;
+    margin-top:20%;
+    margin-left:10%;
+    margin-right:10%;
+    text-align: center;
+    color: white;
+    background-color:#9E7E38;
+    border-radius: 11px;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    border-style:solid;
+    border-color: white;
+}
+.DeaconDollar {
+  height: 40px;
+    width: 80%;
+    margin-top:7%; 
+    margin-left:10%; 
+    margin-right:10%; 
+    text-align: center; 
+    color: white;
+    background-color:#9E7E38;
+    border-radius: 11px;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    border-style:solid;
+    border-color: white;
+}
+.ChangeMealPlan {
+  height: 40px;
+  width: 80%;
+  margin-top:7%; 
+  margin-left:10%; 
+  margin-right:10%; 
+  text-align: center; 
+  color: white;
+  background-color:#9E7E38;
+  border-radius: 11px;
+  display: flex;
+  align-items:center;
+  justify-content: center;
+  border-style:solid;
+  border-color: white;
+}
+
+.intro{
+  background:#9E7E38;
+  border: radius 10px;
 }

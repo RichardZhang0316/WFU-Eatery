@@ -1,0 +1,26 @@
+page{
+  background-color:  #ececec ;
+}
+
+.maxTitle{
+  color:black;
+  padding: 15px;
+  font-size: 20px;
+  text-align: left;
+  text-decoration-line: underline;
+}
+
+.box{
+  height: 80px;
+    width: 85%;
+    margin-top:5%;
+    margin-left:5%;
+    margin-right:5%;
+    text-align: left;
+    background-color:white;
+    border-radius: 11px;
+    border-style:solid;
+    border-color: black;
+    text-align: center;
+}
+
