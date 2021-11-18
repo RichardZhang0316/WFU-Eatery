@@ -1,2 +1,4 @@
-<!--pages/Bento/Bento.wxml-->
-<text>pages/Bento/Bento.wxml</text>
+<component title='我是tabbar的页面' show_bol='{{false}}'></component> 
+
+<component title='我是带返回的页面' show_bol='{{true}}'></component> 
+

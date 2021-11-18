@@ -11,6 +11,8 @@ Page({
         searchMarginTop: 0, // 搜索框上边距
         searchWidth: 0, // 搜索框宽度
         searchHeight: 0 // 搜索框高度
+        
+
     },
 
     /**

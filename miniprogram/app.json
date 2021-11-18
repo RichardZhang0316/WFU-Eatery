@@ -27,11 +27,12 @@
     "pages/336Market/336Market",
     "pages/VillageJuice/VillageJuice",
     "pages/starbucks/starbucks",
-    "pages/P.O.D.Market/P.O.D.Market"
+    "pages/P.O.D.Market/P.O.D.Market",
+    "components/navigation/navigation"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#9E7E38",
+    "navigationBarBackgroundColor": "#d6b160",
     "navigationBarTitleText": "WFU Eatery",
     "navigationBarTextStyle": "black"
   },

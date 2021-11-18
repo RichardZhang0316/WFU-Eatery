@@ -1,5 +1,6 @@
+<navigation title='' show_bol='{{false}}'></navigation> 
 <view class="topCard">
-<image src="https://dining.wfu.edu/wp-content/uploads/2019/10/111-Philip-Gabriel-Photography-Aramark-HT-WakeForest-2.27.18-2100x900-c-default.jpg" style="height:100%; width:100%"></image>
+<image mode="aspectFill" src="https://dining.wfu.edu/wp-content/uploads/2019/10/111-Philip-Gabriel-Photography-Aramark-HT-WakeForest-2.27.18-2100x900-c-default.jpg" style="height:100%; width:100%"></image>
 <text class="head-text">North Pit</text>
 </view>
 <view class="flexTimetable">
@@ -22,9 +23,9 @@
 </view>
 
 <view class="shit2"><view>Occupancy Percentage</view></view>
-<view class="container"> 
+<cover-view class="container"> 
   <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
-</view>
+</cover-view>
 
 <view class="greyPart"> </view>
 <view class="realPart"><view class="menuTitle">Menu</view></view>
@@ -39,7 +40,6 @@
           <block wx:for-items="{{item.pages}}" wx:for-item="page" wx:key="*item">
             <navigator url="pages/{{page}}/{{page}}" class="navigator">
              <view class="navigator-text">{{page}}</view>
-             
              <view class="navigator-arrow"></view>
            </navigator>
          </block>

@@ -182,11 +182,11 @@
 </view>
 </navigator>
 
-<navigator class="resturantCard" url="/pages//starbucks/starbucks">
+<!-- <navigator class="resturantCard" url="/pages//starbucks/starbucks">
 <image class="resturantImage" mode="aspectFill" src="https://i.loli.net/2021/11/12/bxMTIA3d79pR4Jh.jpg"></image>
 <view class="cardResturantNameFont">Starbucks</view>
 <view class="flex">
 <view class="locationFont">North Dining Hall</view>
 <view class="timeFont">营业至12PM</view>
 </view>
-</navigator>
+</navigator> -->

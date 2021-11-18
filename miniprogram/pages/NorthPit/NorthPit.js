@@ -3,6 +3,9 @@
 var app = getApp();
 Page({
     data: {
+      ec: {
+        onInit: initChart
+      },
         choose: false,
         animationData: {},
         stopBtn: true,//动画未执行完之前禁用按钮
@@ -125,7 +128,18 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+    //   wx.cloud.database().collection('ForsythData')
+    // .doc('8937eaa9615a601a0f766e4201bf62d2').get()
+    // .then(res=>{
+    //   console.log("成功",res)
+    //   this.setData({
+    //     num1:res.data.newCases,
+    //     num2:res.data.casesLast14Days,
+    //     num3:res.data.totalCases,
+    //     num4:res.data.totalDeaths,
+    //     date:res.data.date,
+    //   })
+    // })
     },
 
     /**
@@ -186,11 +200,11 @@ Page({
         fail: function () { }
       }
     },
-    data: {
-      ec: {
-        onInit: initChart
-      }
-    },
+    // data: {
+    //   ec: {
+    //     onInit: initChart
+    //   }
+    // },
   
     onReady() {
       setTimeout(function () {

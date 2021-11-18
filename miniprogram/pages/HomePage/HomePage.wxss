@@ -11,7 +11,7 @@ page{
     left: 0;
     top: 0;
     width: 100%;
-    background-color:#9E7E38 ;
+    background-color:#d6b160 ;
     padding-bottom: 10px;
     height: auto !important;
   }
@@ -45,7 +45,7 @@ page{
 
   .root {
     height: 40%;
-    background: #9E7E38;
+    background: #d6b160;
     padding-bottom: 20rpx;
   }
   .maxTitle{
@@ -69,7 +69,7 @@ page{
     justify-content: center;
   }
   .title{
-      color:#9E7E38;
+      color:#d6b160;
       font-weight: bold;
       font-size: 17px;/* open/close标题字号标准 */
       margin-left: 5%;

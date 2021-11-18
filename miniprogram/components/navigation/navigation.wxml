@@ -1,0 +1,20 @@
+<!-- <view style="padding-top:{{cover_state ? bar_Height + 44 : 0}}px;">
+ <view class='status-bar'>
+    <view class='goBack' bindtap='goBack' style="padding-top:{{bar_Height}}px;"  hidden='{{show_bol}}'>		
+      <image src='back.jpg'></image>
+    </view>
+    <view class="tabar {{my_class ? 'tabar2':''}}" style="padding-top:{{bar_Height}}px;">
+      <text class="red">{{title}}</text>
+    </view>
+  </view>
+</view> -->
+
+<view class='status-bar'>
+    <view class='goBack' bindtap='goBack' style="padding-top:0px;"  hidden='{{show_bol}}'>	
+      <image mode="aspectFit" style="top:6%" src='back.svg'></image>
+    </view>
+    <!-- <view class="tabar {{my_class ? 'tabar2':''}}" style="padding-top:{{bar_Height}}px;">
+      <text class="red">{{title}}</text>
+    </view> -->
+  </view>
+

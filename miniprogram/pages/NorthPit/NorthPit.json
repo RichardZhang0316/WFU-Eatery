@@ -1,5 +1,7 @@
 {
   "usingComponents": {
-    "ec-canvas": "../../ec-canvas/ec-canvas"
-  }
+    "ec-canvas": "../../ec-canvas/ec-canvas",
+    "navigation": "/components/navigation/navigation" 
+  },
+  "navigationStyle": "custom"
 }

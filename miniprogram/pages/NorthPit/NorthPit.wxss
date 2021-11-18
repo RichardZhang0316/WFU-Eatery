@@ -11,7 +11,7 @@
 }
 
 .topCard{
-    height: 140px;
+  height: 260px;
 }
 .view{
     display: flex;

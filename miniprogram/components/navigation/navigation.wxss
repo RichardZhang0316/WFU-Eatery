@@ -1,0 +1,42 @@
+/* 顶部导航 */
+.status-bar {
+    width: 100%;
+    z-index: 99998;
+    position: absolute;
+    top: 0;
+  }
+  .status-bar .goBack{
+    font-size: 12pt;
+    width: 100%;
+  }
+  .status-bar .goBack image{
+    position: fixed;
+    display: block;
+    top: 25px;
+    height: 25px;
+    left: 10px;
+    width: 10%;
+  }
+  .status-bar .tabar {
+    display: flex;
+    justify-content: center;
+    background: #fff;
+  }
+  .status-bar .tabar2{
+    background: transparent !important;
+  }
+  .status-bar .tabar2 text{
+    color: #fff !important;
+    /* font-weight: lighter !important; */
+  }
+  .status-bar .tabar text {
+    height: 44px;
+    line-height: 44px;
+    /* padding: 10pt 15pt; */
+    color: #fff;
+    font-size: 17px;
+    /* font-weight: bold; */
+  }
+  .status-bar .tabar .active {
+    color: #fff;
+  }

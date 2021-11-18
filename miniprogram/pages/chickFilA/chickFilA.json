@@ -1,3 +1,7 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "navigation": "/components/navigation/navigation" ,
+    "foodCard": "/components/vant/card/index"
+  },
+  "navigationStyle": "custom"
 }
