@@ -1,71 +1,276 @@
 <!--pages/IncomingMenu/IncomingMenu.wxml-->
 <view class="root">
-<view class="maxTitle">Upcoming Menus</view>
+   <view class="maxTitle">Upcoming Menus</view>
 </view>
 
 <view class='topTabSwiper'>
-   <view class='tab  {{currentData == 0 ? "tabBorer" : "abc"}}'  data-current = "0" bindtap='checkCurrent' ><text class="l1"  data-current = "0" >{{time1}}</text><text class="l2"  data-current = "0" >{{time2}}</text></view>
-   <view class='tab  {{currentData == 1 ? "tabBorer" : ""}}'  data-current = "1" bindtap='checkCurrent'><text class="l1" data-current = "1">{{day11}}</text><text class="l2" data-current = "1">{{day12}}</text></view>
-   <view class='tab  {{currentData == 2 ? "tabBorer" : ""}}'  data-current = "2" bindtap='checkCurrent'><text class="l1" data-current = "2">{{day21}}</text><text class="l2" data-current = "2">{{day22}}</text></view>
-   <view class='tab  {{currentData == 3 ? "tabBorer" : ""}}'  data-current = "3" bindtap='checkCurrent'><text class="l1" data-current = "3">{{day31}}</text><text class="l2" data-current = "3">{{day32}}</text></view>
-   <view class='tab  {{currentData == 4 ? "tabBorer" : ""}}'  data-current = "4" bindtap='checkCurrent'><text class="l1"  data-current = "4">{{day41}}</text><text class="l2"  data-current = "4">{{day42}}</text></view>
-   <view class='tab  {{currentData == 5 ? "tabBorer" : ""}}'  data-current = "5" bindtap='checkCurrent'><text class="l1" data-current = "5">{{day51}}</text><text class="l2" data-current = "5">{{day52}}</text></view>
-   <view class='tab  {{currentData == 6 ? "tabBorer" : ""}}'  data-current = "6" bindtap='checkCurrent'><text class="l1" data-current = "6">{{day61}}</text><text class="l2" data-current = "6">{{day62}}</text></view>
+   <view class='tab  {{currentData == 0 ? "tabBorer" : "abc"}}' data-current="0" bindtap='checkCurrent'><text class="l1" data-current="0">{{time1}}</text><text class="l2" data-current="0">{{time2}}</text></view>
+   <view class='tab  {{currentData == 1 ? "tabBorer" : ""}}' data-current="1" bindtap='checkCurrent'><text class="l1" data-current="1">{{day11}}</text><text class="l2" data-current="1">{{day12}}</text></view>
+   <view class='tab  {{currentData == 2 ? "tabBorer" : ""}}' data-current="2" bindtap='checkCurrent'><text class="l1" data-current="2">{{day21}}</text><text class="l2" data-current="2">{{day22}}</text></view>
+   <view class='tab  {{currentData == 3 ? "tabBorer" : ""}}' data-current="3" bindtap='checkCurrent'><text class="l1" data-current="3">{{day31}}</text><text class="l2" data-current="3">{{day32}}</text></view>
+   <view class='tab  {{currentData == 4 ? "tabBorer" : ""}}' data-current="4" bindtap='checkCurrent'><text class="l1" data-current="4">{{day41}}</text><text class="l2" data-current="4">{{day42}}</text></view>
+   <view class='tab  {{currentData == 5 ? "tabBorer" : ""}}' data-current="5" bindtap='checkCurrent'><text class="l1" data-current="5">{{day51}}</text><text class="l2" data-current="5">{{day52}}</text></view>
+   <view class='tab  {{currentData == 6 ? "tabBorer" : ""}}' data-current="6" bindtap='checkCurrent'><text class="l1" data-current="6">{{day61}}</text><text class="l2" data-current="6">{{day62}}</text></view>
 </view>
 
 <view class='topTabSwiper'>
-   <view class='tab1  {{dataCurrent==0? "tabBorer" : "abc"}}'  data-current = "0" bindtap='currentCheck'><text class="l3" data-current = "0" >Breakfast</text></view>
-   <view class='tab1  {{dataCurrent==1 ? "tabBorer" : "abc" }}'  data-current = "1" bindtap='currentCheck'><text class="l3" data-current = "1" >Lunch</text></view>
-   <view class='tab1  {{dataCurrent==2 ? "tabBorer" : "abc"}}'  data-current = "2" bindtap='currentCheck'><text class="l3" data-current = "2">Dinner</text></view>
-  
-
+   <view class='tab1  {{dataCurrent2==0? "tabBorer" : "abc"}}' data-current="0" bindtap='currentCheck2'><text class="l3" data-current="0">Breakfast</text></view>
+   <view class='tab1  {{dataCurrent2==1 ? "tabBorer" : "abc" }}' data-current="1" bindtap='currentCheck2'><text class="l3" data-current="1">Lunch</text></view>
+   <view class='tab1  {{dataCurrent2==2 ? "tabBorer" : "abc" }}' data-current="2" bindtap='currentCheck2'><text class="l3" data-current="2">Dinner</text></view>
 </view>
 
-<view wx:if="{{currentData==0}}">
-   <swiper current="{{dataCurrent}}" class='swiper' style="height:600px;" duration="300" bindchange="bindchange">
- <swiper-item> <view wx:if="{{dataCurrent==0}}"><view class='swiper_con'>page1</view></view></swiper-item>
- <swiper-item> <view wx:if="{{dataCurrent==1}}"><view class='swiper_con'>page2</view></view></swiper-item>
- <swiper-item> <view wx:if="{{dataCurrent==2}}"><view class='swiper_con'>page3</view></view></swiper-item>
-</swiper></view>
+<!-- 菜单↓ -->
+<view>
+   <swiper current="{{dataCurrent2}}" class='swiper' style="height:600px;" duration="300" bindchange="bindchange">
+      <swiper-item>
+         <scroll-view style="height: 100%;" scroll-y bindscroll="scroll" bindscrolltolower="reactBottom" scroll-with-animation>
+            <view wx:if="{{dataCurrent2==0}}">
+               <block wx:if="{{brunchL.length > 0}}">
+                  <view class="realPart">
+                     <view class="menuTitle">BRUNCH (10am-2pm)</view>
+                  </view>
+               </block>
+               <block wx:else>
+                  <view class='swiper_con'>暂无相关信息</view>
+               </block>
 
-<view wx:if="{{currentData==1}}">
-   <swiper current="{{dataCurrent}}" class='swiper' style="height:600px;" duration="300" bindchange="bindchange">
- <swiper-item> <view wx:if="{{ dataCurrent==0}}"><view class='swiper_con'>page4</view></view></swiper-item>
- <swiper-item> <view wx:if="{{dataCurrent==1}}"><view class='swiper_con'>page5</view></view></swiper-item>
- <swiper-item> <view wx:if="{{dataCurrent==2}}"><view class='swiper_con'>page6</view></view></swiper-item>
-</swiper></view>
+               <block wx:for-items="{{brunchL}}" wx:key="{{item.id}}">
+                  <view class="kind-list-item">
+                     <view id="{{item.id}}" class="kind-list-item-hd {{item.open?'kind-list-item-hd-show':''}}" bindtap="kindToggle1">
+                        <view class="kind-list-text">{{item.name}}</view>
+                     </view>
+                     <view class="kind-list-item-bd {{item.open?'kind-list-item-bd-show':''}}">
+                        <view class="navigator-box {{item.open?'navigator-box-show':''}}">
+                           <block wx:for-items="{{item.pages}}" wx:for-item="page" wx:key="*item">
+                              <navigator class="navigator">
+                                 <view class="navigator-text">{{page}}</view>
+                                 <view class="navigator-arrow"></view>
+                              </navigator>
+                           </block>
+                        </view>
+                     </view>
+                  </view>
+               </block>
 
-<view wx:if="{{currentData==2}}">
-   <swiper current="{{dataCurrent}}" class='swiper' style="height:600px;" duration="300" bindchange="bindchange">
- <swiper-item> <view wx:if="{{ dataCurrent==0}}"><view class='swiper_con'>page7</view></view></swiper-item>
- <swiper-item> <view wx:if="{{dataCurrent==1}}"><view class='swiper_con'>page8</view></view></swiper-item>
- <swiper-item> <view wx:if="{{dataCurrent==2}}"><view class='swiper_con'>page9</view></view></swiper-item>
-</swiper></view>
+            </view>
+         </scroll-view>
+      </swiper-item>
+      <swiper-item>
+         <scroll-view style="height: 100%;" scroll-y bindscroll="scroll" bindscrolltolower="reactBottom" scroll-with-animation>
+            <view wx:if="{{dataCurrent2==1}}">
+               <block wx:if="{{lunchL.length > 0}}">
+                  <view class="realPart">
+                     <view class="menuTitle">LUNCH (11am-2pm)</view>
+                  </view>
+               </block>
+               <block wx:else>
+                  <view class='swiper_con'>暂无相关信息</view>
+               </block>
 
-<view wx:if="{{currentData==3}}">
-   <swiper current="{{dataCurrent}}" class='swiper' style="height:600px;" duration="300" bindchange="bindchange">
- <swiper-item> <view wx:if="{{ dataCurrent==0}}"><view class='swiper_con'>page10</view></view></swiper-item>
- <swiper-item> <view wx:if="{{dataCurrent==1}}"><view class='swiper_con'>page11</view></view></swiper-item>
- <swiper-item> <view wx:if="{{dataCurrent==2}}"><view class='swiper_con'>page12</view></view></swiper-item>
-</swiper></view>
+               <block wx:for-items="{{lunchL}}" wx:key="{{item.id}}">
+                  <view class="kind-list-item">
+                     <view id="{{item.id}}" class="kind-list-item-hd {{item.open?'kind-list-item-hd-show':''}}" bindtap="kindToggle2">
+                        <view class="kind-list-text">{{item.name}}</view>
+                     </view>
+                     <view class="kind-list-item-bd {{item.open?'kind-list-item-bd-show':''}}">
+                        <view class="navigator-box {{item.open?'navigator-box-show':''}}">
+                           <block wx:for-items="{{item.pages}}" wx:for-item="page" wx:key="*item">
+                              <navigator class="navigator">
+                                 <view class="navigator-text">{{page}}</view>
+                                 <view class="navigator-arrow"></view>
+                              </navigator>
+                           </block>
+                        </view>
+                     </view>
+                  </view>
+               </block>
 
-<view wx:if="{{currentData==4}}">
-   <swiper current="{{dataCurrent}}" class='swiper' style="height:600px;" duration="300" bindchange="bindchange">
- <swiper-item> <view wx:if="{{ dataCurrent==0}}"><view class='swiper_con'>page13</view></view></swiper-item>
- <swiper-item> <view wx:if="{{dataCurrent==1}}"><view class='swiper_con'>page14</view></view></swiper-item>
- <swiper-item> <view wx:if="{{dataCurrent==2}}"><view class='swiper_con'>page15</view></view></swiper-item>
-</swiper></view>
+            </view>
+         </scroll-view>
+      </swiper-item>
 
-<view wx:if="{{currentData==5}}">
-   <swiper current="{{dataCurrent}}" class='swiper' style="height:600px;" duration="300" bindchange="bindchange">
- <swiper-item> <view wx:if="{{ dataCurrent==0}}"><view class='swiper_con'>page16</view></view></swiper-item>
- <swiper-item> <view wx:if="{{dataCurrent==1}}"><view class='swiper_con'>page17</view></view></swiper-item>
- <swiper-item> <view wx:if="{{dataCurrent==2}}"><view class='swiper_con'>page18</view></view></swiper-item>
-</swiper></view>
+      <swiper-item>
+         <scroll-view style="height: 100%;" scroll-y bindscroll="scroll" bindscrolltolower="reactBottom" scroll-with-animation>
+            <view wx:if="{{dataCurrent2==2}}">
+               <block wx:if="{{dinnerL.length > 0}}">
+                  <view class="realPart">
+                     <view class="menuTitle">DINNER (4:30pm-9pm)</view>
+                  </view>
+               </block>
+               <block wx:else>
+                  <view class='swiper_con'>暂无相关信息</view>
+               </block>
 
-<view wx:if="{{currentData==6}}">
+               <block wx:for-items="{{dinnerL}}" wx:key="{{item.id}}">
+                  <view class="kind-list-item">
+                     <view id="{{item.id}}" class="kind-list-item-hd {{item.open?'kind-list-item-hd-show':''}}" bindtap="kindToggle">
+                        <view class="kind-list-text">{{item.name}}</view>
+                     </view>
+                     <view class="kind-list-item-bd {{item.open?'kind-list-item-bd-show':''}}">
+                        <view class="navigator-box {{item.open?'navigator-box-show':''}}">
+                           <block wx:for-items="{{item.pages}}" wx:for-item="page" wx:key="*item">
+                              <navigator class="navigator">
+                                 <view class="navigator-text">{{page}}</view>
+                                 <view class="navigator-arrow"></view>
+                              </navigator>
+                           </block>
+                        </view>
+                     </view>
+                  </view>
+               </block>
+
+            </view>
+         </scroll-view>
+      </swiper-item>
+   </swiper>
+</view>
+
+
+
+
+<view class='topTabSwiper' style="display: flex;">
+   <view class='tab1  {{dataCurrent==0? "tabBorer" : "abc"}}' style="flex: 1;" data-current="0" bindtap='currentCheck'><text class="l3" data-current="0">Breakfast</text></view>
+   <view class='tab1  {{dataCurrent==1 ? "tabBorer" : "abc" }}' style="flex: 1;" data-current="1" bindtap='currentCheck'><text class="l3" data-current="1">LateBrunch</text></view>
+   <view class='tab1  {{dataCurrent==2 ? "tabBorer" : "abc" }}' style="flex: 1;" data-current="2" bindtap='currentCheck'><text class="l3" data-current="2">PitStop</text></view>
+   <view class='tab1  {{dataCurrent==3 ? "tabBorer" : "abc"}}' style="flex: 1;" data-current="3" bindtap='currentCheck'><text class="l3" data-current="3">Dinner</text></view>
+</view>
+
+<view>
    <swiper current="{{dataCurrent}}" class='swiper' style="height:600px;" duration="300" bindchange="bindchange">
- <swiper-item> <view wx:if="{{ dataCurrent==0}}"><view class='swiper_con'>page19</view></view></swiper-item>
- <swiper-item> <view wx:if="{{dataCurrent==1}}"><view class='swiper_con'>page20</view></view></swiper-item>
- <swiper-item> <view wx:if="{{dataCurrent==2}}"><view class='swiper_con'>page21</view></view></swiper-item>
-</swiper></view>
+      <swiper-item>
+         <scroll-view style="height: 100%;" scroll-y bindscroll="scroll" bindscrolltolower="reactBottom" scroll-with-animation>
+            <view wx:if="{{dataCurrent==0}}">
+               <block wx:if="{{brunchL2.length > 0}}">
+                  <view class="realPart">
+                     <view class="menuTitle">BRUNCH (9am-11am)</view>
+                  </view>
+               </block>
+               <block wx:else>
+                  <view class='swiper_con'>暂无相关信息</view>
+               </block>
+
+               <block wx:for-items="{{brunchL2}}" wx:key="{{item.id}}">
+                  <view class="kind-list-item">
+                     <view id="{{item.id}}" class="kind-list-item-hd {{item.open?'kind-list-item-hd-show':''}}" bindtap="kindToggle3">
+                        <view class="kind-list-text">{{item.name}}</view>
+                     </view>
+                     <view class="kind-list-item-bd {{item.open?'kind-list-item-bd-show':''}}">
+                        <view class="navigator-box {{item.open?'navigator-box-show':''}}">
+                           <block wx:for-items="{{item.pages}}" wx:for-item="page" wx:key="*item">
+                              <navigator class="navigator">
+                                 <view class="navigator-text">{{page}}</view>
+                                 <view class="navigator-arrow"></view>
+                              </navigator>
+                           </block>
+                        </view>
+                     </view>
+                  </view>
+               </block>
+
+            </view>
+         </scroll-view>
+      </swiper-item>
+      <swiper-item>
+         <scroll-view style="height: 100%;" scroll-y bindscroll="scroll" bindscrolltolower="reactBottom" scroll-with-animation>
+            <view wx:if="{{dataCurrent==1}}">
+               <block wx:if="{{labrunchL2.length > 0}}">
+                  <view class="realPart">
+                     <view class="menuTitle">LATE BRUNCH (11am-2pm)</view>
+                  </view>
+               </block>
+               <block wx:else>
+                  <view class='swiper_con'>暂无相关信息</view>
+               </block>
+
+               <block wx:for-items="{{labrunchL2}}" wx:key="{{item.id}}">
+                  <view class="kind-list-item">
+                     <view id="{{item.id}}" class="kind-list-item-hd {{item.open?'kind-list-item-hd-show':''}}" bindtap="kindToggle4">
+                        <view class="kind-list-text">{{item.name}}</view>
+                     </view>
+                     <view class="kind-list-item-bd {{item.open?'kind-list-item-bd-show':''}}">
+                        <view class="navigator-box {{item.open?'navigator-box-show':''}}">
+                           <block wx:for-items="{{item.pages}}" wx:for-item="page" wx:key="*item">
+                              <navigator class="navigator">
+                                 <view class="navigator-text">{{page}}</view>
+                                 <view class="navigator-arrow"></view>
+                              </navigator>
+                           </block>
+                        </view>
+                     </view>
+                  </view>
+               </block>
+
+            </view>
+         </scroll-view>
+      </swiper-item>
+
+      <swiper-item>
+         <scroll-view style="height: 100%;" scroll-y bindscroll="scroll" bindscrolltolower="reactBottom" scroll-with-animation>
+            <view wx:if="{{dataCurrent==2}}">
+               <block wx:if="{{pitSL2.length > 0}}">
+                  <view class="realPart">
+                     <view class="menuTitle">PIT STOP (2pm-4:30pm)</view>
+                  </view>
+               </block>
+               <block wx:else>
+                  <view class='swiper_con'>暂无相关信息</view>
+               </block>
+
+               <block wx:for-items="{{pitSL2}}" wx:key="{{item.id}}">
+                  <view class="kind-list-item">
+                     <view id="{{item.id}}" class="kind-list-item-hd {{item.open?'kind-list-item-hd-show':''}}" bindtap="kindToggle5">
+                        <view class="kind-list-text">{{item.name}}</view>
+                     </view>
+                     <view class="kind-list-item-bd {{item.open?'kind-list-item-bd-show':''}}">
+                        <view class="navigator-box {{item.open?'navigator-box-show':''}}">
+                           <block wx:for-items="{{item.pages}}" wx:for-item="page" wx:key="*item">
+                              <navigator class="navigator">
+                                 <view class="navigator-text">{{page}}</view>
+                                 <view class="navigator-arrow"></view>
+                              </navigator>
+                           </block>
+                        </view>
+                     </view>
+                  </view>
+               </block>
+
+            </view>
+         </scroll-view>
+      </swiper-item>
+
+      <swiper-item>
+         <scroll-view style="height: 100%;" scroll-y bindscroll="scroll" bindscrolltolower="reactBottom" scroll-with-animation>
+            <view wx:if="{{dataCurrent==3}}">
+               <block wx:if="{{dinnerL2.length > 0}}">
+                  <!-- <view class="greyPart"> </view> -->
+                  <view class="realPart">
+                     <view class="menuTitle">DINNER (4:30pm-8pm)</view>
+                  </view>
+               </block>
+               <block wx:else>
+                  <view class='swiper_con'>暂无相关信息</view>
+               </block>
+
+               <block wx:for-items="{{dinnerL2}}" wx:key="{{item.id}}">
+                  <view class="kind-list-item">
+                     <view id="{{item.id}}" class="kind-list-item-hd {{item.open?'kind-list-item-hd-show':''}}" bindtap="kindToggle6">
+                        <view class="kind-list-text">{{item.name}}</view>
+                     </view>
+                     <view class="kind-list-item-bd {{item.open?'kind-list-item-bd-show':''}}">
+                        <view class="navigator-box {{item.open?'navigator-box-show':''}}">
+                           <block wx:for-items="{{item.pages}}" wx:for-item="page" wx:key="*item">
+                              <navigator class="navigator">
+                                 <view class="navigator-text">{{page}}</view>
+                                 <view class="navigator-arrow"></view>
+                              </navigator>
+                           </block>
+                        </view>
+                     </view>
+                  </view>
+               </block>
+
+            </view>
+         </scroll-view>
+      </swiper-item>
+   </swiper>
+</view>

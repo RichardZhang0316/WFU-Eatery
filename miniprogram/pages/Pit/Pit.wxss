@@ -1,5 +1,4 @@
-/* pages/Pit/Pit.wxss */
-/**index.wxss**/
+@import "../NorthPit/NorthPit.wxss";
 ec-canvas {
   width: 100%;
   height: 100%;

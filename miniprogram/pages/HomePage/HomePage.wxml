@@ -1,4 +1,4 @@
-<view class="custom-bar" style="height:{{navHeight}}px">
+<view class="custom-bar" style="height:{{navHeight}}px;z-index: 2;">
   <view class="custom-bar__wrapper" style="margin-top:{{searchMarginTop}}px; height: {{searchHeight}}px;width: {{searchWidth}}px" >
     <view class="search-group">
  
@@ -13,13 +13,16 @@
 <view class="root">
     <view class="custom-bar__wrapper" style="margin-top:{{searchMarginTop}}px; height: {{searchHeight}}px" ></view>
 <view class="maxTitle">美食与温暖，我们都有</view><!-- 做成随机选择欢迎语 -->
-<!-- <navigator url="/pages/Search/Search" class="input">
-    <icon type="search" size="17" ></icon>
- 搜索餐厅或美食</navigator> -->
 </view>
 
 <view class="title">营业中</view>
+
 <navigator class="resturantCard" url="/pages/Zicks/Zicks">
+<view class="bigTag">
+<image class="smallTag" src="/images/icon4.svg"></image>
+<image class="smallTag" src="/images/icon1.svg"></image>
+<image class="smallTag" src="/images/icon5.svg"></image>
+</view>
 <image class="resturantImage" mode="aspectFill" src="https://i.loli.net/2021/11/12/JDPvo2uyTXbBcSp.jpg"></image>
 <view class="cardResturantNameFont">Zick's</view>
 <view class="flex">
@@ -29,6 +32,11 @@
 </navigator>
 
 <navigator class="resturantCard" url="/pages/Subway/Subway">
+<view class="bigTag">
+<image class="smallTag" src="/images/icon4.svg"></image>
+<image class="smallTag" src="/images/icon1.svg"></image>
+<image class="smallTag" src="/images/icon5.svg"></image>
+</view>
 <image class="resturantImage" mode="aspectFill" src="https://i.loli.net/2021/11/12/JLCeQiNwfFlUIsn.jpg"></image>
 <view class="cardResturantNameFont">Subway</view>
 <view class="flex">
@@ -38,6 +46,11 @@
 </navigator>
 
 <navigator class="resturantCard" url="/pages/chickFilA/chickFilA">
+  <view class="bigTag">
+<image class="smallTag" src="/images/icon4.svg"></image>
+<image class="smallTag" src="/images/icon1.svg"></image>
+<image class="smallTag" src="/images/icon5.svg"></image>
+</view>
 <image class="resturantImage" mode="aspectFill" src="https://i.loli.net/2021/11/12/cndshbOz4MVoDU2.jpg"></image>
 <view class="cardResturantNameFont">Chick-fil-A</view>
 <view class="flex">
@@ -47,6 +60,11 @@
 </navigator>
 
 <navigator class="resturantCard" url="/pages/starbucks/starbucks">
+  <view class="bigTag">
+<image class="smallTag" src="/images/icon4.svg"></image>
+<image class="smallTag" src="/images/icon1.svg"></image>
+<image class="smallTag" src="/images/icon5.svg"></image>
+</view>
 <image class="resturantImage" mode="aspectFill" src="https://s3.amazonaws.com/secretsaucefiles/photos/images/000/112/260/large/IMG_4506-copy.jpg?1485385027"></image>
 <view class="cardResturantNameFont">Starbucks</view>
 <view class="flex">
@@ -57,6 +75,11 @@
 
 <view class="title">已打烊</view>
 <navigator class="resturantCard" url="/pages/NorthPit/NorthPit">
+  <view class="bigTag">
+<image class="smallTag" src="/images/icon4.svg"></image>
+<image class="smallTag" src="/images/icon1.svg"></image>
+<image class="smallTag" src="/images/icon2.svg"></image>
+</view>
 <image class="resturantImage" mode="aspectFill" src="https://dining.wfu.edu/wp-content/uploads/2019/10/111-Philip-Gabriel-Photography-Aramark-HT-WakeForest-2.27.18-2100x900-c-default.jpg"></image>
 <view class="cardResturantNameFont">North Pit</view>
 <view class="flex">
@@ -66,6 +89,11 @@
 </navigator>
 
 <navigator class="resturantCard" url="/pages/Pit/Pit">
+  <view class="bigTag">
+<image class="smallTag" src="/images/icon4.svg"></image>
+<image class="smallTag" src="/images/icon1.svg"></image>
+<image class="smallTag" src="/images/icon2.svg"></image>
+</view>
 <image class="resturantImage" mode="aspectFill" src="https://dining.wfu.edu/wp-content/uploads/2021/02/Breakfast-Chef-400x0-c-default.jpg"></image>
 <view class="cardResturantNameFont">Pit</view>
 <view class="flex">
@@ -75,6 +103,11 @@
 </navigator>
 
 <navigator class="resturantCard" url="/pages/MagnoliaRoom/MagnoliaRoom">
+  <view class="bigTag">
+<image class="smallTag" src="/images/icon4.svg"></image>
+<image class="smallTag" src="/images/icon1.svg"></image>
+<image class="smallTag" src="/images/icon2.svg"></image>
+</view>
 <image class="resturantImage" mode="aspectFill" src="https://images.squarespace-cdn.com/content/v1/602c9aa15ca0a203f2d91a73/1623899120481-Y4L7IAJ51W6DTDPEH9NB/image-asset-2.jpg?format=1000w"></image>
 <view class="cardResturantNameFont">Magnolia Room</view>
 <view class="flex">
@@ -84,6 +117,11 @@
 </navigator>
 
 <navigator class="resturantCard" url="/pages/EinsteinBrosBagels/EinsteinBrosBagels">
+  <view class="bigTag">
+<image class="smallTag" src="/images/icon4.svg"></image>
+<image class="smallTag" src="/images/icon1.svg"></image>
+<image class="smallTag" src="/images/icon5.svg"></image>
+</view>
 <image class="resturantImage" mode="aspectFill" src="https://i.loli.net/2021/11/12/MhLG32sdubAKQgt.jpg"></image>
 <view class="cardResturantNameFont">Einstein Bros Bagels</view>
 <view class="flex">
@@ -93,6 +131,11 @@
 </navigator>
 
 <navigator class="resturantCard" url="/pages/CaminoBakery/CaminoBakery">
+  <view class="bigTag">
+<image class="smallTag" src="/images/icon4.svg"></image>
+<image class="smallTag" src="/images/icon1.svg"></image>
+<image class="smallTag" src="/images/icon5.svg"></image>
+</view>
 <image class="resturantImage" mode="aspectFill" src="https://wfuogb.com/wp-content/uploads/2020/09/Camino1-1-scaled-1-900x675.jpeg"></image>
 <view class="cardResturantNameFont">Camino Bakery</view>
 <view class="flex">
@@ -102,6 +145,11 @@
 </navigator>
 
 <navigator class="resturantCard" url="/pages/LegalGroundsCafé/LegalGroundsCafé">
+  <view class="bigTag">
+<image class="smallTag" src="/images/icon4.svg"></image>
+<image class="smallTag" src="/images/icon1.svg"></image>
+<image class="smallTag" src="/images/icon5.svg"></image>
+</view>
 <image class="resturantImage" mode="aspectFill" src="https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1024-512,f_auto,q_auto:best/newscms/2019_33/2203981/171026-better-coffee-boost-se-329p.jpg"></image>
 <view class="cardResturantNameFont">Legal Grounds Café</view>
 <view class="flex">
@@ -111,6 +159,11 @@
 </navigator>
 
 <navigator class="resturantCard" url="/pages/Shorty's/Shorty's">
+  <view class="bigTag">
+<image class="smallTag" src="/images/icon4.svg"></image>
+<image class="smallTag" src="/images/icon1.svg"></image>
+<image class="smallTag" src="/images/icon5.svg"></image>
+</view>
 <image class="resturantImage" mode="aspectFill" src="https://pbs.twimg.com/media/D3UedXiWwAc2PmQ.jpg"></image>
 <view class="cardResturantNameFont">Shorty's</view>
 <view class="flex">
@@ -120,6 +173,10 @@
 </navigator>
 
 <navigator class="resturantCard" url="/pages/Bento/Bento">
+  <view class="bigTag">
+<image class="smallTag" src="/images/icon4.svg"></image>
+<image class="smallTag" src="/images/icon1.svg"></image>
+</view>
 <image class="resturantImage" mode="aspectFill" src="https://thegatewayonline.ca/wp-content/uploads/2018/09/BENTO-1.jpg"></image>
 <view class="cardResturantNameFont">Bento Sushi</view>
 <view class="flex">
@@ -129,6 +186,11 @@
 </navigator>
 
 <navigator class="resturantCard" url="/pages/ForestGreens/ForestGreens">
+  <view class="bigTag">
+<image class="smallTag" src="/images/icon4.svg"></image>
+<image class="smallTag" src="/images/icon1.svg"></image>
+<image class="smallTag" src="/images/icon5.svg"></image>
+</view>
 <image class="resturantImage" mode="aspectFill" src="https://jojorecipes.com/assets/img/recipes/acai-bowl.jpg"></image>
 <view class="cardResturantNameFont">Forest Greens</view>
 <view class="flex">
@@ -147,6 +209,11 @@
 </navigator> -->
 
 <navigator class="resturantCard" url="/pages/YamasMediterraneanStreetFood/YamasMediterraneanStreetFood">
+  <view class="bigTag">
+<image class="smallTag" src="/images/icon4.svg"></image>
+<image class="smallTag" src="/images/icon1.svg"></image>
+<image class="smallTag" src="/images/icon5.svg"></image>
+</view>
 <image class="resturantImage" mode="aspectFill" src="https://i.loli.net/2021/11/12/gd8HcXSaIk3ZCOy.png"></image>
 <view class="cardResturantNameFont">Yamas Mediterranean Street Food</view>
 <view class="flex">
@@ -156,6 +223,10 @@
 </navigator>
 
 <navigator class="resturantCard" url="/pages/336Market/336Market">
+  <view class="bigTag">
+<image class="smallTag" src="/images/icon4.svg"></image>
+<image class="smallTag" src="/images/icon1.svg"></image>
+</view>
 <image class="resturantImage" mode="aspectFill" src="https://i.loli.net/2021/11/12/54dNItHcq9V2D1f.jpg"></image>
 <view class="cardResturantNameFont">336 Market</view>
 <view class="flex">
@@ -165,6 +236,11 @@
 </navigator>
 
 <navigator class="resturantCard" url="/pages/VillageJuice/VillageJuice">
+  <view class="bigTag">
+<image class="smallTag" src="/images/icon4.svg"></image>
+<image class="smallTag" src="/images/icon1.svg"></image>
+<image class="smallTag" src="/images/icon5.svg"></image>
+</view>
 <image class="resturantImage" mode="aspectFill" src="https://i.loli.net/2021/11/12/EucK3lRjtqaxmW1.jpg"></image>
 <view class="cardResturantNameFont">Village Juice</view>
 <view class="flex">
@@ -174,6 +250,10 @@
 </navigator>
 
 <navigator class="resturantCard" url="/pages/VillageJuice/VillageJuice">
+  <view class="bigTag">
+<image class="smallTag" src="/images/icon4.svg"></image>
+<image class="smallTag" src="/images/icon1.svg"></image>
+</view>
 <image class="resturantImage" mode="aspectFill" src="https://i.loli.net/2021/11/12/1aSfEJUxBmhsjg7.jpg"></image>
 <view class="cardResturantNameFont">P.O.D. Market</view>
 <view class="flex">

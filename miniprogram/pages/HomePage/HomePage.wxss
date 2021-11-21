@@ -5,6 +5,12 @@ page{
     box-sizing: border-box;
     overflow: hidden;
   }
+  .bigTag{
+    display: flex; flex-direction: row-reverse; position: absolute; height: 15%; width: 90%;
+  }
+  .smallTag{
+    margin-top: 7px; height: 20%; width:8%;
+  }
   .custom-bar {
     /* background-color: #aaa; */
     position: fixed;

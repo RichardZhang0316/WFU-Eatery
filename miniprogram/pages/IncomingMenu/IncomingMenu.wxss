@@ -1,38 +1,87 @@
-page{
-    background-color:  #ececec ;
-  } 
-  .root {
-    height: 40%;
-    background: rgb(214, 177, 96);
-    padding-bottom: 20rpx;
-  }
-  .maxTitle{
-    color:white;
-    font-weight: bold;
-    padding: 20px;
-    font-size: 22px; /* 大标题字号标准 */
+@import "../NorthPit/NorthPit.wxss";
+
+page {
+  background-color: #ececec;
 }
 
-.l1{
-  font-size:10px;
+.root {
+  height: 40%;
+  background: rgb(214, 177, 96);
+  padding-bottom: 20rpx;
 }
 
-.l2{
-  font-size:20px;
+.maxTitle {
+  color: white;
+  font-weight: bold;
+  padding: 20px;
+  font-size: 22px;
+  /* 大标题字号标准 */
 }
 
-.l3{
-  font-size:15px;
+.l1 {
+  font-size: 10px;
+}
+
+.l2 {
+  font-size: 20px;
+}
+
+.l3 {
+  font-size: 15px;
 }
 
 
 
-.tab{float: left; width: 14.2857143%; height: 50px; text-align: center;padding: 20rpx 0; word-wrap: break-word;word-break: break-all;white-space: pre-line; }
-.topTabSwiper{border-top: 1px solid #ccc; border-bottom: 1px solid #ccc; zoom: 1;}
-.topTabSwiper:after{content: ""; clear: both;display: block;}
-.tabBorer{border-bottom: 1px solid rgb(214, 177, 96); color:rgb(214, 177, 96);}
-.swiper{width: 100%;}
-.swiper_con{text-align: center; width: 100%; height: 100%; padding: 80rpx 0;}
-.checkCurrent{color:#ccc}
+.tab {
+  float: left;
+  width: 14.2857143%;
+  height: 50px;
+  text-align: center;
+  padding: 20rpx 0;
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: pre-line;
+}
 
-.tab1{float: left; width: 33.333333%; height: 25px; text-align: center;padding: 20rpx 0; word-wrap: break-word;word-break: break-all;white-space: pre-line; }
+.topTabSwiper {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  zoom: 1;
+}
+
+.topTabSwiper:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.tabBorer {
+  border-bottom: 1px solid rgb(214, 177, 96);
+  color: rgb(214, 177, 96);
+}
+
+.swiper {
+  width: 100%;
+}
+
+.swiper_con {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  padding: 80rpx 0;
+}
+
+.checkCurrent {
+  color: #ccc
+}
+
+.tab1 {
+  float: left;
+  width: 33.333333%;
+  height: 25px;
+  text-align: center;
+  padding: 20rpx 0;
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: pre-line;
+}

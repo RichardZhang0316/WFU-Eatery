@@ -29,4 +29,24 @@
 <foodCard desc="500卡路里" title="Deluxe Sandwich 豪华鸡肉三明治" thumb="https://www.cfacdn.com/img/order/COM/Menu_Refresh/Entree/Entree%20PDP/_0000s_0004_NEWStack6200001CFAPDPDeluxeSandwich1085png.png"/>
 <foodCard desc="460卡路里" title="Grilled Chicken Sandwich 豪华辣鸡三明治" thumb="https://www.cfacdn.com/img/order/COM/Menu_Refresh/Entree/Entree%20Desktop/_0003s_0012_%5BFeed%5D_0001s_0023_Entrees_Spicy-Deluxe-Sandwich.png"/>
 <foodCard desc="380卡路里" title="Grilled Chicken Sandwich 烤鸡三明治" thumb="https://www.cfacdn.com/img/order/COM/Menu_Refresh/Entree/Entree%20PDP/_0000s_0009_Final__0026_CFA_PDP_Grilled-Deluxe-Sandwich_1085.png"/>
-<foodCard desc="460卡路里" title="Grilled Chicken Club Sandwich 烤鸡三明治" thumb="https://www.cfacdn.com/img/order/menu/Online/Entrees/grilledClub_colbyJack_PDP.png"/>
+<foodCard desc="460卡路里" title="Grilled Chicken Club Sandwich 烤鸡俱乐部" thumb="https://www.cfacdn.com/img/order/menu/Online/Entrees/grilledClub_colbyJack_PDP.png"/>
+
+<foodCard desc="460卡路里" title="Nuggets 鸡块" thumb="https://www.cfacdn.com/img/order/menu/Online/Entrees/nuggets_8ct_PDP.png"/>
+<foodCard desc="460卡路里" title="Grilled Nuggets 烤鸡块" thumb="https://www.cfacdn.com/img/order/menu/Online/Entrees/grilledNuggets_8ct_PDP.png"/>
+<foodCard desc="420卡路里（破防了，居然比汉堡热量还高）" title="Waffle Potato Fries 华夫土豆" thumb="https://www.cfacdn.com/img/order/menu/Online/Sides%26treats/Medium_Lowered_1217shoot_1080x1080.png"/>
+<foodCard desc="60卡路里（可用套餐内薯条换购）" title="Fruit Cup 水果杯" thumb="https://www.cfacdn.com/img/order/COM/Menu_Refresh/Sides/Sides%20PDP/_0000s_0010_%5BFeed%5D_0003s_0002_Sides_Fruit-Cup.png"/>
+<foodCard desc="270卡路里（可用套餐内薯条换购）" title="Greek Yogurt Parfait 酸奶杯" thumb="https://www.cfacdn.com/img/order/menu/Online/Sides%26treats/Jul19_OrganicAussieGreekYogurtParfaitCupGranola_pdp.png"/>
+
+<foodCard desc="630卡路里（emo终结者）" title="Cookies & Cream Milkshake 奥利奥碎&奶油奶昔" thumb="https://www.cfacdn.com/img/order/COM/Menu_Refresh/Treats/Treats%20PDP/_0000s_0000_%5BFeed%5D_0005s_0004_Treats_Cookies-Cream-Milkshake.png"/>
+<foodCard desc="580卡路里" title="Vanilla Milkshake 香草奶昔" thumb="https://www.cfacdn.com/img/order/COM/Menu_Refresh/Treats/Treats%20PDP/_0000s_0002_%5BFeed%5D_0005s_0002_Treats_Vanilla-Milkshake.png"/>
+<foodCard desc="590卡路里" title="Chocolate Milkshake 巧克力奶昔" thumb="https://www.cfacdn.com/img/order/COM/Menu_Refresh/Treats/Treats%20PDP/_0000s_0005_%5BFeed%5D_0005s_0005_Treats_Chocolate-Milkshake.png"/>
+<foodCard desc="570卡路里" title="Strawberry Milkshake 草莓奶昔" thumb="https://www.cfacdn.com/img/order/COM/Menu_Refresh/Treats/Treats%20PDP/_0000s_0001_%5BFeed%5D_0005s_0003_Treats_Strawberry-Milkshake.png"/>
+<foodCard desc="140卡路里" title="Icedream Cup 香草冰激凌" thumb="https://www.cfacdn.com/img/order/menu/Online/Sides%26treats/IceDream_RedCup_1080x1080.png"/>
+<foodCard desc="370卡路里" title="Chocolate Chunk Cookie 曲奇饼干" thumb="https://www.cfacdn.com/img/order/menu/Online/Sides%26treats/PDP_CCCookie.png"/>
+<foodCard desc="380卡路里 （不会有人不喜欢吃布朗尼吧）" title="Chocolate Fudge Brownie 布朗尼" thumb="https://www.cfacdn.com/img/order/COM/Menu_Refresh/Treats/Treats%20PDP/031717_FudgeChunkBrownie_PDP.png"/>
+
+<foodCard desc="120卡路里（可选无糖）" title="Freshly-Brewed Iced Tea Sweetened 鲜萃冰茶" thumb="https://www.cfacdn.com/img/order/menu/Online/Drinks/tea_pdp.png"/>
+<foodCard desc="220卡路里（可选Diet Lemonade-50卡路里）" title="Lemonade 柠檬汽水" thumb="https://www.cfacdn.com/img/order/menu/Online/Drinks/lemonade_pdp.png"/>
+<foodCard desc="160卡路里" title="Sunjoy 一半冰茶兑一半柠檬水" thumb="https://www.cfacdn.com/img/order/menu/Online/Drinks/halfTeahalfLem_pdp.png"/>
+<foodCard desc="330卡路里" title="Frosted Lemonade 柠檬水冰沙" thumb="https://www.cfacdn.com/img/order/COM/Menu_Refresh/Treats/Treats%20PDP/_0000s_0003_%5BFeed%5D_0005s_0001_Treats_Frosted-Lemonade.png"/>
+<foodCard desc="250卡路里" title="Frosted Coffee 咖啡冰沙" thumb="https://www.cfacdn.com/img/order/COM/Menu_Refresh/Treats/Treats%20Desktop/_0001s_0004_%5BFeed%5D_0005s_0000_Treats_Frosted-Coffee.png"/>
