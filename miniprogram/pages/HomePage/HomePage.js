@@ -1,5 +1,8 @@
 //获取应用实例
 const app = getApp()
+// import util from '../../utils/util.js';
+var util = require('../../utils/util.js');
+var myDate = new Date();
 Page({
 
     /**
@@ -10,9 +13,13 @@ Page({
         menuButtonInfo: {},
         searchMarginTop: 0, // 搜索框上边距
         searchWidth: 0, // 搜索框宽度
-        searchHeight: 0 // 搜索框高度
-        
-
+        searchHeight: 0 ,// 搜索框高度
+        //设定时间
+        //相关参考资料：https://developers.weixin.qq.com/community/develop/doc/0000a4390c4f706f79fa0e6755bc00
+        todHours:myDate.getHours(),
+        todMinutes:myDate.getMinutes(),
+        todSeconds:myDate.getSeconds(),
+        todWeekD:myDate.getDay(),
     },
 
     /**
@@ -36,6 +43,12 @@ Page({
             })
         },
     })
+    },
+    
+     /**
+     * 调动时间
+     */
+    timesetting: function () {
     },
 
     /**

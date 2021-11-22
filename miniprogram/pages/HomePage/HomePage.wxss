@@ -124,3 +124,28 @@ page{
       margin-left:auto;
       /* 上面这行怎么做到放到最右边的 我不理解 但我大受震撼*/
   }
+  /*
+  the close restaurant font is setted to distinguish the color of closed restaurant with 
+  operating restaurant. Specifically, I added the opacity of the card to make the closed
+  retaurant looks "faint" 
+  调整方式：opacity：0~1
+  */
+  .closeRestuarantFont{
+    width: 90%;
+    background-color: white;
+    /*左外边距，这里代表距离最左边的距离*/
+    margin-left: 5%;
+    /*卡片的高度。*/
+    height: 350rpx;
+    border-radius:10px;
+    /* radius是卡片的边框的圆润c程度*/
+    box-shadow: 7px 7px 7px #cdcfcf;
+    margin-bottom: 20px;
+  }
+  .closeResturantImage{
+    opacity: 0.3;
+    border-top-left-radius:10px;
+    border-top-right-radius: 10px;
+    height: 70%;
+    width: 100%;
+  }

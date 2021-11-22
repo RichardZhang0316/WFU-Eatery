@@ -15,10 +15,16 @@
 <view class="maxTitle">美食与温暖，我们都有</view><!-- 做成随机选择欢迎语 -->
 </view>
 
+<!-- 营业中部分：此处在食堂开放的时候显示于主页面 -->
+<!--以下包含维克全部的餐厅、商店等，分为打烊和营业两种状态-->
 <view class="title">营业中</view>
+<!-- 尝试创建条件：使得卡片在特定时间内才可以显示 -->
 
+<!-- Zicks 卡片 -->
+<!-- Zicks opens from 11am to 11pm from Sunday to Wednesday, and from 11am to 12 am from Thursday to Saturday-->
+<block wx:if="{{((todWeekD == 0 || todWeekD == 1 || todWeekD == 2 || todWeekD == 3) && todHours >= 11 && todHours <=23) || ((todWeekD == 4 || todWeekD == 5 || todWeekD == 6) && todHours >= 11 && (todHours <= 20 && todMinutes <= 59 && todSeconds <=59))}}">
 <navigator class="resturantCard" url="/pages/Zicks/Zicks">
-<view class="bigTag">
+  <view class="bigTag">
 <image class="smallTag" src="/images/icon4.svg"></image>
 <image class="smallTag" src="/images/icon1.svg"></image>
 <image class="smallTag" src="/images/icon5.svg"></image>
@@ -30,9 +36,25 @@
 <view class="timeFont">营业至12PM</view>
 </view>
 </navigator>
-
-<navigator class="resturantCard" url="/pages/Subway/Subway">
+</block>
+<!-- <navigator class="resturantCard" url="/pages/Zicks/Zicks">
 <view class="bigTag">
+<image class="smallTag" src="/images/icon4.svg"></image>
+<image class="smallTag" src="/images/icon1.svg"></image>
+<image class="smallTag" src="/images/icon5.svg"></image>
+</view>
+<image class="resturantImage" mode="aspectFill" src="https://i.loli.net/2021/11/12/JDPvo2uyTXbBcSp.jpg"></image>
+<view class="cardResturantNameFont">Zick's</view>
+<view class="flex">
+<view class="locationFont">Poteat Residence Hall</view>
+<view class="timeFont">营业至12PM</view>
+</view>
+</navigator> -->
+
+<!-- Subway 卡片 -->
+<!-- Subway opens 24 hours-->
+<navigator class="resturantCard" url="/pages/Subway/Subway">
+  <view class="bigTag">
 <image class="smallTag" src="/images/icon4.svg"></image>
 <image class="smallTag" src="/images/icon1.svg"></image>
 <image class="smallTag" src="/images/icon5.svg"></image>
@@ -44,7 +66,24 @@
 <view class="timeFont">营业至12PM</view>
 </view>
 </navigator>
+<!-- <navigator class="resturantCard" url="/pages/Subway/Subway">
+<view class="bigTag">
+<image class="smallTag" src="/images/icon4.svg"></image>
+<image class="smallTag" src="/images/icon1.svg"></image>
+<image class="smallTag" src="/images/icon5.svg"></image>
+</view>
+<image class="resturantImage" mode="aspectFill" src="https://i.loli.net/2021/11/12/JLCeQiNwfFlUIsn.jpg"></image>
+<view class="cardResturantNameFont">Subway</view>
+<view class="flex">
+<view class="locationFont">Davis Residence Hall</view>
+<view class="timeFont">营业至12PM</view>
+</view>
+</navigator> -->
 
+
+<!-- Chick-fli-A 卡片 -->
+<!-- Chick-fli-A opens from 7:30am to 10pm from Monday to Friday, and from 11am to 10 pm on Saturday and closed on Sunday-->
+<block wx:if="{{((todWeekD == 1 || todWeekD == 2 || todWeekD == 3 || todWeekD == 4 || todWeekD == 5) && (todHours >= 8 || (todHours == 7 && todMinutes >=30) && todHours <= 22) || (todWeekD == 6 && todHours >= 11 && todHours <= 22))}}">
 <navigator class="resturantCard" url="/pages/chickFilA/chickFilA">
   <view class="bigTag">
 <image class="smallTag" src="/images/icon4.svg"></image>
@@ -58,7 +97,24 @@
 <view class="timeFont">营业至12PM</view>
 </view>
 </navigator>
+</block>
+<!-- <navigator class="resturantCard" url="/pages/chickFilA/chickFilA">
+  <view class="bigTag">
+<image class="smallTag" src="/images/icon4.svg"></image>
+<image class="smallTag" src="/images/icon1.svg"></image>
+<image class="smallTag" src="/images/icon5.svg"></image>
+</view>
+<image class="resturantImage" mode="aspectFill" src="https://i.loli.net/2021/11/12/cndshbOz4MVoDU2.jpg"></image>
+<view class="cardResturantNameFont">Chick-fil-A</view>
+<view class="flex">
+<view class="locationFont">Benson University Center</view>
+<view class="timeFont">营业至12PM</view>
+</view>
+</navigator> -->
 
+<!-- Starbucks 卡片 -->
+<!-- Starbucks opens from 7am to 8pm from Monday to Friday, and from 9am to 8pm on Saturday and Sunday-->
+<block wx:if="{{((todWeekD == 1 || todWeekD == 2 || todWeekD == 3 || todWeekD == 4 || todWeekD == 5) && (todHours >= 7 && todHours <= 20) || ((todWeekD == 6 || todWeekD == 0) && todHours >= 9 && todHours <= 20))}}">
 <navigator class="resturantCard" url="/pages/starbucks/starbucks">
   <view class="bigTag">
 <image class="smallTag" src="/images/icon4.svg"></image>
@@ -72,9 +128,39 @@
 <view class="timeFont">营业至12PM</view>
 </view>
 </navigator>
+</block>
+<!-- <navigator class="resturantCard" url="/pages/starbucks/starbucks">
+  <view class="bigTag">
+<image class="smallTag" src="/images/icon4.svg"></image>
+<image class="smallTag" src="/images/icon1.svg"></image>
+<image class="smallTag" src="/images/icon5.svg"></image>
+</view>
+<image class="resturantImage" mode="aspectFill" src="https://s3.amazonaws.com/secretsaucefiles/photos/images/000/112/260/large/IMG_4506-copy.jpg?1485385027"></image>
+<view class="cardResturantNameFont">Starbucks</view>
+<view class="flex">
+<view class="locationFont">North Dining Hall</view>
+<view class="timeFont">营业至12PM</view>
+</view>
+</navigator> -->
 
-<view class="title">已打烊</view>
-<navigator class="resturantCard" url="/pages/NorthPit/NorthPit">
+<!-- NorthPit 卡片-->
+<!-- NorthPit opens at 7am - 9pm on Mon, Tue, and Wed; 7am - 8 pm on Thu and Fri; 9am - 8pm on weekends, same as (south) pit-->
+<block wx:if="{{((todWeekD == 1 || todWeekD == 2 || todWeekD == 3) && todHours >= 7 && todHours <=21) || ((todWeekD == 4 || todWeekD == 5) && todHours >= 7 && todHours <= 20) || ((todWeekD == 6 || todWeekD == 0) && todHours >= 9 && todHours <= 20)}}">
+  <navigator class="resturantCard" url="/pages/NorthPit/NorthPit">
+    <view class="bigTag">
+<image class="smallTag" src="/images/icon4.svg"></image>
+<image class="smallTag" src="/images/icon1.svg"></image>
+<image class="smallTag" src="/images/icon2.svg"></image>
+</view>
+    <image class="resturantImage" mode="aspectFill" src="https://dining.wfu.edu/wp-content/uploads/2019/10/111-Philip-Gabriel-Photography-Aramark-HT-WakeForest-2.27.18-2100x900-c-default.jpg"></image>
+    <view class="cardResturantNameFont">North Pit</view>
+    <view class="flex">
+    <view class="locationFont">North Dining Hall</view>
+    <view class="timeFont">营业至12PM</view>
+    </view>
+  </navigator>
+</block>
+<!-- <navigator class="resturantCard" url="/pages/NorthPit/NorthPit">
   <view class="bigTag">
 <image class="smallTag" src="/images/icon4.svg"></image>
 <image class="smallTag" src="/images/icon1.svg"></image>
@@ -86,9 +172,31 @@
 <view class="locationFont">North Dining Hall</view>
 <view class="timeFont">营业至12PM</view>
 </view>
-</navigator>
+</navigator> -->
 
-<navigator class="resturantCard" url="/pages/Pit/Pit">
+
+<!-- Pit YYDS!-->
+<!-- Pit opens at 7am - 9pm on Mon, Tue, and Wed; 7am - 8 pm on Thu and Fri; 9am - 8pm on weekends, therefore, the conditions are based this-->
+<block wx:if="{{((todWeekD == 1 || todWeekD == 2 || todWeekD == 3) && todHours >= 7 && todHours <=21) || ((todWeekD == 4 || todWeekD == 5) && todHours >= 7 && todHours <= 20) || ((todWeekD == 6 || todWeekD == 0) && todHours >= 9 && todHours <= 20)}}">
+ 
+ <navigator class="resturantCard" url="/pages/Pit/Pit">
+  <view class="bigTag">
+<image class="smallTag" src="/images/icon4.svg"></image>
+<image class="smallTag" src="/images/icon1.svg"></image>
+<image class="smallTag" src="/images/icon2.svg"></image>
+</view>
+ <image class="resturantImage" mode="aspectFill" src="https://dining.wfu.edu/wp-content/uploads/2021/02/Breakfast-Chef-400x0-c-default.jpg"></image>
+ <view class="cardResturantNameFont">Pit</view>
+ <view class="flex">
+ <view class="locationFont">Reynolda Hall Ground Floor</view>
+ <block wx:if = "true">
+ <view class="timeFont">营业至12PM</view>
+</block>
+ </view>
+ </navigator>
+ 
+ </block>
+<!-- <navigator class="resturantCard" url="/pages/Pit/Pit">
   <view class="bigTag">
 <image class="smallTag" src="/images/icon4.svg"></image>
 <image class="smallTag" src="/images/icon1.svg"></image>
@@ -100,8 +208,11 @@
 <view class="locationFont">Reynolda Hall Ground Floor</view>
 <view class="timeFont">营业至12PM</view>
 </view>
-</navigator>
+</navigator> -->
 
+<!-- Magnolia room 卡片 -->
+<!-- Magnolia room opens from 11am to 1:30pm from Monday to Friday, and closed on Saturday and Sunday -->
+<block wx:if="{{((todWeekD == 1 || todWeekD == 2 || todWeekD == 3 || todWeekD == 4 || todWeekD == 5) && (todHours >= 11 && todHours < 13 && (todHours == 13 && todMinutes <= 30)))}}">
 <navigator class="resturantCard" url="/pages/MagnoliaRoom/MagnoliaRoom">
   <view class="bigTag">
 <image class="smallTag" src="/images/icon4.svg"></image>
@@ -115,7 +226,24 @@
 <view class="timeFont">营业至12PM</view>
 </view>
 </navigator>
+</block>
+<!-- <navigator class="resturantCard" url="/pages/MagnoliaRoom/MagnoliaRoom">
+  <view class="bigTag">
+<image class="smallTag" src="/images/icon4.svg"></image>
+<image class="smallTag" src="/images/icon1.svg"></image>
+<image class="smallTag" src="/images/icon2.svg"></image>
+</view>
+<image class="resturantImage" mode="aspectFill" src="https://images.squarespace-cdn.com/content/v1/602c9aa15ca0a203f2d91a73/1623899120481-Y4L7IAJ51W6DTDPEH9NB/image-asset-2.jpg?format=1000w"></image>
+<view class="cardResturantNameFont">Magnolia Room</view>
+<view class="flex">
+<view class="locationFont">Reynolda Hall Second Floor</view>
+<view class="timeFont">营业至12PM</view>
+</view>
+</navigator> -->
 
+<!-- Einstein Bros Bagels 卡片 -->
+<!-- Einstein Bros Bagels opens from 7am to 6pm from Monday to Thursday, open from 7am to 4 pm on Friday, close on Saturday, and open from 11am to 5pm on Sunday-->
+<block wx:if="{{((todWeekD == 1 || todWeekD == 2 || todWeekD == 3 || todWeekD == 4) && (todHours >= 7 && todHours < 18) || (todWeekD == 5 && todHours >= 7 && todHours <= 16) || (todWeekD == 0 && todHours >= 11 && todHours <= 17))}}">
 <navigator class="resturantCard" url="/pages/EinsteinBrosBagels/EinsteinBrosBagels">
   <view class="bigTag">
 <image class="smallTag" src="/images/icon4.svg"></image>
@@ -129,7 +257,24 @@
 <view class="timeFont">营业至12PM</view>
 </view>
 </navigator>
+</block>
+<!-- <navigator class="resturantCard" url="/pages/EinsteinBrosBagels/EinsteinBrosBagels">
+  <view class="bigTag">
+<image class="smallTag" src="/images/icon4.svg"></image>
+<image class="smallTag" src="/images/icon1.svg"></image>
+<image class="smallTag" src="/images/icon5.svg"></image>
+</view>
+<image class="resturantImage" mode="aspectFill" src="https://i.loli.net/2021/11/12/MhLG32sdubAKQgt.jpg"></image>
+<view class="cardResturantNameFont">Einstein Bros Bagels</view>
+<view class="flex">
+<view class="locationFont">Farrell Hall Ground Floor</view>
+<view class="timeFont">营业至12PM</view>
+</view>
+</navigator> -->
 
+<!-- Camino Bakery 卡片 -->
+<!-- Camino Bakery opens from 7:30am to 12am (0:00) from Monday to Thursday, open from 7:30am to 5 pm on Friday, open from 12pm to 5 pm on Saturday, and open from 11am to 12am on Sunday-->
+<block wx:if="{{(((todWeekD == 1 || todWeekD == 2 || todWeekD == 3 || todWeekD == 4) && ((todHours > 7 || (todHours == 7 && todMinutes >= 30)) && todHours < 24)) || (todWeekD == 5 && (todHours > 7 || (todHours == 7 && todMinutes >= 30)) && todHours <= 17) || (todWeekD == 0 && todHours >= 11 && todHours <= 12))}}">
 <navigator class="resturantCard" url="/pages/CaminoBakery/CaminoBakery">
   <view class="bigTag">
 <image class="smallTag" src="/images/icon4.svg"></image>
@@ -143,7 +288,24 @@
 <view class="timeFont">营业至12PM</view>
 </view>
 </navigator>
+</block>
+<!-- <navigator class="resturantCard" url="/pages/CaminoBakery/CaminoBakery">
+  <view class="bigTag">
+<image class="smallTag" src="/images/icon4.svg"></image>
+<image class="smallTag" src="/images/icon1.svg"></image>
+<image class="smallTag" src="/images/icon5.svg"></image>
+</view>
+<image class="resturantImage" mode="aspectFill" src="https://wfuogb.com/wp-content/uploads/2020/09/Camino1-1-scaled-1-900x675.jpeg"></image>
+<view class="cardResturantNameFont">Camino Bakery</view>
+<view class="flex">
+<view class="locationFont">ZSR Library Ground Floor</view>
+<view class="timeFont">营业至12PM</view>
+</view>
+</navigator> -->
 
+<!-- Legal Ground Cafe 卡片 -->
+<!-- Legal Ground Cafe opens from 8am to 3pm from Monday to Friday, close on Saturday and Sunday-->
+<block wx:if="{{((todWeekD == 1 || todWeekD == 2 || todWeekD == 3 || todWeekD == 4 || todWeekD == 5) && (todHours >= 8 && todHours < 15))}}">
 <navigator class="resturantCard" url="/pages/LegalGroundsCafé/LegalGroundsCafé">
   <view class="bigTag">
 <image class="smallTag" src="/images/icon4.svg"></image>
@@ -157,7 +319,24 @@
 <view class="timeFont">营业至12PM</view>
 </view>
 </navigator>
+</block>
+<!-- <navigator class="resturantCard" url="/pages/LegalGroundsCafé/LegalGroundsCafé">
+  <view class="bigTag">
+<image class="smallTag" src="/images/icon4.svg"></image>
+<image class="smallTag" src="/images/icon1.svg"></image>
+<image class="smallTag" src="/images/icon5.svg"></image>
+</view>
+<image class="resturantImage" mode="aspectFill" src="https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1024-512,f_auto,q_auto:best/newscms/2019_33/2203981/171026-better-coffee-boost-se-329p.jpg"></image>
+<view class="cardResturantNameFont">Legal Grounds Café</view>
+<view class="flex">
+<view class="locationFont">Worrell Professional Center</view>
+<view class="timeFont">营业至12PM</view>
+</view>
+</navigator> -->
 
+<!-- Shorty's 卡片 (u1s1，真不咋地，那个牛肉还不如我自己烤的) -->
+<!-- Shorty's opens from 11am to 9pm from Monday to Friday, open from 4pm to 9pm on Saturday and Sunday-->
+<block wx:if="{{((todWeekD == 1 || todWeekD == 2 || todWeekD == 3 || todWeekD == 4 || todWeekD == 5) && (todHours >= 11 && todHours < 21)) || ((todWeekD == 6 || todWeekD == 0) && (todHours >= 16 && todHours < 21))}}">
 <navigator class="resturantCard" url="/pages/Shorty's/Shorty's">
   <view class="bigTag">
 <image class="smallTag" src="/images/icon4.svg"></image>
@@ -171,7 +350,24 @@
 <view class="timeFont">营业至12PM</view>
 </view>
 </navigator>
+</block>
+<!-- <navigator class="resturantCard" url="/pages/Shorty's/Shorty's">
+  <view class="bigTag">
+<image class="smallTag" src="/images/icon4.svg"></image>
+<image class="smallTag" src="/images/icon1.svg"></image>
+<image class="smallTag" src="/images/icon5.svg"></image>
+</view>
+<image class="resturantImage" mode="aspectFill" src="https://pbs.twimg.com/media/D3UedXiWwAc2PmQ.jpg"></image>
+<view class="cardResturantNameFont">Shorty's</view>
+<view class="flex">
+<view class="locationFont">Benson University Center</view>
+<view class="timeFont">营业至12PM</view>
+</view>
+</navigator> -->
 
+<!-- Bentos 卡片 (碳水炸弹) -->
+<!-- Bentos opens from 11am to 10pm from Monday to Friday and Sunday, close on Saturday-->
+<block wx:if="{{((todWeekD == 1 || todWeekD == 2 || todWeekD == 3 || todWeekD == 4 || todWeekD == 5 || todWeekD == 0) && (todHours >= 11 && todHours < 22))}}">
 <navigator class="resturantCard" url="/pages/Bento/Bento">
   <view class="bigTag">
 <image class="smallTag" src="/images/icon4.svg"></image>
@@ -184,7 +380,23 @@
 <view class="timeFont">营业至12PM</view>
 </view>
 </navigator>
+</block>
+<!-- <navigator class="resturantCard" url="/pages/Bento/Bento">
+  <view class="bigTag">
+<image class="smallTag" src="/images/icon4.svg"></image>
+<image class="smallTag" src="/images/icon1.svg"></image>
+</view>
+<image class="resturantImage" mode="aspectFill" src="https://thegatewayonline.ca/wp-content/uploads/2018/09/BENTO-1.jpg"></image>
+<view class="cardResturantNameFont">Bento Sushi</view>
+<view class="flex">
+<view class="locationFont">Benson University Center</view>
+<view class="timeFont">营业至12PM</view>
+</view>
+</navigator> -->
 
+<!-- Forest Greens 卡片 (还真有这家？卖三明治的那个吗) -->
+<!-- Forest Greens opens from 11am to 10pm from Monday to Sunday-->
+<block wx:if="{{((todWeekD == 1 || todWeekD == 2 || todWeekD == 3 || todWeekD == 4 || todWeekD == 5 || todWeekD == 6 || todWeekD == 0) && (todHours >= 11 && todHours < 22))}}">
 <navigator class="resturantCard" url="/pages/ForestGreens/ForestGreens">
   <view class="bigTag">
 <image class="smallTag" src="/images/icon4.svg"></image>
@@ -198,6 +410,20 @@
 <view class="timeFont">营业至12PM</view>
 </view>
 </navigator>
+</block>
+<!-- <navigator class="resturantCard" url="/pages/ForestGreens/ForestGreens">
+  <view class="bigTag">
+<image class="smallTag" src="/images/icon4.svg"></image>
+<image class="smallTag" src="/images/icon1.svg"></image>
+<image class="smallTag" src="/images/icon5.svg"></image>
+</view>
+<image class="resturantImage" mode="aspectFill" src="https://jojorecipes.com/assets/img/recipes/acai-bowl.jpg"></image>
+<view class="cardResturantNameFont">Forest Greens</view>
+<view class="flex">
+<view class="locationFont">Benson University Center</view>
+<view class="timeFont">营业至12PM</view>
+</view>
+</navigator> -->
 
 <!-- <navigator class="resturantCard" url="/pages/Bento/Bento">
 <image class="resturantImage" mode="aspectFill" src="https://i.loli.net/2021/11/12/VvTkhwrSnIFCus3.jpg"></image>
@@ -208,6 +434,9 @@
 </view>
 </navigator> -->
 
+<!-- Yamas 卡片 (这个算是唯一去benson吃了没有负罪感的) -->
+<!-- Yamas opens from 11am to 10pm from Monday to Sunday-->
+<block wx:if="{{((todWeekD == 1 || todWeekD == 2 || todWeekD == 3 || todWeekD == 4 || todWeekD == 5 || todWeekD == 6 || todWeekD == 0) && (todHours >= 11 && todHours < 22))}}">
 <navigator class="resturantCard" url="/pages/YamasMediterraneanStreetFood/YamasMediterraneanStreetFood">
   <view class="bigTag">
 <image class="smallTag" src="/images/icon4.svg"></image>
@@ -221,7 +450,24 @@
 <view class="timeFont">营业至12PM</view>
 </view>
 </navigator>
+</block>
+<!-- <navigator class="resturantCard" url="/pages/YamasMediterraneanStreetFood/YamasMediterraneanStreetFood">
+  <view class="bigTag">
+<image class="smallTag" src="/images/icon4.svg"></image>
+<image class="smallTag" src="/images/icon1.svg"></image>
+<image class="smallTag" src="/images/icon5.svg"></image>
+</view>
+<image class="resturantImage" mode="aspectFill" src="https://i.loli.net/2021/11/12/gd8HcXSaIk3ZCOy.png"></image>
+<view class="cardResturantNameFont">Yamas Mediterranean Street Food</view>
+<view class="flex">
+<view class="locationFont">Benson University Center</view>
+<view class="timeFont">营业至12PM</view>
+</view>
+</navigator> -->
 
+<!-- 336 Market 卡片 -->
+<!-- 336 Market opens from 8am to 10pm from Monday to Friday, open from 11am to 10pm on Saturday and Sunday-->
+<block wx:if="{{((todWeekD == 1 || todWeekD == 2 || todWeekD == 3 || todWeekD == 4 || todWeekD == 5) && (todHours >= 8 && todHours < 22)) || ((todWeekD == 6 || todWeekD == 0) && (todHours >= 11 && todHours < 22))}}">
 <navigator class="resturantCard" url="/pages/336Market/336Market">
   <view class="bigTag">
 <image class="smallTag" src="/images/icon4.svg"></image>
@@ -234,7 +480,23 @@
 <view class="timeFont">营业至12PM</view>
 </view>
 </navigator>
+</block>
+<!-- <navigator class="resturantCard" url="/pages/336Market/336Market">
+  <view class="bigTag">
+<image class="smallTag" src="/images/icon4.svg"></image>
+<image class="smallTag" src="/images/icon1.svg"></image>
+</view>
+<image class="resturantImage" mode="aspectFill" src="https://i.loli.net/2021/11/12/54dNItHcq9V2D1f.jpg"></image>
+<view class="cardResturantNameFont">336 Market</view>
+<view class="flex">
+<view class="locationFont">Benson University Center</view>
+<view class="timeFont">营业至12PM</view>
+</view>
+</navigator> -->
 
+<!-- Village Juice 卡片 （打个两折才会去吃的那种） -->
+<!-- Village Juice opens from 11am to 8pm from Monday to Sunday-->
+<block wx:if="{{((todWeekD == 1 || todWeekD == 2 || todWeekD == 3 || todWeekD == 4 || todWeekD == 5 || todWeekD == 6 || todWeekD == 0) && (todHours >= 11 && todHours < 20))}}">
 <navigator class="resturantCard" url="/pages/VillageJuice/VillageJuice">
   <view class="bigTag">
 <image class="smallTag" src="/images/icon4.svg"></image>
@@ -248,8 +510,25 @@
 <view class="timeFont">营业至12PM</view>
 </view>
 </navigator>
+</block>
+<!-- <navigator class="resturantCard" url="/pages/VillageJuice/VillageJuice">
+  <view class="bigTag">
+<image class="smallTag" src="/images/icon4.svg"></image>
+<image class="smallTag" src="/images/icon1.svg"></image>
+<image class="smallTag" src="/images/icon5.svg"></image>
+</view>
+<image class="resturantImage" mode="aspectFill" src="https://i.loli.net/2021/11/12/EucK3lRjtqaxmW1.jpg"></image>
+<view class="cardResturantNameFont">Village Juice</view>
+<view class="flex">
+<view class="locationFont">North Dining Hall</view>
+<view class="timeFont">营业至12PM</view>
+</view>
+</navigator> -->
 
-<navigator class="resturantCard" url="/pages/VillageJuice/VillageJuice">
+<!-- P.O.D. Market 卡片 -->
+<!-- 336 Market opens from 8am to 8pm from Monday to Friday, open from 9am to 8pm on Saturday and Sunday-->
+<block wx:if="{{((todWeekD == 1 || todWeekD == 2 || todWeekD == 3 || todWeekD == 4 || todWeekD == 5) && (todHours >= 8 && todHours < 20)) || ((todWeekD == 6 || todWeekD == 0) && (todHours >= 9 && todHours < 20))}}">
+<navigator class="resturantCard" url="/pages/P.O.D.Market/P.O.D.Market">
   <view class="bigTag">
 <image class="smallTag" src="/images/icon4.svg"></image>
 <image class="smallTag" src="/images/icon1.svg"></image>
@@ -261,12 +540,292 @@
 <view class="timeFont">营业至12PM</view>
 </view>
 </navigator>
-
-<!-- <navigator class="resturantCard" url="/pages//starbucks/starbucks">
-<image class="resturantImage" mode="aspectFill" src="https://i.loli.net/2021/11/12/bxMTIA3d79pR4Jh.jpg"></image>
-<view class="cardResturantNameFont">Starbucks</view>
+</block>
+<!-- <navigator class="resturantCard" url="/pages/VillageJuice/VillageJuice">
+  <view class="bigTag">
+<image class="smallTag" src="/images/icon4.svg"></image>
+<image class="smallTag" src="/images/icon1.svg"></image>
+</view>
+<image class="resturantImage" mode="aspectFill" src="https://i.loli.net/2021/11/12/1aSfEJUxBmhsjg7.jpg"></image>
+<view class="cardResturantNameFont">P.O.D. Market</view>
 <view class="flex">
 <view class="locationFont">North Dining Hall</view>
 <view class="timeFont">营业至12PM</view>
 </view>
 </navigator> -->
+
+<!-- 停止营业部分：由于时间、节日等原因，商店已停止营业，自动更新至此 -->
+<!-- ************************************************************************************************-->
+<view class="title">已打烊</view>
+
+<!-- 只需要把之前的码每个前面加一个“！”就可以了 -->
+<!-- Pit YYDS!-->
+<block wx:if="{{!(((todWeekD == 1 || todWeekD == 2 || todWeekD == 3) && todHours >= 7 && todHours <=21) || ((todWeekD == 4 || todWeekD == 5) && todHours >= 7 && todHours <= 20) || ((todWeekD == 6 || todWeekD == 0) && todHours >= 9 && todHours <= 20))}}">
+ 
+ <navigator class="closeRestuarantFont" url="/pages/Pit/Pit">
+  <view class="bigTag">
+<image class="smallTag" src="/images/icon4.svg"></image>
+<image class="smallTag" src="/images/icon1.svg"></image>
+<image class="smallTag" src="/images/icon2.svg"></image>
+</view>
+ <image class="closeResturantImage" mode="aspectFill" src="https://dining.wfu.edu/wp-content/uploads/2021/02/Breakfast-Chef-400x0-c-default.jpg"></image>
+ <view class="cardResturantNameFont">Pit</view>
+ <view class="flex">
+ <view class="locationFont">Reynolda Hall Ground Floor</view>
+ <view class="timeFont">营业至12PM</view>
+ </view>
+ </navigator>
+ 
+ </block>
+
+<!-- NorthPit 卡片-->
+<block wx:if="{{!(((todWeekD == 1 || todWeekD == 2 || todWeekD == 3) && todHours >= 7 && todHours <=21) || ((todWeekD == 4 || todWeekD == 5) && todHours >= 7 && todHours <= 20) || ((todWeekD == 6 || todWeekD == 0) && todHours >= 9 && todHours <= 20))}}">
+  <navigator class="closeRestuarantFont" url="/pages/NorthPit/NorthPit">
+    <view class="bigTag">
+<image class="smallTag" src="/images/icon4.svg"></image>
+<image class="smallTag" src="/images/icon1.svg"></image>
+<image class="smallTag" src="/images/icon2.svg"></image>
+</view>
+    <image class="closeResturantImage" mode="aspectFill" src="https://dining.wfu.edu/wp-content/uploads/2019/10/111-Philip-Gabriel-Photography-Aramark-HT-WakeForest-2.27.18-2100x900-c-default.jpg"></image>
+    <view class="cardResturantNameFont">North Pit</view>
+    <view class="flex">
+    <view class="locationFont">North Dining Hall</view>
+    <view class="timeFont">营业至12PM</view>
+    </view>
+  </navigator>
+</block>
+
+<!-- Zicks 卡片 -->
+<block wx:if="{{!(((todWeekD == 0 || todWeekD == 1 || todWeekD == 2 || todWeekD == 3) && todHours >= 11 && todHours <=23) || ((todWeekD == 4 || todWeekD == 5 || todWeekD == 6) && todHours >= 11 && (todHours <= 20 && todMinutes <= 59 && todSeconds <=59)))}}">
+<navigator class="closeRestuarantFont" url="/pages/Zicks/Zicks">
+  <view class="bigTag">
+<image class="smallTag" src="/images/icon4.svg"></image>
+<image class="smallTag" src="/images/icon1.svg"></image>
+<image class="smallTag" src="/images/icon5.svg"></image>
+</view>
+<image class="closeResturantImage" mode="aspectFill" src="https://i.loli.net/2021/11/12/JDPvo2uyTXbBcSp.jpg"></image>
+<view class="cardResturantNameFont">Zick's</view>
+<view class="flex">
+<view class="locationFont">Poteat Residence Hall</view>
+<view class="timeFont">营业至12PM</view>
+</view>
+</navigator>
+</block>
+
+<!-- Chick-fli-A 卡片 -->
+<block wx:if="{{!((todWeekD == 1 || todWeekD == 2 || todWeekD == 3 || todWeekD == 4 || todWeekD == 5) && (todHours >= 8 || (todHours == 7 && todMinutes >=30) && todHours <= 22) || (todWeekD == 6 && todHours >= 11 && todHours <= 22))}}">
+<navigator class="closeRestuarantFont" url="/pages/chickFilA/chickFilA">
+  <view class="bigTag">
+<image class="smallTag" src="/images/icon4.svg"></image>
+<image class="smallTag" src="/images/icon1.svg"></image>
+<image class="smallTag" src="/images/icon5.svg"></image>
+</view>
+<image class="closeResturantImage" mode="aspectFill" src="https://i.loli.net/2021/11/12/cndshbOz4MVoDU2.jpg"></image>
+<view class="cardResturantNameFont">Chick-fil-A</view>
+<view class="flex">
+<view class="locationFont">Benson University Center</view>
+<view class="timeFont">营业至12PM</view>
+</view>
+</navigator>
+</block>
+
+<!-- Starbucks 卡片 -->
+<block wx:if="{{!((todWeekD == 1 || todWeekD == 2 || todWeekD == 3 || todWeekD == 4 || todWeekD == 5) && (todHours >= 7 && todHours <= 20) || ((todWeekD == 6 || todWeekD == 0) && todHours >= 9 && todHours <= 20))}}">
+<navigator class="closeRestuarantFont" url="/pages/starbucks/starbucks">
+  <view class="bigTag">
+<image class="smallTag" src="/images/icon4.svg"></image>
+<image class="smallTag" src="/images/icon1.svg"></image>
+<image class="smallTag" src="/images/icon5.svg"></image>
+</view>
+<image class="closeResturantImage" mode="aspectFill" src="https://s3.amazonaws.com/secretsaucefiles/photos/images/000/112/260/large/IMG_4506-copy.jpg?1485385027"></image>
+<view class="cardResturantNameFont">Starbucks</view>
+<view class="flex">
+<view class="locationFont">North Dining Hall</view>
+<view class="timeFont">营业至12PM</view>
+</view>
+</navigator>
+</block>
+
+<!-- Magnolia room 卡片 -->
+<block wx:if="{{!((todWeekD == 1 || todWeekD == 2 || todWeekD == 3 || todWeekD == 4 || todWeekD == 5) && (todHours >= 11 && todHours < 13 && (todHours == 13 && todMinutes <= 30)))}}">
+<navigator class="closeRestuarantFont" url="/pages/MagnoliaRoom/MagnoliaRoom">
+  <view class="bigTag">
+<image class="smallTag" src="/images/icon4.svg"></image>
+<image class="smallTag" src="/images/icon1.svg"></image>
+<image class="smallTag" src="/images/icon2.svg"></image>
+</view>
+<image class="closeResturantImage" mode="aspectFill" src="https://images.squarespace-cdn.com/content/v1/602c9aa15ca0a203f2d91a73/1623899120481-Y4L7IAJ51W6DTDPEH9NB/image-asset-2.jpg?format=1000w"></image>
+<view class="cardResturantNameFont">Magnolia Room</view>
+<view class="flex">
+<view class="locationFont">Reynolda Hall Second Floor</view>
+<view class="timeFont">营业至12PM</view>
+</view>
+</navigator>
+</block>
+
+<!-- Einstein Bros Bagels 卡片 -->
+<block wx:if="{{!((todWeekD == 1 || todWeekD == 2 || todWeekD == 3 || todWeekD == 4) && (todHours >= 7 && todHours < 18) || (todWeekD == 5 && todHours >= 7 && todHours <= 16) || (todWeekD == 0 && todHours >= 11 && todHours <= 17))}}">
+<navigator class="closeRestuarantFont" url="/pages/EinsteinBrosBagels/EinsteinBrosBagels">
+  <view class="bigTag">
+<image class="smallTag" src="/images/icon4.svg"></image>
+<image class="smallTag" src="/images/icon1.svg"></image>
+<image class="smallTag" src="/images/icon5.svg"></image>
+</view>
+<image class="closeResturantImage" mode="aspectFill" src="https://i.loli.net/2021/11/12/MhLG32sdubAKQgt.jpg"></image>
+<view class="cardResturantNameFont">Einstein Bros Bagels</view>
+<view class="flex">
+<view class="locationFont">Farrell Hall Ground Floor</view>
+<view class="timeFont">营业至12PM</view>
+</view>
+</navigator>
+</block>
+
+<!-- Camino Bakery 卡片 -->
+<block wx:if="{{!(((todWeekD == 1 || todWeekD == 2 || todWeekD == 3 || todWeekD == 4) && ((todHours > 7 || (todHours == 7 && todMinutes >= 30)) && todHours < 24)) || (todWeekD == 5 && (todHours > 7 || (todHours == 7 && todMinutes >= 30)) && todHours <= 17) || (todWeekD == 0 && todHours >= 11 && todHours <= 12))}}">
+<navigator class="closeRestuarantFont" url="/pages/CaminoBakery/CaminoBakery">
+  <view class="bigTag">
+<image class="smallTag" src="/images/icon4.svg"></image>
+<image class="smallTag" src="/images/icon1.svg"></image>
+<image class="smallTag" src="/images/icon5.svg"></image>
+</view>
+<image class="closeResturantImage" mode="aspectFill" src="https://wfuogb.com/wp-content/uploads/2020/09/Camino1-1-scaled-1-900x675.jpeg"></image>
+<view class="cardResturantNameFont">Camino Bakery</view>
+<view class="flex">
+<view class="locationFont">ZSR Library Ground Floor</view>
+<view class="timeFont">营业至12PM</view>
+</view>
+</navigator>
+</block>
+
+<!-- Legal Ground Cafe 卡片 -->
+<block wx:if="{{!((todWeekD == 1 || todWeekD == 2 || todWeekD == 3 || todWeekD == 4 || todWeekD == 5) && (todHours >= 8 && todHours < 15))}}">
+<navigator class="closeRestuarantFont" url="/pages/LegalGroundsCafé/LegalGroundsCafé">
+  <view class="bigTag">
+<image class="smallTag" src="/images/icon4.svg"></image>
+<image class="smallTag" src="/images/icon1.svg"></image>
+<image class="smallTag" src="/images/icon5.svg"></image>
+</view>
+<image class="closeResturantImage" mode="aspectFill" src="https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1024-512,f_auto,q_auto:best/newscms/2019_33/2203981/171026-better-coffee-boost-se-329p.jpg"></image>
+<view class="cardResturantNameFont">Legal Grounds Café</view>
+<view class="flex">
+<view class="locationFont">Worrell Professional Center</view>
+<view class="timeFont">营业至12PM</view>
+</view>
+</navigator>
+</block>
+
+<!-- Shorty's 卡片 -->
+<block wx:if="{{!(((todWeekD == 1 || todWeekD == 2 || todWeekD == 3 || todWeekD == 4 || todWeekD == 5) && (todHours >= 11 && todHours < 21)) || ((todWeekD == 6 || todWeekD == 0) && (todHours >= 16 && todHours < 21)))}}">
+<navigator class="closeRestuarantFont" url="/pages/Shorty's/Shorty's">
+  <view class="bigTag">
+<image class="smallTag" src="/images/icon4.svg"></image>
+<image class="smallTag" src="/images/icon1.svg"></image>
+<image class="smallTag" src="/images/icon5.svg"></image>
+</view>
+<image class="closeResturantImage" mode="aspectFill" src="https://pbs.twimg.com/media/D3UedXiWwAc2PmQ.jpg"></image>
+<view class="cardResturantNameFont">Shorty's</view>
+<view class="flex">
+<view class="locationFont">Benson University Center</view>
+<view class="timeFont">营业至12PM</view>
+</view>
+</navigator>
+</block>
+
+<!-- Bentos 卡片 -->
+<block wx:if="{{!((todWeekD == 1 || todWeekD == 2 || todWeekD == 3 || todWeekD == 4 || todWeekD == 5 || todWeekD == 0) && (todHours >= 11 && todHours < 22))}}">
+<navigator class="closeRestuarantFont" url="/pages/Bento/Bento">
+  <view class="bigTag">
+<image class="smallTag" src="/images/icon4.svg"></image>
+<image class="smallTag" src="/images/icon1.svg"></image>
+</view>
+<image class="closeResturantImage" mode="aspectFill" src="https://thegatewayonline.ca/wp-content/uploads/2018/09/BENTO-1.jpg"></image>
+<view class="cardResturantNameFont">Bento Sushi</view>
+<view class="flex">
+<view class="locationFont">Benson University Center</view>
+<view class="timeFont">营业至12PM</view>
+</view>
+</navigator>
+</block>
+
+<!-- Forest Greens 卡片 -->
+<block wx:if="{{!((todWeekD == 1 || todWeekD == 2 || todWeekD == 3 || todWeekD == 4 || todWeekD == 5 || todWeekD == 6 || todWeekD == 0) && (todHours >= 11 && todHours < 22))}}">
+<navigator class="closeRestuarantFont" url="/pages/ForestGreens/ForestGreens">
+  <view class="bigTag">
+<image class="smallTag" src="/images/icon4.svg"></image>
+<image class="smallTag" src="/images/icon1.svg"></image>
+<image class="smallTag" src="/images/icon5.svg"></image>
+</view>
+<image class="closeResturantImage" mode="aspectFill" src="https://jojorecipes.com/assets/img/recipes/acai-bowl.jpg"></image>
+<view class="cardResturantNameFont">Forest Greens</view>
+<view class="flex">
+<view class="locationFont">Benson University Center</view>
+<view class="timeFont">营业至12PM</view>
+</view>
+</navigator>
+</block>
+
+<!-- Yamas 卡片 -->
+<block wx:if="{{!((todWeekD == 1 || todWeekD == 2 || todWeekD == 3 || todWeekD == 4 || todWeekD == 5 || todWeekD == 6 || todWeekD == 0) && (todHours >= 11 && todHours < 22))}}">
+<navigator class="closeRestuarantFont" url="/pages/YamasMediterraneanStreetFood/YamasMediterraneanStreetFood">
+  <view class="bigTag">
+<image class="smallTag" src="/images/icon4.svg"></image>
+<image class="smallTag" src="/images/icon1.svg"></image>
+<image class="smallTag" src="/images/icon5.svg"></image>
+</view>
+<image class="closeResturantImage" mode="aspectFill" src="https://i.loli.net/2021/11/12/gd8HcXSaIk3ZCOy.png"></image>
+<view class="cardResturantNameFont">Yamas Mediterranean Street Food</view>
+<view class="flex">
+<view class="locationFont">Benson University Center</view>
+<view class="timeFont">营业至12PM</view>
+</view>
+</navigator>
+</block>
+
+<!-- 336 Market 卡片 -->
+<block wx:if="{{!(((todWeekD == 1 || todWeekD == 2 || todWeekD == 3 || todWeekD == 4 || todWeekD == 5) && (todHours >= 8 && todHours < 22)) || ((todWeekD == 6 || todWeekD == 0) && (todHours >= 11 && todHours < 22)))}}">
+<navigator class="closeRestuarantFont" url="/pages/336Market/336Market">
+  <view class="bigTag">
+<image class="smallTag" src="/images/icon4.svg"></image>
+<image class="smallTag" src="/images/icon1.svg"></image>
+</view>
+<image class="closeResturantImage" mode="aspectFill" src="https://i.loli.net/2021/11/12/54dNItHcq9V2D1f.jpg"></image>
+<view class="cardResturantNameFont">336 Market</view>
+<view class="flex">
+<view class="locationFont">Benson University Center</view>
+<view class="timeFont">营业至12PM</view>
+</view>
+</navigator>
+</block>
+
+<!-- Village Juice 卡片  -->
+<block wx:if="{{!((todWeekD == 1 || todWeekD == 2 || todWeekD == 3 || todWeekD == 4 || todWeekD == 5 || todWeekD == 6 || todWeekD == 0) && (todHours >= 11 && todHours < 20))}}">
+<navigator class="closeRestuarantFont" url="/pages/VillageJuice/VillageJuice">
+  <view class="bigTag">
+<image class="smallTag" src="/images/icon4.svg"></image>
+<image class="smallTag" src="/images/icon1.svg"></image>
+<image class="smallTag" src="/images/icon5.svg"></image>
+</view>
+<image class="closeResturantImage" mode="aspectFill" src="https://i.loli.net/2021/11/12/EucK3lRjtqaxmW1.jpg"></image>
+<view class="cardResturantNameFont">Village Juice</view>
+<view class="flex">
+<view class="locationFont">North Dining Hall</view>
+<view class="timeFont">营业至12PM</view>
+</view>
+</navigator>
+</block>
+
+<!-- P.O.D. Market 卡片 -->
+<block wx:if="{{!(((todWeekD == 1 || todWeekD == 2 || todWeekD == 3 || todWeekD == 4 || todWeekD == 5) && (todHours >= 8 && todHours < 20)) || ((todWeekD == 6 || todWeekD == 0) && (todHours >= 9 && todHours < 20)))}}">
+<navigator class="closeRestuarantFont" url="/pages/P.O.D.Market/P.O.D.Market">
+  <view class="bigTag">
+<image class="smallTag" src="/images/icon4.svg"></image>
+<image class="smallTag" src="/images/icon1.svg"></image>
+</view>
+<image class="closeResturantImage" mode="aspectFill" src="https://i.loli.net/2021/11/12/1aSfEJUxBmhsjg7.jpg"></image>
+<view class="cardResturantNameFont">P.O.D. Market</view>
+<view class="flex">
+<view class="locationFont">North Dining Hall</view>
+<view class="timeFont">营业至12PM</view>
+</view>
+</navigator>
+</block>
