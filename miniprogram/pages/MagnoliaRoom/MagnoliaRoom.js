@@ -1,66 +1,84 @@
-// pages/MagnoliaRoom/MagnoliaRoom.js
-Page({
+import * as echarts from '../../ec-canvas/echarts';
 
-    /**
-     * 页面的初始数据
-     */
-    data: {
+const app = getApp();
 
-    },
-
-    /**
-     * 生命周期函数--监听页面加载
-     */
-    onLoad: function (options) {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面显示
-     */
-    onShow: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
-    onHide: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面卸载
-     */
-    onUnload: function () {
-
-    },
-
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-    onPullDownRefresh: function () {
-
-    },
-
-    /**
-     * 页面上拉触底事件的处理函数
-     */
-    onReachBottom: function () {
-
-    },
-
-    /**
-     * 用户点击右上角分享
-     */
-    onShareAppMessage: function () {
-
-    }
+/* 尝试写Javascript爬虫 （失败）
+function getPercentage() {
+  var url = require("url")
+  //var querystring = require("querystring")
+  var $ = require("jquery")
+  var axios = require("axios")
+  var cheerio = require("cheerio")
+  axios.get("https://services.is.wfu.edu/dining-occupancy/").then(resp => {
+  //var repos = []
+  //for (var i=0; i<3; i++) {
+    var $ = cheerio.load(h2)
+    
+    Percent : find("h2").text.trim(),
+    
+    //repos.push(repo)
+    //}
+    console.log(Percent)  
+  //})
 })
+*/
+
+function initChart(canvas, width, height, dpr) {
+  const chart = echarts.init(canvas, null, {
+    width: width,
+    height: height,
+    devicePixelRatio: dpr // new
+  });
+  canvas.setChart(chart);
+
+  //获取实时人流数据，链接Javascript爬虫(未成功)
+  var PecentageM = 90;   //最终data
+
+  //实时人流图表的基础参数设置
+  var option = {
+    backgroundColor: "#ffffff",
+    series: [{
+      name: 'Real_Time',
+      type: 'gauge',
+      detail: {
+        formatter: '{value}%',
+        color: '#9E7E38',
+      },
+      axisLine: {
+        show: true,
+      },
+      data: [{
+        value: PecentageM,
+        name: 'Occupancy',
+        }
+      ],
+      itemStyle: {
+        color: '#9E7E38',
+      }
+    }]
+  };
+
+  chart.setOption(option, true);
+
+  return chart;
+}
+
+Page({
+  onShareAppMessage: function (res) {
+    return {
+      title: 'ECharts',
+      path: '/pages/index/index',
+      success: function () { },
+      fail: function () { }
+    }
+  },
+  
+  data: {
+    ec: {
+      onInit: initChart
+    }
+  },
+
+  onReady() {
+  }
+});

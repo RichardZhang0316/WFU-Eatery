@@ -1,2 +1,6 @@
 <!--pages/MagnoliaRoom/MagnoliaRoom.wxml-->
 <text>pages/MagnoliaRoom/MagnoliaRoom.wxml</text>
+<view class="container">
+  <ec-canvas id="mychart-dom-gauge" canvas-id="mychart-gauge" ec="{{ ec }}"></ec-canvas>
+</view>
+<view>Menu</view>
