@@ -337,7 +337,7 @@
 <!-- Shorty's 卡片 (u1s1，真不咋地，那个牛肉还不如我自己烤的) -->
 <!-- Shorty's opens from 11am to 9pm from Monday to Friday, open from 4pm to 9pm on Saturday and Sunday-->
 <block wx:if="{{((todWeekD == 1 || todWeekD == 2 || todWeekD == 3 || todWeekD == 4 || todWeekD == 5) && (todHours >= 11 && todHours < 21)) || ((todWeekD == 6 || todWeekD == 0) && (todHours >= 16 && todHours < 21))}}">
-<navigator class="resturantCard" url="/pages/Shorty's/Shorty's">
+<navigator class="resturantCard" url="/pages/Shorty/Shorty">
   <view class="bigTag">
 <image class="smallTag" src="/images/icon4.svg"></image>
 <image class="smallTag" src="/images/icon1.svg"></image>
@@ -716,7 +716,7 @@
 
 <!-- Shorty's 卡片 -->
 <block wx:if="{{!(((todWeekD == 1 || todWeekD == 2 || todWeekD == 3 || todWeekD == 4 || todWeekD == 5) && (todHours >= 11 && todHours < 21)) || ((todWeekD == 6 || todWeekD == 0) && (todHours >= 16 && todHours < 21)))}}">
-<navigator class="closeRestuarantFont" url="/pages/Shorty's/Shorty's">
+<navigator class="closeRestuarantFont" url="/pages/Shorty/Shorty">
   <view class="bigTag">
 <image class="smallTag" src="/images/icon4.svg"></image>
 <image class="smallTag" src="/images/icon1.svg"></image>

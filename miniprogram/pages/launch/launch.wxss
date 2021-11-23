@@ -1,0 +1,7 @@
+page{
+    background-color:  #9E7E38 ;
+  } 
+.full{
+    height: 500px;
+    width: 100%;
+}

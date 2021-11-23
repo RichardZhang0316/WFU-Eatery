@@ -4,6 +4,7 @@
     },
   
   "pages": [
+    "pages/launch/launch",
     "pages/HomePage/HomePage",
     "pages/Search/Search",
     "pages/IncomingMenu/IncomingMenu",
@@ -20,7 +21,7 @@
     "pages/EinsteinBrosBagels/EinsteinBrosBagels",
     "pages/CaminoBakery/CaminoBakery",
     "pages/LegalGroundsCafé/LegalGroundsCafé",
-    "pages/Shorty's/Shorty's",
+    "pages/Shorty/Shorty",
     "pages/Bento/Bento",
     "pages/ForestGreens/ForestGreens",
     "pages/YamasMediterraneanStreetFood/YamasMediterraneanStreetFood",

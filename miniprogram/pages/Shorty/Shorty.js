@@ -1,4 +1,4 @@
-// pages/Shorty's/Shorty's.js
+// pages/Shorty/Shorty.js
 Page({
 
     /**
