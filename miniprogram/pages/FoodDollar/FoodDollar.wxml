@@ -7,3 +7,12 @@
 <view>2.点击“my profile", 查看账户余额以及交易记录。</view>
 <text class = "website">   Detailed Instruction：</text> <text>  https://dining.wfu.edu/wp-content/uploads/2017/09/Student-Deacon-Dining-Job-Aid-.pdf</text>
 </view>
+<van-steps
+  steps="{{ steps }}"
+  active="0"
+  direction="vertical"
+  active-color="#d6b160"
+  inactive-color="#d6b160"
+  active-icon="star"
+  inactive-icon="star"
+/>
