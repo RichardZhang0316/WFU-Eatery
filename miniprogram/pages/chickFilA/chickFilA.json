@@ -1,7 +1,8 @@
 {
   "usingComponents": {
     "navigation": "/components/navigation/navigation" ,
-    "foodCard": "/components/vant/card/index"
+    "foodCard": "/components/vant/card/index",
+    "ec-canvas": "../../ec-canvas/ec-canvas"
   },
   "navigationStyle": "custom"
 }

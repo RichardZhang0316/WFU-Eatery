@@ -20,8 +20,12 @@
 <view class="shit">Reynolda Hall B-1 Floor</view>
 </view>
 <view class="popularTimes">
-<view class="shit2"><view>Popular Times</view></view>
+<view class="shit2"><view>Popular Times</view></view></view>
+
+<view class="container">
+  <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
 </view>
+
 <view class="greyPart"> </view>
 <view class="realPart"><view class="menuTitle">Menu</view></view>
 <foodCard desc="440卡路里" title="Chicken Sandwich 鸡肉三明治" thumb="https://www.cfacdn.com/img/order/menu/Online/Entrees/Jul19_CFASandwich_pdp.png"/>
