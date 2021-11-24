@@ -4,8 +4,10 @@
 //Popular Time 表格
 import * as echarts from '../../ec-canvas/echarts';
 let chart = null;  
+var util = require('../../utils/util.js');
 
-function initChart(canvas, width, height, dpr) {  // initial Chart的function
+// initial Chart的function
+function initChart(canvas, width, height, dpr) {  
   chart = echarts.init(canvas, null, {            // object, initial method
     width: width,
     height: height,
@@ -13,77 +15,101 @@ function initChart(canvas, width, height, dpr) {  // initial Chart的function
   });
   canvas.setChart(chart);
 
-  var option = {              
-    tooltip: {
-      trigger: 'axis',
-      axisPointer: {          // 坐标轴指示器，坐标轴触发有效
-        type: 'line'          // 默认为直线，可选为：'line' | 'shadow'
-      },
-      confine: true
-    },
+  //获取当日是星期几
+  var myDate = new Date();
+  var D = myDate.getDay()
+  console.log(D) //测试用，例如: 2 = Tue
+  
+  var Mon = {              
+    tooltip: {trigger:'axis',axisPointer: {type: 'shadow'},confine: true,formatter: '{b0}: {c0}%', padding:[5,10,5,10,]}, //提示框前端
+    grid: {left: 20,right: 20,bottom: 15,top: 40,containLabel: true}, // 整体表格所在的grid的大小设置
+    yAxis: [{type: 'value',axisLine: {lineStyle: {color: '#999'}},axisLabel: {color: '#666'}}], //表格y轴设置
+    xAxis: [{type: 'category',axisTick: { show: false },data: ['8:00', '9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00'],axisLine: {lineStyle: {color: '#999'}},axisLabel: {color: '#666'}}], //表格x轴设置
+    series: [{name: 'Pit', type: 'bar', label: {normal: {show: true,position: 'inside'}},itemStyle: {borderRadius: [4, 4, 0, 0], color: '#9E7E38', shadowColor: 'rgba(0, 0, 0, 0.5)', shadowBlur: 2}, //Series设置
+        // 👇 Monday 数据！！！
+        data: [2.9, 6.6, 12, 29, 44, 37, 23, 20, 21, 28, 48, 40, 28, 21, 18], },]}
+  
+  var Tue = {              
+    tooltip: {trigger:'axis',axisPointer: {type: 'shadow'},confine: true,formatter: '{b0}: {c0}%', padding:[5,10,5,10,]}, //提示框前端
+    grid: {left: 20,right: 20,bottom: 15,top: 40,containLabel: true}, // 整体表格所在的grid的大小设置
+    yAxis: [{type: 'value',axisLine: {lineStyle: {color: '#999'}},axisLabel: {color: '#666'}}], //表格y轴设置
+    xAxis: [{type: 'category',axisTick: { show: false },data: ['8:00', '9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00'],axisLine: {lineStyle: {color: '#999'}},axisLabel: {color: '#666'}}], //表格x轴设置
+    series: [{name: 'Pit', type: 'bar', label: {normal: {show: true,position: 'inside'}},itemStyle: {borderRadius: [4, 4, 0, 0], color: '#9E7E38', shadowColor: 'rgba(0, 0, 0, 0.5)', shadowBlur: 2}, //Series设置
+        // 👇 Tuesday 数据！！！
+        data: [99, 77, 12, 29, 44, 80, 80, 80, 21, 28, 48, 40, 28, 90, 18], },]}
 
-    grid: {                   // 整体表格所在的grid的大小设置
-      left: 20,
-      right: 20,
-      bottom: 15,
-      top: 40,
-      containLabel: true
-    },
-    yAxis: [
-      {
-        type: 'value',
-        axisLine: {
-          lineStyle: {
-            color: '#999'
-          }
-        },
-        axisLabel: {
-          color: '#666'
-        }
-      }
-    ],
+  var Wed = {              
+    tooltip: {trigger:'axis',axisPointer: {type: 'shadow'},confine: true,formatter: '{b0}: {c0}%', padding:[5,10,5,10,]}, //提示框前端
+    grid: {left: 20,right: 20,bottom: 15,top: 40,containLabel: true}, // 整体表格所在的grid的大小设置
+    yAxis: [{type: 'value',axisLine: {lineStyle: {color: '#999'}},axisLabel: {color: '#666'}}], //表格y轴设置
+    xAxis: [{type: 'category',axisTick: { show: false },data: ['8:00', '9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00'],axisLine: {lineStyle: {color: '#999'}},axisLabel: {color: '#666'}}], //表格x轴设置
+    series: [{name: 'Pit', type: 'bar', label: {normal: {show: true,position: 'inside'}},itemStyle: {borderRadius: [4, 4, 0, 0], color: '#9E7E38', shadowColor: 'rgba(0, 0, 0, 0.5)', shadowBlur: 2}, //Series设置
+        // 👇 Wednesday 数据！！！
+        data: [99, 77, 12, 29, 44, 80, 80, 80, 21, 28, 48, 40, 28, 90, 18], },]}
 
-    xAxis: [
-      {
-        type: 'category',
-        axisTick: { show: false },
-        data: ['8:00', '9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00'],
-        axisLine: {
-          lineStyle: {
-            color: '#999'
-          }
-        },
-        axisLabel: {
-          color: '#666'
-        }
-      }
-    ],
-
-    series: [
-      {
-        name: 'Pit',
-        type: 'bar',
-        label: {
-          normal: {
-            show: true,
-            position: 'inside'
-          }
-        },
+  var Thur = {              
+    tooltip: {trigger:'axis',axisPointer: {type: 'shadow'},confine: true,formatter: '{b0}: {c0}%', padding:[5,10,5,10,]}, //提示框前端
+    grid: {left: 20,right: 20,bottom: 15,top: 40,containLabel: true}, // 整体表格所在的grid的大小设置
+    yAxis: [{type: 'value',axisLine: {lineStyle: {color: '#999'}},axisLabel: {color: '#666'}}], //表格y轴设置
+    xAxis: [{type: 'category',axisTick: { show: false },data: ['8:00', '9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00'],axisLine: {lineStyle: {color: '#999'}},axisLabel: {color: '#666'}}], //表格x轴设置
+    series: [{name: 'Pit', type: 'bar', label: {normal: {show: true,position: 'inside'}},itemStyle: {borderRadius: [4, 4, 0, 0], color: '#9E7E38', shadowColor: 'rgba(0, 0, 0, 0.5)', shadowBlur: 2}, //Series设置
+        // 👇 Wednesday 数据！！！
+        data: [99, 77, 12, 29, 44, 80, 80, 80, 21, 28, 48, 40, 28, 90, 18], },]}
         
-        data: [2.9, 6.6, 12, 29, 44, 37, 23, 20, 21, 28, 48, 40, 28, 21, 18], //思考一下怎么进行Mon-Sun数据依次替换
+  var Fri = {              
+    tooltip: {trigger:'axis',axisPointer: {type: 'shadow'},confine: true,formatter: '{b0}: {c0}%', padding:[5,10,5,10,]}, //提示框前端
+    grid: {left: 20,right: 20,bottom: 15,top: 40,containLabel: true}, // 整体表格所在的grid的大小设置
+    yAxis: [{type: 'value',axisLine: {lineStyle: {color: '#999'}},axisLabel: {color: '#666'}}], //表格y轴设置
+    xAxis: [{type: 'category',axisTick: { show: false },data: ['8:00', '9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00'],axisLine: {lineStyle: {color: '#999'}},axisLabel: {color: '#666'}}], //表格x轴设置
+    series: [{name: 'Pit', type: 'bar', label: {normal: {show: true,position: 'inside'}},itemStyle: {borderRadius: [4, 4, 0, 0], color: '#9E7E38', shadowColor: 'rgba(0, 0, 0, 0.5)', shadowBlur: 2}, //Series设置
+        // 👇 Wednesday 数据！！！
+        data: [99, 77, 12, 29, 44, 80, 80, 80, 21, 28, 48, 40, 28, 90, 18], },]}  
+
+  var Sat = {              
+    tooltip: {trigger:'axis',axisPointer: {type: 'shadow'},confine: true,formatter: '{b0}: {c0}%', padding:[5,10,5,10,]}, //提示框前端
+    grid: {left: 20,right: 20,bottom: 15,top: 40,containLabel: true}, // 整体表格所在的grid的大小设置
+    yAxis: [{type: 'value',axisLine: {lineStyle: {color: '#999'}},axisLabel: {color: '#666'}}], //表格y轴设置
+    xAxis: [{type: 'category',axisTick: { show: false },data: ['8:00', '9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00'],axisLine: {lineStyle: {color: '#999'}},axisLabel: {color: '#666'}}], //表格x轴设置
+    series: [{name: 'Pit', type: 'bar', label: {normal: {show: true,position: 'inside'}},itemStyle: {borderRadius: [4, 4, 0, 0], color: '#9E7E38', shadowColor: 'rgba(0, 0, 0, 0.5)', shadowBlur: 2}, //Series设置
+        // 👇 Wednesday 数据！！！
+        data: [99, 77, 12, 29, 44, 80, 80, 80, 21, 28, 48, 40, 28, 90, 18], },]}
         
-        itemStyle: {
-          borderRadius: [4, 4, 0, 0],
-          color: '#9E7E38',
-          shadowColor: 'rgba(0, 0, 0, 0.5)',
-          shadowBlur: 2
-        }
-      },
-    ]
-  };
+  var Sun = {              
+    tooltip: {trigger:'axis',axisPointer: {type: 'shadow'},confine: true,formatter: '{b0}: {c0}%', padding:[5,10,5,10,]}, //提示框前端
+    grid: {left: 20,right: 20,bottom: 15,top: 40,containLabel: true}, // 整体表格所在的grid的大小设置
+    yAxis: [{type: 'value',axisLine: {lineStyle: {color: '#999'}},axisLabel: {color: '#666'}}], //表格y轴设置
+    xAxis: [{type: 'category',axisTick: { show: false },data: ['8:00', '9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00'],axisLine: {lineStyle: {color: '#999'}},axisLabel: {color: '#666'}}], //表格x轴设置
+    series: [{name: 'Pit', type: 'bar', label: {normal: {show: true,position: 'inside'}},itemStyle: {borderRadius: [4, 4, 0, 0], color: '#9E7E38', shadowColor: 'rgba(0, 0, 0, 0.5)', shadowBlur: 2}, //Series设置
+        // 👇 Wednesday 数据！！！
+        data: [99, 77, 12, 29, 44, 80, 80, 80, 21, 28, 48, 40, 28, 90, 180], },]}       
+
+  if (D == 1){
+    var option = Mon;
+  }
+  if (D == 2){
+    var option = Tue;
+  }
+  if (D == 3){
+    var option = Sun;
+  }
+  if (D == 4){
+    var option = Thur;
+  }
+  if (D == 5){
+    var option = Fri;
+  }
+  if (D == 6){
+    var option = Sat;
+  }
+  if (D == 7){
+    var option = Wed;
+  }
+
   chart.setOption(option);
   return chart;
 }
+
+
 
 
 var app = getApp();
@@ -310,11 +336,9 @@ Page({
             });
           }
         }
-
         wx.hideLoading()
       }
     })
-
   },
 
   /**
