@@ -27,7 +27,7 @@ function initChart(canvas, width, height, dpr) {
     xAxis: [{type: 'category',axisTick: { show: false },data: ['8:00', '9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00'],axisLine: {lineStyle: {color: '#999'}},axisLabel: {color: '#666'}}], //表格x轴设置
     series: [{name: 'Pit', type: 'bar', label: {normal: {show: true,position: 'inside'}},itemStyle: {borderRadius: [4, 4, 0, 0], color: '#9E7E38', shadowColor: 'rgba(0, 0, 0, 0.5)', shadowBlur: 2}, //Series设置
         // 👇 Monday 数据！！！
-        data: [2.9, 6.6, 12, 29, 44, 37, 23, 20, 21, 28, 48, 40, 28, 21, 18], },]}
+        data: [3, 5, 6.7, 29, 47, 38, 28, 22, 27, 33, 64, 52, 34, 20, 17], },]}
   
   var Tue = {              
     tooltip: {trigger:'axis',axisPointer: {type: 'shadow'},confine: true,formatter: '{b0}: {c0}%', padding:[5,10,5,10,]}, //提示框前端
@@ -36,7 +36,7 @@ function initChart(canvas, width, height, dpr) {
     xAxis: [{type: 'category',axisTick: { show: false },data: ['8:00', '9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00'],axisLine: {lineStyle: {color: '#999'}},axisLabel: {color: '#666'}}], //表格x轴设置
     series: [{name: 'Pit', type: 'bar', label: {normal: {show: true,position: 'inside'}},itemStyle: {borderRadius: [4, 4, 0, 0], color: '#9E7E38', shadowColor: 'rgba(0, 0, 0, 0.5)', shadowBlur: 2}, //Series设置
         // 👇 Tuesday 数据！！！
-        data: [99, 77, 12, 29, 44, 80, 80, 80, 21, 28, 48, 40, 28, 90, 18], },]}
+        data: [4.1, 9.4, 17, 38, 47, 29, 19, 16, 19, 35, 66, 53, 33, 19, 15], },]}
 
   var Wed = {              
     tooltip: {trigger:'axis',axisPointer: {type: 'shadow'},confine: true,formatter: '{b0}: {c0}%', padding:[5,10,5,10,]}, //提示框前端
@@ -45,7 +45,7 @@ function initChart(canvas, width, height, dpr) {
     xAxis: [{type: 'category',axisTick: { show: false },data: ['8:00', '9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00'],axisLine: {lineStyle: {color: '#999'}},axisLabel: {color: '#666'}}], //表格x轴设置
     series: [{name: 'Pit', type: 'bar', label: {normal: {show: true,position: 'inside'}},itemStyle: {borderRadius: [4, 4, 0, 0], color: '#9E7E38', shadowColor: 'rgba(0, 0, 0, 0.5)', shadowBlur: 2}, //Series设置
         // 👇 Wednesday 数据！！！
-        data: [99, 77, 12, 29, 44, 80, 80, 80, 21, 28, 48, 40, 28, 90, 18], },]}
+        data: [3.7, 8.2, 16, 40, 53, 40, 33, 31, 35, 43, 56, 37, 21, 5.3, 5], },]}
 
   var Thur = {              
     tooltip: {trigger:'axis',axisPointer: {type: 'shadow'},confine: true,formatter: '{b0}: {c0}%', padding:[5,10,5,10,]}, //提示框前端
@@ -53,8 +53,8 @@ function initChart(canvas, width, height, dpr) {
     yAxis: [{type: 'value',axisLine: {lineStyle: {color: '#999'}},axisLabel: {color: '#666'}}], //表格y轴设置
     xAxis: [{type: 'category',axisTick: { show: false },data: ['8:00', '9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00'],axisLine: {lineStyle: {color: '#999'}},axisLabel: {color: '#666'}}], //表格x轴设置
     series: [{name: 'Pit', type: 'bar', label: {normal: {show: true,position: 'inside'}},itemStyle: {borderRadius: [4, 4, 0, 0], color: '#9E7E38', shadowColor: 'rgba(0, 0, 0, 0.5)', shadowBlur: 2}, //Series设置
-        // 👇 Wednesday 数据！！！
-        data: [99, 77, 12, 29, 44, 80, 80, 80, 21, 28, 48, 40, 28, 90, 18], },]}
+        // 👇 Thursday 数据！！！
+        data: [4.9, 12, 19, 39, 60, 44, 32, 34, 35, 59, 48, 42, 34, 30, 26], },]}
         
   var Fri = {              
     tooltip: {trigger:'axis',axisPointer: {type: 'shadow'},confine: true,formatter: '{b0}: {c0}%', padding:[5,10,5,10,]}, //提示框前端
@@ -62,8 +62,8 @@ function initChart(canvas, width, height, dpr) {
     yAxis: [{type: 'value',axisLine: {lineStyle: {color: '#999'}},axisLabel: {color: '#666'}}], //表格y轴设置
     xAxis: [{type: 'category',axisTick: { show: false },data: ['8:00', '9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00'],axisLine: {lineStyle: {color: '#999'}},axisLabel: {color: '#666'}}], //表格x轴设置
     series: [{name: 'Pit', type: 'bar', label: {normal: {show: true,position: 'inside'}},itemStyle: {borderRadius: [4, 4, 0, 0], color: '#9E7E38', shadowColor: 'rgba(0, 0, 0, 0.5)', shadowBlur: 2}, //Series设置
-        // 👇 Wednesday 数据！！！
-        data: [99, 77, 12, 29, 44, 80, 80, 80, 21, 28, 48, 40, 28, 90, 18], },]}  
+        // 👇 Friday 数据！！！
+        data: [2.5, 7.5, 9.8, 23, 42, 38, 21, 17, 21, 29, 43, 35, 31, 26, 25], },]}  
 
   var Sat = {              
     tooltip: {trigger:'axis',axisPointer: {type: 'shadow'},confine: true,formatter: '{b0}: {c0}%', padding:[5,10,5,10,]}, //提示框前端
@@ -71,8 +71,8 @@ function initChart(canvas, width, height, dpr) {
     yAxis: [{type: 'value',axisLine: {lineStyle: {color: '#999'}},axisLabel: {color: '#666'}}], //表格y轴设置
     xAxis: [{type: 'category',axisTick: { show: false },data: ['8:00', '9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00'],axisLine: {lineStyle: {color: '#999'}},axisLabel: {color: '#666'}}], //表格x轴设置
     series: [{name: 'Pit', type: 'bar', label: {normal: {show: true,position: 'inside'}},itemStyle: {borderRadius: [4, 4, 0, 0], color: '#9E7E38', shadowColor: 'rgba(0, 0, 0, 0.5)', shadowBlur: 2}, //Series设置
-        // 👇 Wednesday 数据！！！
-        data: [99, 77, 12, 29, 44, 80, 80, 80, 21, 28, 48, 40, 28, 90, 18], },]}
+        // 👇 Saturday 数据！！！
+        data: [1.4, 2.7, 7.7, 20, 24, 28, 8.3, 7, 7.8, 11, 25, 29, 27, 17, 14], },]}
         
   var Sun = {              
     tooltip: {trigger:'axis',axisPointer: {type: 'shadow'},confine: true,formatter: '{b0}: {c0}%', padding:[5,10,5,10,]}, //提示框前端
@@ -80,8 +80,8 @@ function initChart(canvas, width, height, dpr) {
     yAxis: [{type: 'value',axisLine: {lineStyle: {color: '#999'}},axisLabel: {color: '#666'}}], //表格y轴设置
     xAxis: [{type: 'category',axisTick: { show: false },data: ['8:00', '9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00'],axisLine: {lineStyle: {color: '#999'}},axisLabel: {color: '#666'}}], //表格x轴设置
     series: [{name: 'Pit', type: 'bar', label: {normal: {show: true,position: 'inside'}},itemStyle: {borderRadius: [4, 4, 0, 0], color: '#9E7E38', shadowColor: 'rgba(0, 0, 0, 0.5)', shadowBlur: 2}, //Series设置
-        // 👇 Wednesday 数据！！！
-        data: [99, 77, 12, 29, 44, 80, 80, 80, 21, 28, 48, 40, 28, 90, 180], },]}       
+        // 👇 Sunday 数据！！！
+        data: [1, 2, 7.9, 15, 34, 36, 23, 18, 13, 18, 22, 22, 2, 1, 1], },]}       
 
   if (D == 1){
     var option = Mon;
@@ -102,7 +102,7 @@ function initChart(canvas, width, height, dpr) {
     var option = Sat;
   }
   if (D == 7){
-    var option = Wed;
+    var option = Sun;
   }
 
   chart.setOption(option);
