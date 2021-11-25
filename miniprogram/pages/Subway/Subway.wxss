@@ -27,8 +27,8 @@
 
 .flexTimetable{
   border-bottom: 1px solid #ececec;
-  padding-top: 10rpx;
-  padding-bottom: 10rpx;
+  padding-top: 5rpx;
+  padding-bottom: 5rpx;
   background-color: #fff;
   width: 100%;
 }

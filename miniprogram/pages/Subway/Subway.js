@@ -26,7 +26,7 @@ function initChart(canvas, width, height, dpr) {
     xAxis: [{type: 'category',axisTick: { show: false },data: ['8:00', '9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00'],axisLine: {lineStyle: {color: '#999'}},axisLabel: {color: '#666'}}], //表格x轴设置
     series: [{name: 'Pit', type: 'bar', label: {normal: {show: false, position: 'inside', color: 'white'}},itemStyle: {borderRadius: [4, 4, 0, 0], color: '#9E7E38', shadowColor: 'rgba(0, 0, 0, 0.5)', shadowBlur: 2},  //Series设置
         // 👇 数据录入处 ！！暂定以10为scale进行模拟, 数据源: Google
-        data: [3, 5, 6.7, 9, 7, 8, 8, 2, 7, 3, 4, 2, 4, 2, 7], },]}
+        data: [3, 5, 6.7, 9, 7, 8, 8, 6, 7, 7, 4, 3, 4, 5, 7], },]}
 
   var weekend= {              
     tooltip: {trigger:'axis',axisPointer: {type: 'shadow'},confine: true,formatter:'{b0}: {c0}%', padding:[5,10,5,10,],show: true},//提示框前端
@@ -48,16 +48,18 @@ function initChart(canvas, width, height, dpr) {
 var app = getApp();
 Page({
     data: {
-        choose: false,
-        animationData: {},
-        stopBtn: true,//动画未执行完之前禁用按钮
-        navTab: ['Breakfast','Lunch','Dinner'],        
-        currentTab: 0,
-        id:'timetable',
-        sendList:[],
-
-        timeTable:[{realTimeTable:'Mon: 24hr'},{realTimeTable:'Tue: 10:00 AM- 1:00 AM'},{realTimeTable:'Wed: 10:00 AM- 1:00 AM'},{realTimeTable:'Thu: 10:00 AM- 1:00 AM'},{realTimeTable:'Fri: 10:00 AM- 1:00 AM'},{realTimeTable:'Sat: 10:00 AM- 1:00 AM'},{realTimeTable:'Sun: 10:00 AM- 1:00 AM'}],
-
+        //营业时间下拉菜单
+        option1: [
+            { text: 'Mon: 10:00 AM- 1:00 AM', value: 0 },
+            { text: 'Tue: 10:00 AM- 1:00 AM', value: 1 },
+            { text: 'Wed: 10:00 AM- 1:00 AM', value: 2 },
+            { text: 'Thur: 10:00 AM- 1:00 AM', value: 3 },
+            { text: 'Fri: 10:00 AM- 1:00 AM', value: 4 },
+            { text: 'Sat: 10:00 AM- 1:00 AM', value: 5 },
+            { text: 'Sun: 10:00 AM- 1:00 AM', value: 6 },
+          ],
+        
+        //Popular Time_图表Data
         ec: {
             onInit: initChart
           },
@@ -65,7 +67,7 @@ Page({
         active: 1,
       },
       
-      //前端滑动切换bar
+      //前端滑动切换bar-展示信息（目前都注释掉了）
       onChange(event) {
         // wx.showToast({
         //   //title: `切换到标签 ${event.detail.name}`,

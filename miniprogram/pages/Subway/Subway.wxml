@@ -4,21 +4,16 @@
 <image mode="aspectFill" src="https://i.loli.net/2021/11/12/JLCeQiNwfFlUIsn.jpg" style="height:100%; width:100%"></image>
 <text class="head-text">Subway</text>
 </view>
-<view class="flexTimetable">
 
-<view class="shit3">
-<view class="view">
-<view class="shit">24 hours open </view>
-<icon bindtap="{{ stopBtn ? 'showContent' : 'hideContent' }}" type="info" size="18" color="#9E7E38"></icon></view>
-<view wx:for="{{timeTable}}" wx:if="{{choose}}" class='companyInfo1'  animation='{{animationData}}'>
-        <view class='companyInfo-left'>
-            <text class="shit4">{{item.realTimeTable}}</text>
-        </view>
-</view>
+<view class="flexTimetable">
+  <van-dropdown-menu>
+  <van-dropdown-item value="{{ value1 }}" options="{{ option1 }}" />
+  
+</van-dropdown-menu>
 </view>
 
 <view class="shit">Reynolda Hall B-1 Floor</view>
-</view>
+
 <view class="popularTimes">
 <view class="shit2"><view>Popular Times</view></view></view>
 
@@ -27,7 +22,7 @@
 </view>
 
 <view class="greyPart"> </view>
-<view class="realPart"><view class="menuTitle">Sauce</view></view>
+<view class="realPart"><view class="menuTitle">Menu</view></view>
 
 <van-tabs active="{{ active }}" bind:change="onChange">
   <van-tab title="Sauce">
