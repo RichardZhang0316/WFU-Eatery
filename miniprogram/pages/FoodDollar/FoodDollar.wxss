@@ -25,3 +25,8 @@ page{
   background:#9E7E38;
   border: radius 10px;
 }
+.button{
+  background-color: #d6b160;
+  text-align: center;
+  width: 40px;
+}

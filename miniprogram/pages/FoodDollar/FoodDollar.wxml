@@ -16,3 +16,5 @@
   active-icon="star"
   inactive-icon="star"
 />
+<view>内容：{{contents}} </view>
+<view class="button" bindtap='copyText' data-text="{{contents}}">复制</view>
