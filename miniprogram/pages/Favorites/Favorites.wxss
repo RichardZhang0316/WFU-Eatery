@@ -2,7 +2,9 @@ page{
   background-color:  #ececec ;
 }
 .root {
-  background: #9E7E38;
+  height: 50%;
+  background: rgb(214, 177, 96);
+  padding-bottom: 20rpx;
 }
 
 .maxTitle{
@@ -13,14 +15,14 @@ page{
 }
 
 .FoodDollar {
-  height: 40px;
+    height: 35px;
     width: 80%;
-    margin-top:20%;
+    margin-top:10%;
     margin-left:10%;
     margin-right:10%;
     text-align: center;
     color: white;
-    background-color:#9E7E38;
+    background-color:#d6b160;
     border-radius: 11px;
     display: flex;
     align-items:center;
@@ -29,14 +31,14 @@ page{
     border-color: white;
 }
 .DeaconDollar {
-  height: 40px;
+    height: 35px;
     width: 80%;
     margin-top:7%; 
     margin-left:10%; 
     margin-right:10%; 
     text-align: center; 
     color: white;
-    background-color:#9E7E38;
+    background-color:#d6b160;
     border-radius: 11px;
     display: flex;
     align-items:center;
@@ -45,14 +47,14 @@ page{
     border-color: white;
 }
 .ChangeMealPlan {
-  height: 40px;
+  height: 35px;
   width: 80%;
   margin-top:7%; 
   margin-left:10%; 
   margin-right:10%; 
   text-align: center; 
   color: white;
-  background-color:#9E7E38;
+  background-color:#d6b160;
   border-radius: 11px;
   display: flex;
   align-items:center;
@@ -60,8 +62,9 @@ page{
   border-style:solid;
   border-color: white;
 }
-
-.intro{
-  background:#9E7E38;
-  border: radius 10px;
+.end {
+  text-align: center;
+  color:rgb(177, 177, 177); 
+  margin-top: 10%;
+  
 }
