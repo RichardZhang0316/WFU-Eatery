@@ -1,5 +1,5 @@
 page{
-  background-color:  #ececec ;
+  background-color:  rgb(237, 237, 237) ;
 }
 .root {
   height: 50%;
@@ -15,9 +15,9 @@ page{
 }
 
 .FoodDollar {
-    height: 35px;
+    height: 30px;
     width: 80%;
-    margin-top:10%;
+    margin-top:8%;
     margin-left:10%;
     margin-right:10%;
     text-align: center;
@@ -28,31 +28,16 @@ page{
     align-items:center;
     justify-content: center;
     border-style:solid;
-    border-color: white;
+    border-color: rgba(221, 221, 218, 0.24);
+    
 }
 .DeaconDollar {
-    height: 35px;
-    width: 80%;
-    margin-top:7%; 
-    margin-left:10%; 
-    margin-right:10%; 
-    text-align: center; 
-    color: white;
-    background-color:#d6b160;
-    border-radius: 11px;
-    display: flex;
-    align-items:center;
-    justify-content: center;
-    border-style:solid;
-    border-color: white;
-}
-.ChangeMealPlan {
-  height: 35px;
+  height: 30px;
   width: 80%;
-  margin-top:7%; 
-  margin-left:10%; 
-  margin-right:10%; 
-  text-align: center; 
+  margin-top:8%;
+  margin-left:10%;
+  margin-right:10%;
+  text-align: center;
   color: white;
   background-color:#d6b160;
   border-radius: 11px;
@@ -60,11 +45,36 @@ page{
   align-items:center;
   justify-content: center;
   border-style:solid;
-  border-color: white;
+  border-color: rgba(221, 221, 218, 0.24);
+}
+.ChangeMealPlan {
+  height: 30px;
+  width: 80%;
+  margin-top:8%;
+  margin-left:10%;
+  margin-right:10%;
+  text-align: center;
+  color: white;
+  background-color:#d6b160;  
+  border-radius: 11px;  
+  display: flex;
+  align-items:center;
+  justify-content: center;
+  border-style:solid;
+  border-color: rgba(221, 221, 218, 0.24);
 }
 .end {
   text-align: center;
   color:rgb(177, 177, 177); 
-  margin-top: 10%;
   
+}
+.logo {
+text-align: center;
+margin-top:20%; 
+}
+
+.image{
+  margin-top: 23%;
+  margin-left:38%;  
+
 }
