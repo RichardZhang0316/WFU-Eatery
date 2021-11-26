@@ -20,7 +20,10 @@
 </view>
 
 <!-- 菜单↓ -->
+
+
 <view>
+   
    <swiper current="{{dataCurrent2}}" class='swiper' style="height:600px;" duration="300" bindchange="bindchange">
       <swiper-item>
          <scroll-view style="height: 100%;" scroll-y bindscroll="scroll" bindscrolltolower="reactBottom" scroll-with-animation>

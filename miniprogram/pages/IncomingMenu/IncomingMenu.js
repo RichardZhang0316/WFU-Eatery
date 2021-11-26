@@ -1,14 +1,79 @@
 var util = require('../../utils/util.js');
+
 Page({
-
   data: {
+    currentData:0,
+    dataCurrent2:null,
+    dataCurrent:null,
 
+    /*changeStatus(){
+      if (7<util.hour<11) {
+        that.setData({
+         dataCurrent2:0
+        })
+        console.log(this.data.dataCurrent2)
+       }
+   
+       else if(11<=util.hour<=14){
+         that.setData({
+         dataCurrent2:1
+        })
+        console.log(this.data.dataCurrent2)
+       }
+   
+       else if(16<=util.hour<21 && 30<=util.minute<=59){
+         that.setData({
+         dataCurrent2:2
+        })
+        console.log(this.data.dataCurrent2)
+       }
+   
+       else {
+         that.setData({
+         dataCurrent2:0
+        })
+        console.log(this.data.dataCurrent2)
+       }
+    } */
+  
   },
 
+  /*testfun: function() {
+    var that = this;
+    if (7<util.hour<11) {
+     that.setData({
+      dataCurrent2:0
+     })
+     console.log(this.data.dataCurrent2)
+    }
+
+    else if(11<=util.hour<=14){
+      that.setData({
+      dataCurrent2:1
+     })
+     console.log(this.data.dataCurrent2)
+    }
+
+    else if(16<=util.hour<21 && 30<=util.minute<=59){
+      that.setData({
+      dataCurrent2:2
+     })
+     console.log(this.data.dataCurrent2)
+    }
+
+    else {
+      that.setData({
+      dataCurrent2:0
+     })
+     console.log(this.data.dataCurrent2)
+    }
+
+   },*/
+
   onLoad: function (options) {
+
     //获取当前日期
     var time = util.formatDate(new Date());
-
     var day1 = util.getTimeLastWeek1(new Date()); //1天后时间
     var day2 = util.getTimeLastWeek2(new Date());
     var day3 = util.getTimeLastWeek3(new Date());
@@ -37,7 +102,10 @@ Page({
       day61: week6 + '\n',
       day62: day6,
 
+      currentData2:0
+
     });
+
   },
 
   /**
@@ -110,6 +178,18 @@ Page({
     var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1);
     //获取当日 
     var D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
+
+    var T = date.getHours();
+    
+    var F = date.getMinutes();
+
+
+    function getData(){
+      var that = this;
+      console.log(that.data.message)
+      }
+
+    
 
     if (day == '0') {
       D = this.data.time2;
@@ -384,7 +464,10 @@ Page({
 
   },
 
+
 })
+
+
 // function getDay(num) {
 //     var today = new Date();
 //     var nowTime = today.getTime();

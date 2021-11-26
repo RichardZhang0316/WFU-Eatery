@@ -15,8 +15,6 @@ const formatDate = date => {
   return `${[day].map(formatNumber)}`
 }
 
-
-
 const getWeekByDate1 = dates => {
   let show_day = new Array('sun','Mon','Tue','Wed','Thur','Fri','Sat');
   let date = new Date(dates);
