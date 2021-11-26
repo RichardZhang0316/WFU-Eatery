@@ -14,8 +14,7 @@ App({
       })
     }
 
-    globalData = {  
-    }
+
   },
     
   
