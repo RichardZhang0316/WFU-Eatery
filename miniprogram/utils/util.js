@@ -15,6 +15,21 @@ const formatDate = date => {
   return `${[day].map(formatNumber)}`
 }
 
+const BLD = dates=>{
+  let date = new Date(dates);
+  let hour=date.getHours();
+  let oneDay=new Array(0,1,2);
+  console.log(hour);
+  if(hour<11){
+    return oneDay[0];
+  }
+  else if(hour>=11&&hour<6){
+    return oneDay[1];
+  }
+  else{
+    return oneDay[2];
+  }
+}
 
 
 const getWeekByDate1 = dates => {
@@ -220,6 +235,7 @@ module.exports = {
  getWeekByDate4:getWeekByDate4,
  getWeekByDate5:getWeekByDate5,
  getWeekByDate6:getWeekByDate6,
+ BLD:BLD,
 }
 // module.exports.formatTimeNEW = formatTimeNEW
 // exports.formatTimeNEW = formatTimeNEW

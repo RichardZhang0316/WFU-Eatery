@@ -57,8 +57,10 @@
   display: inline;
 }
 
-.shit4 {
+.shit4{
   display: block;
+  font-size: 12px;
+  font-weight: bold;
 }
 
 .popularTimes {
@@ -204,7 +206,7 @@ ec-canvas {
 }
 
 .container {
-  height: 250px;
+  height: 450px;
 }
 
 .l3 {

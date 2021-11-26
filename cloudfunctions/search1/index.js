@@ -53,7 +53,7 @@ exports.main = async (event, context) => {
     )
 
     // 在当天菜单中查询
-    var dinningHallList = ['diningHall1']
+    var dinningHallList = ['NorthPitMenu','Pit']
     dinningHallList.forEach(function (currentValue) {
         task_list.push(db.collection(currentValue)
             .where({

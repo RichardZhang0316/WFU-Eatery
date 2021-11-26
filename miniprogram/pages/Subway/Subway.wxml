@@ -1,2 +1,87 @@
-<!--pages/Subway/Subway.wxml-->
-<text>pages/Subway/Subway.wxml</text>
+<navigation title='' show_bol='{{false}}'></navigation> 
+
+<view class="topCard">
+<image mode="aspectFill" src="https://i.loli.net/2021/11/12/JLCeQiNwfFlUIsn.jpg" style="height:100%; width:100%"></image>
+<text class="head-text">Subway</text>
+</view>
+
+<view class="flexTimetable">
+  <view class="shit3">
+    <view class="view">
+      <view class="shit">Open until 10 PM</view>
+      <icon bindtap="{{ stopBtn ? 'showContent' : 'hideContent' }}" type="info" size="16" color="#9E7E38"></icon>
+    </view>
+    <view wx:for="{{timeTable}}" wx:if="{{choose}}" class='companyInfo1' animation='{{}}'>
+      <view class='companyInfo-left'>
+        <text class="shit4">{{item.realTimeTable}}</text>
+      </view>
+    </view>
+</view>
+</view>
+
+<view class="shit">Reynolda Hall B-1 Floor</view>
+
+<view class="popularTimes">
+<view class="shit2"><view>Popular Times</view></view></view>
+
+<view class="container">
+  <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
+</view>
+
+<view class="greyPart"> </view>
+<view class="realPart"><view class="menuTitle">Menu</view></view>
+
+<van-tabs active="{{ active }}" bind:change="onChange">
+  <van-tab title="Sauce">
+      <foodCard desc="蛋黄酱的色泽淡黄，柔软适度，呈粘稠态，有一定韧性，清香爽口，回味浓厚" title="Mayonnaise 蛋黄酱" thumb="https://www.seriouseats.com/thmb/JDaa6-NZVcZQ0NJzA4Sfq2ooqDM=/450x0/filters:no_upscale():max_bytes(150000):strip_icc()/two-minute-mayonnaise-04-2512665608084cff84ce7ed03a1bec97.jpg" />
+      <foodCard desc="芥末酱为一种芥末色稠状物，具有强烈鲜明的味道，由芥菜类蔬菜的籽研磨掺水、醋或酒类调制而成" title="Yellow Mustard 黄芥末酱" thumb="https://cdn.leitesculinaria.com/wp-content/uploads/2021/04/homemade-yellow-mustard-fp.jpg.optimal.jpg" />
+      <foodCard desc="蜂蜜芥末酱一般由等分量蜂蜜及芥末酱混和制成，偏甜口，不是很辣" title="Honey Mustard 蜂蜜芥末酱" thumb="https://pinchofyum.com/wp-content/uploads/Honey-Mustard-Sauce-in-bowl-Recipe.jpg" />
+      <foodCard desc="由蛋黄酱、芥末、萊姆汁和大蒜等调制而成，是很受欢迎很百搭的一款酱" title="Chipotle Southwest 墨西哥风味西南酱" thumb="https://www.laylita.com/recipes/wp-content/uploads/2013/09/Chipotle-yogurt-or-crema-sauce.jpg" />
+      <foodCard desc="甜甜辣辣百搭酱" title="Sweet Onion 甜洋葱酱" thumb="https://spoonsofflavor.com/wp-content/uploads/2021/06/subway-sweet-onion-sauce-recipe.jpg" />
+      <foodCard desc="乡村沙拉酱，里面有洋葱、蒜、芥末酱和一些香料" title="Ranch 酸奶油沙拉酱" thumb="https://bakeitwithlove.com/wp-content/uploads/2020/07/Homemade-Ranch-Dressing-lg-sq.jpg" />
+      <foodCard desc="又称红油醋汁，是西餐各式沙拉的配料之一，由橄榄油、醋、盐、胡椒制成" title="Italian Dressing 意大利油醋酱" thumb="https://www.inspiredtaste.net/wp-content/uploads/2021/06/Homemade-Italian-Dressing-Recipe-2-1200.jpg" />
+      <foodCard desc="由沙拉油、鸡蛋、腌黄瓜精制而成，具有浓、香、滑的口感" title="1000 Island 千岛酱" thumb="https://static.toiimg.com/thumb/57629715.cms?imgsize=459970&width=800&height=800" />
+      <foodCard desc="由茄膏、醋、食糖、和香料，如黑椒、芥辣、辣酱、烟熏液等制成" title="BBQ 烧烤酱" thumb="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F24%2F2021%2F02%2F09%2F2656701_Secre_Texas_Alabama_SC_288_TX-Style-2000.jpg&q=85" />
+      <foodCard desc="由红辣椒，糖，盐，大蒜，蒸馏醋等制成" title="Sriracha 拉差辣椒酱" thumb="https://www.thespruceeats.com/thmb/085RPP70ab4Nazs4tz1DiZ1JXNU=/2119x1415/filters:fill(auto,1)/Sriracha-Sauce-GettyImages-509822896-58d5311a5f9b584683d8795f.jpg" />
+      <foodCard title="Olive Oil Blend 橄榄油混合酱" thumb="https://www.smells-like-home.com/wp-content/uploads/2020/12/Olive-Oil-Bread-Dip-8-scaled-720x720.jpg" />
+      <foodCard desc="红酒醋有圆滑的滋味和略微带甜的香味" title="Red Wine Vinegar 红酒醋" thumb="https://assets.change.org/photos/0/xd/gy/qCXDgycWBGAPFtM-800x450-noPad.jpg?1529765599" />
+  </van-tab>
+  <van-tab title="6 in.Sandwich">
+      <foodCard desc="480卡路里" title="6 in. Meatball Marinara 意大利肉丸子三明治" thumb="http://3.bp.blogspot.com/-XRHy9Tpa3tE/VJiBCpZ0ehI/AAAAAAAACgI/_79KOmMvdbA/s1600/meatball%2Bsub%2Bpic.png" price="3.99" currency="$"/>
+      <foodCard desc="290卡路里" title="6 in. Black Forest Ham 黑森林火腿三明治" thumb="https://cdn.shopify.com/s/files/1/0071/0420/0763/products/Turkey_Breast_Black_Forest_Ham_grande.png?v=1545895768" price="3.89" currency="$"/>
+      <foodCard desc="360卡路里" title="6 in. Cold Cut Combo 冷切三明治" thumb="https://www.eatthis.com/wp-content/uploads/sites/4/2021/06/subway-cold-cut-combo.jpg" price="3.89" currency="$"/>
+      <foodCard desc="480卡路里" title="6 in. Spicy Italian 意大利香辣三明治" thumb="https://www.subway.com.hk/wp-content/uploads/2017/09/Spicy-Italian-450x450.png" price="3.99" currency="$"/>
+      <foodCard desc="230卡路里" title="6 in. Veggie Delite 新鲜蔬菜三明治" thumb="https://cdn.shopify.com/s/files/1/0071/0420/0763/products/Veggie_Delite_grande.png?v=1545895905" price="3.89" currency="$"/>
+      <foodCard desc="280卡路里" title="6 in. Turkey Breast 火鸡胸三明治" thumb="https://media1.popsugar-assets.com/files/thumbor/TDSCofPjTnOcLuPHcAd7nwomLfk/fit-in/2048xorig/filters:format_auto-!!-:strip_icc-!!-/2016/03/14/961/n/1922729/3c26ad07a3c47476_product15/i/Turkey-Breast-Ham-Sandwich.jpg" price="4.49" currency="$"/>
+      <foodCard desc="410卡路里" title="6 in. Italian B.M.T." thumb="http://subway-menu.com/wp-content/uploads/2018/04/RPLC-italian_B.M.T_594x334_PR.jpg" price="4.39" currency="$"/>
+      <foodCard desc="480卡路里" title="6 in. Tuna 金枪鱼三明治" thumb="https://www.gannett-cdn.com/presto/2021/01/29/USAT/2b697721-e001-4dcc-a1b8-d701bd0a8df1-XXX_Subway_Tuna.jpg?width=1200&disable=upscale&format=pjpg&auto=webp" price="4.49" currency="$"/>
+      <foodCard desc="320卡路里" title="6 in. Oven Roasted Chicken 烤鸡三明治" thumb="https://1.bp.blogspot.com/-m0jC58gDuIw/Xg4bVXHtBbI/AAAAAAABJTE/526XoewkNJsbSpMCmARe35LNvmmKznHdwCLcBGAsYHQ/w1200-h630-p-k-no-nu/subway-6-inch-oven-roasted-sub.jpg" price="4.79" currency="$"/>
+      <foodCard desc="370卡路里" title="6 in. Sweet Onion Chicken Teriyaki 红烧甜洋葱鸡三明治" thumb="https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iHTuwQXFImY0/v2/-1x-1.jpg" price="4.89" currency="$"/>
+      <foodCard desc="380卡路里" title="6 in. Steak & Cheese 牛排奶酪三明治" thumb="https://menuandprice.com/wp-content/uploads/2021/05/Steak_product-detail_1080x482.png" price="4.99" currency="$"/>
+      <foodCard desc="610卡路里" title="6 in. Chicken & Bacon Ranch Melt 鸡肉熏肉三明治" thumb="https://uploads-ssl.webflow.com/5deec68bd42e2bd899cbc76b/5e07ca4dad6bad038ab0b69c_Chicken%20and%20Bacon%20Ranch.png" price="4.99" currency="$"/>
+      <foodCard desc="200卡路里" title="6 in. Veggie Patty 素食帕蒂三明治" thumb="https://www.totallyveganbuzz.com/wp-content/uploads/2019/04/2019-04-17_1104.jpg" price="4.59" currency="$"/>
+      <foodCard desc="550卡路里" title="6 in. Cali Fresh Turkey 新鲜火鸡三明治" thumb="https://www.chewboom.com/wp-content/uploads/2021/07/Subway-Is-Giving-Away-New-Turkey-Cali-Fresh-Subs-On-July-13-2021.jpg" price="5.49" currency="$"/>
+      <foodCard desc="610卡路里" title="6 in. Cali Fresh Steak 新鲜牛肉三明治" thumb="https://www.mashed.com/img/gallery/subways-steak-cali-what-you-need-to-know-before-you-order/what-is-in-the-steak-cali-fresh-1626632163.jpg" price="6.49" currency="$"/>
+  </van-tab>
+  <van-tab title="12 in.Sandwich">
+      <foodCard desc="960卡路里" title="12 in. Meatball Marinara 意大利肉丸子三明治" thumb="https://www.seekpng.com/png/detail/104-1046912_meatball-sub-meatball-sub-clipart.png" price="5.99" currency="$"/>
+      <foodCard desc="580卡路里" title="12 in. Black Forest Ham 黑森林火腿三明治" thumb="https://www.guysgab.com/wp-content/uploads/2013/09/Subway-Footlong.jpg" price="5.99" currency="$"/>
+      <foodCard desc="730卡路里" title="12 in. Cold Cut Combo 冷切三明治" thumb="https://www.eatthis.com/wp-content/uploads/sites/4/2021/06/subway-cold-cut-combo.jpg" price="5.79" currency="$"/>
+      <foodCard desc="600卡路里" title="12 in. Veggie Delite 新鲜蔬菜三明治" thumb="https://cdn.shopify.com/s/files/1/0071/0420/0763/products/Veggie_Delite_grande.png?v=1545895905" price="5.69" currency="$"/>
+      <foodCard desc="960卡路里" title="12 in. Spicy Italian 意大利香辣三明治" thumb="https://www.subway.com.hk/wp-content/uploads/2017/09/Spicy-Italian-450x450.png" price="5.99" currency="$"/>
+      <foodCard desc="860卡路里" title="12 in. Italian B.M.T." thumb="http://subway-menu.com/wp-content/uploads/2018/04/RPLC-italian_B.M.T_594x334_PR.jpg" price="7.19" currency="$"/>
+      <foodCard desc="560卡路里" title="12 in. Turkey Breast 火鸡胸三明治" thumb="https://media1.popsugar-assets.com/files/thumbor/TDSCofPjTnOcLuPHcAd7nwomLfk/fit-in/2048xorig/filters:format_auto-!!-:strip_icc-!!-/2016/03/14/961/n/1922729/3c26ad07a3c47476_product15/i/Turkey-Breast-Ham-Sandwich.jpg" price="7.19" currency="$"/>
+      <foodCard desc="960卡路里" title="120 in. Tuna 金枪鱼三明治" thumb="https://www.gannett-cdn.com/presto/2021/01/29/USAT/2b697721-e001-4dcc-a1b8-d701bd0a8df1-XXX_Subway_Tuna.jpg?width=1200&disable=upscale&format=pjpg&auto=webp" price="7.19" currency="$"/>
+      <foodCard desc="850卡路里" title="12 in. Oven Roasted Chicken 烤鸡三明治" thumb="https://1.bp.blogspot.com/-m0jC58gDuIw/Xg4bVXHtBbI/AAAAAAABJTE/526XoewkNJsbSpMCmARe35LNvmmKznHdwCLcBGAsYHQ/w1200-h630-p-k-no-nu/subway-6-inch-oven-roasted-sub.jpg" price="6.99" currency="$"/>
+      <foodCard desc="740卡路里" title="12 in. Sweet Onion Chicken Teriyaki 红烧甜洋葱鸡三明治" thumb="https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iHTuwQXFImY0/v2/-1x-1.jpg" price="7.99" currency="$"/>
+      <foodCard desc="760卡路里" title="12 in. Steak & Cheese 牛排奶酪三明治" thumb="https://menuandprice.com/wp-content/uploads/2021/05/Steak_product-detail_1080x482.png" price="7.99" currency="$"/>
+      <foodCard desc="1140卡路里" title="12 in. Chicken & Bacon Ranch Melt 鸡肉熏肉三明治" thumb="https://uploads-ssl.webflow.com/5deec68bd42e2bd899cbc76b/5e07ca4dad6bad038ab0b69c_Chicken%20and%20Bacon%20Ranch.png" price="4.99" currency="$"/>
+      <foodCard desc="400卡路里" title="12 in. Veggie Patty 素食帕蒂三明治" thumb="https://www.totallyveganbuzz.com/wp-content/uploads/2019/04/2019-04-17_1104.jpg" price="6.75" currency="$"/>
+  </van-tab>
+</van-tabs>
+
+
+
+
+
+

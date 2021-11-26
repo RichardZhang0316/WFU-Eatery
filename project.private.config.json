@@ -57,6 +57,31 @@
         {
           "name": "pages/updateRecordSuccess/index",
           "pathName": "pages/updateRecordSuccess/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/Shorty/Shorty",
+          "pathName": "pages/Shorty/Shorty",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/HomePage/HomePage",
+          "pathName": "pages/HomePage/HomePage",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/NorthPit/NorthPit",
+          "pathName": "pages/NorthPit/NorthPit",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/Subway/Subway",
+          "pathName": "pages/Subway/Subway",
+          "query": "",
           "scene": null
         }
       ]

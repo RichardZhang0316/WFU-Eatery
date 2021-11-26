@@ -118,9 +118,9 @@ Page({
   },
   getMenu: function (sj) {
     var that = this;
-    wx.showLoading({
-      title: '',
-    })
+    // wx.showLoading({
+    //   title: '',
+    // })
     const db = wx.cloud.database({});
     const cont = db.collection('diningHallMenu');
     cont.where({
@@ -163,7 +163,7 @@ Page({
           }
         }
 
-        wx.hideLoading()
+        // wx.hideLoading()
       }
     })
 
