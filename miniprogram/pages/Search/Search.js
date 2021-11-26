@@ -22,7 +22,7 @@ Page({
   search: function (value) {
     return new Promise((resolve, reject) => {
       wx.cloud.callFunction({
-        name: 'SearchFood',
+        name: 'search1',
         // 传递给云函数的event参数
         data: {
           searchKey: value
@@ -35,9 +35,11 @@ Page({
 
   selectResult: function (e) {
     console.log('select result', e.detail)
-    // wx.navigateTo({
-    //   url:'/pages/'
-    // })
+    var name=e.detail.item.value;
+    console.log(`pages/${name}/${name}`);
+    wx.navigateTo({
+      url: `/pages/${name}/${name}`
+    })
   },
 
   /**
