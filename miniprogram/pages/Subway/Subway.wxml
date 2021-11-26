@@ -6,10 +6,17 @@
 </view>
 
 <view class="flexTimetable">
-  <van-dropdown-menu>
-  <van-dropdown-item value="{{ value1 }}" options="{{ option1 }}" />
-  
-</van-dropdown-menu>
+  <view class="shit3">
+    <view class="view">
+      <view class="shit">Open until 10 PM</view>
+      <icon bindtap="{{ stopBtn ? 'showContent' : 'hideContent' }}" type="info" size="16" color="#9E7E38"></icon>
+    </view>
+    <view wx:for="{{timeTable}}" wx:if="{{choose}}" class='companyInfo1' animation='{{}}'>
+      <view class='companyInfo-left'>
+        <text class="shit4">{{item.realTimeTable}}</text>
+      </view>
+    </view>
+</view>
 </view>
 
 <view class="shit">Reynolda Hall B-1 Floor</view>

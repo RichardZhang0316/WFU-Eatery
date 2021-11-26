@@ -9,24 +9,17 @@ page{
   text-align: left;
   text-decoration-line: underline;
 }
-.box{
-  height: 200px;
-    width: 85%;
-    margin-top:5%;
-    margin-left:5%;
-    margin-right:5%;
-    text-align: left;
-    background-color:white;
-    border-radius: 11px;
-    border-style:solid;
-    border-color: black;
-}
-.website{
-  background:#9E7E38;
-  border: radius 10px;
-}
+
 .button{
-  background-color: #d6b160;
+  height: 30px;
+  width: 50%;
+  margin-left: 5%;
+  margin-right:5%;
   text-align: center;
-  width: 40px;
+  text-size-adjust:14;
+  color: black;
+  background-color:#d6b160;
+  display: flex;
+  align-items:center;
+  justify-content: center;
 }

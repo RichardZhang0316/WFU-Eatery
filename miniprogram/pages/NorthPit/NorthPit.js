@@ -104,22 +104,23 @@ function initChart1(canvas, width, height, dpr) {
   });
   canvas.setChart(chart);
 
-  //获取实时人流数据，链接Javascript爬虫(未成功)
-  var PecentageM = 40;   //最终data
+  //获取实时人流数据，链接Javascript爬虫
+  var PecentageM = 80;   
 
   //实时人流图表的基础参数设置
   var option = {
-    backgroundColor: "#ffffff",
+    backgroundColor: "#F6F6F6",
     series: [{
       name: 'Real_Time',
       type: 'gauge',
       detail: {
         formatter: '{value}%',
         color: '#9E7E38',
+        fontSize: 20,
       },
       axisLine: {
         lineStyle: {
-          width: 30,
+          width: 25,
           color: [
             [0.3, '#d6b160'],
             [0.7, '#957b43'],
@@ -133,8 +134,8 @@ function initChart1(canvas, width, height, dpr) {
         }
       },
       axisTick: {
-        distance: -30,
-        length: 8,
+        distance: -25,
+        length: 7,
         lineStyle: {
           color: '#fff',
           width: 2
@@ -145,13 +146,14 @@ function initChart1(canvas, width, height, dpr) {
         length: 30,
         lineStyle: {
           color: '#fff',
-          width: 4
+          width: 2
         }
       },
       axisLabel: {
-        color: 'auto',
-        distance: 35,
-        fontSize: 15,
+        color: 'white',
+        distance: 9,
+        fontSize: 0,
+        fontWeight: 'bold',
       },
       data: [{
         value: PecentageM,
@@ -244,7 +246,7 @@ Page({
             that.setData({
                 stopBtn: false
             })
-        }, 500)
+        }, 0)
     },
     choose: false,
     animationData: {},
@@ -272,7 +274,7 @@ Page({
                 animationData: animation.export(),
                 choose: false,
             })
-        }, 500)
+        }, 0)
         //收回动画开始禁用按钮
         that.setData({
             stopBtn: true,

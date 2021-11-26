@@ -2,19 +2,14 @@
 
 <view class="maxTitle">🎩 怎么查看Food Dollar Balance？</view> 
 
-<view class = "box">
-<view>1.登陆gmail,找到 Deacon Dining。</view>
-<view>2.点击“my profile", 查看账户余额以及交易记录。</view>
-<text class = "website">   Detailed Instruction：</text> <text>  https://dining.wfu.edu/wp-content/uploads/2017/09/Student-Deacon-Dining-Job-Aid-.pdf</text>
-</view>
 <van-steps
   steps="{{ steps }}"
   active="0"
   direction="vertical"
-  active-color="#d6b160"
-  inactive-color="#d6b160"
+  active-color="black"
+  inactive-color="black"
   active-icon="star"
   inactive-icon="star"
 />
-<view>内容：{{contents}} </view>
-<view class="button" bindtap='copyText' data-text="{{contents}}">复制</view>
+
+<view class="button" bindtap='copyText' data-text="{{contents}}">Get Website Link</view> 
