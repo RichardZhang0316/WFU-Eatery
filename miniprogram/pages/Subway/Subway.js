@@ -48,16 +48,7 @@ function initChart(canvas, width, height, dpr) {
 var app = getApp();
 Page({
     data: {
-        //营业时间下拉菜单
-        option1: [
-            { text: 'Mon: 10:00 AM- 1:00 AM', value: 0 },
-            { text: 'Tue: 10:00 AM- 1:00 AM', value: 1 },
-            { text: 'Wed: 10:00 AM- 1:00 AM', value: 2 },
-            { text: 'Thur: 10:00 AM- 1:00 AM', value: 3 },
-            { text: 'Fri: 10:00 AM- 1:00 AM', value: 4 },
-            { text: 'Sat: 10:00 AM- 1:00 AM', value: 5 },
-            { text: 'Sun: 10:00 AM- 1:00 AM', value: 6 },
-          ],
+        
         
         //Popular Time_图表Data
         ec: {
@@ -65,6 +56,16 @@ Page({
           },
         //前端滑动切换bar_Data input
         active: 1,
+        //下拉动画
+        choose: false,
+        animationData: {},
+        stopBtn: true,  //动画未执行完之前禁用按钮
+        navTab: ['Breakfast','Lunch','Dinner'],        
+        currentTab: 0,
+        id:'timetable',
+        sendList:[],
+
+        timeTable:[{realTimeTable:'Mon: 10:00 AM- 1:00 AM'},{realTimeTable:'Tue: 10:00 AM- 1:00 AM'},{realTimeTable:'Wed: 10:00 AM- 1:00 AM'},{realTimeTable:'Thu: 10:00 AM- 1:00 AM'},{realTimeTable:'Fri: 10:00 AM- 1:00 AM'},{realTimeTable:'Sat: 10:00 AM- 1:00 AM'},{realTimeTable:'Sun: 10:00 AM- 1:00 AM'}],
       },
       
       //前端滑动切换bar-展示信息（目前都注释掉了）
@@ -108,18 +109,18 @@ Page({
             that.setData({
                 stopBtn: false
             })
-        }, 500)
+        }, 0)
     },
 
     // 隐藏
     hideContent: function (e) {
         var that = this;
         var animation = wx.createAnimation({
-            duration: 500,
+            duration: 1,
             timingFunction: 'linear'
         })
         that.animation = animation
-        animation.height(0).opacity(0).step({ duration: 500 })
+        animation.height(0).opacity(0).step({ duration: 10 })
         that.setData({
             animationData: animation.export()
         })
@@ -129,7 +130,7 @@ Page({
                 animationData: animation.export(),
                 choose: false,
             })
-        }, 500)
+        }, 10)
         //收回动画开始禁用按钮
         that.setData({
             stopBtn: true,

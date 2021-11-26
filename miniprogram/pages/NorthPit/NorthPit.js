@@ -246,7 +246,7 @@ Page({
             that.setData({
                 stopBtn: false
             })
-        }, 500)
+        }, 0)
     },
     choose: false,
     animationData: {},
@@ -274,7 +274,7 @@ Page({
                 animationData: animation.export(),
                 choose: false,
             })
-        }, 500)
+        }, 0)
         //收回动画开始禁用按钮
         that.setData({
             stopBtn: true,

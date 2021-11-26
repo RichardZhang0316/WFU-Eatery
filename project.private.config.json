@@ -77,6 +77,12 @@
           "pathName": "pages/NorthPit/NorthPit",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/Subway/Subway",
+          "pathName": "pages/Subway/Subway",
+          "query": "",
+          "scene": null
         }
       ]
     }

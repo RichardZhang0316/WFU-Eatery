@@ -3,14 +3,14 @@
   <image mode="aspectFill" src="https://dining.wfu.edu/wp-content/uploads/2019/10/111-Philip-Gabriel-Photography-Aramark-HT-WakeForest-2.27.18-2100x900-c-default.jpg" style="height:100%; width:100%"></image>
   <text class="head-text">North Pit</text>
 </view>
-<view class="flexTimetable">
 
+<view class="flexTimetable">
   <view class="shit3">
     <view class="view">
       <view class="shit">Open until 10 PM</view>
       <icon bindtap="{{ stopBtn ? 'showContent' : 'hideContent' }}" type="info" size="16" color="#9E7E38"></icon>
     </view>
-    <view wx:for="{{timeTable}}" wx:if="{{choose}}" class='companyInfo1' animation='{{animationData}}'>
+    <view wx:for="{{timeTable}}" wx:if="{{choose}}" class='companyInfo1' animation='{{}}'>
       <view class='companyInfo-left'>
         <text class="shit4">{{item.realTimeTable}}</text>
       </view>
