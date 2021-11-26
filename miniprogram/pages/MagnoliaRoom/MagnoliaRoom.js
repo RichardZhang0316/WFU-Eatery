@@ -17,7 +17,7 @@ function initChart(canvas, width, height, dpr) {
   }).then(res => {
     // resolve(res.result)
     console.log(res);
-    var PecentageM = 90;   //最终data
+    var PecentageM = 90;   //最终data 
 
     //实时人流图表的基础参数设置
     var option = {

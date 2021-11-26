@@ -65,6 +65,18 @@
                     "pathName": "pages/Shorty/Shorty",
                     "query": "",
                     "scene": null
+                },
+                {
+                    "name": "pages/Subway/Subway",
+                    "pathName": "pages/Subway/Subway",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/MagnoliaRoom/MagnoliaRoom",
+                    "pathName": "pages/MagnoliaRoom/MagnoliaRoom",
+                    "query": "",
+                    "scene": null
                 }
             ]
         }

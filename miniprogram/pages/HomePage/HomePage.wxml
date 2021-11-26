@@ -1,12 +1,10 @@
 <view class="custom-bar" style="height:{{navHeight}}px;z-index: 2;">
   <view class="custom-bar__wrapper" style="margin-top:{{searchMarginTop}}px; height: {{searchHeight}}px;width: {{searchWidth}}px" >
-    <view class="search-group">
- 
-      <!-- <input class="search-group__input" auto-focus placeholder="输入点什么吧"/> -->
-      <navigator url="/pages/Search/Search" class="search-group__input">
+    <navigator url="/pages/Search/Search" class="search-group">
+      <view class="search-group__input">
         <icon type="search" size="17" ></icon>
-        搜索餐厅或美食</navigator>
-    </view>
+        搜索餐厅或美食</view>
+    </navigator>
   </view>
 </view>
 
@@ -829,3 +827,16 @@
 </view>
 </navigator>
 </block>
+
+<!-- <view class="explaination">
+  <image class="smallTag1" src="/images/icon1.svg"></image> 
+  </view>
+  <view class="explaination">
+  <image class="smallTag1" src="/images/icon2.svg"></image> 
+</view>
+  <view class="explaination">
+  <image class="smallTag1" src="/images/icon4.svg"></image>  
+</view>
+  <view class="explaination">
+  <image class="smallTag1" src="/images/icon5.svg"></image> 
+</view> -->
