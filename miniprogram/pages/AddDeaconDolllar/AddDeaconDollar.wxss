@@ -10,21 +10,16 @@ page{
   text-decoration-line: underline;
 }
 
-.box{
-  height: 250px;
-    width: 85%;
-    margin-top:5%;
-    margin-left:5%;
-    margin-right:5%;
-    text-align: left;
-    background-color:white;
-    border-radius: 11px;
-    border-style:solid;
-    border-color: black;
-}
-.website{
-  color:#9E7E38;
-  border: radius 10px;
-  width:50; 
-
+.button{
+  height: 30px;
+  width: 50%;
+  margin-left: 5%;
+  margin-right:5%;
+  text-align: center;
+  color: black;
+  text-size-adjust:14;
+  background-color:#d6b160;
+  display: flex;
+  align-items:center;
+  justify-content: center;
 }

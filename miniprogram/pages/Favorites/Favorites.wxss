@@ -1,8 +1,10 @@
 page{
-  background-color:  #ececec ;
+  background-color:  rgb(237, 237, 237) ;
 }
 .root {
-  background: #9E7E38;
+  height: 50%;
+  background: rgb(214, 177, 96);
+  padding-bottom: 20rpx;
 }
 
 .maxTitle{
@@ -13,55 +15,66 @@ page{
 }
 
 .FoodDollar {
-  height: 40px;
+    height: 30px;
     width: 80%;
-    margin-top:20%;
+    margin-top:8%;
     margin-left:10%;
     margin-right:10%;
     text-align: center;
     color: white;
-    background-color:#9E7E38;
+    background-color:#d6b160;
     border-radius: 11px;
     display: flex;
     align-items:center;
     justify-content: center;
     border-style:solid;
-    border-color: white;
+    border-color: rgba(221, 221, 218, 0.24);
+    
 }
 .DeaconDollar {
-  height: 40px;
-    width: 80%;
-    margin-top:7%; 
-    margin-left:10%; 
-    margin-right:10%; 
-    text-align: center; 
-    color: white;
-    background-color:#9E7E38;
-    border-radius: 11px;
-    display: flex;
-    align-items:center;
-    justify-content: center;
-    border-style:solid;
-    border-color: white;
-}
-.ChangeMealPlan {
-  height: 40px;
+  height: 30px;
   width: 80%;
-  margin-top:7%; 
-  margin-left:10%; 
-  margin-right:10%; 
-  text-align: center; 
+  margin-top:8%;
+  margin-left:10%;
+  margin-right:10%;
+  text-align: center;
   color: white;
-  background-color:#9E7E38;
+  background-color:#d6b160;
   border-radius: 11px;
   display: flex;
   align-items:center;
   justify-content: center;
   border-style:solid;
-  border-color: white;
+  border-color: rgba(221, 221, 218, 0.24);
+}
+.ChangeMealPlan {
+  height: 30px;
+  width: 80%;
+  margin-top:8%;
+  margin-left:10%;
+  margin-right:10%;
+  text-align: center;
+  color: white;
+  background-color:#d6b160;  
+  border-radius: 11px;  
+  display: flex;
+  align-items:center;
+  justify-content: center;
+  border-style:solid;
+  border-color: rgba(221, 221, 218, 0.24);
+}
+.end {
+  text-align: center;
+  color:rgb(177, 177, 177); 
+  
+}
+.logo {
+text-align: center;
+margin-top:20%; 
 }
 
-.intro{
-  background:#9E7E38;
-  border: radius 10px;
+.image{
+  margin-top: 23%;
+  margin-left:38%;  
+
 }

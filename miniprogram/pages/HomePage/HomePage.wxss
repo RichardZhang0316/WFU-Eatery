@@ -149,3 +149,16 @@ page{
     height: 70%;
     width: 100%;
   }
+
+  /* .explaination{
+    height: 30px;
+    width: 100%;
+    background-color:#ececec  ;
+    
+  }
+  .smallTag1{
+    height: 20px;
+    width: 20px;
+    margin-left: 5%;
+    margin-top: 2px;
+  } */

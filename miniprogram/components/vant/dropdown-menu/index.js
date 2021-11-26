@@ -14,7 +14,7 @@ VantComponent({
         },
         overlay: {
             type: Boolean,
-            value: true,
+            value: false,
             observer: 'updateChildrenData',
         },
         zIndex: {

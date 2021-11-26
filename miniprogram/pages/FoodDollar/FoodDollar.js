@@ -8,19 +8,21 @@ Page({
     steps: [
       {
         text: '步骤一',
-        desc: '描述信息',
+        desc: '登录gmail, 找到Deacon Dining。',
       },
       {
         text: '步骤二',
-        desc: '描述信息',
+        desc: '点击my profile，查看账户余额以及交易记录。',
       },
       {
         text: '步骤三',
-        desc: '描述信息',
+        desc: 'Instruction详见下方链接',
       },
     ],
-    contents:'这是可以复制的文字,粘贴后即可看到效果',
+    contents:'https://dining.wfu.edu/wp-content/uploads/2017/09/Student-Deacon-Dining-Job-Aid-.pdf',
   },
+
+
   copyText: function (e) {
     console.log(e)
     wx.setClipboardData({

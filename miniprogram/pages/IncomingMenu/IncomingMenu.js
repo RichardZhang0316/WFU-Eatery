@@ -3,39 +3,8 @@ var util = require('../../utils/util.js');
 Page({
   data: {
     currentData:0,
-    dataCurrent2:null,
-    dataCurrent:null,
+    dataCurrent2:0,
 
-    /*changeStatus(){
-      if (7<util.hour<11) {
-        that.setData({
-         dataCurrent2:0
-        })
-        console.log(this.data.dataCurrent2)
-       }
-   
-       else if(11<=util.hour<=14){
-         that.setData({
-         dataCurrent2:1
-        })
-        console.log(this.data.dataCurrent2)
-       }
-   
-       else if(16<=util.hour<21 && 30<=util.minute<=59){
-         that.setData({
-         dataCurrent2:2
-        })
-        console.log(this.data.dataCurrent2)
-       }
-   
-       else {
-         that.setData({
-         dataCurrent2:0
-        })
-        console.log(this.data.dataCurrent2)
-       }
-    } */
-  
   },
 
   /*testfun: function() {
@@ -86,7 +55,9 @@ Page({
     var week4 = util.getWeekByDate4(new Date());
     var week5 = util.getWeekByDate5(new Date());
     var week6 = util.getWeekByDate6(new Date());
+    var BLD=util.BLD(new Date());
     this.setData({
+      dataCurrent2:BLD,
       time1: 'Today\n',
       time2: time,
       day11: week1 + '\n',
@@ -464,17 +435,4 @@ Page({
 
   },
 
-
 })
-
-
-// function getDay(num) {
-//     var today = new Date();
-//     var nowTime = today.getTime();
-//     var ms = 24 * 3600 * 1000 * num;
-//     today.setTime(parseInt(nowTime + ms));
-
-//     // var oMoth = (today.getMonth() + 1).toString();
-//     var oDay = today.getDate().toString();
-//     return oDay ;
-//   }

@@ -10,17 +10,15 @@ page{
   text-decoration-line: underline;
 }
 
-.box{
-  height: 80px;
-    width: 85%;
-    margin-top:5%;
-    margin-left:5%;
-    margin-right:5%;
-    text-align: left;
-    background-color:white;
-    border-radius: 11px;
-    border-style:solid;
-    border-color: black;
-    text-align: center;
+.button{
+  height: 30px;
+  width: 50%;
+  margin-left: 5%;
+  margin-right:5%;
+  text-align: center;
+  color: black;
+  background-color:#d6b160;
+  display: flex;
+  align-items:center;
+  justify-content: center;
 }
-

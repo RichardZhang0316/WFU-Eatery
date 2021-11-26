@@ -57,6 +57,30 @@ Page({
 
   },
 
+
+
+  data: {
+    steps: [
+      {
+      
+        desc: ' 联系Residential Life and Housing。',
+      },
+      {
+        text: 'tel: ',
+        desc: '336-758-5185',
+      
+      },
+      {
+        text: 'email:',
+        desc: 'housing @wfu.edu',
+      
+      },
+    ],
+
+  },
+
+
+
   /**
    * 用户点击右上角分享
    */

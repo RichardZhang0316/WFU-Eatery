@@ -3,6 +3,7 @@
    <view class="maxTitle">Upcoming Menus</view>
 </view>
 
+<van-sticky>
 <view class='topTabSwiper'>
    <view class='tab  {{currentData == 0 ? "tabBorer" : "abc"}}' data-current="0" bindtap='checkCurrent'><text class="l1" data-current="0">{{time1}}</text><text class="l2" data-current="0">{{time2}}</text></view>
    <view class='tab  {{currentData == 1 ? "tabBorer" : ""}}' data-current="1" bindtap='checkCurrent'><text class="l1" data-current="1">{{day11}}</text><text class="l2" data-current="1">{{day12}}</text></view>
@@ -18,6 +19,7 @@
    <view class='tab1  {{dataCurrent2==1 ? "tabBorer" : "abc" }}' data-current="1" bindtap='currentCheck2'><text class="l3" data-current="1">Lunch</text></view>
    <view class='tab1  {{dataCurrent2==2 ? "tabBorer" : "abc" }}' data-current="2" bindtap='currentCheck2'><text class="l3" data-current="2">Dinner</text></view>
 </view>
+</van-sticky>
 
 <!-- 菜单↓ -->
 
@@ -34,7 +36,8 @@
                   </view>
                </block>
                <block wx:else>
-                  <view class='swiper_con'>暂无相关信息</view>
+                  <!-- <view class='swiper_con'>暂无相关信息</view> -->
+                  <van-empty class='swiper_con' description="暂无相关信息" />
                </block>
 
                <block wx:for-items="{{brunchL}}" wx:key="{{item.id}}">
@@ -67,7 +70,8 @@
                   </view>
                </block>
                <block wx:else>
-                  <view class='swiper_con'>暂无相关信息</view>
+                  <!-- <view class='swiper_con'>暂无相关信息</view> -->
+                  <van-empty class='swiper_con' description="暂无相关信息" />
                </block>
 
                <block wx:for-items="{{lunchL}}" wx:key="{{item.id}}">
@@ -101,7 +105,8 @@
                   </view>
                </block>
                <block wx:else>
-                  <view class='swiper_con'>暂无相关信息</view>
+                  <!-- <view class='swiper_con'>暂无相关信息</view> -->
+                  <van-empty class='swiper_con' description="暂无相关信息" />
                </block>
 
                <block wx:for-items="{{dinnerL}}" wx:key="{{item.id}}">
@@ -149,7 +154,8 @@
                   </view>
                </block>
                <block wx:else>
-                  <view class='swiper_con'>暂无相关信息</view>
+                  <!-- <view class='swiper_con'>暂无相关信息</view> -->
+                  <van-empty class='swiper_con' description="暂无相关信息" />
                </block>
 
                <block wx:for-items="{{brunchL2}}" wx:key="{{item.id}}">
@@ -182,7 +188,8 @@
                   </view>
                </block>
                <block wx:else>
-                  <view class='swiper_con'>暂无相关信息</view>
+                  <!-- <view class='swiper_con'>暂无相关信息</view> -->
+                  <van-empty class='swiper_con' description="暂无相关信息" />
                </block>
 
                <block wx:for-items="{{labrunchL2}}" wx:key="{{item.id}}">
@@ -216,7 +223,8 @@
                   </view>
                </block>
                <block wx:else>
-                  <view class='swiper_con'>暂无相关信息</view>
+                  <!-- <view class='swiper_con'>暂无相关信息</view> -->
+                  <van-empty class='swiper_con' description="暂无相关信息" />
                </block>
 
                <block wx:for-items="{{pitSL2}}" wx:key="{{item.id}}">
@@ -251,7 +259,8 @@
                   </view>
                </block>
                <block wx:else>
-                  <view class='swiper_con'>暂无相关信息</view>
+                  <!-- <view class='swiper_con'>暂无相关信息</view> -->
+                  <van-empty class='swiper_con' description="暂无相关信息" />
                </block>
 
                <block wx:for-items="{{dinnerL2}}" wx:key="{{item.id}}">
