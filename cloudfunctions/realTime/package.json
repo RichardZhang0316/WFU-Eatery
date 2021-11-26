@@ -1,5 +1,5 @@
 {
-  "name": "quickstartFunctions",
+  "name": "realTime",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,6 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "wx-server-sdk": "~2.4.0"
+    "wx-server-sdk": "latest",
+    "xmldom": "^0.6.0",
+    "xpath.js": "^1.1.0"
   }
 }
