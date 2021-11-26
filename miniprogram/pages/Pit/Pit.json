@@ -1,5 +1,8 @@
 {
   "usingComponents": {
-    "ec-canvas": "../../ec-canvas/ec-canvas"
-  }
+    "ec-canvas": "../../ec-canvas/ec-canvas",
+    "navigation": "/components/navigation/navigation", 
+    "van-transition": "/components/vant/transition/index"
+  },
+  "navigationStyle": "custom"
 }

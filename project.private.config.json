@@ -83,6 +83,12 @@
           "pathName": "pages/Subway/Subway",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/Pit/Pit",
+          "pathName": "pages/Pit/Pit",
+          "query": "",
+          "scene": null
         }
       ]
     }

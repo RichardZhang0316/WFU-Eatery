@@ -25,11 +25,15 @@
   </view>
 </view>
 
-<view class="shit2"><view>Occupancy Percentage</view></view>
 
 <!-- Popular Time图表组建↓ -->
+<view class="shit2"><view>Estimated Occupancy</view></view>
 <cover-view class="container"> 
   <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
+</cover-view>
+
+<view class="shit2"><view>Real-time Occupancy </view></view>
+<cover-view class="container1"> 
   <ec-canvas id="mychart-dom-gauge" canvas-id="mychart-gauge" ec="{{ ec1 }}"></ec-canvas>
 </cover-view>
 
