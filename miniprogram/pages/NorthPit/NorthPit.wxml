@@ -27,9 +27,12 @@
 
 <view class="shit2"><view>Occupancy Percentage</view></view>
 
+<!-- Popular Time图表组建↓ -->
 <cover-view class="container"> 
   <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
+  <ec-canvas id="mychart-dom-gauge" canvas-id="mychart-gauge" ec="{{ ec1 }}"></ec-canvas>
 </cover-view>
+
 
 <!-- 菜单↓ -->
 <view class='topTabSwiper'>

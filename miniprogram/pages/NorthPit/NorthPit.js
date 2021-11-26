@@ -83,39 +83,105 @@ function initChart(canvas, width, height, dpr) {
         // 👇 Sunday 数据！！！
         data: [1, 2, 7.9, 15, 34, 36, 23, 18, 13, 18, 22, 22, 2, 1, 1], },]}       
 
-  if (D == 1){
-    var option = Mon;
-  }
-  if (D == 2){
-    var option = Tue;
-  }
-  if (D == 3){
-    var option = Wed;
-  }
-  if (D == 4){
-    var option = Thur;
-  }
-  if (D == 5){
-    var option = Fri;
-  }
-  if (D == 6){
-    var option = Sat;
-  }
-  if (D == 7){
-    var option = Sun;
-  }
+  if (D == 1){var option = Mon;}
+  if (D == 2){var option = Tue;}
+  if (D == 3){var option = Wed;}
+  if (D == 4){var option = Thur;}
+  if (D == 5){var option = Fri;}
+  if (D == 6){var option = Sat;}
+  if (D == 7){var option = Sun;}
 
   chart.setOption(option);
   return chart;
 }
 
+//实时人流仪表盘
+function initChart1(canvas, width, height, dpr) {
+  const chart = echarts.init(canvas, null, {
+    width: width,
+    height: height,
+    devicePixelRatio: dpr // new
+  });
+  canvas.setChart(chart);
 
+  //获取实时人流数据，链接Javascript爬虫(未成功)
+  var PecentageM = 40;   //最终data
+
+  //实时人流图表的基础参数设置
+  var option = {
+    backgroundColor: "#ffffff",
+    series: [{
+      name: 'Real_Time',
+      type: 'gauge',
+      detail: {
+        formatter: '{value}%',
+        color: '#9E7E38',
+      },
+      axisLine: {
+        lineStyle: {
+          width: 30,
+          color: [
+            [0.3, '#d6b160'],
+            [0.7, '#957b43'],
+            [1, '#554626']
+          ]
+        }
+      },
+      pointer: {
+        itemStyle: {
+          color: 'auto'
+        }
+      },
+      axisTick: {
+        distance: -30,
+        length: 8,
+        lineStyle: {
+          color: '#fff',
+          width: 2
+        }
+      },
+      splitLine: {
+        distance: -30,
+        length: 30,
+        lineStyle: {
+          color: '#fff',
+          width: 4
+        }
+      },
+      axisLabel: {
+        color: 'auto',
+        distance: 35,
+        fontSize: 15,
+      },
+      data: [{
+        value: PecentageM,
+        name: 'Occupancy',
+        }
+      ],
+      itemStyle: {
+        color: '#9E7E38',
+      }
+    }]
+  };
+
+  chart.setOption(option, true);
+
+  return chart;
+}
+
+// 云函数入口函数
+exports.main = async (event, context) => {
+  return await getDiningOccupancy()
+}
 
 var app = getApp();
 Page({
     data: {
       ec: {
         onInit: initChart
+      },
+      ec1:{
+        onInit: initChart1
       },
         choose: false,
         animationData: {},
@@ -335,7 +401,7 @@ Page({
             });
           }
         }
-        // wx.hideLoading()
+        wx.hideLoading()
       }
     })
   },

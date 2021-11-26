@@ -204,7 +204,7 @@ ec-canvas {
 }
 
 .container {
-  height: 250px;
+  height: 450px;
 }
 
 .l3 {
