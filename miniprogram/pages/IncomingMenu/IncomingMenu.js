@@ -1,6 +1,6 @@
 var util = require('../../utils/util.js');
-Page({
 
+Page({
   data: {
     menu_data: {},
     have_menu_data: false
@@ -10,6 +10,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+
     //获取当前日期
     var today = new Date()
     var show_day_list = new Array('sun', 'Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat');
