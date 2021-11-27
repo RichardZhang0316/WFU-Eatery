@@ -1,76 +1,73 @@
-// pages/starbucks/starbucks.js
+// import cfg from '../../utils/config.js';
 
+//Popular_Time 表格: 目前分为“周中”和“周末”进行数据切换，数据源为Google，方法为“等比例缩放”
 import * as echarts from '../../ec-canvas/echarts';
 var util = require('../../utils/util.js');
 let chart = null;  
 
+//Initial Chart的function
 function initChart(canvas, width, height, dpr) {  
-    chart = echarts.init(canvas, null, {            // object, initial method
-      width: width,
-      height: height,
-      devicePixelRatio: dpr   
-    });
-    canvas.setChart(chart);
+  chart = echarts.init(canvas, null, {            // object, initial method
+    width: width,
+    height: height,
+    devicePixelRatio: dpr   
+  });
+  canvas.setChart(chart);
+
+  //获取当日是星期几
+  var myDate = new Date();
+  var D = myDate.getDay()
+  console.log(D) //测试用，例如: 2 = Tue
+
+  var weekdays= {              
+    tooltip: {trigger:'axis',axisPointer: {type: 'shadow'},confine: true,formatter:'{b0}: {c0}%', padding:[5,10,5,10,],show: true},//提示框前端
+    grid: {left: 20,right: 20,bottom: 15,top: 40,containLabel: true},  // 整体表格所在的grid的大小设置
+    yAxis: [{type: 'value',axisLine: {lineStyle: {color: '#999'}},axisLabel: {color: '#666'}, show: false}], //表格y轴设置
+    xAxis: [{type: 'category',axisTick: { show: false },data: ['8:00', '9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00'],axisLine: {lineStyle: {color: '#999'}},axisLabel: {color: '#666'}}], //表格x轴设置
+    series: [{name: 'Pit', type: 'bar', label: {normal: {show: false, position: 'inside', color: 'white'}},itemStyle: {borderRadius: [4, 4, 0, 0], color: '#9E7E38', shadowColor: 'rgba(0, 0, 0, 0.5)', shadowBlur: 2},  //Series设置
+        // 👇 数据录入处 ！！暂定以10为scale进行模拟, 数据源: Google
+        data: [3, 5, 6.7, 9, 7, 8, 8, 6, 7, 7, 4, 3, 4, 5, 7], },]}
+
+  var weekend= {              
+    tooltip: {trigger:'axis',axisPointer: {type: 'shadow'},confine: true,formatter:'{b0}: {c0}%', padding:[5,10,5,10,],show: true},//提示框前端
+    grid: {left: 20,right: 20,bottom: 15,top: 40,containLabel: true},  // 整体表格所在的grid的大小设置
+    yAxis: [{type: 'value',axisLine: {lineStyle: {color: '#999'}},axisLabel: {color: '#666'}, show: false}], //表格y轴设置
+    xAxis: [{type: 'category',axisTick: { show: false },data: ['8:00', '9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00'],axisLine: {lineStyle: {color: '#999'}},axisLabel: {color: '#666'}}], //表格x轴设置
+    series: [{name: 'Pit', type: 'bar', label: {normal: {show: false, position: 'inside', color: 'white'}},itemStyle: {borderRadius: [4, 4, 0, 0], color: '#9E7E38', shadowColor: 'rgba(0, 0, 0, 0.5)', shadowBlur: 2},  //Series设置
+        // 👇 数据录入处 ！！暂定以10为scale进行模拟, 数据源: Google
+        data: [3, 5, 6.7, 9, 90, 90, 90, 90, 90, 33, 64, 52, 34, 20, 17], },]}
   
-    //获取当日是星期几
-    var myDate = new Date();
-    var D = myDate.getDay()
-    console.log(D) //测试用，例如: 2 = Tue
-  
-    var weekdays= {              
-      tooltip: {trigger:'axis',axisPointer: {type: 'shadow'},confine: true,formatter:'{b0}: {c0}%', padding:[5,10,5,10,],show: true},//提示框前端
-      grid: {left: 20,right: 20,bottom: 15,top: 40,containLabel: true},  // 整体表格所在的grid的大小设置
-      yAxis: [{type: 'value',axisLine: {lineStyle: {color: '#999'}},axisLabel: {color: '#666'}, show: false}], //表格y轴设置
-      xAxis: [{type: 'category',axisTick: { show: false },data: ['8:00', '9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00'],axisLine: {lineStyle: {color: '#999'}},axisLabel: {color: '#666'}}], //表格x轴设置
-      series: [{name: 'Pit', type: 'bar', label: {normal: {show: false, position: 'inside', color: 'white'}},itemStyle: {borderRadius: [4, 4, 0, 0], color: '#9E7E38', shadowColor: 'rgba(0, 0, 0, 0.5)', shadowBlur: 2},  //Series设置
-          // 👇 数据录入处 ！！暂定以10为scale进行模拟, 数据源: Google
-          data: [3, 5, 6.7, 9, 7, 8, 8, 6, 7, 7, 4, 3, 4, 5, 7], },]}
-  
-    var weekend= {              
-      tooltip: {trigger:'axis',axisPointer: {type: 'shadow'},confine: true,formatter:'{b0}: {c0}%', padding:[5,10,5,10,],show: true},//提示框前端
-      grid: {left: 20,right: 20,bottom: 15,top: 40,containLabel: true},  // 整体表格所在的grid的大小设置
-      yAxis: [{type: 'value',axisLine: {lineStyle: {color: '#999'}},axisLabel: {color: '#666'}, show: false}], //表格y轴设置
-      xAxis: [{type: 'category',axisTick: { show: false },data: ['8:00', '9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00'],axisLine: {lineStyle: {color: '#999'}},axisLabel: {color: '#666'}}], //表格x轴设置
-      series: [{name: 'Pit', type: 'bar', label: {normal: {show: false, position: 'inside', color: 'white'}},itemStyle: {borderRadius: [4, 4, 0, 0], color: '#9E7E38', shadowColor: 'rgba(0, 0, 0, 0.5)', shadowBlur: 2},  //Series设置
-          // 👇 数据录入处 ！！暂定以10为scale进行模拟, 数据源: Google
-          data: [3, 5, 6.7, 9, 90, 90, 90, 90, 90, 33, 64, 52, 34, 20, 17], },]}
-    
-    if (D<=5 && D>=1) {var option = weekdays}
-    if (D<=7 && D>=6) {var option = weekend}
-  
-    chart.setOption(option);
-    return chart;
-  }
+  if (D<=5 && D>=1) {var option = weekdays}
+  if (D<=7 && D>=6) {var option = weekend}
+
+  chart.setOption(option);
+  return chart;
+}
 
 
-
+var app = getApp();
 Page({
-
-    /**
-     * 页面的初始数据
-     */
     data: {
-        option1: [
-            { text: 'Mon: 10:00 AM- 1:00 AM', value: 0 },
-            { text: 'Tue: 10:00 AM- 1:00 AM', value: 1 },
-            { text: 'Wed: 10:00 AM- 1:00 AM', value: 2 },
-            { text: 'Thur: 10:00 AM- 1:00 AM', value: 3 },
-            { text: 'Fri: 10:00 AM- 1:00 AM', value: 4 },
-            { text: 'Sat: 10:00 AM- 1:00 AM', value: 5 },
-            { text: 'Sun: 10:00 AM- 1:00 AM', value: 6 },
-          ],
-
-          //Popular Time_图表Data
+        //Popular Time_图表Data
         ec: {
             onInit: initChart
           },
         //前端滑动切换bar_Data input
         active: 1,
+        //下拉动画
+        choose: false,
+        animationData: {},
+        stopBtn: true,  //动画未执行完之前禁用按钮
+        navTab: ['Breakfast','Lunch','Dinner'],        
+        currentTab: 0,
+        id:'timetable',
+        sendList:[],
 
-    },
-
-    //前端滑动切换bar-展示信息（目前都注释掉了）
-    onChange(event) {
+        timeTable:[{realTimeTable:'Mon: 10:00 AM- 1:00 AM'},{realTimeTable:'Tue: 10:00 AM- 1:00 AM'},{realTimeTable:'Wed: 10:00 AM- 1:00 AM'},{realTimeTable:'Thu: 10:00 AM- 1:00 AM'},{realTimeTable:'Fri: 10:00 AM- 1:00 AM'},{realTimeTable:'Sat: 10:00 AM- 1:00 AM'},{realTimeTable:'Sun: 10:00 AM- 1:00 AM'}],
+      },
+      
+      //前端滑动切换bar-展示信息（目前都注释掉了）
+      onChange(event) {
         // wx.showToast({
         //   //title: `切换到标签 ${event.detail.name}`,
         //   //icon: 'none',
@@ -110,17 +107,18 @@ Page({
             that.setData({
                 stopBtn: false
             })
-        }, 500)
+        }, 0)
     },
 
+    // 隐藏
     hideContent: function (e) {
         var that = this;
         var animation = wx.createAnimation({
-            duration: 500,
+            duration: 1,
             timingFunction: 'linear'
         })
         that.animation = animation
-        animation.height(0).opacity(0).step({ duration: 500 })
+        animation.height(0).opacity(0).step({ duration: 10 })
         that.setData({
             animationData: animation.export()
         })
@@ -130,14 +128,13 @@ Page({
                 animationData: animation.export(),
                 choose: false,
             })
-        }, 500)
+        }, 10)
         //收回动画开始禁用按钮
         that.setData({
             stopBtn: true,
         })
     },
-
-    /**
+    /**上面是时间表核心代码
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
@@ -145,11 +142,12 @@ Page({
     },
 
     /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
+     * 生命周期函数--监听页面初次渲染完成*/
+     
     onReady: function () {
 
     },
+    
 
     /**
      * 生命周期函数--监听页面显示
@@ -190,10 +188,6 @@ Page({
      * 用户点击右上角分享
      */
     onShareAppMessage: function () {
-
-    },
-
-    onShareAppMessage: function () {
     },
 
     //Echart
@@ -205,13 +199,16 @@ Page({
           fail: function () { }
         }
       },
-
+    //   data: {
+    //     ec: {
+    //       onInit: initChart
+    //     }
+    //   },
+    
       onReady() {
         setTimeout(function () {
           // 获取 chart 实例的方式
           // console.log(chart)
         }, 2000);
       }
-
-
 })
