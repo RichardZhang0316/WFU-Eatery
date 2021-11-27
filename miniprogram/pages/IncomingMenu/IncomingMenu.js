@@ -2,46 +2,33 @@ var util = require('../../utils/util.js');
 Page({
 
   data: {
-    currentData:0,
-    dataCurrent2:0,
-
+    menu_data: {},
+    have_menu_data: false
   },
 
+  /**
+   * 生命周期函数--监听页面加载
+   */
   onLoad: function (options) {
     //获取当前日期
-    var time = util.formatDate(new Date());
-
-    var day1 = util.getTimeLastWeek1(new Date()); //1天后时间
-    var day2 = util.getTimeLastWeek2(new Date());
-    var day3 = util.getTimeLastWeek3(new Date());
-    var day4 = util.getTimeLastWeek4(new Date());
-    var day5 = util.getTimeLastWeek5(new Date());
-    var day6 = util.getTimeLastWeek6(new Date());
-    var week1 = util.getWeekByDate1(new Date());
-    var week2 = util.getWeekByDate2(new Date());
-    var week3 = util.getWeekByDate3(new Date());
-    var week4 = util.getWeekByDate4(new Date());
-    var week5 = util.getWeekByDate5(new Date());
-    var week6 = util.getWeekByDate6(new Date());
-    var BLD=util.BLD(new Date());
+    var today = new Date()
+    var show_day_list = new Array('sun', 'Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat');
+    var dateList = []
+    for (var i = 0; i < 7; i++) {
+      var show_day = show_day_list[(today.getDay() + i) % 7]
+      if (i === 0) {
+        show_day = 'Today'
+      }
+      var day = new Date()
+      day.setDate(today.getDate() + i)
+      dateList.push({
+        'show_day': show_day + "\n",
+        'day': day.getDate()
+      })
+    }
     this.setData({
-      dataCurrent2:BLD,
-      time1: 'Today\n',
-      time2: time,
-      day11: week1 + '\n',
-      day12: day1,
-      day21: week2 + '\n',
-      day22: day2,
-      day31: week3 + ' \n',
-      day32: day3,
-      day41: week4 + ' \n',
-      day42: day4,
-      day51: week5 + '\n',
-      day52: day5,
-      day61: week6 + '\n',
-      day62: day6,
-
-    });
+      dateList: dateList
+    })
   },
 
   /**
@@ -92,300 +79,133 @@ Page({
   onShareAppMessage: function () {
 
   },
-  checkCurrent: function (e) {
+  // 选择日期
+  selectDate: function (e) {
     const that = this;
-    if (that.data.currentData === e.target.dataset.current) {
+    var day = new Date()
+    day.setDate(day.getDate() + e.currentTarget.dataset.current)
+    if (that.data.currentDateIndex === e.currentTarget.dataset.current) {
       return false;
     } else {
       that.setData({
-        currentData: e.target.dataset.current
+        currentDateIndex: e.currentTarget.dataset.current
       })
-      console.log(e.target.dataset.current);
-      that.getList(e.target.dataset.current);
+      var date_string = `${day.getFullYear()}-${(day.getMonth() + 1).toString().padStart(2,'0')}-${(day.getDate()).toString().padStart(2,'0')}`
+      that.getMenuList(date_string, 'NorthPitMenu')
+      that.getMenuList(date_string, 'Pit')
     }
   },
 
-  getList: function (day) {
-    var timestamp = Date.parse(new Date());
-    var date = new Date(timestamp);
-    //获取年  
-    var Y = date.getFullYear();
-    //获取月  
-    var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1);
-    //获取当日 
-    var D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
-
-    if (day == '0') {
-      D = this.data.time2;
-    } else if (day == '1') {
-      D = this.data.day12[0];
-    } else if (day == '2') {
-      D = this.data.day22[0];
-    } else if (day == '3') {
-      D = this.data.day32[0];
-    } else if (day == '4') {
-      D = this.data.day42[0];
-    } else if (day == '5') {
-      D = this.data.day52[0];
-    } else if (day == '6') {
-      D = this.data.day62[0];
-    }
-    var sj = Y + '-' + M + '-' + D;
-    console.log(sj);
-    var that = this;
+  // 获取当天菜单
+  getMenuList: function (date_string, dinning_name) {
+    // date_string = '2021-11-09'
+    console.log('date_string:', date_string)
     wx.showLoading({
       title: '',
     })
-    const db = wx.cloud.database({});
-    const cont = db.collection('NorthPitMenu');
+    const db = wx.cloud.database();
+    var that=this;
+    const cont = db.collection(dinning_name);
     cont.where({
-      _id: sj,
+      _id: date_string,
     }).get({
       success: res => {
-        // this.setData({
-        //   list: res.data
-        // })
+        console.log(res)
         if(res.data.length < 1){
-          wx.hideLoading()
+          wx.hideLoading();
           wx.showToast({
-            title: sj+'暂无数据',
+            title: date_string+'暂无数据',
             icon: 'none',
             duration: 2000
           });
           that.setData({
-            brunchL:[],
-            lunchL:[],
-            dinnerL:[]
+            menu_data: {},
+            have_menu_data: false
           });
           return;
         }
-        console.log(res.data);
-        var ary = res.data[0];
-        delete ary._id;
-        for (var i in ary) {
-          var obj = [];
-          //console.log(i);
-          var a = 0;
-          for (var j in ary[i]) {
-            obj.push({
-              id: a,
-              name: j,
+        // 拿到数据
+        var dinningHallMenu = res.data[0];
+        delete dinningHallMenu._id;
+        for (var key in dinningHallMenu) {
+          if(key=="Pit Stop"){
+            continue;
+          }
+          if (!this.data.menu_data.hasOwnProperty(key)) {
+            this.setData({
+              [`menu_data.${key}`]: {},
+              have_menu_data: true
+            })
+          }
+          var window_data = {}
+          for (var window in dinningHallMenu[key]) {
+            window_data[window] = {
               open: false,
-              pages: ary[i][j]
-            });
-            a++;
+              food_list: dinningHallMenu[key][window]
+            }
           }
-          if (i == 'DINNER (4:30pm-9pm)') {
-            that.setData({
-              dinnerL: obj
-            });
-            console.log(obj);
-          } else if (i == 'LUNCH (11am-2pm)') {
-            that.setData({
-              lunchL: obj
-            });
-          } else if (i == 'BRUNCH (10am-2pm)') {
-            that.setData({
-              brunchL: obj
-            });
-          }
+          this.setData({
+            [`menu_data.${key}.${dinning_name}`]: {
+              open: false,
+              window: window_data
+            },
+            have_menu_data: true
+          })
         }
         wx.hideLoading()
       }
     })
-
-    this.getMenu2(sj);
-
   },
 
-  getMenu2: function (sj) {
-    var that = this;
-    wx.showLoading({
-      title: '',
-    })
-    const db = wx.cloud.database({});
-    const cont = db.collection('diningHallMenu');
-    cont.where({
-      _id: sj,
-    }).get({
-      success: res => {
-        console.log(res.data);
-        var ary = res.data[0];
-        delete ary._id;
-        for (var i in ary) {
-          var obj = [];
-          //console.log(i);
-          var a = 0;
-          for (var j in ary[i]) {
-            obj.push({
-              id: a,
-              name: j,
-              open: false,
-              pages: ary[i][j]
-            });
-            a++;
-          }
-          if (i == 'DINNER (4:30pm-8pm)') {
-            that.setData({
-              dinnerL2: obj
-            });
-            console.log(obj);
-          } else if (i == 'LATE BRUNCH (11am-2pm)') {
-            that.setData({
-              labrunchL2: obj
-            });
-          } else if (i == 'BRUNCH (9am-11am)') {
-            that.setData({
-              brunchL2: obj
-            });
-          } else if (i == 'PIT STOP (2pm-4:30pm)') {
-            that.setData({
-              pitSL2: obj
-            });
-          }
-        }
-
-        wx.hideLoading()
-      }
-    })
-
-  },
-
-  kindToggle1(e) {
-    var id = e.currentTarget.id;
-    id = parseInt(id);
-    var list =  this.data.brunchL;// this.data.list;
-    for (let i = 0, len = list.length; i < len; ++i) {
-      if (list[i].id === id) {
-        list[i].open = !list[i].open
-      } else {
-        list[i].open = false
-      }
-    }
-    this.setData({
-      brunchL:list
-    })
-  },
-  kindToggle2(e) {
-    var id = e.currentTarget.id;
-    id = parseInt(id);
-    var list =  this.data.lunchL;// this.data.list;
-    for (let i = 0, len = list.length; i < len; ++i) {
-      if (list[i].id === id) {
-        list[i].open = !list[i].open
-      } else {
-        list[i].open = false
-      }
-    }
-    this.setData({
-      lunchL:list
-    })
-  },
-  kindToggle(e) {
-    var id = e.currentTarget.id;
-    id = parseInt(id);
-    var list =  this.data.dinnerL;// this.data.list;
-    for (let i = 0, len = list.length; i < len; ++i) {
-      if (list[i].id === id) {
-        list[i].open = !list[i].open
-      } else {
-        list[i].open = false
-      }
-    }
-    this.setData({
-      dinnerL:list
-    })
-  },
-  kindToggle3(e) {
-    var id = e.currentTarget.id;
-    id = parseInt(id);
-    var list =  this.data.brunchL2;// this.data.list;
-    for (let i = 0, len = list.length; i < len; ++i) {
-      if (list[i].id === id) {
-        list[i].open = !list[i].open
-      } else {
-        list[i].open = false
-      }
-    }
-    this.setData({
-      brunchL2:list
-    })
-  },
-  kindToggle4(e) {
-    var id = e.currentTarget.id;
-    id = parseInt(id);
-    var list =  this.data.labrunchL2;// this.data.list;
-    for (let i = 0, len = list.length; i < len; ++i) {
-      if (list[i].id === id) {
-        list[i].open = !list[i].open
-      } else {
-        list[i].open = false
-      }
-    }
-    this.setData({
-      labrunchL2:list
-    })
-  },
-  kindToggle5(e) {
-    var id = e.currentTarget.id;
-    id = parseInt(id);
-    var list =  this.data.pitSL2;// this.data.list;
-    for (let i = 0, len = list.length; i < len; ++i) {
-      if (list[i].id === id) {
-        list[i].open = !list[i].open
-      } else {
-        list[i].open = false
-      }
-    }
-    this.setData({
-      pitSL2:list
-    })
-  },
-  kindToggle6(e) {
-    var id = e.currentTarget.id;
-    id = parseInt(id);
-    var list =  this.data.dinnerL2;// this.data.list;
-    for (let i = 0, len = list.length; i < len; ++i) {
-      if (list[i].id === id) {
-        list[i].open = !list[i].open
-      } else {
-        list[i].open = false
-      }
-    }
-    this.setData({
-      dinnerL2:list
-    })
-  },
-
-  currentCheck2: function (e) {
+  // 选择供餐时段
+  selectPeriod: function (e) {
     const that = this;
-    if (that.data.dataCurrent2 === e.target.dataset.current) {
+    var key_list = Object.keys(this.data.menu_data)
+    var data_index = 0
+    for (var i in key_list) {
+      if (e.currentTarget.dataset.current === key_list[i]) {
+        data_index = i
+      }
+    }
+    if (that.data.currentTimePeriodIndex === data_index) {
       return false;
     } else {
       that.setData({
-        dataCurrent2: e.target.dataset.current
+        currentTimePeriodName: e.currentTarget.dataset.current,
+        currentTimePeriodIndex: data_index
       })
-    }
-  },
-  currentCheck: function (e) {
-    const that = this;
-    if (that.data.dataCurrent === e.target.dataset.current) {
-      return false;
-    } else {
-      that.setData({
-        dataCurrent: e.target.dataset.current
-      })
+      console.log('currentTimePeriodIndex: ', that.data.currentTimePeriodIndex)
     }
   },
 
-  set: function (e) {
-    const that = this;
-
-    that.setData({
-      num: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-
+  // 餐厅折叠面板
+  dinningHallToggle: function (e) {
+    var periodName = e.currentTarget.dataset.periodname
+    var dinningHallName = e.currentTarget.dataset.dinninghallname
+    this.setData({
+      [`menu_data.${periodName}.${dinningHallName}.open`]: !this.data.menu_data[periodName][dinningHallName].open
     })
-
   },
 
+  // 窗口折叠面板
+  windowToggle: function (e) {
+    var periodName = e.currentTarget.dataset.periodname
+    var dinningHallName = e.currentTarget.dataset.dinninghallname
+    var window_name = e.currentTarget.dataset.window_name
+    var menu_data = this.data.menu_data
+    menu_data[periodName][dinningHallName]['window'][window_name].open = !menu_data[periodName][dinningHallName]['window'][window_name].open
+    this.setData({
+      menu_data
+    })
+  },
+
+  // 页面跳转（测试）
+  navigateToDinningHall: function (e) {
+    var dinninghallname = e.currentTarget.dataset.dinninghallname
+    console.log(`/pages/${dinninghallname}/${dinninghallname}`)
+    wx.navigateTo({
+      url: `/pages/${dinninghallname}/${dinninghallname}`,
+      // url: '/pages/Bento/Bento'
+    })
+  }
 })
