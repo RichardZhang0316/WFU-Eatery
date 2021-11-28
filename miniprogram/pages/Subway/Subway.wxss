@@ -23,10 +23,12 @@
   font-size: 12px;
   font-weight: bold;
   height: fit-content;
+  background-color: #fff;
+  color:grey;
 }
 
 .flexTimetable{
-  border-bottom: 1px solid #ececec;
+  
   padding-top: 5rpx;
   padding-bottom: 5rpx;
   background-color: #fff;

@@ -7,9 +7,9 @@
 
 <view class="flexTimetable">
   <view class="shit3">
-    <view class="view">
+    <view class="view" bindtap="{{ stopBtn ? 'showContent' : 'hideContent' }}">
       <view class="shit">Open until 10 PM</view>
-      <icon bindtap="{{ stopBtn ? 'showContent' : 'hideContent' }}" type="info" size="16" color="#9E7E38"></icon>
+      <icon type="info" size="16" color="#9E7E38"></icon>
     </view>
     <view wx:for="{{timeTable}}" wx:if="{{choose}}" class='companyInfo1' animation='{{}}'>
       <view class='companyInfo-left'>
@@ -31,7 +31,7 @@
 <view class="greyPart"> </view>
 <view class="realPart"><view class="menuTitle">Menu</view></view>
 
-<van-tabs active="{{ active }}" bind:change="onChange">
+<van-tabs active="{{ active }}" bind:change="onChange" color="#d6b160" title-active-color="#d6b160">
   <van-tab title="Sauce">
       <foodCard desc="蛋黄酱的色泽淡黄，柔软适度，呈粘稠态，有一定韧性，清香爽口，回味浓厚" title="Mayonnaise 蛋黄酱" thumb="https://www.seriouseats.com/thmb/JDaa6-NZVcZQ0NJzA4Sfq2ooqDM=/450x0/filters:no_upscale():max_bytes(150000):strip_icc()/two-minute-mayonnaise-04-2512665608084cff84ce7ed03a1bec97.jpg" />
       <foodCard desc="芥末酱为一种芥末色稠状物，具有强烈鲜明的味道，由芥菜类蔬菜的籽研磨掺水、醋或酒类调制而成" title="Yellow Mustard 黄芥末酱" thumb="https://cdn.leitesculinaria.com/wp-content/uploads/2021/04/homemade-yellow-mustard-fp.jpg.optimal.jpg" />
