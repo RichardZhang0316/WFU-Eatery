@@ -113,6 +113,18 @@
           "pathName": "pages/chickFilA/chickFilA",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/Zicks/Zicks",
+          "pathName": "pages/Zicks/Zicks",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/VillageJuice/VillageJuice",
+          "pathName": "pages/VillageJuice/VillageJuice",
+          "query": "",
+          "scene": null
         }
       ]
     }

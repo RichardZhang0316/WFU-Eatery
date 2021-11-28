@@ -89,7 +89,7 @@ function initChart(canvas, width, height, dpr) {
   if (D == 4){var option = Thur;}
   if (D == 5){var option = Fri;}
   if (D == 6){var option = Sat;}
-  if (D == 7){var option = Sun;}
+  if (D == 0){var option = Sun;}
 
   chart.setOption(option);
   return chart;
@@ -172,11 +172,11 @@ function initChart1(canvas, width, height, dpr) {
 }
 
 // 云函数入口函数
-exports.main = async (event, context) => {
-  return await getDiningOccupancy()
-}
+// exports.main = async (event, context) => {
+//   return await getDiningOccupancy()
+// }
 
-var app = getApp();
+//var app = getApp();
 Page({
     data: {
       menu_data: {},
