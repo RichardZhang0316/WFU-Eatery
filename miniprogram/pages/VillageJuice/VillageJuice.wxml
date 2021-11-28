@@ -1,2 +1,67 @@
-<!--pages/VillageJuice/VillageJuice.wxml-->
-<text>pages/VillageJuice/VillageJuice.wxml</text>
+<navigation title='' show_bol='{{false}}'></navigation> 
+
+<view class="topCard">
+<image mode="aspectFill" src="https://i.loli.net/2021/11/12/EucK3lRjtqaxmW1.jpg" style="height:100%; width:100%"></image>
+<text class="head-text">Village Juice</text>
+</view>
+
+<view class="flexTimetable">
+  <view class="shit3">
+    <view class="view">
+      <view class="shit">Open until 11 PM</view>
+      <icon bindtap="{{ stopBtn ? 'showContent' : 'hideContent' }}" type="info" size="16" color="#9E7E38"></icon>
+    </view>
+    <view wx:for="{{timeTable}}" wx:if="{{choose}}" class='companyInfo1' animation='{{}}'>
+      <view class='companyInfo-left'>
+        <text class="shit4">{{item.realTimeTable}}</text>
+      </view>
+    </view>
+</view>
+<view class="shit">Location: North Dining Hall</view>
+</view>
+
+
+<view class="popularTimes">
+<view class="shit2"><view>Popular Times</view></view></view>
+
+<view class="container">
+  <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
+</view>
+
+<view class="greyPart"> </view>
+<view class="realPart"><view class="menuTitle">Menu</view></view>
+
+<van-tabs active="{{ active }}" bind:change="onChange">
+  <van-tab title="Smoothies">
+    <foodCard desc="280卡路里 详情: oat milk, cold brew coffee, banana, date, cacao" title="MOCHA-NANA" thumb="https://i.loli.net/2021/11/28/7e61mLHqPzUjwYX.png" price="6.95" currency="$"/>
+    <foodCard desc="320卡路里 详情: oat milk, organic strawberry, banana, date" title="PINKY SWEAR" thumb="https://i.loli.net/2021/11/28/bWhcONP9mfkI6gl.png" price="7.95" currency="$"/>
+    <foodCard desc="400卡路里 详情: oat milk, pineapple, banana, mango, lime" title="SUNSET" thumb="https://i.loli.net/2021/11/28/MctwWiO6aAeIYR1.png" price="7.95" currency="$"/>
+    <foodCard desc="340卡路里 详情: oat milk, spinach, banana, date, cacao nibs, mint leaves" title="MINT CHIP" thumb="https://i.loli.net/2021/11/28/nQYfJKgvyeFGRb4.png" price="8.95" currency="$"/>
+    <foodCard desc="450卡路里 详情: oat milk, cacao nibs, almond butter, banana, date" title="CURIOUS GEORGE" thumb="https://i.loli.net/2021/11/28/Ks18bDIWNUr9Gn4.png" price="7.95" currency="$"/>
+    <foodCard desc="270卡路里 详情: oat milk, mango, cucumber, spinach, kale, banana, mint" title="GREEN COCO" thumb="https://i.loli.net/2021/11/28/P4XQFbWmcYVq6Io.png" price="8.95" currency="$"/>
+    <foodCard desc="480卡路里 详情: oat milk, organic blueberry, almond butter, date, chia seed, banana" title="SUPER BLUE" thumb="https://i.loli.net/2021/11/28/ReVE3J9kK1uLp5B.png" price="9.95" currency="$"/>
+  </van-tab>
+  <van-tab title="Bowls">
+    <foodCard desc="330卡路里 详情：oat milk, organic strawberry, banana, date. topped with organic strawberry, banana, toasted almond crumble, goji berries" title="PINKY SWEAR BOWL" thumb="https://i.loli.net/2021/11/28/POIlcx81sNqKahU.png" price="8.95" currency="$"/>
+    <foodCard desc="400卡路里 详情：oat milk, pineapple, banana, mango, lime. topped with banana, coconut, goji berries, mango" title="SUNSET BOWL" thumb="https://i.loli.net/2021/11/28/pZiVBRnKPqgthNL.png" price="8.95" currency="$"/>
+    <foodCard desc="440卡路里 详情：oat milk, banana, almond butter, date. topped with frozen organic blueberry, toasted almond crumble, banana, bee" title="COCO-NUT-BUTTER BOWL" thumb="https://i.loli.net/2021/11/28/UckE62VGYSFuR4A.png" price="8.95" currency="$"/>
+    <foodCard desc="440卡路里 详情：oat milk, organic acai, banana, organic strawberry and date. topped with banana, cacao nib, organic strawberry, coconut, toasted almond crumble" title="AÇAÍ BOWL" thumb="https://i.loli.net/2021/11/28/znyxTitaLUpSoJC.png" price="10.95" currency="$"/>
+    <foodCard desc="440卡路里 详情：gluten free oats, oat milk, almond butter, organic strawberry, honey, banana, toasted almond crumble" title="OVERNIGHT OATS" thumb="https://i.loli.net/2021/11/28/3ZeGgWhwoLY1NC7.png" price="7.95" currency="$"/>
+  </van-tab>
+  <van-tab title="Wraps">
+    <foodCard desc="930卡路里 详情: Tater tots (炸土豆), bacon, BBQ sauce, cheddar (干酪), mozzarella & ranch added" title="Puff Daddy" thumb="https://spoonuniversity.com/wp-content/uploads/sites/100/2016/03/zicks-changes.jpg" price="8.79" currency="$"/>
+    
+    
+  </van-tab>
+  <van-tab title="Salad">
+
+    <foodCard desc="490卡路里 (可以换为Chipotle Honey风味)" title="FTC Chicken Tenders (3 pc.)" thumb="https://food.fnr.sndimg.com/content/dam/images/food/plus/fullset/2020/02/04/0/GuysBigBash_TOUCHDOWN-TENDERS_0023_s4x3.jpg.rend.hgtvcom.406.305.suffix/1580853266209.jpeg" price="4.29"currency="$"/>
+    <foodCard desc="820卡路里 (可以换为Chipotle Honey风味)" title="FTC Chicken Tenders (5 pc.)" thumb="https://food.fnr.sndimg.com/content/dam/images/food/plus/fullset/2020/02/04/0/GuysBigBash_TOUCHDOWN-TENDERS_0023_s4x3.jpg.rend.hgtvcom.406.305.suffix/1580853266209.jpeg" price="5.79"currency="$"/>
+  </van-tab>
+</van-tabs>
+
+
+
+
+
+

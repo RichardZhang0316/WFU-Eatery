@@ -15,9 +15,9 @@
             <text class="shit4">{{item.realTimeTable}}</text>
         </view>
 </view>
+<view class="shit">Location: Benson, Food Court Center</view>
 </view>
 
-<view class="shit">Benson, Food Court Center</view>
 </view>
 <view class="popularTimes">
 <view class="shit2"><view>Popular Times</view></view></view>
@@ -60,7 +60,7 @@
   </van-tab>
 
 <van-tab title="Beverage">
-    <foodCard desc="630卡路里" title="Cookies & Cream Milkshake 奥利奥碎&奶油奶昔" thumb="https://www.cfacdn.com/img/order/COM/Menu_Refresh/Treats/Treats%20PDP/_0000s_0000_%5BFeed%5D_0005s_0004_Treats_Cookies-Cream-Milkshake.png" price="3.85" currency="$"/>
+    <foodCard desc="630卡路里" title="Cookies & Cream Milkshake 奥利奥&奶油奶昔" thumb="https://www.cfacdn.com/img/order/COM/Menu_Refresh/Treats/Treats%20PDP/_0000s_0000_%5BFeed%5D_0005s_0004_Treats_Cookies-Cream-Milkshake.png" price="3.85" currency="$"/>
     <foodCard desc="580卡路里" title="Vanilla Milkshake 香草奶昔" thumb="https://www.cfacdn.com/img/order/COM/Menu_Refresh/Treats/Treats%20PDP/_0000s_0002_%5BFeed%5D_0005s_0002_Treats_Vanilla-Milkshake.png" price="3.85" currency="$"/>
     <foodCard desc="590卡路里" title="Chocolate Milkshake 巧克力奶昔" thumb="https://www.cfacdn.com/img/order/COM/Menu_Refresh/Treats/Treats%20PDP/_0000s_0005_%5BFeed%5D_0005s_0005_Treats_Chocolate-Milkshake.png" price="3.85" currency="$"/>
     <foodCard desc="570卡路里" title="Strawberry Milkshake 草莓奶昔" thumb="https://www.cfacdn.com/img/order/COM/Menu_Refresh/Treats/Treats%20PDP/_0000s_0001_%5BFeed%5D_0005s_0003_Treats_Strawberry-Milkshake.png" price="3.85" currency="$"/>

@@ -1,2 +1,71 @@
-<!--pages/Zicks/Zicks.wxml-->
-<text>pages/Zicks/Zicks.wxml</text>
+<navigation title='' show_bol='{{false}}'></navigation> 
+
+<view class="topCard">
+<image mode="aspectFill" src="https://i.loli.net/2021/11/12/JDPvo2uyTXbBcSp.jpg" style="height:100%; width:100%"></image>
+<text class="head-text">Zick's</text>
+</view>
+
+<view class="flexTimetable">
+  <view class="shit3">
+    <view class="view">
+      <view class="shit">Open until 11 PM</view>
+      <icon bindtap="{{ stopBtn ? 'showContent' : 'hideContent' }}" type="info" size="16" color="#9E7E38"></icon>
+    </view>
+    <view wx:for="{{timeTable}}" wx:if="{{choose}}" class='companyInfo1' animation='{{}}'>
+      <view class='companyInfo-left'>
+        <text class="shit4">{{item.realTimeTable}}</text>
+      </view>
+    </view>
+</view>
+<view class="shit">Location: Hearn Plaza in Poteat Residence Hall</view>
+</view>
+
+
+
+<view class="popularTimes">
+<view class="shit2"><view>Popular Times</view></view></view>
+
+<view class="container">
+  <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
+</view>
+
+<view class="greyPart"> </view>
+<view class="realPart"><view class="menuTitle">Menu</view></view>
+
+<van-tabs active="{{ active }}" bind:change="onChange">
+  <van-tab title="Starters">
+    <foodCard desc="540卡路里 详情：5 Golden Crispy Fried Mozzarella Sticks served with Zick's Sauce" title="Mozzarella Sticks" thumb="https://sugarspunrun.com/wp-content/uploads/2021/07/Homemade-Mozzarella-Sticks-Recipe-1-of-1.jpg" price="6.69" currency="$"/>
+    <foodCard desc="700卡路里 详情：Tater tots topped with cheddar cheese, bacon, tomatoes & red onion, drizzled with ranch dressing" title="Totchos" thumb="https://www.keyingredient.com/media/03/50/3cee1948cad642e9faaeaa07841dc1f61581.jpg/rh/loaded-totchos.jpg" price="6.69" currency="$"/>
+    <foodCard desc="630卡路里 详情：Three beef meatballs with classic red sauce, whipped ricotta cheese, pepperoncini and topped with toasted breadcrumbs" title="Meatball Trio" thumb="https://media-cdn.tripadvisor.com/media/photo-s/12/26/71/6f/mellow-mushroom-meatball.jpg" price="6.99" currency="$"/>
+    <foodCard desc="620卡路里" title="Garlic Knots" thumb="https://www.whiskaffair.com/wp-content/uploads/2014/10/Garlic-Knots-3.jpg" price="5.19" currency="$"/>
+  </van-tab>
+  <van-tab title="Slices">
+    <foodCard desc="450卡路里 详情：Classic 18' pizza with Zick's sauce, fresh mozzarella, basil and drizzled with olive oil" title="Margherita Pizza" thumb="https://cdn.loveandlemons.com/wp-content/uploads/2019/09/margherita-pizza.jpg" price="4.29" currency="$"/>
+    <foodCard desc="390卡路里 详情：Classic 18' pizza with Zick's sauce, mozarella cheese and pepperoni (意大利辣香肠)" title="Pepperoni Pizza" thumb="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F19%2F2014%2F07%2F10%2Fpepperoni-pizza-ck-x.jpg&q=85" price="4.29" currency="$"/>
+    <foodCard desc="490卡路里 详情：Classic 18' pizza with ricotta & parmesan cheeses, sausage and mushrooms" title="White Pizza" thumb="https://www.modernhoney.com/wp-content/uploads/2019/05/The-Best-3-Cheese-White-Pizza-3.jpg" price="4.29" currency="$"/>
+  </van-tab>
+  <van-tab title="Zick's Signature">
+    <foodCard desc="930卡路里 详情: Tater tots (炸土豆), bacon, BBQ sauce, cheddar (干酪), mozzarella & ranch added" title="Puff Daddy" thumb="https://spoonuniversity.com/wp-content/uploads/sites/100/2016/03/zicks-changes.jpg" price="8.79" currency="$"/>
+    <foodCard desc="500卡路里 详情: Basil pesto (罗勒青蒜酱), sundried tomato, mozzarella & basil added" title="Couch Tomato" thumb="https://spoonuniversity.com/wp-content/uploads/sites/100/2016/03/zicks-changes.jpg" price="8.79" currency="$"/>
+    <foodCard desc="520卡路里 详情: BBQ chicken, red onion, mozzarella and ranch dressing added (推荐)" title="Ken & Barbie" thumb="https://spoonuniversity.com/wp-content/uploads/sites/100/2016/03/zicks-changes.jpg" price="8.79" currency="$"/>
+    <foodCard desc="330卡路里 详情: Zick's pizza sauce, diced chicken, roasted garlic, broccoli, mozzarella and romano cheese added" title="Chicken, Garlic & Broccoli" thumb="https://spoonuniversity.com/wp-content/uploads/sites/100/2016/03/zicks-changes.jpg" price="8.79" currency="$"/>
+    <foodCard desc="530卡路里 详情: Alfredo sauce, roasted potatoes, bacon, red onion, scallions (葱), cheddar, mozzarella, sour cream & ranch added" title="Loaded Potato" thumb="https://spoonuniversity.com/wp-content/uploads/sites/100/2016/03/zicks-changes.jpg" price="8.79" currency="$"/>
+    <foodCard desc="450卡路里 详情: Alfredo sauce, diced chicken, ham, swiss & bleu cheeses (蓝纹奶酪) added" title="Chicken Cordon Bleu" thumb="https://spoonuniversity.com/wp-content/uploads/sites/100/2016/03/zicks-changes.jpg" price="8.79" currency="$"/>
+    <foodCard desc="390卡路里 详情: Zicks pizza sauce, spinach, bacon, red onion, roasted garlic and feta cheese added" title="Spinach" thumb="https://spoonuniversity.com/wp-content/uploads/sites/100/2016/03/zicks-changes.jpg" price="8.79" currency="$"/>
+    
+  </van-tab>
+  <van-tab title="Flying the Coop">
+    <foodCard desc="770卡路里" title="TLC Combo 1" thumb="https://i.loli.net/2021/11/28/FmJbgWHPLqenQBh.png" price="7.99"currency="$"/>
+    <foodCard desc="980卡路里" title="TLC Combo 2" thumb="https://i.loli.net/2021/11/28/FmJbgWHPLqenQBh.png" price="9.99"currency="$"/>
+    <foodCard desc="770卡路里" title="TLC Combo 3" thumb="https://i.loli.net/2021/11/28/FmJbgWHPLqenQBh.png" price="7.99"currency="$"/>
+    <foodCard desc="490卡路里 (可以换为Chipotle Honey风味)" title="FTC Chicken Tenders Sandwich" thumb="https://user-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_1440,w_720,f_auto,q_auto/1408291/Web_Flew_The_Coop_Fare_Photo-19_scxbzv.jpg" price="4.29"currency="$"/>
+    <foodCard desc="490卡路里 (可以换为Chipotle Honey风味)" title="FTC Chicken Tenders (3 pc.)" thumb="https://food.fnr.sndimg.com/content/dam/images/food/plus/fullset/2020/02/04/0/GuysBigBash_TOUCHDOWN-TENDERS_0023_s4x3.jpg.rend.hgtvcom.406.305.suffix/1580853266209.jpeg" price="4.29"currency="$"/>
+    <foodCard desc="820卡路里 (可以换为Chipotle Honey风味)" title="FTC Chicken Tenders (5 pc.)" thumb="https://food.fnr.sndimg.com/content/dam/images/food/plus/fullset/2020/02/04/0/GuysBigBash_TOUCHDOWN-TENDERS_0023_s4x3.jpg.rend.hgtvcom.406.305.suffix/1580853266209.jpeg" price="5.79"currency="$"/>
+  </van-tab>
+</van-tabs>
+
+
+
+
+
+

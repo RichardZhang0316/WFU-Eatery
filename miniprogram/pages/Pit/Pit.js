@@ -166,7 +166,7 @@ function initChart1(canvas, width, height, dpr) {
 }
 
 
-var app = getApp();
+//var app = getApp();
 Page({
     data: {
       menu_data: {},

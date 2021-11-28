@@ -99,7 +99,13 @@ function initChart1(canvas, width, height, dpr) {
   canvas.setChart(chart);
 
   //获取实时人流数据，链接Javascript爬虫
-  var PecentageM = 80;   
+  wx.cloud.callFunction({
+    name: 'realTime',
+    // 传递给云函数的event参数
+  }).then(res => {
+    // resolve(res.result)
+    console.log(res);
+    var PecentageM = res.result.MagnoliaRoom.occupancy_percent;   //最终data 
 
   //实时人流图表的基础参数设置
   var option = {
@@ -163,14 +169,14 @@ function initChart1(canvas, width, height, dpr) {
   chart.setOption(option, true);
 
   return chart;
-}
+})}
 
-// 云函数入口函数
-exports.main = async (event, context) => {
-  return await getDiningOccupancy()
-}
+// // 云函数入口函数
+// exports.main = async (event, context) => {
+//   return await getDiningOccupancy()
+// }
 
-var app = getApp();
+// var app = getApp();
 Page({
     data: {
       ec: {
