@@ -1,9 +1,10 @@
 
-//Popular Time 表格
+//Popular_Time 表格: 目前分为“周中”和“周末”进行数据切换，数据源为Google，方法为“等比例缩放”
 import * as echarts from '../../ec-canvas/echarts';
+var util = require('../../utils/util.js');
 let chart = null;  
 
-// initial Chart的function
+//Initial Chart的function
 function initChart(canvas, width, height, dpr) {  
   chart = echarts.init(canvas, null, {            // object, initial method
     width: width,
@@ -11,8 +12,13 @@ function initChart(canvas, width, height, dpr) {
     devicePixelRatio: dpr   
   });
   canvas.setChart(chart);
-  
-  var option = {              
+
+  //获取当日是星期几
+  var myDate = new Date();
+  var D = myDate.getDay()
+  console.log(D) //测试用，例如: 2 = Tue
+
+  var weekdays= {              
     tooltip: {trigger:'axis',axisPointer: {type: 'shadow'},confine: true,formatter:'{b0}: {c0}%', padding:[5,10,5,10,],show: true},//提示框前端
     grid: {left: 20,right: 20,bottom: 15,top: 40,containLabel: true},  // 整体表格所在的grid的大小设置
     yAxis: [{type: 'value',axisLine: {lineStyle: {color: '#999'}},axisLabel: {color: '#666'}, show: false}], //表格y轴设置
@@ -22,7 +28,7 @@ function initChart(canvas, width, height, dpr) {
     data: [3, 5, 6.7, 29, 47, 38, 28, 22, 27, 33, 64, 52, 34, 20, 17], },]}
 
   
-  chart.setOption(option);
+  chart.setOption(weekdays);
   return chart;
 }
 
@@ -30,17 +36,32 @@ function initChart(canvas, width, height, dpr) {
 var app = getApp();
 Page({
     data: {
+        //Popular Time_图表Data
+        ec: {
+            onInit: initChart
+          },
+        //前端滑动切换bar_Data input
+        active: 1,
+        //下拉动画
         choose: false,
         animationData: {},
-        stopBtn: true,//动画未执行完之前禁用按钮
+        stopBtn: true,  //动画未执行完之前禁用按钮
         navTab: ['Breakfast','Lunch','Dinner'],        
         currentTab: 0,
         id:'timetable',
         sendList:[],
 
-        timeTable:[{realTimeTable:'Mon: 10:00 AM- 1:00 AM'},{realTimeTable:'Tue: 10:00 AM- 1:00 AM'},{realTimeTable:'Wed: 10:00 AM- 1:00 AM'},{realTimeTable:'Thu: 10:00 AM- 1:00 AM'},{realTimeTable:'Fri: 10:00 AM- 1:00 AM'},{realTimeTable:'Sat: 10:00 AM- 1:00 AM'},{realTimeTable:'Sun: 10:00 AM- 1:00 AM'}],
+        timeTable:[{realTimeTable:'Mon: 7:30 AM- 22:00 PM'},{realTimeTable:'Tue: 7:30 AM- 22:00 PM'},{realTimeTable:'Wed: 7:30 AM- 22:00 PM'},{realTimeTable:'Thu: 7:30 AM- 22:00 PM'},{realTimeTable:'Fri: 7:30 AM- 22:00 PM'},{realTimeTable:'Sat: 7:30 AM- 22:00 PM'},{realTimeTable:'Sun: Closed'}],
       },
       
+      //前端滑动切换bar-展示信息（目前都注释掉了）
+      onChange(event) {
+        // wx.showToast({
+        //   //title: `切换到标签 ${event.detail.name}`,
+        //   //icon: 'none',
+        // });
+      },
+
       showContent: function (e) {
         // 用that取代this，防止setTimeout内使用this出错
         var that = this;
@@ -48,8 +69,8 @@ Page({
         var animation = wx.createAnimation({
             // 动画持续时间
             duration: 500,
-            // 定义动画效果，当前是匀速
-            timingFunction: 'linear'
+            // 定义动画效果
+            timingFunction: 'sinusoidalln'
         })
         // 将该变量赋值给当前动画
         that.animation = animation
@@ -74,18 +95,18 @@ Page({
             that.setData({
                 stopBtn: false
             })
-        }, 500)
+        }, 0)
     },
 
     // 隐藏
     hideContent: function (e) {
         var that = this;
         var animation = wx.createAnimation({
-            duration: 500,
+            duration: 1,
             timingFunction: 'linear'
         })
         that.animation = animation
-        animation.height(0).opacity(0).step({ duration: 500 })
+        animation.height(0).opacity(0).step({ duration: 10 })
         that.setData({
             animationData: animation.export()
         })
@@ -95,7 +116,7 @@ Page({
                 animationData: animation.export(),
                 choose: false,
             })
-        }, 500)
+        }, 10)
         //收回动画开始禁用按钮
         that.setData({
             stopBtn: true,
@@ -166,11 +187,11 @@ Page({
           fail: function () { }
         }
       },
-      data: {
-        ec: {
-          onInit: initChart
-        }
-      },
+    //   data: {
+    //     ec: {
+    //       onInit: initChart
+    //     }
+    //   },
     
       onReady() {
         setTimeout(function () {

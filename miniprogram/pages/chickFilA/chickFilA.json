@@ -2,7 +2,9 @@
   "usingComponents": {
     "navigation": "/components/navigation/navigation" ,
     "foodCard": "/components/vant/card/index",
-    "ec-canvas": "../../ec-canvas/ec-canvas"
+    "ec-canvas": "../../ec-canvas/ec-canvas",
+    "van-tab": "/components/vant/tab/index",
+    "van-tabs": "/components/vant/tabs/index"
   },
   "navigationStyle": "custom"
 }
