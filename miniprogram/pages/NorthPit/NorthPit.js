@@ -83,13 +83,7 @@ function initChart(canvas, width, height, dpr) {
         // 👇 Sunday 数据！！！
         data: [1, 2, 7.9, 15, 34, 36, 23, 18, 13, 18, 22, 22, 2, 1, 1], },]}       
 
-  if (D == 1){var option = Mon;}
-  if (D == 2){var option = Tue;}
-  if (D == 3){var option = Wed;}
-  if (D == 4){var option = Thur;}
-  if (D == 5){var option = Fri;}
-  if (D == 6){var option = Sat;}
-  if (D == 0){var option = Sun;}
+  var option=[Sun,Mon,Tue,Wed,Thur,Fri,Sat][D];
 
   chart.setOption(option);
   return chart;

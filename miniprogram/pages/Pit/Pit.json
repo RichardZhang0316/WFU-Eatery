@@ -3,7 +3,9 @@
     "ec-canvas": "../../ec-canvas/ec-canvas",
     "navigation": "/components/navigation/navigation", 
     "van-transition": "/components/vant/transition/index",
-    "van-empty":"/components/vant/empty/index"
+    "van-empty":"/components/vant/empty/index",
+    "van-tab": "/components/vant/tab/index",
+    "van-tabs": "/components/vant/tabs/index"
   },
   "navigationStyle": "custom"
 }

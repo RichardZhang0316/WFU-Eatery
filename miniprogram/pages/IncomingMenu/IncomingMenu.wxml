@@ -4,37 +4,35 @@
    <view class="maxTitle">Upcoming Menus</view>
 </view>
 
-<!-- 日期 Tab -->
 <van-sticky>
-<view class='topTabSwiper'>
-   <view wx:for="{{dateList}}" wx:key="day">
-      <view class='tab  {{currentDateIndex == index ? "tabBorer" : ""}}' data-current="{{index}}" bindtap='selectDate'>
-         <text class="l1">{{item.show_day}}</text>
-         <text class="l2">{{item.day}}</text>
+   <!-- 日期 Tab -->
+   <view class='topTab topTabSwiper'>
+      <view wx:for="{{dateList}}" wx:key="day">
+         <view class='tab  {{currentDateIndex == index ? "tabBorer" : ""}}' data-current="{{index}}" bindtap='selectDate'>
+            <text class="l1">{{item.show_day}}</text>
+            <text class="l2">{{item.day}}</text>
+         </view>
       </view>
    </view>
-</view>
 
-<view wx:if="{{!have_menu_data}}">
-   <van-empty description="没吃的" />
-</view>
-<!-- 供餐时间 Tab -->
-<view hidden="{{!have_menu_data}}" class='topTabSwiper timeSwiper'>
-   <view wx:for="{{menu_data}}" wx:for-index="key" wx:for-item="key" wx:key="*this" class='tab1 {{currentTimePeriodName==key? "tabBorer" : ""}}' data-current="{{key}}" bindtap='selectPeriod'>
-      <text class="l3">{{key}}</text>
+   <!-- 供餐时间 Tab -->
+   <view class="topTab">
+      <van-tabs active="{{currentTimePeriodIndex}}" title-active-color="#d6b160" color="#d6b160" bind:change="onTabChange">
+         <van-tab wx:for="{{['Breakfast','Lunch','Dinner']}}" wx:for-item="periodName" wx:key="*this" title="{{periodName}}" bindtap='selectPeriod'></van-tab>
+      </van-tabs>
    </view>
-</view>
 </van-sticky>
 
 <!-- 菜单↓ -->
-<view hidden="{{!have_menu_data}}">
-   <swiper current="{{currentTimePeriodIndex}}" class='swiper' style="height:600px;" duration="300" bindchange="bindchange">
+<view class="swiper-container" id="swiper-container">
+   <swiper current="{{currentTimePeriodIndex}}" class='swiper' style="height:{{swiper_height}}px;" duration="300" bindchange="onSwiperChange">
       <!-- 供餐时段 swiper 循环 -->
-      <swiper-item wx:for="{{menu_data}}" wx:for-index="periodName" data-key="{{key}}" wx:key="*this">
-         <scroll-view style="height: 100%;" scroll-y scroll-with-animation>
-
+      <swiper-item class="swiper-item" wx:for="{{['Breakfast','Lunch','Dinner']}}" wx:for-item="periodName" wx:key="*this">
+         <scroll-view class="swiper-item-scroll" enable-flex scroll-y scroll-with-animation style="height:{{swiper_height}}px;">
+            <van-empty class="empty-sign" description="没吃的" />
+            <view class="dinningHallName-list">
             <!-- 餐厅循环 -->
-            <block wx:for="{{menu_data[currentTimePeriodName]}}" wx:for-index="dinningHallName" wx:for-item="dinningHallMenu" wx:key="*this">
+            <view class="dinningHallName-item" wx:for="{{menu_data[periodName]}}" wx:for-index="dinningHallName" wx:for-item="dinningHallMenu" wx:key="*this">
                <view class="kind-list__item">
                   <view class="kind-list__item-hd {{dinningHallMenu['open']?'kind-list__item-hd-show':''}}" data-periodname="{{periodName}}" data-dinninghallname="{{dinningHallName}}" bindtap="dinningHallToggle">
                      <view class="kind-list-text">{{dinningHallName}}</view>
@@ -59,7 +57,9 @@
                      </view>
                   </view>
                </view>
-            </block>
+            </view>
+         </view>
+         <!-- </view>. -->
          </scroll-view>
       </swiper-item>
    </swiper>

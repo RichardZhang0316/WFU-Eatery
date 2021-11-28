@@ -74,6 +74,7 @@
 page {
   /* background-color: #ececec; */
   background-color: var(--weui-BG-2);
+  /* height: 100%; */
 }
 
 .root {
@@ -122,6 +123,10 @@ page {
   width: 100%;
 }
 
+.topTab {
+  background-color: white;
+}
+
 .topTabSwiper:after {
   content: "";
   clear: both;
@@ -133,8 +138,13 @@ page {
   color: rgb(214, 177, 96);
 }
 
+.swiper-container {
+  /* height: 100%; */
+}
+
 .swiper {
   width: 100%;
+  /* height: 100%; */
 }
 
 .swiper_con {
@@ -142,6 +152,29 @@ page {
   width: 100%;
   height: 100%;
   padding: 80rpx 0;
+}
+
+/* .period-swiper-item {
+  height: 100%;
+  background-color: white;
+} */
+
+.swiper-item-scroll {
+  display: flex;
+  justify-content: center;
+}
+
+.empty-sign {
+  position: absolute;
+  top: 0;
+}
+
+.dinningHallName-list {
+  /* position: fixed;
+  top: 0; */
+  height: 100%;
+  background-color: white;
+  z-index: 1;
 }
 
 .checkCurrent {

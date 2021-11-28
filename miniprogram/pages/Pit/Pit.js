@@ -83,13 +83,7 @@ function initChart(canvas, width, height, dpr) {
         // 👇 Sunday 数据！！！
         data: [0, 7.6, 18, 35, 40, 38, 18, 5.2, 8.9, 17, 42, 36, 0.4, 0.1, 0], },]}       
 
-  if (D == 1){var option = Mon;}
-  if (D == 2){var option = Tue;}
-  if (D == 3){var option = Wed;}
-  if (D == 4){var option = Thur;}
-  if (D == 5){var option = Fri;}
-  if (D == 6){var option = Sat;}
-  if (D == 0){var option = Sun;}
+var option=[Sun,Mon,Tue,Wed,Thur,Fri,Sat][D];
 
   chart.setOption(option);
   return chart;
@@ -171,10 +165,6 @@ function initChart1(canvas, width, height, dpr) {
   return chart;
 }
 
-// 云函数入口函数
-// exports.main = async (event, context) => {
-//   return await getDiningOccupancy()
-// }
 
 //var app = getApp();
 Page({

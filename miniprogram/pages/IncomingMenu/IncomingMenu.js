@@ -3,17 +3,18 @@ var util = require('../../utils/util.js');
 Page({
   data: {
     menu_data: {},
-    have_menu_data: false
+    have_menu_data: false,
+    currentDateIndex: 0,
+    currentTimePeriodIndex: 0
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
     //获取当前日期
     var today = new Date()
-    var show_day_list = new Array('sun', 'Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat');
+    var show_day_list = new Array('Sun', 'Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat');
     var dateList = []
     for (var i = 0; i < 7; i++) {
       var show_day = show_day_list[(today.getDay() + i) % 7]
@@ -30,21 +31,66 @@ Page({
     this.setData({
       dateList: dateList
     })
+    var e = {
+      currentTarget: {
+        dataset: {
+          current: 0,
+          onload: true
+        }
+      }
+    }
+    this.selectDate(e)
+  },
+
+  onTabChange: function (e) {
+    this.setData({
+      currentTimePeriodIndex: e.detail.index
+    })
+  },
+
+  onSwiperChange: function (e) {
+    this.setData({
+      currentTimePeriodIndex: e.detail.current
+    })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    let that = this;
+    const query = wx.createSelectorQuery()
+    query.select('#swiper-container').boundingClientRect()
+    query.selectViewport().scrollOffset()
+    query.exec(function (res) {
+      console.log(res[0])
+      var position = res[0].top
+      console.log('position:', position)
+      // 获取系统信息
+      wx.getSystemInfo({
+        success: function (res) {
+          // 获取可使用窗口高度
+          let clientHeight = res.windowHeight;
+          console.log('clientHeight:', clientHeight)
+          // 获取可使用窗口宽度
+          let clientWidth = res.windowWidth;
+          // // 算出比例
+          // let ratio = 750 / clientWidth;
+          // // 算出高度(单位rpx)
+          // let height = clientHeight * ratio;
+          // 设置高度
+          that.setData({
+            swiper_height: clientHeight - position
+          });
+        }
+      });
+    })
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-
-  },
+  onShow: function () {},
 
   /**
    * 生命周期函数--监听页面隐藏
@@ -82,19 +128,24 @@ Page({
   },
   // 选择日期
   selectDate: function (e) {
+    this.setData({
+      menu_data: {}
+    })
     const that = this;
     var day = new Date()
     day.setDate(day.getDate() + e.currentTarget.dataset.current)
+
     if (that.data.currentDateIndex === e.currentTarget.dataset.current) {
-      return false;
-    } else {
-      that.setData({
-        currentDateIndex: e.currentTarget.dataset.current
-      })
-      var date_string = `${day.getFullYear()}-${(day.getMonth() + 1).toString().padStart(2,'0')}-${(day.getDate()).toString().padStart(2,'0')}`
-      that.getMenuList(date_string, 'NorthPitMenu')
-      that.getMenuList(date_string, 'Pit')
+      if (e.currentTarget.dataset.onload != true) {
+        return false;
+      }
     }
+    that.setData({
+      currentDateIndex: e.currentTarget.dataset.current
+    })
+    var date_string = `${day.getFullYear()}-${(day.getMonth() + 1).toString().padStart(2,'0')}-${(day.getDate()).toString().padStart(2,'0')}`
+    that.getMenuList(date_string, 'NorthPitMenu')
+    that.getMenuList(date_string, 'Pit')
   },
 
   // 获取当天菜单
@@ -105,17 +156,17 @@ Page({
       title: '',
     })
     const db = wx.cloud.database();
-    var that=this;
+    var that = this;
     const cont = db.collection(dinning_name);
     cont.where({
       _id: date_string,
     }).get({
       success: res => {
         console.log(res)
-        if(res.data.length < 1){
+        if (res.data.length < 1) {
           wx.hideLoading();
           wx.showToast({
-            title: date_string+'暂无数据',
+            title: date_string + '暂无数据',
             icon: 'none',
             duration: 2000
           });
@@ -129,7 +180,7 @@ Page({
         var dinningHallMenu = res.data[0];
         delete dinningHallMenu._id;
         for (var key in dinningHallMenu) {
-          if(key=="Pit Stop"){
+          if (key == "Pit Stop") {
             continue;
           }
           if (!this.data.menu_data.hasOwnProperty(key)) {
