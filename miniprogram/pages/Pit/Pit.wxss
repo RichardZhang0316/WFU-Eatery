@@ -1,3 +1,4 @@
+@import "../IncomingMenu/IncomingMenu.wxss"; 
 .head-text {
   position: relative;
   z-index: 99;

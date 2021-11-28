@@ -179,6 +179,8 @@ exports.main = async (event, context) => {
 var app = getApp();
 Page({
     data: {
+      menu_data: {},
+      have_menu_data: false,
       ec: {
         onInit: initChart
       },
@@ -195,22 +197,7 @@ Page({
 
         timeTable:[{realTimeTable:'Mon: 10:00 AM- 1:00 AM'},{realTimeTable:'Tue: 10:00 AM- 1:00 AM'},{realTimeTable:'Wed: 10:00 AM- 1:00 AM'},{realTimeTable:'Thu: 10:00 AM- 1:00 AM'},{realTimeTable:'Fri: 10:00 AM- 1:00 AM'},{realTimeTable:'Sat: 10:00 AM- 1:00 AM'},{realTimeTable:'Sun: 10:00 AM- 1:00 AM'}],
         
-        list: [{
-            id: 'view',
-            name: 'True Balance',
-            open: false,
-            pages: ['干煸四季豆', '红烧狮子头', '披萨', 'sausage muffin', 'omelette egg']
-          }, {
-            id: 'content',
-            name: 'Black&Gold Grill',
-            open: false,
-            pages: ['burger', 'bagel', 'Croissant', 'sandwich']
-          }, {
-            id: 'form',
-            name: 'The Table',
-            open: false,
-            pages: ['真难吃', '真难吃', '真难吃', '真难吃']
-          }]
+    
       },
 
     showContent: function (e) {
@@ -309,18 +296,11 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-    //   wx.cloud.database().collection('ForsythData')
-    // .doc('8937eaa9615a601a0f766e4201bf62d2').get()
-    // .then(res=>{
-    //   console.log("成功",res)
-    //   this.setData({
-    //     num1:res.data.newCases,
-    //     num2:res.data.casesLast14Days,
-    //     num3:res.data.totalCases,
-    //     num4:res.data.totalDeaths,
-    //     date:res.data.date,
-    //   })
-    // })
+    const that = this;
+    var day = new Date()
+      var date_string = `${day.getFullYear()}-${(day.getMonth() + 1).toString().padStart(2,'0')}-${(day.getDate()).toString().padStart(2,'0')}`;
+      // date_string="2021-12-01";
+      that.getMenuList(date_string, 'Pit')
   },
 
   /**
@@ -463,5 +443,115 @@ Page({
         // 获取 chart 实例的方式
         //console.log(chart)
       }, 2000);
+    },
+
+    // 获取当天菜单**********************************************************************************
+  getMenuList: function (date_string, dinning_name) {
+    // date_string = '2021-11-09'
+    console.log('date_string:', date_string)
+    wx.showLoading({
+      title: '',
+    })
+    const db = wx.cloud.database();
+    var that=this;
+    const cont = db.collection(dinning_name);
+    cont.where({
+      _id: date_string,
+    }).get({
+      success: res => {
+        console.log(res)
+        if(res.data.length < 1){
+          wx.hideLoading();
+          wx.showToast({
+            title: date_string+'暂无数据',
+            icon: 'none',
+            duration: 2000
+          });
+          that.setData({
+            menu_data: {},
+            have_menu_data: false
+          });
+          return;
+        }
+        // 拿到数据
+        var dinningHallMenu = res.data[0];
+        delete dinningHallMenu._id;
+        for (var key in dinningHallMenu) {
+          if (!this.data.menu_data.hasOwnProperty(key)) {
+            this.setData({
+              [`menu_data.${key}`]: {},
+              have_menu_data: true
+            })
+          }
+          var window_data = {}
+          for (var window in dinningHallMenu[key]) {
+            window_data[window] = {
+              open: false,
+              food_list: dinningHallMenu[key][window]
+            }
+          }
+          this.setData({
+            [`menu_data.${key}.${dinning_name}`]: {
+              open: false,
+              window: window_data
+            },
+            have_menu_data: true
+          })
+        }
+        wx.hideLoading()
+      }
+    })
+  },
+
+  // 选择供餐时段
+  selectPeriod: function (e) {
+    const that = this;
+    var key_list = Object.keys(this.data.menu_data)
+    var data_index = 0
+    for (var i in key_list) {
+      if (e.currentTarget.dataset.current === key_list[i]) {
+        data_index = i
+      }
     }
+    if (that.data.currentTimePeriodIndex === data_index) {
+      return false;
+    } else {
+      that.setData({
+        currentTimePeriodName: e.currentTarget.dataset.current,
+        currentTimePeriodIndex: data_index
+      })
+      console.log('currentTimePeriodIndex: ', that.data.currentTimePeriodIndex)
+    }
+  },
+
+  // 餐厅折叠面板
+  dinningHallToggle: function (e) {
+    var periodName = e.currentTarget.dataset.periodname
+    var dinningHallName = e.currentTarget.dataset.dinninghallname
+    this.setData({
+      [`menu_data.${periodName}.${dinningHallName}.open`]: !this.data.menu_data[periodName][dinningHallName].open
+    })
+  },
+
+  // 窗口折叠面板
+  windowToggle: function (e) {
+    var periodName = e.currentTarget.dataset.periodname
+    var dinningHallName = e.currentTarget.dataset.dinninghallname
+    var window_name = e.currentTarget.dataset.window_name
+    var menu_data = this.data.menu_data
+    menu_data[periodName][dinningHallName]['window'][window_name].open = !menu_data[periodName][dinningHallName]['window'][window_name].open
+    this.setData({
+      menu_data
+    })
+  },
+
+  // 页面跳转（测试）
+  navigateToDinningHall: function (e) {
+    var dinninghallname = e.currentTarget.dataset.dinninghallname
+    console.log(`/pages/${dinninghallname}/${dinninghallname}`)
+    wx.navigateTo({
+      url: `/pages/${dinninghallname}/${dinninghallname}`,
+      // url: '/pages/Bento/Bento'
+    })
+  }
   })

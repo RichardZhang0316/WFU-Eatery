@@ -48,8 +48,6 @@ function initChart(canvas, width, height, dpr) {
 var app = getApp();
 Page({
     data: {
-        
-        
         //Popular Time_图表Data
         ec: {
             onInit: initChart

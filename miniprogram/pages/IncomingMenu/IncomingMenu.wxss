@@ -1,7 +1,79 @@
-@import "../NorthPit/NorthPit.wxss";
+/* @import "../NorthPit/NorthPit.wxss"; */
+
+.weui-flex {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center
+}
+
+.weui-cells {
+  margin-top: 0;
+  opacity: 0;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -webkit-transition: .3s;
+  transition: .3s
+}
+
+.weui-cells:after,
+.weui-cells:before {
+  display: none
+}
+
+.weui-cells_show {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  transform: translateY(0)
+}
+
+.weui-cell:before {
+  right: 15px
+}
+
+.kind-list__item {
+  /* margin: 10px 0; */
+  margin-bottom: 10px;
+  background-color: var(--weui-BG-2);
+  border-radius: 2px;
+  overflow: hidden
+}
+
+.kind-list__item:first-child {
+  margin-top: 0
+}
+
+.kind-list__img {
+  width: 30px;
+  height: 30px
+}
+
+[data-weui-theme=dark] .kind-list__img {
+  -webkit-filter: invert(100) hue-rotate(180deg);
+  filter: invert(100) hue-rotate(180deg)
+}
+
+.kind-list__item-hd {
+  padding: 20px;
+  -webkit-transition: opacity .3s;
+  transition: opacity .3s
+}
+
+.kind-list__item-hd_show {
+  opacity: .4
+}
+
+.kind-list__item-bd {
+  height: 0;
+  overflow: hidden
+}
+
+.kind-list__item-bd_show {
+  height: auto
+}
 
 page {
-  background-color: #ececec;
+  /* background-color: #ececec; */
+  background-color: var(--weui-BG-2);
 }
 
 .root {
@@ -47,7 +119,7 @@ page {
   border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
   zoom: 1;
-  background-color: #ececec;
+  width: 100%;
 }
 
 .topTabSwiper:after {
@@ -76,13 +148,38 @@ page {
   color: #ccc
 }
 
+.timeSwiper {
+  white-space: nowrap;
+  display: flex;
+  justify-content: space-around;
+}
+
 .tab1 {
-  float: left;
-  width: 33.333333%;
+  /* float: left; */
+  /* width: 20%; */
+  min-width: 25%;
+  margin: 0 2%;
   height: 25px;
   text-align: center;
   padding: 20rpx 0;
   word-wrap: break-word;
   word-break: break-all;
   white-space: pre-line;
+  display: inline-block;
+}
+
+.menuTitle {
+  display: flex;
+  justify-content: center;
+  background-color: var(--weui-BG-2);
+  font-weight: bold;
+  border-bottom: 0.5px rgba(0, 0, 0, 0.1) solid;
+}
+
+.dinningHallName {
+  padding-left: 50px;
+}
+
+.navigator {
+  padding-left: 100px;
 }

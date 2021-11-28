@@ -7,10 +7,17 @@
 </view>
 
 <view class="flexTimetable">
-  <van-dropdown-menu>
-  <van-dropdown-item value="{{ value1 }}" options="{{ option1 }}" />
-  
-</van-dropdown-menu>
+  <view class="shit3">
+    <view class="view">
+      <view class="shit">Open until 10 PM</view>
+      <icon bindtap="{{ stopBtn ? 'showContent' : 'hideContent' }}" type="info" size="16" color="#9E7E38"></icon>
+    </view>
+    <view wx:for="{{timeTable}}" wx:if="{{choose}}" class='companyInfo1' animation='{{}}'>
+      <view class='companyInfo-left'>
+        <text class="shit4">{{item.realTimeTable}}</text>
+      </view>
+    </view>
+</view>
 </view>
 
 <view class="shit">The North Dining Hall</view>
@@ -27,7 +34,7 @@
 
 <van-tabs swipeable>
   <van-tab title="Seasonal Beverages">
-      <foodCard desc="星巴克的金色浓缩咖啡、红糖和肉桂一起摇一摇，最后在上面加上燕麦奶和冰块，" title="Iced Brown Sugar Oatmilk Shaken Espresso 冰红糖燕麦牛奶摇浓缩咖啡" thumb="https://globalassets.starbucks.com/assets/9fdcfa06cc964029a3941adb7a36aa7f.jpg?impolicy=1by1_wide_topcrop_630" price="4.95+" currency="$"/>
+      <foodCard desc="星巴克的金色浓缩咖啡、红糖和肉桂一起摇一摇，最后在上面加上燕麦奶和冰块" title="Iced Brown Sugar Oatmilk Shaken Espresso 冰红糖燕麦牛奶摇浓缩咖啡" thumb="https://globalassets.starbucks.com/assets/9fdcfa06cc964029a3941adb7a36aa7f.jpg?impolicy=1by1_wide_topcrop_630" price="4.95+" currency="$"/>
       <foodCard desc="星巴克金色浓缩咖啡融合了可可和麦芽的味道，摇匀后加入杏仁牛奶和冰块" title="Iced Chocolate Almondmilk Shaken Espresso 冰巧克力杏仁牛奶摇浓缩咖啡" thumb="https://globalassets.starbucks.com/assets/9d72035353344b59938d007451754db5.jpg?impolicy=1by1_wide_topcrop_630" price="4.95+" currency="$"/>
       <foodCard desc="星巴克冷萃，加上蜂蜜，最后加上杏仁牛奶，每口美味的小口都有均衡的口感" title="Honey Almondmilk Cold Brew 蜂蜜杏仁牛奶冷萃" thumb="https://globalassets.starbucks.com/assets/21f012c25a714d81b211a19094fb90cc.jpg?impolicy=1by1_wide_topcrop_630" price="3.95+" currency="$"/>
       <foodCard desc="燕麦牛奶和招牌浓缩咖啡有意地与蜂蜜和烤蜂蜜混合在一起，这是对所有甜和咸美味的致敬" title="Honey Oatmilk Latte 蜂蜜燕麦奶拿铁" thumb="https://globalassets.starbucks.com/assets/edd75880341c437ab194c14835fbb24e.jpg?impolicy=1by1_wide_topcrop_630" price="4.95+" currency="$"/>
