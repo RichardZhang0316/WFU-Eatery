@@ -38,7 +38,17 @@
 </cover-view>
 
 <view wx:if="{{!have_menu_data}}">
-   <van-empty description="没吃的" />
+   <van-tabs active="1" >
+   <van-tab title="Breakfast">
+   </van-tab>  
+   <van-tab title="Lunch">
+   </van-tab>  
+   <van-tab title="Pit Stop">
+   </van-tab>  
+   <van-tab title="Dinner">
+   </van-tab>  
+</van-tabs>
+<van-empty description="没吃的" />
 </view>
 <!-- 供餐时间 Tab -->
 <scroll-view hidden="{{!have_menu_data}}" class='topTabSwiper timeSwiper' scroll-x="true">

@@ -150,15 +150,20 @@ page{
     width: 100%;
   }
 
-  /* .explaination{
-    height: 30px;
-    width: 100%;
-    background-color:#ececec  ;
-    
+
+  .filterCard{
+    border-radius: 10px;
+    border: solid 1px rgb(214, 177, 96);
+    font-size: 15px;
+    color: rgb(214, 177, 96);
+    text-align: center;
+    background-color: white;
+    margin: 5px;
+    margin-bottom: 0px;
+    display: inline-block;
+    padding: 4px;
   }
-  .smallTag1{
-    height: 20px;
-    width: 20px;
-    margin-left: 5%;
-    margin-top: 2px;
-  } */
+  .chosenFilter{
+    background-color: rgb(214, 177, 96);
+    color:white;
+  }

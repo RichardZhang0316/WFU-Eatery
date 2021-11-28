@@ -1,5 +1,3 @@
-// import cfg from '../../utils/config.js';
-
 //Popular_Time 表格: 目前分为“周中”和“周末”进行数据切换，数据源为Google，方法为“等比例缩放”
 import * as echarts from '../../ec-canvas/echarts';
 var util = require('../../utils/util.js');
@@ -37,8 +35,8 @@ function initChart(canvas, width, height, dpr) {
         // 👇 数据录入处 ！！暂定以10为scale进行模拟, 数据源: Google
         data: [3, 5, 6.7, 9, 90, 90, 90, 90, 90, 33, 64, 52, 34, 20, 17], },]}
   
-  if (D<=5 && D>=1) {var option = weekdays}
-  if (D<=7 && D>=6) {var option = weekend}
+  if (D<=4 && D>=0) {var option = weekdays}
+  if (D<=6 && D>=5) {var option = weekend}
 
   chart.setOption(option);
   return chart;
@@ -48,8 +46,6 @@ function initChart(canvas, width, height, dpr) {
 var app = getApp();
 Page({
     data: {
-        
-        
         //Popular Time_图表Data
         ec: {
             onInit: initChart
@@ -70,10 +66,6 @@ Page({
       
       //前端滑动切换bar-展示信息（目前都注释掉了）
       onChange(event) {
-        // wx.showToast({
-        //   //title: `切换到标签 ${event.detail.name}`,
-        //   //icon: 'none',
-        // });
       },
 
       showContent: function (e) {
@@ -201,11 +193,6 @@ Page({
           fail: function () { }
         }
       },
-    //   data: {
-    //     ec: {
-    //       onInit: initChart
-    //     }
-    //   },
     
       onReady() {
         setTimeout(function () {

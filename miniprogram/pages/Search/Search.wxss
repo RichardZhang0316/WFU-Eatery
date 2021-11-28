@@ -39,3 +39,7 @@
     color: var(--weui-FG-1);
     background: var(--weui-BG-2);
 }
+.weui-cell{
+    font-size: 12px;
+    background-color: #ececec ;
+}
