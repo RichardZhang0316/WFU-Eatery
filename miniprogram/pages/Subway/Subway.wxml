@@ -15,16 +15,19 @@
 <view class="flexTimetable">
   <view class="shit3">
     <view class="view" bindtap="{{ stopBtn ? 'showContent' : 'hideContent' }}">
-      <view class="shit">Open until 10 PM</view>
+      <view class="shit">Opening Time</view>
       <van-icon name="arrow-down" color="#d6b160"/>
     </view>
-    <view wx:for="{{timeTable}}" wx:if="{{choose}}" class='companyInfo1' animation='{{}}'>
+    <van-transition show="{{ choose }}" custom-class="block" name="fade">
+    <view wx:for="{{timeTable}}" class='companyInfo1'>
       <view class='companyInfo-left'>
         <text class="shit4">{{item.realTimeTable}}</text>
       </view>
     </view>
+    </van-transition>
 </view>
-<view class="shit">Location: Reynolda Hall B-1 Floor</view>
+
+<view class="shit">Davis Hall</view>
 </view>
 
 
@@ -38,7 +41,8 @@
 <view class="greyPart"> </view>
 <view class="realPart"><view class="menuTitle">Menu</view></view>
 
-<van-tabs active="{{ active }}" bind:change="onChange" color="#d6b160" title-active-color="#d6b160">
+ 
+<van-tabs swipeable ellipsis="{{false}}" active="{{ active }}" bind:change="onChange" color="#d6b160" title-active-color="#d6b160">
   <van-tab title="Sauce">
       <foodCard desc="蛋黄酱的色泽淡黄，柔软适度，呈粘稠态，有一定韧性，清香爽口，回味浓厚" title="Mayonnaise 蛋黄酱" thumb="https://www.seriouseats.com/thmb/JDaa6-NZVcZQ0NJzA4Sfq2ooqDM=/450x0/filters:no_upscale():max_bytes(150000):strip_icc()/two-minute-mayonnaise-04-2512665608084cff84ce7ed03a1bec97.jpg" />
       <foodCard desc="芥末酱为一种芥末色稠状物，具有强烈鲜明的味道，由芥菜类蔬菜的籽研磨掺水、醋或酒类调制而成" title="Yellow Mustard 黄芥末酱" thumb="https://cdn.leitesculinaria.com/wp-content/uploads/2021/04/homemade-yellow-mustard-fp.jpg.optimal.jpg" />
@@ -86,6 +90,7 @@
       <foodCard desc="400卡路里" title="12 in. Veggie Patty 素食帕蒂三明治" thumb="https://www.totallyveganbuzz.com/wp-content/uploads/2019/04/2019-04-17_1104.jpg" price="6.75" currency="$"/>
   </van-tab>
 </van-tabs>
+<view style="height: 60px; width: 100%; background-color:#ececec;"></view>
 
 
 

@@ -16,7 +16,7 @@
 <view class="flexTimetable">
   <view class="shit3">
     <view class="view" bindtap="{{ stopBtn ? 'showContent' : 'hideContent' }}">
-      <view class="shit">Open until 10 PM</view>
+      <view class="shit">Opening Time</view>
       <van-icon name="arrow-down" color="#d6b160"/>
     </view>
     <view wx:for="{{timeTable}}" wx:if="{{choose}}" class='companyInfo1' animation='{{}}'>
@@ -25,7 +25,7 @@
       </view>
     </view>
 </view>
-<view class="shit">Location: Benson University Center Ground Floor</view>
+<view class="shit">Benson University Center Ground Floor</view>
 </view>
 
 
@@ -39,7 +39,7 @@
 <view class="greyPart"> </view>
 <view class="realPart"><view class="menuTitle">Menu</view></view>
 
-<van-tabs active="{{ active }}" bind:change="onChange" color="#d6b160" title-active-color="#d6b160">
+<van-tabs active="{{ active }}" bind:change="onChange" swipeable ellipsis="{{false}}" color="#d6b160" title-active-color="#d6b160">
 <van-tab title="Bento Box">
       <foodCard title="Beef Bento Box 牛肉饭" desc="米饭、牛肉、寿司、炸饺和海藻" thumb="https://www.bentosushi.com/wp-content/uploads/2020/02/Beef-Bento-Box.jpg" price="11" currency="$" />
       <foodCard title="Chicken Bento Box 鸡肉饭" desc="米饭、鸡肉、寿司、炸饺和海藻" thumb="https://www.bentosushi.com/wp-content/uploads/2020/02/Karaage-Chicken-Bento-Box.jpg" price="11" currency="$" />
@@ -121,3 +121,4 @@
       <foodCard title="Tempura Shrimp 天妇罗" desc="就是天妇罗" thumb="https://www.bentosushi.com/wp-content/uploads/2019/02/Tempura-Shrimp-1.jpg" price="6" currency="$" />
   </van-tab>
 </van-tabs>
+<view style="height: 60px; width: 100%; background-color:#ececec;"></view>

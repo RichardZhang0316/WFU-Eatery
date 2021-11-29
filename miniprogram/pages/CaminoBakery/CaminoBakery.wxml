@@ -8,19 +8,23 @@
 
 <view class="flexTimetable">
   <view class="shit3">
-    <view class="view">
-      <view class="shit">Open until 10 PM</view>
-      <icon bindtap="{{ stopBtn ? 'showContent' : 'hideContent' }}" type="info" size="16" color="#9E7E38"></icon>
+    <view class="view" bindtap="{{ stopBtn ? 'showContent' : 'hideContent' }}">
+      <view class="shit">Opening Time</view>
+      <van-icon name="arrow-down" color="#d6b160"/>
     </view>
-    <view wx:for="{{timeTable}}" wx:if="{{choose}}" class='companyInfo1' animation='{{}}'>
+    <van-transition show="{{ choose }}" custom-class="block" name="fade">
+    <view wx:for="{{timeTable}}" class='companyInfo1'>
       <view class='companyInfo-left'>
         <text class="shit4">{{item.realTimeTable}}</text>
       </view>
     </view>
-</view>
+    </van-transition>
 </view>
 
-<view class="shit">The North Dining Hall</view>
+
+</view>
+
+<view class="shit">ZSR Library</view>
 
 <view class="popularTimes">
 <view class="shit2"><view>Popular Times</view></view></view>
@@ -32,14 +36,14 @@
 <view class="greyPart"> </view>
 <view class="realPart"><view class="menuTitle">Menu</view></view>
 
-<van-tabs swipeable>
+<van-tabs swipeable ellipsis="{{false}}" color="#d6b160" title-active-color="#d6b160">
   <van-tab title="Morning Pastries">
     <foodCard desc="" title="Plain Croissant 原味牛角包" thumb="https://www.gourmandpastries.com/website/var/tmp/image-thumbnails/0/129/thumb__product_overview/11151067_7294.jpeg" price="3.75" currency="$"/>
     <foodCard desc="" title="Cinnamon Roll 肉桂卷" thumb="https://tmbidigitalassetsazure.blob.core.windows.net/rms3-prod/attachments/37/1200x1200/Best-Cinnamon-Rolls_EXPS_BW20_22631_B09_29_20b.jpg" price="3.75" currency="$"/>
     <foodCard desc="" title="Everything Swiss Croissant 瑞士牛角面包" thumb="http://4.bp.blogspot.com/-IQz28GhS2OU/T2oEdReQITI/AAAAAAAABfc/-FbZZB52eXc/s1600/IMG_1590.JPG" price="3.75" currency="$"/>
     <foodCard desc="" title="Almond Croissant 杏仁牛角面包" thumb="https://static01.nyt.com/images/2021/04/07/dining/06croissantsrex4-almond/merlin_184842117_321090da-ce3a-4c4d-9e6a-3461506a39d3-articleLarge.jpg" price="3.75" currency="$"/>
     <foodCard desc="" title="Pecan Sticky Bun 核桃粘包" thumb="https://assets.marthastewart.com/styles/wmax-300/d21/med105199_0310_sticky/med105199_0310_sticky_vert.jpg?itok=9AGyUlnZ" price="3.75" currency="$"/>
-    <foodCard desc="" title="Carrot Coffee Cake 胡萝卜咖啡蛋糕" thumb="https://cdn.apartmenttherapy.info/image/upload/f_auto,q_auto:eco,c_fill,g_auto,w_768/k%2FPhoto%2FRecipes%2F2021-05-carrot-cake-coffee-cake%2FReshoot%2F2021-05-26_ATK2490" price="3.75" currency="$"/>
+    <foodCard desc="" title="Carrot Coffee Cake 胡萝卜咖啡蛋糕" thumb="https://pinchofyum.com/wp-content/uploads/Carrot-Cake-Coffee-Cake-1.jpg" price="3.75" currency="$"/>
     <foodCard desc="" title="Pain Au Chocolat 巧克力面包" thumb="https://upload.wikimedia.org/wikipedia/commons/5/5f/Pain_au_chocolat_Luc_Viatour.jpg" price="3.75" currency="$"/>
     <foodCard desc="" title="Fresh Fruit Danish 鲜果丹麦酥皮" thumb="https://d2j6dbq0eux0bg.cloudfront.net/images/7782646/1393364735.jpg" price="3.75" currency="$"/>
     <foodCard desc="" title="Pumpkin Danish 南瓜丹麦酥皮" thumb="https://www.number-2-pencil.com/wp-content/uploads/2013/09/Pumpkin-Cream-Cheese-Danish-3.jpg" price="3.75" currency="$"/>
@@ -142,3 +146,4 @@
 
 </van-tabs>
 
+<view style="height: 60px; width: 100%; background-color:#ececec;"></view>

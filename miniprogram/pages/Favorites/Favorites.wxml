@@ -1,18 +1,18 @@
 
 <view class="root" style="margin-bottom: 40px;">
-<view class="maxTitle">Deacon Help</view> 
+<view class="maxTitle">Deacon Dining Help</view> 
 </view>
 
 <view class="card">
-<navigator class="topTitle" url="/pages/FoodDollar/FoodDollar">Inquiry Food Dollar</navigator>
+<navigator class="topTitle" url="/pages/FoodDollar/FoodDollar">Inquire Food Dollar</navigator>
 </view>
 
 <view class="card">
-<navigator class="topTitle" url="/pages/AddDeaconDolllar/AddDeaconDollar"> Add Deacon/Food Dollar </navigator>
+<navigator class="topTitle" url="/pages/AddDeaconDolllar/AddDeaconDollar">Add Deacon/Food Dollar</navigator>
 </view>
 
 <view class="card">
-<navigator class="topTitle" url="/pages/ChangeMealPlan/ChangeMealPlan"> Change Meal Plan </navigator>
+<navigator class="topTitle" url="/pages/ChangeMealPlan/ChangeMealPlan">Change Meal Plan</navigator>
 </view>
 
 

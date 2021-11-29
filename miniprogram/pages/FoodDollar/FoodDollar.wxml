@@ -8,8 +8,8 @@
   steps="{{ steps }}"
   active="0"
   direction="vertical"
-  active-color="#9E7E38"
-  inactive-color="#9E7E38"
+  active-color="#d6b160"
+  inactive-color="#d6b160"
   active-icon="star"
   inactive-icon="star"
 />

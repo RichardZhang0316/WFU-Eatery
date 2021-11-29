@@ -7,17 +7,21 @@
 
 <view class="flexTimetable">
   <view class="shit3">
-    <view class="view">
-      <view class="shit">Open until 11 PM</view>
-      <icon bindtap="{{ stopBtn ? 'showContent' : 'hideContent' }}" type="info" size="16" color="#9E7E38"></icon>
+    <view class="view" bindtap="{{ stopBtn ? 'showContent' : 'hideContent' }}">
+      <view class="shit">Opening Time</view>
+      <van-icon name="arrow-down" color="#d6b160"/>
     </view>
-    <view wx:for="{{timeTable}}" wx:if="{{choose}}" class='companyInfo1' animation='{{}}'>
+    <van-transition show="{{ choose }}" custom-class="block" name="fade">
+    <view wx:for="{{timeTable}}" class='companyInfo1'>
       <view class='companyInfo-left'>
         <text class="shit4">{{item.realTimeTable}}</text>
       </view>
     </view>
+    </van-transition>
 </view>
-<view class="shit">Location: North Dining Hall</view>
+   
+
+<view class="shit">North Dining Hall</view>
 </view>
 
 
@@ -31,7 +35,7 @@
 <view class="greyPart"> </view>
 <view class="realPart"><view class="menuTitle">Menu</view></view>
 
-<van-tabs active="{{ active }}" bind:change="onChange">
+<van-tabs active="{{ active }}" bind:change="onChange" swipeable ellipsis="{{false}}" color="#d6b160" title-active-color="#d6b160">
   <van-tab title="Smoothies">
     <foodCard desc="280卡路里 详情: oat milk, cold brew coffee, banana, date, cacao" title="MOCHA-NANA" thumb="https://i.loli.net/2021/11/28/7e61mLHqPzUjwYX.png" price="6.95" currency="$"/>
     <foodCard desc="320卡路里 详情: oat milk, organic strawberry, banana, date" title="PINKY SWEAR" thumb="https://i.loli.net/2021/11/28/bWhcONP9mfkI6gl.png" price="7.95" currency="$"/>
@@ -67,7 +71,7 @@
   </van-tab>
 </van-tabs>
 
-
+<view style="height: 60px; width: 100%; background-color:#ececec;"></view>
 
 
 

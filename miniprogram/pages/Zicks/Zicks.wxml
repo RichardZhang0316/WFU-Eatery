@@ -7,17 +7,19 @@
 
 <view class="flexTimetable">
   <view class="shit3">
-    <view class="view">
-      <view class="shit">Open until 11 PM</view>
-      <icon bindtap="{{ stopBtn ? 'showContent' : 'hideContent' }}" type="info" size="16" color="#9E7E38"></icon>
+    <view class="view" bindtap="{{ stopBtn ? 'showContent' : 'hideContent' }}">
+      <view class="shit">Open until 10 PM</view>
+      <van-icon name="arrow-down" color="#d6b160"/>
     </view>
-    <view wx:for="{{timeTable}}" wx:if="{{choose}}" class='companyInfo1' animation='{{}}'>
+    <van-transition show="{{ choose }}" custom-class="block" name="fade">
+    <view wx:for="{{timeTable}}" class='companyInfo1'>
       <view class='companyInfo-left'>
         <text class="shit4">{{item.realTimeTable}}</text>
       </view>
     </view>
+  </van-transition>
 </view>
-<view class="shit">Location: Hearn Plaza in Poteat Residence Hall</view>
+<view class="shit">Hearn Plaza in Poteat Residence Hall</view>
 </view>
 
 
@@ -32,7 +34,7 @@
 <view class="greyPart"> </view>
 <view class="realPart"><view class="menuTitle">Menu</view></view>
 
-<van-tabs active="{{ active }}" bind:change="onChange">
+<van-tabs active="{{ active }}" bind:change="onChange" swipeable ellipsis="{{false}}" color="#d6b160" title-active-color="#d6b160">
   <van-tab title="Starters">
     <foodCard desc="540卡路里 详情：5 Golden Crispy Fried Mozzarella Sticks served with Zick's Sauce" title="Mozzarella Sticks" thumb="https://sugarspunrun.com/wp-content/uploads/2021/07/Homemade-Mozzarella-Sticks-Recipe-1-of-1.jpg" price="6.69" currency="$"/>
     <foodCard desc="700卡路里 详情：Tater tots topped with cheddar cheese, bacon, tomatoes & red onion, drizzled with ranch dressing" title="Totchos" thumb="https://www.keyingredient.com/media/03/50/3cee1948cad642e9faaeaa07841dc1f61581.jpg/rh/loaded-totchos.jpg" price="6.69" currency="$"/>
@@ -64,6 +66,7 @@
   </van-tab>
 </van-tabs>
 
+<view style="height: 60px; width: 100%; background-color:#ececec;"></view>
 
 
 

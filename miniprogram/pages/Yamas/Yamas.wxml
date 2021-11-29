@@ -8,7 +8,7 @@
 <view class="flexTimetable">
   <view class="shit3">
     <view class="view" bindtap="{{ stopBtn ? 'showContent' : 'hideContent' }}">
-      <view class="shit">Open until 10 PM</view>
+      <view class="shit">Opening Time</view>
       <van-icon name="arrow-down" color="#d6b160"/>
     </view>
     <view wx:for="{{timeTable}}" wx:if="{{choose}}" class='companyInfo1' animation='{{}}'>
@@ -17,7 +17,7 @@
       </view>
     </view>
 </view>
-<view class="shit">Location: Benson, Food Court Center</view>
+<view class="shit">Benson, Food Court Center</view>
 </view>
 
 
@@ -48,7 +48,7 @@
   </van-tab>
 </van-tabs>
 
-
+<view style="height: 60px; width: 100%; background-color:#ececec;"></view>
 
 
 

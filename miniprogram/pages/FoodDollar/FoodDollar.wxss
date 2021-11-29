@@ -19,7 +19,6 @@ page{
   height: 30px;
   width: 50%;
   margin-left: 25%;
-  
   text-align: center;
   text-size-adjust:14;
   color: white;
@@ -31,6 +30,7 @@ page{
   border-radius:10px;
   /* box-shadow: 5px 5px 5px #FDC314; */
   box-shadow: 5px 5px 5px #cdcfcf;
+  margin-top:20px;
 }
 
 .card{
@@ -52,7 +52,6 @@ page{
 }
 
 .Michael2 {
-  font-weight: bold;
   padding-top: 12px;
 }
 

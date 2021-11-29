@@ -9,6 +9,7 @@
     "van-dropdown-item": "/components/vant/dropdown-item/index",
     "van-icon": "/components/vant/icon/index",
     "van-transition": "/components/vant/transition/index"
+
   },
   "navigationStyle": "custom"
 }

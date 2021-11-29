@@ -34,9 +34,10 @@
     background: var(--weui-BG-2);
 }
 .weui-cell{
-    font-size: 12px;
+    font-size: 15px;
     background-color: #ececec ;
+    color:rgb(85, 85, 85);
 }
-/* .weui-search-bar__input{
+.weui-search-bar__input{
     caret-color: #d6b160 !important;
-} */
+}

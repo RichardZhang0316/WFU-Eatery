@@ -6,7 +6,9 @@
     "van-tab": "/components/vant/tab/index",
     "van-tabs": "/components/vant/tabs/index",
     "van-dropdown-menu": "/components/vant/dropdown-menu/index",
-    "van-dropdown-item": "/components/vant/dropdown-item/index"
+    "van-dropdown-item": "/components/vant/dropdown-item/index",
+    "van-icon": "/components/vant/icon/index",
+    "van-transition": "/components/vant/transition/index"
   },
   "navigationStyle": "custom"
 }

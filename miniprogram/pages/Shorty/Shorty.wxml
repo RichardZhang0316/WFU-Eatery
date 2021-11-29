@@ -10,7 +10,7 @@
 <view class="flexTimetable">
   <view class="shit3">
     <view class="view" bindtap="{{ stopBtn ? 'showContent' : 'hideContent' }}">
-      <view class="shit">Open until 10 PM</view>
+      <view class="shit">Opening Time</view>
       <van-icon name="arrow-down" color="#d6b160"/>
     </view>
     <view wx:for="{{timeTable}}" wx:if="{{choose}}" class='companyInfo1' animation='{{}}'>
@@ -19,7 +19,7 @@
       </view>
     </view>
 </view>
-<view class="shit">Location: Benson University Center Ground Floor</view>
+<view class="shit">Benson University Center Ground Floor</view>
 </view>
 
 
@@ -33,7 +33,7 @@
 <view class="greyPart"> </view>
 <view class="realPart"><view class="menuTitle">Menu</view></view>
 
-<van-tabs active="{{ active }}" bind:change="onChange" color="#d6b160" title-active-color="#d6b160">
+<van-tabs active="{{ active }}" bind:change="onChange" swipeable ellipsis="{{false}}" color="#d6b160" title-active-color="#d6b160"> 
   <van-tab title="Burger">
     <foodCard title="1.Deamon Deacon 小恶魔汉堡" desc="800 卡路里" thumb="https://media-cdn.tripadvisor.com/media/photo-s/06/af/44/2b/chili-dogs.jpg" price="6.99" currency="$" />
     <foodCard title="2.classic burger 经典汉堡" desc="620 卡路里" thumb="https://images.squarespace-cdn.com/content/v1/5d374de57e75a000017996b0/1564062977510-I42MXH0W25C0FSJG8KJ2/shorties_2019-2.jpg" price="6.99" currency="$" />
@@ -75,3 +75,4 @@
     <foodCard title="Hummus Platter 鹰嘴豆泥盘" desc="330 卡路里" thumb="https://daniliciousdishes.com/wp-content/uploads/2020/04/Spring-Hummus-Platter-1.jpg" price="6.99" currency="$" /> 
 </van-tab>
 </van-tabs>
+<view style="height: 60px; width: 100%; background-color:#ececec;"></view>

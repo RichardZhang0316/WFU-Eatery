@@ -4,7 +4,9 @@
     "navigation": "/components/navigation/navigation", 
     "van-transition": "/components/vant/transition/index",
     "van-loading": "/components/vant/loading/index",
-    "van-skeleton": "/components/vant/skeleton/index"
+    "van-skeleton": "/components/vant/skeleton/index",
+    "van-icon": "/components/vant/icon/index"
+    
   },
   "navigationStyle": "custom"
 }

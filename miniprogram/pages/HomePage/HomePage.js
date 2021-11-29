@@ -461,8 +461,20 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+        var currentTime=new Date().getHours();
+        var sentences="美食与温暖，我们都有";
+        if(currentTime>=0&&currentTime<=5){
+            sentences="赶due的苦，夜宵来补";
+        }
+        else if(currentTime>=6&&currentTime<=10){
+            sentences="Good morning, deacons!";
+        }
+        else if(currentTime>=18&&currentTime<=23){
+            sentences="早休息啦~";
+        }
         this.setData({
-            menuButtonInfo: wx.getMenuButtonBoundingClientRect()
+            menuButtonInfo: wx.getMenuButtonBoundingClientRect(),
+            sentences:sentences
         })
         console.log(this.data.menuButtonInfo)
         const {

@@ -3,7 +3,13 @@
     "ec-canvas": "../../ec-canvas/ec-canvas",
     "navigation": "/components/navigation/navigation", 
     "van-transition": "/components/vant/transition/index",
-    "van-loading": "/components/vant/loading/index"
+    "van-loading": "/components/vant/loading/index",
+    "foodCard": "/components/vant/card/index",
+    "van-tab": "/components/vant/tab/index",
+    "van-tabs": "/components/vant/tabs/index",
+    "van-dropdown-menu": "/components/vant/dropdown-menu/index",
+    "van-dropdown-item": "/components/vant/dropdown-item/index",
+    "van-icon": "/components/vant/icon/index"
   },
   "navigationStyle": "custom"
-}
+} 

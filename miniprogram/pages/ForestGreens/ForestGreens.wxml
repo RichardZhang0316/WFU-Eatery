@@ -8,7 +8,7 @@
 <view class="flexTimetable">
   <view class="shit3">
     <view class="view" bindtap="{{ stopBtn ? 'showContent' : 'hideContent' }}">
-      <view class="shit">Open Time</view>
+      <view class="shit">Opening Time</view>
       <van-icon name="arrow-down" color="#d6b160"/>
     </view>
     <view wx:for="{{timeTable}}" wx:if="{{choose}}" class='companyInfo1' animation='{{}}'>
@@ -17,7 +17,7 @@
       </view>
     </view>
 </view>
-<view class="shit">Location: Benson, Food Court Center</view>
+<view class="shit">Benson, Food Court Center</view>
 </view>
 
 
@@ -34,7 +34,8 @@
 <foodCard title="Build Your Own Sandwich" desc="Choose your bread, spread, meat, cheese, and unlimited toppings"  thumb="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F9%2F2013%2F12%2F06%2F2012-r-xl-vegetable-sandwich-with-dill-sauce-2000.jpg&q=85"/>
 <foodCard title="Build Your Own Salad/Grain Bowl" desc="Choose salad base, protein, toppings, dressing" thumb="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimg1.cookinglight.timeinc.net%2Fsites%2Fdefault%2Ffiles%2Fstyles%2F4_3_horizontal_-_1200x900%2Fpublic%2Fimage%2F2017%2F03%2Fmain%2Fspring-vegetable-grain-bowl-1705p12.jpg%3Fitok%3DpYnqdFbs"/>     
 <foodCard title="Build Your SAMBAZON ACAI BOWLS" desc="Please be advised - Granola now has almonds!"  thumb="https://www.chelseasmessyapron.com/wp-content/uploads/2018/10/ACAIBOWLF8-500x500.jpg"/>
-      
+<view style="height: 60px; width: 100%; background-color:#ececec;"></view>
+
   
 
 

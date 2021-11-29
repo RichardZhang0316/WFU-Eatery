@@ -1,3 +1,6 @@
+page{
+  background-color:  #ececec ;
+} 
 .head-text{
   position: relative;
   z-index: 99;

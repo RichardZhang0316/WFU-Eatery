@@ -1,5 +1,6 @@
 {
   "usingComponents": {
+    "van-icon": "/components/vant/icon/index"
   },
   "navigationStyle": "custom"
 }

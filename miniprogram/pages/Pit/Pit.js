@@ -26,7 +26,7 @@ function initChart(canvas, width, height, dpr) {
     grid: {left: 20,right: 20,bottom: 15,top: 40,containLabel: true}, // 整体表格所在的grid的大小设置
     yAxis: [{type: 'value',axisLine: {lineStyle: {color: '#999'}},axisLabel: {color: '#666'}}], //表格y轴设置
     xAxis: [{type: 'category',axisTick: { show: false },data: ['8:00', '9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00'],axisLine: {lineStyle: {color: '#999'}},axisLabel: {color: '#666'}}], //表格x轴设置
-    series: [{name: 'Pit', type: 'bar', label: {normal: {show: true,position: 'inside', color: 'white'}},itemStyle: {borderRadius: [4, 4, 0, 0], color: '#9E7E38', shadowColor: 'rgba(0, 0, 0, 0.5)', shadowBlur: 2}, //Series设置
+    series: [{name: 'Pit', type: 'bar', label: {normal: {show: true,position: 'inside', color: 'white'}},itemStyle: {borderRadius: [4, 4, 0, 0], color: '#d6b160', shadowColor: 'rgba(0, 0, 0, 0.5)', shadowBlur: 2}, //Series设置
         // 👇 Monday 数据！！！
         data: [9.5, 18, 22, 30, 53, 37, 13, 4, 5, 18, 81, 76, 22, 11, 8.5], },]}
   
@@ -36,7 +36,7 @@ function initChart(canvas, width, height, dpr) {
     grid: {left: 20,right: 20,bottom: 15,top: 40,containLabel: true}, // 整体表格所在的grid的大小设置
     yAxis: [{type: 'value',axisLine: {lineStyle: {color: '#999'}},axisLabel: {color: '#666'}}], //表格y轴设置
     xAxis: [{type: 'category',axisTick: { show: false },data: ['8:00', '9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00'],axisLine: {lineStyle: {color: '#999'}},axisLabel: {color: '#666'}}], //表格x轴设置
-    series: [{name: 'Pit', type: 'bar', label: {normal: {show: true,position: 'inside', color: 'white'}},itemStyle: {borderRadius: [4, 4, 0, 0], color: '#9E7E38', shadowColor: 'rgba(0, 0, 0, 0.5)', shadowBlur: 2}, //Series设置
+    series: [{name: 'Pit', type: 'bar', label: {normal: {show: true,position: 'inside', color: 'white'}},itemStyle: {borderRadius: [4, 4, 0, 0], color: '#d6b160', shadowColor: 'rgba(0, 0, 0, 0.5)', shadowBlur: 2}, //Series设置
         // 👇 Tuesday 数据！！！
         data: [6.5, 16, 20, 38, 55, 32, 19, 5, 9, 28, 78, 80, 25, 2, 1], },]}
 
@@ -46,7 +46,7 @@ function initChart(canvas, width, height, dpr) {
     grid: {left: 20,right: 20,bottom: 15,top: 40,containLabel: true}, // 整体表格所在的grid的大小设置
     yAxis: [{type: 'value',axisLine: {lineStyle: {color: '#999'}},axisLabel: {color: '#666'}}], //表格y轴设置
     xAxis: [{type: 'category',axisTick: { show: false },data: ['8:00', '9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00'],axisLine: {lineStyle: {color: '#999'}},axisLabel: {color: '#666'}}], //表格x轴设置
-    series: [{name: 'Pit', type: 'bar', label: {normal: {show: true,position: 'inside', color: 'white'}},itemStyle: {borderRadius: [4, 4, 0, 0], color: '#9E7E38', shadowColor: 'rgba(0, 0, 0, 0.5)', shadowBlur: 2}, //Series设置
+    series: [{name: 'Pit', type: 'bar', label: {normal: {show: true,position: 'inside', color: 'white'}},itemStyle: {borderRadius: [4, 4, 0, 0], color: '#d6b160', shadowColor: 'rgba(0, 0, 0, 0.5)', shadowBlur: 2}, //Series设置
         // 👇 Wednesday 数据！！！
         data: [13, 22, 21, 32, 50, 33, 13, 6, 5, 14, 56, 22, 4, 1, 0], },]}
 
@@ -56,7 +56,7 @@ function initChart(canvas, width, height, dpr) {
     grid: {left: 20,right: 20,bottom: 15,top: 40,containLabel: true}, // 整体表格所在的grid的大小设置
     yAxis: [{type: 'value',axisLine: {lineStyle: {color: '#999'}},axisLabel: {color: '#666'}}], //表格y轴设置
     xAxis: [{type: 'category',axisTick: { show: false },data: ['8:00', '9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00'],axisLine: {lineStyle: {color: '#999'}},axisLabel: {color: '#666'}}], //表格x轴设置
-    series: [{name: 'Pit', type: 'bar', label: {normal: {show: true,position: 'inside', color: 'white'}},itemStyle: {borderRadius: [4, 4, 0, 0], color: '#9E7E38', shadowColor: 'rgba(0, 0, 0, 0.5)', shadowBlur: 2}, //Series设置
+    series: [{name: 'Pit', type: 'bar', label: {normal: {show: true,position: 'inside', color: 'white'}},itemStyle: {borderRadius: [4, 4, 0, 0], color: '#d6b160', shadowColor: 'rgba(0, 0, 0, 0.5)', shadowBlur: 2}, //Series设置
         // 👇 Thursday 数据！！！
         data: [6, 14, 14, 35, 53, 30, 14, 3, 2, 33, 58, 32, 2, 1, 0], },]}
         
@@ -66,7 +66,7 @@ function initChart(canvas, width, height, dpr) {
     grid: {left: 20,right: 20,bottom: 15,top: 40,containLabel: true}, // 整体表格所在的grid的大小设置
     yAxis: [{type: 'value',axisLine: {lineStyle: {color: '#999'}},axisLabel: {color: '#666'}}], //表格y轴设置
     xAxis: [{type: 'category',axisTick: { show: false },data: ['8:00', '9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00'],axisLine: {lineStyle: {color: '#999'}},axisLabel: {color: '#666'}}], //表格x轴设置
-    series: [{name: 'Pit', type: 'bar', label: {normal: {show: true,position: 'inside', color: 'white'}},itemStyle: {borderRadius: [4, 4, 0, 0], color: '#9E7E38', shadowColor: 'rgba(0, 0, 0, 0.5)', shadowBlur: 2}, //Series设置
+    series: [{name: 'Pit', type: 'bar', label: {normal: {show: true,position: 'inside', color: 'white'}},itemStyle: {borderRadius: [4, 4, 0, 0], color: '#d6b160', shadowColor: 'rgba(0, 0, 0, 0.5)', shadowBlur: 2}, //Series设置
         // 👇 Friday 数据！！！
         data: [7, 9, 10, 29, 56, 49, 25, 18, 17, 33, 43, 31, 2, 1, 0], },]}  
 
@@ -76,7 +76,7 @@ function initChart(canvas, width, height, dpr) {
     grid: {left: 20,right: 20,bottom: 15,top: 40,containLabel: true}, // 整体表格所在的grid的大小设置
     yAxis: [{type: 'value',axisLine: {lineStyle: {color: '#999'}},axisLabel: {color: '#666'}}], //表格y轴设置
     xAxis: [{type: 'category',axisTick: { show: false },data: ['8:00', '9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00'],axisLine: {lineStyle: {color: '#999'}},axisLabel: {color: '#666'}}], //表格x轴设置
-    series: [{name: 'Pit', type: 'bar', label: {normal: {show: true,position: 'inside', color: 'white'}},itemStyle: {borderRadius: [4, 4, 0, 0], color: '#9E7E38', shadowColor: 'rgba(0, 0, 0, 0.5)', shadowBlur: 2}, //Series设置
+    series: [{name: 'Pit', type: 'bar', label: {normal: {show: true,position: 'inside', color: 'white'}},itemStyle: {borderRadius: [4, 4, 0, 0], color: '#d6b160', shadowColor: 'rgba(0, 0, 0, 0.5)', shadowBlur: 2}, //Series设置
         // 👇 Saturday 数据！！！
         data: [0, 7, 17, 41, 45, 31, 8.3, 1.5, 0.9, 7.4, 20, 19, 1.7, 1, 0], },]}
         
@@ -86,7 +86,7 @@ function initChart(canvas, width, height, dpr) {
     grid: {left: 20,right: 20,bottom: 15,top: 40,containLabel: true}, // 整体表格所在的grid的大小设置
     yAxis: [{type: 'value',axisLine: {lineStyle: {color: '#999'}},axisLabel: {color: '#666'}}], //表格y轴设置
     xAxis: [{type: 'category',axisTick: { show: false },data: ['8:00', '9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00'],axisLine: {lineStyle: {color: '#999'}},axisLabel: {color: '#666'}}], //表格x轴设置
-    series: [{name: 'Pit', type: 'bar', label: {normal: {show: true,position: 'inside', color: 'white'}},itemStyle: {borderRadius: [4, 4, 0, 0], color: '#9E7E38', shadowColor: 'rgba(0, 0, 0, 0.5)', shadowBlur: 2}, //Series设置
+    series: [{name: 'Pit', type: 'bar', label: {normal: {show: true,position: 'inside', color: 'white'}},itemStyle: {borderRadius: [4, 4, 0, 0], color: '#d6b160', shadowColor: 'rgba(0, 0, 0, 0.5)', shadowBlur: 2}, //Series设置
         // 👇 Sunday 数据！！！
         data: [0, 7.6, 18, 35, 40, 38, 18, 5.2, 8.9, 17, 42, 36, 0.4, 0.1, 0], },]}       
 
@@ -122,7 +122,7 @@ wx.cloud.callFunction({
       type: 'gauge',
       detail: {
         formatter: '{value}%',
-        color: '#9E7E38',
+        color: '#d6b160',
         fontSize: 20,
       },
       axisLine: {
@@ -168,7 +168,7 @@ wx.cloud.callFunction({
         }
       ],
       itemStyle: {
-        color: '#9E7E38',
+        color: '#d6b160',
       }
     }]
   };
@@ -182,6 +182,8 @@ wx.cloud.callFunction({
 //var app = getApp();
 Page({
     data: {
+      currentDateIndex: 0,
+      currentTimePeriodIndex: 0,
       menu_data: {},
       have_menu_data: false,
       ec: {
@@ -299,18 +301,79 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-    const that = this;
-    var day = new Date()
-      var date_string = `${day.getFullYear()}-${(day.getMonth() + 1).toString().padStart(2,'0')}-${(day.getDate()).toString().padStart(2,'0')}`;
-      // date_string="2021-12-01";
-      that.getMenuList(date_string, 'Pit')
+      this.getTodayMenu();
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    let that = this;
+    const query = wx.createSelectorQuery()
+    query.select('#swiper-container').boundingClientRect()
+    query.selectViewport().scrollOffset()
+    query.exec(function (swiper_container_res) {
+      const stickyTab = wx.createSelectorQuery()
+      stickyTab.select('#stickyTab').boundingClientRect()
+      stickyTab.selectViewport().scrollOffset()
+      stickyTab.exec(function (stickyTab_res) {
+        var stickyTabTop = stickyTab_res[0].top
+        var position = swiper_container_res[0].top
+        // 获取系统信息
+        wx.getSystemInfo({
+          success: function (res) {
+            // 获取可使用窗口高度
+            let clientHeight = res.windowHeight;
+            // 设置高度
+            that.setData({
+              stickyTabTop: stickyTabTop,
+              swiper_height: clientHeight - position
+            });
+          }
+        });
+      })
+    })
+  },
+  // 选择供餐时段
+  selectPeriod: function (e) {
+    const that = this;
+    var key_list = Object.keys(this.data.menu_data)
+    var data_index = 0
+    for (var i in key_list) {
+      if (e.currentTarget.dataset.current === key_list[i]) {
+        data_index = i
+      }
+    }
+    if (that.data.currentTimePeriodIndex === data_index) {
+      return false;
+    } else {
+      that.setData({
+        currentTimePeriodName: e.currentTarget.dataset.current,
+        currentTimePeriodIndex: data_index
+      })
+      console.log('currentTimePeriodIndex: ', that.data.currentTimePeriodIndex)
+    }
+  },
+  onTabChange: function (e) {
+    this.setData({
+      currentTimePeriodIndex: e.detail.index
+    })
+  },
+  onSwiperChange: function (e) {
+    this.setData({
+      currentTimePeriodIndex: e.detail.current
+    })
+  },
+  // 窗口折叠面板
+  windowToggle: function (e) {
+    var periodName = e.currentTarget.dataset.periodname
+    var dinningHallName = e.currentTarget.dataset.dinninghallname
+    var window_name = e.currentTarget.dataset.window_name
+    var menu_data = this.data.menu_data
+    menu_data[periodName][dinningHallName]['window'][window_name].open = !menu_data[periodName][dinningHallName]['window'][window_name].open
+    this.setData({
+      menu_data
+    })
   },
 
   /**
@@ -449,61 +512,83 @@ Page({
     },
 
     // 获取当天菜单**********************************************************************************
-  getMenuList: function (date_string, dinning_name) {
-    // date_string = '2021-11-09'
-    console.log('date_string:', date_string)
+    getMenuList: function (date_string, dinning_name) {
+      return new Promise((resolve, reject) => {
+        // date_string = '2021-11-09'
+        console.log('date_string:', date_string)
+        const db = wx.cloud.database();
+        const cont = db.collection(dinning_name);
+        cont.where({
+          _id: date_string,
+        }).get({
+          success: res => {
+            console.log(res)
+            if (res.data.length < 1) {
+              resolve();
+            }
+            // 拿到数据
+            var dinningHallMenu = res.data[0];
+            delete dinningHallMenu._id;
+            for (var key in dinningHallMenu) {
+              if (key == "Pit Stop") {
+                continue;
+              }
+              if (!this.data.menu_data.hasOwnProperty(key)) {
+                this.setData({
+                  [`menu_data.${key}`]: {},
+                  have_menu_data: true
+                })
+              }
+              var window_data = {}
+              for (var window in dinningHallMenu[key]) {
+                window_data[window] = {
+                  open: false,
+                  food_list: dinningHallMenu[key][window]
+                }
+              }
+              this.setData({
+                [`menu_data.${key}.${dinning_name}`]: {
+                  open: false,
+                  window: window_data
+                },
+                have_menu_data: true
+              })
+            }
+            resolve()
+          }
+        })
+      })
+    },
+     // 选择日期
+  getTodayMenu: function (e) {
     wx.showLoading({
       title: '',
+      mask: true
     })
-    const db = wx.cloud.database();
-    var that=this;
-    const cont = db.collection(dinning_name);
-    cont.where({
-      _id: date_string,
-    }).get({
-      success: res => {
-        console.log(res)
-        if(res.data.length < 1){
-          wx.hideLoading();
-          wx.showToast({
-            title: date_string+'暂无数据',
-            icon: 'none',
-            duration: 2000
-          });
-          that.setData({
-            menu_data: {},
-            have_menu_data: false
-          });
-          return;
-        }
-        // 拿到数据
-        var dinningHallMenu = res.data[0];
-        delete dinningHallMenu._id;
-        for (var key in dinningHallMenu) {
-          if (!this.data.menu_data.hasOwnProperty(key)) {
-            this.setData({
-              [`menu_data.${key}`]: {},
-              have_menu_data: true
-            })
-          }
-          var window_data = {}
-          for (var window in dinningHallMenu[key]) {
-            window_data[window] = {
-              open: false,
-              food_list: dinningHallMenu[key][window]
-            }
-          }
-          this.setData({
-            [`menu_data.${key}.${dinning_name}`]: {
-              open: false,
-              window: window_data
-            },
-            have_menu_data: true
-          })
-        }
-        wx.hideLoading()
+    
+    const that = this;
+    var day = new Date()
+
+    var date_string = `${day.getFullYear()}-${(day.getMonth() + 1).toString().padStart(2,'0')}-${(day.getDate()).toString().padStart(2,'0')}`
+   
+    var PitPromise = that.getMenuList(date_string, 'Pit')
+    PitPromise.then(values => {
+      console.log(values);
+      if (Object.keys(this.data.menu_data).length == 0) {
+        wx.showToast({
+          title: date_string + '暂无数据',
+          icon: 'none',
+          duration: 2000
+        });
+        that.setData({
+          menu_data: {},
+          have_menu_data: false
+        });
       }
-    })
+      wx.hideLoading();
+    }, reason => {
+      console.log(reason)
+    });
   },
 
   // 选择供餐时段

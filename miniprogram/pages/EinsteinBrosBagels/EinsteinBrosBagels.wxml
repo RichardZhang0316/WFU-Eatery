@@ -8,19 +8,21 @@
 
 <view class="flexTimetable">
   <view class="shit3">
-    <view class="view">
-      <view class="shit">Open until 10 PM</view>
-      <icon bindtap="{{ stopBtn ? 'showContent' : 'hideContent' }}" type="info" size="16" color="#9E7E38"></icon>
+    <view class="view" bindtap="{{ stopBtn ? 'showContent' : 'hideContent' }}">
+      <view class="shit">Opening Time</view>
+      <van-icon name="arrow-down" color="#d6b160"/>
     </view>
-    <view wx:for="{{timeTable}}" wx:if="{{choose}}" class='companyInfo1' animation='{{}}'>
+    <van-transition show="{{ choose }}" custom-class="block" name="fade">
+    <view wx:for="{{timeTable}}" class='companyInfo1'>
       <view class='companyInfo-left'>
         <text class="shit4">{{item.realTimeTable}}</text>
       </view>
     </view>
-</view>
+    </van-transition>
 </view>
 
-<view class="shit">The North Dining Hall</view>
+</view>
+<view class="shit">Farrell Hall Ground Floor</view>
 
 <view class="popularTimes">
 <view class="shit2"><view>Popular Times</view></view></view>
@@ -32,7 +34,7 @@
 <view class="greyPart"> </view>
 <view class="realPart"><view class="menuTitle">Menu</view></view>
 
-<van-tabs swipeable>
+<van-tabs swipeable ellipsis="{{false}}" color="#d6b160" title-active-color="#d6b160">
   <van-tab title="Bagels">
       <foodCard desc="简单却是永恒的经典" title="Plain bagel 原味贝果" thumb="https://www.einsteinbros.com/wp-content/uploads/2019/04/menu_items_new_ClassicBagel_Plain.jpg" price="1.39+" currency="$"/>
       <foodCard desc="意大利进口奶酪，好吃到爆" title="Asiago Cheese Bagel 阿夏戈奶酪贝果" thumb="https://www.einsteinbros.com/wp-content/uploads/2019/04/menu_items_new_ClassicBagel_Asiago.jpg" price="1.39+" currency="$"/>
@@ -135,3 +137,4 @@
 
 </van-tabs>
 
+<view style="height: 60px; width: 100%; background-color:#ececec;"></view>

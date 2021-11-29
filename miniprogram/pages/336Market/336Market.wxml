@@ -10,7 +10,7 @@
 <view class="flexTimetable">
   <view class="shit3">
     <view class="view" bindtap="{{ stopBtn ? 'showContent' : 'hideContent' }}">
-      <view class="shit">Open until 10 PM</view>
+      <view class="shit">Opening Time</view>
       <van-icon name="arrow-down" color="#d6b160"/>
     </view>
     <view wx:for="{{timeTable}}" wx:if="{{choose}}" class='companyInfo1' animation='{{}}'>
@@ -33,7 +33,7 @@
 <view class="greyPart"> </view>
 <view class="realPart"><view class="menuTitle">Menu</view></view>
 
-<van-tabs active="{{ active }}" bind:change="onChange" color="#d6b160" title-active-color="#d6b160">
+<van-tabs active="{{ active }}" bind:change="onChange" swipeable ellipsis="{{false}}" color="#d6b160" title-active-color="#d6b160">
     <van-tab title="Harvest Table Grab N Go">
     <foodCard title="Fruit Salad Cup 水果沙拉杯" desc="80卡路里" thumb="https://sob-prd-cdn-products.azureedge.net/media/image/product/en/large/0020861100000.jpg"/>
     <foodCard title="Bacon, Egg, Mushroom, Spinach Salad 培根鸡蛋蘑菇菠菜沙拉" desc="240卡路里" thumb="https://zenandspice.com/wp-content/uploads/2019/12/spinach-bacon-salad-1-1024x683.jpg"/>
@@ -54,3 +54,4 @@
     <foodCard title="Caesar Salad 凯撒沙拉" desc="510卡路里" thumb="https://natashaskitchen.com/wp-content/uploads/2019/01/Caesar-Salad-Recipe-3.jpg"/>
   </van-tab>
 </van-tabs>
+<view style="height: 60px; width: 100%; background-color:#ececec;"></view>

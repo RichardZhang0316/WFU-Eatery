@@ -10,7 +10,7 @@
 <view class="flexTimetable">
   <view class="shit3">
     <view class="view" bindtap="{{ stopBtn ? 'showContent' : 'hideContent' }}">
-      <view class="shit">Open until 10 PM</view>
+      <view class="shit">Opening Time</view>
       <van-icon name="arrow-down" color="#d6b160"/>
     </view>
     <view wx:for="{{timeTable}}" wx:if="{{choose}}" class='companyInfo1' animation='{{}}'>
@@ -33,7 +33,7 @@
 <view class="greyPart"> </view>
 <view class="realPart"><view class="menuTitle">Menu</view></view>
 
-<van-tabs active="{{ active }}" bind:change="onChange" color="#d6b160" title-active-color="#d6b160">
+<van-tabs active="{{ active }}" bind:change="onChange" swipeable ellipsis="{{false}}" color="#d6b160" title-active-color="#d6b160">
   <van-tab title="Breakfast">
     <foodCard title="Morning Sunrise Bagel 日出贝果" desc="培根、鸡蛋和车打芝士佐Plain Bagel或Everyth Bagel" thumb="https://cdn7.kiwilimon.com/recetaimagen/26259/1900x1080/23276.jpg.webp" price="5.19" currency="$" />
     <foodCard title="Breakfast Burrito 早餐墨西哥卷" desc="鸡蛋、火鸡和车打芝士做的墨西哥卷" thumb="https://www.cookingclassy.com/wp-content/uploads/2019/08/breakfast-burrito-01.jpg" price="5.19" currency="$" />
@@ -70,3 +70,4 @@
     <foodCard title="Hashbrowns 薯饼" thumb="https://thumbor.thedailymeal.com/mLKOQg-3ILFNGOjKQyEOeoR_uyw=//https://www.thedailymeal.com/sites/default/files/recipe/2021/GettyImages-184839841.jpg" price="1.79" currency="$" />
   </van-tab>
 </van-tabs>
+<view style="height: 60px; width: 100%; background-color:#ececec;"></view>

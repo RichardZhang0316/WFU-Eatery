@@ -5,7 +5,9 @@
     "van-transition": "/components/vant/transition/index",
     "van-empty":"/components/vant/empty/index",
     "van-tab": "/components/vant/tab/index",
-    "van-tabs": "/components/vant/tabs/index"
+    "van-tabs": "/components/vant/tabs/index",
+    "van-skeleton":"/components/vant/skeleton/index",
+    "van-icon": "/components/vant/icon/index"
   },
   "navigationStyle": "custom"
 }

@@ -1,3 +1,6 @@
+page{
+  background-color:  #ececec ;
+} 
 .head-text {
   position: relative;
   z-index: 99;
@@ -9,7 +12,11 @@
   left: 3%;
   bottom: 100rpx;
 }
-
+.greyPart{
+  background-color: #ececec;
+  height: 13px;
+  width: 100%;
+}
 .topCard {
   height: 260px;
 }
@@ -18,12 +25,14 @@
   display: flex;
 }
 
-.shit {
+.shit{
   margin-left: 3%;
   margin-right: 3%;
   font-size: 12px;
   font-weight: bold;
   height: fit-content;
+  background-color: #fff;
+  color:grey;
 }
 
 .flexTimetable {
@@ -38,7 +47,7 @@
   margin-left: 3%;
   margin-right: 3%;
   font-size: 17px;
-  color: #9E7E38;
+  color: #d6b160;
   background-color: #fff;
 }
 
@@ -61,7 +70,10 @@
 .shit4{
   display: block;
   font-size: 12px;
+  color: grey;
+  line-height: auto;
 }
+
 
 .popularTimes {
   height: 30%;
@@ -81,7 +93,7 @@
 .menuTitle {
   height: 30%;
   font-size: 17px;
-  color: #9E7E38;
+  color: #d6b160;
   margin-left: 3%;
   margin-right: 3%;
   font-weight: bold;
@@ -170,7 +182,7 @@
 
 .kind-list-text {
   flex: 1;
-  color: #9E7E38;
+  color: #d6b160;
   margin-left: 2%;
   font-size: 17px;
 }
@@ -232,8 +244,8 @@ ec-canvas {
 }
 
 .tabBorer {
-  border-bottom: 1px solid rgb(214, 177, 96);
-  color: rgb(214, 177, 96);
+  border-bottom: 1px solid #d6b160;
+  color: #d6b160;
 }
 
 .tab1 {
