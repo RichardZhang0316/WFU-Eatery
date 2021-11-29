@@ -4,7 +4,7 @@
 </view>
 
 <view class="card">
-<navigator class="topTitle" url="/pages/FoodDollar/FoodDollar">Inquiry Food Dollar </navigator>
+<navigator class="topTitle" url="/pages/FoodDollar/FoodDollar">Inquiry Food Dollar</navigator>
 </view>
 
 <view class="card">
@@ -19,4 +19,4 @@
 
 <image class="image" src="/images/Deaco.png" style = "width:100px" mode = "widthFix"></image>
 
-<view class = "end">━━━━━━━━━ Eat Wisely! ━━━━━━━━━</view>
+<view class = "end">━━━━━━━━ Eat Wisely! ━━━━━━━━</view>

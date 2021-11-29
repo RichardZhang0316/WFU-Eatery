@@ -86,7 +86,7 @@ margin-top:20%;
   /*左外边距，这里代表距离最左边的距离*/
   
   /*卡片的高度。*/
-  height: 100rpx;
+  height: 90rpx;
   color:black;
   padding: 20px;
   font-size: 20px;

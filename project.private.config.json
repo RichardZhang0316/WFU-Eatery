@@ -35,6 +35,12 @@
           "pathName": "pages/ForestGreens/ForestGreens",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/Favorites/Favorites",
+          "pathName": "pages/Favorites/Favorites",
+          "query": "",
+          "scene": null
         }
       ]
     }
