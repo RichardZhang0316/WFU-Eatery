@@ -57,7 +57,7 @@
   <van-tab title="Flying the Coop">
     <foodCard desc="770卡路里" title="TLC Combo 1" thumb="https://i.loli.net/2021/11/28/FmJbgWHPLqenQBh.png" price="7.99"currency="$"/>
     <foodCard desc="980卡路里" title="TLC Combo 2" thumb="https://i.loli.net/2021/11/28/FmJbgWHPLqenQBh.png" price="9.99"currency="$"/>
-    <foodCard desc="770卡路里" title="TLC Combo 3" thumb="https://i.loli.net/2021/11/28/FmJbgWHPLqenQBh.png" price="7.99"currency="$"/>
+    <foodCard desc="770卡路里 (有汉堡)" title="TLC Combo 3" thumb="https://i.loli.net/2021/11/28/FmJbgWHPLqenQBh.png" price="7.99"currency="$"/>
     <foodCard desc="490卡路里 (可以换为Chipotle Honey风味)" title="FTC Chicken Tenders Sandwich" thumb="https://user-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_1440,w_720,f_auto,q_auto/1408291/Web_Flew_The_Coop_Fare_Photo-19_scxbzv.jpg" price="4.29"currency="$"/>
     <foodCard desc="490卡路里 (可以换为Chipotle Honey风味)" title="FTC Chicken Tenders (3 pc.)" thumb="https://food.fnr.sndimg.com/content/dam/images/food/plus/fullset/2020/02/04/0/GuysBigBash_TOUCHDOWN-TENDERS_0023_s4x3.jpg.rend.hgtvcom.406.305.suffix/1580853266209.jpeg" price="4.29"currency="$"/>
     <foodCard desc="820卡路里 (可以换为Chipotle Honey风味)" title="FTC Chicken Tenders (5 pc.)" thumb="https://food.fnr.sndimg.com/content/dam/images/food/plus/fullset/2020/02/04/0/GuysBigBash_TOUCHDOWN-TENDERS_0023_s4x3.jpg.rend.hgtvcom.406.305.suffix/1580853266209.jpeg" price="5.79"currency="$"/>

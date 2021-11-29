@@ -4,25 +4,22 @@ Page({
   /**
    * 页面的初始数据
    */
-  data: {
-
-  },
 
 
   data: {
     steps: [
       {
-        text: '方法一',
-        desc: 'Deacon Dining Website。',
+        text: 'Method 1',
+        desc: 'Deacon Dining网站: 下方复制网页链接，跳转浏览器后登陆充值',
       
       },
       {
-        text: '方法二',
-        desc: '拨打336.758.5607 或 800.528.5778。',
+        text: 'Method 2',
+        desc: '拨打电话: 336.758.5607 或 800.528.5778',
       },
       {
-        text: '方法三',
-        desc: '周一至周五8:30 Am 到 4:30 PM，在Reynolda一楼服务窗口直接充值。',
+        text: 'Method 3',
+        desc: '现场充值: 周一至周五8:30am-4:30 PM，在Reynolda一层服务窗口直接充值',
 
       
       },

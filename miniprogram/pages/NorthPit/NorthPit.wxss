@@ -39,6 +39,7 @@
   margin-right: 3%;
   font-size: 17px;
   color: #9E7E38;
+  background-color: #fff;
 }
 
 .companyInfo1 {
@@ -206,10 +207,12 @@ ec-canvas {
 
 .container {
   height: 175px;
+  background-color: #fff;
 }
 
 .container1 {
   height: 215px;
+  background-color: #fff;
 }
 
 .l3 {

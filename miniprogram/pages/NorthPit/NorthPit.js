@@ -20,7 +20,8 @@ function initChart(canvas, width, height, dpr) {
   var D = myDate.getDay()
   console.log(D) //测试用，例如: 2 = Tue
   
-  var Mon = {              
+  var Mon = {   
+    backgroundColor: "#fff",           
     tooltip: {trigger:'axis',axisPointer: {type: 'shadow'},confine: true,formatter: '{b0}: {c0}%', padding:[5,10,5,10,]}, //提示框前端
     grid: {left: 20,right: 20,bottom: 15,top: 40,containLabel: true}, // 整体表格所在的grid的大小设置
     yAxis: [{type: 'value',axisLine: {lineStyle: {color: '#999'}},axisLabel: {color: '#666'}}], //表格y轴设置
@@ -29,7 +30,8 @@ function initChart(canvas, width, height, dpr) {
         // 👇 Monday 数据！！！
         data: [3, 5, 6.7, 29, 47, 38, 28, 22, 27, 33, 64, 52, 34, 20, 17], },]}
   
-  var Tue = {              
+  var Tue = {   
+    backgroundColor: "#fff",                      
     tooltip: {trigger:'axis',axisPointer: {type: 'shadow'},confine: true,formatter: '{b0}: {c0}%', padding:[5,10,5,10,]}, //提示框前端
     grid: {left: 20,right: 20,bottom: 15,top: 40,containLabel: true}, // 整体表格所在的grid的大小设置
     yAxis: [{type: 'value',axisLine: {lineStyle: {color: '#999'}},axisLabel: {color: '#666'}}], //表格y轴设置
@@ -38,7 +40,8 @@ function initChart(canvas, width, height, dpr) {
         // 👇 Tuesday 数据！！！
         data: [4.1, 9.4, 17, 38, 47, 29, 19, 16, 19, 35, 66, 53, 33, 19, 15], },]}
 
-  var Wed = {              
+  var Wed = {
+    backgroundColor: "#fff",                         
     tooltip: {trigger:'axis',axisPointer: {type: 'shadow'},confine: true,formatter: '{b0}: {c0}%', padding:[5,10,5,10,]}, //提示框前端
     grid: {left: 20,right: 20,bottom: 15,top: 40,containLabel: true}, // 整体表格所在的grid的大小设置
     yAxis: [{type: 'value',axisLine: {lineStyle: {color: '#999'}},axisLabel: {color: '#666'}}], //表格y轴设置
@@ -47,7 +50,8 @@ function initChart(canvas, width, height, dpr) {
         // 👇 Wednesday 数据！！！
         data: [3.7, 8.2, 16, 40, 53, 40, 33, 31, 35, 43, 56, 37, 21, 5.3, 5], },]}
 
-  var Thur = {              
+  var Thur = {   
+    backgroundColor: "#fff",                      
     tooltip: {trigger:'axis',axisPointer: {type: 'shadow'},confine: true,formatter: '{b0}: {c0}%', padding:[5,10,5,10,]}, //提示框前端
     grid: {left: 20,right: 20,bottom: 15,top: 40,containLabel: true}, // 整体表格所在的grid的大小设置
     yAxis: [{type: 'value',axisLine: {lineStyle: {color: '#999'}},axisLabel: {color: '#666'}}], //表格y轴设置
@@ -56,7 +60,8 @@ function initChart(canvas, width, height, dpr) {
         // 👇 Thursday 数据！！！
         data: [4.9, 12, 19, 39, 60, 44, 32, 34, 35, 59, 48, 42, 34, 30, 26], },]}
         
-  var Fri = {              
+  var Fri = {    
+    backgroundColor: "#fff",                     
     tooltip: {trigger:'axis',axisPointer: {type: 'shadow'},confine: true,formatter: '{b0}: {c0}%', padding:[5,10,5,10,]}, //提示框前端
     grid: {left: 20,right: 20,bottom: 15,top: 40,containLabel: true}, // 整体表格所在的grid的大小设置
     yAxis: [{type: 'value',axisLine: {lineStyle: {color: '#999'}},axisLabel: {color: '#666'}}], //表格y轴设置
@@ -65,7 +70,8 @@ function initChart(canvas, width, height, dpr) {
         // 👇 Friday 数据！！！
         data: [2.5, 7.5, 9.8, 23, 42, 38, 21, 17, 21, 29, 43, 35, 31, 26, 25], },]}  
 
-  var Sat = {              
+  var Sat = {  
+    backgroundColor: "#fff",                       
     tooltip: {trigger:'axis',axisPointer: {type: 'shadow'},confine: true,formatter: '{b0}: {c0}%', padding:[5,10,5,10,]}, //提示框前端
     grid: {left: 20,right: 20,bottom: 15,top: 40,containLabel: true}, // 整体表格所在的grid的大小设置
     yAxis: [{type: 'value',axisLine: {lineStyle: {color: '#999'}},axisLabel: {color: '#666'}}], //表格y轴设置
@@ -74,7 +80,8 @@ function initChart(canvas, width, height, dpr) {
         // 👇 Saturday 数据！！！
         data: [1.4, 2.7, 7.7, 20, 24, 28, 8.3, 7, 7.8, 11, 25, 29, 27, 17, 14], },]}
         
-  var Sun = {              
+  var Sun = { 
+    backgroundColor: "#fff",                        
     tooltip: {trigger:'axis',axisPointer: {type: 'shadow'},confine: true,formatter: '{b0}: {c0}%', padding:[5,10,5,10,]}, //提示框前端
     grid: {left: 20,right: 20,bottom: 15,top: 40,containLabel: true}, // 整体表格所在的grid的大小设置
     yAxis: [{type: 'value',axisLine: {lineStyle: {color: '#999'}},axisLabel: {color: '#666'}}], //表格y轴设置
@@ -105,11 +112,11 @@ function initChart1(canvas, width, height, dpr) {
   }).then(res => {
     // resolve(res.result)
     console.log(res);
-    var PecentageM = res.result.MagnoliaRoom.occupancy_percent;   //最终data 
+    var PecentageM = res.result.Hilltop.occupancy_percent;   //最终data 
 
   //实时人流图表的基础参数设置
   var option = {
-    backgroundColor: "#F6F6F6",
+    backgroundColor: "#fff",
     series: [{
       name: 'Real_Time',
       type: 'gauge',
@@ -179,6 +186,8 @@ function initChart1(canvas, width, height, dpr) {
 // var app = getApp();
 Page({
     data: {
+      loading: true,
+
       ec: {
         onInit: initChart
       },
@@ -326,8 +335,8 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
-
+  onReady() {
+    
   },
 
   /**
@@ -463,5 +472,8 @@ Page({
         // 获取 chart 实例的方式
         //console.log(chart)
       }, 2000);
+      this.setData({
+        loading: false,
+      });
     }
   })

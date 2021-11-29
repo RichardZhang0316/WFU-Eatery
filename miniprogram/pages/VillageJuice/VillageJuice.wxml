@@ -49,14 +49,21 @@
     <foodCard desc="440卡路里 详情：gluten free oats, oat milk, almond butter, organic strawberry, honey, banana, toasted almond crumble" title="OVERNIGHT OATS" thumb="https://i.loli.net/2021/11/28/3ZeGgWhwoLY1NC7.png" price="7.95" currency="$"/>
   </van-tab>
   <van-tab title="Wraps">
-    <foodCard desc="930卡路里 详情: Tater tots (炸土豆), bacon, BBQ sauce, cheddar (干酪), mozzarella & ranch added" title="Puff Daddy" thumb="https://spoonuniversity.com/wp-content/uploads/sites/100/2016/03/zicks-changes.jpg" price="8.79" currency="$"/>
-    
-    
+    <foodCard title="QUIT YOUR JOB" desc="520卡路里 详情：scrambled egg, tomato, avocado, sharp cheddar, avocado goddess, sriracha and wrapped in flour tortilla & topped with mango salsa" thumb="https://i.loli.net/2021/11/29/9kHrj7nKdDQptB8.png" price="9.95" currency="$"/>
+    <foodCard title="NUT BUTTER & BANANA" desc="550卡路里 详情：cashew butter, banana, honey" thumb="https://i.loli.net/2021/11/29/SrNVkD6GeCitO7z.png" price="7.95" currency="$"/>
+    <foodCard title="CHICKEN BACON AVOCADO WRAP" desc="620卡路里 详情：Joyce Farms roasted chicken, thick cut bacon, heirloom tomato, sharp cheddar, avocado, spinach, housemade ranch and wrapped in flour tortilla" thumb="https://i.loli.net/2021/11/29/gReVbU2sWHdp1lI.png" price="10.95" currency="$"/>
+    <foodCard title="AVO VEGAN" desc="260卡路里 详情：housemade avocado spread, local curtido, herb oil, micro-greens" thumb="https://i.loli.net/2021/11/29/xMzPEs8FBjLiQ64.png" price="9.95" currency="$"/>
+    <foodCard title="BASIL, BACON & TOMATO" desc="210卡路里 详情：bacon, heirloom tomato, basil with housemade avocado spread" thumb="https://i.loli.net/2021/11/29/trzjAoBVvyadPbE.png" price="9.95" currency="$"/>
   </van-tab>
-  <van-tab title="Salad">
 
-    <foodCard desc="490卡路里 (可以换为Chipotle Honey风味)" title="FTC Chicken Tenders (3 pc.)" thumb="https://food.fnr.sndimg.com/content/dam/images/food/plus/fullset/2020/02/04/0/GuysBigBash_TOUCHDOWN-TENDERS_0023_s4x3.jpg.rend.hgtvcom.406.305.suffix/1580853266209.jpeg" price="4.29"currency="$"/>
-    <foodCard desc="820卡路里 (可以换为Chipotle Honey风味)" title="FTC Chicken Tenders (5 pc.)" thumb="https://food.fnr.sndimg.com/content/dam/images/food/plus/fullset/2020/02/04/0/GuysBigBash_TOUCHDOWN-TENDERS_0023_s4x3.jpg.rend.hgtvcom.406.305.suffix/1580853266209.jpeg" price="5.79"currency="$"/>
+  <van-tab title="Salad">
+    <foodCard title="VILLAGE COBB" desc="760卡路里 详情：Joyce Farms roasted chicken, thick cut bacon, egg, cherry tomato, avocado, green onion, blue crumbled cheese, sweet corn, romaine dressing: dressing: village ranch* or avo-goddess" thumb="https://i.loli.net/2021/11/29/25RTVEfKzLn6sqF.png" price="13.95" currency="$"/>
+    <foodCard title="TROPICAL CHICKEN" desc="430卡路里 详情：Joyce Farms roasted chicken, fresh mango, cilantro, honey sesame cashews, sesame goat cheese medallions, romaine" thumb="https://i.loli.net/2021/11/29/W1KVvlytiHzdTQP.png" price="12.95" currency="$"/>
+    <foodCard title="MISO BOWL " desc="470卡路里 详情：roasted red peppers, roasted carrots, pumpkin seeds, avocado, nori strips, brown rice, kale or spinach" thumb="https://i.loli.net/2021/11/29/mtD7oUGPOeyLuNY.png" price="9.95" currency="$"/>
+    <foodCard title="FARMER’S DAUGHTER" desc="550卡路里 详情：Joyce Farms roasted chicken, green apple, sweet potato, spiced almonds, brown rice, kale or spinach" thumb="https://i.loli.net/2021/11/29/N1KcnJFDms6uZyS.png" price="10.95" currency="$"/>    
+    <foodCard title="BRUSSELS & BACON" desc="650卡路里 详情：brussels sprouts, charred tomato, thick cut bacon, parmesan crisp, brown rice, spinach || Sub quinoa" thumb="https://i.loli.net/2021/11/29/xZLb8GPjqlH52BF.png" price="11.95" currency="$"/>
+    <foodCard title="MEDITERRANEAN" desc="570卡路里 详情：spiced chickpeas, feta, cherry tomato, cucumber, quinoa, fresh herbs romaine, organic arugula" thumb="https://i.loli.net/2021/11/29/HnmJEzx8Dhs7d3V.png" price="10.95" currency="$"/>
+    <foodCard title="SOUTHWEST" desc="572卡路里 详情：black beans, mango salsa, chopped romaine, sharp cheddar, cilantro, avocado, brown rice, sweet corn, green onion" thumb="https://i.loli.net/2021/11/29/k2HrPhTIS8xMqKX.png" price="10.95" currency="$"/>
   </van-tab>
 </van-tabs>
 

@@ -1,15 +1,19 @@
 <!--pages/FoodDollar/FoodDollar.wxml-->
+<view class="root">
+<view class="maxTitle">🎩 如何查看Food Dollar余额?</view></view> 
 
-<view class="maxTitle">🎩 怎么查看Food Dollar Balance？</view> 
-
+<view class="card">
+<view class="Michael2">
 <van-steps
   steps="{{ steps }}"
   active="0"
   direction="vertical"
-  active-color="black"
-  inactive-color="black"
+  active-color="#9E7E38"
+  inactive-color="#9E7E38"
   active-icon="star"
   inactive-icon="star"
 />
-
+</view>
 <view class="button" bindtap='copyText' data-text="{{contents}}">Get Website Link</view> 
+</view>
+

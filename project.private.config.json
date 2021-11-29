@@ -125,6 +125,48 @@
           "pathName": "pages/VillageJuice/VillageJuice",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/MagnoliaRoom/MagnoliaRoom",
+          "pathName": "pages/MagnoliaRoom/MagnoliaRoom",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/Favorites/Favorites",
+          "pathName": "pages/Favorites/Favorites",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/FoodDollar/FoodDollar",
+          "pathName": "pages/FoodDollar/FoodDollar",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/Favorites/Favorites",
+          "pathName": "pages/Favorites/Favorites",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/AddDeaconDolllar/AddDeaconDollar",
+          "pathName": "pages/AddDeaconDolllar/AddDeaconDollar",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/AddDeaconDolllar/AddDeaconDollar",
+          "pathName": "pages/AddDeaconDolllar/AddDeaconDollar",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/ChangeMealPlan/ChangeMealPlan",
+          "pathName": "pages/ChangeMealPlan/ChangeMealPlan",
+          "query": "",
+          "scene": null
         }
       ]
     }
