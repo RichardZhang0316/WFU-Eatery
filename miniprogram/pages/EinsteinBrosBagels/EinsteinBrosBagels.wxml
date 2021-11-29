@@ -3,7 +3,7 @@
 
 <view class="topCard">
 <image mode="aspectFill" src="https://i.loli.net/2021/11/12/MhLG32sdubAKQgt.jpg" style="height:100%; width:100%"></image>
-<text class="head-text">Starbucks</text>
+<text class="head-text">Einstein Bros Bagels</text>
 </view>
 
 <view class="flexTimetable">
