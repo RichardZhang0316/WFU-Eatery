@@ -7,16 +7,22 @@ Page({
   data: {
     steps: [
       {
-        text: '步骤一',
-        desc: '登录gmail, 找到Deacon Dining。',
+        text: 'Step 1',
+        desc: '登录WFU_Gmail, 在Google Apps中找到Deacon Dining选项',
+        // inactiveIcon: 'location-o',
+        // activeIcon: 'success',
       },
       {
-        text: '步骤二',
-        desc: '点击my profile，查看账户余额以及交易记录。',
+        text: 'Step 2',
+        desc: '点击"My Profile"即可查看账户余额及交易记录',
+        // inactiveIcon: 'location-o',
+        // activeIcon: 'success',
       },
       {
-        text: '步骤三',
-        desc: 'Instruction详见下方链接',
+        text: 'Step 3',
+        desc: '具体流程见下方链接，复制后在浏览器中打开',
+        // inactiveIcon: 'location-o',
+        // activeIcon: 'success',
       },
     ],
     contents:'https://dining.wfu.edu/wp-content/uploads/2017/09/Student-Deacon-Dining-Job-Aid-.pdf',

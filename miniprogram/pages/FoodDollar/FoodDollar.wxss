@@ -2,24 +2,58 @@ page{
   background-color:  #ececec ;
 }
 
+.root {
+  height: 50%;
+  background: rgb(214, 177, 96);
+  padding-bottom: 20rpx;
+}
+
 .maxTitle{
-  color:black;
+  color:white;
+  font-weight: bold;
   padding: 15px;
-  font-size: 20px;
-  text-align: left;
-  text-decoration-line: underline;
+  font-size: 25px;
 }
 
 .button{
   height: 30px;
   width: 50%;
-  margin-left: 5%;
-  margin-right:5%;
+  margin-left: 25%;
+  
   text-align: center;
   text-size-adjust:14;
-  color: black;
+  color: white;
   background-color:#d6b160;
   display: flex;
   align-items:center;
   justify-content: center;
+  right: 25%;
+  border-radius:10px;
+  /* box-shadow: 5px 5px 5px #FDC314; */
+  box-shadow: 5px 5px 5px #cdcfcf;
 }
+
+.card{
+  color:rgb(158, 126, 56);
+  /*卡片的宽度*/  
+  width: 90%;
+  /*左外边距，这里代表距离最左边的距离*/
+  /*margin-top: 10%;*/
+  margin-left: 5%;
+  /*卡片的高度。*/
+  height: 550rpx;
+  /*背景色，可以自己更换*/
+  background: rgb(255, 255, 255);
+  /* radius是卡片的边框的圆润c程度*/
+  margin-top: 30px;
+  border-radius:10px;
+  /* box-shadow: 5px 5px 5px #FDC314; */
+  box-shadow: 5px 5px 5px #cdcfcf;
+}
+
+.Michael2 {
+  font-weight: bold;
+  padding-top: 12px;
+}
+
+

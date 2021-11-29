@@ -57,22 +57,48 @@ Page({
 
   },
 
-
-
   data: {
+      List: [
+      {url: 'https://i.loli.net/2021/11/29/fA2eHXwuPgGqsNS.png',
+        text:"Base Plan",
+      },
+        {url: 'https://i.loli.net/2021/11/29/wuX9pQx5WHhFiNc.png',
+        text:"Gold Plan",
+      },
+        {url: 'https://i.loli.net/2021/11/29/IiW3NDnjVfloRkc.png',
+        text:"Screamin' Plan",
+      },
+        {url: 'https://i.loli.net/2021/11/29/hyH8lBLFMJcU514.png',
+        text:"Freedom Plan",
+      },
+        {url: 'https://i.loli.net/2021/11/29/Riw5nSQPjkxXU1Y.png',
+        text:"Forestry Plan",
+      },
+        {url: 'https://i.loli.net/2021/11/29/b2I8VOKqwf3UJFl.png',
+        text:"Black Plan",
+      },
+        {url: 'https://i.loli.net/2021/11/29/FisIkDn9Uy1bpdc.png',
+        text:"Apartment Style Plan",
+      },
+        {url: 'https://i.loli.net/2021/11/29/HUdVBziMJN16lKG.png',
+        text:"Commuter Plan",
+      }
+      ],
+      banner_data: {},
+  
     steps: [
       {
       
-        desc: ' 联系Residential Life and Housing。',
+        desc: ' 学生需联系Residential Life and Housing',
       },
       {
-        text: 'tel: ',
+        text: '电话：',
         desc: '336-758-5185',
       
       },
       {
-        text: 'email:',
-        desc: 'housing @wfu.edu',
+        text: 'Email:',
+        desc: 'housing@wfu.edu',
       
       },
     ],

@@ -2,24 +2,92 @@ page{
   background-color:  #ececec ;
 }
 
+.root {
+  height: 50%;
+  background: rgb(214, 177, 96);
+  padding-bottom: 20rpx;
+}
+
 .maxTitle{
-  color:black;
+  color:white;
+  font-weight: bold;
   padding: 15px;
-  font-size: 20px;
-  text-align: left;
-  text-decoration-line: underline;
+  font-size: 25px;
 }
 
 .button{
   height: 30px;
   width: 50%;
-  margin-left: 5%;
-  margin-right:5%;
+  margin-left: 25%;
+  
   text-align: center;
-  color: black;
   text-size-adjust:14;
+  color: white;
   background-color:#d6b160;
   display: flex;
   align-items:center;
   justify-content: center;
+  right: 25%;
+  border-radius:10px;
+  /* box-shadow: 5px 5px 5px #FDC314; */
+  box-shadow: 5px 5px 5px #cdcfcf;
+}
+
+.card{
+  color:rgb(158, 126, 56);
+  /*卡片的宽度*/  
+  width: 90%;
+  /*左外边距，这里代表距离最左边的距离*/
+  /*margin-top: 10%;*/
+  margin-left: 5%;
+  /*卡片的高度。*/
+  height: 375rpx;
+  /*背景色，可以自己更换*/
+  background: rgb(255, 255, 255);
+  /* radius是卡片的边框的圆润c程度*/
+  margin-top: 30px;
+  border-radius:10px;
+  /* box-shadow: 5px 5px 5px #FDC314; */
+  box-shadow: 5px 5px 5px #cdcfcf;
+}
+
+.card1{
+  color:rgb(158, 126, 56);
+  /*卡片的宽度*/  
+  width: 90%;
+  /*左外边距，这里代表距离最左边的距离*/
+  /*margin-top: 10%;*/
+  margin-left: 5%;
+  /*卡片的高度。*/
+  height: 585rpx;
+  /*背景色，可以自己更换*/
+  background: rgb(255, 255, 255);
+  /* radius是卡片的边框的圆润c程度*/
+  margin-top: 30px;
+  border-radius:10px;
+  /* box-shadow: 5px 5px 5px #FDC314; */
+  box-shadow: 5px 5px 5px #cdcfcf;
+}
+
+.Michael {
+  width: 90%;
+  text-align: center;
+  /*左外边距，这里代表距离最左边的距离*/
+  margin-left: 5%;
+  padding-top: 24px;
+  font-size: 16px;
+  font-weight: bold;
+  color:rgb(158, 126, 56);
+}
+.Michael1 {
+  width: 90%;
+  /*左外边距，这里代表距离最左边的距离*/
+  margin-left: 8%;
+  padding-top: 30px;
+  font-size: 15px;
+  color:rgb(158, 126, 56);
+}
+.Michael2 {
+  font-weight: bold;
+  padding-top: 12px;
 }

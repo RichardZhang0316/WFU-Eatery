@@ -1,13 +1,22 @@
 
-<view class="root">
-<view class="maxTitle" > Deacon Dining  </view> </view>
-<view class="logo" > 🥢 🍚🥄 </view>
+<view class="root" style="margin-bottom: 40px;">
+<view class="maxTitle">Deacon Help</view> 
+</view>
 
-<navigator class="FoodDollar" url="/pages/FoodDollar/FoodDollar"> Food Dollar </navigator>
-<navigator class="DeaconDollar" url="/pages/AddDeaconDolllar/AddDeaconDollar"> Add Deacon Dollar </navigator>
+<view class="card">
+<navigator class="topTitle" url="/pages/FoodDollar/FoodDollar">Inquiry Food Dollar </navigator>
+</view>
 
-<navigator class="ChangeMealPlan" url="/pages/ChangeMealPlan/ChangeMealPlan"> Change Meal Plan </navigator>
+<view class="card">
+<navigator class="topTitle" url="/pages/AddDeaconDolllar/AddDeaconDollar"> Add Deacon/Food Dollar </navigator>
+</view>
+
+<view class="card">
+<navigator class="topTitle" url="/pages/ChangeMealPlan/ChangeMealPlan"> Change Meal Plan </navigator>
+</view>
+
+
 
 <image class="image" src="/images/Deaco.png" style = "width:100px" mode = "widthFix"></image>
 
-<view class = "end">━━━━━━ Have A Good One! ━━━━━━</view>
+<view class = "end">━━━━━━━━━ Eat Wisely! ━━━━━━━━━</view>

@@ -20,7 +20,8 @@ function initChart(canvas, width, height, dpr) {
   var D = myDate.getDay()
   console.log(D) //测试用，例如: 2 = Tue
   
-  var Mon = {              
+  var Mon = {     
+    backgroundColor:"#fff",                             
     tooltip: {trigger:'axis',axisPointer: {type: 'shadow'},confine: true,formatter: '{b0}: {c0}%', padding:[5,10,5,10,]}, //提示框前端
     grid: {left: 20,right: 20,bottom: 15,top: 40,containLabel: true}, // 整体表格所在的grid的大小设置
     yAxis: [{type: 'value',axisLine: {lineStyle: {color: '#999'}},axisLabel: {color: '#666'}}], //表格y轴设置
@@ -29,7 +30,8 @@ function initChart(canvas, width, height, dpr) {
         // 👇 Monday 数据！！！
         data: [9.5, 18, 22, 30, 53, 37, 13, 4, 5, 18, 81, 76, 22, 11, 8.5], },]}
   
-  var Tue = {              
+  var Tue = {    
+    backgroundColor:"#fff",          
     tooltip: {trigger:'axis',axisPointer: {type: 'shadow'},confine: true,formatter: '{b0}: {c0}%', padding:[5,10,5,10,]}, //提示框前端
     grid: {left: 20,right: 20,bottom: 15,top: 40,containLabel: true}, // 整体表格所在的grid的大小设置
     yAxis: [{type: 'value',axisLine: {lineStyle: {color: '#999'}},axisLabel: {color: '#666'}}], //表格y轴设置
@@ -38,7 +40,8 @@ function initChart(canvas, width, height, dpr) {
         // 👇 Tuesday 数据！！！
         data: [6.5, 16, 20, 38, 55, 32, 19, 5, 9, 28, 78, 80, 25, 2, 1], },]}
 
-  var Wed = {              
+  var Wed = {    
+    backgroundColor:"#fff",          
     tooltip: {trigger:'axis',axisPointer: {type: 'shadow'},confine: true,formatter: '{b0}: {c0}%', padding:[5,10,5,10,]}, //提示框前端
     grid: {left: 20,right: 20,bottom: 15,top: 40,containLabel: true}, // 整体表格所在的grid的大小设置
     yAxis: [{type: 'value',axisLine: {lineStyle: {color: '#999'}},axisLabel: {color: '#666'}}], //表格y轴设置
@@ -47,7 +50,8 @@ function initChart(canvas, width, height, dpr) {
         // 👇 Wednesday 数据！！！
         data: [13, 22, 21, 32, 50, 33, 13, 6, 5, 14, 56, 22, 4, 1, 0], },]}
 
-  var Thur = {              
+  var Thur = {  
+    backgroundColor:"#fff",            
     tooltip: {trigger:'axis',axisPointer: {type: 'shadow'},confine: true,formatter: '{b0}: {c0}%', padding:[5,10,5,10,]}, //提示框前端
     grid: {left: 20,right: 20,bottom: 15,top: 40,containLabel: true}, // 整体表格所在的grid的大小设置
     yAxis: [{type: 'value',axisLine: {lineStyle: {color: '#999'}},axisLabel: {color: '#666'}}], //表格y轴设置
@@ -56,7 +60,8 @@ function initChart(canvas, width, height, dpr) {
         // 👇 Thursday 数据！！！
         data: [6, 14, 14, 35, 53, 30, 14, 3, 2, 33, 58, 32, 2, 1, 0], },]}
         
-  var Fri = {              
+  var Fri = {    
+    backgroundColor:"#fff",          
     tooltip: {trigger:'axis',axisPointer: {type: 'shadow'},confine: true,formatter: '{b0}: {c0}%', padding:[5,10,5,10,]}, //提示框前端
     grid: {left: 20,right: 20,bottom: 15,top: 40,containLabel: true}, // 整体表格所在的grid的大小设置
     yAxis: [{type: 'value',axisLine: {lineStyle: {color: '#999'}},axisLabel: {color: '#666'}}], //表格y轴设置
@@ -65,7 +70,8 @@ function initChart(canvas, width, height, dpr) {
         // 👇 Friday 数据！！！
         data: [7, 9, 10, 29, 56, 49, 25, 18, 17, 33, 43, 31, 2, 1, 0], },]}  
 
-  var Sat = {              
+  var Sat = {   
+    backgroundColor:"#fff",           
     tooltip: {trigger:'axis',axisPointer: {type: 'shadow'},confine: true,formatter: '{b0}: {c0}%', padding:[5,10,5,10,]}, //提示框前端
     grid: {left: 20,right: 20,bottom: 15,top: 40,containLabel: true}, // 整体表格所在的grid的大小设置
     yAxis: [{type: 'value',axisLine: {lineStyle: {color: '#999'}},axisLabel: {color: '#666'}}], //表格y轴设置
@@ -74,7 +80,8 @@ function initChart(canvas, width, height, dpr) {
         // 👇 Saturday 数据！！！
         data: [0, 7, 17, 41, 45, 31, 8.3, 1.5, 0.9, 7.4, 20, 19, 1.7, 1, 0], },]}
         
-  var Sun = {              
+  var Sun = {  
+    backgroundColor:"#fff",            
     tooltip: {trigger:'axis',axisPointer: {type: 'shadow'},confine: true,formatter: '{b0}: {c0}%', padding:[5,10,5,10,]}, //提示框前端
     grid: {left: 20,right: 20,bottom: 15,top: 40,containLabel: true}, // 整体表格所在的grid的大小设置
     yAxis: [{type: 'value',axisLine: {lineStyle: {color: '#999'}},axisLabel: {color: '#666'}}], //表格y轴设置
@@ -98,12 +105,18 @@ function initChart1(canvas, width, height, dpr) {
   });
   canvas.setChart(chart);
 
-  //获取实时人流数据，链接Javascript爬虫
-  var PecentageM = 80;   
+//获取实时人流数据，链接Javascript爬虫
+wx.cloud.callFunction({
+  name: 'realTime',
+  // 传递给云函数的event参数
+}).then(res => {
+  // resolve(res.result)
+  console.log(res);
+  var PecentageM = res.result.ThePit.occupancy_percent;   //最终data 
 
   //实时人流图表的基础参数设置
   var option = {
-    backgroundColor: "#F6F6F6",
+    backgroundColor: "#fff",
     series: [{
       name: 'Real_Time',
       type: 'gauge',
@@ -163,7 +176,7 @@ function initChart1(canvas, width, height, dpr) {
   chart.setOption(option, true);
 
   return chart;
-}
+})}
 
 
 //var app = getApp();

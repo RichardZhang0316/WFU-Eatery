@@ -1,8 +1,7 @@
 <navigation title='' show_bol='{{false}}'></navigation> 
 
 <view class="topCard">
-<image mode="aspectFill" src="https://i.loli.net/2021/11/12/JLCeQiNwfFlUIsn.jpg" style="height:100%; width:100%"></image>
-<view class="view">
+<image mode="aspectFill" src="https://i.loli.net/2021/11/29/zjyfTpNCFcbqruH.png" style="height:100%; width:100%"></image>
 <text class="head-text">Subway</text>
 <!-- <view class="bigTag">
 <image class="smallTag" src="/images/icon2.svg"></image>
@@ -11,7 +10,7 @@
 <image class="smallTag" src="/images/icon4.svg"></image>
 </view> -->
 </view>
-</view>
+
 
 <view class="flexTimetable">
   <view class="shit3">

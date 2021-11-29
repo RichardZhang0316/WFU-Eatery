@@ -2,7 +2,9 @@
   "usingComponents": {
     "ec-canvas": "../../ec-canvas/ec-canvas",
     "navigation": "/components/navigation/navigation", 
-    "van-transition": "/components/vant/transition/index"
+    "van-transition": "/components/vant/transition/index",
+    "van-loading": "/components/vant/loading/index",
+    "van-skeleton": "/components/vant/skeleton/index"
   },
   "navigationStyle": "custom"
 }

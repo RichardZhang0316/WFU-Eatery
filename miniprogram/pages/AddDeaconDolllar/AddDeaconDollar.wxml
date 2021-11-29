@@ -1,17 +1,27 @@
 <!--pages/AddDeaconDolllar/AddDeaconDollar.wxml-->
-<view class="maxTitle"> 🎩 Deacon Dollar怎么充值？</view> 
+<view class="root">
+<view class="maxTitle">🎩 如何充值Food Dollar?</view></view> 
 
+<view class="card">
+<view class="Michael">Food Dollar与Deacon Dollar有什么区别?</view>
+<view class="Michael1">Food Dollar可以用于购买WFU Dining的相关服务，而Deacon Dollar既可以用于购买WFU Dining的服务还可以用于校园内的其他购买，例如在University Store中购买商品</view>
+</view>
+
+<view class="card1">
+<view class="Michael2">
 <van-steps
   steps="{{ steps }}"
   active="0"
   direction="vertical"
-  active-color="black"
-  inactive-color="black"
+  active-color="#9E7E38"
+  inactive-color="#9E7E38"
   active-icon="star"
   inactive-icon="star"
 />
+</view>
 
 <view class="button" bindtap='copyText' data-text="{{contents}}">Get Website Link</view> 
+</view>
 
 
 

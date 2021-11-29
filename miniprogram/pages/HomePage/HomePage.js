@@ -37,7 +37,7 @@ Page({
             {
                 name: "Subway",
                 address: "Davis Residence Hall",
-                url: "https://i.loli.net/2021/11/12/JLCeQiNwfFlUIsn.jpg",
+                url: "https://i.loli.net/2021/11/29/cRsg3Jq7TOr8xj5.png",
                 page: "/pages/Subway/Subway",
                 payment: {
                     mealSwipes: false,

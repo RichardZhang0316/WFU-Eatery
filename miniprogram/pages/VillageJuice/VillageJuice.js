@@ -37,8 +37,8 @@ function initChart(canvas, width, height, dpr) {
         // 👇 数据录入处 ！！暂定以10为scale进行模拟, 数据源: Google
         data: [3, 5, 6.7, 9, 90, 90, 90, 90, 90, 33, 64, 52, 34, 20, 17], },]}
   
-  if (D<=5 && D>=1) {var option = weekdays}
-  if (D<=7 && D>=6) {var option = weekend}
+    if (D<=5 && D>=1) {var option = weekdays}
+    if (D==0 || D==6) {var option = weekend}
 
   chart.setOption(option);
   return chart;
@@ -53,7 +53,7 @@ Page({
             onInit: initChart
           },
         //前端滑动切换bar_Data input
-        active: 1,
+        active: 0,
         //下拉动画
         choose: false,
         animationData: {},
