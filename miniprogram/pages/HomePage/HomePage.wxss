@@ -152,7 +152,7 @@ page{
 
 
   .filterCard{
-    border-radius: 10px;
+    border-radius: 7px;
     border: solid 1px rgb(214, 177, 96);
     font-size: 15px;
     color: rgb(214, 177, 96);
@@ -161,7 +161,9 @@ page{
     margin: 5px;
     margin-bottom: 0px;
     display: inline-block;
-    padding: 4px;
+    padding: 0px;
+    padding-left: 6px;
+    padding-right: 6px;
   }
   .chosenFilter{
     background-color: rgb(214, 177, 96);

@@ -1,4 +1,114 @@
-<component title='我是tabbar的页面' show_bol='{{false}}'></component> 
+<navigation title='' show_bol='{{false}}'></navigation> 
 
-<component title='我是带返回的页面' show_bol='{{true}}'></component> 
+<view class="topCard">
+<image mode="aspectFill" src="https://thegatewayonline.ca/wp-content/uploads/2018/09/BENTO-1.jpg" style="height:100%; width:100%"></image>
+<view class="view">
+<text class="head-text">Bento Sushi</text>
+<!-- <view class="bigTag">
+<image class="smallTag" src="/images/icon2.svg"></image>
+<image class="smallTag" src="/images/icon5.svg"></image>
+<image class="smallTag" src="/images/icon1.svg"></image>
+<image class="smallTag" src="/images/icon4.svg"></image>
+</view> -->
+</view>
+</view>
 
+<view class="flexTimetable">
+  <view class="shit3">
+    <view class="view" bindtap="{{ stopBtn ? 'showContent' : 'hideContent' }}">
+      <view class="shit">Open until 10 PM</view>
+      <van-icon name="arrow-down" color="#d6b160"/>
+    </view>
+    <view wx:for="{{timeTable}}" wx:if="{{choose}}" class='companyInfo1' animation='{{}}'>
+      <view class='companyInfo-left'>
+        <text class="shit4">{{item.realTimeTable}}</text>
+      </view>
+    </view>
+</view>
+<view class="shit">Location: Benson University Center Ground Floor</view>
+</view>
+
+
+<view class="popularTimes">
+<view class="shit2"><view>Popular Times</view></view></view>
+
+<view class="container">
+  <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
+</view>
+
+<view class="greyPart"> </view>
+<view class="realPart"><view class="menuTitle">Menu</view></view>
+
+<van-tabs active="{{ active }}" bind:change="onChange" color="#d6b160" title-active-color="#d6b160">
+<van-tab title="Bento Box">
+      <foodCard title="Beef Bento Box 牛肉饭" desc="米饭、牛肉、寿司、炸饺和海藻" thumb="https://www.bentosushi.com/wp-content/uploads/2020/02/Beef-Bento-Box.jpg" price="11" currency="$" />
+      <foodCard title="Chicken Bento Box 鸡肉饭" desc="米饭、鸡肉、寿司、炸饺和海藻" thumb="https://www.bentosushi.com/wp-content/uploads/2020/02/Karaage-Chicken-Bento-Box.jpg" price="11" currency="$" />
+      <foodCard title="Inari Tofu Bento Box 豆腐饭" desc="米饭、豆腐、寿司、炸饺和海藻" thumb="https://www.bentosushi.com/wp-content/uploads/2020/02/Inari-Tofu-Bento-Box-1024x663.jpg" price="11" currency="$" />
+      <foodCard title="Shrimp Tempura Bento Box 天妇罗饭" desc="米饭、天妇罗、寿司、炸饺和海藻" thumb="https://sumosushibento.com/documents/menugallery/thumb/1506319435352.jpg" price="11" currency="$" />
+  </van-tab>
+  <van-tab title="Sushi">
+      <foodCard desc="阿拉斯加卷食材包括三文鱼，寿司饭，海藻，黄油和蟹肉" title="Alaska Roll 阿拉斯加卷" thumb="https://www.bentosushi.com/us/wp-content/uploads/sites/2/2019/02/Alaska-Roll-1.jpg" price="9" currency="$"/>
+      <foodCard desc="由新鲜的大西洋鲑鱼制成" title="Angel Combo 天使组合" thumb="https://www.bentosushi.com/us/wp-content/uploads/sites/2/2019/03/Angel-Combo-1.jpg"  price="8" currency="$"/>
+      <foodCard desc="由胡萝卜、牛油果、黄瓜、腌姜、芝麻和海藻制成" title="Vegetable California Roll 蔬菜加州卷" thumb="https://www.bentosushi.com/wp-content/uploads/2019/01/Veg-California-Roll_clear-pack-1024x1024.jpg" price="6.5" currency="$" />
+      <foodCard title="California Roll 加州卷" desc="由鱼糜、黄瓜、牛油果、芝麻和海藻制成(亦可选辣味加州卷）。" thumb="https://www.bentosushi.com/wp-content/uploads/2019/01/California-Roll_clear-pack-1024x1024.jpg" price="7" currency="$" />
+      <foodCard title="Spicy California Spring Roll 辣加州春卷" desc="把加州卷的料放春卷里" thumb="https://www.bentosushi.com/wp-content/uploads/2019/02/Spicy-Cali-Spring-Roll-V2-1024x1024.jpg" price="7" currency="$" />
+      <foodCard title="Vegetable Green Dragon Crunch Roll 蔬菜青龙卷" desc="由海藻沙拉、芝麻油、芝麻、黑木耳、辣椒、牛油果、黄瓜、胡萝卜和海藻制成" thumb="https://www.bentosushi.com/wp-content/uploads/2019/02/Veg-Green-Dragon-Crunch-Roll_clear-pack-scaled.jpg" price="7" currency="$" />
+      <foodCard title="Vegetable Spring Roll 蔬菜春卷" desc="由芒果、胡萝卜、黄瓜、生菜和鳄梨制成" thumb="https://www.bentosushi.com/wp-content/uploads/2019/02/Vege-Spring-Roll-V1-1024x1024.jpg" price="7" currency="$" />
+      <foodCard title="Spicy California Crunch Roll 加州香辣脆卷" desc="由鳕鱼、蛋黄酱、炒洋葱、辣椒酱和海藻制成" thumb="https://www.bentosushi.com/us/wp-content/uploads/sites/2/2020/11/Spicy-Cali-Crunch-Roll.jpg" price="8" currency="$" />
+      <foodCard title="Teriyaki Chicken Roll 红烧鸡肉卷" desc="由鸡胸肉、鳄梨、黄瓜、生菜和照烧酱制成" thumb="https://www.bentosushi.com/wp-content/uploads/2019/02/Teriyaki-Chicken-Roll.jpg" price="8" currency="$" />
+      <foodCard title="Philadelphia Roll 费城卷" desc="由烟熏大西洋鲑鱼、奶油奶酪、黄瓜、芝麻和海藻制成" thumb="https://www.bentosushi.com/wp-content/uploads/2019/08/Phila-Roll-Label-scaled.jpg" price="9" currency="$" />
+      <foodCard title="Salmon Avocado Roll 鲑鱼牛油果卷" desc="正如其名，由鲑鱼和牛油果制成" thumb="https://www.bentosushi.com/wp-content/uploads/2019/01/Salmon-Avocado-Roll_clear-pack-1024x1024.jpg" price="9" currency="$" />
+      <foodCard title="Shrimp Tempura Roll-USA 炸天妇罗卷" desc="用天妇罗做的寿司" thumb="https://www.bentosushi.com/us/wp-content/uploads/sites/2/2019/01/Spicy-Salmon-US_clear-pack-1024x1024.jpg" price="9" currency="$" />
+      <foodCard title="Spicy Salmon Roll 辣三文鱼卷" desc="辣的三文鱼做的卷" thumb="https://www.bentosushi.com/wp-content/uploads/2019/01/Spicy-Salmon-CA_clear-pack-scaled.jpg" price="9" currency="$" />
+      <foodCard title="Spicy Tuna Roll 辣金枪鱼卷" desc="辣的金枪鱼做的卷" thumb="https://www.bentosushi.com/wp-content/uploads/2019/01/Spicy-Tuna-CA_clear-pack-scaled.jpg" price="9" currency="$" />
+      <foodCard title="Tuna Avocado Roll 金枪鱼牛油果卷" desc="金枪鱼和牛油果做的卷" thumb="https://www.bentosushi.com/wp-content/uploads/2019/01/Tuna-Avocado-Roll_clear-pack-scaled.jpg" price="9" currency="$" />
+      <foodCard title="California Samurai Combo 加州武士组合" desc="三文鱼寿司和牛油果寿司" thumb="https://www.bentosushi.com/wp-content/uploads/2019/02/Cali-Samurai-Combo.jpg" price="10" currency="$" />
+      <foodCard title="Green Dragon Roll 青龙卷" desc="牛油果寿司上面放点芝麻" thumb="https://www.bentosushi.com/us/wp-content/uploads/sites/2/2019/05/Green-Dragon-Roll_clear-pack-1024x1024.jpg" price="10" currency="$" />
+      <foodCard title="Hikari Combo 希卡利组合" desc="由蟹肉、金枪鱼和三文鱼寿司组成" thumb="https://www.bentosushi.com/wp-content/uploads/2019/09/Hikari-Combo_Clear.jpg" price="10" currency="$" />
+      <foodCard title="Kodama Combo 儿玉（日本地名）组合" desc="金枪鱼卷三文鱼卷佐牛油果" thumb="https://www.bentosushi.com/wp-content/uploads/2019/09/Kodama-Combo_Clear-1.jpg" price="10" currency="$" />
+      <foodCard title="Nozomi Combo 希望号新干线组合" desc="天妇罗、金枪鱼寿司、三文鱼寿司、虾寿司佐牛油果" thumb="https://www.bentosushi.com/wp-content/uploads/2019/09/Nozomi-Combo_Clear.jpg" price="10" currency="$" />
+      <foodCard title="Salmon Samurai Combo 三文鱼武士组合" desc="三文鱼寿司和金枪鱼寿司配上一点牛油果" thumb="https://www.bentosushi.com/wp-content/uploads/2019/02/Salmon-Samurai-Combo-2.jpg" price="10" currency="$" />
+      <foodCard title="Simply Shrimp Roll 虾卷" desc="（可选辣的）" thumb="https://www.bentosushi.com/us/wp-content/uploads/sites/2/2019/09/Spicy-Shrimp-Mango-1024x1024.jpg" price="10" currency="$" />
+      <foodCard title="Inari Dragon Crunch Roll 神田龙脆卷" desc="由虾、稻濑（所以这是什么）、芒果、蛋黄酱、海草和酥脆炸葱制成" thumb="https://www.bentosushi.com/wp-content/uploads/2019/03/Inari-Dragon-Crunch-Roll_clear-pack-scaled.jpg" price="11" currency="$" />
+      <foodCard title="Salmon Volcano Roll 三文鱼火山卷" desc="由三文鱼、鱼子和脆炸洋葱制成" thumb="https://www.bentosushi.com/wp-content/uploads/2019/02/Salmon-Volcano.jpg" price="11" currency="$" />
+      <foodCard title="Rainbow Roll 彩虹卷" desc="由三文鱼、黄瓜、虾、金枪鱼和海藻制成" thumb="https://www.bentosushi.com/wp-content/uploads/2019/02/Rainbow-Roll_clear-pack-1024x1024.jpg" price="11.5" currency="$" />
+      <foodCard title="Nigiri Combo 生鱼片寿司组合" desc="三文鱼寿司、金枪鱼寿司和虾寿司" thumb="https://www.bentosushi.com/wp-content/uploads/2019/02/Nigiri-Combo-1.jpg" price="12" currency="$" />
+      <foodCard title="California Shogun Combo 加州幕府将军组合" desc="金枪鱼寿司、三文鱼寿司、虾寿" thumb="https://www.bentosushi.com/wp-content/uploads/2019/02/Cali-Shogun-Combo-2.jpg" price="12" currency="$" />
+      <foodCard title="Assorted Maki Boat 寿司船" desc="由黄瓜、鳄梨和胡萝卜制成" thumb="https://www.bentosushi.com/wp-content/uploads/2019/02/Assorted-Maki-Boat.jpg" price="13" currency="$" />
+      <foodCard title="Crunch Combo 脆卷组合" desc="由芝麻、蘑菇、鳄梨、胡萝卜和海藻制成" thumb="https://www.bentosushi.com/us/wp-content/uploads/sites/2/2019/05/Crunch-Combo_clear-pack-scaled.jpg" price="13" currency="$" />
+      <foodCard title="Deluxe Combo 豪华组合" desc="金枪鱼和三文鱼寿司" thumb="https://www.bentosushi.com/wp-content/uploads/2019/03/Deluxe-Combo.jpg" price="13" currency="$" />
+      <foodCard title="Fiji Combo 斐济组合" desc="由三文鱼、鱼子、虾、金枪鱼和脆炸洋葱制成" thumb="https://www.bentosushi.com/us/wp-content/uploads/sites/2/2019/05/Fiji-Combo.jpg" price="14" currency="$" />
+      <foodCard title="Tuna & Salmon Sashimi 金枪鱼&三文鱼刺身" desc="金枪鱼和三文鱼刺身" thumb="https://www.bentosushi.com/wp-content/uploads/2019/02/Sashimi-Combo-1024x1024.jpg" price="14" currency="$" />
+      
+  </van-tab>
+  <van-tab title="Bowl">
+    <foodCard title="Teriyaki Beef Rice Bowl" desc="" thumb="" price="" currency="$" />
+      <foodCard title="Teriyaki Chicken Rice Bowl" desc="" thumb="" price="" currency="$" />
+      <foodCard title="Salmon Poke Bowl" desc="" thumb="" price="" currency="$" />
+      <foodCard title="Spicy California Poke Bowl" desc="" thumb="" price="" currency="$" />
+      <foodCard title="Spicy Shrimp Poke Bowl" desc="" thumb="" price="" currency="$" />
+      <foodCard title="Tuna Poke Bowl" desc="" thumb="" price="" currency="$" />
+      <foodCard title="Tofu Poke Bowl" desc="" thumb="" price="" currency="$" />
+  </van-tab>
+  <van-tab title="Ramen">
+    <foodCard title="" desc="" thumb="" price="" currency="$" />
+      <foodCard title="" desc="" thumb="" price="" currency="$" />
+      <foodCard title="" desc="" thumb="" price="" currency="$" />
+      <foodCard title="" desc="" thumb="" price="" currency="$" />
+      <foodCard title="" desc="" thumb="" price="" currency="$" />
+  </van-tab>
+  <van-tab title="Yaki Udon">
+    <foodCard title="" desc="" thumb="" price="" currency="$" />
+      <foodCard title="" desc="" thumb="" price="" currency="$" />
+      <foodCard title="" desc="" thumb="" price="" currency="$" />
+      <foodCard title="" desc="" thumb="" price="" currency="$" />
+      <foodCard title="" desc="" thumb="" price="" currency="$" />
+  </van-tab>
+  <van-tab title="Side">
+    <foodCard title="Pork Dumpling" desc="" thumb="" price="" currency="$" />
+      <foodCard title="" desc="" thumb="" price="" currency="$" />
+      <foodCard title="" desc="" thumb="" price="" currency="$" />
+      <foodCard title="" desc="" thumb="" price="" currency="$" />
+      <foodCard title="" desc="" thumb="" price="" currency="$" />
+  </van-tab>
+</van-tabs>

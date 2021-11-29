@@ -62,28 +62,26 @@ Page({
     const query = wx.createSelectorQuery()
     query.select('#swiper-container').boundingClientRect()
     query.selectViewport().scrollOffset()
-    query.exec(function (res) {
-      console.log(res[0])
-      var position = res[0].top
-      console.log('position:', position)
-      // 获取系统信息
-      wx.getSystemInfo({
-        success: function (res) {
-          // 获取可使用窗口高度
-          let clientHeight = res.windowHeight;
-          console.log('clientHeight:', clientHeight)
-          // 获取可使用窗口宽度
-          let clientWidth = res.windowWidth;
-          // // 算出比例
-          // let ratio = 750 / clientWidth;
-          // // 算出高度(单位rpx)
-          // let height = clientHeight * ratio;
-          // 设置高度
-          that.setData({
-            swiper_height: clientHeight - position
-          });
-        }
-      });
+    query.exec(function (swiper_container_res) {
+      const stickyTab = wx.createSelectorQuery()
+      stickyTab.select('#stickyTab').boundingClientRect()
+      stickyTab.selectViewport().scrollOffset()
+      stickyTab.exec(function (stickyTab_res) {
+        var stickyTabTop = stickyTab_res[0].top
+        var position = swiper_container_res[0].top
+        // 获取系统信息
+        wx.getSystemInfo({
+          success: function (res) {
+            // 获取可使用窗口高度
+            let clientHeight = res.windowHeight;
+            // 设置高度
+            that.setData({
+              stickyTabTop: stickyTabTop,
+              swiper_height: clientHeight - position
+            });
+          }
+        });
+      })
     })
   },
 
@@ -128,6 +126,10 @@ Page({
   },
   // 选择日期
   selectDate: function (e) {
+    wx.showLoading({
+      title: '',
+      mask: true
+    })
     this.setData({
       menu_data: {}
     })
@@ -144,68 +146,73 @@ Page({
       currentDateIndex: e.currentTarget.dataset.current
     })
     var date_string = `${day.getFullYear()}-${(day.getMonth() + 1).toString().padStart(2,'0')}-${(day.getDate()).toString().padStart(2,'0')}`
-    that.getMenuList(date_string, 'NorthPitMenu')
-    that.getMenuList(date_string, 'Pit')
+    var NorthPitMenuPromise = that.getMenuList(date_string, 'NorthPitMenu')
+    var PitPromise = that.getMenuList(date_string, 'Pit')
+    Promise.all([NorthPitMenuPromise, PitPromise]).then(values => {
+      console.log(values);
+      if (Object.keys(this.data.menu_data).length == 0) {
+        wx.showToast({
+          title: date_string + '暂无数据',
+          icon: 'none',
+          duration: 2000
+        });
+        that.setData({
+          menu_data: {},
+          have_menu_data: false
+        });
+      }
+      wx.hideLoading();
+    }, reason => {
+      console.log(reason)
+    });
   },
 
   // 获取当天菜单
   getMenuList: function (date_string, dinning_name) {
-    // date_string = '2021-11-09'
-    console.log('date_string:', date_string)
-    wx.showLoading({
-      title: '',
-    })
-    const db = wx.cloud.database();
-    var that = this;
-    const cont = db.collection(dinning_name);
-    cont.where({
-      _id: date_string,
-    }).get({
-      success: res => {
-        console.log(res)
-        if (res.data.length < 1) {
-          wx.hideLoading();
-          wx.showToast({
-            title: date_string + '暂无数据',
-            icon: 'none',
-            duration: 2000
-          });
-          that.setData({
-            menu_data: {},
-            have_menu_data: false
-          });
-          return;
-        }
-        // 拿到数据
-        var dinningHallMenu = res.data[0];
-        delete dinningHallMenu._id;
-        for (var key in dinningHallMenu) {
-          if (key == "Pit Stop") {
-            continue;
+    return new Promise((resolve, reject) => {
+      // date_string = '2021-11-09'
+      console.log('date_string:', date_string)
+      const db = wx.cloud.database();
+      const cont = db.collection(dinning_name);
+      cont.where({
+        _id: date_string,
+      }).get({
+        success: res => {
+          console.log(res)
+          if (res.data.length < 1) {
+            resolve();
           }
-          if (!this.data.menu_data.hasOwnProperty(key)) {
+          // 拿到数据
+          var dinningHallMenu = res.data[0];
+          delete dinningHallMenu._id;
+          for (var key in dinningHallMenu) {
+            if (key == "Pit Stop") {
+              continue;
+            }
+            if (!this.data.menu_data.hasOwnProperty(key)) {
+              this.setData({
+                [`menu_data.${key}`]: {},
+                have_menu_data: true
+              })
+            }
+            var window_data = {}
+            for (var window in dinningHallMenu[key]) {
+              window_data[window] = {
+                open: false,
+                food_list: dinningHallMenu[key][window]
+              }
+            }
             this.setData({
-              [`menu_data.${key}`]: {},
+              [`menu_data.${key}.${dinning_name}`]: {
+                open: false,
+                window: window_data
+              },
               have_menu_data: true
             })
           }
-          var window_data = {}
-          for (var window in dinningHallMenu[key]) {
-            window_data[window] = {
-              open: false,
-              food_list: dinningHallMenu[key][window]
-            }
-          }
-          this.setData({
-            [`menu_data.${key}.${dinning_name}`]: {
-              open: false,
-              window: window_data
-            },
-            have_menu_data: true
-          })
+          resolve()
         }
-        wx.hideLoading()
-      }
+      })
     })
   },
 

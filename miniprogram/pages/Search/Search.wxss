@@ -1,9 +1,3 @@
-.weui-search-bar__cancel-btn{
-    margin-left: 8px;
-    line-height: 28px;
-    color: #9E7E38;
-    white-space: nowrap;
-}
 .weui-search-bar{
     height: 38.39px;
     width: 90%;
@@ -43,3 +37,6 @@
     font-size: 12px;
     background-color: #ececec ;
 }
+/* .weui-search-bar__input{
+    caret-color: #d6b160 !important;
+} */

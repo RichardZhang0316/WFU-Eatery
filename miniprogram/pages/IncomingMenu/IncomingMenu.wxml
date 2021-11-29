@@ -4,7 +4,7 @@
    <view class="maxTitle">Upcoming Menus</view>
 </view>
 
-<van-sticky>
+<van-sticky id="stickyTab">
    <!-- 日期 Tab -->
    <view class='topTab topTabSwiper'>
       <view wx:for="{{dateList}}" wx:key="day">
@@ -25,10 +25,10 @@
 
 <!-- 菜单↓ -->
 <view class="swiper-container" id="swiper-container">
-   <swiper current="{{currentTimePeriodIndex}}" class='swiper' style="height:{{swiper_height}}px;" duration="300" bindchange="onSwiperChange">
+   <swiper current="{{currentTimePeriodIndex}}" class='swiper' style="height:{{stickyTabTop + swiper_height}}px;" duration="300" bindchange="onSwiperChange">
       <!-- 供餐时段 swiper 循环 -->
       <swiper-item class="swiper-item" wx:for="{{['Breakfast','Lunch','Dinner']}}" wx:for-item="periodName" wx:key="*this">
-         <scroll-view class="swiper-item-scroll" enable-flex scroll-y scroll-with-animation style="height:{{swiper_height}}px;">
+         <scroll-view class="swiper-item-scroll" enable-flex scroll-y scroll-with-animation style="height:{{stickyTabTop + swiper_height}}px;">
             <van-empty class="empty-sign" description="没吃的" />
             <view class="dinningHallName-list">
             <!-- 餐厅循环 -->
