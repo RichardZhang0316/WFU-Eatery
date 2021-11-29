@@ -1,9 +1,9 @@
 <navigation title='' show_bol='{{false}}'></navigation> 
 
 <view class="topCard">
-<image mode="aspectFill" src="https://pbs.twimg.com/media/D3UedXiWwAc2PmQ.jpg" style="height:100%; width:100%"></image>
+<image mode="aspectFill" src="https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1024-512,f_auto,q_auto:best/newscms/2019_33/2203981/171026-better-coffee-boost-se-329p.jpg" style="height:100%; width:100%"></image>
 <view class="view">
-<text class="head-text">Shorty's</text>
+<text class="head-text">Legal Grounds Café</text>
 </view>
 </view>
 
@@ -19,7 +19,7 @@
       </view>
     </view>
 </view>
-<view class="shit">Location: Benson University Center Ground Floor</view>
+<view class="shit">Worrell Professional Center</view>
 </view>
 
 
@@ -34,13 +34,39 @@
 <view class="realPart"><view class="menuTitle">Menu</view></view>
 
 <van-tabs active="{{ active }}" bind:change="onChange" color="#d6b160" title-active-color="#d6b160">
-  <van-tab title="Burger">
-    <foodCard title="" desc="" thumb="" price="" currency="$" />
+  <van-tab title="Breakfast">
+    <foodCard title="Morning Sunrise Bagel 日出贝果" desc="培根、鸡蛋和车打芝士佐Plain Bagel或Everyth Bagel" thumb="https://cdn7.kiwilimon.com/recetaimagen/26259/1900x1080/23276.jpg.webp" price="5.19" currency="$" />
+    <foodCard title="Breakfast Burrito 早餐墨西哥卷" desc="鸡蛋、火鸡和车打芝士做的墨西哥卷" thumb="https://www.cookingclassy.com/wp-content/uploads/2019/08/breakfast-burrito-01.jpg" price="5.19" currency="$" />
+    <foodCard title="Healthy Start 健康贝果" desc="鸡蛋、菠菜、西红柿、牛油果、芝士佐全麦贝果" thumb="https://www.myeclecticbites.com/wp-content/uploads/2020/04/Breakfast-bagel-sandwich-11.jpg" price="5.29" currency="$" />
+    <foodCard title="Bagel 贝果" desc="平淡无奇的一只贝果，除了贝果什么也没有" thumb="https://bakingamoment.com/wp-content/uploads/2020/06/IMG_8813-bagel-recipe-500x375.jpg" price="2.29" currency="$" />
+    <foodCard title="Croissants/Muffins 可颂/麦芬" desc="可颂、麦芬或其他点心" thumb="https://bakerpedia.com/wp-content/uploads/2020/06/Pastry_baking-processes-e1593464950587-400x400.jpg" price="2.29+" currency="$" />
   </van-tab>
-  <van-tab title="Salad">
-    <foodCard title="" desc="" thumb="" price="" currency="$" />
+  <van-tab title="Coffee & Tea">
+    <foodCard title="Espresso coffee 意式浓缩咖啡" desc="就苦呗" thumb="https://www.adityabirlacapital.com/healthinsurance/active-together/wp-content/uploads/2019/12/How-Are-Espressos-Good-For-Health_blog_lower_1.png" price="1.59+" currency="$" />
+    <foodCard title="Latte 拿铁" desc="可选regular和grande两种杯型，也可选择加脱脂牛奶或豆奶，也可选冰拿铁" thumb="https://coffeeaffection.com/wp-content/uploads/2021/05/Spanish-latte-milk-and-espresso-500x500.jpg" price="3.59" currency="$" />
+    <foodCard title="Chai Latte 印度茶拿铁" desc="可选regular和grande两种杯型，也可选择加脱脂牛奶或豆奶，也可选冰印度茶拿铁" thumb="https://insanelygoodrecipes.com/wp-content/uploads/2021/02/Homemade-Chai-Tea-Latte-in-a-Cup-500x500.png" price="3.59" currency="$" />
+    <foodCard title="Cappuccino 卡布奇诺" desc="可选regular和grande两种杯型，也可选择加脱脂牛奶或豆奶" thumb="https://vaya.in/recipes/wp-content/uploads/2019/02/Cappuccino.jpg" price="3.59" currency="$" />
+    <foodCard title="Brewed Coffee 煮好的咖啡" desc="可选regular和grande两种杯型" thumb="https://vinceandjoes.com/wp-content/uploads/2020/01/COFFEE_coffee-2374466_clipped_rev_3.png" price="2.09" currency="$" />
+    <foodCard title="Hot tea 热红茶" desc="可选regular和grande两种杯型" thumb="https://tanoorhalalfood.com/wp-content/uploads/2019/09/hot-tea-1.jpg" price="2.09" currency="$" />
   </van-tab>
-  <van-tab title="12 in.Sandwich">
-    <foodCard title="" desc="" thumb="" price="" currency="$" />
+  <van-tab title="Salads & Soups">
+    <foodCard title="Chicken Caesar Salad 鸡肉凯撒沙拉" desc="" thumb="https://www.oneness7.com/wp-content/uploads/2020/04/Easy-Grilled-Chicken-Caesar-Salad-with-Homemade-Dressing-web-6.jpg" price="6.69" currency="$" />
+    <foodCard title="Greek Yogurt Power Bowl 希腊酸奶能量碗" desc="希腊酸奶佐草莓、蓝莓" thumb="https://sharedappetite.com/wp-content/uploads/2019/02/breakfast-superfood-yogurt-bowls-12.jpg" price="6.69" currency="$" />
+    <foodCard title="Deacon Cobb Salad 执事考伯沙拉" desc="由鸡蛋、牛油果、西红柿、车打芝士、杏仁和洋葱制成" thumb="https://hips.hearstapps.com/delish/assets/18/11/1520887294-cobb-salad-delish.jpg" price="6.69" currency="$" />
+    <foodCard title="Daily Soup 例汤" thumb="https://heremag-prod-app-deps-s3heremagassets-bfie27mzpk03.s3.amazonaws.com/wp-content/uploads/2020/10/20151124/soup-recipes-annika-palmari-U_mm1wHzm1Q-unsplash-2-1200x800.jpg" price="4.29" currency="$" />
+  </van-tab>
+  <van-tab title="Sandwich">
+    <foodCard title="California Turkey BLT 加州火鸡培根三明治" desc="由火鸡、牛油果、培根制成" thumb="https://www.nutmegnanny.com/wp-content/uploads/2018/08/turkey-and-cheese-blt-sandwich-2.jpg" price="6.69" currency="$" />
+    <foodCard title="Chicken Caesar Salad Warap 鸡肉凯撒卷" thumb="https://www.tasteandtellblog.com/wp-content/uploads/2017/04/Chicken-Caesar-Wraps-tasteandtellblog.com-horizontal.jpg" price="6.19" currency="$" />
+    <foodCard title="Mozzarella Caprese Sandwich 马苏里拉芝士三明治" thumb="http://3.bp.blogspot.com/-Cx1PY6z6DUc/Vdv8BRKxHXI/AAAAAAAAWQ0/bul2lcw0V8c/s1600/caprese-sandwich-recipe-012x1.jpg" price="6.69" currency="$" />
+    <foodCard title="Hot Ham & Swiss 火腿佐瑞士硬干酪三明治" desc="" thumb="https://www.sargento.com/assets/Uploads/Recipe/Image/hamandcheese__FillWzExNzAsNTgzXQ.jpg" price="6.69" currency="$" />
+    <foodCard title="Chipotle Chicken Melt 鸡肉三明治" desc="烤鸡、芝士、洋葱、菠菜佐墨西哥辣椒蒜泥蛋黄酱" thumb="https://hostthetoast.com/wp-content/uploads/2018/10/Chipotle-Chicken-Avocado-Melt-6.jpg" price="6.89" currency="$" />
+  </van-tab>
+  <van-tab title="Snacks">
+    <foodCard title="Chips 薯片" desc="一种薯片" thumb="https://images.heb.com/is/image/HEBGrocery/001876588?fit=constrain,1&wid=800&hei=800&fmt=jpg&qlt=85,0&resMode=sharp2&op_usm=1.75,0.3,2,0" price="1.39" currency="$" />
+    <foodCard title="Cobani Yogurt 酸奶" desc="一种酸奶" thumb="https://images.heb.com/is/image/HEBGrocery/002084850" price="2.39" currency="$" />
+    <foodCard title="Sabra Classic Hummus 鹰嘴豆泥" desc="一种鹰嘴豆泥" thumb="https://jpg.breadberry.com/content/images/thumbs/0113101_sabra-classic-hummus-17-oz.jpeg" price="3.49" currency="$" />
+    <foodCard title="Sabra Roasted Red Pepper Hummus 烤红椒鹰嘴豆泥" thumb="https://i5.walmartimages.com/asr/0473f340-8d13-45dd-9d14-08764dc32f88.6e8c8085c1befcfd992c965c157c46f8.jpeg" price="3.49" currency="$" />
+    <foodCard title="Hashbrowns 薯饼" thumb="https://thumbor.thedailymeal.com/mLKOQg-3ILFNGOjKQyEOeoR_uyw=//https://www.thedailymeal.com/sites/default/files/recipe/2021/GettyImages-184839841.jpg" price="1.79" currency="$" />
   </van-tab>
 </van-tabs>

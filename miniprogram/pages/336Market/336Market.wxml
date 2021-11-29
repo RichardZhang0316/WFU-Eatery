@@ -1,9 +1,9 @@
 <navigation title='' show_bol='{{false}}'></navigation> 
 
 <view class="topCard">
-<image mode="aspectFill" src="https://pbs.twimg.com/media/D3UedXiWwAc2PmQ.jpg" style="height:100%; width:100%"></image>
+<image mode="aspectFill" src="https://i.loli.net/2021/11/12/54dNItHcq9V2D1f.jpg" style="height:100%; width:100%"></image>
 <view class="view">
-<text class="head-text">Shorty's</text>
+<text class="head-text">336 Market</text>
 </view>
 </view>
 
@@ -19,7 +19,7 @@
       </view>
     </view>
 </view>
-<view class="shit">Location: Benson University Center Ground Floor</view>
+<view class="shit">Benson University Center Ground Floor</view>
 </view>
 
 
@@ -34,13 +34,23 @@
 <view class="realPart"><view class="menuTitle">Menu</view></view>
 
 <van-tabs active="{{ active }}" bind:change="onChange" color="#d6b160" title-active-color="#d6b160">
-  <van-tab title="Burger">
-    <foodCard title="" desc="" thumb="" price="" currency="$" />
-  </van-tab>
-  <van-tab title="Salad">
-    <foodCard title="" desc="" thumb="" price="" currency="$" />
-  </van-tab>
-  <van-tab title="12 in.Sandwich">
-    <foodCard title="" desc="" thumb="" price="" currency="$" />
+    <van-tab title="Harvest Table Grab N Go">
+    <foodCard title="Fruit Salad Cup 水果沙拉杯" desc="80卡路里" thumb="https://sob-prd-cdn-products.azureedge.net/media/image/product/en/large/0020861100000.jpg"/>
+    <foodCard title="Bacon, Egg, Mushroom, Spinach Salad 培根鸡蛋蘑菇菠菜沙拉" desc="240卡路里" thumb="https://zenandspice.com/wp-content/uploads/2019/12/spinach-bacon-salad-1-1024x683.jpg"/>
+    <foodCard title="Cobb Salad 考伯沙拉" desc="270卡路里 由牛油果、番茄、生菜、培根和白煮鸡蛋制成" thumb="https://hips.hearstapps.com/delish/assets/18/11/1520887294-cobb-salad-delish.jpg"/>
+    <foodCard title="Egg Salad on Wheat 鸡蛋沙拉佐面包" desc="460卡路里" thumb="https://static.toiimg.com/thumb/53684634.cms?imgsize=282334&width=800&height=800"/>
+    <foodCard title="Ham & Swiss on Rye 火腿佐瑞士硬干酪黑麦面包" desc="360卡路里" thumb="https://andrewandeverett.com/wp-content/uploads/2018/01/AE-Grilled-Ham-and-Cheese-Recipe-02-15-17-6.jpg"/>
+    <foodCard title="Tarragon Roast Beef Sandwich 龙蒿烤牛肉三明治" desc="440卡路里" thumb="https://www.godairyfree.org/wp-content/uploads/2016/12/ff-Garlic-Tarragon-Roasted-Beet-Sandwiches-feature.jpg"/>
+    <foodCard title="Winter Kale Salad 羽衣甘蓝沙拉" desc="330卡路里 由羽衣甘蓝、苹果、山核桃、石榴籽制成" thumb="https://www.wellplated.com/wp-content/uploads/2015/12/Kale-Pomegranate-Winter-Salad-Recipe.jpg"/>
+    <foodCard title="Chicken Blue Power Salad 鸡肉沙拉" desc="260卡路里" thumb="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/delish-190611-buffalo-chicken-salad-192-portrait-pf-1561390263.png"/>
+    <foodCard title="Chef's Salad 厨师沙拉" desc="330卡路里 “好好的厨师沙拉嘛，换什么炸鱼薯条” --《重庆森林》" thumb="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/delish-081221-chef-salad-03-landscape-jg-1631045032.jpg"/>
+    <foodCard title="Italian Deli Wrap 意大利熟食卷" desc="710卡路里" thumb="https://marketsandwich.com/wp-content/uploads/2019/04/Market_Sandwich-Wraps-ItalianWrapStacked-basic.jpg"/>
+    <foodCard title="Roast Beef and Cheddar 烤牛肉佐车打芝士" desc="510卡路里" thumb="https://cds.arbys.ca/assets/product_item/ClassicBnC_18_tile_Mobile_768x640.jpg"/>
+    <foodCard title="Caprese Ciabatta 意大利芝巴塔" desc="360卡路里 由番茄，芝士和罗勒制成" thumb="https://keyassets-p2.timeincuk.net/wp/prod/wp-content/uploads/sites/63/2013/01/Caprese-ciabatta-1.jpg"/>
+    <foodCard title="Turkey, Avocado & Smoked Gouda Ciabatta 火鸡，鳄梨和烟熏高德干酪芝巴塔" desc="500卡路里" thumb="https://lh3.googleusercontent.com/PdRhfappZeEvn28VJW6JO3cZP6fnZg7ympQ8CtShllt4V6Zfzv-X4OrRhXFmDE7Sn5SwFc6MsGn5VRX2Ndma=w1358-h764-c-rj-v1-e365"/>
+    <foodCard title="Grape Cup 葡萄杯" desc="150卡路里" thumb="https://images.albertsons-media.com/is/image/ABS/960131441?$ecom-pdp-desktop$&defaultImage=Not_Available&defaultImage=Not_Available"/>
+    <foodCard title="Strawberry Greek Yogurt Parfait 草莓希腊酸奶冻糕" desc="370卡路里" thumb="https://static.onecms.io/wp-content/uploads/sites/44/2019/08/26230701/4024724.jpg"/>
+    <foodCard title="Blueberry Greek Yogurt Parfait 蓝莓希腊酸奶冻糕" desc="360卡路里" thumb="https://thecakeblog.com/wp-content/uploads/2015/06/blueberry_yogurt_parfait.jpg"/>
+    <foodCard title="Caesar Salad 凯撒沙拉" desc="510卡路里" thumb="https://natashaskitchen.com/wp-content/uploads/2019/01/Caesar-Salad-Recipe-3.jpg"/>
   </van-tab>
 </van-tabs>

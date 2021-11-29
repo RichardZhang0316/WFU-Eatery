@@ -1,48 +1,54 @@
 {
-  "setting": {},
-  "condition": {
-    "plugin": {
-      "list": []
-    },
-    "game": {
-      "list": []
-    },
-    "gamePlugin": {
-      "list": []
-    },
-    "miniprogram": {
-      "list": [
-        {
-          "id": -1,
-          "name": "db guide",
-          "pathName": "pages/databaseGuide/databaseGuide",
-          "query": ""
+    "setting": {},
+    "condition": {
+        "plugin": {
+            "list": []
         },
-        {
-          "name": "pages/Yamas/Yamas",
-          "pathName": "pages/Yamas/Yamas",
-          "query": "",
-          "scene": null
+        "game": {
+            "list": []
         },
-        {
-          "name": "pages/Yamas/Yamas",
-          "pathName": "pages/Yamas/Yamas",
-          "query": "",
-          "scene": null
+        "gamePlugin": {
+            "list": []
         },
-        {
-          "name": "pages/ForestGreens/ForestGreens",
-          "pathName": "pages/ForestGreens/ForestGreens",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/Favorites/Favorites",
-          "pathName": "pages/Favorites/Favorites",
-          "query": "",
-          "scene": null
+        "miniprogram": {
+            "list": [
+                {
+                    "id": -1,
+                    "name": "db guide",
+                    "pathName": "pages/databaseGuide/databaseGuide",
+                    "query": ""
+                },
+                {
+                    "name": "pages/Yamas/Yamas",
+                    "pathName": "pages/Yamas/Yamas",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/Yamas/Yamas",
+                    "pathName": "pages/Yamas/Yamas",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/ForestGreens/ForestGreens",
+                    "pathName": "pages/ForestGreens/ForestGreens",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/Favorites/Favorites",
+                    "pathName": "pages/Favorites/Favorites",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/LegalGroundsCafé/LegalGroundsCafé",
+                    "pathName": "pages/LegalGroundsCafé/LegalGroundsCafé",
+                    "query": "",
+                    "scene": null
+                }
+            ]
         }
-      ]
     }
-  }
 }
