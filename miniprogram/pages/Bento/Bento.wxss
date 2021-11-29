@@ -1,1 +1,1 @@
-/* pages/Bento/Bento.wxss */
+@import "../Subway/Subway.wxss";

@@ -53,7 +53,7 @@ Page({
             onInit: initChart
           },
         //前端滑动切换bar_Data input
-        active: 1,
+        active: 0,
         //下拉动画
         choose: false,
         animationData: {},

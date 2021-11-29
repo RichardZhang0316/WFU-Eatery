@@ -1,4 +1,4 @@
-//Popular_Time 表格: 目前分为“周中”和“周末”进行数据切换，数据源为Google，方法为“等比例缩放”
+//Popular_Time 表格: 目前分为“周中”和“周末”进行数据切换，数据源为Google，方法为比例缩放
 import * as echarts from '../../ec-canvas/echarts';
 var util = require('../../utils/util.js');
 let chart = null;  
@@ -17,20 +17,21 @@ function initChart(canvas, width, height, dpr) {
   var D = myDate.getDay()
   console.log(D) //测试用，例如: 2 = Tue
 
-  var weekdays= {              
+  var weekdays= {    
+    backgroundColor: '#fff',         
     tooltip: {trigger:'axis',axisPointer: {type: 'shadow'},confine: true,formatter:'{b0}: {c0}%', padding:[5,10,5,10,],show: true},//提示框前端
     grid: {left: 20,right: 20,bottom: 15,top: 40,containLabel: true},  // 整体表格所在的grid的大小设置
     yAxis: [{type: 'value',axisLine: {lineStyle: {color: '#999'}},axisLabel: {color: '#666'}, show: false}], //表格y轴设置
     xAxis: [{type: 'category',axisTick: { show: false },data: ['8:00', '9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00'],axisLine: {lineStyle: {color: '#999'}},axisLabel: {color: '#666'}}], //表格x轴设置
-    series: [{name: 'Pit', type: 'bar', label: {normal: {show: false, position: 'inside', color: 'white'}},itemStyle: {borderRadius: [4, 4, 0, 0], color: '#9E7E38', shadowColor: 'rgba(0, 0, 0, 0.5)', shadowBlur: 2},  //Series设置
+    series: [{name: 'Pit', type: 'bar', label: {normal: {show: false, position: 'inside', color: 'white'}},itemStyle: {borderRadius: [4, 4, 0, 0], color: '#d6b160', shadowColor: 'rgba(0, 0, 0, 0.5)', shadowBlur: 2},  //Series设置
         // 👇 数据录入处 ！！暂定以10为scale进行模拟, 数据源: Google
         data: [3, 5, 6.7, 9, 7, 8, 8, 6, 7, 7, 4, 3, 4, 5, 7], },]}
 
   var weekend= {              
     tooltip: {trigger:'axis',axisPointer: {type: 'shadow'},confine: true,formatter:'{b0}: {c0}%', padding:[5,10,5,10,],show: true},//提示框前端
     grid: {left: 20,right: 20,bottom: 15,top: 40,containLabel: true},  // 整体表格所在的grid的大小设置
-    yAxis: [{type: 'value',axisLine: {lineStyle: {color: '#999'}},axisLabel: {color: '#666'}, show: false}], //表格y轴设置
-    xAxis: [{type: 'category',axisTick: { show: false },data: ['8:00', '9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00'],axisLine: {lineStyle: {color: '#999'}},axisLabel: {color: '#666'}}], //表格x轴设置
+    yAxis: [{type: 'value',axisLine: {lineStyle: {color: '#9E7E38'}},axisLabel: {color: '#9E7E38'}, show: false}], //表格y轴设置
+    xAxis: [{type: 'category',axisTick: { show: false },data: ['8:00', '9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00'],axisLine: {lineStyle: {color: '#9E7E38'}},axisLabel: {color: '#9E7E38'}}], //表格x轴设置
     series: [{name: 'Pit', type: 'bar', label: {normal: {show: false, position: 'inside', color: 'white'}},itemStyle: {borderRadius: [4, 4, 0, 0], color: '#9E7E38', shadowColor: 'rgba(0, 0, 0, 0.5)', shadowBlur: 2},  //Series设置
         // 👇 数据录入处 ！！暂定以10为scale进行模拟, 数据源: Google
         data: [3, 5, 6.7, 9, 90, 90, 90, 90, 90, 33, 64, 52, 34, 20, 17], },]}
@@ -61,7 +62,7 @@ Page({
         id:'timetable',
         sendList:[],
 
-        timeTable:[{realTimeTable:'Mon: 10:00 AM- 1:00 AM'},{realTimeTable:'Tue: 10:00 AM- 1:00 AM'},{realTimeTable:'Wed: 10:00 AM- 1:00 AM'},{realTimeTable:'Thu: 10:00 AM- 1:00 AM'},{realTimeTable:'Fri: 10:00 AM- 1:00 AM'},{realTimeTable:'Sat: 10:00 AM- 1:00 AM'},{realTimeTable:'Sun: 10:00 AM- 1:00 AM'}],
+        timeTable:[{realTimeTable:'Mon: 0:00 - 24:00'},{realTimeTable:'Tue: 0:00 - 24:00'},{realTimeTable:'Wed: 0:00 - 24:00'},{realTimeTable:'Thu: 0:00 - 24:00'},{realTimeTable:'Fri: 0:00 - 24:00'},{realTimeTable:'Sat: 0:00 - 24:00'},{realTimeTable:'Sun: 0:00 - 24:00'}],
       },
       
       //前端滑动切换bar-展示信息（目前都注释掉了）

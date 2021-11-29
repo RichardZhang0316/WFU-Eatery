@@ -2,14 +2,22 @@
 
 <view class="topCard">
 <image mode="aspectFill" src="https://i.loli.net/2021/11/12/JLCeQiNwfFlUIsn.jpg" style="height:100%; width:100%"></image>
+<view class="view">
 <text class="head-text">Subway</text>
+<!-- <view class="bigTag">
+<image class="smallTag" src="/images/icon2.svg"></image>
+<image class="smallTag" src="/images/icon5.svg"></image>
+<image class="smallTag" src="/images/icon1.svg"></image>
+<image class="smallTag" src="/images/icon4.svg"></image>
+</view> -->
+</view>
 </view>
 
 <view class="flexTimetable">
   <view class="shit3">
     <view class="view" bindtap="{{ stopBtn ? 'showContent' : 'hideContent' }}">
       <view class="shit">Open until 10 PM</view>
-      <icon type="info" size="16" color="#9E7E38"></icon>
+      <van-icon name="arrow-down" color="#d6b160"/>
     </view>
     <view wx:for="{{timeTable}}" wx:if="{{choose}}" class='companyInfo1' animation='{{}}'>
       <view class='companyInfo-left'>
