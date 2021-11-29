@@ -19,154 +19,24 @@
           "query": ""
         },
         {
-          "name": "pages/getOpenId/index",
-          "pathName": "pages/getOpenId/index",
+          "name": "pages/Yamas/Yamas",
+          "pathName": "pages/Yamas/Yamas",
           "query": "",
           "scene": null
         },
         {
-          "name": "pages/deployService/index",
-          "pathName": "pages/deployService/index",
+          "name": "pages/Yamas/Yamas",
+          "pathName": "pages/Yamas/Yamas",
           "query": "",
           "scene": null
         },
         {
-          "name": "pages/selectRecord/index",
-          "pathName": "pages/selectRecord/index",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/sumRecordResult/index",
-          "pathName": "pages/sumRecordResult/index",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/updateRecord/index",
-          "pathName": "pages/updateRecord/index",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/updateRecordResult/index",
-          "pathName": "pages/updateRecordResult/index",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/updateRecordSuccess/index",
-          "pathName": "pages/updateRecordSuccess/index",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/Shorty/Shorty",
-          "pathName": "pages/Shorty/Shorty",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/HomePage/HomePage",
-          "pathName": "pages/HomePage/HomePage",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/NorthPit/NorthPit",
-          "pathName": "pages/NorthPit/NorthPit",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/Subway/Subway",
-          "pathName": "pages/Subway/Subway",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/Pit/Pit",
-          "pathName": "pages/Pit/Pit",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/IncomingMenu/IncomingMenu",
-          "pathName": "pages/IncomingMenu/IncomingMenu",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/Pit/Pit",
-          "pathName": "pages/Pit/Pit",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/HomePage/HomePage",
-          "pathName": "pages/HomePage/HomePage",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/chickFilA/chickFilA",
-          "pathName": "pages/chickFilA/chickFilA",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/Zicks/Zicks",
-          "pathName": "pages/Zicks/Zicks",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/VillageJuice/VillageJuice",
-          "pathName": "pages/VillageJuice/VillageJuice",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/MagnoliaRoom/MagnoliaRoom",
-          "pathName": "pages/MagnoliaRoom/MagnoliaRoom",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/Favorites/Favorites",
-          "pathName": "pages/Favorites/Favorites",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/FoodDollar/FoodDollar",
-          "pathName": "pages/FoodDollar/FoodDollar",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/Favorites/Favorites",
-          "pathName": "pages/Favorites/Favorites",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/AddDeaconDolllar/AddDeaconDollar",
-          "pathName": "pages/AddDeaconDolllar/AddDeaconDollar",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/AddDeaconDolllar/AddDeaconDollar",
-          "pathName": "pages/AddDeaconDolllar/AddDeaconDollar",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/ChangeMealPlan/ChangeMealPlan",
-          "pathName": "pages/ChangeMealPlan/ChangeMealPlan",
+          "name": "pages/ForestGreens/ForestGreens",
+          "pathName": "pages/ForestGreens/ForestGreens",
           "query": "",
           "scene": null
         }
+      ]
     }
+  }
 }

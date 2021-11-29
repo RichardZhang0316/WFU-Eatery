@@ -1,2 +1,55 @@
-<!--pages/YamasMediterraneanStreetFood/YamasMediterraneanStreetFood.wxml-->
-<text>pages/YamasMediterraneanStreetFood/YamasMediterraneanStreetFood.wxml</text>
+<navigation title='' show_bol='{{false}}'></navigation> 
+
+<view class="topCard">
+<image mode="aspectFill" src="https://d1ralsognjng37.cloudfront.net/3edd3b8a-cc75-483d-bf23-f3a7c2dabcdd.jpeg" style="height:100%; width:100%"></image>
+<text class="head-text">Yamas</text>
+</view>
+
+<view class="flexTimetable">
+  <view class="shit3">
+    <view class="view" bindtap="{{ stopBtn ? 'showContent' : 'hideContent' }}">
+      <view class="shit">Open until 10 PM</view>
+      <van-icon name="arrow-down" color="#d6b160"/>
+    </view>
+    <view wx:for="{{timeTable}}" wx:if="{{choose}}" class='companyInfo1' animation='{{}}'>
+      <view class='companyInfo-left'>
+        <text class="shit4">{{item.realTimeTable}}</text>
+      </view>
+    </view>
+</view>
+<view class="shit">Location: Benson, Food Court Center</view>
+</view>
+
+
+<view class="popularTimes">
+<view class="shit2"><view>Popular Times</view></view></view>
+
+<view class="container">
+  <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
+</view>
+
+<view class="greyPart"> </view>
+<view class="realPart"><view class="menuTitle">Menu</view></view>
+
+<van-tabs active="{{ active }}" bind:change="onChange" color="#d6b160" title-active-color="#d6b160">
+  <van-tab title="Meal">
+      <foodCard title="Sandwich 三明治" desc="4 toppings + 1 side, Pita (圆面饼) bread"  thumb="https://media-cdn.tripadvisor.com/media/photo-s/15/28/54/85/turkey-trailhead.jpg" price="9.99" currency="$"/>
+      <foodCard title="Salad Bowl 沙拉碗🥗" desc="organic greens & arugula (芝麻菜) & spinach & romaine (莴苣)"  thumb="https://bloximages.newyork1.vip.townnews.com/yesweekly.com/content/tncms/assets/v3/editorial/b/bf/bbf88b15-168b-548d-94d9-38d68fc81beb/5e793a884b408.image.jpg" price="10.99" currency="$"/>     
+      <foodCard title="Grain Bowl 谷物碗" desc="ancient freekeh wheat & mediterranean lentils (扁豆) & lemon basmati (印度香米) rice"  thumb="https://res.cloudinary.com/sagacity/image/upload/c_crop,h_597,w_601,x_0,y_0/c_limit,dpr_auto,f_auto,fl_lossy,q_80,w_640/Screen_Shot_2018-02-19_at_4.01.58_PM_qow3mx.png" price="10.99" currency="$"/>      
+      <foodCard title="1/2 Grain Bowl + 1/2 Salad Bowl" thumb="https://s.abcnews.com/images/Lifestyle/food-bowl-gty-jpo-170728_16x9t_992.jpg" price="10.99" currency="$"/>   
+  </van-tab>
+  <van-tab title="Extras">
+      <foodCard title="SPANAKOPITA 希腊式馅饼" thumb="https://img.sndimg.com/food/image/upload/q_92,fl_progressive,w_1200,c_scale/v1/img/recipes/18/11/37/DVwj2pHQSZW9tszpiH2G_IMG_5044.JPG" price="3.5" currency="$"/>   
+      <foodCard title="YOGURT MAC + CHEESE 酸奶通心粉+奶酪" thumb="https://wearychef.com/wp-content/uploads/2013/02/mac-and-cheese1.jpg" price="3.5" currency="$"/>   
+      <foodCard title="PITA CRISPS 皮塔薯片" thumb="http://blog.nourishyourself.com/wp-content/uploads/2011/03/pitacrisps.jpg" price="1.5" currency="$"/>     
+      <foodCard title="FALAFEL 沙拉三明治" thumb="https://hips.hearstapps.com/delish/assets/17/28/1499895176-classic-falafel-delish.jpg" price="2.95" currency="$"/>     
+      <foodCard title="SEASONED FRIES 薯条" thumb="https://bluejeanchef.com/uploads/2020/07/Cajun-Fries-1280-8-819x1024.jpg" price="2.75" currency="$"/>
+      <foodCard title="MEDITERRANEAN FRIES 地中海薯条" thumb="https://www.acouplecooks.com/wp-content/uploads/2020/10/Greek-Fries-013.jpg" price="3.95" currency="$"/>         
+  </van-tab>
+</van-tabs>
+
+
+
+
+
+
