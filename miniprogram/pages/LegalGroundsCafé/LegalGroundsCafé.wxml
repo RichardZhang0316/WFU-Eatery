@@ -1,2 +1,46 @@
-<!--pages/LegalGroundsCafé/LegalGroundsCafé.wxml-->
-<text>pages/LegalGroundsCafé/LegalGroundsCafé.wxml</text>
+<navigation title='' show_bol='{{false}}'></navigation> 
+
+<view class="topCard">
+<image mode="aspectFill" src="https://pbs.twimg.com/media/D3UedXiWwAc2PmQ.jpg" style="height:100%; width:100%"></image>
+<view class="view">
+<text class="head-text">Shorty's</text>
+</view>
+</view>
+
+<view class="flexTimetable">
+  <view class="shit3">
+    <view class="view" bindtap="{{ stopBtn ? 'showContent' : 'hideContent' }}">
+      <view class="shit">Open until 10 PM</view>
+      <van-icon name="arrow-down" color="#d6b160"/>
+    </view>
+    <view wx:for="{{timeTable}}" wx:if="{{choose}}" class='companyInfo1' animation='{{}}'>
+      <view class='companyInfo-left'>
+        <text class="shit4">{{item.realTimeTable}}</text>
+      </view>
+    </view>
+</view>
+<view class="shit">Location: Benson University Center Ground Floor</view>
+</view>
+
+
+<view class="popularTimes">
+<view class="shit2"><view>Popular Times</view></view></view>
+
+<view class="container">
+  <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
+</view>
+
+<view class="greyPart"> </view>
+<view class="realPart"><view class="menuTitle">Menu</view></view>
+
+<van-tabs active="{{ active }}" bind:change="onChange" color="#d6b160" title-active-color="#d6b160">
+  <van-tab title="Burger">
+    <foodCard title="" desc="" thumb="" price="" currency="$" />
+  </van-tab>
+  <van-tab title="Salad">
+    <foodCard title="" desc="" thumb="" price="" currency="$" />
+  </van-tab>
+  <van-tab title="12 in.Sandwich">
+    <foodCard title="" desc="" thumb="" price="" currency="$" />
+  </van-tab>
+</van-tabs>
