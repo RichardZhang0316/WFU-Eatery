@@ -35,12 +35,43 @@
 
 <van-tabs active="{{ active }}" bind:change="onChange" color="#d6b160" title-active-color="#d6b160">
   <van-tab title="Burger">
-    <foodCard title="" desc="" thumb="" price="" currency="$" />
+    <foodCard title="1.Deamon Deacon 小恶魔汉堡" desc="800 卡路里" thumb="https://media-cdn.tripadvisor.com/media/photo-s/06/af/44/2b/chili-dogs.jpg" price="6.99" currency="$" />
+    <foodCard title="2.classic burger 经典汉堡" desc="620 卡路里" thumb="https://images.squarespace-cdn.com/content/v1/5d374de57e75a000017996b0/1564062977510-I42MXH0W25C0FSJG8KJ2/shorties_2019-2.jpg" price="6.99" currency="$" />
+    <foodCard title="Mr.Wake Forest 维克森林先生" desc="1290 卡路里" thumb="https://dining.wfu.edu/wp-content/uploads/2021/08/IMG_4282-scaled-400x0-c-default.jpg" price="11.99" currency="$" />
+    <foodCard title="Ham, Brie & Balsamic Burger 火腿、布里干酪、香料汉堡" desc="1290 卡路里" thumb="https://thetravelbite.com/wp-content/uploads/2017/05/Blueberry-Balsamic-and-Brie-Burgers-8.jpg" price="13.59" currency="$" />
+    <foodCard title="Mushroom & Swiss Burger 蘑菇瑞士汉堡" desc="1270 卡路里" thumb="https://littlespicejar.com/wp-content/uploads/2018/06/Rockin-Sweet-Onion-Swiss-Mushroom-Burger-1-720x720.jpg" price="14.59" currency="$" />
+    <foodCard title="BBQ Bacon Burger 烧烤培根汉堡" desc="1290 卡路里" thumb="https://media-cdn.tripadvisor.com/media/photo-s/0e/76/69/21/bbq-bacon-cheddar-burger.jpg" price="11.99" currency="$" />
+    <foodCard title="Portable Burger 便携式汉堡" desc="1120 卡路里" thumb="https://i5.walmartimages.com/asr/032f072a-3845-47b0-95fd-42668145c30b.09ea193a68d2684d5d1ee3bd9dc00bd6.jpeg" price="13.59" currency="$" />
+    <foodCard title="Turkey Burger 土耳其汉堡" desc="1290 卡路里" thumb="https://therecipecritic.com/wp-content/uploads/2019/05/turkey_burger1.jpg" price="12.79" currency="$" />
+    <foodCard title="Harvest Table meatloaf Melt 供肉卷汉堡" desc="1290 卡路里" thumb="https://golf.com/wp-content/uploads/2020/04/sea-pines-meatloaf.jpg" price="11.99" currency="$" />
+
   </van-tab>
   <van-tab title="Salad">
-    <foodCard title="" desc="" thumb="" price="" currency="$" />
+    <foodCard title="Chargrilled Caesar Salad 烤凯撒沙拉" desc="980 卡路里" thumb="https://www.irishtimes.com/polopoly_fs/1.2605181.1460208572!/image/image.jpg_gen/derivatives/landscape_620/image.jpg" price="10.99" currency="$" />
+    <foodCard title="CBBQ Spiced Chicken Tempura Salad 香辣天妇罗鸡肉沙拉" desc="720 卡路里" thumb="https://littlespicejar.com/wp-content/uploads/2018/07/Crispy-Chicken-Salad-with-BBQ-Honey-Mustard-Dressing-13-720x540.jpg" price="10.99" currency="$" />  
+  
   </van-tab>
-  <van-tab title="12 in.Sandwich">
-    <foodCard title="" desc="" thumb="" price="" currency="$" />
+  <van-tab title="Footlong Dogs">
+    <foodCard title="Truffle, Bacon, Mac & Cheese Dog 松露、培根、芝士通心粉热狗" desc="1010 卡路里" thumb="http://www.disneyfoodblog.com/wp-content/uploads/2012/03/mac-and-cheese-dog-cross-section.jpg" price="8.99" currency="$" /> 
+
+    <foodCard title="New York Midtown Dog 纽约中城热狗" desc="710 卡路里" thumb="https://www.webpagedepot.com/images/sitefiles/10-brown/149350410152342061034470243435753o-159119838924.jpg" price="7.79" currency="$" /> 
+
+    <foodCard title="Carolina Dog 卡罗莱纳热狗" desc="710 卡路里" thumb="https://cdn.vox-cdn.com/thumbor/SfY3lLcciiGBGtfGMuaJvZW5cfg=/0x0:4896x3264/1200x900/filters:focal(2057x1241:2839x2023)/cdn.vox-cdn.com/uploads/chorus_image/image/55242119/Ashworth_Drugs_20151021__DSF0217.0.jpg" price="8.99" currency="$" /> 
+
+  </van-tab> 
+  <van-tab title="Shakes and Floats">
+    <foodCard title="Vanilla Shake 香草奶昔" desc="480 卡路里" thumb="https://bakingmischief.com/wp-content/uploads/2020/03/vanilla-milkshake-photo.jpg" price="5.99" currency="$" />
+    <foodCard title="Chocolate Shake 巧克力奶昔" desc="710 卡路里" thumb="https://bakingmischief.com/wp-content/uploads/2019/07/chocolate-milkshake-square.jpg" price="5.99" currency="$" />
+    <foodCard title="Cheerwine Float 冰淇淋苏打" desc="250 卡路里" thumb="https://www.myforkinglife.com/wp-content/uploads/2018/06/cheerwine-float.png" price="3.99" currency="$" />
   </van-tab>
+  <van-tab title="Appetizers">
+    <foodCard title="Herb and Parmesan Fries 香草、帕玛森薯条" desc="350 卡路里" thumb="https://www.howsweeteats.com/wp-content/uploads/2014/07/fries-I-howsweeteats.com-1-2.jpg" price="8.99" currency="$" /> 
+
+    <foodCard title="Sweet Potato Fries 地瓜薯条" desc="550 卡路里" thumb="https://www.pcrm.org/sites/default/files/batatas-fritas-6.jpg" price="5.59" currency="$" /> 
+
+    <foodCard title="Onion Rings 洋葱圈" desc="540 卡路里" thumb="https://www.mylatinatable.com/wp-content/uploads/2016/01/foto-heroe-1024x693-1-1024x693.jpg.webp" price="7.29" currency="$" /> 
+    <foodCard title="Chili Cheese Tater Tots 辣椒芝士薯片" desc="720 卡路里" thumb="https://www.shakentogetherlife.com/wp-content/uploads/2017/10/sheet-pan-chili-cheese-tater-tots-featured.jpg" price="7.29" currency="$" /> 
+
+    <foodCard title="Hummus Platter 鹰嘴豆泥盘" desc="330 卡路里" thumb="https://daniliciousdishes.com/wp-content/uploads/2020/04/Spring-Hummus-Platter-1.jpg" price="6.99" currency="$" /> 
+</van-tab>
 </van-tabs>

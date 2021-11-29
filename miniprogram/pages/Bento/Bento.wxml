@@ -82,33 +82,42 @@
       
   </van-tab>
   <van-tab title="Bowl">
-    <foodCard title="Teriyaki Beef Rice Bowl" desc="" thumb="" price="" currency="$" />
-      <foodCard title="Teriyaki Chicken Rice Bowl" desc="" thumb="" price="" currency="$" />
-      <foodCard title="Salmon Poke Bowl" desc="" thumb="" price="" currency="$" />
-      <foodCard title="Spicy California Poke Bowl" desc="" thumb="" price="" currency="$" />
-      <foodCard title="Spicy Shrimp Poke Bowl" desc="" thumb="" price="" currency="$" />
-      <foodCard title="Tuna Poke Bowl" desc="" thumb="" price="" currency="$" />
-      <foodCard title="Tofu Poke Bowl" desc="" thumb="" price="" currency="$" />
+    <foodCard title="Teriyaki Beef Rice Bowl 牛肉碗" desc="牛肉和饭" thumb="https://www.bentosushi.com/wp-content/uploads/2021/01/Beef-Rice-Bowl.jpg" price="8" currency="$" />
+      <foodCard title="Teriyaki Chicken Rice Bowl 鸡肉碗" desc="鸡肉和饭" thumb="https://www.bentosushi.com/wp-content/uploads/2019/02/Chicken-Teriyaki-Rice-bowl.jpg" price="8" currency="$" />
+      <foodCard title="Salmon Poke Bowl 三文鱼波奇碗" desc="由三文鱼、海藻、黄瓜制成" thumb="https://www.bentosushi.com/us/wp-content/uploads/sites/2/2019/05/Salmon-Poke-Rice-Bowl.jpg" price="12" currency="$" />
+      <foodCard title="Spicy California Poke Bowl 辣波奇碗" desc="由鳕鱼、牛油果、海藻制成" thumb="https://www.bentosushi.com/wp-content/uploads/2021/06/Spicy-California-Poke.jpg" price="12" currency="$" />
+      <foodCard title="Spicy Shrimp Poke Bowl 香辣虾仁波奇碗" desc="由虾、牛油果和海藻制成" thumb="https://www.bentosushi.com/wp-content/uploads/2021/06/Spicy-Shrimp-Poke.jpg" price="12" currency="$" />
+      <foodCard title="Tuna Poke Bowl 金枪鱼波奇碗" desc="由金枪鱼、牛油果和海藻制成" thumb="https://www.bentosushi.com/us/wp-content/uploads/sites/2/2019/05/Tuna-Poke.jpg" price="12" currency="$" />
+      <foodCard title="Tofu Poke Bowl 豆腐波奇碗" desc="由豆腐、牛油果和海藻制成" thumb="https://www.bentosushi.com/wp-content/uploads/2021/09/Tofu-Poke-1024x1024.jpg" price="12" currency="$" />
   </van-tab>
   <van-tab title="Ramen">
-    <foodCard title="" desc="" thumb="" price="" currency="$" />
-      <foodCard title="" desc="" thumb="" price="" currency="$" />
-      <foodCard title="" desc="" thumb="" price="" currency="$" />
-      <foodCard title="" desc="" thumb="" price="" currency="$" />
-      <foodCard title="" desc="" thumb="" price="" currency="$" />
+    <foodCard title="Beef Miso Ramen 牛肉味噌拉面" thumb="https://www.bentosushi.com/us/wp-content/uploads/sites/2/2018/12/Ramen-Noodle-Bowl.jpg" price="11" currency="$" />
+      <foodCard title="Beef Tonkotsu Ramen 牛肉豚骨拉面" thumb="https://www.bentosushi.com/wp-content/uploads/2019/02/Ramen-Noodle-Bowl-1024x1024.jpg" price="11" currency="$" />
+      <foodCard title="Chasu Miso Ramen 叉烧味噌拉面"  thumb="https://www.bentosushi.com/us/wp-content/uploads/sites/2/2018/12/Ramen-Noodle-Bowl.jpg" price="11" currency="$" />
+      <foodCard title="Chasu Tonkotsu Ramen 叉烧豚骨拉面"  thumb="https://www.bentosushi.com/us/wp-content/uploads/sites/2/2018/12/Ramen-Noodle-Bowl.jpg" price="11" currency="$" />
+      <foodCard title="Chicken Miso Ramen 鸡肉味噌拉面"  thumb="https://www.aheadofthyme.com/wp-content/uploads/2019/10/healthy-miso-ramen-with-chicken-6-1-rotated.jpg" price="11" currency="$" />
+      <foodCard title="Chicken Tonkotsu Ramen 鸡肉豚骨拉面"  thumb="https://cdn.shopify.com/s/files/1/1182/3584/products/Takeout-Kit-Japanese-Tonkotsu-Ramen-Meal-Kit_2000x.jpg?v=1593619909" price="11" currency="$" />
+      <foodCard title="Inari Miso Ramen 豆腐味噌拉面" thumb="https://littlespicejar.com/wp-content/uploads/2017/01/Spicy-Curry-Ramen-Bowls-with-Tofu-8.jpg" price="11" currency="$" />
+      <foodCard title="Inari Tonkotsu Ramen 豆腐豚骨拉面"  thumb="https://i.pinimg.com/originals/89/30/9d/89309d7be9d8b28db3312a9d8af590b0.jpg" price="11" currency="$" />
+      <foodCard title="Shrimp Miso Ramen 虾仁味噌拉面"  thumb="https://www.countrysidecravings.com/wp-content/uploads/2018/08/Easy-Shrimp-Ramen-Soup-picture.jpg" price="11" currency="$" />
+      <foodCard title="Shrimp Tonkotsu Ramen 虾仁豚骨拉面" thumb="https://www.countrysidecravings.com/wp-content/uploads/2018/08/Easy-Shrimp-Ramen-Soup-picture.jpg" price="11" currency="$" />
   </van-tab>
   <van-tab title="Yaki Udon">
-    <foodCard title="" desc="" thumb="" price="" currency="$" />
-      <foodCard title="" desc="" thumb="" price="" currency="$" />
-      <foodCard title="" desc="" thumb="" price="" currency="$" />
-      <foodCard title="" desc="" thumb="" price="" currency="$" />
-      <foodCard title="" desc="" thumb="" price="" currency="$" />
+    <foodCard title="Beef Yaki Udon 牛肉乌冬面" thumb="https://v1.nitrocdn.com/KQYMGOLIdXGmoAcyJsPOrQDKktgCbwtG/assets/static/optimized/rev-c707c77/wp-content/uploads/2021/11/Beef-Udon-4322-III.jpg" price="9" currency="$" />
+      <foodCard title="Chicken Yaki Udon 鸡肉乌冬面"  thumb="https://www.bitesofberi.com/wp-content/uploads/2021/08/chicken-yaki-udon-1-500x500.jpg" price="9" currency="$" />
+      <foodCard title="Inari Yaki Udon 豆腐乌冬面" thumb="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fgurunavi.com%2Fzh-hans%2Fk821707%2Fimgs%2Fs_cm_01_049.jpg%3Fdt%3D1533304432&refer=http%3A%2F%2Fgurunavi.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1640755291&t=c3ecbca1987dc36e997620852fcffef1" price="9" currency="$" />
+      <foodCard title="Shrimp Yaki Udon 虾仁乌冬面"  thumb="https://images.japancentre.com/recipes/pics/213/main/photo_Yaki-Udon-Stir-fry-Noodles.jpg?1469572962" price="9" currency="$" />
+      <foodCard title="Chasu Yaki Udon 叉烧乌冬面"  thumb="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.alicdn.com%2Fimgextra%2Fi2%2F33170186%2FTB2QUDNqR8kpuFjSspeXXc7IpXa_%21%2133170186.jpg&refer=http%3A%2F%2Fimg.alicdn.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1640755409&t=db1a7fd05221b51ab4714cf6106db5ab" price="9" currency="$" />
+      <foodCard title="Beef Udon Soup 牛肉乌冬汤"  thumb="https://v1.nitrocdn.com/KQYMGOLIdXGmoAcyJsPOrQDKktgCbwtG/assets/static/optimized/rev-c707c77/wp-content/uploads/2021/11/Beef-Udon-4322-III.jpg" price="9" currency="$" />
+      <foodCard title="Chicken Udon Soup 鸡肉乌冬汤"  thumb="https://omnivorescookbook.com/wp-content/uploads/2019/08/1405_Easy-Chicken-Udon-Soup_550.jpg" price="9" currency="$" />
+      <foodCard title="Inari Udon Soup 豆腐乌冬汤"  thumb="https://healthynibblesandbits.com/wp-content/uploads/2018/09/Ginger-Miso-Noodle-Soup-1.jpg" price="9" currency="$" />
+      <foodCard title="Shrimp Udon Soup 虾仁乌冬汤"  thumb="https://static.onecms.io/wp-content/uploads/sites/19/2009/09/15/udon-soup-ck-1924711-x.jpg" price="9" currency="$" />
+      <foodCard title="Chasu Udon Soup 叉烧乌冬汤"  thumb="https://christieathome.com/wp-content/uploads/2021/02/Char-Siu-Udon-Soup-1-b-scaled.jpg" price="9" currency="$" />
   </van-tab>
   <van-tab title="Side">
-    <foodCard title="Pork Dumpling" desc="" thumb="" price="" currency="$" />
-      <foodCard title="" desc="" thumb="" price="" currency="$" />
-      <foodCard title="" desc="" thumb="" price="" currency="$" />
-      <foodCard title="" desc="" thumb="" price="" currency="$" />
-      <foodCard title="" desc="" thumb="" price="" currency="$" />
+    <foodCard title="Pork Dumpling 猪肉炸饺" desc="猪肉馅的炸饺" thumb="https://www.bentosushi.com/us/wp-content/uploads/sites/2/2019/02/Japanese-Pork-Dumplings-US.jpg" price="5" currency="$" />
+      <foodCard title="Seaweed Salad 海藻沙拉" desc="海藻" thumb="https://www.bentosushi.com/wp-content/uploads/2019/02/Seaweed-Salad-Label-scaled.jpg" price="5" currency="$" />
+      <foodCard title="Karaage Chicken 炸鸡" desc="就是炸鸡" thumb="https://static01.nyt.com/images/2018/07/25/dining/HK-karaage-horizontal/merlin_141075300_74569dec-9fc2-4174-931d-019dddef3bb8-articleLarge.jpg" price="6" currency="$" />
+      <foodCard title="Tempura Shrimp 天妇罗" desc="就是天妇罗" thumb="https://www.bentosushi.com/wp-content/uploads/2019/02/Tempura-Shrimp-1.jpg" price="6" currency="$" />
   </van-tab>
 </van-tabs>
