@@ -1,9 +1,7 @@
-page{
-  background-color:  #ececec ;
-} 
+@import "../IncomingMenu/IncomingMenu.wxss"; 
 .head-text {
   position: relative;
-  z-index: 99;
+  /* z-index: 99; */
   text-align: center;
   font-weight: 550;
   font-size: 22px;
@@ -12,11 +10,7 @@ page{
   left: 3%;
   bottom: 100rpx;
 }
-.greyPart{
-  background-color: #ececec;
-  height: 13px;
-  width: 100%;
-}
+
 .topCard {
   height: 260px;
 }
@@ -31,7 +25,7 @@ page{
   font-size: 12px;
   font-weight: bold;
   height: fit-content;
-  background-color: #fff;
+  background-color: rgb(255, 255, 255);
   color:grey;
 }
 
@@ -43,12 +37,11 @@ page{
   width: 100%;
 }
 
-.shit2 {
+.shit2{
   margin-left: 3%;
   margin-right: 3%;
   font-size: 17px;
   color: #d6b160;
-  background-color: #fff;
 }
 
 .companyInfo1 {
@@ -74,7 +67,6 @@ page{
   line-height: auto;
 }
 
-
 .popularTimes {
   height: 30%;
   font-weight: bold;
@@ -93,7 +85,7 @@ page{
 .menuTitle {
   height: 30%;
   font-size: 17px;
-  color: #d6b160;
+  color: #9E7E38;
   margin-left: 3%;
   margin-right: 3%;
   font-weight: bold;
@@ -182,7 +174,7 @@ page{
 
 .kind-list-text {
   flex: 1;
-  color: #d6b160;
+  color: #9E7E38;
   margin-left: 2%;
   font-size: 17px;
 }
@@ -219,12 +211,12 @@ ec-canvas {
 
 .container {
   height: 175px;
-  background-color: #fff;
+  background-color: white;
 }
 
 .container1 {
   height: 215px;
-  background-color: #fff;
+  background-color: white;
 }
 
 .l3 {
@@ -244,8 +236,8 @@ ec-canvas {
 }
 
 .tabBorer {
-  border-bottom: 1px solid #d6b160;
-  color: #d6b160;
+  border-bottom: 1px solid rgb(214, 177, 96);
+  color: rgb(214, 177, 96);
 }
 
 .tab1 {

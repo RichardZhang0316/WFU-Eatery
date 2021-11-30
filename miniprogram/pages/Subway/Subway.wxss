@@ -1,5 +1,5 @@
 page{
-  background-color:  #ececec ;
+  background-color:  #ececec ; 
 } 
 .head-text{
   position: relative;
@@ -30,7 +30,7 @@ page{
   font-size: 12px;
   font-weight: bold;
   height: fit-content;
-  background-color: #fff;
+  background-color: rgb(255, 255, 255);
   color:grey;
 }
 

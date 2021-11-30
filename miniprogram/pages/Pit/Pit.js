@@ -90,7 +90,7 @@ function initChart(canvas, width, height, dpr) {
         // 👇 Sunday 数据！！！
         data: [0, 7.6, 18, 35, 40, 38, 18, 5.2, 8.9, 17, 42, 36, 0.4, 0.1, 0], },]}       
 
-var option=[Sun,Mon,Tue,Wed,Thur,Fri,Sat][D];
+  var option = [Sun, Mon, Tue, Wed, Thur, Fri, Sat][D]
 
   chart.setOption(option);
   return chart;
@@ -105,24 +105,18 @@ function initChart1(canvas, width, height, dpr) {
   });
   canvas.setChart(chart);
 
-//获取实时人流数据，链接Javascript爬虫
-wx.cloud.callFunction({
-  name: 'realTime',
-  // 传递给云函数的event参数
-}).then(res => {
-  // resolve(res.result)
-  console.log(res);
-  var PecentageM = res.result.ThePit.occupancy_percent;   //最终data 
+  //获取实时人流数据，链接Javascript爬虫
+  var PecentageM = 80;   
 
   //实时人流图表的基础参数设置
   var option = {
-    backgroundColor: "#fff",
+    backgroundColor: "#F6F6F6",
     series: [{
       name: 'Real_Time',
       type: 'gauge',
       detail: {
         formatter: '{value}%',
-        color: '#d6b160',
+        color: '#9E7E38',
         fontSize: 20,
       },
       axisLine: {
@@ -163,12 +157,12 @@ wx.cloud.callFunction({
         fontWeight: 'bold',
       },
       data: [{
-        value: PecentageM,
+        value: 1,
         name: 'Occupancy',
         }
       ],
       itemStyle: {
-        color: '#d6b160',
+        color: '#9E7E38',
       }
     }]
   };
@@ -176,21 +170,22 @@ wx.cloud.callFunction({
   chart.setOption(option, true);
 
   return chart;
-})}
+}
 
-
-//var app = getApp();
+var app = getApp();
 Page({
     data: {
-      currentDateIndex: 0,
-      currentTimePeriodIndex: 0,
       menu_data: {},
       have_menu_data: false,
+      occupancy_chart_loading: true,
       ec: {
-        onInit: initChart
+        onInit: initChart,
+        disableTouch: true
       },
       ec1:{
-        onInit: initChart1
+        lazyLoad: true,
+        disableTouch: true
+        // onInit: initChart1
       },
         choose: false,
         animationData: {},
@@ -200,9 +195,9 @@ Page({
         id:'timetable',
         sendList:[],
 
-        timeTable:[{realTimeTable:'Mon: 10:00 AM- 1:00 AM'},{realTimeTable:'Tue: 10:00 AM- 1:00 AM'},{realTimeTable:'Wed: 10:00 AM- 1:00 AM'},{realTimeTable:'Thu: 10:00 AM- 1:00 AM'},{realTimeTable:'Fri: 10:00 AM- 1:00 AM'},{realTimeTable:'Sat: 10:00 AM- 1:00 AM'},{realTimeTable:'Sun: 10:00 AM- 1:00 AM'}],
+        timeTable:[{realTimeTable:'Mon: 7:00 - 21:00'},{realTimeTable:'Tue: 7:00 - 21:00'},{realTimeTable:'Wed: 7:00 - 21:00'},{realTimeTable:'Thu: 7:00 - 20:00'},{realTimeTable:'Fri: 7:00 - 20:00'},{realTimeTable:'Sat: 9:00 - 20:00'},{realTimeTable:'Sun: 9:00 - 21:00'}],
         
-    
+     
       },
 
     showContent: function (e) {
@@ -275,33 +270,128 @@ Page({
 
     /**上面是时间表核心代码
    * 下面是菜单收缩核心代码*/
-
-  kindToggle(e) {
-    var id = e.currentTarget.id;
-    id = parseInt(id);
-    var list =  this.data.dinnerL;// this.data.list;
-    for (let i = 0, len = list.length; i < len; ++i) {
-      if (list[i].id === id) {
-        list[i].open = !list[i].open
-      } else {
-        list[i].open = false
-      }
-    }
-    this.setData({
-      dinnerL:list
-    })
-  },
-      select: {
-        page: 1,
-        size: 6,
-        isEnd: false
-      },
     
       /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-      this.getTodayMenu();
+    this.initOccupancyChart()
+    const that = this;
+    var day = new Date()
+      var date_string = `${day.getFullYear()}-${(day.getMonth() + 1).toString().padStart(2,'0')}-${(day.getDate()).toString().padStart(2,'0')}`;
+      // date_string="2021-12-01";
+      var PitPromise = that.getMenuList(date_string, 'Pit')
+      PitPromise.then(values => {
+        console.log(values);
+        if (Object.keys(this.data.menu_data).length == 0) {
+          wx.showToast({
+            title: date_string + '暂无数据',
+            icon: 'none',
+            duration: 2000
+          });
+          that.setData({
+            menu_data: {},
+            have_menu_data: false
+          });
+        }
+        console.log(that.data.menu_data)
+        wx.hideLoading();
+      }, reason => {
+        console.log(reason)
+      });
+  },
+
+  initOccupancyChart: function() {
+    var that = this;
+    wx.cloud.callFunction({
+      name: 'realTime',
+    }).then( res => {
+      that.setData({
+        occupancy_chart_loading: false
+      })
+      console.log(res.result)
+      var PecentageM = res.result.ThePit.occupancy_percent;
+      console.log(PecentageM)
+      var ecComponent = this.selectComponent('#mychart-dom-gauge');
+      console.log(ecComponent)
+      ecComponent.init((canvas, width, height, dpr) => {
+        // 初始化图表
+        const chart = echarts.init(canvas, null, {
+          width: width,
+          height: height,
+          devicePixelRatio: dpr // new
+        });
+        canvas.setChart(chart); 
+      
+        //实时人流图表的基础参数设置
+        var option = {
+          // backgroundColor: "#F6F6F6",
+          series: [{
+            name: 'Real_Time',
+            type: 'gauge',
+            detail: {
+              formatter: '{value}%',
+              color: '#9E7E38',
+              fontSize: 20,
+            },
+            axisLine: {
+              lineStyle: {
+                width: 25,
+                color: [
+                  [0.3, '#d6b160'],
+                  [0.7, '#957b43'],
+                  [1, '#554626']
+                ]
+              }
+            },
+            pointer: {
+              itemStyle: {
+                color: 'auto'
+              }
+            },
+            axisTick: {
+              distance: -25,
+              length: 7,
+              lineStyle: {
+                color: '#fff',
+                width: 2
+              }
+            },
+            splitLine: {
+              distance: -30,
+              length: 30,
+              lineStyle: {
+                color: '#fff',
+                width: 2
+              }
+            },
+            axisLabel: {
+              color: 'white',
+              distance: 9,
+              fontSize: 0,
+              fontWeight: 'bold',
+            },
+            data: [{
+              value: PecentageM,
+              name: 'Occupancy',
+              }
+            ],
+            itemStyle: {
+              color: '#9E7E38',
+            }
+          }]
+        };
+      
+        chart.setOption(option, true);
+        return chart;
+    });
+    
+    }).catch( err => {
+      wx.showToast({
+        title: '客流量加载失败',
+        icon: 'error'
+      })
+    })
   },
 
   /**
@@ -310,15 +400,15 @@ Page({
   onReady: function () {
     let that = this;
     const query = wx.createSelectorQuery()
-    query.select('#swiper-container').boundingClientRect()
+    query.select('#my-navigation-bar').boundingClientRect()
     query.selectViewport().scrollOffset()
-    query.exec(function (swiper_container_res) {
+    query.exec(function (my_navigation_bar_res) {
       const stickyTab = wx.createSelectorQuery()
       stickyTab.select('#stickyTab').boundingClientRect()
       stickyTab.selectViewport().scrollOffset()
       stickyTab.exec(function (stickyTab_res) {
-        var stickyTabTop = stickyTab_res[0].top
-        var position = swiper_container_res[0].top
+        var stickyTabHeight = stickyTab_res[0].height
+        var myBavigationBarHeight = my_navigation_bar_res[0].height
         // 获取系统信息
         wx.getSystemInfo({
           success: function (res) {
@@ -326,53 +416,48 @@ Page({
             let clientHeight = res.windowHeight;
             // 设置高度
             that.setData({
-              stickyTabTop: stickyTabTop,
-              swiper_height: clientHeight - position
+              swiper_height: clientHeight - stickyTabHeight - myBavigationBarHeight
             });
+            console.log({
+              stickyTabHeight: stickyTabHeight,
+              myBavigationBarHeight: myBavigationBarHeight,
+              swiper_height: clientHeight - stickyTabHeight - myBavigationBarHeight
+            })
           }
         });
       })
     })
   },
-  // 选择供餐时段
-  selectPeriod: function (e) {
-    const that = this;
-    var key_list = Object.keys(this.data.menu_data)
-    var data_index = 0
-    for (var i in key_list) {
-      if (e.currentTarget.dataset.current === key_list[i]) {
-        data_index = i
-      }
-    }
-    if (that.data.currentTimePeriodIndex === data_index) {
-      return false;
-    } else {
-      that.setData({
-        currentTimePeriodName: e.currentTarget.dataset.current,
-        currentTimePeriodIndex: data_index
-      })
-      console.log('currentTimePeriodIndex: ', that.data.currentTimePeriodIndex)
-    }
+
+  /**
+   * 监听滚动scrollTop滚动的距离,获取滚动条当前位置
+   * 动态改变导航栏背景颜色的透明度
+   * */
+  onPageScroll: function (e) {
+    // console.log(e.scrollTop)
+    // 导航栏透明度
+    let Alpha = e.scrollTop * 1 / 100;
+    // console.log(Alpha)
+    // 导航栏背景颜色
+    let navigationBackgroundColor = 'rgba(241, 241, 241,' + Alpha + ')';
+    // if (Alpha > 1) {
+    //   navigationBackgroundColor = 'rgba(241, 241, 241)'
+    // }
+    this.setData({
+      navigationBackgroundColor: navigationBackgroundColor,
+    })
   },
+
   onTabChange: function (e) {
+    console.log(this.data.menu_data)
     this.setData({
       currentTimePeriodIndex: e.detail.index
     })
   },
+
   onSwiperChange: function (e) {
     this.setData({
       currentTimePeriodIndex: e.detail.current
-    })
-  },
-  // 窗口折叠面板
-  windowToggle: function (e) {
-    var periodName = e.currentTarget.dataset.periodname
-    var dinningHallName = e.currentTarget.dataset.dinninghallname
-    var window_name = e.currentTarget.dataset.window_name
-    var menu_data = this.data.menu_data
-    menu_data[periodName][dinningHallName]['window'][window_name].open = !menu_data[periodName][dinningHallName]['window'][window_name].open
-    this.setData({
-      menu_data
     })
   },
 
@@ -380,78 +465,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    var timestamp = Date.parse(new Date());
-    var date = new Date(timestamp);
-    //获取年  
-    var Y = date.getFullYear();
-    //获取月  
-    var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1);
-    //获取当日 
-    var D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
-    var sj = Y + '-' + M + '-' + D;
-    this.getMenu(sj);
-    this.setData({
-      dataCurrent:0
-    });
-  },
-  currentCheck: function (e) {
-    const that = this;
-    if (that.data.dataCurrent === e.target.dataset.current) {
-      return false;
-    } else {
-      that.setData({
-        dataCurrent: e.target.dataset.current
-      })
-    }
-  },
-  getMenu: function (sj) {
-    var that = this;
-    // wx.showLoading({
-    //   title: '',
-    // })
-    const db = wx.cloud.database({});
-    const cont = db.collection('NorthPitMenu');
-    cont.where({
-      _id: sj,
-    }).get({
-      success: res => {
-        // this.setData({
-        //   list: res.data
-        // })
-        console.log(res.data);
-        var ary = res.data[0];
-        delete ary._id;
-        for (var i in ary) {
-          var obj = [];
-          //console.log(i);
-          var a = 0;
-          for (var j in ary[i]) {
-            obj.push({
-              id: a,
-              name: j,
-              open: false,
-              pages: ary[i][j]
-            });
-            a++;
-          }
-          if (i == 'DINNER (4:30pm-9pm)') {
-            that.setData({
-              dinnerL: obj
-            });
-            console.log(obj);
-          } else if (i == 'LUNCH (11am-2pm)') {
-            that.setData({
-              lunchL: obj
-            });
-          } else if (i == 'BRUNCH (10am-2pm)') {
-            that.setData({
-              brunchL: obj
-            });
-          }
-        }
-        wx.hideLoading()
-      }
-    })
+    
   },
 
   /**
@@ -498,18 +512,6 @@ Page({
         fail: function () { }
       }
     },
-    // data: {
-    //   ec: {
-    //     onInit: initChart
-    //   }
-    // },
-  
-    onReady() {
-      setTimeout(function () {
-        // 获取 chart 实例的方式
-        //console.log(chart)
-      }, 2000);
-    },
 
     // 获取当天菜单**********************************************************************************
     getMenuList: function (date_string, dinning_name) {
@@ -546,6 +548,9 @@ Page({
                   food_list: dinningHallMenu[key][window]
                 }
               }
+              if (dinning_name == "NorthPitMenu") {
+                dinning_name = "North Pit"
+              }
               this.setData({
                 [`menu_data.${key}.${dinning_name}`]: {
                   open: false,
@@ -559,37 +564,6 @@ Page({
         })
       })
     },
-     // 选择日期
-  getTodayMenu: function (e) {
-    wx.showLoading({
-      title: '',
-      mask: true
-    })
-    
-    const that = this;
-    var day = new Date()
-
-    var date_string = `${day.getFullYear()}-${(day.getMonth() + 1).toString().padStart(2,'0')}-${(day.getDate()).toString().padStart(2,'0')}`
-   
-    var PitPromise = that.getMenuList(date_string, 'Pit')
-    PitPromise.then(values => {
-      console.log(values);
-      if (Object.keys(this.data.menu_data).length == 0) {
-        wx.showToast({
-          title: date_string + '暂无数据',
-          icon: 'none',
-          duration: 2000
-        });
-        that.setData({
-          menu_data: {},
-          have_menu_data: false
-        });
-      }
-      wx.hideLoading();
-    }, reason => {
-      console.log(reason)
-    });
-  },
 
   // 选择供餐时段
   selectPeriod: function (e) {
@@ -611,35 +585,4 @@ Page({
       console.log('currentTimePeriodIndex: ', that.data.currentTimePeriodIndex)
     }
   },
-
-  // 餐厅折叠面板
-  dinningHallToggle: function (e) {
-    var periodName = e.currentTarget.dataset.periodname
-    var dinningHallName = e.currentTarget.dataset.dinninghallname
-    this.setData({
-      [`menu_data.${periodName}.${dinningHallName}.open`]: !this.data.menu_data[periodName][dinningHallName].open
-    })
-  },
-
-  // 窗口折叠面板
-  windowToggle: function (e) {
-    var periodName = e.currentTarget.dataset.periodname
-    var dinningHallName = e.currentTarget.dataset.dinninghallname
-    var window_name = e.currentTarget.dataset.window_name
-    var menu_data = this.data.menu_data
-    menu_data[periodName][dinningHallName]['window'][window_name].open = !menu_data[periodName][dinningHallName]['window'][window_name].open
-    this.setData({
-      menu_data
-    })
-  },
-
-  // 页面跳转（测试）
-  navigateToDinningHall: function (e) {
-    var dinninghallname = e.currentTarget.dataset.dinninghallname
-    console.log(`/pages/${dinninghallname}/${dinninghallname}`)
-    wx.navigateTo({
-      url: `/pages/${dinninghallname}/${dinninghallname}`,
-      // url: '/pages/Bento/Bento'
-    })
-  }
   })

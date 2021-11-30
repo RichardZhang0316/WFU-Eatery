@@ -65,7 +65,7 @@ Page({
         id:'timetable',
         sendList:[],
 
-        timeTable:[{realTimeTable:'Mon: 11:00 AM- 11:00 PM'},{realTimeTable:'Tue: 11:00 AM- 11:00 PM'},{realTimeTable:'Wed: 11:00 AM- 11:00 PM'},{realTimeTable:'Thu: 11:00 AM- 2:00 AM'},{realTimeTable:'Fri: 11:00 AM- 2:00 AM'},{realTimeTable:'Sat: 11:00 AM- 2:00 AM'},{realTimeTable:'Sun: 11:00 AM- 11:00 PM'}],
+        timeTable:[{realTimeTable:'Mon: 11:00 - 23:00'},{realTimeTable:'Tue: 11:00 - 23:00'},{realTimeTable:'Wed: 11:00 - 23:00'},{realTimeTable:'Thu: 11:00 - 2:00'},{realTimeTable:'Fri: 11:00 - 2:00'},{realTimeTable:'Sat: 11:00 - 2:00'},{realTimeTable:'Sun: 11:00 - 23:00'}],
       },
       
       //前端滑动切换bar-展示信息（目前都注释掉了）

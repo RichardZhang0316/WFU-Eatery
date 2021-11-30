@@ -89,20 +89,34 @@ Page({
     steps: [
       {
       
-        desc: ' 学生需联系Residential Life and Housing',
+        desc: ' 学生需登录Housing Portal以更改Meal Plan',
       },
       {
-        text: '电话：',
-        desc: '336-758-5185',
+        desc: '登录Housing Portal，点击2021-2022 Housing按钮，选择当前Academic Year，即可进入Meal Plan Selection页面',
       
       },
       {
-        text: 'Email:',
-        desc: 'housing@wfu.edu',
+        desc: '点击按钮复制网址，在浏览器打开网页',
       
       },
     ],
+    contents:'https://wfu.starrezhousing.com/StarRezPortalX/41699BD7/3/3/Home-Home?UrlToken=8B456663',
 
+  },
+  copyText: function (e) {
+    console.log(e)
+    wx.setClipboardData({
+      data: e.currentTarget.dataset.text,
+      success: function (res) {
+        wx.getClipboardData({
+          success: function (res) {
+            wx.showToast({
+              title: '复制成功'
+            })
+          }
+        })
+      }
+    })
   },
 
 

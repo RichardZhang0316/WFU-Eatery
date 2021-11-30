@@ -30,36 +30,29 @@
       <swiper-item class="swiper-item" wx:for="{{['Breakfast','Lunch','Dinner']}}" wx:for-item="periodName" wx:key="*this">
          <scroll-view class="swiper-item-scroll" enable-flex scroll-y scroll-with-animation style="height:{{stickyTabTop + swiper_height}}px;">
             <van-empty class="empty-sign" description="没吃的" />
-            <view class="dinningHallName-list">
-            <!-- 餐厅循环 -->
-            <view class="dinningHallName-item" wx:for="{{menu_data[periodName]}}" wx:for-index="dinningHallName" wx:for-item="dinningHallMenu" wx:key="*this">
-               <view class="kind-list__item">
-                  <view class="kind-list__item-hd {{dinningHallMenu['open']?'kind-list__item-hd-show':''}}" data-periodname="{{periodName}}" data-dinninghallname="{{dinningHallName}}" bindtap="dinningHallToggle">
-                     <view class="kind-list-text">{{dinningHallName}}</view>
-                  </view>
-                  <view class="kind-list__item-bd {{dinningHallMenu['open']?'kind-list__item-bd_show':''}}">
-                     <view class="weui-cells {{dinningHallMenu['open']?'weui-cells_show':''}}">
-                        <view class="navigator-box {{dinningHallMenu['open']?'navigator-box-show':''}}">
-                           <!-- 餐厅窗口循环 -->
-                           <view wx:for="{{dinningHallMenu['window']}}" wx:for-index="window_name" wx:for-item="window_data" wx:key="*this">
-                              <!-- 窗口菜单循环 -->
-                              <view class="weui-cell dinningHallName" data-periodname="{{periodName}}" data-dinninghallname="{{dinningHallName}}" data-window_name="{{window_name}}" bindtap="windowToggle">{{window_name}}</view>
-                              <view class="kind-list__item-bd {{window_data['open']?'kind-list__item-bd_show':''}}">
-                                 <block wx:for="{{window_data.food_list}}" wx:for-item="food_name" wx:key="index">
-                                    <navigator class="weui-cell weui-cell_access navigator" hover-class="weui-cell_active" url="../{{dinningHallName}}/{{dinningHallName}}">
-                                       <view class="weui-cell__bd">{{food_name}}</view>
-                                       <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-                                    </navigator>
-                                 </block>
-                              </view>
+            <view class="dinningHall-container">
+               <!-- 餐厅循环 -->
+               <view class="dinningHall" wx:for="{{menu_data[periodName]}}" wx:for-index="dinningHallName" wx:for-item="dinningHallMenu" wx:key="*this">
+                  <view class="kind-list__item">
+                     <view class="kind-list__item-hd {{dinningHallMenu['open']?'kind-list__item-hd-show':''}} dinningHallName" data-periodname="{{periodName}}" data-dinninghallname="{{dinningHallName}}" bindtap="dinningHallToggle">
+                        <view class="kind-list-text">{{dinningHallName}}</view>
+                     </view>
+                     <view class="kind-list__item-bd {{dinningHallMenu['open']?'kind-list__item-bd_show':''}}  window-contianer">
+                        <!-- 餐厅窗口循环 -->
+                        <view class="window-item" wx:for="{{dinningHallMenu['window']}}" wx:for-index="window_name" wx:for-item="window_data" wx:key="*this">
+                           <view class="window_name" data-periodname="{{periodName}}" data-dinninghallname="{{dinningHallName}}" data-window_name="{{window_name}}" bindtap="windowToggle">{{window_name}}</view>
+                           <!-- 窗口菜单循环 -->
+                           <view class="food-name-container">
+                              <block wx:for="{{window_data.food_list}}" wx:for-item="food_name" wx:key="index">
+                                 <view class="food-name">{{food_name}}</view>
+                              </block>
                            </view>
                         </view>
                      </view>
                   </view>
                </view>
             </view>
-         </view>
-         <!-- </view>. -->
+            <!-- </view>. -->
          </scroll-view>
       </swiper-item>
    </swiper>

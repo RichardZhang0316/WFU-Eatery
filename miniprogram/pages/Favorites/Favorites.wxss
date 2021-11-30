@@ -74,33 +74,28 @@ margin-top:20%;
 }
 
 .image{
-  margin-top: 23%;
+  margin-top: 20%;
   margin-left:38%;  
 }
 
 
 .topTitle{
   /*卡片的宽度*/  
-  width: 90%;
-  text-align: center;
+  width: 100%;
   /*左外边距，这里代表距离最左边的距离*/
-  
   /*卡片的高度。*/
-  height: 90rpx;
-  color:black;
-  padding: 20px;
-  font-size: 20px;
-  
+  padding: 10px 0;
+  text-align: center;
+  font-size: 17px;
   color:#d6b160;
 }
 .card{
-  color:rgb(158, 126, 56);
   /*卡片的宽度*/  
   width: 70%;
   /*左外边距，这里代表距离最左边的距离*/
   margin-left: 15%;
   /*卡片的高度。*/
-  height: 70px;
+  height: 50px;
   /*背景色，可以自己更换*/
   background: rgb(255, 255, 255);
   /* radius是卡片的边框的圆润c程度*/

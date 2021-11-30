@@ -19,7 +19,6 @@ page{
   height: 30px;
   width: 50%;
   margin-left: 25%;
-  
   text-align: center;
   text-size-adjust:14;
   color: white;
@@ -31,17 +30,18 @@ page{
   border-radius:10px;
   /* box-shadow: 5px 5px 5px #FDC314; */
   box-shadow: 5px 5px 5px #cdcfcf;
+  margin-top: 30px;
 }
 
 .card{
-  color:rgb(158, 126, 56);
+  color:#d6b160;
   /*卡片的宽度*/  
   width: 90%;
   /*左外边距，这里代表距离最左边的距离*/
   /*margin-top: 10%;*/
   margin-left: 5%;
   /*卡片的高度。*/
-  height: 400rpx;
+  height: auto;
   /*背景色，可以自己更换*/
   background: rgb(255, 255, 255);
   /* radius是卡片的边框的圆润c程度*/
@@ -51,9 +51,9 @@ page{
   box-shadow: 5px 5px 5px #cdcfcf;
 }
 
+
 .Michael2 {
-  font-weight: bold;
-  padding-top: 12px;
+  padding-top: 15px;
 }
 
 swiper-view{
@@ -64,7 +64,7 @@ swiper-view{
   background-size:cover;
   opacity:0.75;
   border-style:solid;
-  border-color: rgb(158,126,56);
+  border-color: #d6b160;
   border-top: 0px;
  }
 
@@ -111,7 +111,7 @@ swiper-view{
  
 
  .card2{
-  color:rgb(158, 126, 56);
+  color:#d6b160;
   /*卡片的宽度*/  
   width: 90%;
   /*左外边距，这里代表距离最左边的距离*/

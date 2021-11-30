@@ -41,7 +41,7 @@ page{
   /*margin-top: 10%;*/
   margin-left: 5%;
   /*卡片的高度。*/
-  height: 550rpx;
+  height: auto;
   /*背景色，可以自己更换*/
   background: rgb(255, 255, 255);
   /* radius是卡片的边框的圆润c程度*/

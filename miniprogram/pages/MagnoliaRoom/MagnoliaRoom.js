@@ -101,7 +101,7 @@ Page({
         id:'timetable',
         sendList:[],
 
-        timeTable:[{realTimeTable:'Mon: 10:00 AM- 1:00 AM'},{realTimeTable:'Tue: 10:00 AM- 1:00 AM'},{realTimeTable:'Wed: 10:00 AM- 1:00 AM'},{realTimeTable:'Thu: 10:00 AM- 1:00 AM'},{realTimeTable:'Fri: 10:00 AM- 1:00 AM'},{realTimeTable:'Sat: 10:00 AM- 1:00 AM'},{realTimeTable:'Sun: 10:00 AM- 1:00 AM'}],
+        timeTable:[{realTimeTable:'Mon: 11:00 - 13:30'},{realTimeTable:'Tue: 11:00 - 13:30'},{realTimeTable:'Wed: 11:00 - 13:30'},{realTimeTable:'Thu: 11:00 - 13:30'},{realTimeTable:'Fri: 11:00 - 13:30'},{realTimeTable:'Sat: closed'},{realTimeTable:'Sun: closed'}],
         
         list: [{
             id: 'view',

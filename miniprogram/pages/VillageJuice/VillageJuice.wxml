@@ -21,7 +21,7 @@
 </view>
    
 
-<view class="shit">North Dining Hall</view>
+<view class="shit">North Dining Hall Second Floor</view>
 </view>
 
 
@@ -37,37 +37,37 @@
 
 <van-tabs active="{{ active }}" bind:change="onChange" swipeable ellipsis="{{false}}" color="#d6b160" title-active-color="#d6b160">
   <van-tab title="Smoothies">
-    <foodCard desc="280卡路里 详情: oat milk, cold brew coffee, banana, date, cacao" title="MOCHA-NANA" thumb="https://i.loli.net/2021/11/28/7e61mLHqPzUjwYX.png" price="6.95" currency="$"/>
-    <foodCard desc="320卡路里 详情: oat milk, organic strawberry, banana, date" title="PINKY SWEAR" thumb="https://i.loli.net/2021/11/28/bWhcONP9mfkI6gl.png" price="7.95" currency="$"/>
-    <foodCard desc="400卡路里 详情: oat milk, pineapple, banana, mango, lime" title="SUNSET" thumb="https://i.loli.net/2021/11/28/MctwWiO6aAeIYR1.png" price="7.95" currency="$"/>
-    <foodCard desc="340卡路里 详情: oat milk, spinach, banana, date, cacao nibs, mint leaves" title="MINT CHIP" thumb="https://i.loli.net/2021/11/28/nQYfJKgvyeFGRb4.png" price="8.95" currency="$"/>
-    <foodCard desc="450卡路里 详情: oat milk, cacao nibs, almond butter, banana, date" title="CURIOUS GEORGE" thumb="https://i.loli.net/2021/11/28/Ks18bDIWNUr9Gn4.png" price="7.95" currency="$"/>
-    <foodCard desc="270卡路里 详情: oat milk, mango, cucumber, spinach, kale, banana, mint" title="GREEN COCO" thumb="https://i.loli.net/2021/11/28/P4XQFbWmcYVq6Io.png" price="8.95" currency="$"/>
-    <foodCard desc="480卡路里 详情: oat milk, organic blueberry, almond butter, date, chia seed, banana" title="SUPER BLUE" thumb="https://i.loli.net/2021/11/28/ReVE3J9kK1uLp5B.png" price="9.95" currency="$"/>
+    <foodCard desc="280卡路里 由燕麦牛奶，冷煮咖啡，香蕉，大枣，可可豆制成" title="Mocha-Nana 摩卡娜娜奶昔" thumb="https://i.loli.net/2021/11/28/7e61mLHqPzUjwYX.png" price="6.95" currency="$"/>
+    <foodCard desc="320卡路里 由燕麦牛奶，有机草莓，香蕉，大枣制成" title="Pinky Swear 拉钩奶昔" thumb="https://i.loli.net/2021/11/28/bWhcONP9mfkI6gl.png" price="7.95" currency="$"/>
+    <foodCard desc="400卡路里 由燕麦牛奶，菠萝，香蕉，芒果，酸橙制成" title="Sunset 日落奶昔" thumb="https://i.loli.net/2021/11/28/MctwWiO6aAeIYR1.png" price="7.95" currency="$"/>
+    <foodCard desc="340卡路里 由燕麦奶，菠菜，香蕉，大枣，可可豆，薄荷叶制成" title="Mint Chip 薄荷奶昔" thumb="https://i.loli.net/2021/11/28/nQYfJKgvyeFGRb4.png" price="8.95" currency="$"/>
+    <foodCard desc="450卡路里 由燕麦奶，可可豆，杏仁酱，香蕉，枣制成" title="Curious George 好奇乔治奶昔" thumb="https://i.loli.net/2021/11/28/Ks18bDIWNUr9Gn4.png" price="7.95" currency="$"/>
+    <foodCard desc="270卡路里 由燕麦牛奶，芒果，黄瓜，菠菜，甘蓝，香蕉，薄荷制成" title="Green Coco 绿色可可奶昔" thumb="https://i.loli.net/2021/11/28/P4XQFbWmcYVq6Io.png" price="8.95" currency="$"/>
+    <foodCard desc="480卡路里 由燕麦牛奶，有机蓝莓，杏仁黄油，大枣，奇亚籽，香蕉制成" title="Super Blue 超级蓝奶昔" thumb="https://i.loli.net/2021/11/28/ReVE3J9kK1uLp5B.png" price="9.95" currency="$"/>
   </van-tab>
   <van-tab title="Bowls">
-    <foodCard desc="330卡路里 详情：oat milk, organic strawberry, banana, date. topped with organic strawberry, banana, toasted almond crumble, goji berries" title="PINKY SWEAR BOWL" thumb="https://i.loli.net/2021/11/28/POIlcx81sNqKahU.png" price="8.95" currency="$"/>
-    <foodCard desc="400卡路里 详情：oat milk, pineapple, banana, mango, lime. topped with banana, coconut, goji berries, mango" title="SUNSET BOWL" thumb="https://i.loli.net/2021/11/28/pZiVBRnKPqgthNL.png" price="8.95" currency="$"/>
-    <foodCard desc="440卡路里 详情：oat milk, banana, almond butter, date. topped with frozen organic blueberry, toasted almond crumble, banana, bee" title="COCO-NUT-BUTTER BOWL" thumb="https://i.loli.net/2021/11/28/UckE62VGYSFuR4A.png" price="8.95" currency="$"/>
-    <foodCard desc="440卡路里 详情：oat milk, organic acai, banana, organic strawberry and date. topped with banana, cacao nib, organic strawberry, coconut, toasted almond crumble" title="AÇAÍ BOWL" thumb="https://i.loli.net/2021/11/28/znyxTitaLUpSoJC.png" price="10.95" currency="$"/>
-    <foodCard desc="440卡路里 详情：gluten free oats, oat milk, almond butter, organic strawberry, honey, banana, toasted almond crumble" title="OVERNIGHT OATS" thumb="https://i.loli.net/2021/11/28/3ZeGgWhwoLY1NC7.png" price="7.95" currency="$"/>
+    <foodCard desc="330卡路里  由燕麦牛奶，有机草莓，香蕉，大枣、香蕉，烤杏仁酥，枸杞制成" title="Pinky Swear Bowl 拉钩碗" thumb="https://i.loli.net/2021/11/28/POIlcx81sNqKahU.png" price="8.95" currency="$"/>
+    <foodCard desc="400卡路里 由燕麦牛奶、菠萝、香蕉、芒果、酸橙、椰子、枸杞和芒果制成" title="Sunset Bowl 日落碗" thumb="https://i.loli.net/2021/11/28/pZiVBRnKPqgthNL.png" price="8.95" currency="$"/>
+    <foodCard desc="440卡路里 由燕麦牛奶、香蕉、杏仁黄油、枣、有机蓝莓、烤杏仁酥、香蕉和蜂蜜制成" title="Coconut Butter Bowl 椰子黄油碗" thumb="https://i.loli.net/2021/11/28/UckE62VGYSFuR4A.png" price="8.95" currency="$"/>
+    <foodCard desc="440卡路里 由燕麦牛奶，有机巴西莓，香蕉，有机草莓和枣制成。上面有香蕉，可可，有机草莓，椰子和烤杏仁酥" title="Acai Bowl 酸奶碗" thumb="https://i.loli.net/2021/11/28/znyxTitaLUpSoJC.png" price="10.95" currency="$"/>
+    <foodCard desc="440卡路里 由无麸质燕麦，燕麦牛奶，杏仁黄油，有机草莓，蜂蜜，香蕉和烤杏仁酥制成" title="Overnight Oats 隔夜燕麦碗" thumb="https://i.loli.net/2021/11/28/3ZeGgWhwoLY1NC7.png" price="7.95" currency="$"/>
   </van-tab>
   <van-tab title="Wraps">
-    <foodCard title="QUIT YOUR JOB" desc="520卡路里 详情：scrambled egg, tomato, avocado, sharp cheddar, avocado goddess, sriracha and wrapped in flour tortilla & topped with mango salsa" thumb="https://i.loli.net/2021/11/29/9kHrj7nKdDQptB8.png" price="9.95" currency="$"/>
-    <foodCard title="NUT BUTTER & BANANA" desc="550卡路里 详情：cashew butter, banana, honey" thumb="https://i.loli.net/2021/11/29/SrNVkD6GeCitO7z.png" price="7.95" currency="$"/>
-    <foodCard title="CHICKEN BACON AVOCADO WRAP" desc="620卡路里 详情：Joyce Farms roasted chicken, thick cut bacon, heirloom tomato, sharp cheddar, avocado, spinach, housemade ranch and wrapped in flour tortilla" thumb="https://i.loli.net/2021/11/29/gReVbU2sWHdp1lI.png" price="10.95" currency="$"/>
-    <foodCard title="AVO VEGAN" desc="260卡路里 详情：housemade avocado spread, local curtido, herb oil, micro-greens" thumb="https://i.loli.net/2021/11/29/xMzPEs8FBjLiQ64.png" price="9.95" currency="$"/>
-    <foodCard title="BASIL, BACON & TOMATO" desc="210卡路里 详情：bacon, heirloom tomato, basil with housemade avocado spread" thumb="https://i.loli.net/2021/11/29/trzjAoBVvyadPbE.png" price="9.95" currency="$"/>
+    <foodCard title="Quit Your Job 辞职卷" desc="520卡路里 将炒鸡蛋，西红柿，鳄梨，切达干酪和鳄梨裹在玉米粉薄烙饼里，上面放上芒果沙司" thumb="https://i.loli.net/2021/11/29/9kHrj7nKdDQptB8.png" price="9.95" currency="$"/>
+    <foodCard title="Nut Butter & Banana 坚果酱和香蕉卷" desc="550卡路里 由腰果、黄油、香蕉和蜂蜜制成" thumb="https://i.loli.net/2021/11/29/SrNVkD6GeCitO7z.png" price="7.95" currency="$"/>
+    <foodCard title="Chicken Bacon Avocado Wrap 鸡肉培根牛油果卷" desc="620卡路里 由烤鸡，厚切培根，番茄，切达干酪，鳄梨，菠菜和玉米粉圆饼制成" thumb="https://i.loli.net/2021/11/29/gReVbU2sWHdp1lI.png" price="10.95" currency="$"/>
+    <foodCard title="Avo Vegan 牛油果鲜蔬卷" desc="260卡路里 由自制牛油果酱和蔬菜制成" thumb="https://i.loli.net/2021/11/29/xMzPEs8FBjLiQ64.png" price="9.95" currency="$"/>
+    <foodCard title="Basil, Bacon & Tomato 罗勒，培根和番茄卷" desc="210卡路里 由培根、番茄、罗勒和自制鳄梨酱制成" thumb="https://i.loli.net/2021/11/29/trzjAoBVvyadPbE.png" price="9.95" currency="$"/>
   </van-tab>
 
   <van-tab title="Salad">
-    <foodCard title="VILLAGE COBB" desc="760卡路里 详情：Joyce Farms roasted chicken, thick cut bacon, egg, cherry tomato, avocado, green onion, blue crumbled cheese, sweet corn, romaine dressing: dressing: village ranch* or avo-goddess" thumb="https://i.loli.net/2021/11/29/25RTVEfKzLn6sqF.png" price="13.95" currency="$"/>
-    <foodCard title="TROPICAL CHICKEN" desc="430卡路里 详情：Joyce Farms roasted chicken, fresh mango, cilantro, honey sesame cashews, sesame goat cheese medallions, romaine" thumb="https://i.loli.net/2021/11/29/W1KVvlytiHzdTQP.png" price="12.95" currency="$"/>
-    <foodCard title="MISO BOWL " desc="470卡路里 详情：roasted red peppers, roasted carrots, pumpkin seeds, avocado, nori strips, brown rice, kale or spinach" thumb="https://i.loli.net/2021/11/29/mtD7oUGPOeyLuNY.png" price="9.95" currency="$"/>
-    <foodCard title="FARMER’S DAUGHTER" desc="550卡路里 详情：Joyce Farms roasted chicken, green apple, sweet potato, spiced almonds, brown rice, kale or spinach" thumb="https://i.loli.net/2021/11/29/N1KcnJFDms6uZyS.png" price="10.95" currency="$"/>    
-    <foodCard title="BRUSSELS & BACON" desc="650卡路里 详情：brussels sprouts, charred tomato, thick cut bacon, parmesan crisp, brown rice, spinach || Sub quinoa" thumb="https://i.loli.net/2021/11/29/xZLb8GPjqlH52BF.png" price="11.95" currency="$"/>
-    <foodCard title="MEDITERRANEAN" desc="570卡路里 详情：spiced chickpeas, feta, cherry tomato, cucumber, quinoa, fresh herbs romaine, organic arugula" thumb="https://i.loli.net/2021/11/29/HnmJEzx8Dhs7d3V.png" price="10.95" currency="$"/>
-    <foodCard title="SOUTHWEST" desc="572卡路里 详情：black beans, mango salsa, chopped romaine, sharp cheddar, cilantro, avocado, brown rice, sweet corn, green onion" thumb="https://i.loli.net/2021/11/29/k2HrPhTIS8xMqKX.png" price="10.95" currency="$"/>
+    <foodCard title="Village Cobb 乡村考伯沙拉" desc="760卡路里 由烤鸡、厚切培根、鸡蛋、樱桃番茄、牛油果、葱花、蓝色奶酪屑、甜玉米制成" thumb="https://i.loli.net/2021/11/29/25RTVEfKzLn6sqF.png" price="13.95" currency="$"/>
+    <foodCard title="Tropical Chicken 热带鸡肉沙拉" desc="430卡路里 由烤鸡，新鲜芒果，香菜，蜂蜜芝麻腰果，芝麻山羊奶酪圆片，莴苣制成" thumb="https://i.loli.net/2021/11/29/W1KVvlytiHzdTQP.png" price="12.95" currency="$"/>
+    <foodCard title="Miso Bowl 味噌碗沙拉" desc="470卡路里 由烤红辣椒，烤胡萝卜，南瓜子，鳄梨，紫菜条，糙米，甘蓝和菠菜制成" thumb="https://i.loli.net/2021/11/29/mtD7oUGPOeyLuNY.png" price="9.95" currency="$"/>
+    <foodCard title="Farmer's Daughter 农场主的女儿沙拉" desc="550卡路里 由烤鸡、青苹果、红薯、五香杏仁、糙米、羽衣甘蓝和菠菜制成" thumb="https://i.loli.net/2021/11/29/N1KcnJFDms6uZyS.png" price="10.95" currency="$"/>    
+    <foodCard title="Brussels& Bacon 布鲁塞尔培根沙拉" desc="650卡路里 由球芽甘蓝，烧焦的番茄，厚切培根，帕玛森酥，糙米，菠菜和亚藜制成" thumb="https://i.loli.net/2021/11/29/xZLb8GPjqlH52BF.png" price="11.95" currency="$"/>
+    <foodCard title="Mediterranean 地中海沙拉" desc="570卡路里 由鹰嘴豆，羊乳酪，樱桃番茄，黄瓜，藜麦，新鲜香草，生菜，和有机芝麻菜制成" thumb="https://i.loli.net/2021/11/29/HnmJEzx8Dhs7d3V.png" price="10.95" currency="$"/>
+    <foodCard title="Southwest 西南沙拉" desc="572卡路里 由黑豆，芒果沙司，切碎的莴苣，切达干酪，香菜，鳄梨，糙米，甜玉米，和葱花制成" thumb="https://i.loli.net/2021/11/29/k2HrPhTIS8xMqKX.png" price="10.95" currency="$"/>
   </van-tab>
 </van-tabs>
 

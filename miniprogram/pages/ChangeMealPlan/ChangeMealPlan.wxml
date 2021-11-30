@@ -7,13 +7,15 @@
   steps="{{ steps }}"
   active="0"
   direction="vertical"
-  active-color="#9E7E38"
-  inactive-color="#9E7E38"
+  active-color="#d6b160"
+  inactive-color="#d6b160"
   inactive-icon = "star"
   active-icon = "star"
 />
 </view>
 </view>
+
+<view class="button" bindtap='copyText' data-text="{{contents}}">Get Website Link</view> 
 
 <view class="card2">
 <view class="Title">Meal Plan Options</view>

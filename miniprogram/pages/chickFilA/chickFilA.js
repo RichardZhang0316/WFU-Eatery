@@ -52,7 +52,9 @@ Page({
         id:'timetable',
         sendList:[],
 
-        timeTable:[{realTimeTable:'Mon: 7:30 AM- 22:00 PM'},{realTimeTable:'Tue: 7:30 AM- 22:00 PM'},{realTimeTable:'Wed: 7:30 AM- 22:00 PM'},{realTimeTable:'Thu: 7:30 AM- 22:00 PM'},{realTimeTable:'Fri: 7:30 AM- 22:00 PM'},{realTimeTable:'Sat: 7:30 AM- 22:00 PM'},{realTimeTable:'Sun: Closed'}],
+        timeTable:[{realTimeTable:'Mon: 7:30 - 22:00'},{realTimeTable:'Tue: 7:30 - 22:00'},{realTimeTable:'Wed: 7:30 - 22:00'},{realTimeTable:'Thu: 7:30 - 22:00'},{realTimeTable:'Fri: 11:00 - 22:00'},{realTimeTable:'Sat: closed'},{realTimeTable:'Sun: 7:30 - 22:00'}],
+      
+        
       },
       
       //前端滑动切换bar-展示信息（目前都注释掉了）

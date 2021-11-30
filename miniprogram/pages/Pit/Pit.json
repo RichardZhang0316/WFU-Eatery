@@ -6,8 +6,9 @@
     "van-empty":"/components/vant/empty/index",
     "van-tab": "/components/vant/tab/index",
     "van-tabs": "/components/vant/tabs/index",
-    "van-skeleton":"/components/vant/skeleton/index",
-    "van-icon": "/components/vant/icon/index"
+    "van-sticky":"/components/vant/sticky/index",
+    "van-icon": "/components/vant/icon/index",
+    "van-skeleton": "/components/vant/skeleton/index"
   },
   "navigationStyle": "custom"
 }

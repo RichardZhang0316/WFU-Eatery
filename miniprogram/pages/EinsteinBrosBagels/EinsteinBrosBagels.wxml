@@ -43,9 +43,9 @@
       <foodCard desc="拥有香甜多汁的葡萄干，天国芳香的肉桂，像一个温暖、羞涩的拥抱，你可以尽情享受" title="Cinnamon Raisin Bagel 肉桂葡萄干贝果" thumb="https://www.einsteinbros.com/wp-content/uploads/2019/04/menu_items_new_ClassicBagel_CinnamonRaisin-1.jpg" price="1.39+" currency="$"/>
       <foodCard desc="糖、香料和所有好吃的东西，都包在一个美味的贝果里！" title="Cinnamon Sugar 肉桂糖贝果" thumb="https://www.einsteinbros.com/wp-content/uploads/2019/04/menu_items_new_ClassicBagel_CinnamonSugar.jpg" price="1.39+" currency="$" />
       <foodCard desc="用三种奶酪：马苏里拉干酪、普罗沃龙干酪和切达干酪混合而成，然后用更美味的亚洲干酪、帕尔马干酪和罗马诺干酪来结束。" title="Six-Cheese Bagel 六芝士贝果" thumb="https://www.einsteinbros.com/wp-content/uploads/2019/04/menu_items_new_GourmetBagel_SixCheese.jpg" price="1.39+" currency="$"/>
-      <foodCard desc="每一口令人垂涎欲滴的东西都能激发你的味蕾，香料组合包括：芝麻籽、罂粟籽、洋葱、大蒜和盐" title="Everything Bagel 全能贝果" thumb="https://www.einsteinbros.com/wp-content/uploads/2019/04/menu_items_new_EverythingBagel_Website.jpg" price="1.39+" currency="$"/>
+      <foodCard desc="每一口令人垂涎欲滴的东西都能激发你的味蕾，香料组合包括：芝麻籽、洋葱、大蒜和盐" title="Everything Bagel 全能贝果" thumb="https://www.einsteinbros.com/wp-content/uploads/2019/04/menu_items_new_EverythingBagel_Website.jpg" price="1.39+" currency="$"/>
       <foodCard desc="从健康的全麦面粉制成的贝果开始你的早晨，然后用蜂蜜和红糖达到极致。" title="Honey Whole Wheat Bagel 蜂蜜全麦贝果" thumb="https://www.einsteinbros.com/wp-content/uploads/2019/04/menu_items_new_ClassicBagel_HoneyWholeWheat.jpg" price="1.39+" currency="$" />
-      <foodCard desc="芝麻贝果既简单又可爱，是各地饥饿的人们最喜欢的选择，如果你愿意的话，这是一次松脆、令人满意的魔毯之旅！" title="Sesame Bagel 芝麻贝果" thumb="https://www.einsteinbros.com/wp-content/uploads/2019/04/menu_items_new_ClassicBagel_SesameSeed.jpg" price="1.39+" currency="$" />
+      <foodCard desc="芝麻贝果既简单又可爱，是各地人们最喜欢的选择，如果你愿意的话，你会尝到一种松脆、令人满意的美妙味道！" title="Sesame Bagel 芝麻贝果" thumb="https://www.einsteinbros.com/wp-content/uploads/2019/04/menu_items_new_ClassicBagel_SesameSeed.jpg" price="1.39+" currency="$" />
   </van-tab>
 
   <van-tab title="Box of Bagels">

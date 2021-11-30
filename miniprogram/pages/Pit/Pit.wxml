@@ -1,11 +1,16 @@
 <navigation title='' show_bol='{{false}}'></navigation>
+
+
+   <my-navigation-bar id="my-navigation-bar" style="position: absolute;z-index: 100;" background_color="{{navigationBackgroundColor}}"></my-navigation-bar>
+
+
 <view class="topCard">
-   <image mode="aspectFill" src="https://prod.wp.cdn.aws.wfu.edu/sites/215/2018/01/Meal-Plan.jpg" style="height:100%; width:100%"></image>
-   <text class="head-text">The Pit</text>
+  <image mode="aspectFill" src="https://prod.wp.cdn.aws.wfu.edu/sites/215/2018/01/Meal-Plan.jpg" style="height:100%; width:100%"></image>
+  <text class="head-text">The Pit</text>
 </view>
 
 <view class="flexTimetable">
-  <view class="shit3">
+   <view class="shit3">
     <view class="view" bindtap="{{ stopBtn ? 'showContent' : 'hideContent' }}">
       <view class="shit">Opening Time</view>
       <van-icon name="arrow-down" color="#d6b160"/>
@@ -17,32 +22,32 @@
       </view>
     </view>
     </van-transition>
-   </view>
+</view>
 
-   <view class="shit">Location: Reynolda Hall B-1 Floor</view>
+  <view class="shit">Reynolda Hall Ground Floor</view>
 </view>
 <view class="popularTimes">
-   <view class="shit2">
-      <view>Popular Times</view>
-   </view>
+  <view class="shit2">
+    <view>Popular Times</view>
+  </view>
 </view>
 
 
 <!-- Popular Time图表组建↓ -->
-<view class="shit2">
-   <view>Estimated Occupancy</view>
-</view>
-<cover-view class="container">
-   <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
+<view class="shit2"><view>Estimated Occupancy</view></view>
+<cover-view class="container"> 
+  <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
+  <cover-view class="mark-box"></cover-view>
 </cover-view>
 
-<view class="shit2">
-   <view>Real-time Occupancy </view>
-</view>
-<cover-view class="container1">
-   <ec-canvas id="mychart-dom-gauge" canvas-id="mychart-gauge" ec="{{ ec1 }}"></ec-canvas>
+
+<view class="shit2"><view>Real-time Occupancy </view></view>
+<van-skeleton loading="{{occupancy_chart_loading}}" row="8" />
+<cover-view class="container1" hidden="{{occupancy_chart_loading}}"> 
+  <ec-canvas id="mychart-dom-gauge" canvas-id="mychart-gauge" ec="{{ ec1 }}"></ec-canvas>
+  <cover-view class="mark-box"></cover-view>
 </cover-view>
-<view class="greyPart"> </view>
+
 
 <van-sticky id="stickyTab">
    <!-- 供餐时间 Tab -->
@@ -52,36 +57,30 @@
       </van-tabs>
    </view>
 </van-sticky>
+
 <!-- 菜单↓ -->
 <view class="swiper-container" id="swiper-container">
-   <swiper current="{{currentTimePeriodIndex}}" class='swiper' style="height:500px;" duration="300" bindchange="onSwiperChange">
+   <swiper current="{{currentTimePeriodIndex}}" class='swiper' style="height:{{swiper_height}}px;" duration="300" bindchange="onSwiperChange">
       <!-- 供餐时段 swiper 循环 -->
       <swiper-item class="swiper-item" wx:for="{{['Breakfast','Lunch','Dinner']}}" wx:for-item="periodName" wx:key="*this">
-         <scroll-view class="swiper-item-scroll" enable-flex scroll-y scroll-with-animation style="height:500px;">
+         <scroll-view class="swiper-item-scroll" enable-flex scroll-y scroll-with-animation style="height:{{swiper_height}}px;">
             <van-empty class="empty-sign" description="没吃的" />
-            <view class="dinningHallName-list">
+            <view class="dinningHall-container">
                <!-- 餐厅循环 -->
-               <view class="dinningHallName-item" wx:for="{{menu_data[periodName]}}" wx:for-index="dinningHallName" wx:for-item="dinningHallMenu" wx:key="*this">
-
-                  <view class="weui-cells {{dinningHallMenu['open']?'weui-cells_show':''}}">
-                     <view class="navigator-box {{dinningHallMenu['open']?'navigator-box-show':''}}">
+               <view class="dinningHall" wx:for="{{menu_data[periodName]}}" wx:for-index="dinningHallName" wx:for-item="dinningHallMenu" wx:key="*this">
+                  <view class="kind-list__item">
                         <!-- 餐厅窗口循环 -->
-                        <view wx:for="{{dinningHallMenu['window']}}" wx:for-index="window_name" wx:for-item="window_data" wx:key="*this">
+                        <view class="window-item" wx:for="{{dinningHallMenu['window']}}" wx:for-index="window_name" wx:for-item="window_data" wx:key="*this">
+                           <view class="window_name" data-periodname="{{periodName}}" data-dinninghallname="{{dinningHallName}}" data-window_name="{{window_name}}">{{window_name}}</view>
                            <!-- 窗口菜单循环 -->
-                           <view class="weui-cell dinningHallName" data-periodname="{{periodName}}" data-dinninghallname="{{dinningHallName}}" data-window_name="{{window_name}}" bindtap="windowToggle">{{window_name}}</view>
-                           <view class="kind-list__item-bd {{window_data['open']?'kind-list__item-bd_show':''}}">
+                           <view class="food-name-container">
                               <block wx:for="{{window_data.food_list}}" wx:for-item="food_name" wx:key="index">
-                                 <navigator class="weui-cell weui-cell_access navigator" hover-class="weui-cell_active" url="../{{dinningHallName}}/{{dinningHallName}}">
-                                    <view class="weui-cell__bd">{{food_name}}</view>
-                                    <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-                                 </navigator>
+                                 <view class="food-name">{{food_name}}</view>
                               </block>
                            </view>
                         </view>
-                     </view>
+                     <!-- </view> -->
                   </view>
-
-
                </view>
             </view>
             <!-- </view>. -->
@@ -89,5 +88,3 @@
       </swiper-item>
    </swiper>
 </view>
-
-<view style="height: 60px; width: 100%; background-color:#ececec;"></view>

@@ -38,6 +38,7 @@
     background-color: #ececec ;
     color:rgb(85, 85, 85);
 }
-.weui-search-bar__input{
-    caret-color: #d6b160 !important;
+
+.weui-search-bar__input {
+    caret-color: #d6b160 !important;
 }

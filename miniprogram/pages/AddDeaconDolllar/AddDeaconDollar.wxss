@@ -31,7 +31,7 @@ page{
   border-radius:10px;
   /* box-shadow: 5px 5px 5px #FDC314; */
   box-shadow: 5px 5px 5px #cdcfcf;
-  margin-top: 40px;
+  margin-top:30px;
 }
 
 .card{
@@ -60,7 +60,7 @@ page{
   /*margin-top: 10%;*/
   margin-left: 5%;
   /*卡片的高度。*/
-  height: 585rpx;
+  height: auto;
   /*背景色，可以自己更换*/
   background: rgb(255, 255, 255);
   /* radius是卡片的边框的圆润c程度*/
@@ -70,23 +70,14 @@ page{
   box-shadow: 5px 5px 5px #cdcfcf;
 }
 
-.Michael {
-  width: 90%;
-  text-align: center;
-  /*左外边距，这里代表距离最左边的距离*/
-  margin-left: 5%;
-  padding-top: 24px;
-  font-size: 16px;
-  
-  color:#d6b160;
-}
+
 .Michael1 {
   width: 90%;
   /*左外边距，这里代表距离最左边的距离*/
-  margin-left: 8%;
-  padding-top: 30px;
+  margin-left: 5%;
   font-size: 15px;
   color:#d6b160;
+  text-align: center;
 }
 .Michael2 {
 

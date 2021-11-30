@@ -1,4 +1,4 @@
-<navigation title='' show_bol='{{false}}'></navigation> 
+<navigation title='' show_bol='{{false}}'></navigation>  
 
 <view class="topCard">
 <image mode="aspectFill" src="https://i.loli.net/2021/11/29/zjyfTpNCFcbqruH.png" style="height:100%; width:100%"></image>
@@ -12,7 +12,7 @@
 </view>
 
 
-<view class="flexTimetable">
+<view class="flexTimetable"> 
   <view class="shit3">
     <view class="view" bindtap="{{ stopBtn ? 'showContent' : 'hideContent' }}">
       <view class="shit">Opening Time</view>
@@ -27,7 +27,7 @@
     </van-transition>
 </view>
 
-<view class="shit">Davis Hall</view>
+<view class="shit">Hearn Plaza in Davis Hall</view>
 </view>
 
 
@@ -64,7 +64,7 @@
       <foodCard desc="480卡路里" title="6 in. Spicy Italian 意大利香辣三明治" thumb="https://www.subway.com.hk/wp-content/uploads/2017/09/Spicy-Italian-450x450.png" price="3.99" currency="$"/>
       <foodCard desc="230卡路里" title="6 in. Veggie Delite 新鲜蔬菜三明治" thumb="https://cdn.shopify.com/s/files/1/0071/0420/0763/products/Veggie_Delite_grande.png?v=1545895905" price="3.89" currency="$"/>
       <foodCard desc="280卡路里" title="6 in. Turkey Breast 火鸡胸三明治" thumb="https://media1.popsugar-assets.com/files/thumbor/TDSCofPjTnOcLuPHcAd7nwomLfk/fit-in/2048xorig/filters:format_auto-!!-:strip_icc-!!-/2016/03/14/961/n/1922729/3c26ad07a3c47476_product15/i/Turkey-Breast-Ham-Sandwich.jpg" price="4.49" currency="$"/>
-      <foodCard desc="410卡路里" title="6 in. Italian B.M.T." thumb="http://subway-menu.com/wp-content/uploads/2018/04/RPLC-italian_B.M.T_594x334_PR.jpg" price="4.39" currency="$"/>
+      <foodCard desc="410卡路里" title="6 in. Italian B.M.T. 意大利培根三明治" thumb="http://subway-menu.com/wp-content/uploads/2018/04/RPLC-italian_B.M.T_594x334_PR.jpg" price="4.39" currency="$"/>
       <foodCard desc="480卡路里" title="6 in. Tuna 金枪鱼三明治" thumb="https://www.gannett-cdn.com/presto/2021/01/29/USAT/2b697721-e001-4dcc-a1b8-d701bd0a8df1-XXX_Subway_Tuna.jpg?width=1200&disable=upscale&format=pjpg&auto=webp" price="4.49" currency="$"/>
       <foodCard desc="320卡路里" title="6 in. Oven Roasted Chicken 烤鸡三明治" thumb="https://1.bp.blogspot.com/-m0jC58gDuIw/Xg4bVXHtBbI/AAAAAAABJTE/526XoewkNJsbSpMCmARe35LNvmmKznHdwCLcBGAsYHQ/w1200-h630-p-k-no-nu/subway-6-inch-oven-roasted-sub.jpg" price="4.79" currency="$"/>
       <foodCard desc="370卡路里" title="6 in. Sweet Onion Chicken Teriyaki 红烧甜洋葱鸡三明治" thumb="https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iHTuwQXFImY0/v2/-1x-1.jpg" price="4.89" currency="$"/>
@@ -80,9 +80,9 @@
       <foodCard desc="730卡路里" title="12 in. Cold Cut Combo 冷切三明治" thumb="https://www.eatthis.com/wp-content/uploads/sites/4/2021/06/subway-cold-cut-combo.jpg" price="5.79" currency="$"/>
       <foodCard desc="600卡路里" title="12 in. Veggie Delite 新鲜蔬菜三明治" thumb="https://cdn.shopify.com/s/files/1/0071/0420/0763/products/Veggie_Delite_grande.png?v=1545895905" price="5.69" currency="$"/>
       <foodCard desc="960卡路里" title="12 in. Spicy Italian 意大利香辣三明治" thumb="https://www.subway.com.hk/wp-content/uploads/2017/09/Spicy-Italian-450x450.png" price="5.99" currency="$"/>
-      <foodCard desc="860卡路里" title="12 in. Italian B.M.T." thumb="http://subway-menu.com/wp-content/uploads/2018/04/RPLC-italian_B.M.T_594x334_PR.jpg" price="7.19" currency="$"/>
+      <foodCard desc="860卡路里" title="12 in. Italian B.M.T. 意大利培根三明治" thumb="http://subway-menu.com/wp-content/uploads/2018/04/RPLC-italian_B.M.T_594x334_PR.jpg" price="7.19" currency="$"/>
       <foodCard desc="560卡路里" title="12 in. Turkey Breast 火鸡胸三明治" thumb="https://media1.popsugar-assets.com/files/thumbor/TDSCofPjTnOcLuPHcAd7nwomLfk/fit-in/2048xorig/filters:format_auto-!!-:strip_icc-!!-/2016/03/14/961/n/1922729/3c26ad07a3c47476_product15/i/Turkey-Breast-Ham-Sandwich.jpg" price="7.19" currency="$"/>
-      <foodCard desc="960卡路里" title="120 in. Tuna 金枪鱼三明治" thumb="https://www.gannett-cdn.com/presto/2021/01/29/USAT/2b697721-e001-4dcc-a1b8-d701bd0a8df1-XXX_Subway_Tuna.jpg?width=1200&disable=upscale&format=pjpg&auto=webp" price="7.19" currency="$"/>
+      <foodCard desc="960卡路里" title="12 in. Tuna 金枪鱼三明治" thumb="https://www.gannett-cdn.com/presto/2021/01/29/USAT/2b697721-e001-4dcc-a1b8-d701bd0a8df1-XXX_Subway_Tuna.jpg?width=1200&disable=upscale&format=pjpg&auto=webp" price="7.19" currency="$"/>
       <foodCard desc="850卡路里" title="12 in. Oven Roasted Chicken 烤鸡三明治" thumb="https://1.bp.blogspot.com/-m0jC58gDuIw/Xg4bVXHtBbI/AAAAAAABJTE/526XoewkNJsbSpMCmARe35LNvmmKznHdwCLcBGAsYHQ/w1200-h630-p-k-no-nu/subway-6-inch-oven-roasted-sub.jpg" price="6.99" currency="$"/>
       <foodCard desc="740卡路里" title="12 in. Sweet Onion Chicken Teriyaki 红烧甜洋葱鸡三明治" thumb="https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iHTuwQXFImY0/v2/-1x-1.jpg" price="7.99" currency="$"/>
       <foodCard desc="760卡路里" title="12 in. Steak & Cheese 牛排奶酪三明治" thumb="https://menuandprice.com/wp-content/uploads/2021/05/Steak_product-detail_1080x482.png" price="7.99" currency="$"/>

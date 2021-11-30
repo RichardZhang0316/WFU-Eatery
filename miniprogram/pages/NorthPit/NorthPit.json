@@ -3,10 +3,12 @@
     "ec-canvas": "../../ec-canvas/ec-canvas",
     "navigation": "/components/navigation/navigation", 
     "van-transition": "/components/vant/transition/index",
-    "van-loading": "/components/vant/loading/index",
-    "van-skeleton": "/components/vant/skeleton/index",
-    "van-icon": "/components/vant/icon/index"
-    
+    "van-empty":"/components/vant/empty/index",
+    "van-tab": "/components/vant/tab/index",
+    "van-tabs": "/components/vant/tabs/index",
+    "van-sticky":"/components/vant/sticky/index",
+    "van-icon": "/components/vant/icon/index",
+    "van-skeleton": "/components/vant/skeleton/index"
   },
   "navigationStyle": "custom"
 }

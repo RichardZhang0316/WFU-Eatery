@@ -14,6 +14,6 @@
   inactive-icon="star"
 />
 </view>
-<view class="button" bindtap='copyText' data-text="{{contents}}">Get Website Link</view> 
 </view>
+<view class="button" bindtap='copyText' data-text="{{contents}}">Get Website Link</view> 
 

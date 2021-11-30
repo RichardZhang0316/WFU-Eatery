@@ -125,6 +125,12 @@
                     "pathName": "pages/AddDeaconDolllar/AddDeaconDollar",
                     "query": "",
                     "scene": null
+                },
+                {
+                    "name": "pages/ChangeMealPlan/ChangeMealPlan",
+                    "pathName": "pages/ChangeMealPlan/ChangeMealPlan",
+                    "query": "",
+                    "scene": null
                 }
             ]
         }

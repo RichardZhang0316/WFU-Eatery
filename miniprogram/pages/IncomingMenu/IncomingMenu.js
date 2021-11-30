@@ -161,6 +161,7 @@ Page({
           have_menu_data: false
         });
       }
+      console.log(that.data.menu_data)
       wx.hideLoading();
     }, reason => {
       console.log(reason)
@@ -201,6 +202,9 @@ Page({
                 open: false,
                 food_list: dinningHallMenu[key][window]
               }
+            }
+            if (dinning_name == "NorthPitMenu") {
+              dinning_name = "North Pit"
             }
             this.setData({
               [`menu_data.${key}.${dinning_name}`]: {

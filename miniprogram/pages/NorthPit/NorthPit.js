@@ -88,9 +88,9 @@ function initChart(canvas, width, height, dpr) {
     xAxis: [{type: 'category',axisTick: { show: false },data: ['8:00', '9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00'],axisLine: {lineStyle: {color: '#999'}},axisLabel: {color: '#666'}}], //表格x轴设置
     series: [{name: 'Pit', type: 'bar', label: {normal: {show: true,position: 'inside', color: 'white'}},itemStyle: {borderRadius: [4, 4, 0, 0], color: '#d6b160', shadowColor: 'rgba(0, 0, 0, 0.5)', shadowBlur: 2}, //Series设置
         // 👇 Sunday 数据！！！
-        data: [1, 2, 7.9, 15, 34, 36, 23, 18, 13, 18, 22, 22, 2, 1, 1], },]}       
+        data: [1, 2, 7.9, 15, 34, 36, 23, 18, 13, 18, 22, 22, 2, 1, 1], },]}     
 
-  var option=[Sun,Mon,Tue,Wed,Thur,Fri,Sat][D];
+        var option=[Sun,Mon,Tue,Wed,Thur,Fri,Sat][D];
 
   chart.setOption(option);
   return chart;
@@ -106,17 +106,11 @@ function initChart1(canvas, width, height, dpr) {
   canvas.setChart(chart);
 
   //获取实时人流数据，链接Javascript爬虫
-  wx.cloud.callFunction({
-    name: 'realTime',
-    // 传递给云函数的event参数
-  }).then(res => {
-    // resolve(res.result)
-    console.log(res);
-    var PecentageM = res.result.Hilltop.occupancy_percent;   //最终data 
+  var PecentageM = 80;   
 
   //实时人流图表的基础参数设置
   var option = {
-    backgroundColor: "#fff",
+    // backgroundColor: "#F6F6F6",
     series: [{
       name: 'Real_Time',
       type: 'gauge',
@@ -176,23 +170,20 @@ function initChart1(canvas, width, height, dpr) {
   chart.setOption(option, true);
 
   return chart;
-})}
+}
 
-// // 云函数入口函数
-// exports.main = async (event, context) => {
-//   return await getDiningOccupancy()
-// }
-
-// var app = getApp();
+var app = getApp();
 Page({
     data: {
-      loading: true,
-
+      menu_data: {},
+      have_menu_data: false,
+      occupancy_chart_loading: true,
       ec: {
         onInit: initChart
       },
       ec1:{
-        onInit: initChart1
+        lazyLoad: true,
+        // onInit: initChart1
       },
         choose: false,
         animationData: {},
@@ -202,7 +193,7 @@ Page({
         id:'timetable',
         sendList:[],
 
-        timeTable:[{realTimeTable:'Mon: 10:00 AM- 1:00 AM'},{realTimeTable:'Tue: 10:00 AM- 1:00 AM'},{realTimeTable:'Wed: 10:00 AM- 1:00 AM'},{realTimeTable:'Thu: 10:00 AM- 1:00 AM'},{realTimeTable:'Fri: 10:00 AM- 1:00 AM'},{realTimeTable:'Sat: 10:00 AM- 1:00 AM'},{realTimeTable:'Sun: 10:00 AM- 1:00 AM'}],
+        timeTable:[{realTimeTable:'Mon: 7:00 - 21:00'},{realTimeTable:'Tue: 7:00 - 21:00'},{realTimeTable:'Wed: 7:00 - 21:00'},{realTimeTable:'Thu: 7:00 - 20:00'},{realTimeTable:'Fri: 7:00 - 20:00'},{realTimeTable:'Sat: 9:00 - 20:00'},{realTimeTable:'Sun: 9:00 - 20:00'}],
         
         list: [{
             id: 'view',
@@ -293,50 +284,262 @@ Page({
     /**上面是时间表核心代码
    * 下面是菜单收缩核心代码*/
 
-  kindToggle(e) {
-    var id = e.currentTarget.id;
-    id = parseInt(id);
-    var list =  this.data.dinnerL;// this.data.list;
-    for (let i = 0, len = list.length; i < len; ++i) {
-      if (list[i].id === id) {
-        list[i].open = !list[i].open
-      } else {
-        list[i].open = false
-      }
-    }
+  /**
+   * 监听滚动scrollTop滚动的距离,获取滚动条当前位置
+   * 动态改变导航栏背景颜色的透明度
+   * */
+  onPageScroll: function (e) {
+    // console.log(e.scrollTop)
+    // 导航栏透明度
+    let Alpha = e.scrollTop * 1 / 100;
+    // 导航栏背景颜色
+    let navigationBackgroundColor = 'rgba(241, 241, 241,' + Alpha + ')';
     this.setData({
-      dinnerL:list
+      navigationBackgroundColor: navigationBackgroundColor,
     })
   },
-      select: {
-        page: 1,
-        size: 6,
-        isEnd: false
-      },
-    
       /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-    //   wx.cloud.database().collection('ForsythData')
-    // .doc('8937eaa9615a601a0f766e4201bf62d2').get()
-    // .then(res=>{
-    //   console.log("成功",res)
-    //   this.setData({
-    //     num1:res.data.newCases,
-    //     num2:res.data.casesLast14Days,
-    //     num3:res.data.totalCases,
-    //     num4:res.data.totalDeaths,
-    //     date:res.data.date,
-    //   })
-    // })
-  },
+      this.initOccupancyChart()
+      const that = this;
+      var day = new Date()
+        var date_string = `${day.getFullYear()}-${(day.getMonth() + 1).toString().padStart(2,'0')}-${(day.getDate()).toString().padStart(2,'0')}`;
+        // date_string="2021-12-01";
+        var NorthPitMenuPromise = that.getMenuList(date_string, 'NorthPitMenu')
+        NorthPitMenuPromise.then(values => {
+          console.log(values);
+          if (Object.keys(this.data.menu_data).length == 0) {
+            wx.showToast({
+              title: date_string + '暂无数据',
+              icon: 'none',
+              duration: 2000
+            });
+            that.setData({
+              menu_data: {},
+              have_menu_data: false
+            });
+          }
+          console.log(that.data.menu_data)
+          wx.hideLoading();
+        }, reason => {
+          console.log(reason)
+        });
+    },
+
+    initOccupancyChart: function() {
+      var that = this;
+      wx.cloud.callFunction({
+        name: 'realTime',
+      }).then( res => {
+        that.setData({
+          occupancy_chart_loading: false
+        })
+        var PecentageM = res.result.MagnoliaRoom.occupancy_percent;
+        console.log(PecentageM)
+        var ecComponent = this.selectComponent('#mychart-dom-gauge');
+        console.log(ecComponent)
+        ecComponent.init((canvas, width, height, dpr) => {
+          // 初始化图表
+          const chart = echarts.init(canvas, null, {
+            width: width,
+            height: height,
+            devicePixelRatio: dpr // new
+          });
+          canvas.setChart(chart); 
+        
+          //实时人流图表的基础参数设置
+          var option = {
+            // backgroundColor: "#F6F6F6",
+            series: [{
+              name: 'Real_Time',
+              type: 'gauge',
+              detail: {
+                formatter: '{value}%',
+                color: '#9E7E38',
+                fontSize: 20,
+              },
+              axisLine: {
+                lineStyle: {
+                  width: 25,
+                  color: [
+                    [0.3, '#d6b160'],
+                    [0.7, '#957b43'],
+                    [1, '#554626']
+                  ]
+                }
+              },
+              pointer: {
+                itemStyle: {
+                  color: 'auto'
+                }
+              },
+              axisTick: {
+                distance: -25,
+                length: 7,
+                lineStyle: {
+                  color: '#fff',
+                  width: 2
+                }
+              },
+              splitLine: {
+                distance: -30,
+                length: 30,
+                lineStyle: {
+                  color: '#fff',
+                  width: 2
+                }
+              },
+              axisLabel: {
+                color: 'white',
+                distance: 9,
+                fontSize: 0,
+                fontWeight: 'bold',
+              },
+              data: [{
+                value: PecentageM,
+                name: 'Occupancy',
+                }
+              ],
+              itemStyle: {
+                color: '#9E7E38',
+              }
+            }]
+          };
+        
+          chart.setOption(option, true);
+          return chart;
+      });
+      
+      }).catch( err => {
+        wx.showToast({
+          title: '客流量加载失败',
+          icon: 'error'
+        })
+      })
+    },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady() {
-    
+  onReady: function () {
+    let that = this;
+    const query = wx.createSelectorQuery()
+    query.select('#my-navigation-bar').boundingClientRect()
+    query.selectViewport().scrollOffset()
+    query.exec(function (my_navigation_bar_res) {
+      const stickyTab = wx.createSelectorQuery()
+      stickyTab.select('#stickyTab').boundingClientRect()
+      stickyTab.selectViewport().scrollOffset()
+      stickyTab.exec(function (stickyTab_res) {
+        var stickyTabHeight = stickyTab_res[0].height
+        var myBavigationBarHeight = my_navigation_bar_res[0].height
+        // 获取系统信息
+        wx.getSystemInfo({
+          success: function (res) {
+            // 获取可使用窗口高度
+            let clientHeight = res.windowHeight;
+            // 设置高度
+            that.setData({
+              swiper_height: clientHeight - stickyTabHeight - myBavigationBarHeight
+            });
+            console.log({
+              stickyTabHeight: stickyTabHeight,
+              myBavigationBarHeight: myBavigationBarHeight,
+              swiper_height: clientHeight - stickyTabHeight - myBavigationBarHeight
+            })
+          }
+        });
+      })
+    })
+  },
+
+  onTabChange: function (e) {
+    console.log(this.data.menu_data)
+    this.setData({
+      currentTimePeriodIndex: e.detail.index
+    })
+  },
+
+  onSwiperChange: function (e) {
+    this.setData({
+      currentTimePeriodIndex: e.detail.current
+    })
+  },
+
+  
+    // 获取当天菜单**********************************************************************************
+    getMenuList: function (date_string, dinning_name) {
+      return new Promise((resolve, reject) => {
+        // date_string = '2021-11-09'
+        console.log('date_string:', date_string)
+        const db = wx.cloud.database();
+        const cont = db.collection(dinning_name);
+        cont.where({
+          _id: date_string,
+        }).get({
+          success: res => {
+            console.log(res)
+            if (res.data.length < 1) {
+              resolve();
+            }
+            // 拿到数据
+            var dinningHallMenu = res.data[0];
+            delete dinningHallMenu._id;
+            for (var key in dinningHallMenu) {
+              if (key == "Pit Stop") {
+                continue;
+              }
+              if (!this.data.menu_data.hasOwnProperty(key)) {
+                this.setData({
+                  [`menu_data.${key}`]: {},
+                  have_menu_data: true
+                })
+              }
+              var window_data = {}
+              for (var window in dinningHallMenu[key]) {
+                window_data[window] = {
+                  open: false,
+                  food_list: dinningHallMenu[key][window]
+                }
+              }
+              if (dinning_name == "NorthPitMenu") {
+                dinning_name = "North Pit"
+              }
+              this.setData({
+                [`menu_data.${key}.${dinning_name}`]: {
+                  open: false,
+                  window: window_data
+                },
+                have_menu_data: true
+              })
+            }
+            resolve()
+          }
+        })
+      })
+    },
+
+  // 选择供餐时段
+  selectPeriod: function (e) {
+    const that = this;
+    var key_list = Object.keys(this.data.menu_data)
+    var data_index = 0
+    for (var i in key_list) {
+      if (e.currentTarget.dataset.current === key_list[i]) {
+        data_index = i
+      }
+    }
+    if (that.data.currentTimePeriodIndex === data_index) {
+      return false;
+    } else {
+      that.setData({
+        currentTimePeriodName: e.currentTarget.dataset.current,
+        currentTimePeriodIndex: data_index
+      })
+      console.log('currentTimePeriodIndex: ', that.data.currentTimePeriodIndex)
+    }
   },
 
   /**
@@ -461,19 +664,4 @@ Page({
         fail: function () { }
       }
     },
-    // data: {
-    //   ec: {
-    //     onInit: initChart
-    //   }
-    // },
-  
-    onReady() {
-      setTimeout(function () {
-        // 获取 chart 实例的方式
-        //console.log(chart)
-      }, 2000);
-      this.setData({
-        loading: false,
-      });
-    }
   })

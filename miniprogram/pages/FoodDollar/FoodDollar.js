@@ -8,7 +8,7 @@ Page({
     steps: [
       {
         text: 'Step 1',
-        desc: '登录WFU_Gmail, 在Google Apps中找到Deacon Dining选项',
+        desc: '登录WFU Gmail, 在Google Apps中找到Deacon Dining选项',
         // inactiveIcon: 'location-o',
         // activeIcon: 'success',
       },

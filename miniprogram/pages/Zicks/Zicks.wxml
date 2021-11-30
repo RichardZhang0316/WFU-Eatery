@@ -8,7 +8,7 @@
 <view class="flexTimetable">
   <view class="shit3">
     <view class="view" bindtap="{{ stopBtn ? 'showContent' : 'hideContent' }}">
-      <view class="shit">Open until 10 PM</view>
+      <view class="shit">Opening Time</view>
       <van-icon name="arrow-down" color="#d6b160"/>
     </view>
     <van-transition show="{{ choose }}" custom-class="block" name="fade">
