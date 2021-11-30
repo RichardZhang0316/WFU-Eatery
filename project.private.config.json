@@ -131,6 +131,12 @@
                     "pathName": "pages/ChangeMealPlan/ChangeMealPlan",
                     "query": "",
                     "scene": null
+                },
+                {
+                    "name": "pages/ForestGreens/ForestGreens",
+                    "pathName": "pages/ForestGreens/ForestGreens",
+                    "query": "",
+                    "scene": null
                 }
             ]
         }

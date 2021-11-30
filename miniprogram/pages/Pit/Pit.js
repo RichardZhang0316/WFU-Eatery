@@ -235,13 +235,6 @@ Page({
             })
         }, 0)
     },
-    choose: false,
-    animationData: {},
-    stopBtn: true, //动画未执行完之前禁用按钮
-    navTab: ['Breakfast', 'Lunch', 'Dinner'],
-    currentTab: 0,
-    id: 'timetable',
-    sendList: [],
 
     // 隐藏
     hideContent: function (e) {
