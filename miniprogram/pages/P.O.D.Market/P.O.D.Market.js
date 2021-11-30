@@ -25,7 +25,7 @@ function initChart(canvas, width, height, dpr) {
     xAxis: [{type: 'category',axisTick: { show: false },data: ['8:00', '9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00'],axisLine: {lineStyle: {color: '#999'}},axisLabel: {color: '#666'}}], //表格x轴设置
     series: [{name: 'Pit', type: 'bar', label: {normal: {show: false, position: 'inside', color: 'white'}},itemStyle: {borderRadius: [4, 4, 0, 0], color: '#d6b160', shadowColor: 'rgba(0, 0, 0, 0.5)', shadowBlur: 2},  //Series设置
         // 👇 数据录入处 ！！暂定以10为scale进行模拟, 数据源: Google
-        data: [3, 5, 6.7, 9, 7, 8, 8, 6, 7, 7, 4, 3, 4, 5, 7], },]}
+        data: [5, 10, 12, 13, 20, 13, 8, 5, 5, 7, 11, 10, 5, 0, 0], },]}
 
   var weekend= {              
     tooltip: {trigger:'axis',axisPointer: {type: 'shadow'},confine: true,formatter:'{b0}: {c0}%', padding:[5,10,5,10,],show: true},//提示框前端
@@ -34,10 +34,10 @@ function initChart(canvas, width, height, dpr) {
     xAxis: [{type: 'category',axisTick: { show: false },data: ['8:00', '9:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00'],axisLine: {lineStyle: {color: '#9E7E38'}},axisLabel: {color: '#9E7E38'}}], //表格x轴设置
     series: [{name: 'Pit', type: 'bar', label: {normal: {show: false, position: 'inside', color: 'white'}},itemStyle: {borderRadius: [4, 4, 0, 0], color: '#9E7E38', shadowColor: 'rgba(0, 0, 0, 0.5)', shadowBlur: 2},  //Series设置
         // 👇 数据录入处 ！！暂定以10为scale进行模拟, 数据源: Google
-        data: [3, 5, 6.7, 9, 90, 90, 90, 90, 90, 33, 64, 52, 34, 20, 17], },]}
+        data: [0, 3, 9, 8, 6, 4, 2, 2, 2, 5, 6, 6, 3, 0, 0], },]}
   
-  if (D<=4 && D>=0) {var option = weekdays}
-  if (D<=6 && D>=5) {var option = weekend}
+    if (D<=5 && D>=1) {var option = weekdays}
+    if (D==0 || D==6) {var option = weekend}
 
   chart.setOption(option);
   return chart;

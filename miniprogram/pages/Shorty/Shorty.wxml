@@ -35,8 +35,8 @@
 
 <van-tabs active="{{ active }}" bind:change="onChange" swipeable ellipsis="{{false}}" color="#d6b160" title-active-color="#d6b160"> 
   <van-tab title="Burger">
-    <foodCard title="1.Deamon Deacon 小恶魔汉堡" desc="800 卡路里" thumb="https://media-cdn.tripadvisor.com/media/photo-s/06/af/44/2b/chili-dogs.jpg" price="6.99" currency="$" />
-    <foodCard title="2.classic burger 经典汉堡" desc="620 卡路里" thumb="https://images.squarespace-cdn.com/content/v1/5d374de57e75a000017996b0/1564062977510-I42MXH0W25C0FSJG8KJ2/shorties_2019-2.jpg" price="6.99" currency="$" />
+    <foodCard title="Deamon Deacon 小恶魔汉堡" desc="800 卡路里" thumb="https://media-cdn.tripadvisor.com/media/photo-s/06/af/44/2b/chili-dogs.jpg" price="6.99" currency="$" />
+    <foodCard title="classic burger 经典汉堡" desc="620 卡路里" thumb="https://images.squarespace-cdn.com/content/v1/5d374de57e75a000017996b0/1564062977510-I42MXH0W25C0FSJG8KJ2/shorties_2019-2.jpg" price="6.99" currency="$" />
     <foodCard title="Mr.Wake Forest 维克森林先生" desc="1290 卡路里" thumb="https://dining.wfu.edu/wp-content/uploads/2021/08/IMG_4282-scaled-400x0-c-default.jpg" price="11.99" currency="$" />
     <foodCard title="Ham, Brie & Balsamic Burger 火腿、布里干酪、香料汉堡" desc="1290 卡路里" thumb="https://thetravelbite.com/wp-content/uploads/2017/05/Blueberry-Balsamic-and-Brie-Burgers-8.jpg" price="13.59" currency="$" />
     <foodCard title="Mushroom & Swiss Burger 蘑菇瑞士汉堡" desc="1270 卡路里" thumb="https://littlespicejar.com/wp-content/uploads/2018/06/Rockin-Sweet-Onion-Swiss-Mushroom-Burger-1-720x720.jpg" price="14.59" currency="$" />
