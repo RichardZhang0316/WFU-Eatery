@@ -137,6 +137,12 @@
                     "pathName": "pages/ForestGreens/ForestGreens",
                     "query": "",
                     "scene": null
+                },
+                {
+                    "name": "pages/AddDeaconDolllar/AddDeaconDollar",
+                    "pathName": "pages/AddDeaconDolllar/AddDeaconDollar",
+                    "query": "",
+                    "scene": null
                 }
             ]
         }

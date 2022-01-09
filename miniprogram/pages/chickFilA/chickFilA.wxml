@@ -36,13 +36,13 @@
 
 <van-tabs active="{{ active }}" bind:change="onChange" swipeable ellipsis="{{false}}" color="#d6b160" title-active-color="#d6b160">
   <van-tab title="Sauce">
-    <foodCard desc="140卡路里" title="Chick-fil-A Sauce" thumb="https://d1fd34dzzl09j.cloudfront.net/Images/CFACOM/Sauces/SauceV4/Sauce_CFA-Sauce_Desk.png?h=800&w=800&la=en"/>
-    <foodCard desc="110卡路里 由玉米苹果醋、蒸馏醋、番茄酱、盐、红辣椒和芥菜籽制成" title="Polynesian Sauce 波利尼西亚酱" thumb="https://d1fd34dzzl09j.cloudfront.net/Images/CFACOM/Sauces/SauceV4/Sauce_Polynesian_Desk.png?h=800&w=800&la=en" />
-    <foodCard desc="45卡路里" title="Barbeque Sauce 烧烤酱" thumb="https://d1fd34dzzl09j.cloudfront.net/Images/CFACOM/Sauces/SauceV4/Sauce_Barbeque_Desk.png?h=800&w=800&la=en"/>
-    <foodCard desc="50卡路里" title="Honey Mustard 蜂蜜芥末酱" thumb="http://images.squarespace-cdn.com/content/v1/5d4c6358a7991a0001838ee2/1573244149845-O11HYKRW5XR8FGKM88PK/Sauce_Honey-Mustard_Desk.png"/>
-    <foodCard desc="140卡路里" title="Garden Herb Ranch 酸奶油" thumb="https://www.cfacdn.com/img/order/menu/Online/Modifiers/Sauces/sauces_1ozPDP/Sauce_Garden-Herb-Ranch_PDP.png"/>
+    <foodCard desc="140卡路里 经典蘸酱，有芥末和烟熏的味道" title="Chick-fil-A Sauce" thumb="https://d1fd34dzzl09j.cloudfront.net/Images/CFACOM/Sauces/SauceV4/Sauce_CFA-Sauce_Desk.png?h=800&w=800&la=en"/>
+    <foodCard desc="110卡路里 由玉米苹果醋、蒸馏醋、番茄酱、盐、红辣椒和芥菜籽制成（酸甜酱）" title="Polynesian Sauce 波利尼西亚酱" thumb="https://d1fd34dzzl09j.cloudfront.net/Images/CFACOM/Sauces/SauceV4/Sauce_Polynesian_Desk.png?h=800&w=800&la=en" />
+    <foodCard desc="45卡路里 经典烧烤酱，用香料，洋葱和大蒜调味，口感丰富" title="Barbeque Sauce 烧烤酱" thumb="https://d1fd34dzzl09j.cloudfront.net/Images/CFACOM/Sauces/SauceV4/Sauce_Barbeque_Desk.png?h=800&w=800&la=en"/>
+    <foodCard desc="50卡路里 一种带有芥末、香料和蜂蜜甜味的美味酱汁" title="Honey Mustard 蜂蜜芥末酱" thumb="http://images.squarespace-cdn.com/content/v1/5d4c6358a7991a0001838ee2/1573244149845-O11HYKRW5XR8FGKM88PK/Sauce_Honey-Mustard_Desk.png"/>
+    <foodCard desc="140卡路里 奶油酪乳牧场沙司，带有美味的大蒜、洋葱和香草口味" title="Garden Herb Ranch 酸奶油 " thumb="https://www.cfacdn.com/img/order/menu/Online/Modifiers/Sauces/sauces_1ozPDP/Sauce_Garden-Herb-Ranch_PDP.png"/>
     <foodCard desc="25卡路里 混合醋和黄油的辣椒沙司" title="Zesty Buffalo Sauce 水牛城特制鸡翅酱" thumb="https://d1fd34dzzl09j.cloudfront.net/Images/CFACOM/Sauces/SauceV4/Sauce_Honey-Mustard_Desk.png?h=800&w=800&la=en"/>
-    <foodCard desc="45卡路里" title="Sweet and Spicy Sriracha Sauce 甜辣酱" thumb="https://www.cfacdn.com/img/order/menu/Online/Modifiers/Sauces/sauces_1ozPDP/Sauce_Sweet-and-Spicy-Sriracha_PDP.png"/>
+    <foodCard desc="45卡路里 一种用红辣椒制成的甜而辣的酱汁" title="Sweet and Spicy Sriracha Sauce 甜辣酱" thumb="https://www.cfacdn.com/img/order/menu/Online/Modifiers/Sauces/sauces_1ozPDP/Sauce_Sweet-and-Spicy-Sriracha_PDP.png"/>
   </van-tab>
 
   <van-tab title="Entrees">

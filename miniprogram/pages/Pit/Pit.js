@@ -294,19 +294,22 @@ Page({
       });
   },
 
-  initOccupancyChart: function() {
+  initOccupancyChart: function () {
     var that = this;
-    wx.cloud.callFunction({
-      name: 'realTime',
-    }).then( res => {
-      that.setData({
-        occupancy_chart_loading: false
-      })
-      console.log(res.result)
-      var PecentageM = res.result.ThePit.occupancy_percent;
-      console.log(PecentageM)
-      var ecComponent = this.selectComponent('#mychart-dom-gauge');
-      console.log(ecComponent)
+    const db = wx.cloud.database()
+    db.collection('diningOccupancy')
+      .doc('lastDiningOccupancy')
+      .get()
+      .then(res => {
+        that.setData({
+          occupancy_chart_loading: false,
+          occupancy_percent_updated_time: res.data.updated_time
+        })
+        console.log(res.data)
+        var PecentageM = res.data.ThePit.occupancy_percent;
+        console.log(PecentageM)
+        var ecComponent = this.selectComponent('#mychart-dom-gauge');
+        console.log(ecComponent)
       ecComponent.init((canvas, width, height, dpr) => {
         // 初始化图表
         const chart = echarts.init(canvas, null, {
@@ -380,6 +383,7 @@ Page({
     });
     
     }).catch( err => {
+      console.log(err)
       wx.showToast({
         title: '客流量加载失败',
         icon: 'error'

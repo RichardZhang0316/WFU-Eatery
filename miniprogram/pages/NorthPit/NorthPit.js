@@ -193,7 +193,7 @@ Page({
         id:'timetable',
         sendList:[],
 
-        timeTable:[{realTimeTable:'Mon: 7:00 - 21:00'},{realTimeTable:'Tue: 7:00 - 21:00'},{realTimeTable:'Wed: 7:00 - 21:00'},{realTimeTable:'Thu: 7:00 - 20:00'},{realTimeTable:'Fri: 7:00 - 20:00'},{realTimeTable:'Sat: 9:00 - 20:00'},{realTimeTable:'Sun: 9:00 - 20:00'}],
+        timeTable:[{realTimeTable:'Mon: 7:00 - 21:00'},{realTimeTable:'Tue: 7:00 - 21:00'},{realTimeTable:'Wed: 7:00 - 21:00'},{realTimeTable:'Thu: 7:00 - 20:00'},{realTimeTable:'Fri: 7:00 - 20:00'},{realTimeTable:'Sat: 10:00 - 21:00'},{realTimeTable:'Sun: 10:00 - 21:00'}],
         
         list: [{
             id: 'view',
@@ -328,18 +328,23 @@ Page({
         });
     },
 
-    initOccupancyChart: function() {
+    initOccupancyChart: function () {
       var that = this;
-      wx.cloud.callFunction({
-        name: 'realTime',
-      }).then( res => {
-        that.setData({
-          occupancy_chart_loading: false
-        })
-        var PecentageM = res.result.MagnoliaRoom.occupancy_percent;
-        console.log(PecentageM)
-        var ecComponent = this.selectComponent('#mychart-dom-gauge');
-        console.log(ecComponent)
+      const db = wx.cloud.database()
+      db.collection('diningOccupancy')
+        .doc('lastDiningOccupancy')
+        .get()
+        .then(res => {
+          console.log("***",res)
+          that.setData({
+            occupancy_chart_loading: false,
+            occupancy_percent_updated_time: res.data.updated_time
+          })
+          console.log(res.data)
+          var PecentageM = res.data.Hilltop.occupancy_percent;
+          console.log(PecentageM)
+          var ecComponent = this.selectComponent('#mychart-dom-gauge');
+          console.log(ecComponent)
         ecComponent.init((canvas, width, height, dpr) => {
           // 初始化图表
           const chart = echarts.init(canvas, null, {

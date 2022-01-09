@@ -1,6 +1,10 @@
 {
   "permissions": {
-    "openapi": [
-    ]
-  }
+    "openapi": []
+  },
+  "triggers": [{
+    "name": "cronRealTime",
+    "type": "timer",
+    "config": "0 */10 * * * * *"
+  }]
 }

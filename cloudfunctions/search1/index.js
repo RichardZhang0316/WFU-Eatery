@@ -53,11 +53,7 @@ exports.main = async (event, context) => {
     )
 
     // 在当天菜单中查询
-<<<<<<< Updated upstream:cloudfunctions/search1/index.js
     var dinningHallList = ['NorthPitMenu','Pit']
-=======
-    var dinningHallList = ['diningHallMenu','NorthPitMenu']
->>>>>>> Stashed changes:cloudfunctions/quickstartFunctions/index.js
     dinningHallList.forEach(function (currentValue) {
         task_list.push(db.collection(currentValue)
             .where({

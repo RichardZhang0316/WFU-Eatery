@@ -20,12 +20,12 @@ Page({
       },
       {
         text: 'Step 3',
-        desc: '具体流程见下方链接，复制后在浏览器中打开',
+        desc: '点击下方按钮复制链接，浏览器打开网址查询food dollar, meal swipes和old gold meal余额',
         // inactiveIcon: 'location-o',
         // activeIcon: 'success',
       },
     ],
-    contents:'https://dining.wfu.edu/wp-content/uploads/2017/09/Student-Deacon-Dining-Job-Aid-.pdf',
+    contents:'https://wakeforest.campuscardcenter.com/ch/login.html',
   },
 
 

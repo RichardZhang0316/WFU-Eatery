@@ -38,10 +38,11 @@
 <cover-view class="container"> 
   <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
   <cover-view class="mark-box"></cover-view>
-</cover-view>
+</cover-view> 
 
 
 <view class="shit2"><view>Real-time Occupancy </view></view>
+
 <van-skeleton loading="{{occupancy_chart_loading}}" row="8" />
 <cover-view class="container1" hidden="{{occupancy_chart_loading}}"> 
   <ec-canvas id="mychart-dom-gauge" canvas-id="mychart-gauge" ec="{{ ec1 }}"></ec-canvas>

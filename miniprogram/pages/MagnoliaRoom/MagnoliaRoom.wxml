@@ -17,7 +17,7 @@
       </view>
     </view>
     </van-transition>
-</view>
+</view> 
 
 
   <view class="shit">Reynolda Hall Second Floor</view>
@@ -34,6 +34,7 @@
 <view style="background-color: white;">
 <view class="shit2">Real-time Occupancy</view>
 </view>
+
 <cover-view class="container1">
 <ec-canvas id="mychart-dom-gauge" canvas-id="mychart-gauge" ec="{{ ec1 }}"></ec-canvas>
 </cover-view>

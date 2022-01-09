@@ -1,4 +1,5 @@
 @import "../Subway/Subway.wxss";
-.container1{
-  height: 200px;
+.container1 {
+  height: 215px;
+  background-color: white;
 }

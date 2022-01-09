@@ -16,17 +16,11 @@ function initChart1(canvas, width, height, dpr) {
   canvas.setChart(chart);
 
   //获取实时人流数据，链接Javascript爬虫
-  wx.cloud.callFunction({
-    name: 'realTime',
-    // 传递给云函数的event参数
-  }).then(res => {
-    // resolve(res.result)
-    console.log(res);
-    var PecentageM = res.result.MagnoliaRoom.occupancy_percent;   //最终data 
+  var PecentageM = 80;   
 
   //实时人流图表的基础参数设置
   var option = {
-    backgroundColor: "#fff",
+    // backgroundColor: "#F6F6F6",
     series: [{
       name: 'Real_Time',
       type: 'gauge',
@@ -86,12 +80,14 @@ function initChart1(canvas, width, height, dpr) {
   chart.setOption(option, true);
 
   return chart;
-})}
+}
 
 Page({
     data: {
+      occupancy_chart_loading: true,
       ec1:{
-        onInit: initChart1
+        // onInit: initChart1
+        lazyLoad: true,
       },
         choose: false,
         animationData: {},
@@ -217,18 +213,105 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-    //   wx.cloud.database().collection('ForsythData')
-    // .doc('8937eaa9615a601a0f766e4201bf62d2').get()
-    // .then(res=>{
-    //   console.log("成功",res)
-    //   this.setData({
-    //     num1:res.data.newCases,
-    //     num2:res.data.casesLast14Days,
-    //     num3:res.data.totalCases,
-    //     num4:res.data.totalDeaths,
-    //     date:res.data.date,
-    //   })
-    // })
+    this.initOccupancyChart()
+    const that = this;
+  },
+
+  initOccupancyChart: function () {
+    var that = this;
+    const db = wx.cloud.database()
+    db.collection('diningOccupancy')
+      .doc('lastDiningOccupancy')
+      .get()
+      .then(res => {
+        console.log("***",res)
+        that.setData({
+          occupancy_chart_loading: false,
+          occupancy_percent_updated_time: res.data.updated_time
+        })
+        console.log(res.data)
+        var PecentageM = res.data.MagnoliaRoom.occupancy_percent;
+        console.log(PecentageM)
+        var ecComponent = this.selectComponent('#mychart-dom-gauge');
+        console.log(ecComponent)
+      ecComponent.init((canvas, width, height, dpr) => {
+        // 初始化图表
+        const chart = echarts.init(canvas, null, {
+          width: width,
+          height: height,
+          devicePixelRatio: dpr // new
+        });
+        canvas.setChart(chart); 
+      
+        //实时人流图表的基础参数设置
+        var option = {
+          // backgroundColor: "#F6F6F6",
+          series: [{
+            name: 'Real_Time',
+            type: 'gauge',
+            detail: {
+              formatter: '{value}%',
+              color: '#9E7E38',
+              fontSize: 20,
+            },
+            axisLine: {
+              lineStyle: {
+                width: 25,
+                color: [
+                  [0.3, '#d6b160'],
+                  [0.7, '#957b43'],
+                  [1, '#554626']
+                ]
+              }
+            },
+            pointer: {
+              itemStyle: {
+                color: 'auto'
+              }
+            },
+            axisTick: {
+              distance: -25,
+              length: 7,
+              lineStyle: {
+                color: '#fff',
+                width: 2
+              }
+            },
+            splitLine: {
+              distance: -30,
+              length: 30,
+              lineStyle: {
+                color: '#fff',
+                width: 2
+              }
+            },
+            axisLabel: {
+              color: 'white',
+              distance: 9,
+              fontSize: 0,
+              fontWeight: 'bold',
+            },
+            data: [{
+              value: PecentageM,
+              name: 'Occupancy',
+              }
+            ],
+            itemStyle: {
+              color: '#9E7E38',
+            }
+          }]
+        };
+      
+        chart.setOption(option, true);
+        return chart;
+    });
+    
+    }).catch( err => {
+      wx.showToast({
+        title: '客流量加载失败',
+        icon: 'error'
+      })
+    })
   },
 
   /**

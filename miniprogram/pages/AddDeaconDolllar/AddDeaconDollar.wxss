@@ -35,14 +35,14 @@ page{
 }
 
 .card{
-  color:#d6b160;
+  color:#d6b160; 
   /*卡片的宽度*/  
   width: 90%;
   /*左外边距，这里代表距离最左边的距离*/
   /*margin-top: 10%;*/
   margin-left: 5%;
   /*卡片的高度。*/
-  height: 375rpx;
+  height: auto;
   /*背景色，可以自己更换*/
   background: rgb(255, 255, 255);
   /* radius是卡片的边框的圆润c程度*/
@@ -78,6 +78,7 @@ page{
   font-size: 15px;
   color:#d6b160;
   text-align: center;
+  padding-bottom: 10px;
 }
 .Michael2 {
 
