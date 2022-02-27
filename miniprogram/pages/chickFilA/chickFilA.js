@@ -38,6 +38,7 @@ var app = getApp();
 Page({
     data: {
         RateChick:[],
+        Name: ["Chick_Fila_A_Sauce", "Polynesian_Sauce"],
         //Popular Time_图表Data
         ec: {
             onInit: initChart
@@ -54,6 +55,7 @@ Page({
         sendList:[],
 
         timeTable:[{realTimeTable:'Mon: 7:30 - 22:00'},{realTimeTable:'Tue: 7:30 - 22:00'},{realTimeTable:'Wed: 7:30 - 22:00'},{realTimeTable:'Thu: 7:30 - 22:00'},{realTimeTable:'Fri: 11:00 - 22:00'},{realTimeTable:'Sat: closed'},{realTimeTable:'Sun: 7:30 - 22:00'}],
+
       },
       
 
@@ -132,8 +134,6 @@ Page({
     onLoad: function (options) {
       wx.cloud.database().collection('ChickFilAUpDown').get().then(res=>{
         console.log("Success",res);
-        
-
         this.setData({
           RateChick: res.data
           //ChickFilA:res.data
@@ -143,7 +143,7 @@ Page({
         console.log("查询失败",err);
       })
     },
-    update() {
+    updateUP1() {
       const _ = wx.cloud.database().command
       wx.cloud.database().collection('ChickFilAUpDown').doc('Chick_Fila_A_Sauce')
       .update({
@@ -152,11 +152,220 @@ Page({
         }
       }) .then(res=>{
         console.log('success',res)
-        this.setData({
-          RateChick: res.data
-        })
+        //let index = e.currentTarget.dataset.index;
+        this.setData({ 
+           RateChick: res.data
+         })
+        this.onLoad()
       })
-
+    },
+    updateDOWN1() {
+      const _ = wx.cloud.database().command
+      wx.cloud.database().collection('ChickFilAUpDown').doc('Chick_Fila_A_Sauce')
+      .update({
+        data: {
+          Down:_.inc(1)
+        }
+      }) .then(res=>{
+        console.log('success',res)
+        //let index = e.currentTarget.dataset.index;
+        this.setData({ 
+           RateChick: res.data
+         })
+        this.onLoad()
+      })
+    },
+    updateUP2() {
+      const _ = wx.cloud.database().command
+      wx.cloud.database().collection('ChickFilAUpDown').doc('Polynesian_Sauce')
+      .update({
+        data: {
+          Up:_.inc(1)
+        }
+      }) .then(res=>{
+        console.log('success',res)
+        //let index = e.currentTarget.dataset.index;
+        this.setData({ 
+           RateChick: res.data
+         })
+        this.onLoad()
+      })
+    },
+    updateDOWN2() {
+      const _ = wx.cloud.database().command
+      wx.cloud.database().collection('ChickFilAUpDown').doc('Polynesian_Sauce')
+      .update({
+        data: {
+          Down:_.inc(1)
+        }
+      }) .then(res=>{
+        console.log('success',res)
+        //let index = e.currentTarget.dataset.index;
+        this.setData({ 
+           RateChick: res.data
+         })
+        this.onLoad()
+      })
+    },
+    updateUP3() {
+      const _ = wx.cloud.database().command
+      wx.cloud.database().collection('ChickFilAUpDown').doc('Barbeque_Sauce')
+      .update({
+        data: {
+          Up:_.inc(1)
+        }
+      }) .then(res=>{
+        console.log('success',res)
+        //let index = e.currentTarget.dataset.index;
+        this.setData({ 
+           RateChick: res.data
+         })
+        this.onLoad()
+      })
+    },
+    updateDOWN3() {
+      const _ = wx.cloud.database().command
+      wx.cloud.database().collection('ChickFilAUpDown').doc('Barbeque_Sauce')
+      .update({
+        data: {
+          Down:_.inc(1)
+        }
+      }) .then(res=>{
+        console.log('success',res)
+        //let index = e.currentTarget.dataset.index;
+        this.setData({ 
+           RateChick: res.data
+         })
+        this.onLoad()
+      })
+    },
+    updateUP4() {
+      const _ = wx.cloud.database().command
+      wx.cloud.database().collection('ChickFilAUpDown').doc('Honey_Mustard')
+      .update({
+        data: {
+          Up:_.inc(1)
+        }
+      }) .then(res=>{
+        console.log('success',res)
+        //let index = e.currentTarget.dataset.index;
+        this.setData({ 
+           RateChick: res.data
+         })
+        this.onLoad()
+      })
+    },
+    updateDOWN4() {
+      const _ = wx.cloud.database().command
+      wx.cloud.database().collection('ChickFilAUpDown').doc('Honey_Mustard')
+      .update({
+        data: {
+          Down:_.inc(1)
+        }
+      }) .then(res=>{
+        console.log('success',res)
+        //let index = e.currentTarget.dataset.index;
+        this.setData({ 
+           RateChick: res.data
+         })
+        this.onLoad()
+      })
+    },
+    updateUP5() {
+      const _ = wx.cloud.database().command
+      wx.cloud.database().collection('ChickFilAUpDown').doc('Garden_Herb_Ranch')
+      .update({
+        data: {
+          Up:_.inc(1)
+        }
+      }) .then(res=>{
+        console.log('success',res)
+        //let index = e.currentTarget.dataset.index;
+        this.setData({ 
+           RateChick: res.data
+         })
+        this.onLoad()
+      })
+    },
+    updateDOWN5() {
+      const _ = wx.cloud.database().command
+      wx.cloud.database().collection('ChickFilAUpDown').doc('Garden_Herb_Ranch')
+      .update({
+        data: {
+          Down:_.inc(1)
+        }
+      }) .then(res=>{
+        console.log('success',res)
+        //let index = e.currentTarget.dataset.index;
+        this.setData({ 
+           RateChick: res.data
+         })
+        this.onLoad()
+      })
+    },
+    updateUP6() {
+      const _ = wx.cloud.database().command
+      wx.cloud.database().collection('ChickFilAUpDown').doc('Zesty Buffalo Sauce')
+      .update({
+        data: {
+          Up:_.inc(1)
+        }
+      }) .then(res=>{
+        console.log('success',res)
+        //let index = e.currentTarget.dataset.index;
+        this.setData({ 
+           RateChick: res.data
+         })
+        this.onLoad()
+      })
+    },
+    updateDOWN6() {
+      const _ = wx.cloud.database().command
+      wx.cloud.database().collection('ChickFilAUpDown').doc('Zesty Buffalo Sauce')
+      .update({
+        data: {
+          Down:_.inc(1)
+        }
+      }) .then(res=>{
+        console.log('success',res)
+        //let index = e.currentTarget.dataset.index;
+        this.setData({ 
+           RateChick: res.data
+         })
+        this.onLoad()
+      })
+    },
+    updateUP7() {
+      const _ = wx.cloud.database().command
+      wx.cloud.database().collection('ChickFilAUpDown').doc('SweetSpicy')
+      .update({
+        data: {
+          Up:_.inc(1)
+        }
+      }) .then(res=>{
+        console.log('success',res)
+        //let index = e.currentTarget.dataset.index;
+        this.setData({ 
+           RateChick: res.data
+         })
+        this.onLoad()
+      })
+    },
+    updateDOWN7() {
+      const _ = wx.cloud.database().command
+      wx.cloud.database().collection('ChickFilAUpDown').doc('SweetSpicy')
+      .update({
+        data: {
+          Down:_.inc(1)
+        }
+      }) .then(res=>{
+        console.log('success',res)
+        //let index = e.currentTarget.dataset.index;
+        this.setData({ 
+           RateChick: res.data
+         })
+        this.onLoad()
+      })
     },
     /**
      * 生命周期函数--监听页面初次渲染完成*/
@@ -170,9 +379,7 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-      this.setData({
-        RateChick: res.data
-      })
+
     },
 
     /**
