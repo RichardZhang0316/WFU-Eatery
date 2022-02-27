@@ -6,7 +6,7 @@
     "van-tab": "/components/vant/tab/index",
     "van-tabs": "/components/vant/tabs/index",
     "van-icon": "/components/vant/icon/index",
-"van-transition": "/components/vant/transition/index"
+    "van-transition": "/components/vant/transition/index"
   },
   "navigationStyle": "custom"
 }

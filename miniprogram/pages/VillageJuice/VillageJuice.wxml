@@ -36,8 +36,10 @@
 <view class="realPart"><view class="menuTitle">Menu</view></view>
 
 <van-tabs active="{{ active }}" bind:change="onChange" swipeable ellipsis="{{false}}" color="#d6b160" title-active-color="#d6b160">
+  
   <van-tab title="Smoothies">
-    <foodCard desc="280卡路里 由燕麦牛奶，冷煮咖啡，香蕉，大枣，可可豆制成" title="Mocha-Nana 摩卡娜娜奶昔" thumb="https://i.loli.net/2021/11/28/7e61mLHqPzUjwYX.png" price="6.95" currency="$"/>
+    <foodCard desc="280卡路里 由燕麦牛奶，冷煮咖啡，香蕉，大枣，可可豆制成" title="Mocha-Nana 摩卡娜娜奶昔" thumb="https://i.loli.net/2021/11/28/7e61mLHqPzUjwYX.png" price="6.95" currency="$"> 
+    </foodCard>  
     <foodCard desc="320卡路里 由燕麦牛奶，有机草莓，香蕉，大枣制成" title="Pinky Swear 拉钩奶昔" thumb="https://i.loli.net/2021/11/28/bWhcONP9mfkI6gl.png" price="7.95" currency="$"/>
     <foodCard desc="400卡路里 由燕麦牛奶，菠萝，香蕉，芒果，酸橙制成" title="Sunset 日落奶昔" thumb="https://i.loli.net/2021/11/28/MctwWiO6aAeIYR1.png" price="7.95" currency="$"/>
     <foodCard desc="340卡路里 由燕麦奶，菠菜，香蕉，大枣，可可豆，薄荷叶制成" title="Mint Chip 薄荷奶昔" thumb="https://i.loli.net/2021/11/28/nQYfJKgvyeFGRb4.png" price="8.95" currency="$"/>

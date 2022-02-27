@@ -18,6 +18,18 @@ button::after{
   border: none;
 }
 
+@font-face {
+  font-family: 'my-icon';
+  src: url('./my-icon.ttf') format('truetype');
+}
+
+.my-icon {
+  font-family: 'my-icon';
+}
+
+.my-icon-extra::before {
+  content: '\e626';
+}
 
 page {
   background: #f6f6f6;

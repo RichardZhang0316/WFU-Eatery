@@ -1,4 +1,3 @@
-
 //Popular_Time 表格: 目前分为“周中”和“周末”进行数据切换，数据源为Google，方法为“等比例缩放”
 import * as echarts from '../../ec-canvas/echarts';
 var util = require('../../utils/util.js');
@@ -34,9 +33,11 @@ function initChart(canvas, width, height, dpr) {
 }
 
 
+
 var app = getApp();
 Page({
     data: {
+        RateChick:[],
         //Popular Time_图表Data
         ec: {
             onInit: initChart
@@ -53,10 +54,9 @@ Page({
         sendList:[],
 
         timeTable:[{realTimeTable:'Mon: 7:30 - 22:00'},{realTimeTable:'Tue: 7:30 - 22:00'},{realTimeTable:'Wed: 7:30 - 22:00'},{realTimeTable:'Thu: 7:30 - 22:00'},{realTimeTable:'Fri: 11:00 - 22:00'},{realTimeTable:'Sat: closed'},{realTimeTable:'Sun: 7:30 - 22:00'}],
-      
-        
       },
       
+
       //前端滑动切换bar-展示信息（目前都注释掉了）
       onChange(event) {
         // wx.showToast({
@@ -80,6 +80,7 @@ Page({
         //用step()完成一个动画， 高度为0，透明度为不可见
         animation.height("0").opacity(0).step()
         // 用setData改变当前动画
+  
         that.setData({
             // 通过export()方法导出数据
             animationData: animation.export(),
@@ -129,9 +130,34 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+      wx.cloud.database().collection('ChickFilAUpDown').get().then(res=>{
+        console.log("Success",res);
+        
+
+        this.setData({
+          RateChick: res.data
+          //ChickFilA:res.data
+        })
+      })
+      .catch(err=>{
+        console.log("查询失败",err);
+      })
+    },
+    update() {
+      const _ = wx.cloud.database().command
+      wx.cloud.database().collection('ChickFilAUpDown').doc('Chick_Fila_A_Sauce')
+      .update({
+        data: {
+          Up:_.inc(1)
+        }
+      }) .then(res=>{
+        console.log('success',res)
+        this.setData({
+          RateChick: res.data
+        })
+      })
 
     },
-
     /**
      * 生命周期函数--监听页面初次渲染完成*/
      
@@ -144,7 +170,9 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-
+      this.setData({
+        RateChick: res.data
+      })
     },
 
     /**
@@ -190,11 +218,6 @@ Page({
           fail: function () { }
         }
       },
-    //   data: {
-    //     ec: {
-    //       onInit: initChart
-    //     }
-    //   },
     
       onReady() {
         setTimeout(function () {

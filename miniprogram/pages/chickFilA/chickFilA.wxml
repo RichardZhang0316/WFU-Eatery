@@ -36,7 +36,15 @@
 
 <van-tabs active="{{ active }}" bind:change="onChange" swipeable ellipsis="{{false}}" color="#d6b160" title-active-color="#d6b160">
   <van-tab title="Sauce">
-    <foodCard desc="140卡路里 经典蘸酱，有芥末和烟熏的味道" title="Chick-fil-A Sauce" thumb="https://d1fd34dzzl09j.cloudfront.net/Images/CFACOM/Sauces/SauceV4/Sauce_CFA-Sauce_Desk.png?h=800&w=800&la=en"/>
+    <foodCard desc="140卡路里 经典蘸酱，有芥末和烟熏的味道" title="Chick-fil-A Sauce" thumb="https://d1fd34dzzl09j.cloudfront.net/Images/CFACOM/Sauces/SauceV4/Sauce_CFA-Sauce_Desk.png?h=800&w=800&la=en">
+    
+    <view slot="footer">
+    <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="update" /> {{RateChick[0].Up}} </van-button> 
+    <van-button size="large"> <van-icon name="close" size="25px"/> {{1}} </van-button> 
+    </view>
+    
+    </foodCard>
+
     <foodCard desc="110卡路里 由玉米苹果醋、蒸馏醋、番茄酱、盐、红辣椒和芥菜籽制成（酸甜酱）" title="Polynesian Sauce 波利尼西亚酱" thumb="https://d1fd34dzzl09j.cloudfront.net/Images/CFACOM/Sauces/SauceV4/Sauce_Polynesian_Desk.png?h=800&w=800&la=en" />
     <foodCard desc="45卡路里 经典烧烤酱，用香料，洋葱和大蒜调味，口感丰富" title="Barbeque Sauce 烧烤酱" thumb="https://d1fd34dzzl09j.cloudfront.net/Images/CFACOM/Sauces/SauceV4/Sauce_Barbeque_Desk.png?h=800&w=800&la=en"/>
     <foodCard desc="50卡路里 一种带有芥末、香料和蜂蜜甜味的美味酱汁" title="Honey Mustard 蜂蜜芥末酱" thumb="http://images.squarespace-cdn.com/content/v1/5d4c6358a7991a0001838ee2/1573244149845-O11HYKRW5XR8FGKM88PK/Sauce_Honey-Mustard_Desk.png"/>
