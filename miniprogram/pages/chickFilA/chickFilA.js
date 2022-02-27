@@ -2,6 +2,7 @@
 import * as echarts from '../../ec-canvas/echarts';
 var util = require('../../utils/util.js');
 let chart = null;  
+let content = '';
 
 //Initial Chart的function
 function initChart(canvas, width, height, dpr) {  
@@ -37,8 +38,12 @@ function initChart(canvas, width, height, dpr) {
 var app = getApp();
 Page({
     data: {
+<<<<<<< Updated upstream
         RateChick:[],
         Name: ["Chick_Fila_A_Sauce", "Polynesian_Sauce"],
+=======
+      comments:[],
+>>>>>>> Stashed changes
         //Popular Time_图表Data
         ec: {
             onInit: initChart
@@ -132,6 +137,7 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+<<<<<<< Updated upstream
       wx.cloud.database().collection('ChickFilAUpDown').get().then(res=>{
         console.log("Success",res);
         this.setData({
@@ -366,6 +372,20 @@ Page({
          })
         this.onLoad()
       })
+=======
+      
+
+      wx.cloud.database().collection("comments").doc('chickFillA').get()
+      .then(res=>{
+      console.log("查询成功",res);
+      this.setData({
+        comments:res.data.commentList
+      })
+    })
+    .catch(err=>{
+      console.log("查询失败",err);
+    })
+>>>>>>> Stashed changes
     },
     /**
      * 生命周期函数--监听页面初次渲染完成*/
@@ -431,5 +451,102 @@ Page({
           // 获取 chart 实例的方式
           // console.log(chart)
         }, 2000);
+      },
+
+      // onAdd: function () {
+      //   const db = wx.cloud.database()
+      //   db.collection('comments').doc('chickFillA').add({
+      //     data: {
+      //       commentList:{content:"32r13f2f4",userName:"hardhardsohard"},
+          
+      //     },
+      //     success: res => {
+      //       // 在返回结果中会包含新创建的记录的 _id
+      //       this.setData({
+      //         counterId: res._id,
+      //         count: 1
+      //       })
+      //       wx.showToast({
+      //         title: '新增记录成功',
+      //       })
+      //       console.log('[数据库] [新增记录] 成功，记录 _id: ', res._id)
+      //     },
+      //     fail: err => {
+      //       wx.showToast({
+      //         icon: 'none',
+      //         title: '新增记录失败'
+      //       })
+      //       console.error('[数据库] [新增记录] 失败：', err)
+      //     }
+      //   })
+      //   },        
+
+
+
+      //new comment method
+      
+      getContent(e){
+        content = e.detail.value
+        //动态绑定数据，实现评论结束后清空content的内容
+        this.setData({
+          content :e.detail.value
+        })
+      },
+    
+      //发表评论
+      remark(e){
+        //如果评论长度小于4给予提示
+        if(content.length<4){
+          wx.showToast({
+            title: 'your comment is too short',
+            icon:"none"
+          })
+          return
+        }
+        //定义remarksItem变量来存储插入的对象
+        let remarksItem = {}
+        remarksItem.userName = "Anonymous user"
+        remarksItem.content = content
+    
+        //remarks存储更新后的数组，
+        let remarks = this.data.comments
+        remarks.unshift(remarksItem)  //将对象插入到数组中。unshift插入到数组最前面，push插入到数组最后面
+        console.log("添加评论后的数组",remarks);
+    
+        //调用云函数之前显示加载中
+        wx.showLoading({
+          title: '发表中',
+        })
+    
+        //调用云函数来更新评论数据到数据库
+        wx.cloud.callFunction({
+          name:"updateState",
+          data:{
+            action:"remark",
+            // id :id,
+            commentList:remarks //将新数组remarks传递给数据库的remarks字段
+          }
+        })
+        .then(res=>{
+          console.log("your comment is successfully published",res);
+          //提示成功
+          wx.showToast({
+            title: 'your comment is successfully published',
+            icon:"success",
+            duration:2000
+          }),
+          //实现动态刷新页面
+          this.setData({
+            comments:remarks,  //发表成功后，动态刷新评论列表
+            content:""        //发表成功后，清空input内容
+          })
+          //隐藏加载提示
+          wx.hideLoading()
+        })
+        .catch(err=>{
+          console.log("Fail to publish your comment",err);
+          //隐藏加载提示
+          wx.hideLoading()
+        })
       }
 })
