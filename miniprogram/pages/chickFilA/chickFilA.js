@@ -38,12 +38,9 @@ function initChart(canvas, width, height, dpr) {
 var app = getApp();
 Page({
     data: {
-<<<<<<< Updated upstream
         RateChick:[],
         Name: ["Chick_Fila_A_Sauce", "Polynesian_Sauce"],
-=======
       comments:[],
->>>>>>> Stashed changes
         //Popular Time_图表Data
         ec: {
             onInit: initChart
@@ -137,7 +134,6 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-<<<<<<< Updated upstream
       wx.cloud.database().collection('ChickFilAUpDown').get().then(res=>{
         console.log("Success",res);
         this.setData({
@@ -372,7 +368,6 @@ Page({
          })
         this.onLoad()
       })
-=======
       
 
       wx.cloud.database().collection("comments").doc('chickFillA').get()
@@ -385,7 +380,6 @@ Page({
     .catch(err=>{
       console.log("查询失败",err);
     })
->>>>>>> Stashed changes
     },
     /**
      * 生命周期函数--监听页面初次渲染完成*/
