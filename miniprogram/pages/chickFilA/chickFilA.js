@@ -134,6 +134,18 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+
+      wx.cloud.database().collection("comments").doc('chickFillA').get()
+      .then(res=>{
+      console.log("查询成功",res);
+      this.setData({
+        comments:res.data.commentList
+      })
+    })
+    .catch(err=>{
+      console.log("查询失败",err);
+    })
+    
       wx.cloud.database().collection('ChickFilAUpDown').get().then(res=>{
         console.log("Success",res);
         this.setData({
@@ -368,18 +380,7 @@ Page({
          })
         this.onLoad()
       })
-      
-
-      wx.cloud.database().collection("comments").doc('chickFillA').get()
-      .then(res=>{
-      console.log("查询成功",res);
-      this.setData({
-        comments:res.data.commentList
-      })
-    })
-    .catch(err=>{
-      console.log("查询失败",err);
-    })
+    
     },
     /**
      * 生命周期函数--监听页面初次渲染完成*/
