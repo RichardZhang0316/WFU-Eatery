@@ -1,12 +1,21 @@
+const cloud = require("wx-server-sdk")
+cloud.init(
+  //{env:'cloud1-9g617xow636319d2'}
+)
+
+const db = cloud.database()
+
 // 云函数入口函数
 exports.main = async (event, context) => {
-    if(event.action =="collect"){ //如果是评论
-    return cloud.database().collection("comments")
-    .doc('chickFillA')
+  try{
+    return await db.collection("comments").doc(event.id)
     .update({
       data:{
-        collect:event.collect
+        commentList:event.commentList,
+       //commentList:{"content":"wowowow","userName":"Anomynous user"},
       }
     })
+  }catch(e){
+    console.error(e)
   }
 }

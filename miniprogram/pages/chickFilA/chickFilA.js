@@ -40,7 +40,7 @@ Page({
     data: {
         RateChick:[],
         Name: ["Chick_Fila_A_Sauce", "Polynesian_Sauce"],
-      comments:[],
+        comments:[],
         //Popular Time_图表Data
         ec: {
             onInit: initChart
@@ -145,7 +145,7 @@ Page({
     .catch(err=>{
       console.log("查询失败",err);
     })
-    
+
       wx.cloud.database().collection('ChickFilAUpDown').get().then(res=>{
         console.log("Success",res);
         this.setData({
@@ -157,6 +157,8 @@ Page({
         console.log("查询失败",err);
       })
     },
+
+
     updateUP1() {
       const _ = wx.cloud.database().command
       wx.cloud.database().collection('ChickFilAUpDown').doc('Chick_Fila_A_Sauce')
@@ -500,26 +502,54 @@ Page({
         }
         //定义remarksItem变量来存储插入的对象
         let remarksItem = {}
-        remarksItem.userName = "Anonymous user"
         remarksItem.content = content
+        remarksItem.userName = "Anonymous user"
     
         //remarks存储更新后的数组，
-        let remarks = this.data.comments
-        remarks.unshift(remarksItem)  //将对象插入到数组中。unshift插入到数组最前面，push插入到数组最后面
-        console.log("添加评论后的数组",remarks);
+        let commentList = this.data.comments
+        commentList.unshift(remarksItem)  //将对象插入到数组中。unshift插入到数组最前面，push插入到数组最后面
+        console.log("添加评论后的数组",commentList);
     
         //调用云函数之前显示加载中
         wx.showLoading({
           title: '发表中',
         })
-    
+
+        wx.cloud.database().collection('comments').doc('chickFillA')
+      .update({
+        data:{
+          commentList:commentList
+        }
+      }).then(res=>{
+        console.log("your comment is successfully published",res);
+        //提示成功
+        wx.showToast({
+          title: 'your comment is successfully published',
+          icon:"success",
+          duration:2000
+        }),
+        //实现动态刷新页面
+        this.setData({
+          comments:commentList,  //发表成功后，动态刷新评论列表
+          content:""        //发表成功后，清空input内容
+        })
+        //隐藏加载提示
+        wx.hideLoading()
+      })
+      .catch(err=>{
+        console.log("Fail to publish your comment",err);
+        //隐藏加载提示
+        wx.hideLoading()
+      })
+
         //调用云函数来更新评论数据到数据库
+        /*
         wx.cloud.callFunction({
           name:"updateState",
           data:{
-            action:"remark",
-            // id :id,
-            commentList:remarks //将新数组remarks传递给数据库的remarks字段
+            id:"chickFillA",
+            commentList:commentList,
+            //commentList:{"content":"wowowow","userName":"Anomynous user"},
           }
         })
         .then(res=>{
@@ -532,7 +562,7 @@ Page({
           }),
           //实现动态刷新页面
           this.setData({
-            comments:remarks,  //发表成功后，动态刷新评论列表
+            comments:commentList,  //发表成功后，动态刷新评论列表
             content:""        //发表成功后，清空input内容
           })
           //隐藏加载提示
@@ -543,5 +573,9 @@ Page({
           //隐藏加载提示
           wx.hideLoading()
         })
+        */
+        
       }
+      
+      
 })
