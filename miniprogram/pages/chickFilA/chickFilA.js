@@ -506,9 +506,9 @@ Page({
         remarksItem.userName = "Anonymous user"
     
         //remarks存储更新后的数组，
-        let commentList = this.data.comments
-        commentList.unshift(remarksItem)  //将对象插入到数组中。unshift插入到数组最前面，push插入到数组最后面
-        console.log("添加评论后的数组",commentList);
+        let localCommentList = this.data.comments
+        localCommentList.unshift(remarksItem)  //将对象插入到数组中。unshift插入到数组最前面，push插入到数组最后面
+        console.log("添加评论后的数组",localCommentList);
     
         //调用云函数之前显示加载中
         wx.showLoading({
@@ -518,7 +518,7 @@ Page({
         wx.cloud.database().collection('comments').doc('chickFillA')
       .update({
         data:{
-          commentList:commentList
+          commentList:localCommentList
         }
       }).then(res=>{
         console.log("your comment is successfully published",res);
@@ -530,7 +530,7 @@ Page({
         }),
         //实现动态刷新页面
         this.setData({
-          comments:commentList,  //发表成功后，动态刷新评论列表
+          comments:localCommentList,  //发表成功后，动态刷新评论列表
           content:""        //发表成功后，清空input内容
         })
         //隐藏加载提示
@@ -549,7 +549,6 @@ Page({
           data:{
             id:"chickFillA",
             commentList:commentList,
-            //commentList:{"content":"wowowow","userName":"Anomynous user"},
           }
         })
         .then(res=>{
