@@ -1,8 +1,17 @@
 //Popular_Time 表格: 目前分为“周中”和“周末”进行数据切换，数据源为Google，方法为“等比例缩放”
 import * as echarts from '../../ec-canvas/echarts';
+const db = wx.cloud.database()
+const _ = db.command
+const CF = db.collection('ChickFilAUpDown')
+
 var util = require('../../utils/util.js');
+var that;
 let chart = null;  
 let content = '';
+let likeCollection = wx.getStorageSync('likeCollection');
+    if(!likeCollection){
+      wx.setStorageSync('likeCollection', {})
+    }
 
 //Initial Chart的function
 function initChart(canvas, width, height, dpr) {  
@@ -38,6 +47,10 @@ function initChart(canvas, width, height, dpr) {
 var app = getApp();
 Page({
     data: {
+      newList:[],
+      isLike:[],
+      like_people:[],
+      openid:'',
         RateChick:[],
         Name: ["Chick_Fila_A_Sauce", "Polynesian_Sauce"],
         comments:[],
@@ -134,6 +147,49 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+       let that = this;
+       wx.cloud.callFunction({
+         name:'getOpenid',
+         complete:res=>{
+          console.log('云函数获取到的openid: ', res.result.openid)
+          that.setData({
+            openid: res.result.openid
+          })
+          
+          CF.field({ //发送请求获取列表数据
+            _id: true,
+            like: true,
+            Up: true,
+            like_people: true
+          }).get({
+            success: res => {
+              that.setData({
+                newList: res.data
+              })
+              var iszan = that.data.isLike;
+            for (var i = 0; i < res.data.length; i++) { //数据获取成功后，进行遍历，拿到所有已经点过赞的书籍id
+              for (let j = 0; j < res.data[i].like_people.length; j++) {
+                if (res.data[i].like_people[j] == that.data.openid) { 
+                  iszan.push(res.data[i]._id) //根据改用户的数据找到已经点赞的，把书籍id放入新建数组中
+                }
+              }
+            }
+            for (let i = 0; i < res.data.length; i++) {
+              res.data[i].like = false
+              for (let j = 0; j < iszan.length; j++) { //利用新建的iszan数组与list数组的id查找相同的书籍id
+                if (res.data[i]._id == iszan[j]) { //双重循环遍历，有相同的id则点亮红心
+                  res.data[i].like = true
+                }
+              }
+            }
+            console.log('在这里',res.data)
+            that.setData({
+              isLike: this.data.iszan,
+              newList: res.data
+            })
+            wx.setStorageSync('zan', iszan);
+         }
+       })
 
       wx.cloud.database().collection("comments").doc('chickFillA').get()
       .then(res=>{
@@ -156,8 +212,79 @@ Page({
       .catch(err=>{
         console.log("查询失败",err);
       })
+
+      wx.cloud.database().collection('ChickFilAUpDown').doc('Chick_Fila_A_Sauce').get().then(res=>{
+        console.log("Success",res);
+        this.setData({
+          CFAup:res.data.Up
+        })
+      })
+      .catch(err=>{
+        console.log("查询失败",err);
+      })
+    }
+    })},
+
+    upFunction(e){
+      var shareid = e.currentTarget.dataset.id;
+    this.zan("Chick_Fila_A_Sauce");
     },
 
+    zan: function (item_id) {
+      var that = this;
+      var cookie_id = wx.getStorageSync('zan') || []; //获取全部点赞的id
+      var openid = that.data.openid
+      console.log(openid)
+      for (var i = 0; i < that.data.newList.length; i++) {
+        if (that.data.newList[i]._id == item_id) { //数据列表中找到对应的id
+          var num = that.data.newList[i].Up; //当前点赞数
+          if (cookie_id.includes(item_id) ) { //已经点过赞了，取消点赞
+            for (var j in cookie_id) {
+              if (cookie_id[j] == item_id) {
+                cookie_id.splice(j, 1); //删除取消点赞的id
+              }
+            }
+            --num; //点赞数减1
+            that.setData({
+              [`newList[${i}].Up`]: num, //es6模板语法，常规写法报错
+              [`newList[${i}.].like`]: false //我的数据中like为'false'是未点赞
+            })
+            wx.setStorageSync('zan', cookie_id);
+            wx.showToast({
+              title: "取消点赞",
+              icon: 'none'
+            })
+            this.data.newList[i].like_people.pop(openid)
+          } else { //点赞操作
+            ++num; //点赞数加1
+            that.setData({
+              [`newList[${i}].Up`]: num,
+              [`newList[${i}.].like`]: true
+            })
+            cookie_id.unshift(item_id); //新增赞的id
+            wx.setStorageSync('zan', cookie_id);
+            wx.showToast({
+              title: "点赞成功",
+              icon: 'none'
+            })
+            this.data.newList[i].like_people.push(openid)
+          }
+          //和后台交互，后台数据要同步
+          CF.doc(item_id).update({
+            data: {
+              like: this.data.newList[i].like,
+              Up: num,
+              like_people: this.data.newList[i].like_people
+            },
+            success: res => {
+              console.log(res)
+            }
+          })
+          this.onLoad()
+        }
+      }
+    },
+    
 
     updateUP1() {
       const _ = wx.cloud.database().command
@@ -573,8 +700,7 @@ Page({
           wx.hideLoading()
         })
         */
-        
+      
       }
-      
-      
-})
+    }
+  )
