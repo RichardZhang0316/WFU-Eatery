@@ -1,4 +1,5 @@
 {
+  "setting": {},
   "condition": {
     "plugin": {
       "list": []
@@ -20,6 +21,13 @@
         {
           "name": "",
           "pathName": "pages/chickFilA/chickFilA",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/Subway/Subway",
           "query": "",
           "scene": null,
           "launchMode": "default"

@@ -234,7 +234,6 @@ Page({
 
     // 点赞函数
     zan: function (item_id) {
-      
       var that = this;
       var cookie_id = wx.getStorageSync('zan') || []; //获取全部点赞的id
       var openid = that.data.openid
@@ -296,8 +295,7 @@ Page({
         }
       }
     },
-    
-
+ 
     updateUP1() {
       const _ = wx.cloud.database().command
       wx.cloud.database().collection('ChickFilAUpDown').doc('Chick_Fila_A_Sauce')
@@ -587,40 +585,9 @@ Page({
           // 获取 chart 实例的方式
           // console.log(chart)
         }, 2000);
-      },
+      },    
 
-      // onAdd: function () {
-      //   const db = wx.cloud.database()
-      //   db.collection('comments').doc('chickFillA').add({
-      //     data: {
-      //       commentList:{content:"32r13f2f4",userName:"hardhardsohard"},
-          
-      //     },
-      //     success: res => {
-      //       // 在返回结果中会包含新创建的记录的 _id
-      //       this.setData({
-      //         counterId: res._id,
-      //         count: 1
-      //       })
-      //       wx.showToast({
-      //         title: '新增记录成功',
-      //       })
-      //       console.log('[数据库] [新增记录] 成功，记录 _id: ', res._id)
-      //     },
-      //     fail: err => {
-      //       wx.showToast({
-      //         icon: 'none',
-      //         title: '新增记录失败'
-      //       })
-      //       console.error('[数据库] [新增记录] 失败：', err)
-      //     }
-      //   })
-      //   },        
-
-
-
-      //new comment method
-      
+      //New comment method
       getContent(e){
         content = e.detail.value
         //动态绑定数据，实现评论结束后清空content的内容
@@ -634,7 +601,7 @@ Page({
         //如果评论长度小于4给予提示
         if(content.length<4){
           wx.showToast({
-            title: 'your comment is too short',
+            title: 'Your comment is too short',
             icon:"none"
           })
           return
