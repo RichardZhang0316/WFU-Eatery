@@ -226,18 +226,22 @@ Page({
     })},
 
     upFunction(e){
-      var shareid = e.currentTarget.dataset.id;
-    this.zan("Chick_Fila_A_Sauce");
+      var shareid = e.currentTarget.dataset.id
+      console.log("shareid: "+shareid)
+      this.zan(shareid);
     },
 
     zan: function (item_id) {
+      
       var that = this;
       var cookie_id = wx.getStorageSync('zan') || []; //获取全部点赞的id
       var openid = that.data.openid
       console.log(openid)
+
       for (var i = 0; i < that.data.newList.length; i++) {
         if (that.data.newList[i]._id == item_id) { //数据列表中找到对应的id
           var num = that.data.newList[i].Up; //当前点赞数
+          //console.log("here!")
           if (cookie_id.includes(item_id) ) { //已经点过赞了，取消点赞
             for (var j in cookie_id) {
               if (cookie_id[j] == item_id) {
@@ -257,16 +261,21 @@ Page({
             this.data.newList[i].like_people.pop(openid)
           } else { //点赞操作
             ++num; //点赞数加1
+            //console.log(num)
             that.setData({
               [`newList[${i}].Up`]: num,
               [`newList[${i}.].like`]: true
             })
+           
             cookie_id.unshift(item_id); //新增赞的id
             wx.setStorageSync('zan', cookie_id);
             wx.showToast({
               title: "点赞成功",
               icon: 'none'
             })
+            if(this.data.newList[i].like_people == undefined){
+              this.data.newList[i].like_people = []
+            }
             this.data.newList[i].like_people.push(openid)
           }
           //和后台交互，后台数据要同步
