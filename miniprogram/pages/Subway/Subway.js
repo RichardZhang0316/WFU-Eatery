@@ -1,7 +1,8 @@
 //Popular_Time 表格: 目前分为“周中”和“周末”进行数据切换，数据源为Google，方法为比例缩放
 import * as echarts from '../../ec-canvas/echarts';
-var util = require('../../utils/util.js');
 let chart = null;  
+let content = '';
+var util = require('../../utils/util.js');
 
 //Initial Chart的function
 function initChart(canvas, width, height, dpr) {  
@@ -43,14 +44,17 @@ function initChart(canvas, width, height, dpr) {
   return chart;
 }
 
-
 var app = getApp();
 Page({
     data: {
+        //Comments
+        comments:[],
+
         //Popular Time_图表Data
         ec: {
             onInit: initChart
           },
+
         //前端滑动切换bar_Data input
         active: 0,
         //下拉动画
@@ -69,7 +73,7 @@ Page({
       onChange(event) {
       },
 
-      showContent: function (e) {
+    showContent: function (e) {
         // 用that取代this，防止setTimeout内使用this出错
         var that = this;
         // 创建一个动画实例
@@ -104,8 +108,6 @@ Page({
             })
         }, 0)
     },
-
-    // 隐藏
     hideContent: function (e) {
         var that = this;
         var animation = wx.createAnimation({
@@ -129,24 +131,82 @@ Page({
             stopBtn: true,
         })
     },
-    /**上面是时间表核心代码
-     * 生命周期函数--监听页面加载
-     */
+
     onLoad: function (options) {
-
+        // 初始页面加载CommentList
+        wx.cloud.database().collection("comments").doc('subway').get()
+        .then(res=>{
+        console.log("CommentList查询成功",res);
+        this.setData({
+          comments:res.data.commentList
+        })
+      }).catch(err=>{
+        console.log("CommentList查询失败",err);
+      })
     },
 
-    /**
-     * 生命周期函数--监听页面初次渲染完成*/
-     
-    onReady: function () {
-
+    //清空评论框
+    getContent(e){
+      content = e.detail.value
+      //动态绑定数据，实现评论结束后清空content的内容
+      this.setData({
+        content :e.detail.value
+      })
     },
+
+    //发表评论
+    remark(e){
+      //如果评论长度小于4给予提示
+      if(content.length<4){
+        wx.showToast({
+          title: 'Your comment is too short',
+          icon:"none"
+        })
+        return
+      }
+      //定义remarksItem变量来存储插入的对象
+      let remarksItem = {}
+      remarksItem.content = content
+      remarksItem.userName = "Anonymous user"
+  
+      //remarks存储更新后的数组，
+      let localCommentList = this.data.comments
+      localCommentList.unshift(remarksItem)  //将对象插入到数组中。unshift插入到数组最前面，push插入到数组最后面
+      console.log("添加评论后的数组",localCommentList);
+  
+      //调用云函数之前显示加载中
+      wx.showLoading({
+        title: '发表中',
+      })
+
+      wx.cloud.database().collection('comments').doc('subway')
+    .update({
+      data:{
+        commentList:localCommentList
+      }
+    }).then(res=>{
+      console.log("your comment is successfully published",res);
+      //提示成功
+      wx.showToast({
+        title: 'your comment is successfully published',
+        icon:"success",
+        duration:2000
+      }),
+      //实现动态刷新页面
+      this.setData({
+        comments:localCommentList, //发表成功后，动态刷新评论列表
+        content:""  //发表成功后，清空input内容
+      })
+      wx.hideLoading()  //隐藏加载提示
+    })
+    .catch(err=>{
+      console.log("Fail to publish your comment",err);
+      //隐藏加载提示
+      wx.hideLoading()
+    })},
     
 
-    /**
-     * 生命周期函数--监听页面显示
-     */
+
     onShow: function () {
 
     },
@@ -188,7 +248,7 @@ Page({
     //Echart
     onShareAppMessage: function (res) {
         return {
-          title: 'ECharts 可以在微信小程序中使用啦！',
+          //title: 'ECharts 可以在微信小程序中使用啦！',
           path: '/pages/index/index',
           success: function () { },
           fail: function () { }

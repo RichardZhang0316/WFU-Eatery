@@ -93,6 +93,24 @@
 <view style="height: 60px; width: 100%; background-color:#ececec;"></view>
 
 
+<!-- <view style="height: 60px; width: 100%; background-color:#ececec;"></view> -->
+<view class="greyPart"></view>
+<view class="realPart"><view class="menuTitle">Comments</view></view>
+
+<!-- Comment List -->
+<block class="remarksList">
+  <view wx:for="{{comments}}" wx:key="index" class="remarks">
+    <view class="name">{{item.userName}}</view>
+    <!-- <view class="name">{{item.time}}</view> -->
+    <view class="content">{{item.content}}</view>
+  </view> 
+</block>
+
+<!-- Publish Comment -->
+<view class="last">
+<textarea bindinput="getContent" placeholder="Leave your comment about this resturant here" value="{{content}}"></textarea>
+<button bindtap="remark" type="primary" class="buttttton">publish comment</button>
+</view>
 
 
 

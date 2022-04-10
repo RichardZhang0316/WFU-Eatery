@@ -1,12 +1,13 @@
 //Popular_Time 表格: 目前分为“周中”和“周末”进行数据切换，数据源为Google，方法为“等比例缩放”
 import * as echarts from '../../ec-canvas/echarts';
-const db = wx.cloud.database()
-const _ = db.command
+
+const db = wx.cloud.database() 
+const _ = db.command // 获取数据库操作符，通过 db.command 获取
 const CF = db.collection('ChickFilAUpDown')
 
 let chart = null;  
 let content = '';
-let likeCollection = wx.getStorageSync('likeCollection');
+let likeCollection = wx.getStorageSync('likeCollection'); // 从本地缓存中同步获取指定 key 的内容
     if(!likeCollection){
       wx.setStorageSync('likeCollection', {})
     }
@@ -46,7 +47,6 @@ function initChart(canvas, width, height, dpr) {
 }
 
 
-
 var app = getApp();
 Page({
     data: {
@@ -60,10 +60,7 @@ Page({
         RateChick:[],
         Name: ["Chick_Fila_A_Sauce", "Polynesian_Sauce"],
         comments:[],
-        //Popular Time_图表Data
-        ec: {
-            onInit: initChart
-          },
+
         //前端滑动切换bar_Data input
         active:0,
         //下拉动画
@@ -74,21 +71,25 @@ Page({
         currentTab: 0,
         id:'timetable',
         sendList:[],
-
+        
+        //Popular Time_图表Data
         timeTable:[{realTimeTable:'Mon: 7:30 - 22:00'},{realTimeTable:'Tue: 7:30 - 22:00'},{realTimeTable:'Wed: 7:30 - 22:00'},{realTimeTable:'Thu: 7:30 - 22:00'},{realTimeTable:'Fri: 11:00 - 22:00'},{realTimeTable:'Sat: closed'},{realTimeTable:'Sun: 7:30 - 22:00'}],
 
+        ec: {
+          onInit: initChart
+        },
       },
       
 
-      //前端滑动切换bar-展示信息（目前都注释掉了）
-      onChange(event) {
+    //前端滑动切换bar-展示信息（目前都注释掉了）
+    onChange(event) {
         // wx.showToast({
         //   //title: `切换到标签 ${event.detail.name}`,
         //   //icon: 'none',
         // });
-      },
+    },
 
-      showContent: function (e) {
+    showContent: function (e) {
         // 用that取代this，防止setTimeout内使用this出错
         var that = this;
         // 创建一个动画实例
@@ -125,7 +126,6 @@ Page({
         }, 0)
     },
 
-    // 隐藏
     hideContent: function (e) {
         var that = this;
         var animation = wx.createAnimation({
@@ -150,19 +150,20 @@ Page({
         })
     },
     /**上面是时间表核心代码
-     * 生命周期函数--监听页面加载
-     */
-    onLoad: function (options) {
-       let that = this;
+     * 生命周期函数--监听页面加载*/
+
+    // onLoad:页面加载时触发,一个页面只会调用一次
+    onLoad: function (options) { 
+       let that = this; // this指的是本页面的所有data
        wx.cloud.callFunction({
          name:'getOpenid',
          complete:res=>{
           console.log('云函数获取到的openid: ', res.result.openid)
           that.setData({
-            openid: res.result.openid
+            openid: res.result.openid,
           })
           
-          CF.field({ //发送请求获取列表数据
+          CF.field({ //发送请求获取Up_and_Down列表数据
             _id: true,
             like: true,
             Up: true,
@@ -217,39 +218,39 @@ Page({
          }
        })
 
-      wx.cloud.database().collection("comments").doc('chickFillA').get()
-      .then(res=>{
-      console.log("查询成功",res);
-      this.setData({
-        comments:res.data.commentList
-      })
-    })
-    .catch(err=>{
-      console.log("查询失败",err);
-    })
-
-      wx.cloud.database().collection('ChickFilAUpDown').get().then(res=>{
-        console.log("Success",res);
+        // 以下是CommentList函数
+        wx.cloud.database().collection("comments").doc('chickFillA').get()
+        .then(res=>{
+        console.log("CommentList查询成功",res);
         this.setData({
-          RateChick: res.data
-          //ChickFilA:res.data
+          comments:res.data.commentList
         })
-      })
-      .catch(err=>{
+      }).catch(err=>{
         console.log("查询失败",err);
       })
 
-      wx.cloud.database().collection('ChickFilAUpDown').doc('Chick_Fila_A_Sauce').get().then(res=>{
-        console.log("Success",res);
-        this.setData({
-          CFAup:res.data.Up
+        wx.cloud.database().collection('ChickFilAUpDown').get().then(res=>{
+          console.log("Success",res);
+          this.setData({
+            RateChick: res.data
+            //ChickFilA:res.data
+          })
         })
-      })
-      .catch(err=>{
-        console.log("查询失败",err);
-      })
-    }
-    })},
+        .catch(err=>{
+          console.log("查询失败",err);
+        })
+
+        wx.cloud.database().collection('ChickFilAUpDown').doc('Chick_Fila_A_Sauce').get().then(res=>{
+          console.log("Success",res);
+          this.setData({
+            CFAup:res.data.Up
+          })
+        })
+        .catch(err=>{
+          console.log("查询失败",err);
+        })
+      }
+      })},
 
     downFunction(e){
       var shareid = e.currentTarget.dataset.id
@@ -347,8 +348,8 @@ Page({
       this.zan(shareid);
     },
 
+    // 点赞函数
     zan: function (item_id) {
-      
       var that = this;
       var cookie_id = wx.getStorageSync('zan') || []; //获取全部点赞的id
       var cai_id = wx.getStorageSync('cai') || [];
@@ -422,9 +423,10 @@ Page({
               cai_people: this.data.nList[i].cai_people,
             },
             success: res => {
-              console.log(res)
+              console.log("点赞数据后台已同步",res)
             }
           })
+          //更新点赞后的点赞数
           this.onLoad()
         }
       }
@@ -494,40 +496,9 @@ Page({
           // 获取 chart 实例的方式
           // console.log(chart)
         }, 2000);
-      },
+      },    
 
-      // onAdd: function () {
-      //   const db = wx.cloud.database()
-      //   db.collection('comments').doc('chickFillA').add({
-      //     data: {
-      //       commentList:{content:"32r13f2f4",userName:"hardhardsohard"},
-          
-      //     },
-      //     success: res => {
-      //       // 在返回结果中会包含新创建的记录的 _id
-      //       this.setData({
-      //         counterId: res._id,
-      //         count: 1
-      //       })
-      //       wx.showToast({
-      //         title: '新增记录成功',
-      //       })
-      //       console.log('[数据库] [新增记录] 成功，记录 _id: ', res._id)
-      //     },
-      //     fail: err => {
-      //       wx.showToast({
-      //         icon: 'none',
-      //         title: '新增记录失败'
-      //       })
-      //       console.error('[数据库] [新增记录] 失败：', err)
-      //     }
-      //   })
-      //   },        
-
-
-
-      //new comment method
-      
+      //New comment method
       getContent(e){
         content = e.detail.value
         //动态绑定数据，实现评论结束后清空content的内容
@@ -541,7 +512,7 @@ Page({
         //如果评论长度小于4给予提示
         if(content.length<4){
           wx.showToast({
-            title: 'your comment is too short',
+            title: 'Your comment is too short',
             icon:"none"
           })
           return
