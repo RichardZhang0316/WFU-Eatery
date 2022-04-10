@@ -4,14 +4,17 @@ const db = wx.cloud.database()
 const _ = db.command
 const CF = db.collection('ChickFilAUpDown')
 
-var util = require('../../utils/util.js');
-var that;
 let chart = null;  
 let content = '';
 let likeCollection = wx.getStorageSync('likeCollection');
     if(!likeCollection){
       wx.setStorageSync('likeCollection', {})
     }
+
+let caiCollection = wx.getStorageSync('caiCollection');
+  if(!caiCollection){
+    wx.setStorageSync('caiCollection', {})
+  }
 
 //Initial Chart的function
 function initChart(canvas, width, height, dpr) {  
@@ -48,8 +51,11 @@ var app = getApp();
 Page({
     data: {
       newList:[],
+      nList:[],
       isLike:[],
+      isCai:[],
       like_people:[],
+      cai_people:[],
       openid:'',
         RateChick:[],
         Name: ["Chick_Fila_A_Sauce", "Polynesian_Sauce"],
@@ -160,34 +166,54 @@ Page({
             _id: true,
             like: true,
             Up: true,
-            like_people: true
+            Down: true,
+            like_people: true,
+            cai_people:true
           }).get({
             success: res => {
               that.setData({
-                newList: res.data
+                newList: res.data,
+                nList: res.data
               })
               var iszan = that.data.isLike;
+              var iscai = that.data.isCai;
             for (var i = 0; i < res.data.length; i++) { //数据获取成功后，进行遍历，拿到所有已经点过赞的书籍id
               for (let j = 0; j < res.data[i].like_people.length; j++) {
                 if (res.data[i].like_people[j] == that.data.openid) { 
                   iszan.push(res.data[i]._id) //根据改用户的数据找到已经点赞的，把书籍id放入新建数组中
                 }
               }
+              for (let j = 0; j < res.data[i].cai_people.length; j++) {
+                if (res.data[i].cai_people[j] == that.data.openid) { 
+                  iscai.push(res.data[i]._id) //根据改用户的数据找到已经点赞的，把书籍id放入新建数组中
+                }
+              }
             }
+            
             for (let i = 0; i < res.data.length; i++) {
               res.data[i].like = false
+              res.data[i].cai = false
               for (let j = 0; j < iszan.length; j++) { //利用新建的iszan数组与list数组的id查找相同的书籍id
                 if (res.data[i]._id == iszan[j]) { //双重循环遍历，有相同的id则点亮红心
                   res.data[i].like = true
                 }
               }
+              for (let j = 0; j < iscai.length; j++) { //利用新建的iszan数组与list数组的id查找相同的书籍id
+                if (res.data[i]._id == iscai[j]) { //双重循环遍历，有相同的id则点亮红心
+                  res.data[i].cai = true
+                }
+              }
             }
+
             console.log('在这里',res.data)
             that.setData({
               isLike: this.data.iszan,
-              newList: res.data
+              newList: res.data,
+              isCai:this.data.iscai,
+              nList: res.data,
             })
             wx.setStorageSync('zan', iszan);
+            wx.setStorageSync('cai', iscai);
          }
        })
 
@@ -225,6 +251,96 @@ Page({
     }
     })},
 
+    downFunction(e){
+      var shareid = e.currentTarget.dataset.id
+      console.log("shareid: "+shareid)
+      this.cai(shareid);
+    },
+
+    cai: function (item_id) {
+      
+      var that = this;
+      var cookie_id = wx.getStorageSync('cai') || []; //获取全部点踩的id
+      var zan_id = wx.getStorageSync('zan') || [];
+      var openid = that.data.openid
+      console.log(openid)
+
+      for (var i = 0; i < that.data.nList.length; i++) {
+        if (that.data.nList[i]._id == item_id) { //数据列表中找到对应的id
+          var numD = that.data.nList[i].Down; //当前点赞数
+          var numU = that.data.newList[i].Up;
+          //console.log("here!")
+          if (cookie_id.includes(item_id) ) { //已经点过赞了，取消点赞
+            for (var j in cookie_id) {
+              if (cookie_id[j] == item_id) {
+                cookie_id.splice(j, 1); //删除取消点赞的id
+              }
+            }
+            --numD; //踩数减1
+            that.setData({
+              [`nList[${i}].Down`]: numD, //es6模板语法，常规写法报错
+              [`nList[${i}.].cai`]: false //我的数据中like为'false'是未点赞
+            })
+            wx.setStorageSync('cai', cookie_id);
+            wx.showToast({
+              title: "取消踩",
+              icon: 'none'
+            })
+            this.data.nList[i].cai_people.pop(openid)
+          } else { //踩操作
+            if(zan_id.includes(item_id)){
+              for (var j in zan_id) {
+                if (zan_id[j] == item_id) {
+                  zan_id.splice(j, 1); //删除取消点赞的id
+                }
+              }
+              --numU; //点赞数减1
+              that.setData({
+                [`newList[${i}].Up`]: numU, //es6模板语法，常规写法报错
+                [`newList[${i}.].zan`]: false //我的数据中like为'false'是未点赞
+              })
+              wx.setStorageSync('zan', cookie_id);
+              this.data.newList[i].like_people.pop(openid)
+            }
+            ++numD; //踩数加1
+            //console.log(num)
+            that.setData({
+              [`nList[${i}].Down`]: numD,
+              [`nList[${i}.].cai`]: true
+            })
+           
+            cookie_id.unshift(item_id); //新增赞的id
+            wx.setStorageSync('cai', cookie_id);
+            wx.showToast({
+              title: "踩一下",
+              icon: 'none'
+            })
+            if(this.data.nList[i].cai_people == undefined){
+              this.data.nList[i].cai_people = []
+            }
+            this.data.nList[i].cai_people.push(openid)
+          }
+          //和后台交互，后台数据要同步
+          CF.doc(item_id).update({
+            data: {
+              like: this.data.newList[i].like,
+              Up: numU,
+              Down:numD,
+              like_people: this.data.newList[i].like_people,
+              cai: this.data.nList[i].cai,
+              cai_people: this.data.nList[i].cai_people,
+            },
+            success: res => {
+              console.log(res)
+            }
+          })
+          this.onLoad()
+        }
+      }
+    },
+    
+
+
     upFunction(e){
       var shareid = e.currentTarget.dataset.id
       console.log("shareid: "+shareid)
@@ -235,12 +351,14 @@ Page({
       
       var that = this;
       var cookie_id = wx.getStorageSync('zan') || []; //获取全部点赞的id
+      var cai_id = wx.getStorageSync('cai') || [];
       var openid = that.data.openid
       console.log(openid)
 
       for (var i = 0; i < that.data.newList.length; i++) {
         if (that.data.newList[i]._id == item_id) { //数据列表中找到对应的id
-          var num = that.data.newList[i].Up; //当前点赞数
+          var numU = that.data.newList[i].Up; //当前点赞数
+          var numD = that.data.nList[i].Down;
           //console.log("here!")
           if (cookie_id.includes(item_id) ) { //已经点过赞了，取消点赞
             for (var j in cookie_id) {
@@ -248,9 +366,9 @@ Page({
                 cookie_id.splice(j, 1); //删除取消点赞的id
               }
             }
-            --num; //点赞数减1
+            --numU; //点赞数减1
             that.setData({
-              [`newList[${i}].Up`]: num, //es6模板语法，常规写法报错
+              [`newList[${i}].Up`]: numU, //es6模板语法，常规写法报错
               [`newList[${i}.].like`]: false //我的数据中like为'false'是未点赞
             })
             wx.setStorageSync('zan', cookie_id);
@@ -259,11 +377,26 @@ Page({
               icon: 'none'
             })
             this.data.newList[i].like_people.pop(openid)
-          } else { //点赞操作
-            ++num; //点赞数加1
+          } else{
+            if(cai_id.includes(item_id)){
+              for (var j in cai_id) {
+                if (cai_id[j] == item_id) {
+                  cai_id.splice(j, 1); //删除取消点赞的id
+                }
+              }
+              --numD; //点赞数减1
+              that.setData({
+                [`nList[${i}].Down`]: numD, //es6模板语法，常规写法报错
+                [`nList[${i}.].cai`]: false //我的数据中like为'false'是未点赞
+              })
+              wx.setStorageSync('cai', cookie_id);
+              this.data.nList[i].cai_people.pop(openid)
+            }
+             //点赞操作
+            ++numU; //点赞数加1
             //console.log(num)
             that.setData({
-              [`newList[${i}].Up`]: num,
+              [`newList[${i}].Up`]: numU,
               [`newList[${i}.].like`]: true
             })
            
@@ -277,13 +410,16 @@ Page({
               this.data.newList[i].like_people = []
             }
             this.data.newList[i].like_people.push(openid)
-          }
+          } 
           //和后台交互，后台数据要同步
           CF.doc(item_id).update({
             data: {
               like: this.data.newList[i].like,
-              Up: num,
-              like_people: this.data.newList[i].like_people
+              Up: numU,
+              Down:numD,
+              like_people: this.data.newList[i].like_people,
+              cai: this.data.nList[i].cai,
+              cai_people: this.data.nList[i].cai_people,
             },
             success: res => {
               console.log(res)
@@ -294,232 +430,6 @@ Page({
       }
     },
     
-
-    updateUP1() {
-      const _ = wx.cloud.database().command
-      wx.cloud.database().collection('ChickFilAUpDown').doc('Chick_Fila_A_Sauce')
-      .update({
-        data: {
-          Up:_.inc(1)
-        }
-      }) .then(res=>{
-        console.log('success',res)
-        //let index = e.currentTarget.dataset.index;
-        this.setData({ 
-           RateChick: res.data
-         })
-        this.onLoad()
-      })
-    },
-    updateDOWN1() {
-      const _ = wx.cloud.database().command
-      wx.cloud.database().collection('ChickFilAUpDown').doc('Chick_Fila_A_Sauce')
-      .update({
-        data: {
-          Down:_.inc(1)
-        }
-      }) .then(res=>{
-        console.log('success',res)
-        //let index = e.currentTarget.dataset.index;
-        this.setData({ 
-           RateChick: res.data
-         })
-        this.onLoad()
-      })
-    },
-    updateUP2() {
-      const _ = wx.cloud.database().command
-      wx.cloud.database().collection('ChickFilAUpDown').doc('Polynesian_Sauce')
-      .update({
-        data: {
-          Up:_.inc(1)
-        }
-      }) .then(res=>{
-        console.log('success',res)
-        //let index = e.currentTarget.dataset.index;
-        this.setData({ 
-           RateChick: res.data
-         })
-        this.onLoad()
-      })
-    },
-    updateDOWN2() {
-      const _ = wx.cloud.database().command
-      wx.cloud.database().collection('ChickFilAUpDown').doc('Polynesian_Sauce')
-      .update({
-        data: {
-          Down:_.inc(1)
-        }
-      }) .then(res=>{
-        console.log('success',res)
-        //let index = e.currentTarget.dataset.index;
-        this.setData({ 
-           RateChick: res.data
-         })
-        this.onLoad()
-      })
-    },
-    updateUP3() {
-      const _ = wx.cloud.database().command
-      wx.cloud.database().collection('ChickFilAUpDown').doc('Barbeque_Sauce')
-      .update({
-        data: {
-          Up:_.inc(1)
-        }
-      }) .then(res=>{
-        console.log('success',res)
-        //let index = e.currentTarget.dataset.index;
-        this.setData({ 
-           RateChick: res.data
-         })
-        this.onLoad()
-      })
-    },
-    updateDOWN3() {
-      const _ = wx.cloud.database().command
-      wx.cloud.database().collection('ChickFilAUpDown').doc('Barbeque_Sauce')
-      .update({
-        data: {
-          Down:_.inc(1)
-        }
-      }) .then(res=>{
-        console.log('success',res)
-        //let index = e.currentTarget.dataset.index;
-        this.setData({ 
-           RateChick: res.data
-         })
-        this.onLoad()
-      })
-    },
-    updateUP4() {
-      const _ = wx.cloud.database().command
-      wx.cloud.database().collection('ChickFilAUpDown').doc('Honey_Mustard')
-      .update({
-        data: {
-          Up:_.inc(1)
-        }
-      }) .then(res=>{
-        console.log('success',res)
-        //let index = e.currentTarget.dataset.index;
-        this.setData({ 
-           RateChick: res.data
-         })
-        this.onLoad()
-      })
-    },
-    updateDOWN4() {
-      const _ = wx.cloud.database().command
-      wx.cloud.database().collection('ChickFilAUpDown').doc('Honey_Mustard')
-      .update({
-        data: {
-          Down:_.inc(1)
-        }
-      }) .then(res=>{
-        console.log('success',res)
-        //let index = e.currentTarget.dataset.index;
-        this.setData({ 
-           RateChick: res.data
-         })
-        this.onLoad()
-      })
-    },
-    updateUP5() {
-      const _ = wx.cloud.database().command
-      wx.cloud.database().collection('ChickFilAUpDown').doc('Garden_Herb_Ranch')
-      .update({
-        data: {
-          Up:_.inc(1)
-        }
-      }) .then(res=>{
-        console.log('success',res)
-        //let index = e.currentTarget.dataset.index;
-        this.setData({ 
-           RateChick: res.data
-         })
-        this.onLoad()
-      })
-    },
-    updateDOWN5() {
-      const _ = wx.cloud.database().command
-      wx.cloud.database().collection('ChickFilAUpDown').doc('Garden_Herb_Ranch')
-      .update({
-        data: {
-          Down:_.inc(1)
-        }
-      }) .then(res=>{
-        console.log('success',res)
-        //let index = e.currentTarget.dataset.index;
-        this.setData({ 
-           RateChick: res.data
-         })
-        this.onLoad()
-      })
-    },
-    updateUP6() {
-      const _ = wx.cloud.database().command
-      wx.cloud.database().collection('ChickFilAUpDown').doc('Zesty Buffalo Sauce')
-      .update({
-        data: {
-          Up:_.inc(1)
-        }
-      }) .then(res=>{
-        console.log('success',res)
-        //let index = e.currentTarget.dataset.index;
-        this.setData({ 
-           RateChick: res.data
-         })
-        this.onLoad()
-      })
-    },
-    updateDOWN6() {
-      const _ = wx.cloud.database().command
-      wx.cloud.database().collection('ChickFilAUpDown').doc('Zesty Buffalo Sauce')
-      .update({
-        data: {
-          Down:_.inc(1)
-        }
-      }) .then(res=>{
-        console.log('success',res)
-        //let index = e.currentTarget.dataset.index;
-        this.setData({ 
-           RateChick: res.data
-         })
-        this.onLoad()
-      })
-    },
-    updateUP7() {
-      const _ = wx.cloud.database().command
-      wx.cloud.database().collection('ChickFilAUpDown').doc('SweetSpicy')
-      .update({
-        data: {
-          Up:_.inc(1)
-        }
-      }) .then(res=>{
-        console.log('success',res)
-        //let index = e.currentTarget.dataset.index;
-        this.setData({ 
-           RateChick: res.data
-         })
-        this.onLoad()
-      })
-    },
-    updateDOWN7() {
-      const _ = wx.cloud.database().command
-      wx.cloud.database().collection('ChickFilAUpDown').doc('SweetSpicy')
-      .update({
-        data: {
-          Down:_.inc(1)
-        }
-      }) .then(res=>{
-        console.log('success',res)
-        //let index = e.currentTarget.dataset.index;
-        this.setData({ 
-           RateChick: res.data
-         })
-        this.onLoad()
-      })
-    
-    },
     /**
      * 生命周期函数--监听页面初次渲染完成*/
      
