@@ -57,9 +57,9 @@ Page({
       like_people:[],
       cai_people:[],
       openid:'',
-        RateChick:[],
-        Name: ["Chick_Fila_A_Sauce", "Polynesian_Sauce"],
-        comments:[],
+      RateChick:[],
+      comments:[],
+      
 
         //前端滑动切换bar_Data input
         active:0,
@@ -186,7 +186,7 @@ Page({
               }
               for (let j = 0; j < res.data[i].cai_people.length; j++) {
                 if (res.data[i].cai_people[j] == that.data.openid) { 
-                  iscai.push(res.data[i]._id) //根据改用户的数据找到已经点赞的，把书籍id放入新建数组中
+                  iscai.push(res.data[i]._id) //根据改用户的数据找到已经踩过的，把商品id放入新建数组中
                 }
               }
             }
@@ -205,8 +205,6 @@ Page({
                 }
               }
             }
-
-            console.log('在这里',res.data)
             that.setData({
               isLike: this.data.iszan,
               newList: res.data,
@@ -259,7 +257,6 @@ Page({
     },
 
     cai: function (item_id) {
-      
       var that = this;
       var cookie_id = wx.getStorageSync('cai') || []; //获取全部点踩的id
       var zan_id = wx.getStorageSync('zan') || [];
@@ -268,10 +265,9 @@ Page({
 
       for (var i = 0; i < that.data.nList.length; i++) {
         if (that.data.nList[i]._id == item_id) { //数据列表中找到对应的id
-          var numD = that.data.nList[i].Down; //当前点赞数
+          var numD = that.data.nList[i].Down; //当前踩数量
           var numU = that.data.newList[i].Up;
-          //console.log("here!")
-          if (cookie_id.includes(item_id) ) { //已经点过赞了，取消点赞
+          if (cookie_id.includes(item_id) ) { //已经踩过了，取消踩
             for (var j in cookie_id) {
               if (cookie_id[j] == item_id) {
                 cookie_id.splice(j, 1); //删除取消点赞的id
@@ -280,7 +276,7 @@ Page({
             --numD; //踩数减1
             that.setData({
               [`nList[${i}].Down`]: numD, //es6模板语法，常规写法报错
-              [`nList[${i}.].cai`]: false //我的数据中like为'false'是未点赞
+              [`nList[${i}.].cai`]: false //我的数据中cai为'false'是未踩
             })
             wx.setStorageSync('cai', cookie_id);
             wx.showToast({
@@ -304,7 +300,6 @@ Page({
               this.data.newList[i].like_people.pop(openid)
             }
             ++numD; //踩数加1
-            //console.log(num)
             that.setData({
               [`nList[${i}].Down`]: numD,
               [`nList[${i}.].cai`]: true
@@ -332,12 +327,20 @@ Page({
               cai_people: this.data.nList[i].cai_people,
             },
             success: res => {
-              console.log(res)
+              console.log("踩数据后台已同步",res)
             }
           })
-          this.onLoad()
+          that.setData({
+            [`RateChick[${i}].Up`]: numU,
+            [`RateChick[${i}].Down`]: numD,
+          })
         }
+        
       }
+      this.onLoad()
+      console.log("cai2: "+ this.data.nList[0].cai)
+      
+     
     },
     
 
@@ -400,7 +403,6 @@ Page({
               [`newList[${i}].Up`]: numU,
               [`newList[${i}.].like`]: true
             })
-           
             cookie_id.unshift(item_id); //新增赞的id
             wx.setStorageSync('zan', cookie_id);
             wx.showToast({
@@ -427,9 +429,14 @@ Page({
             }
           })
           //更新点赞后的点赞数
-          this.onLoad()
+          that.setData({
+            [`RateChick[${i}].Up`]: numU,
+            [`RateChick[${i}].Down`]: numD,
+          })
         }
+        console.log("zan2: "+ this.data.newList[i].zan)
       }
+      
     },
     
     /**
@@ -559,38 +566,6 @@ Page({
         wx.hideLoading()
       })
 
-        //调用云函数来更新评论数据到数据库
-        /*
-        wx.cloud.callFunction({
-          name:"updateState",
-          data:{
-            id:"chickFillA",
-            commentList:commentList,
-          }
-        })
-        .then(res=>{
-          console.log("your comment is successfully published",res);
-          //提示成功
-          wx.showToast({
-            title: 'your comment is successfully published',
-            icon:"success",
-            duration:2000
-          }),
-          //实现动态刷新页面
-          this.setData({
-            comments:commentList,  //发表成功后，动态刷新评论列表
-            content:""        //发表成功后，清空input内容
-          })
-          //隐藏加载提示
-          wx.hideLoading()
-        })
-        .catch(err=>{
-          console.log("Fail to publish your comment",err);
-          //隐藏加载提示
-          wx.hideLoading()
-        })
-        */
-      
       }
     }
   )
