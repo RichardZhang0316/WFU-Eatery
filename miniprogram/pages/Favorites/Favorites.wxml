@@ -1,6 +1,11 @@
 
 <view class="root" style="margin-bottom: 40px;">
-<view class="maxTitle">Deacon Dining Help</view> 
+<view class="maxTitle">你好呀👋, {{name}}</view> 
+</view>
+
+<!-- 请求用户授权页面 -->
+<view class="card">
+  <button open-type="getUserProfile" bindtap="getUserProfile">用户授权</button>
 </view>
 
 <view class="card">
@@ -19,4 +24,4 @@
 
 <image class="image" src="/images/Deaco.png" style = "width:100px" mode = "widthFix"></image>
 
-<view class = "end">━━━━━━━ Eat Wisely! ━━━━━━━</view>
+<view class = "end">━━━━━━━ Eat Wisely！━━━━━━━</view>

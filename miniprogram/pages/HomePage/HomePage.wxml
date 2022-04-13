@@ -1,3 +1,5 @@
+
+<!-- 主页主体部分 -->
 <view class="custom-bar" style="height:{{navHeight}}px;z-index: 2;">
   <view class="custom-bar__wrapper" style="margin-top:{{searchMarginTop}}px; height: {{searchHeight}}px;width: {{searchWidth}}px" >
     <navigator url="/pages/Search/Search" class="search-group">

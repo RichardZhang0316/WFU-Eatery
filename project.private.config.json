@@ -29,6 +29,20 @@
           "name": "",
           "pathName": "pages/Subway/Subway",
           "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/UserLogin/UserLogin",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/Favorites/Favorites",
+          "query": "",
           "scene": null,
           "launchMode": "default"
         }

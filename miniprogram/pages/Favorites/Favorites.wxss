@@ -1,6 +1,13 @@
 page{
   background-color:  rgb(237, 237, 237) ;
 }
+
+.intro {
+  margin: 30px;
+  margin-top: 7px; height: 20%; width:8%;
+  text-align: center;
+}
+
 .root {
   height: 50%;
   background: rgb(214, 177, 96);
