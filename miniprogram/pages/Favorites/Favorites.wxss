@@ -14,11 +14,17 @@ page{
   padding-bottom: 20rpx;
 }
 
+.userProfile {
+  padding-inline-start: 19px;
+  display: flex;
+  align-items:center;
+}
+
 .maxTitle{
   color:white;
   font-weight: bold;
-  padding: 15px;
-  font-size: 25px;
+  padding-inline-start: 15px;
+  font-size: 23px;
 }
 
 .FoodDollar {
@@ -116,4 +122,15 @@ margin-top:20%;
   color:rgb(196, 196, 196);
   text-align: center;
   margin-top: 30px;
+}
+
+.user {
+  display: inline-block;
+  width: 73px;
+  height: 73px;
+  border-radius: 50%;
+
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
 }

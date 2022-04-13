@@ -51,9 +51,7 @@ Page({
         comments:[],
 
         //Popular Time_图表Data
-        ec: {
-            onInit: initChart
-          },
+        ec: { onInit: initChart },
 
         //前端滑动切换bar_Data input
         active: 0,
@@ -138,20 +136,23 @@ Page({
         .then(res=>{
         console.log("CommentList查询成功",res);
         this.setData({
-          comments:res.data.commentList
+          // Initialize本页已存在的data
+          comments:res.data.commentList 
         })
       }).catch(err=>{
         console.log("CommentList查询失败",err);
       })
     },
 
-    //清空评论框
+    // 评论框中展示已输入内容
     getContent(e){
       content = e.detail.value
       //动态绑定数据，实现评论结束后清空content的内容
       this.setData({
-        content :e.detail.value
+        content :e.detail.value,
       })
+      // 内容框里的输入字符：content
+      // console.log(content)
     },
 
     //发表评论

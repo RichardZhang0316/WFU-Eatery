@@ -39,7 +39,8 @@
     <foodCard desc="140卡路里 经典蘸酱，有芥末和烟熏的味道" title="Chick-fil-A Sauce" thumb="https://d1fd34dzzl09j.cloudfront.net/Images/CFACOM/Sauces/SauceV4/Sauce_CFA-Sauce_Desk.png?h=800&w=800&la=en">
     
     <view slot="footer">
-      <van-button size="large"><van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='Chick_Fila_A_Sauce'wx:if="{{!newList[0].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='Chick_Fila_A_Sauce'wx:else />{{RateChick[0].Up}}</van-button> 
+      <van-button size="large">
+      <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='Chick_Fila_A_Sauce'wx:if="{{!newList[0].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='Chick_Fila_A_Sauce'wx:else />{{RateChick[0].Up}}</van-button> 
       <van-button size="large"> <view wx:if="{{!nList[0].cai}}" class="iconfont icon-cai"  bindtap="downFunction" data-id='Chick_Fila_A_Sauce' ></view> <view wx:else class="iconfont icon-caishixin"  bindtap="downFunction" data-id='Chick_Fila_A_Sauce' ></view> {{RateChick[0].Down}} </van-button> 
     </view>
     

@@ -80,7 +80,7 @@ page{
 }
 .greyPart{
   background-color: #ececec;
-  height: 13px;
+  height: 6px;
   width: 100%;
 }
 .menuTitle{
