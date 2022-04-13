@@ -1,5 +1,41 @@
 @import "../Subway/Subway.wxss";
 
+@font-face {
+  font-family: 'iconfont';  /* Project id 3317566 */
+  src: url('//at.alicdn.com/t/font_3317566_4lqhh2l8nae.woff2?t=1649651234563') format('woff2'),
+       url('//at.alicdn.com/t/font_3317566_4lqhh2l8nae.woff?t=1649651234563') format('woff'),
+       url('//at.alicdn.com/t/font_3317566_4lqhh2l8nae.ttf?t=1649651234563') format('truetype');
+}
+
+@font-face {
+  font-family: 'iconfont';  /* Project id 3317566 */
+  src: url('//at.alicdn.com/t/font_3317566_umomlm7w5se.woff2?t=1649744248756') format('woff2'),
+       url('//at.alicdn.com/t/font_3317566_umomlm7w5se.woff?t=1649744248756') format('woff'),
+       url('//at.alicdn.com/t/font_3317566_umomlm7w5se.ttf?t=1649744248756') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 20px;
+  font-style: normal;
+  margin-inline-start: 2px;
+  display:inline-flex;
+  text-rendering:auto;
+  font-display:auto;
+  padding-left: 4px;
+  padding-right:2px;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+.icon-caishixin:before {content: "\e68f";}
+
+.icon-cai:before{content: "\e701";}
+
+
+
 .likeandcollect{
     margin: 20rpx;
   }

@@ -39,8 +39,8 @@
     <foodCard desc="140卡路里 经典蘸酱，有芥末和烟熏的味道" title="Chick-fil-A Sauce" thumb="https://d1fd34dzzl09j.cloudfront.net/Images/CFACOM/Sauces/SauceV4/Sauce_CFA-Sauce_Desk.png?h=800&w=800&la=en">
     
     <view slot="footer">
-      <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='Chick_Fila_A_Sauce'/>{{RateChick[0].Up}}</van-button> 
-      <van-button size="large"> <van-icon name="close" size="25px" bindtap="upFunction" data-id='Chick_Fila_A_Sauce'/> {{RateChick[0].Down}} </van-button> 
+      <van-button size="large"><van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='Chick_Fila_A_Sauce'wx:if="{{!newList[0].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='Chick_Fila_A_Sauce'wx:else />{{RateChick[0].Up}}</van-button> 
+      <van-button size="large"> <view wx:if="{{!nList[0].cai}}" class="iconfont icon-cai"  bindtap="downFunction" data-id='Chick_Fila_A_Sauce' ></view> <view wx:else class="iconfont icon-caishixin"  bindtap="downFunction" data-id='Chick_Fila_A_Sauce' ></view> {{RateChick[0].Down}} </van-button> 
     </view>
     
     </foodCard>
@@ -48,8 +48,8 @@
     <foodCard desc="110卡路里 由玉米苹果醋、蒸馏醋、番茄酱、盐、红辣椒和芥菜籽制成（酸甜酱）" title="Polynesian Sauce 波利尼西亚酱" thumb="https://d1fd34dzzl09j.cloudfront.net/Images/CFACOM/Sauces/SauceV4/Sauce_Polynesian_Desk.png?h=800&w=800&la=en" >
 
     <view slot="footer">
-    <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='Polynesian_Sauce'/> {{RateChick[1].Up}} </van-button> 
-    <van-button size="large"> <van-icon name="close" size="25px" bindtap="updateDOWN2"/> {{RateChick[1].Down}} </van-button> 
+    <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='Polynesian_Sauce'wx:if="{{!newList[1].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='Polynesian_Sauce'wx:else/> {{RateChick[1].Up}} </van-button> 
+    <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='Polynesian_Sauce' wx:if="{{!nList[1].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='Polynesian_Sauce' wx:else></view>{{RateChick[1].Down}} </van-button> 
     </view>
 
     </foodCard>
@@ -57,8 +57,8 @@
     <foodCard desc="45卡路里 经典烧烤酱，用香料，洋葱和大蒜调味，口感丰富" title="Barbeque Sauce 烧烤酱" thumb="https://d1fd34dzzl09j.cloudfront.net/Images/CFACOM/Sauces/SauceV4/Sauce_Barbeque_Desk.png?h=800&w=800&la=en">
 
     <view slot="footer">
-    <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="updateUP3" /> {{RateChick[2].Up}} </van-button> 
-    <van-button size="large"> <van-icon name="close" size="25px" bindtap="updateDOWN3"/> {{RateChick[2].Down}} </van-button> 
+    <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='Barbeque_Sauce'/> {{RateChick[2].Up}} </van-button> 
+    <van-button size="large"> <van-icon name="close" size="25px" bindtap="downFunction" data-id='Barbeque_Sauce'/> {{RateChick[2].Down}} </van-button> 
     </view>
 
     </foodCard>
@@ -66,8 +66,8 @@
     <foodCard desc="50卡路里 一种带有芥末、香料和蜂蜜甜味的美味酱汁" title="Honey Mustard 蜂蜜芥末酱" thumb="http://images.squarespace-cdn.com/content/v1/5d4c6358a7991a0001838ee2/1573244149845-O11HYKRW5XR8FGKM88PK/Sauce_Honey-Mustard_Desk.png">
 
     <view slot="footer">
-    <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="updateUP4" /> {{RateChick[3].Up}} </van-button> 
-    <van-button size="large"> <van-icon name="close" size="25px" bindtap="updateDOWN4"/> {{RateChick[3].Down}} </van-button> 
+    <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='Honey_Mustard' /> {{RateChick[3].Up}} </van-button> 
+    <van-button size="large"> <van-icon name="close" size="25px" bindtap="downFunction" data-id='Honey_Mustard'/> {{RateChick[3].Down}} </van-button> 
     </view>
 
     </foodCard>
@@ -75,8 +75,8 @@
     <foodCard desc="140卡路里 奶油酪乳牧场沙司，带有美味的大蒜、洋葱和香草口味" title="Garden Herb Ranch 酸奶油 " thumb="https://www.cfacdn.com/img/order/menu/Online/Modifiers/Sauces/sauces_1ozPDP/Sauce_Garden-Herb-Ranch_PDP.png">
 
     <view slot="footer">
-    <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="updateUP5" /> {{RateChick[4].Up}} </van-button> 
-    <van-button size="large"> <van-icon name="close" size="25px" bindtap="updateDOWN5"/> {{RateChick[4].Down}} </van-button> 
+    <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='Garden_Herb_Ranch' /> {{RateChick[4].Up}} </van-button> 
+    <van-button size="large"> <van-icon name="close" size="25px" bindtap="downFunction" data-id='Garden_Herb_Ranch'/> {{RateChick[4].Down}} </van-button> 
     </view>
 
     </foodCard>
@@ -85,8 +85,8 @@
     <foodCard desc="25卡路里 混合醋和黄油的辣椒沙司" title="Zesty Buffalo Sauce 水牛城特制鸡翅酱" thumb="https://d1fd34dzzl09j.cloudfront.net/Images/CFACOM/Sauces/SauceV4/Sauce_Honey-Mustard_Desk.png?h=800&w=800&la=en">
 
     <view slot="footer">
-    <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="updateUP6" /> {{RateChick[5].Up}} </van-button> 
-    <van-button size="large"> <van-icon name="close" size="25px" bindtap="updateDOWN6"/> {{RateChick[5].Down}} </van-button> 
+    <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='Zesty Buffalo Sauce' /> {{RateChick[5].Up}} </van-button> 
+    <van-button size="large"> <van-icon name="close" size="25px" bindtap="downFunction" data-id='Zesty Buffalo Sauce'/> {{RateChick[5].Down}} </van-button> 
     </view>
 
     </foodCard>
@@ -95,8 +95,8 @@
     <foodCard desc="45卡路里 一种用红辣椒制成的甜而辣的酱汁" title="Sweet and Spicy Sriracha Sauce 甜辣酱" thumb="https://www.cfacdn.com/img/order/menu/Online/Modifiers/Sauces/sauces_1ozPDP/Sauce_Sweet-and-Spicy-Sriracha_PDP.png">
 
     <view slot="footer">
-    <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="updateUP7" /> {{RateChick[6].Up}} </van-button> 
-    <van-button size="large"> <van-icon name="close" size="25px" bindtap="updateDOWN7"/> {{RateChick[6].Down}} </van-button> 
+    <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='SweetSpicy' /> {{RateChick[6].Up}} </van-button> 
+    <van-button size="large"> <van-icon name="close" size="25px" bindtap="downFunction" data-id='SweetSpicy'/> {{RateChick[6].Down}} </van-button> 
     </view>
 
     </foodCard>
@@ -104,8 +104,20 @@
   </van-tab>
 
   <van-tab title="Entrees">
-    <foodCard desc="440卡路里 " title="Chicken Sandwich 鸡肉三明治" thumb="https://www.cfacdn.com/img/order/menu/Online/Entrees/Jul19_CFASandwich_pdp.png" price="4.15" currency="$"/>
-    <foodCard desc="460卡路里" title="Spicy Chicken Sandwich 辣鸡三明治" thumb="https://www.cfacdn.com/img/order/menu/Online/Entrees/CFASpicySandwich_1080.png" price="4.45" currency="$"/>
+    <foodCard desc="440卡路里 " title="Chicken Sandwich 鸡肉三明治" thumb="https://www.cfacdn.com/img/order/menu/Online/Entrees/Jul19_CFASandwich_pdp.png" price="4.15" currency="$">
+    <view slot="footer">
+      <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='ChickenSandwich'/>{{RateChick[7].Up}}</van-button> 
+      <van-button size="large"> <van-icon name="close" size="25px" bindtap="downFunction" data-id='ChickenSandwich'/> {{RateChick[7].Down}} </van-button> 
+    </view>
+  </foodCard>
+
+    <foodCard desc="460卡路里" title="Spicy Chicken Sandwich 辣鸡三明治" thumb="https://www.cfacdn.com/img/order/menu/Online/Entrees/CFASpicySandwich_1080.png" price="4.45" currency="$">
+    <view slot="footer">
+      <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='SpicyChickenSandwich'/>{{RateChick[8].Up}}</van-button> 
+      <van-button size="large"> <van-icon name="close" size="25px" bindtap="downFunction" data-id='SpicyChickenSandwich'/> {{RateChick[8].Down}} </van-button> 
+    </view>
+  </foodCard>
+
     <foodCard desc="500卡路里" title="Deluxe Sandwich 豪华鸡肉三明治" thumb="https://www.cfacdn.com/img/order/COM/Menu_Refresh/Entree/Entree%20PDP/_0000s_0004_NEWStack6200001CFAPDPDeluxeSandwich1085png.png" price="4.85" currency="$"/>
     <foodCard desc="550卡路里" title="Spicy Deluxe Sandwich 豪华辣鸡三明治" thumb="https://www.cfacdn.com/img/order/COM/Menu_Refresh/Entree/Entree%20Desktop/_0003s_0012_%5BFeed%5D_0001s_0023_Entrees_Spicy-Deluxe-Sandwich.png" price="5.15" currency="$"/>
     <foodCard desc="380卡路里" title="Grilled Chicken Sandwich 烤鸡三明治" thumb="https://www.cfacdn.com/img/order/COM/Menu_Refresh/Entree/Entree%20PDP/_0000s_0009_Final__0026_CFA_PDP_Grilled-Deluxe-Sandwich_1085.png" price="5.55" currency="$"/>
