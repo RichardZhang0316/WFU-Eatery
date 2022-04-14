@@ -102,9 +102,9 @@
 <!-- Comment List -->
 <block class="remarksList">
   <view wx:for="{{comments}}" wx:key="index" class="remarks">
-    <!-- 若不是该用户所发的评论，则不能删除，需要wxif-else-->
-    <view class="name" bindtap="getNotice" >{{item.userName}}</view>
-    <view class="content" bindtap="getNotice" >{{item.content}}</view>
+    <!-- 若不是该用户所发的评论，则不能删除 -->
+    <view class="name" data-index-of-item="{{index}}" bindtap="getNotice" >{{item.userName}}</view>
+    <view class="content" data-index-of-item="{{index}}" bindtap="getNotice" >{{item.content}}</view>
   </view> 
 </block>
 

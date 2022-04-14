@@ -52,6 +52,8 @@ Page({
         userName: "Anonymous user",
         isAuth: false,
         openid: "",
+        thiscommentAuthorid: "",
+        isYourComment: false,
 
         //Popular Time_图表Data
         ec: { onInit: initChart },
@@ -214,7 +216,7 @@ Page({
         title: '发表中',
       })
       wx.cloud.database().collection('comments').doc('subway')
-    .update({
+      .update({
       data:{
         commentList:localCommentList
       }
@@ -244,27 +246,49 @@ Page({
       
     },
 
-    // Todo: 判断是否为该用户所发表的评论
+    // 判断是否为该用户所发表的评论
     isYourComments: function (e) {
-    var isYourComment = false
-    let thiscommentID = ""
-
-    
+      let thiscommentID = e
+      console.log("该条评论为第 " + thiscommentID + " 条评论")
+      let userOpenid = this.data.openid
+      // 调取点击评论的作者的openid，并与此用户openid比对
+      wx.cloud.database().collection('comments').doc('subway').get().then(res=>{
+        this.setData({
+          thiscommentAuthorid: res.data.commentList[thiscommentID].openid
+        })
+        if (this.data.thiscommentAuthorid === userOpenid) {
+          console.log(this.data.thiscommentAuthorid + " <-> " + userOpenid)
+          this.setData({ isYourComment: true })
+        } else {
+          console.log(this.data.thiscommentAuthorid + " <-> " + userOpenid)
+          this.setData({ isYourComment: false })
+        }
+        // 如果是同一个人，则给予删除权限
+        if (this.data.isYourComment) {
+          wx.showModal({
+            title: '删除评论',
+            content: "",
+            success (res) {
+              if (res.confirm) {
+                console.log('用户点击确定')
+              } else if (res.cancel) {
+                console.log('用户点击取消')
+              }
+            }
+          })
+        }
+      })
+      //console.log("该条评论的作者是: " + this.data.thiscommentAuthorid)
     },
 
     // Todo: 删除评论问讯提示框
     getNotice: function (e) {
-      wx.showModal({
-        title: '删除评论',
-        content: '',
-        success (res) {
-          if (res.confirm) {
-            console.log('用户点击确定')
-          } else if (res.cancel) {
-            console.log('用户点击取消')
-          }
-        }
-      })},
+      // 重要: 获取对应点击评论的index
+      let thisCommentIndex = e.currentTarget.dataset.indexOfItem
+      console.log(e.currentTarget.dataset.indexOfItem)
+      // 如果是该用户发表的评论，则弹出删除提示框
+      this.isYourComments(thisCommentIndex) 
+    },
 
 
     // 获取用户Profile授权函数
