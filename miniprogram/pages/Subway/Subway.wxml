@@ -93,23 +93,32 @@
 <view style="height: 60px; width: 100%; background-color:#ececec;"></view>
 
 
-<!-- <view style="height: 60px; width: 100%; background-color:#ececec;"></view> -->
+<!-- 评论功能 -->
 <view class="greyPart"></view>
-<view class="realPart"><view class="menuTitle">Comments</view></view>
+<view class="realPart">
+  <view class="menuTitle">Comments</view>
+</view>
 
 <!-- Comment List -->
 <block class="remarksList">
   <view wx:for="{{comments}}" wx:key="index" class="remarks">
-    <view class="name">{{item.userName}}</view>
-    <!-- <view class="name">{{item.time}}</view> -->
-    <view class="content">{{item.content}}</view>
+    <!-- 若不是该用户所发的评论，则不能删除，需要wxif-else-->
+    <view class="name" bindtap="getNotice" >{{item.userName}}</view>
+    <view class="content" bindtap="getNotice" >{{item.content}}</view>
   </view> 
 </block>
 
 <!-- Publish Comment -->
 <view class="last">
 <textarea bindinput="getContent" placeholder="Leave your comment about this resturant here" value="{{content}}"></textarea>
-<button bindtap="remark" type="primary" class="buttttton">publish comment</button>
+
+<view wx:if="{{isAuth==true}}"> 
+  <button bindtap="remark" type="primary" class="buttttton">publish comment</button>
+</view>
+<view wx:else>
+  <button bindtap="getUserProfile" open-type="getUserProfile" type="primary" class="buttttton">请先用户授权</button>
+</view>
+
 </view>
 
 

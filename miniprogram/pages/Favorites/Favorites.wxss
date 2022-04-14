@@ -12,10 +12,18 @@ page{
   height: 50%;
   background: rgb(214, 177, 96);
   padding-bottom: 20rpx;
+  padding-top: 10rpx;
+  margin-top: 12px;
+  margin-bottom: 11px;
+}
+
+.subBackground {
+  background: rgb(214, 177, 96);
+  margin-bottom: 12px;
 }
 
 .userProfile {
-  padding-inline-start: 19px;
+  padding-inline-start: 21px;
   display: flex;
   align-items:center;
 }
@@ -24,7 +32,7 @@ page{
   color:white;
   font-weight: bold;
   padding-inline-start: 15px;
-  font-size: 23px;
+  font-size: 24px;
 }
 
 .FoodDollar {

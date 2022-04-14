@@ -225,7 +225,7 @@ Page({
                     ["12:00", "17:00"],
                 ],
                 status: false,
-                showStatus:true,
+                showStatus: true,
             },
             {
                 name: "Legal Grounds Café",

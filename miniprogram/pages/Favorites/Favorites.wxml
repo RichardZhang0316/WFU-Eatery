@@ -1,17 +1,13 @@
-
-<view class="root" style="margin-bottom: 40px;">
+<view class="subBackground">
+<view class="root">
   <view class="userProfile">
     <view style="display:inline;">
       <image class="user" src="{{userPic}}"></image>
     </view>
-    <view class="maxTitle" style="display:inline; white-space:nowrap;" open-type="getUserProfile" bindtap="getUserProfile">你好呀👋, {{name}}</view> 
+    <view class="maxTitle" style="display:inline; white-space:nowrap;" open-type="getUserProfile" bindtap="getUserProfile">{{welcome}}, {{name}}</view> 
   </view>
 </view>
-
-<!-- 请求用户授权页面 
-<view class="card">
-  <button open-type="getUserProfile" bindtap="getUserProfile">用户授权</button>
-</view> -->
+</view>
 
 <view class="card">
 <navigator class="topTitle" url="/pages/FoodDollar/FoodDollar">Inquire Food Dollar</navigator>
