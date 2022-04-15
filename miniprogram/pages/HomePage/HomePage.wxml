@@ -18,7 +18,7 @@
 </view>
 
 <!-- filters -->
-<scroll-view scroll-x="true" style="white-space: nowrap; margin-top:3px ;">
+<scroll-view scroll-x="true" style="white-space: nowrap; margin-top:3px">
   <view  class="filterCard {{chosenPayment=='mealSwipes' ? 'chosenFilter' : ''}}" bindtap="filterPayment" data-payment="mealSwipes">Meal Swipes</view>
   <view  class="filterCard {{chosenPayment=='oldGoldMeal' ? 'chosenFilter' : ''}}" bindtap="filterPayment" data-payment="oldGoldMeal">Old Gold Meal</view>
   <view  class="filterCard {{chosenPayment=='foodDollar' ? 'chosenFilter' : ''}}" bindtap="filterPayment" data-payment="foodDollar" >Food Dollar</view>

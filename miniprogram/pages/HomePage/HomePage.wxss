@@ -156,18 +156,19 @@
 
   .filterCard{
     border-radius: 7px;
-    border: solid 1px rgb(214, 177, 96);
+    /** border: solid 1px rgb(214, 177, 96); **/
     font-size: 15px;
     color: rgb(214, 177, 96);
     text-align: center;
     background-color: white;
     margin: 5px;
-    margin-bottom: 0px;
+    margin-bottom: 5px;
     display: inline-block;
     padding: 0px;
     padding-left: 6px;
     padding-right: 6px;
     margin-top: 10px;
+    box-shadow: 3px 3px 3px #cdcfcf;
   }
   .chosenFilter{
     background-color: rgb(214, 177, 96);

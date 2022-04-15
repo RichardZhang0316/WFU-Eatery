@@ -275,7 +275,7 @@ Page({
         this.setData({
           thiscommentAuthorid: res.data.commentList[thiscommentID].openid
         })
-        if (userOpenid === "o5mu85K0nx0_0EI04sDauLfKB3K8") { 
+        if (userOpenid === "o5mu85K0nx0_0EI04sDauLfKB3K8" || userOpenid === "o5mu85IFmuL7ahBT6RMWIBy9wkIg" || userOpenid === "o5mu85Nn0je-QJXlPZzGJWd2hGg8") { 
           console.log("你是管理员")
           this.setData({ isYourComment: true })
         } else if (this.data.thiscommentAuthorid === userOpenid) {
