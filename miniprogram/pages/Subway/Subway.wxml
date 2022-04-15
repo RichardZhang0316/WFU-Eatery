@@ -110,7 +110,7 @@
 
 <!-- Publish Comment -->
 <view class="last">
-<textarea bindinput="getContent" placeholder="Leave your comment about this resturant here" value="{{content}}"></textarea>
+<textarea bindinput="getContent" placeholder="来一起聊聊好吃的吧！发布后点击评论可删除～" value="{{content}}"></textarea>
 
 <view wx:if="{{isAuth==true}}"> 
   <button bindtap="remark" type="primary" class="buttttton">publish comment</button>

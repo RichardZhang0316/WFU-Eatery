@@ -79,8 +79,11 @@ page {
 
 .root {
   height: 40%;
-  background: rgb(214, 177, 96);
-  padding-bottom: 20rpx;
+  background: #d6b160;
+  padding-bottom: 25rpx;
+  /*border-bottom-right-radius: 9px;
+  border-bottom-left-radius: 9px; */
+  box-shadow: 3px 3px 3px #cdcfcf;
 }
 
 .maxTitle {

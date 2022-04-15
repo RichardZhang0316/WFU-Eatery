@@ -79,15 +79,6 @@ Page({
           onInit: initChart
         },
       },
-      
-
-    //前端滑动切换bar-展示信息（目前都注释掉了）
-    onChange(event) {
-        // wx.showToast({
-        //   //title: `切换到标签 ${event.detail.name}`,
-        //   //icon: 'none',
-        // });
-    },
 
     showContent: function (e) {
         // 用that取代this，防止setTimeout内使用this出错

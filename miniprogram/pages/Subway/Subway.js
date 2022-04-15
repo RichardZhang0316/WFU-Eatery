@@ -1,4 +1,6 @@
 //Popular_Time 表格: 目前分为“周中”和“周末”进行数据切换，数据源为Google，方法为比例缩放
+const db = wx.cloud.database()
+const _ = db.command
 import * as echarts from '../../ec-canvas/echarts';
 let chart = null;  
 let content = '';
@@ -53,6 +55,7 @@ Page({
         isAuth: false,
         openid: "",
         thiscommentAuthorid: "",
+        thiscommentID: 0,
         isYourComment: false,
 
         //Popular Time_图表Data
@@ -242,13 +245,29 @@ Page({
     })},
     
     // ToDo: 删除评论函数
-    delete(e) {
-      
+    delete: function(e) {
+      var that = this
+      let indexDelete = e
+      console.log("执行删除评论：" + indexDelete)
+      // 从页面的data层面删除指定评论
+      var list = this.data.comments
+      list.splice(indexDelete, 1)
+      this.setData({
+        comments: list
+      })
+      // 同步云端删除
+      db.collection('comments').doc('subway').update({
+        data: {
+          commentList: list
+        }
+      })
     },
 
     // 判断是否为该用户所发表的评论
     isYourComments: function (e) {
+      var that = this
       let thiscommentID = e
+      this.setData({ thiscommentID: thiscommentID })
       console.log("该条评论为第 " + thiscommentID + " 条评论")
       let userOpenid = this.data.openid
       // 调取点击评论的作者的openid，并与此用户openid比对
@@ -256,11 +275,16 @@ Page({
         this.setData({
           thiscommentAuthorid: res.data.commentList[thiscommentID].openid
         })
-        if (this.data.thiscommentAuthorid === userOpenid) {
-          console.log(this.data.thiscommentAuthorid + " <-> " + userOpenid)
+        if (userOpenid === "o5mu85K0nx0_0EI04sDauLfKB3K8") { 
+          console.log("你是管理员")
+          this.setData({ isYourComment: true })
+        } else if (this.data.thiscommentAuthorid === userOpenid) {
+          // console.log(this.data.thiscommentAuthorid + " <-> " + userOpenid)
+          console.log("你是该条评论发布者")
           this.setData({ isYourComment: true })
         } else {
-          console.log(this.data.thiscommentAuthorid + " <-> " + userOpenid)
+          // console.log(this.data.thiscommentAuthorid + " <-> " + userOpenid)
+          console.log("你不是该条评论发布者")
           this.setData({ isYourComment: false })
         }
         // 如果是同一个人，则给予删除权限
@@ -271,6 +295,7 @@ Page({
             success (res) {
               if (res.confirm) {
                 console.log('用户点击确定')
+                that.delete(that.data.thiscommentID)
               } else if (res.cancel) {
                 console.log('用户点击取消')
               }
@@ -278,14 +303,13 @@ Page({
           })
         }
       })
-      //console.log("该条评论的作者是: " + this.data.thiscommentAuthorid)
     },
 
-    // Todo: 删除评论问讯提示框
+    // 删除评论问讯提示框
     getNotice: function (e) {
       // 重要: 获取对应点击评论的index
       let thisCommentIndex = e.currentTarget.dataset.indexOfItem
-      console.log(e.currentTarget.dataset.indexOfItem)
+        // console.log(e.currentTarget.dataset.indexOfItem)
       // 如果是该用户发表的评论，则弹出删除提示框
       this.isYourComments(thisCommentIndex) 
     },

@@ -6,10 +6,7 @@ var myDate = new Date();
 
 Page({
     data: { 
-        // 用户授权所需Data
-        // userInfo: {},
-        // hasUserInfo: false,
-
+        userName: "",
         chosenPayment:"",
         eateries: [{
                 name: "Zick's",
@@ -461,20 +458,32 @@ Page({
 
     // 生命周期函数--监听页面加载
     onLoad: function (options) {
+        // 以下是获取用户名称code
+        let userName = wx.getStorageSync('userName') || 'N/A';
+        console.log("用户名称: " + userName)
+        if (userName === 'N/A') {
+          this.setData({ userName : "" })
+        } else {
+          this.setData({ userName : userName + ", " })
+        }
         // 以下是用户授权登录的code
         var openid = wx.getStorageInfo('openId');
 
         // 以下是HomePage主要内容js
-        var currentTime=new Date().getHours();
-        var sentences="美食与温暖，我们都有";
+        var currentTime = new Date().getHours();
+        var sentences = "";
         if(currentTime>=0&&currentTime<=5){
+            this.setData({ userName : "" })
             sentences="赶due的苦，夜宵来补";
         }
-        else if(currentTime>=6&&currentTime<=10){
-            sentences="Good morning, deacons!";
+        else if(currentTime>=6&&currentTime<=11){
+            sentences="早饭要吃好喔";
         }
         else if(currentTime>=18&&currentTime<=23){
             sentences="早休息啦~";
+        } else {
+            this.setData({ userName : "" })
+            sentences="美食与温暖，我们都有";
         }
         this.setData({
             menuButtonInfo: wx.getMenuButtonBoundingClientRect(),

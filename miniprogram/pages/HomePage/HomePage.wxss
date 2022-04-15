@@ -53,7 +53,10 @@
   .root {
     height: 40%;
     background: #d6b160;
-    padding-bottom: 20rpx;
+    padding-bottom: 25rpx;
+    border-bottom-right-radius: 9px;
+    border-bottom-left-radius: 9px;
+    box-shadow: 3px 3px 3px #cdcfcf;
   }
   .maxTitle{
       color:white;
@@ -88,7 +91,6 @@
     background-color: white;
     /*左外边距，这里代表距离最左边的距离*/
     margin-left: 5%;
-    /*卡片的高度。*/
     height: 350rpx;
     border-radius:10px;
     /* radius是卡片的边框的圆润c程度*/

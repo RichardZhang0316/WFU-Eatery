@@ -1,4 +1,4 @@
-<view class="subBackground">
+
 <view class="root">
   <view class="userProfile">
     <view style="display:inline;">
@@ -7,7 +7,7 @@
     <view class="maxTitle" style="display:inline; white-space:nowrap;" open-type="getUserProfile" bindtap="getUserProfile">{{welcome}}, {{name}}</view> 
   </view>
 </view>
-</view>
+
 
 <view class="card">
 <navigator class="topTitle" url="/pages/FoodDollar/FoodDollar">Inquire Food Dollar</navigator>
