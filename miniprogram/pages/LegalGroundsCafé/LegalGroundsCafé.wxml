@@ -46,11 +46,11 @@
     <foodCard title="Latte 拿铁" desc="可选regular和grande两种杯型，也可选择加脱脂牛奶或豆奶，也可选冰拿铁" thumb="https://coffeeaffection.com/wp-content/uploads/2021/05/Spanish-latte-milk-and-espresso-500x500.jpg" price="3.59" currency="$" />
     <foodCard title="Chai Latte 印度茶拿铁" desc="可选regular和grande两种杯型，也可选择加脱脂牛奶或豆奶，也可选冰印度茶拿铁" thumb="https://insanelygoodrecipes.com/wp-content/uploads/2021/02/Homemade-Chai-Tea-Latte-in-a-Cup-500x500.png" price="3.59" currency="$" />
     <foodCard title="Cappuccino 卡布奇诺" desc="可选regular和grande两种杯型，也可选择加脱脂牛奶或豆奶" thumb="https://vaya.in/recipes/wp-content/uploads/2019/02/Cappuccino.jpg" price="3.59" currency="$" />
-    <foodCard title="Brewed Coffee 煮好的咖啡" desc="可选regular和grande两种杯型" thumb="https://vinceandjoes.com/wp-content/uploads/2020/01/COFFEE_coffee-2374466_clipped_rev_3.png" price="2.09" currency="$" />
+    <foodCard title="Brewed Coffee" desc="可选regular和grande两种杯型" thumb="https://s2.loli.net/2022/04/16/JXGA1bhuSvsNIk2.jpg" price="2.09" currency="$" />
     <foodCard title="Hot tea 热红茶" desc="可选regular和grande两种杯型" thumb="https://tanoorhalalfood.com/wp-content/uploads/2019/09/hot-tea-1.jpg" price="2.09" currency="$" />
   </van-tab>
   <van-tab title="Salads & Soups">
-    <foodCard title="Chicken Caesar Salad 鸡肉凯撒沙拉" desc="" thumb="https://www.oneness7.com/wp-content/uploads/2020/04/Easy-Grilled-Chicken-Caesar-Salad-with-Homemade-Dressing-web-6.jpg" price="6.69" currency="$" />
+    <foodCard title="Chicken Caesar Salad 鸡肉凯撒沙拉" desc="" thumb="https://s2.loli.net/2022/04/16/MZDKLqnSFpwV2Q3.jpg" price="6.69" currency="$" />
     <foodCard title="Greek Yogurt Power Bowl 希腊酸奶能量碗" desc="希腊酸奶佐草莓、蓝莓" thumb="https://sharedappetite.com/wp-content/uploads/2019/02/breakfast-superfood-yogurt-bowls-12.jpg" price="6.69" currency="$" />
     <foodCard title="Deacon Cobb Salad 执事考伯沙拉" desc="由鸡蛋、牛油果、西红柿、车打芝士、杏仁和洋葱制成" thumb="https://hips.hearstapps.com/delish/assets/18/11/1520887294-cobb-salad-delish.jpg" price="6.69" currency="$" />
     <foodCard title="Daily Soup 例汤" thumb="https://heremag-prod-app-deps-s3heremagassets-bfie27mzpk03.s3.amazonaws.com/wp-content/uploads/2020/10/20151124/soup-recipes-annika-palmari-U_mm1wHzm1Q-unsplash-2-1200x800.jpg" price="4.29" currency="$" />
@@ -70,4 +70,35 @@
     <foodCard title="Hashbrowns 薯饼" thumb="https://thumbor.thedailymeal.com/mLKOQg-3ILFNGOjKQyEOeoR_uyw=//https://www.thedailymeal.com/sites/default/files/recipe/2021/GettyImages-184839841.jpg" price="1.79" currency="$" />
   </van-tab>
 </van-tabs>
-<view style="height: 60px; width: 100%; background-color:#ececec;"></view>
+
+<view style="height: 25px; width: 100%; background-color:#ececec;"></view>
+
+<!-- 评论功能 -->
+<view class="realPart1">
+  <view class="menuTitle">Comments</view>
+</view>
+
+<!-- Comment List -->
+<block class="remarksList">
+  <view wx:for="{{comments}}" wx:key="index" class="remarks">
+    <!-- 若不是该用户所发的评论，则不能删除 -->
+    <view class="name" data-index-of-item="{{index}}" bindtap="getNotice" >{{item.userName}}</view>
+    <view class="content" data-index-of-item="{{index}}" bindtap="getNotice" >{{item.content}}</view>
+  </view> 
+</block>
+
+<!-- Publish Comment -->
+<view class="last">
+<textarea bindinput="getContent" placeholder="来一起聊聊好吃的吧！发布后点击评论可删除～" value="{{content}}"></textarea>
+
+<view wx:if="{{isAuth==true}}"> 
+  <button bindtap="remark" type="primary" class="buttttton">Publish Comment</button>
+</view>
+<view wx:else>
+  <button bindtap="getUserProfile" open-type="getUserProfile" type="primary" class="buttttton">请先用户授权</button>
+</view>
+</view>
+
+
+
+

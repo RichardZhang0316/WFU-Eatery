@@ -1,9 +1,9 @@
 //Popular_Time 表格: 目前分为“周中”和“周末”进行数据切换，数据源为Google，方法为比例缩放
 const db = wx.cloud.database()
 const _ = db.command
+let content = '';
 import * as echarts from '../../ec-canvas/echarts';
 let chart = null;  
-let content = '';
 var util = require('../../utils/util.js');
 
 //Initial Chart的function
@@ -140,6 +140,7 @@ Page({
 
     onLoad: function (options) {
         let that = this
+// **************** 评论功能所需onLoad **************//
         // 获取用户openid
         wx.cloud.callFunction({
           name:'getOpenid',
@@ -165,10 +166,10 @@ Page({
           })
         }
         // For Debug
-        var userName = that.data.name
-        var isAutho = that.data.isAuth
-        console.log("用户授权状态: " + isAutho)
-        console.log("用户昵称: " + userName)
+        // var userName = that.data.name
+        // var isAutho = that.data.isAuth
+        // console.log("用户授权状态: " + isAutho)
+        // console.log("用户昵称: " + userName)
 
         // 初始页面加载CommentList
         wx.cloud.database().collection("comments").doc('subway').get()
@@ -181,7 +182,8 @@ Page({
       }).catch(err=>{
         console.log("CommentList查询失败",err);
       })
-    }, // onLoad_结束
+// ************** 评论功能所需onLoad结束*************//
+    }, 
 
     // 评论框：展示输入内容
     getContent(e){
@@ -336,16 +338,6 @@ Page({
         }
       })       
     },
-
-    //Echart
-    onShareAppMessage: function (res) {
-        return {
-          //title: 'ECharts 可以在微信小程序中使用啦！',
-          path: '/pages/index/index',
-          success: function () { },
-          fail: function () { }
-        }
-      },
     
       onReady() {
         setTimeout(function () {

@@ -110,7 +110,7 @@
       <foodCard desc="" title="Mocha 摩卡" thumb="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/mocha-001-8301418.jpg?quality=90&webp=true&resize=440,400" price="5.00+" currency="$"/>
       <foodCard desc="" title="Hot Chocolate 热巧" thumb="https://dam.kraftheinzcompany.com/adaptivemedia/rendition/52645_3000x2000.jpg?id=f1eaa137e42e2419720d2703e7dcbf912f5639c3&height=2000&width=3000&clid=pim" price="3.00+" currency="$"/>
       <foodCard desc="" title="Chai Latte 印度茶拿铁" thumb="https://fitfoodiefinds.com/wp-content/uploads/2021/09/Chai-Tea-Latte-05sq.jpg" price="4.25+" currency="$"/>
-      <foodCard desc="" title="Earl Grey Latte 伯爵茶拿铁" thumb="https://domesticdreamboat.com/wp-content/uploads/2020/02/London-Fog.jpg" price="4.25+" currency="$"/>
+      <foodCard desc="" title="Earl Grey Latte 伯爵茶拿铁" thumb="https://s2.loli.net/2022/04/16/tEaDQ8IHvMbfGPm.png" price="4.25+" currency="$"/>
       <foodCard desc="" title="Matcha Latte 抹茶拿铁" thumb="https://images.japancentre.com/recipes/pics/16/main/matcha-latte.jpg?1469572822" price="4.25+" currency="$"/>
       <foodCard desc="" title="Hot Tea 热茶" thumb="https://cdn-prod.medicalnewstoday.com/content/images/articles/324/324771/close-up-of-a-cup-of-tea.jpg" price="2.50+" currency="$"/>
       <foodCard desc="" title="Hot Apple Spice 苹果茶" thumb="https://tmbidigitalassetsazure.blob.core.windows.net/rms3-prod/attachments/37/1200x1200/Apple-Spiced-Tea_exps138035_SD2232457D08_24_1b_RMS.jpg" price="4.00+" currency="$"/>
@@ -142,8 +142,36 @@
       <foodCard desc="" title="Blended Latte 拿铁混合饮料" thumb="https://cdnimg.webstaurantstore.com/images/products/large/107078/1995951.jpg" price="5.25+" currency="$"/>
 
   </van-tab >
-  
-
 </van-tabs>
 
-<view style="height: 60px; width: 100%; background-color:#ececec;"></view>
+<view style="height: 25px; width: 100%; background-color:#ececec;"></view>
+
+<!-- 评论功能 -->
+<view class="realPart1">
+  <view class="menuTitle">Comments</view>
+</view>
+
+<!-- Comment List -->
+<block class="remarksList">
+  <view wx:for="{{comments}}" wx:key="index" class="remarks">
+    <!-- 若不是该用户所发的评论，则不能删除 -->
+    <view class="name" data-index-of-item="{{index}}" bindtap="getNotice" >{{item.userName}}</view>
+    <view class="content" data-index-of-item="{{index}}" bindtap="getNotice" >{{item.content}}</view>
+  </view> 
+</block>
+
+<!-- Publish Comment -->
+<view class="last">
+<textarea bindinput="getContent" placeholder="来一起聊聊好吃的吧！发布后点击评论可删除～" value="{{content}}"></textarea>
+
+<view wx:if="{{isAuth==true}}"> 
+  <button bindtap="remark" type="primary" class="buttttton">Publish Comment</button>
+</view>
+<view wx:else>
+  <button bindtap="getUserProfile" open-type="getUserProfile" type="primary" class="buttttton">请先用户授权</button>
+</view>
+</view>
+
+
+
+
