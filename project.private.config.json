@@ -142,6 +142,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/chickFilA/chickFilA",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }
