@@ -285,7 +285,7 @@ Page({
               --numU; //点赞数减1
               that.setData({
                 [`newList[${i}].Up`]: numU, //es6模板语法，常规写法报错
-                [`newList[${i}.].zan`]: false //我的数据中like为'false'是未点赞
+                [`newList[${i}.].like`]: false //我的数据中like为'false'是未点赞
               })
               wx.setStorageSync('zan', cookie_id);
               this.data.newList[i].like_people.pop(openid)
@@ -324,11 +324,12 @@ Page({
           that.setData({
             [`RateChick[${i}].Up`]: numU,
             [`RateChick[${i}].Down`]: numD,
+            [`newList[${i}].like`]:this.data.newList[i].like,
+            [`nList[${i}].cai`]:this.data.nList[i].cai,
           })
         }
         
       }
-      this.onLoad()
       console.log("cai2: "+ this.data.nList[0].cai)
       
      
@@ -434,6 +435,8 @@ Page({
           that.setData({
             [`RateChick[${i}].Up`]: numU,
             [`RateChick[${i}].Down`]: numD,
+            [`newList[${i}].like`]:this.data.newList[i].like,
+            [`nList[${i}].cai`]:this.data.nList[i].cai,
           })
         }
         console.log("zan2: "+ this.data.newList[i].zan)
