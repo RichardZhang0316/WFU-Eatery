@@ -343,7 +343,18 @@ Page({
      
     },
     
-
+    /*
+    handleSearchVal(e) {
+      getApp().preventActive(() => {
+        const orderName = e.detail;
+        this.setData({
+          page: 1,
+          orderName: orderName,
+          contentList: []
+        });
+        this.orderList();
+      })
+    },*/
 
     upFunction(e){
       var shareid = e.currentTarget.dataset.id

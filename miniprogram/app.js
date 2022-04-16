@@ -16,8 +16,24 @@ App({
     }
 
     this.globalData = {  
+      PageActive: true
     }
-  }
+
+    /*
+    preventActive(fn,time) {
+      time = time || 500;
+      const self = this
+      if (this.globalData.pageActive) {
+        this.globalData.pageActive = false
+        if (fn) fn()
+        setTimeout(() => {
+          self.globalData.pageActive = true
+        }, time);
+      }else{
+        console.log("重复点击")
+      }
+  }*/
+}
     
   
 })
