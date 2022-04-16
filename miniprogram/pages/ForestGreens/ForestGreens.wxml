@@ -39,15 +39,48 @@
   </van-tab>
 
   <van-tab title="Salad">
-    <foodCard title="When In Home 宾至如归" desc="520卡路里 详情：Romaine Lettuce, Grilled Chicken, Croutons (油炸面包丁), Parmesan Cheese, Served with Caesar Dressing (凯撒酱汁)"  thumb="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F9%2F2013%2F12%2F06%2F2012-r-xl-vegetable-sandwich-with-dill-sauce-2000.jpg&q=85" price="8.49" currency="$"/>
+    <foodCard title="When In Home 宾至如归" desc="520卡路里 详情：Romaine Lettuce, Grilled Chicken, Croutons (油炸面包丁), Parmesan Cheese, Served with Caesar Dressing (凯撒酱汁)"  thumb="https://s2.loli.net/2022/04/16/aTkEsOZbY5PmAnU.jpg" price="8.49" currency="$"/>
     <foodCard title="Mein That's GOOD" desc="440卡路里 详情：Spinach, Grilled Chicken, Mandarin Oranges, Bell Pepers, Chow Mein Noodles, Served with (芝麻生姜酱)"  thumb="https://static.onecms.io/wp-content/uploads/sites/44/2021/02/04/watercress-salad-honey-Balsamic-tofu-2000.jpg" price="8.49" currency="$"/>
     <foodCard title="Kale YEAH 羽衣甘蓝" desc="620卡路里 详情：Kale Blend, Old Gold Grain Blend, Carrots, Feta (羊乳酪), Strawberries, Served with Balsamic Dressing (油醋汁)"  thumb="https://assets.bonappetit.com/photos/5e8cdb60a7a01c00083b08a9/1:1/w_2560%2Cc_limit/HMONG-Potluck-Chopped-Salad.jpg" price="8.49" currency="$"/>
   </van-tab>
 
-  <van-tab title="Acai Bowl 酸奶杯">
+  <van-tab title="Acai Bowl">
     <foodCard title="Acai Bowl" desc="160卡路里 详情：可添加 4 种 toppings, including Granola (格兰诺拉麦片), Coconut, Chocolate Chips, Chia Seeds, Strawberries, Blackberries, Raspberries (树莓), Honey, Nutella"  thumb="https://www.jessicagavin.com/wp-content/uploads/2020/01/acai-bowl-10-1200.jpg" price="8.29" currency="$"/>
   </van-tab>
 </van-tabs>
+
+<view style="height: 25px; width: 100%; background-color:#ececec;"></view>
+
+<!-- 评论功能 -->
+<view class="realPart1">
+  <view class="menuTitle">Comments</view>
+</view>
+
+<!-- Comment List -->
+<block class="remarksList">
+  <view wx:for="{{comments}}" wx:key="index" class="remarks">
+    <!-- 若不是该用户所发的评论，则不能删除 -->
+    <view class="name" data-index-of-item="{{index}}" bindtap="getNotice" >{{item.userName}}</view>
+    <view class="content" data-index-of-item="{{index}}" bindtap="getNotice" >{{item.content}}</view>
+  </view> 
+</block>
+
+<!-- Publish Comment -->
+<view class="last">
+<textarea bindinput="getContent" placeholder="来一起聊聊好吃的吧！发布后点击评论可删除～" value="{{content}}"></textarea>
+
+<view wx:if="{{isAuth==true}}"> 
+  <button bindtap="remark" type="primary" class="buttttton">Publish Comment</button>
+</view>
+<view wx:else>
+  <button bindtap="getUserProfile" open-type="getUserProfile" type="primary" class="buttttton">请先用户授权</button>
+</view>
+</view>
+
+
+
+
+
 
   
 

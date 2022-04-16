@@ -1,7 +1,8 @@
-page{
-    background-color:  #ececec ;
-  } 
-  view {
+  page{
+      background-color:  #ececec ;
+    } 
+  
+  .view {
     box-sizing: border-box;
     overflow: hidden;
   }
@@ -52,7 +53,10 @@ page{
   .root {
     height: 40%;
     background: #d6b160;
-    padding-bottom: 20rpx;
+    padding-bottom: 25rpx;
+    border-bottom-right-radius: 9px;
+    border-bottom-left-radius: 9px;
+    box-shadow: 3px 3px 3px #cdcfcf;
   }
   .maxTitle{
       color:white;
@@ -87,7 +91,6 @@ page{
     background-color: white;
     /*左外边距，这里代表距离最左边的距离*/
     margin-left: 5%;
-    /*卡片的高度。*/
     height: 350rpx;
     border-radius:10px;
     /* radius是卡片的边框的圆润c程度*/
@@ -153,18 +156,19 @@ page{
 
   .filterCard{
     border-radius: 7px;
-    border: solid 1px rgb(214, 177, 96);
+    /** border: solid 1px rgb(214, 177, 96); **/
     font-size: 15px;
     color: rgb(214, 177, 96);
     text-align: center;
     background-color: white;
     margin: 5px;
-    margin-bottom: 0px;
+    margin-bottom: 5px;
     display: inline-block;
     padding: 0px;
     padding-left: 6px;
     padding-right: 6px;
     margin-top: 10px;
+    box-shadow: 3px 3px 3px #cdcfcf;
   }
   .chosenFilter{
     background-color: rgb(214, 177, 96);
@@ -180,3 +184,35 @@ page{
   .search-group__input icon {
     margin-right: 15rpx;
   }
+
+/* pages/UserLogin/UserLogin.wxss */
+.header {
+  margin: 90rpx 0 90rpx 50rpx;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+  width: 650rpx;
+  height: 300rpx;
+  line-height: 450rpx;
+ }
+    
+ .header image {
+  width: 200rpx;
+  height: 200rpx;
+ }
+    
+ .content {
+  margin-left: 50rpx;
+  margin-bottom: 90rpx;
+ }
+    
+ .content text {
+  display: block;
+  color: #9d9d9d;
+  margin-top: 40rpx;
+ }
+    
+ .bottom {
+  border-radius: 80rpx;
+  margin: 70rpx 50rpx;
+  font-size: 35rpx;
+ }

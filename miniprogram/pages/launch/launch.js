@@ -31,7 +31,7 @@ Page({
           wx.switchTab({
             url: '/pages/HomePage/HomePage',
           })
-        }, 2000)
+        }, 1000)
       },
     
     

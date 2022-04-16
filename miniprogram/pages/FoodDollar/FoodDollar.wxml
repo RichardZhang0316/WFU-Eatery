@@ -1,19 +1,20 @@
 <!--pages/FoodDollar/FoodDollar.wxml-->
 <view class="root">
-<view class="maxTitle">🎩 如何查看Food Dollar余额?</view></view> 
+<view class="maxTitle">🎩 如何查询Food Dollar余额?</view></view> 
 
 <view class="card">
-<view class="Michael2">
-<van-steps
-  steps="{{ steps }}"
-  active="0"
-  direction="vertical"
-  active-color="#d6b160"
-  inactive-color="#d6b160"
-  active-icon="star"
-  inactive-icon="star"
-/>
+  <van-steps
+    steps="{{ steps }}"
+    active="0"
+    direction="vertical"
+    active-color="#d6b160"
+    inactive-color="#d6b160"
+    active-icon="star"
+    inactive-icon="star"
+  />
 </view>
+<view class="Pic">
+  <image src="https://s2.loli.net/2022/04/15/DTYsz7e4AqUuQEL.png"></image>
 </view>
 <view class="button" bindtap='copyText' data-text="{{contents}}">Get Website Link</view> 
 

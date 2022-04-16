@@ -206,3 +206,49 @@
 .container{
   height: 130px;
 }
+
+/* Comment List CSS */
+.realPart1{
+  background-color: #fff;
+  width: 100%;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  box-shadow: 8px 8px 8px #c2c2c2;
+}
+.remarksList{
+  margin-top: 200rpx;
+}
+.remarks{
+  text-align: left;
+  border-bottom: 2rpx solid #e9e2e2;
+  padding: 20rpx;
+  background-color: white;
+}
+.name{
+  color: gray;
+  margin-bottom: 9rpx;
+  font-size: 14px;
+}
+.content{
+  word-wrap:break-word;
+  font-size: 15px;
+}
+textarea{
+  width: auto;
+  height: 200rpx;
+  border: 3rpx solid #c3c3c3;
+  background-color: white;
+  word-break:break-all;
+  margin: 10px;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+.buttttton{
+   background-color: rgb(214, 177, 96)!important;
+   font-size: medium !important;
+   margin-bottom:30px;
+}
+.last{
+    background-color: white;
+}
+/* Comment List CSS End */

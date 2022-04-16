@@ -1,17 +1,40 @@
 page{
   background-color:  rgb(237, 237, 237) ;
 }
+
+.intro {
+  margin: 30px;
+  margin-top: 7px; height: 20%; width:8%;
+  text-align: center;
+}
+
 .root {
   height: 50%;
   background: rgb(214, 177, 96);
   padding-bottom: 20rpx;
+  margin-bottom: 11px;
+  padding-top: 20rpx;
+  border-bottom-right-radius: 9px;
+  border-bottom-left-radius: 9px;
+  box-shadow: 3px 3px 3px #cdcfcf;
+}
+
+.subBackground {
+  background: rgb(214, 177, 96);
+  
+}
+
+.userProfile {
+  padding-inline-start: 21px;
+  display: flex;
+  align-items:center;
 }
 
 .maxTitle{
   color:white;
   font-weight: bold;
-  padding: 15px;
-  font-size: 25px;
+  padding-inline-start: 15px;
+  font-size: 24px;
 }
 
 .FoodDollar {
@@ -109,4 +132,15 @@ margin-top:20%;
   color:rgb(196, 196, 196);
   text-align: center;
   margin-top: 30px;
+}
+
+.user {
+  display: inline-block;
+  width: 73px;
+  height: 73px;
+  border-radius: 50%;
+
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
 }

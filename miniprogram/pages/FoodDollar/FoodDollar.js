@@ -6,21 +6,21 @@ Page({
    */
   data: {
     steps: [
+      // {
+      //   text: 'Step 1',
+      //   desc: '登录WFU Gmail, 在Google Apps中找到Deacon Dining选项',
+      //   // inactiveIcon: 'location-o',
+      //   // activeIcon: 'success',
+      // },
+      // {
+      //   text: 'Step 2',
+      //   desc: '点击"My Profile"即可查看账户余额及交易记录',
+      //   // inactiveIcon: 'location-o',
+      //   // activeIcon: 'success',
+      // },
       {
-        text: 'Step 1',
-        desc: '登录WFU Gmail, 在Google Apps中找到Deacon Dining选项',
-        // inactiveIcon: 'location-o',
-        // activeIcon: 'success',
-      },
-      {
-        text: 'Step 2',
-        desc: '点击"My Profile"即可查看账户余额及交易记录',
-        // inactiveIcon: 'location-o',
-        // activeIcon: 'success',
-      },
-      {
-        text: 'Step 3',
-        desc: '点击下方按钮复制链接，浏览器打开网址查询food dollar, meal swipes和old gold meal余额',
+        text: '',
+        desc: '💬 点击下方按钮复制链接，浏览器打开网址登录后即可查询 Food Dollar 余额, 剩余 Meal Swipes 和 Old Gold Swipes 次数',
         // inactiveIcon: 'location-o',
         // activeIcon: 'success',
       },

@@ -3,12 +3,10 @@ const app = getApp()
 // import util from '../../utils/util.js';
 var util = require('../../utils/util.js');
 var myDate = new Date();
-Page({
 
-    /**
-     * 页面的初始数据
-     */
+Page({
     data: { 
+        userName: "",
         chosenPayment:"",
         eateries: [{
                 name: "Zick's",
@@ -224,7 +222,7 @@ Page({
                     ["12:00", "17:00"],
                 ],
                 status: false,
-                showStatus:true,
+                showStatus: true,
             },
             {
                 name: "Legal Grounds Café",
@@ -457,20 +455,35 @@ Page({
             chosenPayment
         })
     },
-    /**
-     * 生命周期函数--监听页面加载
-     */
+
+    // 生命周期函数--监听页面加载
     onLoad: function (options) {
-        var currentTime=new Date().getHours();
-        var sentences="美食与温暖，我们都有";
+        // 以下是获取用户名称code
+        let userName = wx.getStorageSync('userName') || 'N/A';
+        console.log("用户名称: " + userName)
+        if (userName === 'N/A') {
+          this.setData({ userName : "" })
+        } else {
+          this.setData({ userName : userName + ", " })
+        }
+        // 以下是用户授权登录的code
+        var openid = wx.getStorageInfo('openId');
+
+        // 以下是HomePage主要内容js
+        var currentTime = new Date().getHours();
+        var sentences = "";
         if(currentTime>=0&&currentTime<=5){
+            this.setData({ userName : "" })
             sentences="赶due的苦，夜宵来补";
         }
-        else if(currentTime>=6&&currentTime<=10){
-            sentences="Good morning, deacons!";
+        else if(currentTime>=6&&currentTime<=11){
+            sentences="早饭要吃好喔";
         }
         else if(currentTime>=18&&currentTime<=23){
             sentences="早休息啦~";
+        } else {
+            this.setData({ userName : "" })
+            sentences="美食与温暖，我们都有";
         }
         this.setData({
             menuButtonInfo: wx.getMenuButtonBoundingClientRect(),
@@ -536,59 +549,7 @@ Page({
         this.setData({
             eateries: eateries
         })
-    },
-
-    /**
-     * 调动时间
-     */
-    timesetting: function () {},
-
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady: function () {
 
     },
 
-    /**
-     * 生命周期函数--监听页面显示
-     */
-    onShow: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
-    onHide: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面卸载
-     */
-    onUnload: function () {
-
-    },
-
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-    onPullDownRefresh: function () {
-
-    },
-
-    /**
-     * 页面上拉触底事件的处理函数
-     */
-    onReachBottom: function () {
-
-    },
-
-    /**
-     * 用户点击右上角分享
-     */
-    onShareAppMessage: function () {
-
-    }
 })

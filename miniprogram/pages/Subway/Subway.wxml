@@ -38,8 +38,10 @@
   <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ ec }}"></ec-canvas>
 </view>
 
-<view class="greyPart"> </view>
-<view class="realPart"><view class="menuTitle">Menu</view></view>
+<view class="greyPart"></view>
+<view class="realPart">
+  <view class="menuTitle">Menu</view>
+</view>
 
  
 <van-tabs swipeable ellipsis="{{false}}" active="{{ active }}" bind:change="onChange" color="#d6b160" title-active-color="#d6b160">
@@ -64,7 +66,7 @@
       <foodCard desc="480卡路里" title="6 in. Spicy Italian 意大利香辣三明治" thumb="https://www.subway.com.hk/wp-content/uploads/2017/09/Spicy-Italian-450x450.png" price="3.99" currency="$"/>
       <foodCard desc="230卡路里" title="6 in. Veggie Delite 新鲜蔬菜三明治" thumb="https://cdn.shopify.com/s/files/1/0071/0420/0763/products/Veggie_Delite_grande.png?v=1545895905" price="3.89" currency="$"/>
       <foodCard desc="280卡路里" title="6 in. Turkey Breast 火鸡胸三明治" thumb="https://media1.popsugar-assets.com/files/thumbor/TDSCofPjTnOcLuPHcAd7nwomLfk/fit-in/2048xorig/filters:format_auto-!!-:strip_icc-!!-/2016/03/14/961/n/1922729/3c26ad07a3c47476_product15/i/Turkey-Breast-Ham-Sandwich.jpg" price="4.49" currency="$"/>
-      <foodCard desc="410卡路里" title="6 in. Italian B.M.T. 意大利培根三明治" thumb="http://subway-menu.com/wp-content/uploads/2018/04/RPLC-italian_B.M.T_594x334_PR.jpg" price="4.39" currency="$"/>
+      <foodCard desc="410卡路里" title="6 in. Italian B.M.T. 意大利培根三明治" thumb="https://s2.loli.net/2022/04/16/jWIfGNmv3ydKghT.png" price="4.39" currency="$"/>
       <foodCard desc="480卡路里" title="6 in. Tuna 金枪鱼三明治" thumb="https://www.gannett-cdn.com/presto/2021/01/29/USAT/2b697721-e001-4dcc-a1b8-d701bd0a8df1-XXX_Subway_Tuna.jpg?width=1200&disable=upscale&format=pjpg&auto=webp" price="4.49" currency="$"/>
       <foodCard desc="320卡路里" title="6 in. Oven Roasted Chicken 烤鸡三明治" thumb="https://1.bp.blogspot.com/-m0jC58gDuIw/Xg4bVXHtBbI/AAAAAAABJTE/526XoewkNJsbSpMCmARe35LNvmmKznHdwCLcBGAsYHQ/w1200-h630-p-k-no-nu/subway-6-inch-oven-roasted-sub.jpg" price="4.79" currency="$"/>
       <foodCard desc="370卡路里" title="6 in. Sweet Onion Chicken Teriyaki 红烧甜洋葱鸡三明治" thumb="https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iHTuwQXFImY0/v2/-1x-1.jpg" price="4.89" currency="$"/>
@@ -80,7 +82,7 @@
       <foodCard desc="730卡路里" title="12 in. Cold Cut Combo 冷切三明治" thumb="https://www.eatthis.com/wp-content/uploads/sites/4/2021/06/subway-cold-cut-combo.jpg" price="5.79" currency="$"/>
       <foodCard desc="600卡路里" title="12 in. Veggie Delite 新鲜蔬菜三明治" thumb="https://cdn.shopify.com/s/files/1/0071/0420/0763/products/Veggie_Delite_grande.png?v=1545895905" price="5.69" currency="$"/>
       <foodCard desc="960卡路里" title="12 in. Spicy Italian 意大利香辣三明治" thumb="https://www.subway.com.hk/wp-content/uploads/2017/09/Spicy-Italian-450x450.png" price="5.99" currency="$"/>
-      <foodCard desc="860卡路里" title="12 in. Italian B.M.T. 意大利培根三明治" thumb="http://subway-menu.com/wp-content/uploads/2018/04/RPLC-italian_B.M.T_594x334_PR.jpg" price="7.19" currency="$"/>
+      <foodCard desc="860卡路里" title="12 in. Italian B.M.T. 意大利培根三明治" thumb="https://s2.loli.net/2022/04/16/jWIfGNmv3ydKghT.png" price="7.19" currency="$"/>
       <foodCard desc="560卡路里" title="12 in. Turkey Breast 火鸡胸三明治" thumb="https://media1.popsugar-assets.com/files/thumbor/TDSCofPjTnOcLuPHcAd7nwomLfk/fit-in/2048xorig/filters:format_auto-!!-:strip_icc-!!-/2016/03/14/961/n/1922729/3c26ad07a3c47476_product15/i/Turkey-Breast-Ham-Sandwich.jpg" price="7.19" currency="$"/>
       <foodCard desc="960卡路里" title="12 in. Tuna 金枪鱼三明治" thumb="https://www.gannett-cdn.com/presto/2021/01/29/USAT/2b697721-e001-4dcc-a1b8-d701bd0a8df1-XXX_Subway_Tuna.jpg?width=1200&disable=upscale&format=pjpg&auto=webp" price="7.19" currency="$"/>
       <foodCard desc="850卡路里" title="12 in. Oven Roasted Chicken 烤鸡三明治" thumb="https://1.bp.blogspot.com/-m0jC58gDuIw/Xg4bVXHtBbI/AAAAAAABJTE/526XoewkNJsbSpMCmARe35LNvmmKznHdwCLcBGAsYHQ/w1200-h630-p-k-no-nu/subway-6-inch-oven-roasted-sub.jpg" price="6.99" currency="$"/>
@@ -90,26 +92,33 @@
       <foodCard desc="400卡路里" title="12 in. Veggie Patty 素食帕蒂三明治" thumb="https://www.totallyveganbuzz.com/wp-content/uploads/2019/04/2019-04-17_1104.jpg" price="6.75" currency="$"/>
   </van-tab>
 </van-tabs>
-<view style="height: 60px; width: 100%; background-color:#ececec;"></view>
+<view style="height: 25px; width: 100%; background-color:#ececec;"></view>
 
 
-<!-- <view style="height: 60px; width: 100%; background-color:#ececec;"></view> -->
-<view class="greyPart"></view>
-<view class="realPart"><view class="menuTitle">Comments</view></view>
+<!-- 评论功能 -->
+<view class="realPart1">
+  <view class="menuTitle">Comments</view>
+</view>
 
 <!-- Comment List -->
 <block class="remarksList">
   <view wx:for="{{comments}}" wx:key="index" class="remarks">
-    <view class="name">{{item.userName}}</view>
-    <!-- <view class="name">{{item.time}}</view> -->
-    <view class="content">{{item.content}}</view>
+    <!-- 若不是该用户所发的评论，则不能删除 -->
+    <view class="name" data-index-of-item="{{index}}" bindtap="getNotice" >{{item.userName}}</view>
+    <view class="content" data-index-of-item="{{index}}" bindtap="getNotice" >{{item.content}}</view>
   </view> 
 </block>
 
 <!-- Publish Comment -->
 <view class="last">
-<textarea bindinput="getContent" placeholder="Leave your comment about this resturant here" value="{{content}}"></textarea>
-<button bindtap="remark" type="primary" class="buttttton">publish comment</button>
+<textarea bindinput="getContent" placeholder="来一起聊聊好吃的吧！发布后点击评论可删除～" value="{{content}}"></textarea>
+
+<view wx:if="{{isAuth==true}}"> 
+  <button bindtap="remark" type="primary" class="buttttton">Publish Comment</button>
+</view>
+<view wx:else>
+  <button bindtap="getUserProfile" open-type="getUserProfile" type="primary" class="buttttton">请先用户授权</button>
+</view>
 </view>
 
 

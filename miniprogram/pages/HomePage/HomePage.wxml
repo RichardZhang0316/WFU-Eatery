@@ -1,3 +1,5 @@
+
+<!-- 主页主体部分 -->
 <view class="custom-bar" style="height:{{navHeight}}px;z-index: 2;">
   <view class="custom-bar__wrapper" style="margin-top:{{searchMarginTop}}px; height: {{searchHeight}}px;width: {{searchWidth}}px" >
     <navigator url="/pages/Search/Search" class="search-group">
@@ -9,11 +11,14 @@
 </view>
 
 <view class="root">
-    <view class="custom-bar__wrapper" style="margin-top:{{searchMarginTop}}px; height: {{searchHeight}}px" ></view>
-<view class="maxTitle">{{sentences}}</view><!-- 做成随机选择欢迎语 -->
+    <view class="custom-bar__wrapper" style="margin-top:{{searchMarginTop}}px; height: {{searchHeight}}px" >
+    </view>
+    <!-- 随机选择欢迎语 --> 
+    <view class="maxTitle">{{userName}}{{sentences}}</view>
 </view>
+
 <!-- filters -->
-<scroll-view scroll-x="true" style="white-space: nowrap;">
+<scroll-view scroll-x="true" style="white-space: nowrap; margin-top:3px">
   <view  class="filterCard {{chosenPayment=='mealSwipes' ? 'chosenFilter' : ''}}" bindtap="filterPayment" data-payment="mealSwipes">Meal Swipes</view>
   <view  class="filterCard {{chosenPayment=='oldGoldMeal' ? 'chosenFilter' : ''}}" bindtap="filterPayment" data-payment="oldGoldMeal">Old Gold Meal</view>
   <view  class="filterCard {{chosenPayment=='foodDollar' ? 'chosenFilter' : ''}}" bindtap="filterPayment" data-payment="foodDollar" >Food Dollar</view>

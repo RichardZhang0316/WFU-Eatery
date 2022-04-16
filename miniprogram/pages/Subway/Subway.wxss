@@ -1,52 +1,7 @@
 
-
 page{
   background-color:  #ececec ; 
 } 
-
-.remarksList{
-  margin-top: 200rpx;
-}
-
-.remarks{
-  text-align: left;
-  /* margin: 20rpx;  */
-  border-bottom: 2rpx solid #e9e2e2;
-  padding: 20rpx;
-  background-color: white;
-}
-
-
-.name{
-  color: gray;
-  margin-bottom: 20rpx;
-  font-size: 15px;
-}
-.content{
-  /*在textarea中设置输入内容的自动换行*/
-  word-wrap:break-word;
-  font-size: 15px;
-}
-textarea{
-  width: auto;
-  height: 200rpx;
-  border: 1rpx solid #c3c3c3;
-  background-color: white;
-  word-break:break-all;
-  margin: 10px;
-  margin-bottom: 20px;
-  padding: 10px;
-}
-
-.buttttton{
-   background-color: rgb(214, 177, 96)!important;
-   font-size: medium !important;
-   margin-bottom:30px;
-}
-
-.last{
-    background-color: white;
-}
 
 .head-text{
   position: relative;
@@ -123,11 +78,7 @@ textarea{
   background-color: #fff;
   width: 100%;
 }
-.greyPart{
-  background-color: #ececec;
-  height: 13px;
-  width: 100%;
-}
+
 .menuTitle{
   height: 30%;
   font-size: 17px;
@@ -139,10 +90,7 @@ textarea{
   padding-top: 10rpx;
   padding-bottom: 10rpx;
 }
-.realPart{
-  background-color: #fff;
-  width: 100%;
-}
+
 
 .navigator-box {
  opacity: 0;
@@ -256,3 +204,69 @@ textarea{
 .container{
   height: 130px;
 }
+.menuTitle{
+  height: 30%;
+  font-size: 17px;
+  color: #d6b160;
+  margin-left: 3%;
+  margin-right: 3%;
+  font-weight: bold;
+  border-bottom: 1px solid #ececec;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+}
+.greyPart{
+  background-color: #ececec;
+  height: 6px;
+  width: 100%;
+}
+.realPart{
+  background-color: #fff;
+  width: 100%;
+}
+
+/* Comment List CSS */
+.realPart1{
+  background-color: #fff;
+  width: 100%;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  box-shadow: 8px 8px 8px #c2c2c2;
+}
+.remarksList{
+  margin-top: 200rpx;
+}
+.remarks{
+  text-align: left;
+  border-bottom: 2rpx solid #e9e2e2;
+  padding: 20rpx;
+  background-color: white;
+}
+.name{
+  color: gray;
+  margin-bottom: 9rpx;
+  font-size: 14px;
+}
+.content{
+  word-wrap:break-word;
+  font-size: 15px;
+}
+textarea{
+  width: auto;
+  height: 200rpx;
+  border: 3rpx solid #c3c3c3;
+  background-color: white;
+  word-break:break-all;
+  margin: 10px;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+.buttttton{
+   background-color: rgb(214, 177, 96)!important;
+   font-size: medium !important;
+   margin-bottom:30px;
+}
+.last{
+    background-color: white;
+}
+/* Comment List CSS End */
