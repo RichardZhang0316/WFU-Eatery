@@ -1,17 +1,15 @@
 // Popular_Time 表格: 目前分为“周中”和“周末”进行数据切换，数据源为Google，方法为“等比例缩放”
 import * as echarts from '../../ec-canvas/echarts';
+let chart = null;  
+let content = '';
 
 const db = wx.cloud.database() 
 const _ = db.command // 获取数据库操作符，通过 db.command 获取
 const CF = db.collection('ChickFilAUpDown')
-
-let chart = null;  
-let content = '';
 let likeCollection = wx.getStorageSync('likeCollection'); // 从本地缓存中同步获取指定 key 的内容
     if(!likeCollection){
       wx.setStorageSync('likeCollection', {})
     }
-
 let caiCollection = wx.getStorageSync('caiCollection');
   if(!caiCollection){
     wx.setStorageSync('caiCollection', {})
@@ -46,12 +44,13 @@ function initChart(canvas, width, height, dpr) {
   return chart;
 }
 
-
 var app = getApp();
 Page({
     data: {
-      newList:[],
-      nList:[],
+      // 点赞点踩
+      newList:[], // 全量Result
+      nList:[],   // 全量Result
+
       isLike:[],
       isCai:[],
       like_people:[],
@@ -61,24 +60,24 @@ Page({
       comments:[],
       
 
-        //前端滑动切换bar_Data input
-        active:0,
-        //下拉动画
-        choose: false,
-        animationData: {},
-        stopBtn: true,  //动画未执行完之前禁用按钮
-        navTab: ['Breakfast','Lunch','Dinner'],        
-        currentTab: 0,
-        id:'timetable',
-        sendList:[],
-        
-        //Popular Time_图表Data
-        timeTable:[{realTimeTable:'Mon: 7:30 - 22:00'},{realTimeTable:'Tue: 7:30 - 22:00'},{realTimeTable:'Wed: 7:30 - 22:00'},{realTimeTable:'Thu: 7:30 - 22:00'},{realTimeTable:'Fri: 11:00 - 22:00'},{realTimeTable:'Sat: closed'},{realTimeTable:'Sun: 7:30 - 22:00'}],
+      //前端滑动切换bar_Data input
+      active:0,
+      //下拉动画
+      choose: false,
+      animationData: {},
+      stopBtn: true,  //动画未执行完之前禁用按钮
+      navTab: ['Breakfast','Lunch','Dinner'],        
+      currentTab: 0,
+      id:'timetable',
+      sendList:[],
+      
+      //Popular Time_图表Data
+      timeTable:[{realTimeTable:'Mon: 7:30 - 22:00'},{realTimeTable:'Tue: 7:30 - 22:00'},{realTimeTable:'Wed: 7:30 - 22:00'},{realTimeTable:'Thu: 7:30 - 22:00'},{realTimeTable:'Fri: 11:00 - 22:00'},{realTimeTable:'Sat: closed'},{realTimeTable:'Sun: 7:30 - 22:00'}],
 
-        ec: {
-          onInit: initChart
-        },
+      ec: {
+        onInit: initChart
       },
+    },
 
     showContent: function (e) {
         // 用that取代this，防止setTimeout内使用this出错
@@ -116,7 +115,6 @@ Page({
             })
         }, 0)
     },
-
     hideContent: function (e) {
         var that = this;
         var animation = wx.createAnimation({
@@ -140,39 +138,43 @@ Page({
             stopBtn: true,
         })
     },
-    /**上面是时间表核心代码
-     * 生命周期函数--监听页面加载*/
 
     // onLoad:页面加载时触发,一个页面只会调用一次
     onLoad: function (options) { 
-       let that = this; // this指的是本页面的所有data
+       let that = this; 
        wx.cloud.callFunction({
+         // 云函数获取openid
          name:'getOpenid',
          complete:res=>{
           console.log('云函数获取到的openid: ', res.result.openid)
           that.setData({
             openid: res.result.openid,
           })
-          
-          CF.field({ //发送请求获取Up_and_Down列表数据
+          //发送请求获取Up_and_Down列表数据
+          CF.field({ 
             _id: true,
             like: true,
+            cai: true,
             Up: true,
             Down: true,
             like_people: true,
             cai_people:true
           }).get({
             success: res => {
-              that.setData({
-                newList: res.data,
-                nList: res.data
-              })
-              var iszan = that.data.isLike;
-              var iscai = that.data.isCai;
-            for (var i = 0; i < res.data.length; i++) { //数据获取成功后，进行遍历，拿到所有已经点过赞的书籍id
+          // wx.cloud.database().collection('ChickFilAUpDown').get().then(res=>{
+            console.log("ChickUpDown数据：", res)
+            that.setData({
+              newList: res.data,
+              nList: res.data
+            })
+            
+            let iszan = that.data.isLike; // 已点赞合集
+            let iscai = that.data.isCai; // 已点踩合集
+            // 数据获取成功后，进行遍历，拿到所有已经点过赞的id
+            for (var i = 0; i < res.data.length; i++) { 
               for (let j = 0; j < res.data[i].like_people.length; j++) {
                 if (res.data[i].like_people[j] == that.data.openid) { 
-                  iszan.push(res.data[i]._id) //根据改用户的数据找到已经点赞的，把书籍id放入新建数组中
+                  iszan.push(res.data[i]._id) //根据改用户的数据找到已经点赞的，把id放入新建数组中
                 }
               }
               for (let j = 0; j < res.data[i].cai_people.length; j++) {
@@ -207,75 +209,78 @@ Page({
          }
        })
 
-        // 以下是CommentList函数
-        wx.cloud.database().collection("comments").doc('chickFillA').get()
-        .then(res=>{
-        console.log("CommentList查询成功",res);
+        wx.cloud.database().collection('ChickFilAUpDown').get().then(res=>{
+          // console.log("Success",res);
+          this.setData({
+            RateChick: res.data
+          })
+        }).catch(err=>{
+          console.log("查询失败",err);
+        })
+
+        wx.cloud.database().collection('ChickFilAUpDown').doc('Chick_Fila_A_Sauce').get().then(res=>{
+          // console.log("Chick_Fila_A_Sauce",res);
+          this.setData({
+            CFAup:res.data.Up // ?
+          })
+        })
+        .catch(err=>{
+          console.log("查询失败",err);
+        })
+      }})
+
+      // 以下是CommentList函数
+      wx.cloud.database().collection("comments").doc('chickFillA').get()
+      .then(res=>{
+      console.log("CommentList查询成功",res);
         this.setData({
           comments:res.data.commentList
         })
       }).catch(err=>{
         console.log("查询失败",err);
       })
+    }, // 🙌 onLoad 结束
 
-        wx.cloud.database().collection('ChickFilAUpDown').get().then(res=>{
-          console.log("Success",res);
-          this.setData({
-            RateChick: res.data
-            //ChickFilA:res.data
-          })
-        })
-        .catch(err=>{
-          console.log("查询失败",err);
-        })
-
-        wx.cloud.database().collection('ChickFilAUpDown').doc('Chick_Fila_A_Sauce').get().then(res=>{
-          console.log("Success",res);
-          this.setData({
-            CFAup:res.data.Up
-          })
-        })
-        .catch(err=>{
-          console.log("查询失败",err);
-        })
-      }
-      })},
-
+    // 点踩函数
     downFunction(e){
       var shareid = e.currentTarget.dataset.id
-      console.log("shareid: "+shareid)
+      console.log("Food_id: "+shareid)
       this.cai(shareid);
     },
 
     cai: function (item_id) {
-      var that = this;
-      var cookie_id = wx.getStorageSync('cai') || []; //获取全部点踩的id
-      var zan_id = wx.getStorageSync('zan') || [];
-      var openid = that.data.openid
-      console.log(openid)
+      let that = this;
+      let cookie_id = wx.getStorageSync('cai') || []; 
+      let zan_id = wx.getStorageSync('zan') || [];  
+      let openid = that.data.openid
 
-      for (var i = 0; i < that.data.nList.length; i++) {
-        if (that.data.nList[i]._id == item_id) { //数据列表中找到对应的id
-          var numD = that.data.nList[i].Down; //当前踩数量
-          var numU = that.data.newList[i].Up;
-          if (cookie_id.includes(item_id) ) { //已经踩过了，取消踩
+      for (var i = 0; i < that.data.nList.length; i++) { // 历变当前页面所有fooditems
+        if (that.data.nList[i]._id == item_id) { //找到对应的id的food item
+          let numD = that.data.nList[i].Down; //当前踩数量
+          let numU = that.data.newList[i].Up; //当前踩数量
+          // 若此用户已经踩过了，取消踩
+          if (cookie_id.includes(item_id) ) { 
+            console.log("cooooookie_ID: ", cookie_id)
             for (var j in cookie_id) {
               if (cookie_id[j] == item_id) {
                 cookie_id.splice(j, 1); //删除取消点赞的id
               }
             }
             --numD; //踩数减1
+            if (numD < 0) { numD = 0}
             that.setData({
               [`nList[${i}].Down`]: numD, //es6模板语法，常规写法报错
-              [`nList[${i}.].cai`]: false //我的数据中cai为'false'是未踩
+              [`nList[${i}].cai`]: false //我的数据中cai为'false'是未踩
             })
             wx.setStorageSync('cai', cookie_id);
             wx.showToast({
-              title: "取消踩",
+              title: "取消点踩",
               icon: 'none'
             })
             this.data.nList[i].cai_people.pop(openid)
-          } else { //踩操作
+            // 若此用户尚未点踩，踩操作
+          } else { 
+            // 若此用户点赞了该item，则点踩+取消赞
             if(zan_id.includes(item_id)){
               for (var j in zan_id) {
                 if (zan_id[j] == item_id) {
@@ -283,6 +288,7 @@ Page({
                 }
               }
               --numU; //点赞数减1
+              if (numU < 0) { numU = 0}
               that.setData({
                 [`newList[${i}].Up`]: numU, //es6模板语法，常规写法报错
                 [`newList[${i}.].like`]: false //我的数据中like为'false'是未点赞
@@ -290,13 +296,14 @@ Page({
               wx.setStorageSync('zan', cookie_id);
               this.data.newList[i].like_people.pop(openid)
             }
+            // 进行点踩
             ++numD; //踩数加1
             that.setData({
               [`nList[${i}].Down`]: numD,
-              [`nList[${i}.].cai`]: true
+              [`nList[${i}].cai`]: true
             })
            
-            cookie_id.unshift(item_id); //新增赞的id
+            cookie_id.unshift(item_id); //新增踩的id
             wx.setStorageSync('cai', cookie_id);
             wx.showToast({
               title: "踩一下",
@@ -307,7 +314,7 @@ Page({
             }
             this.data.nList[i].cai_people.push(openid)
           }
-          //和后台交互，后台数据要同步
+          //和后台交互，后台数据库要同步
           CF.doc(item_id).update({
             data: {
               like: this.data.newList[i].like,
@@ -324,15 +331,11 @@ Page({
           that.setData({
             [`RateChick[${i}].Up`]: numU,
             [`RateChick[${i}].Down`]: numD,
-            [`newList[${i}].like`]:this.data.newList[i].like,
-            [`nList[${i}].cai`]:this.data.nList[i].cai,
           })
         }
         
       }
-      console.log("cai2: "+ this.data.nList[0].cai)
       
-     
     },
     
     /*
@@ -374,6 +377,7 @@ Page({
               }
             }
             --numU; //点赞数减1
+            if (numU < 0) { numU = 0}
             that.setData({
               [`newList[${i}].Up`]: numU, //es6模板语法，常规写法报错
               [`newList[${i}.].like`]: false //我的数据中like为'false'是未点赞
@@ -385,13 +389,15 @@ Page({
             })
             this.data.newList[i].like_people.pop(openid)
           } else{
+            // 若用户已点踩，取消点踩，再点赞
             if(cai_id.includes(item_id)){
               for (var j in cai_id) {
                 if (cai_id[j] == item_id) {
                   cai_id.splice(j, 1); //删除取消点赞的id
                 }
               }
-              --numD; //点赞数减1
+              --numD; //点踩数减1
+              if (numD < 0) { numD = 0}
               that.setData({
                 [`nList[${i}].Down`]: numD, //es6模板语法，常规写法报错
                 [`nList[${i}.].cai`]: false //我的数据中like为'false'是未点赞
@@ -435,116 +441,57 @@ Page({
           that.setData({
             [`RateChick[${i}].Up`]: numU,
             [`RateChick[${i}].Down`]: numD,
-            [`newList[${i}].like`]:this.data.newList[i].like,
-            [`nList[${i}].cai`]:this.data.nList[i].cai,
+            
           })
         }
         console.log("zan2: "+ this.data.newList[i].zan)
       }
       
     },
+
     
-    /**
-     * 生命周期函数--监听页面初次渲染完成*/
-     
-    onReady: function () {
+    onReady() {
+      setTimeout(function () {
+        // 获取 chart 实例的方式
+        // console.log(chart)
+      }, 2000);
+    },    
 
+    //New comment method
+    getContent(e){
+      content = e.detail.value
+      //动态绑定数据，实现评论结束后清空content的内容
+      this.setData({
+        content :e.detail.value
+      })
     },
-    
-
-    /**
-     * 生命周期函数--监听页面显示
-     */
-    onShow: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
-    onHide: function () {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面卸载
-     */
-    onUnload: function () {
-
-    },
-
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-    onPullDownRefresh: function () {
-
-    },
-
-    /**
-     * 页面上拉触底事件的处理函数
-     */
-    onReachBottom: function () {
-
-    },
-
-    /**
-     * 用户点击右上角分享
-     */
-    onShareAppMessage: function () {
-    },
-
-    //Echart
-    onShareAppMessage: function (res) {
-        return {
-          title: 'ECharts 可以在微信小程序中使用啦！',
-          path: '/pages/index/index',
-          success: function () { },
-          fail: function () { }
-        }
-      },
-    
-      onReady() {
-        setTimeout(function () {
-          // 获取 chart 实例的方式
-          // console.log(chart)
-        }, 2000);
-      },    
-
-      //New comment method
-      getContent(e){
-        content = e.detail.value
-        //动态绑定数据，实现评论结束后清空content的内容
-        this.setData({
-          content :e.detail.value
+  
+    //发表评论
+    remark(e){
+      //如果评论长度小于4给予提示
+      if(content.length<4){
+        wx.showToast({
+          title: 'Your comment is too short',
+          icon:"none"
         })
-      },
-    
-      //发表评论
-      remark(e){
-        //如果评论长度小于4给予提示
-        if(content.length<4){
-          wx.showToast({
-            title: 'Your comment is too short',
-            icon:"none"
-          })
-          return
-        }
-        //定义remarksItem变量来存储插入的对象
-        let remarksItem = {}
-        remarksItem.content = content
-        remarksItem.userName = "Anonymous user"
-    
-        //remarks存储更新后的数组，
-        let localCommentList = this.data.comments
-        localCommentList.unshift(remarksItem)  //将对象插入到数组中。unshift插入到数组最前面，push插入到数组最后面
-        console.log("添加评论后的数组",localCommentList);
-    
-        //调用云函数之前显示加载中
-        wx.showLoading({
-          title: '发表中',
-        })
+        return
+      }
+      //定义remarksItem变量来存储插入的对象
+      let remarksItem = {}
+      remarksItem.content = content
+      remarksItem.userName = "Anonymous user"
+  
+      //remarks存储更新后的数组，
+      let localCommentList = this.data.comments
+      localCommentList.unshift(remarksItem)  //将对象插入到数组中。unshift插入到数组最前面，push插入到数组最后面
+      console.log("添加评论后的数组",localCommentList);
+  
+      //调用云函数之前显示加载中
+      wx.showLoading({
+        title: '发表中',
+      })
 
-        wx.cloud.database().collection('comments').doc('chickFillA')
+      wx.cloud.database().collection('comments').doc('chickFillA')
       .update({
         data:{
           commentList:localCommentList
