@@ -16,8 +16,10 @@ App({
     }
 
     this.globalData = {  
+      PageActive: true
     }
-  }
+
+}
     
   
 })

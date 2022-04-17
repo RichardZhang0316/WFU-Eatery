@@ -252,9 +252,6 @@ Page({
       let that = this;
       let cookie_id = wx.getStorageSync('cai') || []; 
       let zan_id = wx.getStorageSync('zan') || [];  
-      // console.log(cookie_id)
-      // let cookie_id = wx.getStorageSync('cai') || []; //获取全部点踩的id
-      // let zan_id = wx.getStorageSync('zan')
       let openid = that.data.openid
 
       for (var i = 0; i < that.data.nList.length; i++) { // 历变当前页面所有fooditems
@@ -273,7 +270,7 @@ Page({
             if (numD < 0) { numD = 0}
             that.setData({
               [`nList[${i}].Down`]: numD, //es6模板语法，常规写法报错
-              [`nList[${i}.].cai`]: false //我的数据中cai为'false'是未踩
+              [`nList[${i}].cai`]: false //我的数据中cai为'false'是未踩
             })
             wx.setStorageSync('cai', cookie_id);
             wx.showToast({
@@ -303,7 +300,7 @@ Page({
             ++numD; //踩数加1
             that.setData({
               [`nList[${i}].Down`]: numD,
-              [`nList[${i}.].cai`]: true
+              [`nList[${i}].cai`]: true
             })
            
             cookie_id.unshift(item_id); //新增踩的id
@@ -338,12 +335,21 @@ Page({
         }
         
       }
-      // this.onLoad()
-      console.log("cai2: "+ this.data.nList[0].cai)
       
     },
     
-
+    /*
+    handleSearchVal(e) {
+      getApp().preventActive(() => {
+        const orderName = e.detail;
+        this.setData({
+          page: 1,
+          orderName: orderName,
+          contentList: []
+        });
+        this.orderList();
+      })
+    },*/
 
     upFunction(e){
       var shareid = e.currentTarget.dataset.id
@@ -435,6 +441,7 @@ Page({
           that.setData({
             [`RateChick[${i}].Up`]: numU,
             [`RateChick[${i}].Down`]: numD,
+            
           })
         }
         console.log("zan2: "+ this.data.newList[i].zan)
