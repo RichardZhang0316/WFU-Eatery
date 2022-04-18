@@ -19,7 +19,7 @@ let caiCollection = wx.getStorageSync('caiCollection');
     wx.setStorageSync('caiCollection', {})
   }
 
-//Initial Chart的function
+// Initial Chart的function
 function initChart(canvas, width, height, dpr) {  
   chart = echarts.init(canvas, null, {            // object, initial method
     width: width,

@@ -89,14 +89,14 @@ Page({
     steps: [
       {
       
-        desc: ' 学生需登录Housing Portal以更改Meal Plan',
+        desc: ' 登录 Housing Portal 以更改 Meal Plan',
       },
       {
-        desc: '登录Housing Portal，点击2021-2022 Housing按钮，选择当前Academic Year，即可进入Meal Plan Selection页面',
+        desc: '登录 Housing Portal，点击 2022-2023 Housing按钮，选择当前 Academic Year，即可进入 Meal Plan Selection 页面',
       
       },
       {
-        desc: '点击按钮复制网址，在浏览器打开网页',
+        desc: '👇 点击按钮复制网址，在浏览器打开网页',
       
       },
     ],
