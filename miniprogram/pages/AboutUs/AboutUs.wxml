@@ -7,10 +7,11 @@
   
 </view>
 
+<!--
 <view class="Pic">
   <image src="https://s2.loli.net/2022/04/17/amcfL29ipxIk4YQ.png"></image>
 </view>
-<view class="button" bindtap='copyText' data-text="{{contents}}">See our Website</view> 
+<view class="button" bindtap='copyText' data-text="{{contents}}">See our Website</view> -->
 
 
 

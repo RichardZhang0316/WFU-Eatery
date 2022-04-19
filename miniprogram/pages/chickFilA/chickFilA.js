@@ -2,12 +2,15 @@
 import * as echarts from '../../ec-canvas/echarts';
 let chart = null;  
 let content = '';
-const db = wx.cloud.database() 
-const _ = db.command // 获取数据库操作符，通过 db.command 获取
-const CF = db.collection('ChickFilAUpDown')
 
-// 从本地缓存中同步获取指定 key 的内容
-let likeCollection = wx.getStorageSync('likeCollection'); 
+const db = wx.cloud.database()
+const _ = db.command // 获取数据库操作符，通过 db.command 获取
+//const CF = db.collection('ChickFilAUpDown')
+const CFA = db.collection('UpDown').doc('ChickFillA')
+
+
+
+let likeCollection = wx.getStorageSync('likeCollection') // 从本地缓存中同步获取指定 key 的内容
     if(!likeCollection){
       wx.setStorageSync('likeCollection', {})
     }
@@ -50,15 +53,13 @@ Page({
     data: {
       // 点赞点踩
       newList:[], // 全量Result
-      nList:[],   // 全量Result
-
       isLike:[],
       isCai:[],
       like_people:[],
       cai_people:[],
       openid:'',
-      RateChick:[],
       comments:[],
+      RC:[],
       
 
       //前端滑动切换bar_Data input
@@ -143,96 +144,76 @@ Page({
     // onLoad:页面加载时触发,一个页面只会调用一次
     onLoad: function (options) { 
        let that = this; 
-       // 点赞点踩_BUG: 获取当前页面全部集合
-       // 目前只能获取20条，是TX的限制🚫
-        
+
        // 云函数获取openid
        wx.cloud.callFunction({
-          name:'getOpenid',
-          complete:res=>{
-            console.log('云函数获取到的openid: ', res.result.openid)
-            that.setData({
-              openid: res.result.openid,
-            })
-          
-
-          // (有BUG) 发送请求获取Up_and_Down列表数据
-          CF.field({ 
-            _id: true,
-            like: true,
-            cai: true,
-            Up: true,
-            Down: true,
-            like_people: true,
-            cai_people:true
-          }).get({
-            success: res => { // BUG, 最多读取20条doc
+         // 云函数获取openid
+         name:'getOpenid',
+         complete:res=>{
+          console.log('云函数获取到的openid: ', res.result.openid)
+          that.setData({
+            openid: res.result.openid,
+          })
+          //发送请求获取Up_and_Down列表数据
+          CFA.get({
+            success: res => {
             console.log("ChickUpDown数据：", res)
             that.setData({
-              newList: res.data,
-              nList: res.data
+              newList: res.data.ItemList
+              //nList: res.data.ItemList,
             })
             
             let iszan = that.data.isLike; // 已点赞合集
             let iscai = that.data.isCai; // 已点踩合集
             // 数据获取成功后，进行遍历，拿到所有已经点过赞的id
-            for (var i = 0; i < res.data.length; i++) { 
-              for (let j = 0; j < res.data[i].like_people.length; j++) {
-                if (res.data[i].like_people[j] == that.data.openid) { 
-                  iszan.push(res.data[i]._id) //根据改用户的数据找到已经点赞的，把id放入新建数组中
+            for (var i = 0; i < res.data.ItemList.length; i++) { 
+              for (let j = 0; j < res.data.ItemList[i].like_people.length; j++) {
+                if (res.data.ItemList[i].like_people[j] == that.data.openid) { 
+                  iszan.push(res.data.ItemList[i].item) //根据改用户的数据找到已经点赞的，把id放入新建数组中
                 }
               }
-              for (let j = 0; j < res.data[i].cai_people.length; j++) {
-                if (res.data[i].cai_people[j] == that.data.openid) { 
-                  iscai.push(res.data[i]._id) //根据改用户的数据找到已经踩过的，把商品id放入新建数组中
+              for (let j = 0; j < res.data.ItemList[i].cai_people.length; j++) {
+                if (res.data.ItemList[i].cai_people[j] == that.data.openid) { 
+                  iscai.push(res.data.ItemList[i].item) //根据改用户的数据找到已经踩过的，把商品id放入新建数组中
                 }
               }
             }
             
-            for (let i = 0; i < res.data.length; i++) {
-              res.data[i].like = false
-              res.data[i].cai = false
-              for (let j = 0; j < iszan.length; j++) { //利用新建的iszan数组与list数组的id查找相同的书籍id
-                if (res.data[i]._id == iszan[j]) { //双重循环遍历，有相同的id则点亮红心
-                  res.data[i].like = true
+            for (let i = 0; i < res.data.ItemList.length; i++) {
+              res.data.ItemList[i].like = false
+              res.data.ItemList[i].cai = false
+              for (let j = 0; j < iszan.length; j++) { //利用新建的iszan数组与list数组的id查找相同的item_id
+                if (res.data.ItemList[i].item == iszan[j]) { //双重循环遍历，有相同的id则点亮红心
+                  res.data.ItemList[i].like = true
                 }
               }
               for (let j = 0; j < iscai.length; j++) { //利用新建的iszan数组与list数组的id查找相同的书籍id
-                if (res.data[i]._id == iscai[j]) { //双重循环遍历，有相同的id则点亮红心
-                  res.data[i].cai = true
+                if (res.data.ItemList[i].item == iscai[j]) { //双重循环遍历，有相同的id则点亮红心
+                  res.data.ItemList[i].cai = true
                 }
               }
             }
             that.setData({
               isLike: this.data.iszan,
-              newList: res.data,
+              //newList: res.data.ItemList,
               isCai:this.data.iscai,
-              nList: res.data,
+              //nList: res.data.ItemList,
             })
             wx.setStorageSync('zan', iszan);
             wx.setStorageSync('cai', iscai);
          }
        })
 
-        wx.cloud.database().collection('ChickFilAUpDown').get().then(res=>{
-          // console.log("Success",res);
-          this.setData({
-            RateChick: res.data
-          })
-        }).catch(err=>{
-          console.log("查询失败",err);
-        })
-
-        wx.cloud.database().collection('ChickFilAUpDown').doc('Chick_Fila_A_Sauce').get().then(res=>{
-          // console.log("Chick_Fila_A_Sauce",res);
-          this.setData({
-            CFAup:res.data.Up // ?
-          })
-        })
-        .catch(err=>{
-          console.log("查询失败",err);
-        })
       }})
+
+      wx.cloud.database().collection('UpDown').doc('ChickFillA').get().then(res=>{
+        console.log("RC查询成功",res);
+        this.setData({
+          RC: res.data.ItemList
+        })
+      }).catch(err=>{
+        console.log("查询失败",err);
+      })
 
       // 以下是CommentList函数
       wx.cloud.database().collection("comments").doc('chickFillA').get()
@@ -259,9 +240,9 @@ Page({
       let zan_id = wx.getStorageSync('zan') || [];  
       let openid = that.data.openid
 
-      for (var i = 0; i < that.data.nList.length; i++) { // 历变当前页面所有fooditems
-        if (that.data.nList[i]._id == item_id) { //找到对应的id的food item
-          let numD = that.data.nList[i].Down; //当前踩数量
+      for (var i = 0; i < that.data.newList.length; i++) { // 历变当前页面所有fooditems
+        if (that.data.newList[i].item == item_id) { //找到对应的id的food item
+          let numD = that.data.newList[i].Down; //当前踩数量
           let numU = that.data.newList[i].Up; //当前踩数量
           // 若此用户已经踩过了，取消踩
           if (cookie_id.includes(item_id) ) { 
@@ -274,15 +255,15 @@ Page({
             --numD; //踩数减1
             if (numD < 0) { numD = 0}
             that.setData({
-              [`nList[${i}].Down`]: numD, //es6模板语法，常规写法报错
-              [`nList[${i}].cai`]: false //我的数据中cai为'false'是未踩
+              [`newList[${i}].Down`]: numD, //es6模板语法，常规写法报错
+              [`newList[${i}].cai`]: false //我的数据中cai为'false'是未踩
             })
             wx.setStorageSync('cai', cookie_id);
             wx.showToast({
               title: "取消点踩",
               icon: 'none'
             })
-            this.data.nList[i].cai_people.pop(openid)
+            this.data.newList[i].cai_people.pop(openid)
             // 若此用户尚未点踩，踩操作
           } else { 
             // 若此用户点赞了该item，则点踩+取消赞
@@ -304,8 +285,8 @@ Page({
             // 进行点踩
             ++numD; //踩数加1
             that.setData({
-              [`nList[${i}].Down`]: numD,
-              [`nList[${i}].cai`]: true
+              [`newList[${i}].Down`]: numD,
+              [`newList[${i}].cai`]: true
             })
            
             cookie_id.unshift(item_id); //新增踩的id
@@ -314,47 +295,29 @@ Page({
               title: "踩一下",
               icon: 'none'
             })
-            if(this.data.nList[i].cai_people == undefined){
-              this.data.nList[i].cai_people = []
+            if(this.data.newList[i].cai_people == undefined){
+              this.data.newList[i].cai_people = []
             }
-            this.data.nList[i].cai_people.push(openid)
+            this.data.newList[i].cai_people.push(openid)
           }
           //和后台交互，后台数据库要同步
-          CF.doc(item_id).update({
+          CFA.update({
             data: {
-              like: this.data.newList[i].like,
-              Up: numU,
-              Down:numD,
-              like_people: this.data.newList[i].like_people,
-              cai: this.data.nList[i].cai,
-              cai_people: this.data.nList[i].cai_people,
+             ItemList:this.data.newList
             },
             success: res => {
               console.log("踩数据后台已同步",res)
             }
           })
           that.setData({
-            [`RateChick[${i}].Up`]: numU,
-            [`RateChick[${i}].Down`]: numD,
+            [`RC[${i}].Up`]: numU,
+            [`RC[${i}].Down`]: numD,
           })
         }
         
       }
       
     },
-    
-    /*
-    handleSearchVal(e) {
-      getApp().preventActive(() => {
-        const orderName = e.detail;
-        this.setData({
-          page: 1,
-          orderName: orderName,
-          contentList: []
-        });
-        this.orderList();
-      })
-    },*/
 
     upFunction(e){
       var shareid = e.currentTarget.dataset.id
@@ -371,9 +334,9 @@ Page({
       console.log(that.data.newList)
 
       for (var i = 0; i < that.data.newList.length; i++) {
-        if (that.data.newList[i]._id == item_id) { //数据列表中找到对应的id
+        if (that.data.newList[i].item == item_id) { //数据列表中找到对应的id
           var numU = that.data.newList[i].Up; //当前点赞数
-          var numD = that.data.nList[i].Down;
+          var numD = that.data.newList[i].Down;
           //console.log("here!")
           if (cookie_id.includes(item_id) ) { //已经点过赞了，取消点赞
             for (var j in cookie_id) {
@@ -404,11 +367,11 @@ Page({
               --numD; //点踩数减1
               if (numD < 0) { numD = 0}
               that.setData({
-                [`nList[${i}].Down`]: numD, //es6模板语法，常规写法报错
-                [`nList[${i}.].cai`]: false //我的数据中like为'false'是未点赞
+                [`newList[${i}].Down`]: numD, //es6模板语法，常规写法报错
+                [`newList[${i}.].cai`]: false //我的数据中like为'false'是未点赞
               })
               wx.setStorageSync('cai', cookie_id);
-              this.data.nList[i].cai_people.pop(openid)
+              this.data.newList[i].cai_people.pop(openid)
             }
              //点赞操作
             ++numU; //点赞数加1
@@ -429,14 +392,9 @@ Page({
             this.data.newList[i].like_people.push(openid)
           } 
           //和后台交互，后台数据要同步
-          CF.doc(item_id).update({
+          CFA.update({
             data: {
-              like: this.data.newList[i].like,
-              Up: numU,
-              Down:numD,
-              like_people: this.data.newList[i].like_people,
-              cai: this.data.nList[i].cai,
-              cai_people: this.data.nList[i].cai_people,
+             ItemList:this.data.newList
             },
             success: res => {
               console.log("点赞数据后台已同步",res)
@@ -444,14 +402,12 @@ Page({
           })
           //更新点赞后的点赞数
           that.setData({
-            [`RateChick[${i}].Up`]: numU,
-            [`RateChick[${i}].Down`]: numD,
+            [`RC[${i}].Up`]: numU,
+            [`RC[${i}].Down`]: numD,
             
           })
         }
-        // console.log("zan2: "+ this.data.newList[i].zan)
       }
-      
     },
 
     
