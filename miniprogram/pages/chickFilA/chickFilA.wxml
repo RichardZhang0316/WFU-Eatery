@@ -202,10 +202,15 @@
 
 <van-tab title="Beverage">
     <foodCard desc="630卡路里" title="Cookies & Cream Milkshake 奥利奥&奶油奶昔" thumb="https://www.cfacdn.com/img/order/COM/Menu_Refresh/Treats/Treats%20PDP/_0000s_0000_%5BFeed%5D_0005s_0004_Treats_Cookies-Cream-Milkshake.png" price="3.85" currency="$">
+
       <view slot="footer">
-      <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='Cookie&CreamMS'wx:if="{{!newList[20].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='Cookie&CreamMS'wx:else/> {{RateChick[20].Up}} </van-button> 
+      <van-button size="large"> 
+      <van-icon wx:if="{{!newList[20].like}}" name="good-job-o" size="25px" bindtap="upFunction" data-id='Cookie&CreamMS'/>
+      <van-icon wx:else name="good-job" size="25px" bindtap="upFunction" data-id='Cookie&CreamMS'/> {{RateChick[20].Up}}</van-button> 
+
       <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='Cookie&CreamMS' wx:if="{{!nList[20].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='Cookie&CreamMS' wx:else></view>{{RateChick[20].Down}} </van-button>
       </view>
+
     </foodCard>
 
     <foodCard desc="580卡路里" title="Vanilla Milkshake 香草奶昔" thumb="https://www.cfacdn.com/img/order/COM/Menu_Refresh/Treats/Treats%20PDP/_0000s_0002_%5BFeed%5D_0005s_0002_Treats_Vanilla-Milkshake.png" price="3.85" currency="$">

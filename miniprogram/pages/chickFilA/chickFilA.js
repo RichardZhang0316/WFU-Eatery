@@ -2,11 +2,12 @@
 import * as echarts from '../../ec-canvas/echarts';
 let chart = null;  
 let content = '';
-
 const db = wx.cloud.database() 
 const _ = db.command // 获取数据库操作符，通过 db.command 获取
 const CF = db.collection('ChickFilAUpDown')
-let likeCollection = wx.getStorageSync('likeCollection'); // 从本地缓存中同步获取指定 key 的内容
+
+// 从本地缓存中同步获取指定 key 的内容
+let likeCollection = wx.getStorageSync('likeCollection'); 
     if(!likeCollection){
       wx.setStorageSync('likeCollection', {})
     }
@@ -142,15 +143,20 @@ Page({
     // onLoad:页面加载时触发,一个页面只会调用一次
     onLoad: function (options) { 
        let that = this; 
+       // 点赞点踩_BUG: 获取当前页面全部集合
+       // 目前只能获取20条，是TX的限制🚫
+        
+       // 云函数获取openid
        wx.cloud.callFunction({
-         // 云函数获取openid
-         name:'getOpenid',
-         complete:res=>{
-          console.log('云函数获取到的openid: ', res.result.openid)
-          that.setData({
-            openid: res.result.openid,
-          })
-          //发送请求获取Up_and_Down列表数据
+          name:'getOpenid',
+          complete:res=>{
+            console.log('云函数获取到的openid: ', res.result.openid)
+            that.setData({
+              openid: res.result.openid,
+            })
+          
+
+          // (有BUG) 发送请求获取Up_and_Down列表数据
           CF.field({ 
             _id: true,
             like: true,
@@ -160,8 +166,7 @@ Page({
             like_people: true,
             cai_people:true
           }).get({
-            success: res => {
-          // wx.cloud.database().collection('ChickFilAUpDown').get().then(res=>{
+            success: res => { // BUG, 最多读取20条doc
             console.log("ChickUpDown数据：", res)
             that.setData({
               newList: res.data,
@@ -363,7 +368,7 @@ Page({
       var cookie_id = wx.getStorageSync('zan') || []; //获取全部点赞的id
       var cai_id = wx.getStorageSync('cai') || [];
       var openid = that.data.openid
-      console.log(openid)
+      console.log(that.data.newList)
 
       for (var i = 0; i < that.data.newList.length; i++) {
         if (that.data.newList[i]._id == item_id) { //数据列表中找到对应的id
@@ -444,7 +449,7 @@ Page({
             
           })
         }
-        console.log("zan2: "+ this.data.newList[i].zan)
+        // console.log("zan2: "+ this.data.newList[i].zan)
       }
       
     },
