@@ -155,7 +155,7 @@ Page({
           //发送请求获取Up_and_Down列表数据
           CFA.get({
             success: res => {
-            console.log("ChickUpDown数据：", res)
+            console.log("UpDown数据：", res)
             that.setData({
               newList: res.data.ItemList
               //nList: res.data.ItemList,
@@ -194,9 +194,7 @@ Page({
             }
             that.setData({
               isLike: this.data.iszan,
-              //newList: res.data.ItemList,
               isCai:this.data.iscai,
-              //nList: res.data.ItemList,
             })
             wx.setStorageSync('zan', iszan);
             wx.setStorageSync('cai', iscai);
@@ -239,6 +237,7 @@ Page({
       let zan_id = wx.getStorageSync('zan') || [];  
       let openid = that.data.openid
 
+
       for (var i = 0; i < that.data.newList.length; i++) { // 历变当前页面所有fooditems
         if (that.data.newList[i].item == item_id) { //找到对应的id的food item
           let numD = that.data.newList[i].Down; //当前踩数量
@@ -278,7 +277,7 @@ Page({
                 [`newList[${i}].Up`]: numU, //es6模板语法，常规写法报错
                 [`newList[${i}.].like`]: false //我的数据中like为'false'是未点赞
               })
-              wx.setStorageSync('zan', cookie_id);
+              wx.setStorageSync('zan', zan_id);
               this.data.newList[i].like_people.pop(openid)
             }
             // 进行点踩
@@ -312,6 +311,7 @@ Page({
             [`RC[${i}].Up`]: numU,
             [`RC[${i}].Down`]: numD,
           })
+          
         }
         
       }
@@ -367,9 +367,9 @@ Page({
               if (numD < 0) { numD = 0}
               that.setData({
                 [`newList[${i}].Down`]: numD, //es6模板语法，常规写法报错
-                [`newList[${i}.].cai`]: false //我的数据中like为'false'是未点赞
+                [`newList[${i}.].cai`]: false, //我的数据中like为'false'是未点赞
               })
-              wx.setStorageSync('cai', cookie_id);
+              wx.setStorageSync('cai', cai_id);
               this.data.newList[i].cai_people.pop(openid)
             }
              //点赞操作
@@ -393,7 +393,7 @@ Page({
           //和后台交互，后台数据要同步
           CFA.update({
             data: {
-             ItemList:this.data.newList
+             ItemList:this.data.newList,
             },
             success: res => {
               console.log("点赞数据后台已同步",res)
@@ -403,8 +403,8 @@ Page({
           that.setData({
             [`RC[${i}].Up`]: numU,
             [`RC[${i}].Down`]: numD,
-            
           })
+
         }
       }
       
