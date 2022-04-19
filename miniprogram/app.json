@@ -1,8 +1,7 @@
 {
-    "useExtendedLib": {
-      "weui": true
-    },
-  
+  "useExtendedLib": {
+    "weui": true
+  },
   "pages": [
     "pages/launch/launch",
     "pages/HomePage/HomePage",
@@ -29,7 +28,8 @@
     "pages/VillageJuice/VillageJuice",
     "pages/starbucks/starbucks",
     "pages/P.O.D.Market/P.O.D.Market",
-    "components/navigation/navigation"
+    "components/navigation/navigation",
+    "pages/AboutUs/AboutUs"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -37,32 +37,31 @@
     "navigationBarTitleText": "",
     "navigationBarTextStyle": "black"
   },
-  
   "sitemapLocation": "sitemap.json",
   "style": "v2",
   "tabBar": {
-    "color": "#959394",  
+    "color": "#959394",
     "selectedColor": "#FDC314",
-    "backgroundColor":"#FFFFFF",
+    "backgroundColor": "#FFFFFF",
     "borderStyle": "black",
     "list": [
       {
         "pagePath": "pages/HomePage/HomePage",
         "iconPath": "images/home-no.png",
         "selectedIconPath": "images/home-yes.png",
-        "text":"Eateries"
+        "text": "Eateries"
       },
       {
         "pagePath": "pages/IncomingMenu/IncomingMenu",
         "iconPath": "images/me-no.png",
         "selectedIconPath": "images/me-yes.png",
-        "text":"Upcoming Menu"
+        "text": "Upcoming Menu"
       },
       {
         "pagePath": "pages/Favorites/Favorites",
         "iconPath": "images/shit.png",
         "selectedIconPath": "images/third-yes.png",
-        "text":"Deacon Dining"
+        "text": "Deacon Dining"
       }
     ]
   }

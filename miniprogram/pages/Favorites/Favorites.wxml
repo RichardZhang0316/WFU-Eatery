@@ -21,6 +21,9 @@
 <navigator class="topTitle" url="/pages/ChangeMealPlan/ChangeMealPlan">Change Meal Plan</navigator>
 </view>
 
+<view class="card">
+<navigator class="topTitle" url="/pages/AboutUs/AboutUs">Contact Us</navigator>
+</view>
 
 
 <image class="image" src="/images/Deaco.png" style = "width:100px" mode = "widthFix"></image>
