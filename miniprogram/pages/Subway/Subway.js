@@ -246,7 +246,7 @@ Page({
       wx.hideLoading()
     })},
     
-    // ToDo: 删除评论函数
+    // 删除评论函数
     delete: function(e) {
       var that = this
       let indexDelete = e
@@ -316,7 +316,6 @@ Page({
       this.isYourComments(thisCommentIndex) 
     },
 
-
     // 获取用户Profile授权函数
     getUserProfile: function (e) {
       wx.getUserProfile({
@@ -339,10 +338,10 @@ Page({
       })       
     },
     
-      onReady() {
-        setTimeout(function () {
-          // 获取 chart 实例的方式
-          // console.log(chart)
-        }, 2000);
-      }
+    onReady() {
+      setTimeout(function () {
+        // 获取 chart 实例的方式
+        // console.log(chart)
+      }, 2000);
+    }
 })

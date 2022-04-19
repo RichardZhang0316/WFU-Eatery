@@ -241,21 +241,31 @@
   </van-tab>
 </van-tabs>
 
-<!-- <view style="height: 60px; width: 100%; background-color:#ececec;"></view> -->
-<view class="greyPart"></view>
-<view class="realPart"><view class="menuTitle">Comments</view></view>
+<view style="height: 25px; width: 100%; background-color:#ececec;"></view>
+
+
+<!-- 评论功能 -->
+<view class="realPart1">
+  <view class="menuTitle">Comments</view>
+</view>
 
 <!-- Comment List -->
 <block class="remarksList">
   <view wx:for="{{comments}}" wx:key="index" class="remarks">
-    <view class="name">{{item.userName}}</view>
-    <!-- <view class="name">{{item.time}}</view> -->
-    <view class="content">{{item.content}}</view>
+    <!-- 若不是该用户所发的评论，则不能删除 -->
+    <view class="name" data-index-of-item="{{index}}" bindtap="getNotice" >{{item.userName}}</view>
+    <view class="content" data-index-of-item="{{index}}" bindtap="getNotice" >{{item.content}}</view>
   </view> 
 </block>
 
 <!-- Publish Comment -->
 <view class="last">
-<textarea bindinput="getContent" placeholder="Leave your comment about this resturant here" value="{{content}}"></textarea>
-<button bindtap="remark" type="primary" class="buttttton">publish comment</button>
+<textarea bindinput="getContent" placeholder="来一起聊聊好吃的吧！发布后点击评论可删除～" value="{{content}}"></textarea>
+
+<view wx:if="{{isAuth==true}}"> 
+  <button bindtap="remark" type="primary" class="buttttton">Publish Comment</button>
+</view>
+<view wx:else>
+  <button bindtap="getUserProfile" open-type="getUserProfile" type="primary" class="buttttton">请先用户授权</button>
+</view>
 </view>
