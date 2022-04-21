@@ -163,6 +163,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/AboutUs/AboutUs",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

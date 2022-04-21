@@ -4,14 +4,20 @@
 </view> 
 
 <view class="card">
-  
+  <view class="text">
+  WFU_AppDev创立于Fall2021，我们的目标是"Seek the interaction between technology and humanity"。始于兴趣，并持之以恒地不断为我们的community开发有意义的软件。目前我们所开发和维护的产品有"Eatery", "WFU_Covid"和iOS应用"Deacon Emojis"。
+  </view>
 </view>
 
-<!--
+
+
 <view class="Pic">
-  <image src="https://s2.loli.net/2022/04/17/amcfL29ipxIk4YQ.png"></image>
+  <image class="Pic1" mode="aspectFit" src="{{src}}"></image>
 </view>
-<view class="button" bindtap='copyText' data-text="{{contents}}">See our Website</view> -->
+
+<view class="button" bindtap='copyText' data-text="{{contents}}">See our Website</view> 
+
+<view class="space"></view>
 
 
 

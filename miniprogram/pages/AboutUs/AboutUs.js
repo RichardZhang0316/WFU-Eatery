@@ -5,7 +5,28 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    array: [{
+      mode: 'aspectFit',
+      text: 'aspectFit：保持纵横比缩放图片，使图片的长边能完全显示出来'
+    }],
+    src: 'https://s2.loli.net/2022/04/21/NuhMrQfkyZo56v9.png',
+    contents:'http://www.wfuappdev.com/'
+  },
+  
+  copyText: function (e) {
+    console.log(e)
+    wx.setClipboardData({
+      data: e.currentTarget.dataset.text,
+      success: function (res) {
+        wx.getClipboardData({
+          success: function (res) {
+            wx.showToast({
+              title: '复制成功'
+            })
+          }
+        })
+      }
+    })
   },
 
   /**

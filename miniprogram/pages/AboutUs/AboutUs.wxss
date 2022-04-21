@@ -46,7 +46,7 @@ page{
   background: rgb(255, 255, 255);
   /* radius是卡片的边框的圆润c程度*/
   margin-top: 30px;
-  padding-top: 12px;
+  padding-top: 15px;
   border-radius:10px;
   /* box-shadow: 5px 5px 5px #FDC314; */
   box-shadow: 5px 5px 5px #cdcfcf;
@@ -55,14 +55,38 @@ page{
 .Pic{
   color:rgb(158, 126, 56);
   width: 90%;
+  display: inline-block;
+  overflow: hidden;
   margin-left: 5%;
   height: auto;
   background: rgb(255, 255, 255);
   margin-top: 30px;
-  padding-top: 10px;
   border-radius:10px;
   box-shadow: 5px 5px 5px #cdcfcf;
 }
+
+
+.text{
+  color: #d6b160;
+  text-align: left;
+  padding-left: 18px;
+  padding-right: 18px;
+  padding-bottom: 15px;
+}
+
+.Pic1{
+  object-fit: cover;
+  width: 90%;
+  padding-left: 5%;
+  height: 330px;
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+
+.space{
+  height: 150px;
+}
+
 
 
 

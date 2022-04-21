@@ -20,8 +20,6 @@ Page({
       {
         text: 'Method 3',
         desc: '现场充值: 周一至周五8:30am-4:30 PM，在Reynolda一层服务窗口直接充值',
-
-      
       },
 
 
