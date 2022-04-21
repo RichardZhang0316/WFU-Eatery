@@ -1,4 +1,4 @@
-// miniprogram/components/cloudTipModal/index.js
+//miniprogram/components/cloudTipModal/index.js
 const { isMac } = require('../../envList.js')
 
 Component({

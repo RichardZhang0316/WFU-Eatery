@@ -1,14 +1,15 @@
 @import "../Subway/Subway.wxss";
 
+/*
 @font-face {
-  font-family: 'iconfont';  /* Project id 3317566 */
+  font-family: 'iconfont';  /* Project id 3317566 
   src: url('//at.alicdn.com/t/font_3317566_4lqhh2l8nae.woff2?t=1649651234563') format('woff2'),
        url('//at.alicdn.com/t/font_3317566_4lqhh2l8nae.woff?t=1649651234563') format('woff'),
        url('//at.alicdn.com/t/font_3317566_4lqhh2l8nae.ttf?t=1649651234563') format('truetype');
 }
 
 @font-face {
-  font-family: 'iconfont';  /* Project id 3317566 */
+  font-family: 'iconfont';  /* Project id 3317566 
   src: url('//at.alicdn.com/t/font_3317566_umomlm7w5se.woff2?t=1649744248756') format('woff2'),
        url('//at.alicdn.com/t/font_3317566_umomlm7w5se.woff?t=1649744248756') format('woff'),
        url('//at.alicdn.com/t/font_3317566_umomlm7w5se.ttf?t=1649744248756') format('truetype');
@@ -33,6 +34,7 @@
 .icon-caishixin:before {content: "\e68f";}
 
 .icon-cai:before{content: "\e701";}
+*/
 
 .likeandcollect{
     margin: 20rpx;
