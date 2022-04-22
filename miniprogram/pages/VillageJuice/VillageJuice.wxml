@@ -37,6 +37,14 @@
 
 <van-tabs active="{{ active }}" bind:change="onChange" swipeable ellipsis="{{false}}" color="#d6b160" title-active-color="#d6b160">
   
+  <van-tab title="Bowls">
+    <foodCard desc="330卡路里  由燕麦牛奶，有机草莓，香蕉，大枣、香蕉，烤杏仁酥，枸杞制成" title="Pinky Swear Bowl 拉钩碗" thumb="https://i.loli.net/2021/11/28/POIlcx81sNqKahU.png" price="8.95" currency="$"/>
+    <foodCard desc="400卡路里 由燕麦牛奶、菠萝、香蕉、芒果、酸橙、椰子、枸杞和芒果制成" title="Sunset Bowl 日落碗" thumb="https://i.loli.net/2021/11/28/pZiVBRnKPqgthNL.png" price="8.95" currency="$"/>
+    <foodCard desc="440卡路里 由燕麦牛奶、香蕉、杏仁黄油、枣、有机蓝莓、烤杏仁酥、香蕉和蜂蜜制成" title="Coconut Butter Bowl 椰子黄油碗" thumb="https://i.loli.net/2021/11/28/UckE62VGYSFuR4A.png" price="8.95" currency="$"/>
+    <foodCard desc="440卡路里 由燕麦牛奶，有机巴西莓，香蕉，有机草莓和枣制成。上面有香蕉，可可，有机草莓，椰子和烤杏仁酥" title="Acai Bowl 酸奶碗" thumb="https://i.loli.net/2021/11/28/znyxTitaLUpSoJC.png" price="10.95" currency="$"/>
+    <foodCard desc="440卡路里 由无麸质燕麦，燕麦牛奶，杏仁黄油，有机草莓，蜂蜜，香蕉和烤杏仁酥制成" title="Overnight Oats 隔夜燕麦碗" thumb="https://i.loli.net/2021/11/28/3ZeGgWhwoLY1NC7.png" price="7.95" currency="$"/>
+  </van-tab>
+  
   <van-tab title="Smoothies">
     <foodCard desc="280卡路里 由燕麦牛奶，冷煮咖啡，香蕉，大枣，可可豆制成" title="Mocha-Nana 摩卡娜娜奶昔" thumb="https://i.loli.net/2021/11/28/7e61mLHqPzUjwYX.png" price="6.95" currency="$"> 
     </foodCard>  
@@ -47,13 +55,7 @@
     <foodCard desc="270卡路里 由燕麦牛奶，芒果，黄瓜，菠菜，甘蓝，香蕉，薄荷制成" title="Green Coco 绿色可可奶昔" thumb="https://i.loli.net/2021/11/28/P4XQFbWmcYVq6Io.png" price="8.95" currency="$"/>
     <foodCard desc="480卡路里 由燕麦牛奶，有机蓝莓，杏仁黄油，大枣，奇亚籽，香蕉制成" title="Super Blue 超级蓝奶昔" thumb="https://i.loli.net/2021/11/28/ReVE3J9kK1uLp5B.png" price="9.95" currency="$"/>
   </van-tab>
-  <van-tab title="Bowls">
-    <foodCard desc="330卡路里  由燕麦牛奶，有机草莓，香蕉，大枣、香蕉，烤杏仁酥，枸杞制成" title="Pinky Swear Bowl 拉钩碗" thumb="https://i.loli.net/2021/11/28/POIlcx81sNqKahU.png" price="8.95" currency="$"/>
-    <foodCard desc="400卡路里 由燕麦牛奶、菠萝、香蕉、芒果、酸橙、椰子、枸杞和芒果制成" title="Sunset Bowl 日落碗" thumb="https://i.loli.net/2021/11/28/pZiVBRnKPqgthNL.png" price="8.95" currency="$"/>
-    <foodCard desc="440卡路里 由燕麦牛奶、香蕉、杏仁黄油、枣、有机蓝莓、烤杏仁酥、香蕉和蜂蜜制成" title="Coconut Butter Bowl 椰子黄油碗" thumb="https://i.loli.net/2021/11/28/UckE62VGYSFuR4A.png" price="8.95" currency="$"/>
-    <foodCard desc="440卡路里 由燕麦牛奶，有机巴西莓，香蕉，有机草莓和枣制成。上面有香蕉，可可，有机草莓，椰子和烤杏仁酥" title="Acai Bowl 酸奶碗" thumb="https://i.loli.net/2021/11/28/znyxTitaLUpSoJC.png" price="10.95" currency="$"/>
-    <foodCard desc="440卡路里 由无麸质燕麦，燕麦牛奶，杏仁黄油，有机草莓，蜂蜜，香蕉和烤杏仁酥制成" title="Overnight Oats 隔夜燕麦碗" thumb="https://i.loli.net/2021/11/28/3ZeGgWhwoLY1NC7.png" price="7.95" currency="$"/>
-  </van-tab>
+  
   <van-tab title="Wraps">
     <foodCard title="Quit Your Job 辞职卷" desc="520卡路里 将炒鸡蛋，西红柿，鳄梨，切达干酪和鳄梨裹在玉米粉薄烙饼里，上面放上芒果沙司" thumb="https://i.loli.net/2021/11/29/9kHrj7nKdDQptB8.png" price="9.95" currency="$"/>
     <foodCard title="Nut Butter & Banana 坚果酱和香蕉卷" desc="550卡路里 由腰果、黄油、香蕉和蜂蜜制成" thumb="https://i.loli.net/2021/11/29/SrNVkD6GeCitO7z.png" price="7.95" currency="$"/>
@@ -72,13 +74,24 @@
     <foodCard title="Southwest 西南沙拉" desc="572卡路里 由黑豆，芒果沙司，切碎的莴苣，切达干酪，香菜，鳄梨，糙米，甜玉米，和葱花制成" thumb="https://i.loli.net/2021/11/29/k2HrPhTIS8xMqKX.png" price="10.95" currency="$"/>
   </van-tab>
 </van-tabs>
-
 <view style="height: 25px; width: 100%; background-color:#ececec;"></view>
 
 
 <!-- 评论功能 -->
 <view class="realPart1">
   <view class="menuTitle">Comments</view>
+</view>
+
+<!-- Publish Comment -->
+<view class="last">
+<textarea bindinput="getContent" placeholder="来一起聊聊好吃的吧！点击评论可删除～" value="{{content}}"></textarea>
+
+<view wx:if="{{isAuth==true}}"> 
+  <button bindtap="remark" type="primary" class="buttttton">Publish Comment</button>
+</view>
+<view wx:else>
+  <button bindtap="getUserProfile" open-type="getUserProfile" type="primary" class="buttttton">请先用户授权</button>
+</view>
 </view>
 
 <!-- Comment List -->
@@ -90,21 +103,7 @@
   </view> 
 </block>
 
-<!-- Publish Comment -->
-<view class="last">
-<textarea bindinput="getContent" placeholder="来一起聊聊好吃的吧！发布后点击评论可删除～" value="{{content}}"></textarea>
-
-<view wx:if="{{isAuth==true}}"> 
-  <button bindtap="remark" type="primary" class="buttttton">Publish Comment</button>
-</view>
-<view wx:else>
-  <button bindtap="getUserProfile" open-type="getUserProfile" type="primary" class="buttttton">请先用户授权</button>
-</view>
-</view>
-
-
-
-
+<view style="height: 25px; background-color: white;"></view>
 
 
 

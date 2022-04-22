@@ -38,7 +38,8 @@
     "minifyWXML": true,
     "showES6CompileOption": false,
     "useCompilerPlugins": false,
-    "ignoreUploadUnusedFiles": false
+    "ignoreUploadUnusedFiles": false,
+    "useStaticServer": true
   },
   "appid": "wx2a68ba548488d188",
   "projectname": "WFUeatery",

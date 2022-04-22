@@ -58,7 +58,10 @@
       <foodCard desc="浓缩咖啡制成，然后摇匀、冷冻、加上少量牛奶和甜味使其醇厚" title="Iced Shaken Espresso 冰摇浓缩咖啡" thumb="https://globalassets.starbucks.com/assets/4471d887a8fb4c15a4db4c668971b8aa.jpg?impolicy=1by1_wide_topcrop_630" price="3.45+" currency="$" />
       <foodCard desc="苹果和红糖的分层风味融合在一起，再加入浓咖啡、牛奶、冰块和焦糖" title="Apple Crisp Macchiato 脆苹果玛奇朵" thumb="https://globalassets.starbucks.com/assets/216279bad2ca4dd193675475106a9f88.jpg?impolicy=1by1_wide_topcrop_630" price="4.85+" currency="$" />
       <foodCard desc="招牌意式浓缩咖啡融合了白巧克力酱、薄荷味糖浆和牛奶三种口味，加冰饮用，顶部配以鲜奶油和黑巧克力" title="Iced Peppermint White Chocolate Mocha 冰薄荷白巧克力摩卡" thumb="https://globalassets.starbucks.com/assets/61b8b9d84d2241f298dc2d24a0a203ad.jpg?impolicy=1by1_wide_topcrop_630" price="4.85+" currency="$" />
-      <foodCard desc="星冰乐烤咖啡、摩卡沙司、薄荷味糖浆、冰和牛奶中融入了巧克力与薄荷，再配以鲜奶油和黑巧克力。" title="Peppermint White Chocolate Mocha Frappuccino® Blended Beverage 薄荷白巧克力摩卡星冰乐混合饮料" thumb="https://globalassets.starbucks.com/assets/3408a37425274b6497f1c2f807d7bdca.jpg?impolicy=1by1_wide_topcrop_630" price="4.95+" currency="$" />
+  </van-tab>
+
+  <van-tab title="Seasonal Beverages & More">
+    <foodCard desc="星冰乐烤咖啡、摩卡沙司、薄荷味糖浆、冰和牛奶中融入了巧克力与薄荷，再配以鲜奶油和黑巧克力。" title="Peppermint White Chocolate Mocha Frappuccino® Blended Beverage 薄荷白巧克力摩卡星冰乐混合饮料" thumb="https://globalassets.starbucks.com/assets/3408a37425274b6497f1c2f807d7bdca.jpg?impolicy=1by1_wide_topcrop_630" price="4.95+" currency="$" />
       <foodCard desc="浓缩咖啡配上白巧克力酱、薄荷味糖浆和蒸牛奶，再加上甜奶油和黑巧克力" title="Peppermint White Chocolate Mocha 薄荷白巧克力摩卡" thumb="https://globalassets.starbucks.com/assets/ce5bcd5f1ae549f69f57cf08157202a1.jpg?impolicy=1by1_wide_topcrop_630" price="4.85+" currency="$" />
       <foodCard desc="白巧克力摩卡沙司配上薄荷味糖浆和蒸牛奶，顶部是鲜奶油和黑巧克力。" title="Peppermint White Hot Chocolate 薄荷白热巧克力" thumb="https://globalassets.starbucks.com/assets/6d449ec196ce46fbaf2d6a3b244eeeae.jpg?impolicy=1by1_wide_topcrop_630" price="3.75+" currency="$" />
       <foodCard desc="将白巧克力摩卡酱、薄荷、牛奶、冰和糖浆混合在一起，配以鲜奶油和黑巧克力。" title="Peppermint White Chocolate Crème Frappuccino® Blended Beverage 薄荷白巧克力奶油星冰乐混合饮料" thumb="https://globalassets.starbucks.com/assets/6a0de67f00f04504905a16fae25d2962.jpg?impolicy=1by1_wide_topcrop_630" price="4.95+" currency="$" />
@@ -88,6 +91,7 @@
       <foodCard desc="糖曲奇味的糖浆，与星冰乐烤咖啡、杏仁奶与冰混合，顶部撒有鲜奶油和红绿色的糖点。" title="Sugar Cookie Almondmilk Frappuccino® Blended Beverage 糖曲奇杏仁奶星冰乐混合饮料" thumb="https://globalassets.starbucks.com/assets/d50938db081948b8a23c81070a300ad8.jpg?impolicy=1by1_wide_topcrop_630" price="4.95+" currency="$" />
       <foodCard desc="糖曲奇味的糖浆、杏仁牛奶与冰混合，上面撒上鲜奶油和红绿色的糖点。" title="ugar Cookie Almondmilk Crème Frappuccino® Blended Beverage 糖曲奇杏仁奶奶油星冰乐混合饮料" thumb="https://globalassets.starbucks.com/assets/38b1ea24aa3d4130a01b9b2c101e5738.jpg?impolicy=1by1_wide_topcrop_630" price="4.95+" currency="$" />
   </van-tab>
+
   <van-tab title="Coffee, Tea & More">
       <foodCard desc="新鲜煮好的咖啡和蒸牛奶地混合在一起，就成了一种非常美味的咖啡饮料。" title="Caffè Misto Misto咖啡" thumb="https://globalassets.starbucks.com/assets/d668acbc691b47249548a3eeac449916.jpg?impolicy=1by1_wide_topcrop_630" price="3.15+" currency="$"/>
       <foodCard desc="为那些喜欢喝黑咖啡的人精心酿制" title="Freshly Brewed Coffee 鲜煮咖啡" thumb="https://www.starbucks.co.id/media/27%20-%20Freshly%20Brewed%20Coffee_tcm33-46301_w1024_n.jpg" price="2.45+" currency="$"/>
@@ -169,15 +173,6 @@
   <view class="menuTitle">Comments</view>
 </view>
 
-<!-- Comment List -->
-<block class="remarksList">
-  <view wx:for="{{comments}}" wx:key="index" class="remarks">
-    <!-- 若不是该用户所发的评论，则不能删除 -->
-    <view class="name" data-index-of-item="{{index}}" bindtap="getNotice" >{{item.userName}}</view>
-    <view class="content" data-index-of-item="{{index}}" bindtap="getNotice" >{{item.content}}</view>
-  </view> 
-</block>
-
 <!-- Publish Comment -->
 <view class="last">
 <textarea bindinput="getContent" placeholder="来一起聊聊好吃的吧！发布后点击评论可删除～" value="{{content}}"></textarea>
@@ -190,6 +185,16 @@
 </view>
 </view>
 
+<!-- Comment List -->
+<block class="remarksList">
+  <view wx:for="{{comments}}" wx:key="index" class="remarks">
+    <!-- 若不是该用户所发的评论，则不能删除 -->
+    <view class="name" data-index-of-item="{{index}}" bindtap="getNotice" >{{item.userName}}</view>
+    <view class="content" data-index-of-item="{{index}}" bindtap="getNotice" >{{item.content}}</view>
+  </view> 
+</block>
+
+<view style="height: 25px; background-color: white;"></view>
 
 
 

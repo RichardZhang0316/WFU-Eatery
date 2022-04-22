@@ -287,18 +287,20 @@ page{
 }
 textarea{
   width: auto;
-  height: 200rpx;
+  height: 90rpx;
   border: 3rpx solid #c3c3c3;
+  border-radius: 10px;
   background-color: white;
   word-break:break-all;
   margin: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   padding: 10px;
 }
 .buttttton{
    background-color: rgb(214, 177, 96)!important;
    font-size: medium !important;
-   margin-bottom:30px;
+   border-radius: 10px;
+   margin-bottom: 11px;
 }
 .last{
     background-color: white;

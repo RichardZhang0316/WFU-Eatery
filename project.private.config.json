@@ -170,6 +170,20 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/NorthPit/NorthPit",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/MagnoliaRoom/MagnoliaRoom",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

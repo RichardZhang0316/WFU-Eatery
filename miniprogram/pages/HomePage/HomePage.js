@@ -11,7 +11,7 @@ Page({
         eateries: [{
                 name: "Zick's",
                 address: "Poteat Residence Hall",
-                url: "https://i.loli.net/2021/11/12/JDPvo2uyTXbBcSp.jpg",
+                url: "https://s2.loli.net/2022/04/23/qCZQivpD3xc81Vn.png",
                 page: "/pages/Zicks/Zicks",
                 payment: {
                     mealSwipes: false,
@@ -59,7 +59,7 @@ Page({
             {
                 name: "Chick-fil-A",
                 address: "Benson University Center",
-                url: "https://i.loli.net/2021/11/12/cndshbOz4MVoDU2.jpg",
+                url: "https://s2.loli.net/2022/04/23/hrOxGD2dLX1Hupj.png",
                 page: "/pages/chickFilA/chickFilA",
                 payment: {
                     mealSwipes: false,
@@ -251,7 +251,7 @@ Page({
             {
                 name: "Shorty's",
                 address: "Benson University Center",
-                url: "https://pbs.twimg.com/media/D3UedXiWwAc2PmQ.jpg",
+                url: "https://s2.loli.net/2022/04/23/pFPuoC6B4cRGeYE.png",
                 page: "/pages/Shorty/Shorty",
                 payment: {
                     mealSwipes: false,
@@ -275,7 +275,7 @@ Page({
             {
                 name: "Bento Sushi",
                 address: "Benson University Center",
-                url: "https://thegatewayonline.ca/wp-content/uploads/2018/09/BENTO-1.jpg",
+                url: "https://s2.loli.net/2022/04/23/uPQ8jiaDwJrW3sb.png",
                 page: "/pages/Bento/Bento",
                 payment: {
                     mealSwipes: false,
@@ -323,7 +323,7 @@ Page({
             {
                 name: "Yamas Mediterranean Street Food",
                 address: "Benson University Center",
-                url: "https://i.loli.net/2021/11/12/gd8HcXSaIk3ZCOy.png",
+                url: "https://s2.loli.net/2022/04/23/gny7cMZ58wIOohr.png",
                 page: "/pages/Yamas/Yamas",
                 payment: {
                     mealSwipes: false,

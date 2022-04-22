@@ -94,6 +94,18 @@
   padding-bottom: 10rpx;
 }
 
+.menuTitleComment{
+  height: 30%;
+  font-size: 17px;
+  color: #d6b160;
+  margin-left: 3%;
+  margin-right: 3%;
+  font-weight: bold;
+  border-bottom: 1px solid #ececec;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+}
+
 .realPart {
   background-color: #fff;
   width: 100%;
@@ -255,13 +267,12 @@ ec-canvas {
 .swiper_con{text-align: center; width: 100%; height: 100%; padding: 80rpx 0;}
 .checkCurrent{color:#ccc}
 
-
 /* Comment List CSS */
 .realPart1{
   background-color: #fff;
   width: 100%;
-  /*border-top-right-radius: 15px;
-  border-top-left-radius: 15px;*/
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
   box-shadow: 8px 8px 8px #c2c2c2;
 }
 .remarksList{
@@ -284,18 +295,20 @@ ec-canvas {
 }
 textarea{
   width: auto;
-  height: 200rpx;
+  height: 90rpx;
   border: 3rpx solid #c3c3c3;
+  border-radius: 10px;
   background-color: white;
   word-break:break-all;
   margin: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   padding: 10px;
 }
 .buttttton{
    background-color: rgb(214, 177, 96)!important;
    font-size: medium !important;
-   margin-bottom:30px;
+   border-radius: 10px;
+   margin-bottom: 11px;
 }
 .last{
     background-color: white;
