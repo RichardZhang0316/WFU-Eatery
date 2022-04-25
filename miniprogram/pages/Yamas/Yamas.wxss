@@ -1,4 +1,7 @@
-.head-text{
+
+@import "../Subway/Subway.wxss";
+
+/*.head-text{
   position: relative;
   z-index: 99;
   text-align: center;
@@ -46,11 +49,12 @@
   color: #d6b160;
 }
 .companyInfo1{
-  /* height: 20px!important; */
-}
+  /* height: 20px!important; 
+} */
+/*
 .companyInfo-left{
   /* display: flex;
-  flex-direction: row; */
+  flex-direction: row; 
   width: 100%;
   font-size: 12px;
   margin-left: 3%;
@@ -207,7 +211,7 @@
   height: 130px;
 }
 
-/* Comment List CSS */
+/* Comment List CSS 
 .realPart1{
   background-color: #fff;
   width: 100%;
@@ -253,4 +257,4 @@ textarea{
 .last{
     background-color: white;
 }
-/* Comment List CSS End */
+ Comment List CSS End */

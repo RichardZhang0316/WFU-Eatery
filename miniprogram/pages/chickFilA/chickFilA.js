@@ -157,6 +157,7 @@ Page({
           that.setData({
             openid: res.result.openid,
           })
+// **************** 点赞功能所需onLoad **************//
         // 发送请求获取Up_and_Down列表数据
           CFA.get({
             success: res => {

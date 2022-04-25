@@ -35,7 +35,7 @@ Page({
             {
                 name: "Subway",
                 address: "Davis Residence Hall",
-                url: "https://i.loli.net/2021/11/29/cRsg3Jq7TOr8xj5.png",
+                url: "https://s2.loli.net/2022/04/24/XAimp9frOE8NZew.jpg",
                 page: "/pages/Subway/Subway",
                 payment: {
                     mealSwipes: false,
@@ -155,7 +155,7 @@ Page({
             {
                 name: "Magnolia Room",
                 address: "Reynolda Hall Second Floor",
-                url: "https://images.squarespace-cdn.com/content/v1/602c9aa15ca0a203f2d91a73/1623899120481-Y4L7IAJ51W6DTDPEH9NB/image-asset-2.jpg?format=1000w",
+                url: "https://s2.loli.net/2022/04/23/4iuHskl1bDqQZtc.png",
                 page: "/pages/MagnoliaRoom/MagnoliaRoom",
                 payment: {
                     mealSwipes: true,

@@ -3,16 +3,9 @@
 <view class="topCard">
 <image mode="aspectFill" src="https://i.loli.net/2021/11/29/zjyfTpNCFcbqruH.png" style="height:100%; width:100%"></image>
 <text class="head-text">Subway</text>
-<!-- <view class="bigTag">
-<image class="smallTag" src="/images/icon2.svg"></image>
-<image class="smallTag" src="/images/icon5.svg"></image>
-<image class="smallTag" src="/images/icon1.svg"></image>
-<image class="smallTag" src="/images/icon4.svg"></image>
-</view> -->
 </view>
 
-
-<view class="flexTimetable"> 
+<view class="flexTimetable">
   <view class="shit3">
     <view class="view" bindtap="{{ stopBtn ? 'showContent' : 'hideContent' }}">
       <view class="shit">Opening Time</view>
@@ -24,12 +17,10 @@
         <text class="shit4">{{item.realTimeTable}}</text>
       </view>
     </view>
-    </van-transition>
+    </van-transition>  
 </view>
-
-<view class="shit">Hearn Plaza in Davis Hall</view>
+<view class="shit">Davis Hall, Ground Floor</view>
 </view>
-
 
 <view class="popularTimes">
 <view class="shit2"><view>Popular Times</view></view></view>
@@ -46,50 +37,449 @@
  
 <van-tabs swipeable ellipsis="{{false}}" active="{{ active }}" bind:change="onChange" color="#d6b160" title-active-color="#d6b160">
   <van-tab title="Sauce">
-      <foodCard desc="蛋黄酱的色泽淡黄，柔软适度，呈粘稠态，有一定韧性，清香爽口，回味浓厚" title="Mayonnaise 蛋黄酱" thumb="https://www.seriouseats.com/thmb/JDaa6-NZVcZQ0NJzA4Sfq2ooqDM=/450x0/filters:no_upscale():max_bytes(150000):strip_icc()/two-minute-mayonnaise-04-2512665608084cff84ce7ed03a1bec97.jpg" />
-      <foodCard desc="芥末酱为一种芥末色稠状物，具有强烈鲜明的味道，由芥菜类蔬菜的籽研磨掺水、醋或酒类调制而成" title="Yellow Mustard 黄芥末酱" thumb="https://cdn.leitesculinaria.com/wp-content/uploads/2021/04/homemade-yellow-mustard-fp.jpg.optimal.jpg" />
-      <foodCard desc="蜂蜜芥末酱一般由等分量蜂蜜及芥末酱混和制成，偏甜口，不是很辣" title="Honey Mustard 蜂蜜芥末酱" thumb="https://pinchofyum.com/wp-content/uploads/Honey-Mustard-Sauce-in-bowl-Recipe.jpg" />
-      <foodCard desc="由蛋黄酱、芥末、萊姆汁和大蒜等调制而成，是很受欢迎很百搭的一款酱" title="Chipotle Southwest 墨西哥风味西南酱" thumb="https://www.laylita.com/recipes/wp-content/uploads/2013/09/Chipotle-yogurt-or-crema-sauce.jpg" />
-      <foodCard desc="甜甜辣辣百搭酱" title="Sweet Onion 甜洋葱酱" thumb="https://spoonsofflavor.com/wp-content/uploads/2021/06/subway-sweet-onion-sauce-recipe.jpg" />
-      <foodCard desc="乡村沙拉酱，里面有洋葱、蒜、芥末酱和一些香料" title="Ranch 酸奶油沙拉酱" thumb="https://bakeitwithlove.com/wp-content/uploads/2020/07/Homemade-Ranch-Dressing-lg-sq.jpg" />
-      <foodCard desc="又称红油醋汁，是西餐各式沙拉的配料之一，由橄榄油、醋、盐、胡椒制成" title="Italian Dressing 意大利油醋酱" thumb="https://www.inspiredtaste.net/wp-content/uploads/2021/06/Homemade-Italian-Dressing-Recipe-2-1200.jpg" />
-      <foodCard desc="由沙拉油、鸡蛋、腌黄瓜精制而成，具有浓、香、滑的口感" title="1000 Island 千岛酱" thumb="https://static.toiimg.com/thumb/57629715.cms?imgsize=459970&width=800&height=800" />
-      <foodCard desc="由茄膏、醋、食糖、和香料，如黑椒、芥辣、辣酱、烟熏液等制成" title="BBQ 烧烤酱" thumb="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F24%2F2021%2F02%2F09%2F2656701_Secre_Texas_Alabama_SC_288_TX-Style-2000.jpg&q=85" />
-      <foodCard desc="由红辣椒，糖，盐，大蒜，蒸馏醋等制成" title="Sriracha 拉差辣椒酱" thumb="https://www.thespruceeats.com/thmb/085RPP70ab4Nazs4tz1DiZ1JXNU=/2119x1415/filters:fill(auto,1)/Sriracha-Sauce-GettyImages-509822896-58d5311a5f9b584683d8795f.jpg" />
-      <foodCard title="Olive Oil Blend 橄榄油混合酱" thumb="https://www.smells-like-home.com/wp-content/uploads/2020/12/Olive-Oil-Bread-Dip-8-scaled-720x720.jpg" />
-      <foodCard desc="红酒醋有圆滑的滋味和略微带甜的香味" title="Red Wine Vinegar 红酒醋" thumb="https://assets.change.org/photos/0/xd/gy/qCXDgycWBGAPFtM-800x450-noPad.jpg?1529765599" />
+      <foodCard desc="蛋黄酱的色泽淡黄，柔软适度，呈粘稠态，有一定韧性，清香爽口，回味浓厚" title="Mayonnaise 蛋黄酱" thumb="https://www.seriouseats.com/thmb/JDaa6-NZVcZQ0NJzA4Sfq2ooqDM=/450x0/filters:no_upscale():max_bytes(150000):strip_icc()/two-minute-mayonnaise-04-2512665608084cff84ce7ed03a1bec97.jpg">
+      <view slot="footer">
+        <van-button size="large"> 
+          <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='Mayonnaise'wx:if="{{!newList[0].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='Mayonnaise'wx:else/> {{RC[0].Up}} 
+        </van-button> 
+        <van-button size="large"> 
+          <view class="iconfont icon-cai"  bindtap="downFunction" data-id='Mayonnaise' wx:if="{{!newList[0].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='Mayonnaise' wx:else></view>{{RC[0].Down}} 
+        </van-button> 
+      </view>      
+      </foodCard>
+
+      <foodCard desc="芥末酱为一种芥末色稠状物，具有强烈鲜明的味道，由芥菜类蔬菜的籽研磨掺水、醋或酒类调制而成" title="Yellow Mustard 黄芥末酱" thumb="https://cdn.leitesculinaria.com/wp-content/uploads/2021/04/homemade-yellow-mustard-fp.jpg.optimal.jpg">
+      <view slot="footer">
+        <van-button size="large"> 
+          <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='YellowMustard'wx:if="{{!newList[1].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='YellowMustard'wx:else/> {{RC[1].Up}} 
+        </van-button> 
+        <van-button size="large"> 
+          <view class="iconfont icon-cai"  bindtap="downFunction" data-id='YellowMustard' wx:if="{{!newList[1].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='YellowMustard' wx:else></view>{{RC[1].Down}} 
+        </van-button> 
+      </view>            
+      </foodCard>
+
+      <foodCard desc="蜂蜜芥末酱一般由等分量蜂蜜及芥末酱混和制成，偏甜口，不是很辣" title="Honey Mustard 蜂蜜芥末酱" thumb="https://pinchofyum.com/wp-content/uploads/Honey-Mustard-Sauce-in-bowl-Recipe.jpg"> 
+        <view slot="footer">
+        <van-button size="large"> 
+          <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='HoneyMustard'wx:if="{{!newList[2].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='HoneyMustard'wx:else/> {{RC[2].Up}} 
+        </van-button> 
+        <van-button size="large"> 
+          <view class="iconfont icon-cai"  bindtap="downFunction" data-id='HoneyMustard' wx:if="{{!newList[2].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='HoneyMustard' wx:else></view>{{RC[2].Down}} 
+        </van-button> 
+      </view>                  
+      </foodCard>
+
+      <foodCard desc="由蛋黄酱、芥末、萊姆汁和大蒜等调制而成，是很受欢迎很百搭的一款酱" title="Chipotle Southwest 墨西哥风味西南酱" thumb="https://www.laylita.com/recipes/wp-content/uploads/2013/09/Chipotle-yogurt-or-crema-sauce.jpg"> 
+        <view slot="footer">
+        <van-button size="large"> 
+          <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='ChipotleSouthWest'wx:if="{{!newList[3].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='ChipotleSouthWest'wx:else/> {{RC[3].Up}} 
+        </van-button> 
+        <van-button size="large"> 
+          <view class="iconfont icon-cai"  bindtap="downFunction" data-id='ChipotleSouthWest' wx:if="{{!newList[3].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='ChipotleSouthWest' wx:else></view>{{RC[3].Down}} 
+        </van-button> 
+        </view>     
+      </foodCard>
+
+      <foodCard desc="甜甜辣辣百搭酱" title="Sweet Onion 甜洋葱酱" thumb="https://spoonsofflavor.com/wp-content/uploads/2021/06/subway-sweet-onion-sauce-recipe.jpg">
+        <view slot="footer">
+        <van-button size="large"> 
+          <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='SweetOnion'wx:if="{{!newList[4].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='SweetOnion'wx:else/> {{RC[4].Up}} 
+        </van-button> 
+        <van-button size="large"> 
+          <view class="iconfont icon-cai"  bindtap="downFunction" data-id='SweetOnion' wx:if="{{!newList[4].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='SweetOnion' wx:else></view>{{RC[4].Down}} 
+        </van-button> 
+        </view>     
+      </foodCard>
+
+      <foodCard desc="乡村沙拉酱，里面有洋葱、蒜、芥末酱和一些香料" title="Ranch 酸奶油沙拉酱" thumb="https://bakeitwithlove.com/wp-content/uploads/2020/07/Homemade-Ranch-Dressing-lg-sq.jpg">
+        <view slot="footer">
+        <van-button size="large"> 
+          <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='Ranch'wx:if="{{!newList[5].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='Ranch'wx:else/> {{RC[5].Up}} 
+        </van-button> 
+        <van-button size="large"> 
+          <view class="iconfont icon-cai"  bindtap="downFunction" data-id='Ranch' wx:if="{{!newList[5].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='Ranch' wx:else></view>{{RC[5].Down}} 
+        </van-button> 
+        </view>   
+      </foodCard>
+
+      <foodCard desc="又称红油醋汁，是西餐各式沙拉的配料之一，由橄榄油、醋、盐、胡椒制成" title="Italian Dressing 意大利油醋酱" thumb="https://www.inspiredtaste.net/wp-content/uploads/2021/06/Homemade-Italian-Dressing-Recipe-2-1200.jpg">
+        <view slot="footer">
+        <van-button size="large"> 
+          <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='ItalianDressing'wx:if="{{!newList[6].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='ItalianDressing'wx:else/> {{RC[6].Up}} 
+        </van-button> 
+        <van-button size="large"> 
+          <view class="iconfont icon-cai"  bindtap="downFunction" data-id='ItalianDressing' wx:if="{{!newList[6].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='ItalianDressing' wx:else></view>{{RC[6].Down}} 
+        </van-button> 
+        </view>   
+      </foodCard>
+
+      <foodCard desc="由沙拉油、鸡蛋、腌黄瓜精制而成，具有浓、香、滑的口感" title="1000 Island 千岛酱" thumb="https://static.toiimg.com/thumb/57629715.cms?imgsize=459970&width=800&height=800">
+        <view slot="footer">
+        <van-button size="large"> 
+          <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='1000Island'wx:if="{{!newList[7].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='1000Island'wx:else/> {{RC[7].Up}} 
+        </van-button> 
+        <van-button size="large"> 
+          <view class="iconfont icon-cai"  bindtap="downFunction" data-id='1000Island' wx:if="{{!newList[7].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='1000Island' wx:else></view>{{RC[7].Down}} 
+        </van-button> 
+        </view>   
+      </foodCard>
+
+      <foodCard desc="由茄膏、醋、食糖、和香料，如黑椒、芥辣、辣酱、烟熏液等制成" title="BBQ 烧烤酱" thumb="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F24%2F2021%2F02%2F09%2F2656701_Secre_Texas_Alabama_SC_288_TX-Style-2000.jpg&q=85">
+        <view slot="footer">
+        <van-button size="large"> 
+          <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='BBQ'wx:if="{{!newList[8].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='BBQ'wx:else/> {{RC[8].Up}} 
+        </van-button> 
+        <van-button size="large"> 
+          <view class="iconfont icon-cai"  bindtap="downFunction" data-id='BBQ' wx:if="{{!newList[8].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='BBQ' wx:else></view>{{RC[8].Down}} 
+        </van-button> 
+        </view>  
+      </foodCard>
+
+      <foodCard desc="由红辣椒，糖，盐，大蒜，蒸馏醋等制成" title="Sriracha 拉差辣椒酱" thumb="https://www.thespruceeats.com/thmb/085RPP70ab4Nazs4tz1DiZ1JXNU=/2119x1415/filters:fill(auto,1)/Sriracha-Sauce-GettyImages-509822896-58d5311a5f9b584683d8795f.jpg">
+        <view slot="footer">
+        <van-button size="large"> 
+          <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='Sriracha'wx:if="{{!newList[9].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='Sriracha'wx:else/> {{RC[9].Up}} 
+        </van-button> 
+        <van-button size="large"> 
+          <view class="iconfont icon-cai"  bindtap="downFunction" data-id='Sriracha' wx:if="{{!newList[9].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='Sriracha' wx:else></view>{{RC[9].Down}} 
+        </van-button> 
+        </view> 
+      </foodCard>
+
+      <foodCard title="Olive Oil Blend 橄榄油混合酱" thumb="https://www.smells-like-home.com/wp-content/uploads/2020/12/Olive-Oil-Bread-Dip-8-scaled-720x720.jpg">
+        <view slot="footer">
+        <van-button size="large"> 
+          <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='OliveOilBlend'wx:if="{{!newList[10].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='OliveOilBlend'wx:else/> {{RC[10].Up}} 
+        </van-button> 
+        <van-button size="large"> 
+          <view class="iconfont icon-cai"  bindtap="downFunction" data-id='OliveOilBlend' wx:if="{{!newList[10].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='OliveOilBlend' wx:else></view>{{RC[10].Down}} 
+        </van-button> 
+        </view> 
+      </foodCard>
+
+      <foodCard desc="红酒醋有圆滑的滋味和略微带甜的香味" title="Red Wine Vinegar 红酒醋" thumb="https://assets.change.org/photos/0/xd/gy/qCXDgycWBGAPFtM-800x450-noPad.jpg?1529765599">
+        <view slot="footer">
+        <van-button size="large"> 
+          <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='RedWineVinegar'wx:if="{{!newList[11].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='RedWineVinegar'wx:else/> {{RC[11].Up}} 
+        </van-button> 
+        <van-button size="large"> 
+          <view class="iconfont icon-cai"  bindtap="downFunction" data-id='RedWineVinegar' wx:if="{{!newList[11].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='RedWineVinegar' wx:else></view>{{RC[11].Down}} 
+        </van-button> 
+        </view> 
+      </foodCard>
+
   </van-tab>
   <van-tab title="6 in.Sandwich">
-      <foodCard desc="480卡路里" title="6 in. Meatball Marinara 意大利肉丸子三明治" thumb="http://3.bp.blogspot.com/-XRHy9Tpa3tE/VJiBCpZ0ehI/AAAAAAAACgI/_79KOmMvdbA/s1600/meatball%2Bsub%2Bpic.png" price="3.99" currency="$"/>
-      <foodCard desc="290卡路里" title="6 in. Black Forest Ham 黑森林火腿三明治" thumb="https://cdn.shopify.com/s/files/1/0071/0420/0763/products/Turkey_Breast_Black_Forest_Ham_grande.png?v=1545895768" price="3.89" currency="$"/>
-      <foodCard desc="360卡路里" title="6 in. Cold Cut Combo 冷切三明治" thumb="https://www.eatthis.com/wp-content/uploads/sites/4/2021/06/subway-cold-cut-combo.jpg" price="3.89" currency="$"/>
-      <foodCard desc="480卡路里" title="6 in. Spicy Italian 意大利香辣三明治" thumb="https://www.subway.com.hk/wp-content/uploads/2017/09/Spicy-Italian-450x450.png" price="3.99" currency="$"/>
-      <foodCard desc="230卡路里" title="6 in. Veggie Delite 新鲜蔬菜三明治" thumb="https://cdn.shopify.com/s/files/1/0071/0420/0763/products/Veggie_Delite_grande.png?v=1545895905" price="3.89" currency="$"/>
-      <foodCard desc="280卡路里" title="6 in. Turkey Breast 火鸡胸三明治" thumb="https://media1.popsugar-assets.com/files/thumbor/TDSCofPjTnOcLuPHcAd7nwomLfk/fit-in/2048xorig/filters:format_auto-!!-:strip_icc-!!-/2016/03/14/961/n/1922729/3c26ad07a3c47476_product15/i/Turkey-Breast-Ham-Sandwich.jpg" price="4.49" currency="$"/>
-      <foodCard desc="410卡路里" title="6 in. Italian B.M.T. 意大利培根三明治" thumb="https://s2.loli.net/2022/04/16/jWIfGNmv3ydKghT.png" price="4.39" currency="$"/>
-      <foodCard desc="480卡路里" title="6 in. Tuna 金枪鱼三明治" thumb="https://www.gannett-cdn.com/presto/2021/01/29/USAT/2b697721-e001-4dcc-a1b8-d701bd0a8df1-XXX_Subway_Tuna.jpg?width=1200&disable=upscale&format=pjpg&auto=webp" price="4.49" currency="$"/>
-      <foodCard desc="320卡路里" title="6 in. Oven Roasted Chicken 烤鸡三明治" thumb="https://1.bp.blogspot.com/-m0jC58gDuIw/Xg4bVXHtBbI/AAAAAAABJTE/526XoewkNJsbSpMCmARe35LNvmmKznHdwCLcBGAsYHQ/w1200-h630-p-k-no-nu/subway-6-inch-oven-roasted-sub.jpg" price="4.79" currency="$"/>
-      <foodCard desc="370卡路里" title="6 in. Sweet Onion Chicken Teriyaki 红烧甜洋葱鸡三明治" thumb="https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iHTuwQXFImY0/v2/-1x-1.jpg" price="4.89" currency="$"/>
-      <foodCard desc="380卡路里" title="6 in. Steak & Cheese 牛排奶酪三明治" thumb="https://menuandprice.com/wp-content/uploads/2021/05/Steak_product-detail_1080x482.png" price="4.99" currency="$"/>
-      <foodCard desc="610卡路里" title="6 in. Chicken & Bacon Ranch Melt 鸡肉熏肉三明治" thumb="https://uploads-ssl.webflow.com/5deec68bd42e2bd899cbc76b/5e07ca4dad6bad038ab0b69c_Chicken%20and%20Bacon%20Ranch.png" price="4.99" currency="$"/>
-      <foodCard desc="200卡路里" title="6 in. Veggie Patty 素食帕蒂三明治" thumb="https://www.totallyveganbuzz.com/wp-content/uploads/2019/04/2019-04-17_1104.jpg" price="4.59" currency="$"/>
-      <foodCard desc="550卡路里" title="6 in. Cali Fresh Turkey 新鲜火鸡三明治" thumb="https://www.chewboom.com/wp-content/uploads/2021/07/Subway-Is-Giving-Away-New-Turkey-Cali-Fresh-Subs-On-July-13-2021.jpg" price="5.49" currency="$"/>
-      <foodCard desc="610卡路里" title="6 in. Cali Fresh Steak 新鲜牛肉三明治" thumb="https://www.mashed.com/img/gallery/subways-steak-cali-what-you-need-to-know-before-you-order/what-is-in-the-steak-cali-fresh-1626632163.jpg" price="6.49" currency="$"/>
+      <foodCard desc="480卡路里" title="6 in. Meatball Marinara 意大利肉丸子三明治" thumb="http://3.bp.blogspot.com/-XRHy9Tpa3tE/VJiBCpZ0ehI/AAAAAAAACgI/_79KOmMvdbA/s1600/meatball%2Bsub%2Bpic.png" price="3.99" currency="$">
+        <view slot="footer">
+        <van-button size="large"> 
+          <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='6inMeatballMarinara'wx:if="{{!newList[12].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='6inMeatballMarinara'wx:else/> {{RC[12].Up}} 
+        </van-button> 
+        <van-button size="large"> 
+          <view class="iconfont icon-cai"  bindtap="downFunction" data-id='6inMeatballMarinara' wx:if="{{!newList[12].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='6inMeatballMarinara' wx:else></view>{{RC[12].Down}} 
+        </van-button> 
+        </view> 
+      </foodCard>
+
+      <foodCard desc="290卡路里" title="6 in. Black Forest Ham 黑森林火腿三明治" thumb="https://cdn.shopify.com/s/files/1/0071/0420/0763/products/Turkey_Breast_Black_Forest_Ham_grande.png?v=1545895768" price="3.89" currency="$">
+        <view slot="footer">
+        <van-button size="large"> 
+          <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='6inBlackForest'wx:if="{{!newList[13].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='6inBlackForest'wx:else/> {{RC[13].Up}} 
+        </van-button> 
+        <van-button size="large"> 
+          <view class="iconfont icon-cai"  bindtap="downFunction" data-id='6inBlackForest' wx:if="{{!newList[13].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='6inBlackForest' wx:else></view>{{RC[13].Down}} 
+        </van-button> 
+        </view> 
+      </foodCard>
+
+      <foodCard desc="360卡路里" title="6 in. Cold Cut Combo 冷切三明治" thumb="https://www.eatthis.com/wp-content/uploads/sites/4/2021/06/subway-cold-cut-combo.jpg" price="3.89" currency="$">
+        <view slot="footer">
+        <van-button size="large"> 
+          <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='6inColdCutCombo'wx:if="{{!newList[14].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='6inColdCutCombo'wx:else/> {{RC[14].Up}} 
+        </van-button> 
+        <van-button size="large"> 
+          <view class="iconfont icon-cai"  bindtap="downFunction" data-id='6inColdCutCombo' wx:if="{{!newList[14].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='6inColdCutCombo' wx:else></view>{{RC[14].Down}} 
+        </van-button> 
+        </view> 
+      </foodCard>
+      
+      <foodCard desc="480卡路里" title="6 in. Spicy Italian 意大利香辣三明治" thumb="https://www.subway.com.hk/wp-content/uploads/2017/09/Spicy-Italian-450x450.png" price="3.99" currency="$">
+        <view slot="footer">
+        <van-button size="large"> 
+          <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='6inSpicyItalian'wx:if="{{!newList[15].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='6inSpicyItalian'wx:else/> {{RC[15].Up}} 
+        </van-button> 
+        <van-button size="large"> 
+          <view class="iconfont icon-cai"  bindtap="downFunction" data-id='6inSpicyItalian' wx:if="{{!newList[15].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='6inSpicyItalian' wx:else></view>{{RC[15].Down}} 
+        </van-button> 
+        </view> 
+      </foodCard>
+
+      <foodCard desc="230卡路里" title="6 in. Veggie Delite 新鲜蔬菜三明治" thumb="https://cdn.shopify.com/s/files/1/0071/0420/0763/products/Veggie_Delite_grande.png?v=1545895905" price="3.89" currency="$">
+        <view slot="footer">
+        <van-button size="large"> 
+          <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='6inVeggieDelite'wx:if="{{!newList[16].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='6inVeggieDelite'wx:else/> {{RC[16].Up}} 
+        </van-button> 
+        <van-button size="large"> 
+          <view class="iconfont icon-cai"  bindtap="downFunction" data-id='6inVeggieDelite' wx:if="{{!newList[16].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='6inVeggieDelite' wx:else></view>{{RC[16].Down}} 
+        </van-button> 
+        </view> 
+      </foodCard>
+
+      <foodCard desc="280卡路里" title="6 in. Turkey Breast 火鸡胸三明治" thumb="https://media1.popsugar-assets.com/files/thumbor/TDSCofPjTnOcLuPHcAd7nwomLfk/fit-in/2048xorig/filters:format_auto-!!-:strip_icc-!!-/2016/03/14/961/n/1922729/3c26ad07a3c47476_product15/i/Turkey-Breast-Ham-Sandwich.jpg" price="4.49" currency="$">
+        <view slot="footer">
+        <van-button size="large"> 
+          <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='6inTurkeyBreast'wx:if="{{!newList[17].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='6inTurkeyBreast'wx:else/> {{RC[17].Up}} 
+        </van-button> 
+        <van-button size="large"> 
+          <view class="iconfont icon-cai"  bindtap="downFunction" data-id='6inTurkeyBreast' wx:if="{{!newList[17].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='6inTurkeyBreast' wx:else></view>{{RC[17].Down}} 
+        </van-button> 
+        </view> 
+      </foodCard>
+
+      <foodCard desc="410卡路里" title="6 in. Italian B.M.T. 意大利培根三明治" thumb="https://s2.loli.net/2022/04/16/jWIfGNmv3ydKghT.png" price="4.39" currency="$">
+        <view slot="footer">
+        <van-button size="large"> 
+          <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='6inItalianBMT'wx:if="{{!newList[18].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='6inItalianBMT'wx:else/> {{RC[18].Up}} 
+        </van-button> 
+        <van-button size="large"> 
+          <view class="iconfont icon-cai"  bindtap="downFunction" data-id='6inItalianBMT' wx:if="{{!newList[18].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='6inItalianBMT' wx:else></view>{{RC[18].Down}} 
+        </van-button> 
+        </view> 
+      </foodCard>
+      
+      <foodCard desc="480卡路里" title="6 in. Tuna 金枪鱼三明治" thumb="https://www.gannett-cdn.com/presto/2021/01/29/USAT/2b697721-e001-4dcc-a1b8-d701bd0a8df1-XXX_Subway_Tuna.jpg?width=1200&disable=upscale&format=pjpg&auto=webp" price="4.49" currency="$">
+        <view slot="footer">
+        <van-button size="large"> 
+          <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='6inTuna'wx:if="{{!newList[19].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='6inTuna'wx:else/> {{RC[19].Up}} 
+        </van-button> 
+        <van-button size="large"> 
+          <view class="iconfont icon-cai"  bindtap="downFunction" data-id='6inTuna' wx:if="{{!newList[19].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='6inTuna' wx:else></view>{{RC[19].Down}} 
+        </van-button> 
+        </view> 
+      </foodCard>
+
+      <foodCard desc="320卡路里" title="6 in. Oven Roasted Chicken 烤鸡三明治" thumb="https://1.bp.blogspot.com/-m0jC58gDuIw/Xg4bVXHtBbI/AAAAAAABJTE/526XoewkNJsbSpMCmARe35LNvmmKznHdwCLcBGAsYHQ/w1200-h630-p-k-no-nu/subway-6-inch-oven-roasted-sub.jpg" price="4.79" currency="$">
+        <view slot="footer">
+        <van-button size="large"> 
+          <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='6inOvenRoastedChicken'wx:if="{{!newList[20].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='6inOvenRoastedChicken'wx:else/> {{RC[20].Up}} 
+        </van-button> 
+        <van-button size="large"> 
+          <view class="iconfont icon-cai"  bindtap="downFunction" data-id='6inOvenRoastedChicken' wx:if="{{!newList[20].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='6inOvenRoastedChicken' wx:else></view>{{RC[20].Down}} 
+        </van-button> 
+        </view> 
+      </foodCard>
+
+      <foodCard desc="370卡路里" title="6 in. Sweet Onion Chicken Teriyaki 红烧甜洋葱鸡三明治" thumb="https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iHTuwQXFImY0/v2/-1x-1.jpg" price="4.89" currency="$">
+        <view slot="footer">
+        <van-button size="large"> 
+          <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='6inSweetOnionChickenTeriyaki'wx:if="{{!newList[21].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='6inSweetOnionChickenTeriyaki'wx:else/> {{RC[21].Up}} 
+        </van-button> 
+        <van-button size="large"> 
+          <view class="iconfont icon-cai"  bindtap="downFunction" data-id='6inSweetOnionChickenTeriyaki' wx:if="{{!newList[21].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='6inSweetOnionChickenTeriyaki' wx:else></view>{{RC[21].Down}} 
+        </van-button> 
+        </view> 
+      </foodCard>
+
+      <foodCard desc="380卡路里" title="6 in. Steak & Cheese 牛排奶酪三明治" thumb="https://menuandprice.com/wp-content/uploads/2021/05/Steak_product-detail_1080x482.png" price="4.99" currency="$">
+        <view slot="footer">
+        <van-button size="large"> 
+          <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='6inSteakCheese'wx:if="{{!newList[22].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='6inSteakCheese'wx:else/> {{RC[22].Up}} 
+        </van-button> 
+        <van-button size="large"> 
+          <view class="iconfont icon-cai"  bindtap="downFunction" data-id='6inSteakCheese' wx:if="{{!newList[22].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='6inSteakCheese' wx:else></view>{{RC[22].Down}} 
+        </van-button> 
+        </view> 
+      </foodCard>
+
+      <foodCard desc="610卡路里" title="6 in. Chicken & Bacon Ranch Melt 鸡肉熏肉三明治" thumb="https://uploads-ssl.webflow.com/5deec68bd42e2bd899cbc76b/5e07ca4dad6bad038ab0b69c_Chicken%20and%20Bacon%20Ranch.png" price="4.99" currency="$">
+        <view slot="footer">
+        <van-button size="large"> 
+          <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='6inChickenBaconRanchMelt'wx:if="{{!newList[23].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='6inChickenBaconRanchMelt'wx:else/> {{RC[23].Up}} 
+        </van-button> 
+        <van-button size="large"> 
+          <view class="iconfont icon-cai"  bindtap="downFunction" data-id='6inChickenBaconRanchMelt' wx:if="{{!newList[23].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='6inChickenBaconRanchMelt' wx:else></view>{{RC[23].Down}} 
+        </van-button> 
+        </view> 
+      </foodCard>
+
+      <foodCard desc="200卡路里" title="6 in. Veggie Patty 素食帕蒂三明治" thumb="https://www.totallyveganbuzz.com/wp-content/uploads/2019/04/2019-04-17_1104.jpg" price="4.59" currency="$">
+        <view slot="footer">
+        <van-button size="large"> 
+          <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='6inVeggiePatty'wx:if="{{!newList[24].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='6inVeggiePatty'wx:else/> {{RC[24].Up}} 
+        </van-button> 
+        <van-button size="large"> 
+          <view class="iconfont icon-cai"  bindtap="downFunction" data-id='6inVeggiePatty' wx:if="{{!newList[24].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='6inVeggiePatty' wx:else></view>{{RC[24].Down}} 
+        </van-button> 
+        </view> 
+      </foodCard>
+
+      <foodCard desc="550卡路里" title="6 in. Cali Fresh Turkey 新鲜火鸡三明治" thumb="https://www.chewboom.com/wp-content/uploads/2021/07/Subway-Is-Giving-Away-New-Turkey-Cali-Fresh-Subs-On-July-13-2021.jpg" price="5.49" currency="$">
+        <view slot="footer">
+        <van-button size="large"> 
+          <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='6inCaliFreshTurkey'wx:if="{{!newList[25].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='6inCaliFreshTurkey'wx:else/> {{RC[25].Up}} 
+        </van-button> 
+        <van-button size="large"> 
+          <view class="iconfont icon-cai"  bindtap="downFunction" data-id='6inCaliFreshTurkey' wx:if="{{!newList[25].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='6inCaliFreshTurkey' wx:else></view>{{RC[25].Down}} 
+        </van-button> 
+        </view> 
+      </foodCard>
+
+      <foodCard desc="610卡路里" title="6 in. Cali Fresh Steak 新鲜牛肉三明治" thumb="https://www.mashed.com/img/gallery/subways-steak-cali-what-you-need-to-know-before-you-order/what-is-in-the-steak-cali-fresh-1626632163.jpg" price="6.49" currency="$">
+        <view slot="footer">
+        <van-button size="large"> 
+          <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='6inCaliFreshSteak'wx:if="{{!newList[26].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='6inCaliFreshSteak'wx:else/> {{RC[26].Up}} 
+        </van-button> 
+        <van-button size="large"> 
+          <view class="iconfont icon-cai"  bindtap="downFunction" data-id='6inCaliFreshSteak' wx:if="{{!newList[26].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='6inCaliFreshSteak' wx:else></view>{{RC[26].Down}} 
+        </van-button> 
+        </view> 
+      </foodCard>
+
   </van-tab>
   <van-tab title="12 in.Sandwich">
-      <foodCard desc="960卡路里" title="12 in. Meatball Marinara 意大利肉丸子三明治" thumb="https://www.seekpng.com/png/detail/104-1046912_meatball-sub-meatball-sub-clipart.png" price="5.99" currency="$"/>
-      <foodCard desc="580卡路里" title="12 in. Black Forest Ham 黑森林火腿三明治" thumb="https://www.guysgab.com/wp-content/uploads/2013/09/Subway-Footlong.jpg" price="5.99" currency="$"/>
-      <foodCard desc="730卡路里" title="12 in. Cold Cut Combo 冷切三明治" thumb="https://www.eatthis.com/wp-content/uploads/sites/4/2021/06/subway-cold-cut-combo.jpg" price="5.79" currency="$"/>
-      <foodCard desc="600卡路里" title="12 in. Veggie Delite 新鲜蔬菜三明治" thumb="https://cdn.shopify.com/s/files/1/0071/0420/0763/products/Veggie_Delite_grande.png?v=1545895905" price="5.69" currency="$"/>
-      <foodCard desc="960卡路里" title="12 in. Spicy Italian 意大利香辣三明治" thumb="https://www.subway.com.hk/wp-content/uploads/2017/09/Spicy-Italian-450x450.png" price="5.99" currency="$"/>
-      <foodCard desc="860卡路里" title="12 in. Italian B.M.T. 意大利培根三明治" thumb="https://s2.loli.net/2022/04/16/jWIfGNmv3ydKghT.png" price="7.19" currency="$"/>
-      <foodCard desc="560卡路里" title="12 in. Turkey Breast 火鸡胸三明治" thumb="https://media1.popsugar-assets.com/files/thumbor/TDSCofPjTnOcLuPHcAd7nwomLfk/fit-in/2048xorig/filters:format_auto-!!-:strip_icc-!!-/2016/03/14/961/n/1922729/3c26ad07a3c47476_product15/i/Turkey-Breast-Ham-Sandwich.jpg" price="7.19" currency="$"/>
-      <foodCard desc="960卡路里" title="12 in. Tuna 金枪鱼三明治" thumb="https://www.gannett-cdn.com/presto/2021/01/29/USAT/2b697721-e001-4dcc-a1b8-d701bd0a8df1-XXX_Subway_Tuna.jpg?width=1200&disable=upscale&format=pjpg&auto=webp" price="7.19" currency="$"/>
-      <foodCard desc="850卡路里" title="12 in. Oven Roasted Chicken 烤鸡三明治" thumb="https://1.bp.blogspot.com/-m0jC58gDuIw/Xg4bVXHtBbI/AAAAAAABJTE/526XoewkNJsbSpMCmARe35LNvmmKznHdwCLcBGAsYHQ/w1200-h630-p-k-no-nu/subway-6-inch-oven-roasted-sub.jpg" price="6.99" currency="$"/>
-      <foodCard desc="740卡路里" title="12 in. Sweet Onion Chicken Teriyaki 红烧甜洋葱鸡三明治" thumb="https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iHTuwQXFImY0/v2/-1x-1.jpg" price="7.99" currency="$"/>
-      <foodCard desc="760卡路里" title="12 in. Steak & Cheese 牛排奶酪三明治" thumb="https://menuandprice.com/wp-content/uploads/2021/05/Steak_product-detail_1080x482.png" price="7.99" currency="$"/>
-      <foodCard desc="1140卡路里" title="12 in. Chicken & Bacon Ranch Melt 鸡肉熏肉三明治" thumb="https://uploads-ssl.webflow.com/5deec68bd42e2bd899cbc76b/5e07ca4dad6bad038ab0b69c_Chicken%20and%20Bacon%20Ranch.png" price="4.99" currency="$"/>
-      <foodCard desc="400卡路里" title="12 in. Veggie Patty 素食帕蒂三明治" thumb="https://www.totallyveganbuzz.com/wp-content/uploads/2019/04/2019-04-17_1104.jpg" price="6.75" currency="$"/>
+      <foodCard desc="960卡路里" title="12 in. Meatball Marinara 意大利肉丸子三明治" thumb="https://www.seekpng.com/png/detail/104-1046912_meatball-sub-meatball-sub-clipart.png" price="5.99" currency="$"> 
+        <view slot="footer">
+        <van-button size="large"> 
+          <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='12inMeatballMarinara'wx:if="{{!newList[27].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='12inMeatballMarinara'wx:else/> {{RC[27].Up}} 
+        </van-button> 
+        <van-button size="large"> 
+          <view class="iconfont icon-cai"  bindtap="downFunction" data-id='12inMeatballMarinara' wx:if="{{!newList[27].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='12inMeatballMarinara' wx:else></view>{{RC[27].Down}} 
+        </van-button> 
+        </view> 
+      </foodCard>
+
+      <foodCard desc="580卡路里" title="12 in. Black Forest Ham 黑森林火腿三明治" thumb="https://www.guysgab.com/wp-content/uploads/2013/09/Subway-Footlong.jpg" price="5.99" currency="$"> 
+        <view slot="footer">
+        <van-button size="large"> 
+          <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='12inBlackForestHam'wx:if="{{!newList[28].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='12inBlackForestHam'wx:else/> {{RC[28].Up}} 
+        </van-button> 
+        <van-button size="large"> 
+          <view class="iconfont icon-cai"  bindtap="downFunction" data-id='12inBlackForestHam' wx:if="{{!newList[28].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='12inBlackForestHam' wx:else></view>{{RC[28].Down}} 
+        </van-button> 
+        </view> 
+      </foodCard>
+
+      <foodCard desc="730卡路里" title="12 in. Cold Cut Combo 冷切三明治" thumb="https://www.eatthis.com/wp-content/uploads/sites/4/2021/06/subway-cold-cut-combo.jpg" price="5.79" currency="$"> 
+        <view slot="footer">
+        <van-button size="large"> 
+          <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='12inColdCutCombo'wx:if="{{!newList[29].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='12inColdCutCombo'wx:else/> {{RC[29].Up}} 
+        </van-button> 
+        <van-button size="large"> 
+          <view class="iconfont icon-cai"  bindtap="downFunction" data-id='12inColdCutCombo' wx:if="{{!newList[29].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='12inColdCutCombo' wx:else></view>{{RC[29].Down}} 
+        </van-button> 
+        </view> 
+      </foodCard>
+
+      <foodCard desc="600卡路里" title="12 in. Veggie Delite 新鲜蔬菜三明治" thumb="https://cdn.shopify.com/s/files/1/0071/0420/0763/products/Veggie_Delite_grande.png?v=1545895905" price="5.69" currency="$"> 
+        <view slot="footer">
+        <van-button size="large"> 
+          <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='12inVeggieDelite'wx:if="{{!newList[30].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='12inVeggieDelite'wx:else/> {{RC[30].Up}} 
+        </van-button> 
+        <van-button size="large"> 
+          <view class="iconfont icon-cai"  bindtap="downFunction" data-id='12inVeggieDelite' wx:if="{{!newList[30].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='12inVeggieDelite' wx:else></view>{{RC[30].Down}} 
+        </van-button> 
+        </view> 
+      </foodCard>
+
+      <foodCard desc="960卡路里" title="12 in. Spicy Italian 意大利香辣三明治" thumb="https://www.subway.com.hk/wp-content/uploads/2017/09/Spicy-Italian-450x450.png" price="5.99" currency="$"> 
+        <view slot="footer">
+        <van-button size="large"> 
+          <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='12inSpicyItalian'wx:if="{{!newList[31].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='12inSpicyItalian'wx:else/> {{RC[31].Up}} 
+        </van-button> 
+        <van-button size="large"> 
+          <view class="iconfont icon-cai"  bindtap="downFunction" data-id='12inSpicyItalian' wx:if="{{!newList[31].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='12inSpicyItalian' wx:else></view>{{RC[31].Down}} 
+        </van-button> 
+        </view> 
+      </foodCard>
+
+      <foodCard desc="860卡路里" title="12 in. Italian B.M.T. 意大利培根三明治" thumb="https://s2.loli.net/2022/04/16/jWIfGNmv3ydKghT.png" price="7.19" currency="$"> 
+        <view slot="footer">
+        <van-button size="large"> 
+          <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='12inItalianBMT'wx:if="{{!newList[32].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='12inItalianBMT'wx:else/> {{RC[32].Up}} 
+        </van-button> 
+        <van-button size="large"> 
+          <view class="iconfont icon-cai"  bindtap="downFunction" data-id='12inItalianBMT' wx:if="{{!newList[32].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='12inItalianBMT' wx:else></view>{{RC[32].Down}} 
+        </van-button> 
+        </view> 
+      </foodCard>
+
+      <foodCard desc="560卡路里" title="12 in. Turkey Breast 火鸡胸三明治" thumb="https://media1.popsugar-assets.com/files/thumbor/TDSCofPjTnOcLuPHcAd7nwomLfk/fit-in/2048xorig/filters:format_auto-!!-:strip_icc-!!-/2016/03/14/961/n/1922729/3c26ad07a3c47476_product15/i/Turkey-Breast-Ham-Sandwich.jpg" price="7.19" currency="$"> 
+        <view slot="footer">
+        <van-button size="large"> 
+          <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='12inTurkeyBreast'wx:if="{{!newList[33].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='12inTurkeyBreast'wx:else/> {{RC[33].Up}} 
+        </van-button> 
+        <van-button size="large"> 
+          <view class="iconfont icon-cai"  bindtap="downFunction" data-id='12inTurkeyBreast' wx:if="{{!newList[33].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='12inTurkeyBreast' wx:else></view>{{RC[33].Down}} 
+        </van-button> 
+        </view> 
+      </foodCard>
+
+      <foodCard desc="960卡路里" title="12 in. Tuna 金枪鱼三明治" thumb="https://www.gannett-cdn.com/presto/2021/01/29/USAT/2b697721-e001-4dcc-a1b8-d701bd0a8df1-XXX_Subway_Tuna.jpg?width=1200&disable=upscale&format=pjpg&auto=webp" price="7.19" currency="$"> 
+        <view slot="footer">
+        <van-button size="large"> 
+          <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='12inTuna'wx:if="{{!newList[34].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='12inTuna'wx:else/> {{RC[34].Up}} 
+        </van-button> 
+        <van-button size="large"> 
+          <view class="iconfont icon-cai"  bindtap="downFunction" data-id='12inTuna' wx:if="{{!newList[34].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='12inTuna' wx:else></view>{{RC[34].Down}} 
+        </van-button> 
+        </view> 
+      </foodCard>
+
+      <foodCard desc="850卡路里" title="12 in. Oven Roasted Chicken 烤鸡三明治" thumb="https://1.bp.blogspot.com/-m0jC58gDuIw/Xg4bVXHtBbI/AAAAAAABJTE/526XoewkNJsbSpMCmARe35LNvmmKznHdwCLcBGAsYHQ/w1200-h630-p-k-no-nu/subway-6-inch-oven-roasted-sub.jpg" price="6.99" currency="$"> 
+        <view slot="footer">
+        <van-button size="large"> 
+          <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='12inOvenRoastedChicken'wx:if="{{!newList[35].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='12inOvenRoastedChicken'wx:else/> {{RC[35].Up}} 
+        </van-button> 
+        <van-button size="large"> 
+          <view class="iconfont icon-cai"  bindtap="downFunction" data-id='12inOvenRoastedChicken' wx:if="{{!newList[35].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='12inOvenRoastedChicken' wx:else></view>{{RC[35].Down}} 
+        </van-button> 
+        </view> 
+      </foodCard>
+
+      <foodCard desc="740卡路里" title="12 in. Sweet Onion Chicken Teriyaki 红烧甜洋葱鸡三明治" thumb="https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iHTuwQXFImY0/v2/-1x-1.jpg" price="7.99" currency="$"> 
+        <view slot="footer">
+        <van-button size="large"> 
+          <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='12inSweetOnionChickenTeriyaki'wx:if="{{!newList[36].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='12inSweetOnionChickenTeriyaki'wx:else/> {{RC[36].Up}} 
+        </van-button> 
+        <van-button size="large"> 
+          <view class="iconfont icon-cai"  bindtap="downFunction" data-id='12inSweetOnionChickenTeriyaki' wx:if="{{!newList[36].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='12inSweetOnionChickenTeriyaki' wx:else></view>{{RC[36].Down}} 
+        </van-button> 
+        </view> 
+      </foodCard>
+
+      <foodCard desc="760卡路里" title="12 in. Steak & Cheese 牛排奶酪三明治" thumb="https://menuandprice.com/wp-content/uploads/2021/05/Steak_product-detail_1080x482.png" price="7.99" currency="$"> 
+        <view slot="footer">
+        <van-button size="large"> 
+          <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='12inSteakCheese'wx:if="{{!newList[37].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='12inSteakCheese'wx:else/> {{RC[37].Up}} 
+        </van-button> 
+        <van-button size="large"> 
+          <view class="iconfont icon-cai"  bindtap="downFunction" data-id='12inSteakCheese' wx:if="{{!newList[37].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='12inSteakCheese' wx:else></view>{{RC[37].Down}} 
+        </van-button> 
+        </view> 
+      </foodCard>
+
+      <foodCard desc="1140卡路里" title="12 in. Chicken & Bacon Ranch Melt 鸡肉熏肉三明治" thumb="https://uploads-ssl.webflow.com/5deec68bd42e2bd899cbc76b/5e07ca4dad6bad038ab0b69c_Chicken%20and%20Bacon%20Ranch.png" price="4.99" currency="$"> 
+        <view slot="footer">
+        <van-button size="large"> 
+          <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='12inChickenBaconRanchMelt'wx:if="{{!newList[38].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='12inChickenBaconRanchMelt'wx:else/> {{RC[38].Up}} 
+        </van-button> 
+        <van-button size="large"> 
+          <view class="iconfont icon-cai"  bindtap="downFunction" data-id='12inChickenBaconRanchMelt' wx:if="{{!newList[38].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='12inChickenBaconRanchMelt' wx:else></view>{{RC[38].Down}} 
+        </van-button> 
+        </view> 
+      </foodCard>
+
+      <foodCard desc="400卡路里" title="12 in. Veggie Patty 素食帕蒂三明治" thumb="https://www.totallyveganbuzz.com/wp-content/uploads/2019/04/2019-04-17_1104.jpg" price="6.75" currency="$"> 
+        <view slot="footer">
+        <van-button size="large"> 
+          <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='12inVeggiePatty'wx:if="{{!newList[39].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='12inVeggiePatty'wx:else/> {{RC[39].Up}} 
+        </van-button> 
+        <van-button size="large"> 
+          <view class="iconfont icon-cai"  bindtap="downFunction" data-id='12inVeggiePatty' wx:if="{{!newList[39].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='12inVeggiePatty' wx:else></view>{{RC[39].Down}} 
+        </van-button> 
+        </view> 
+      </foodCard>
   </van-tab>
 </van-tabs>
 <view style="height: 25px; width: 100%; background-color:#ececec;"></view>

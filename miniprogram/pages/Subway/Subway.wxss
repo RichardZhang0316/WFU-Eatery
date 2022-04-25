@@ -3,20 +3,6 @@ page{
   background-color:  #ececec ; 
 } 
 
-@font-face {
-  font-family: 'iconfont';  /* Project id 3317566 */
-  src: url('//at.alicdn.com/t/font_3317566_4lqhh2l8nae.woff2?t=1649651234563') format('woff2'),
-       url('//at.alicdn.com/t/font_3317566_4lqhh2l8nae.woff?t=1649651234563') format('woff'),
-       url('//at.alicdn.com/t/font_3317566_4lqhh2l8nae.ttf?t=1649651234563') format('truetype');
-}
-
-@font-face {
-  font-family: 'iconfont';  /* Project id 3317566 */
-  src: url('//at.alicdn.com/t/font_3317566_umomlm7w5se.woff2?t=1649744248756') format('woff2'),
-       url('//at.alicdn.com/t/font_3317566_umomlm7w5se.woff?t=1649744248756') format('woff'),
-       url('//at.alicdn.com/t/font_3317566_umomlm7w5se.ttf?t=1649744248756') format('truetype');
-}
-
 .iconfont {
   font-family: "iconfont" !important;
   font-size: 20px;
@@ -201,7 +187,7 @@ page{
 
 .kind-list-text {
  flex: 1;
- color:#9E7E38;
+ color:rgb(214, 177, 96);
  margin-left: 2%;
  font-size: 17px;
 }
@@ -231,9 +217,11 @@ page{
    height: auto;
  }
 
- ec-canvas {
+ec-canvas {
   width: 100%;
   height: 100%;
+  background-color: #fff;
+  color: #d6b160;
 }
 .container{
   height: 130px;
@@ -306,3 +294,42 @@ textarea{
     background-color: white;
 }
 /* Comment List CSS End */
+
+/* Up and Down Begin */
+@font-face {
+  font-family: 'iconfont';  /* Project id 3317566 */
+  src: url('//at.alicdn.com/t/font_3317566_4lqhh2l8nae.woff2?t=1649651234563') format('woff2'),
+       url('//at.alicdn.com/t/font_3317566_4lqhh2l8nae.woff?t=1649651234563') format('woff'),
+       url('//at.alicdn.com/t/font_3317566_4lqhh2l8nae.ttf?t=1649651234563') format('truetype');
+}
+
+@font-face {
+  font-family: 'iconfont';  /* Project id 3317566 */
+  src: 
+  url('//at.alicdn.com/t/font_3317566_umomlm7w5se.woff2?t=1649744248756') format('woff2'),
+  url('//at.alicdn.com/t/font_3317566_umomlm7w5se.woff?t=1649744248756') format('woff'),
+  url('//at.alicdn.com/t/font_3317566_umomlm7w5se.ttf?t=1649744248756') format('truetype');
+}
+
+.likeandcollect{
+  margin: 20rpx;
+}
+.img{
+  width: 60rpx;
+  height: 60rpx;
+  margin-right: 20rpx;
+}
+.title{
+  margin: 20rpx;
+}
+.left{
+  text-align: left;
+  margin-left: 20rpx;
+}
+.right{
+  text-align: right;
+  color: gray;
+  margin: 20rpx;
+}
+/* Up and Down End */
+
