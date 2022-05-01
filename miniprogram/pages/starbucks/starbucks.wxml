@@ -23,6 +23,7 @@
 <view class="shit">North Dining Hall Ground Floor</view>
 </view>
 
+
 <view class="popularTimes">
 <view class="shit2"><view>Popular Times</view></view></view>
 
@@ -35,132 +36,742 @@
 
 <van-tabs swipeable ellipsis="{{false}}" color="#d6b160" title-active-color="#d6b160">
   <van-tab title="Seasonal Beverages">
-      <foodCard desc="星巴克的金色浓缩咖啡、红糖和肉桂一起摇一摇，最后在上面加上燕麦奶和冰块" title="Iced Brown Sugar Oatmilk Shaken Espresso 冰红糖燕麦牛奶摇浓缩咖啡" thumb="https://globalassets.starbucks.com/assets/9fdcfa06cc964029a3941adb7a36aa7f.jpg?impolicy=1by1_wide_topcrop_630" price="4.95+" currency="$"/>
-      <foodCard desc="星巴克金色浓缩咖啡融合了可可和麦芽的味道，摇匀后加入杏仁牛奶和冰块" title="Iced Chocolate Almondmilk Shaken Espresso 冰巧克力杏仁牛奶摇浓缩咖啡" thumb="https://globalassets.starbucks.com/assets/9d72035353344b59938d007451754db5.jpg?impolicy=1by1_wide_topcrop_630" price="4.95+" currency="$"/>
-      <foodCard desc="星巴克冷萃，加上蜂蜜，最后加上杏仁牛奶，每口美味的小口都有均衡的口感" title="Honey Almondmilk Cold Brew 蜂蜜杏仁牛奶冷萃" thumb="https://globalassets.starbucks.com/assets/21f012c25a714d81b211a19094fb90cc.jpg?impolicy=1by1_wide_topcrop_630" price="3.95+" currency="$"/>
-      <foodCard desc="燕麦牛奶和招牌浓缩咖啡有意地与蜂蜜和烤蜂蜜混合在一起，这是对所有甜和咸美味的致敬" title="Honey Oatmilk Latte 蜂蜜燕麦奶拿铁" thumb="https://globalassets.starbucks.com/assets/edd75880341c437ab194c14835fbb24e.jpg?impolicy=1by1_wide_topcrop_630" price="4.95+" currency="$"/>
-      <foodCard desc="蒸过的，新鲜压榨的苹果汁和肉桂糖浆再撒上甜奶油和焦糖" title="Caramel Apple Spice 焦糖苹果" thumb="https://globalassets.starbucks.com/assets/878b34f91f924460bc10570a6d75f060.jpg?impolicy=1by1_wide_topcrop_630" price="3.45+" currency="$"/>
-      <foodCard desc="翡翠柑桔薄荷绿茶、桃子宁静花草茶、热水、蒸柠檬水和少许蜂蜜混合在一起" title="Honey Citrus Mint Tea 蜂蜜柑橘薄荷茶" thumb="https://globalassets.starbucks.com/assets/a5e64777b3cc412e9239b8a37328cb37.jpg?impolicy=1by1_wide_topcrop_630" price="2.95+" currency="$" />
-      <foodCard desc="细腻的白茶，有着干净明亮的余味，加冰摇匀后，口感清脆，伴随微妙的甜味，精致提神。" title="Iced White Tea 冰镇白茶" thumb="https://globalassets.starbucks.com/assets/349127afbe87459985ae29dd31d1b096.jpg?impolicy=1by1_wide_topcrop_630" price="2.25+" currency="$"/>
-      <foodCard desc="清爽的草莓饮料，带有西番莲果的味道，与奶油椰子浆混合。" title="Pink Drink 草莓饮料" thumb="https://globalassets.starbucks.com/assets/3fee4c21a1cb4ad294e32c727aec0cdd.jpg?impolicy=1by1_wide_topcrop_630" price="4.05+" currency="$"/>
-      <foodCard desc="Nitro冷萃的顶部是一层自制的香草甜奶油。天鹅绒般的咖啡比以往任何时候都更容易饮用。" title="Vanilla Sweet Cream Nitro Cold Brew 香草甜奶油冷饮" thumb="https://globalassets.starbucks.com/assets/31d2824c896147fbaad4a1eac1ab1174.jpg?impolicy=1by1_wide_topcrop_630" price="4.65+" currency="$" />
-      <foodCard desc="招牌意式烤浓咖啡，配以蒸牛奶、甜摩卡沙司和薄荷味糖浆，再加上鲜奶油和黑巧克力" title="Peppermint Mocha 薄荷摩卡" thumb="https://globalassets.starbucks.com/assets/ca435e1035e04487b6e2fa872a1f8ba7.jpg?impolicy=1by1_wide_topcrop_630" price="4.85+" currency="$" />
-      <foodCard desc="由巧克力摩卡沙司、薄荷味糖浆和蒸牛奶精心调制而成，顶部点缀着鲜奶油和黑巧克力"title="Peppermint Hot Chocolate 薄荷热巧" thumb="https://globalassets.starbucks.com/assets/addff5d43a1146898188e8b2557fd728.jpg?impolicy=1by1_wide_topcrop_630" price="3.75+" currency="$" />
-      <foodCard desc="招牌意式烤浓咖啡与牛奶、冰、甜摩卡沙司和薄荷味糖浆相结合，顶部是鲜奶油和黑巧克力" title="Iced Peppermint Mocha 冰薄荷摩卡" thumb="https://globalassets.starbucks.com/assets/f6201cf816e54c83afa2a8dc2574833c.jpg?impolicy=1by1_wide_topcrop_630" price="4.85+" currency="$" />
-      <foodCard desc="将巧克力薄荷味牛奶、冰、摩卡沙司和薄荷味糖浆混合在一起，再加上鲜奶油和黑巧克力" title="Peppermint Mocha Crème Frappuccino 薄荷摩卡奶油星冰乐" thumb="https://globalassets.starbucks.com/assets/5c1ac7390eb8478b93eaac83436ee163.jpg?impolicy=1by1_wide_topcrop_630" price="4.95+" currency="$" />
-      <foodCard desc="星巴克冷萃，添加香草糖浆，顶部添加南瓜奶油冷泡和南瓜香料。" title="Pumpkin Cream Cold Brew 南瓜奶油冷萃" thumb="https://globalassets.starbucks.com/assets/70cc353e42224b4a97ec995919f02976.jpg?impolicy=1by1_wide_topcrop_630" price="4.25+" currency="$" />
-      <foodCard desc="我们的招牌意式浓缩咖啡和牛奶，配上南瓜、肉桂、肉豆蔻和丁香口味，加冰饮用。" title="Iced Pumpkin Spice Latte 冰南瓜香料拿铁" thumb="https://globalassets.starbucks.com/assets/f316305ccb6e49c79dbc9212a33363f9.jpg?impolicy=1by1_wide_topcrop_630"price="4.85+" currency="$" />
-      <foodCard desc="苹果、红糖、牛奶和冰混合的味道，再用苹果和鲜奶油分层。" title="Apple Crisp Crème Frappuccino Blended Beverage 苹果奶油冻混合饮料" thumb="https://globalassets.starbucks.com/assets/4ad8f722d6ec4464918d351af194f578.jpg?impolicy=1by1_wide_topcrop_630" price="4.95+" currency="$" />
-      <foodCard desc="苹果、红糖、咖啡、牛奶和冰混合在一起，再用香苹果和鲜奶油分层。" title="Apple Crisp Frappuccino® Blended Beverage 苹果脆片星冰乐饮料" thumb="https://globalassets.starbucks.com/assets/bbc7cc6d25be43728bc659d7f7da81bf.jpg?impolicy=1by1_wide_topcrop_630" price="4.95+" currency="$" />
-      <foodCard desc="苹果和红糖的分层风味融合在一起，再加入浓咖啡、牛奶、冰块和焦糖" title="Iced Apple Crisp Macchiato 冰脆苹果玛奇朵" thumb="https://globalassets.starbucks.com/assets/15c21fdd92b04f9ab6dec5fb40201012.jpg?impolicy=1by1_wide_topcrop_630" price="4.85+" currency="$" />
-      <foodCard desc="南瓜加上传统的秋季香料，再与咖啡、牛奶和冰混合，顶部是鲜奶油和南瓜派。" title="Pumpkin Spice Frappuccino® Blended Beverage 南瓜香料星冰乐" thumb="https://globalassets.starbucks.com/assets/f7a91d930a1d4964bd906f685d7cc485.jpg?impolicy=1by1_wide_topcrop_630"price="4.95+" currency="$" />
-      <foodCard desc="浓缩咖啡制成，然后摇匀、冷冻、加上少量牛奶和甜味使其醇厚" title="Iced Shaken Espresso 冰摇浓缩咖啡" thumb="https://globalassets.starbucks.com/assets/4471d887a8fb4c15a4db4c668971b8aa.jpg?impolicy=1by1_wide_topcrop_630" price="3.45+" currency="$" />
-      <foodCard desc="苹果和红糖的分层风味融合在一起，再加入浓咖啡、牛奶、冰块和焦糖" title="Apple Crisp Macchiato 脆苹果玛奇朵" thumb="https://globalassets.starbucks.com/assets/216279bad2ca4dd193675475106a9f88.jpg?impolicy=1by1_wide_topcrop_630" price="4.85+" currency="$" />
-      <foodCard desc="招牌意式浓缩咖啡融合了白巧克力酱、薄荷味糖浆和牛奶三种口味，加冰饮用，顶部配以鲜奶油和黑巧克力" title="Iced Peppermint White Chocolate Mocha 冰薄荷白巧克力摩卡" thumb="https://globalassets.starbucks.com/assets/61b8b9d84d2241f298dc2d24a0a203ad.jpg?impolicy=1by1_wide_topcrop_630" price="4.85+" currency="$" />
-  </van-tab>
+      <foodCard desc="星巴克的金色浓缩咖啡、红糖和肉桂一起摇一摇，最后在上面加上燕麦奶和冰块" title="Iced Brown Sugar Oatmilk Shaken Espresso 冰红糖燕麦牛奶摇浓缩咖啡" thumb="https://globalassets.starbucks.com/assets/9fdcfa06cc964029a3941adb7a36aa7f.jpg?impolicy=1by1_wide_topcrop_630" price="4.95+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='IcedBrownSugarOatmilkSE'wx:if="{{!newList[0].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='IcedBrownSugarOatmilkSE'wx:else/> {{RSB[0].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='IcedBrownSugarOatmilkSE' wx:if="{{!newList[0].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='IcedBrownSugarOatmilkSE' wx:else></view>{{RSB[0].Down}} </van-button> 
+        </view>
+      </foodCard>
 
-  <van-tab title="Seasonal Beverages & More">
-    <foodCard desc="星冰乐烤咖啡、摩卡沙司、薄荷味糖浆、冰和牛奶中融入了巧克力与薄荷，再配以鲜奶油和黑巧克力。" title="Peppermint White Chocolate Mocha Frappuccino® Blended Beverage 薄荷白巧克力摩卡星冰乐混合饮料" thumb="https://globalassets.starbucks.com/assets/3408a37425274b6497f1c2f807d7bdca.jpg?impolicy=1by1_wide_topcrop_630" price="4.95+" currency="$" />
-      <foodCard desc="浓缩咖啡配上白巧克力酱、薄荷味糖浆和蒸牛奶，再加上甜奶油和黑巧克力" title="Peppermint White Chocolate Mocha 薄荷白巧克力摩卡" thumb="https://globalassets.starbucks.com/assets/ce5bcd5f1ae549f69f57cf08157202a1.jpg?impolicy=1by1_wide_topcrop_630" price="4.85+" currency="$" />
-      <foodCard desc="白巧克力摩卡沙司配上薄荷味糖浆和蒸牛奶，顶部是鲜奶油和黑巧克力。" title="Peppermint White Hot Chocolate 薄荷白热巧克力" thumb="https://globalassets.starbucks.com/assets/6d449ec196ce46fbaf2d6a3b244eeeae.jpg?impolicy=1by1_wide_topcrop_630" price="3.75+" currency="$" />
-      <foodCard desc="将白巧克力摩卡酱、薄荷、牛奶、冰和糖浆混合在一起，配以鲜奶油和黑巧克力。" title="Peppermint White Chocolate Crème Frappuccino® Blended Beverage 薄荷白巧克力奶油星冰乐混合饮料" thumb="https://globalassets.starbucks.com/assets/6a0de67f00f04504905a16fae25d2962.jpg?impolicy=1by1_wide_topcrop_630" price="4.95+" currency="$" />
-      <foodCard desc="星冰乐烤咖啡、牛奶和冰与浓郁的焦糖奶油沙司混合，再加上鲜奶油和松脆的焦糖奶油块" title="Caramel Brulée Frappuccino® Blended Beverage 焦糖Brulée星冰乐混合饮料" thumb="https://globalassets.starbucks.com/assets/2f2a9622e1c54674b0683c6ca0776604.jpg?impolicy=1by1_wide_topcrop_630" price="4.95+" currency="$" />
-      <foodCard desc="丰富的焦糖奶油酱与牛奶和冰混合，再加上鲜奶油和松脆的焦糖，为您带来额外的美味。" title="Caramel Brulée Crème Frappuccino® Blended Beverage 焦糖奶油混合饮料" thumb="https://globalassets.starbucks.com/assets/439c44b8b5cc49528a664711b447374f.jpg?impolicy=1by1_wide_topcrop_630" price="4.95+" currency="$" />
-      <foodCard desc="招牌意式浓缩咖啡、牛奶、冰和浓郁的焦糖奶油沙司配以鲜奶油和焦糖奶油。" title="Iced Caramel Brulée Latte 冰焦糖拿铁" thumb="https://globalassets.starbucks.com/assets/3dacf63a42ac40b4b6f6ed32f8422d0a.jpg?impolicy=1by1_wide_topcrop_630" price="4.85+" currency="$" />
-      <foodCard desc="招牌意式浓缩咖啡、蒸牛奶和浓郁的焦糖奶油沙司配以鲜奶油和焦糖奶油" title="Caramel Brulée Latte 焦糖拿铁" thumb="https://globalassets.starbucks.com/assets/1039a0883ad548b69c5f93b9f76dbae2.jpg?impolicy=1by1_wide_topcrop_630" price="4.85+" currency="$" />
-      <foodCard desc="星巴克冷泡，加入爱尔兰奶油糖浆，顶部添加香草甜奶油和一丝可可。" title="Irish Cream Cold Brew 爱尔兰奶油冷萃" thumb="https://globalassets.starbucks.com/assets/3abfc4b26c144afd9dd4eec001f0f252.jpg?impolicy=1by1_wide_topcrop_630" price="4.25+" currency="$" />
-      <foodCard desc="招牌意式浓缩咖啡搭配焦糖化白巧克力、清蒸牛奶，再加上鲜奶油、节日糖果和酥脆的白珍珠带来一种甜蜜、愉快的享受。" title="Toasted White Chocolate Mocha 烤白巧克力摩卡" thumb="https://globalassets.starbucks.com/assets/7a326fe84639496f87326d60fb6ef342.jpg?impolicy=1by1_wide_topcrop_630" price="4.85+" currency="$"  />
-      <foodCard desc="金色意式咖啡烘焙，结合牛奶、冰块和焦糖白巧克力口味。顶部是鲜奶油、节日糖果和脆白珍珠。" title="Iced Starbucks Blonde Toasted White Chocolate Mocha 冰星巴克金烤白巧克力摩卡" thumb="https://globalassets.starbucks.com/assets/10f72c929639436893d29e4e3ada35c2.jpg?impolicy=1by1_wide_topcrop_630" price="4.85+" currency="$" />
-      <foodCard desc="星冰乐烤咖啡、牛奶、冰和焦糖白巧克力的口味，加上鲜奶油、节日糖果和酥脆的白珍珠" title="Toasted White Chocolate Mocha Frappuccino Blended Beverage 烤白巧克力摩卡星冰乐混合饮料" thumb="https://globalassets.starbucks.com/assets/eacda97022ca470db92afd9870e948b3.jpg?impolicy=1by1_wide_topcrop_630" price="4.95+" currency="$" />
-      <foodCard desc="特色浓缩咖啡、清蒸牛奶和焦糖白巧克力口味的完美融合，再配以鲜奶油、假日糖果和酥脆的白珍珠。" title="Toasted White Chocolate Crème Frappuccino Blended Beverage 烤白巧克力奶油星冰乐混合饮料" thumb="https://globalassets.starbucks.com/assets/8c21c791608a4d98b446fcbdfe479347.jpg?impolicy=1by1_wide_topcrop_630" price="4.95+" currency="$" />
-      <foodCard desc="招牌意式浓缩咖啡和蒸牛奶，配以南瓜、肉桂、肉豆蔻和丁香，顶部配以鲜奶油和南瓜香料。" title="Pumpkin Spice Latte 南瓜香料拿铁" thumb="https://globalassets.starbucks.com/assets/4ea1c4c2b6734cd389208520969000f6.jpg?impolicy=1by1_wide_topcrop_630" price="4.85+" currency="$" />
-      <foodCard desc="将蒸牛奶与南瓜、肉桂、肉豆蔻和丁香的味道结合在一起，然后再加上鲜奶油，打造出这款令人惊叹的咖啡。" title="Pumpkin Spice Crème 南瓜香料奶油" thumb="https://globalassets.starbucks.com/assets/56ea95b0384b42fda486e52a23ea21c4.jpg?impolicy=1by1_wide_topcrop_630" price="3.75+" currency="$" />
-      <foodCard desc="清蒸牛奶和焦糖栗子的味道，再加上鲜奶油和果仁面包碎" title="Chestnut Praline Crème 栗子果仁奶油" thumb="https://globalassets.starbucks.com/assets/bf853a9f0ed349b686aee04a61fcb8ae.jpg?impolicy=1by1_wide_topcrop_630" price="3.75+" currency="$" />
-      <foodCard desc="招牌意式浓缩咖啡和蒸牛奶，然后配以焦糖栗子，最后再加上节日奶油和果仁面包碎。" title="Chestnut Praline Latte 栗子果仁拿铁" thumb="https://globalassets.starbucks.com/assets/7202df9b83c4419b8748263e73b4742f.jpg?impolicy=1by1_wide_topcrop_630" price="4.85+" currency="$" />
-      <foodCard desc="招牌浓缩咖啡、冰和牛奶，然后配以焦糖栗子，最后再加上奶油和果仁面包碎。" title="Iced Chestnut Praline Latte 冰栗子果仁拿铁" thumb="https://globalassets.starbucks.com/assets/549e854a0e4a45fc90f7c05ff85a20ae.jpg?impolicy=1by1_wide_topcrop_630" price="4.85+" currency="$" />
-      <foodCard desc="焦糖栗子、牛奶与冰混合的节日风味，顶部再配以鲜奶油和果仁面包碎。" title="Chestnut Praline Crème Frappuccino® Blended Beverage 栗子果仁奶油星冰乐" thumb="https://globalassets.starbucks.com/assets/f54f3ea0a9184c728e8e2543d621d512.jpg?impolicy=1by1_wide_topcrop_630" price="4.95+" currency="$" />
-      <foodCard desc="焦糖栗子、星冰乐烤咖啡、牛奶与冰混合的节日风味，顶部再配以鲜奶油和果仁面包碎。" title="Chestnut Praline Frappuccino® Blended Beverage 栗子果仁星冰乐" thumb="https://globalassets.starbucks.com/assets/b7d038b4aba84e4b8acf756e866820e1.jpg?impolicy=1by1_wide_topcrop_630" price="4.95+" currency="$" />
-      <foodCard desc="南瓜混合了传统的秋季香料、牛奶和冰，顶部再配以鲜奶油和南瓜派。" title="Pumpkin Spice Crème Frappuccino® Blended Beverage 南瓜奶油星冰乐混合饮料" thumb="https://globalassets.starbucks.com/assets/a225ed46752740daa23ed75650c4248b.jpg?impolicy=1by1_wide_topcrop_630" price="4.95+" currency="$" />
-      <foodCard desc="由真正的香草豆粉、椰子奶泡沫制成，然后再配以我们的招牌浓缩咖啡。" title="Vanilla Bean Coconutmilk Latte 香草椰子牛奶拿铁" thumb="https://globalassets.starbucks.com/assets/312c5077786a4ce6a5f902c067b76f0c.jpg?impolicy=1by1_wide_topcrop_630" price="4.65+" currency="$" />
-      <foodCard desc="在一杯冰镇卡布奇诺咖啡洒上一点牛奶，一个在平衡的口感下，具有更强的浓缩咖啡味道和天鹅绒般的泡沫" title="Iced Cappuccino with Cold Foam 冷泡冰卡布奇诺" thumb="https://globalassets.starbucks.com/assets/1c4f9f7226a045df8eae89e5ec42f899.jpg?impolicy=1by1_wide_640" price="3.75+" currency="$" />
-      <foodCard desc="超顺滑的金色浓缩咖啡和牛奶，加入榛子糖浆调味，最后浇在冰上" title="Starbucks Blonde® Hazelnut Latte 星巴克Blonde®榛子拿铁" thumb="https://globalassets.starbucks.com/assets/b635f407bbcd49e7b8dd9119ce33f76e.jpg?impolicy=1by1_wide_topcrop_630" price="4.25+" currency="$" />
-      <foodCard desc="超顺滑的金色浓缩咖啡、天鹅绒般的蒸牛奶和香草糖浆结合在一起" title="Starbucks® Blonde Vanilla Latte 星巴克金色香草拿铁" thumb="https://globalassets.starbucks.com/assets/b635f407bbcd49e7b8dd9119ce33f76e.jpg?impolicy=1by1_wide_topcrop_630" price="4.45+" currency="$" />
-      <foodCard desc="糖曲奇味的糖浆，结合星巴克Blonde®浓缩咖啡和蒸杏仁奶，顶部撒有红色和绿色的糖点。" title="Sugar Cookie Almondmilk Latte 糖曲奇杏仁牛奶拿铁" thumb="https://globalassets.starbucks.com/assets/49bd0d5969e64f63a81b74589ae9e803.jpg?impolicy=1by1_wide_topcrop_630" price="4.65+" currency="$" />
-      <foodCard desc="糖曲奇味的糖浆，加上星巴克Blonde®浓缩咖啡、杏仁牛奶与冰，最后上面撒上红绿色的糖点。" title="Iced Sugar Cookie Almondmilk Latte 冰糖曲奇杏仁牛奶拿铁" thumb="https://globalassets.starbucks.com/assets/c59a4ee6bfa543de8788971494af3003.jpg?impolicy=1by1_wide_topcrop_630" price="4.85+" currency="$" />
-      <foodCard desc="糖曲奇味的糖浆，与星冰乐烤咖啡、杏仁奶与冰混合，顶部撒有鲜奶油和红绿色的糖点。" title="Sugar Cookie Almondmilk Frappuccino® Blended Beverage 糖曲奇杏仁奶星冰乐混合饮料" thumb="https://globalassets.starbucks.com/assets/d50938db081948b8a23c81070a300ad8.jpg?impolicy=1by1_wide_topcrop_630" price="4.95+" currency="$" />
-      <foodCard desc="糖曲奇味的糖浆、杏仁牛奶与冰混合，上面撒上鲜奶油和红绿色的糖点。" title="ugar Cookie Almondmilk Crème Frappuccino® Blended Beverage 糖曲奇杏仁奶奶油星冰乐混合饮料" thumb="https://globalassets.starbucks.com/assets/38b1ea24aa3d4130a01b9b2c101e5738.jpg?impolicy=1by1_wide_topcrop_630" price="4.95+" currency="$" />
-  </van-tab>
+      <foodCard desc="星巴克金色浓缩咖啡融合了可可和麦芽的味道，摇匀后加入杏仁牛奶和冰块" title="Iced Chocolate Almondmilk Shaken Espresso 冰巧克力杏仁牛奶摇浓缩咖啡" thumb="https://globalassets.starbucks.com/assets/9d72035353344b59938d007451754db5.jpg?impolicy=1by1_wide_topcrop_630" price="4.95+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='IcedChocolateAlmondmilkSE'wx:if="{{!newList[1].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='IcedChocolateAlmondmilkSE'wx:else/> {{RSB[1].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='IcedChocolateAlmondmilkSE' wx:if="{{!newList[1].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='IcedChocolateAlmondmilkSE' wx:else></view>{{RSB[1].Down}} </van-button> 
+        </view>
+      </foodCard>
 
+      <foodCard desc="星巴克冷萃，加上蜂蜜，最后加上杏仁牛奶，每口美味的小口都有均衡的口感" title="Honey Almondmilk Cold Brew 蜂蜜杏仁牛奶冷萃" thumb="https://globalassets.starbucks.com/assets/21f012c25a714d81b211a19094fb90cc.jpg?impolicy=1by1_wide_topcrop_630" price="3.95+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='HoneyAlmondmilkCB'wx:if="{{!newList[2].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='HoneyAlmondmilkCB'wx:else/> {{RSB[2].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='HoneyAlmondmilkCB' wx:if="{{!newList[2].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='HoneyAlmondmilkCB' wx:else></view>{{RSB[2].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="燕麦牛奶和招牌浓缩咖啡有意地与蜂蜜和烤蜂蜜混合在一起，这是对所有甜和咸美味的致敬" title="Honey Oatmilk Latte 蜂蜜燕麦奶拿铁" thumb="https://globalassets.starbucks.com/assets/edd75880341c437ab194c14835fbb24e.jpg?impolicy=1by1_wide_topcrop_630" price="4.95+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='HoneyOatmilkLatte'wx:if="{{!newList[3].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='HoneyOatmilkLatte'wx:else/> {{RSB[3].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='HoneyOatmilkLatte' wx:if="{{!newList[3].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='HoneyOatmilkLatte' wx:else></view>{{RSB[3].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="蒸过的，新鲜压榨的苹果汁和肉桂糖浆再撒上甜奶油和焦糖" title="Caramel Apple Spice 焦糖苹果" thumb="https://globalassets.starbucks.com/assets/878b34f91f924460bc10570a6d75f060.jpg?impolicy=1by1_wide_topcrop_630" price="3.45+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='CaramelAppleSpice'wx:if="{{!newList[4].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='CaramelAppleSpice'wx:else/> {{RSB[4].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='CaramelAppleSpice' wx:if="{{!newList[4].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='CaramelAppleSpice' wx:else></view>{{RSB[4].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="翡翠柑桔薄荷绿茶、桃子宁静花草茶、热水、蒸柠檬水和少许蜂蜜混合在一起" title="Honey Citrus Mint Tea 蜂蜜柑橘薄荷茶" thumb="https://globalassets.starbucks.com/assets/a5e64777b3cc412e9239b8a37328cb37.jpg?impolicy=1by1_wide_topcrop_630" price="2.95+" currency="$" >
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='HoneyCitrusMintTea'wx:if="{{!newList[5].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='HoneyCitrusMintTea'wx:else/> {{RSB[5].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='HoneyCitrusMintTea' wx:if="{{!newList[5].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='HoneyCitrusMintTea' wx:else></view>{{RSB[5].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="细腻的白茶，有着干净明亮的余味，加冰摇匀后，口感清脆，伴随微妙的甜味，精致提神。" title="Iced White Tea 冰镇白茶" thumb="https://globalassets.starbucks.com/assets/349127afbe87459985ae29dd31d1b096.jpg?impolicy=1by1_wide_topcrop_630" price="2.25+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='IcedWhiteTea'wx:if="{{!newList[6].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='IcedWhiteTea'wx:else/> {{RSB[6].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='IcedWhiteTea' wx:if="{{!newList[6].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='IcedWhiteTea' wx:else></view>{{RSB[6].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="清爽的草莓饮料，带有西番莲果的味道，与奶油椰子浆混合。" title="Pink Drink 草莓饮料" thumb="https://globalassets.starbucks.com/assets/3fee4c21a1cb4ad294e32c727aec0cdd.jpg?impolicy=1by1_wide_topcrop_630" price="4.05+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='PinkDrink'wx:if="{{!newList[7].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='PinkDrink'wx:else/> {{RSB[7].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='PinkDrink' wx:if="{{!newList[7].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='PinkDrink' wx:else></view>{{RSB[7].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="Nitro冷萃的顶部是一层自制的香草甜奶油。天鹅绒般的咖啡比以往任何时候都更容易饮用。" title="Vanilla Sweet Cream Nitro Cold Brew 香草甜奶油冷饮" thumb="https://globalassets.starbucks.com/assets/31d2824c896147fbaad4a1eac1ab1174.jpg?impolicy=1by1_wide_topcrop_630" price="4.65+" currency="$" >
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='VanillaSweetCreamNitroCB'wx:if="{{!newList[8].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='VanillaSweetCreamNitroCB'wx:else/> {{RSB[8].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='VanillaSweetCreamNitroCB' wx:if="{{!newList[8].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='VanillaSweetCreamNitroCB' wx:else></view>{{RSB[8].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="招牌意式烤浓咖啡，配以蒸牛奶、甜摩卡沙司和薄荷味糖浆，再加上鲜奶油和黑巧克力" title="Peppermint Mocha 薄荷摩卡" thumb="https://globalassets.starbucks.com/assets/ca435e1035e04487b6e2fa872a1f8ba7.jpg?impolicy=1by1_wide_topcrop_630" price="4.85+" currency="$" >
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='PeppermintMocha'wx:if="{{!newList[9].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='PeppermintMocha'wx:else/> {{RSB[9].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='PeppermintMocha' wx:if="{{!newList[9].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='PeppermintMocha' wx:else></view>{{RSB[9].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="由巧克力摩卡沙司、薄荷味糖浆和蒸牛奶精心调制而成，顶部点缀着鲜奶油和黑巧克力"title="Peppermint Hot Chocolate 薄荷热巧" thumb="https://globalassets.starbucks.com/assets/addff5d43a1146898188e8b2557fd728.jpg?impolicy=1by1_wide_topcrop_630" price="3.75+" currency="$" >
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='PeppermintHotChocolate'wx:if="{{!newList[10].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='PeppermintHotChocolate'wx:else/> {{RSB[10].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='PeppermintHotChocolate' wx:if="{{!newList[10].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='PeppermintHotChocolate' wx:else></view>{{RSB[10].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="招牌意式烤浓咖啡与牛奶、冰、甜摩卡沙司和薄荷味糖浆相结合，顶部是鲜奶油和黑巧克力" title="Iced Peppermint Mocha 冰薄荷摩卡" thumb="https://globalassets.starbucks.com/assets/f6201cf816e54c83afa2a8dc2574833c.jpg?impolicy=1by1_wide_topcrop_630" price="4.85+" currency="$" >
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='IcedPeppermintMocha'wx:if="{{!newList[11].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='IcedPeppermintMocha'wx:else/> {{RSB[11].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='IcedPeppermintMocha' wx:if="{{!newList[11].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='IcedPeppermintMocha' wx:else></view>{{RSB[11].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="将巧克力薄荷味牛奶、冰、摩卡沙司和薄荷味糖浆混合在一起，再加上鲜奶油和黑巧克力" title="Peppermint Mocha Crème Frappuccino 薄荷摩卡奶油星冰乐" thumb="https://globalassets.starbucks.com/assets/5c1ac7390eb8478b93eaac83436ee163.jpg?impolicy=1by1_wide_topcrop_630" price="4.95+" currency="$" >
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='PeppermintMochaFrap'wx:if="{{!newList[12].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='PeppermintMochaFrap'wx:else/> {{RSB[12].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='PeppermintMochaFrap' wx:if="{{!newList[12].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='PeppermintMochaFrap' wx:else></view>{{RSB[12].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="星巴克冷萃，添加香草糖浆，顶部添加南瓜奶油冷泡和南瓜香料。" title="Pumpkin Cream Cold Brew 南瓜奶油冷萃" thumb="https://globalassets.starbucks.com/assets/70cc353e42224b4a97ec995919f02976.jpg?impolicy=1by1_wide_topcrop_630" price="4.25+" currency="$" >
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='PumpkinCB'wx:if="{{!newList[13].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='PumpkinCB'wx:else/> {{RSB[13].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='PumpkinCB' wx:if="{{!newList[13].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='PumpkinCB' wx:else></view>{{RSB[13].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="我们的招牌意式浓缩咖啡和牛奶，配上南瓜、肉桂、肉豆蔻和丁香口味，加冰饮用。" title="Iced Pumpkin Spice Latte 冰南瓜香料拿铁" thumb="https://globalassets.starbucks.com/assets/f316305ccb6e49c79dbc9212a33363f9.jpg?impolicy=1by1_wide_topcrop_630"price="4.85+" currency="$" >
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='IcedPumpkinSpiceLatte'wx:if="{{!newList[14].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='IcedPumpkinSpiceLatte'wx:else/> {{RSB[14].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='IcedPumpkinSpiceLatte' wx:if="{{!newList[14].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='IcedPumpkinSpiceLatte' wx:else></view>{{RSB[14].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="苹果、红糖、牛奶和冰混合的味道，再用苹果和鲜奶油分层。" title="Apple Crisp Crème Frappuccino Blended Beverage 苹果奶油冻混合饮料" thumb="https://globalassets.starbucks.com/assets/4ad8f722d6ec4464918d351af194f578.jpg?impolicy=1by1_wide_topcrop_630" price="4.95+" currency="$" >
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='AppleCrispCremeFrap'wx:if="{{!newList[15].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='AppleCrispCremeFrap'wx:else/> {{RSB[15].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='AppleCrispCremeFrap' wx:if="{{!newList[15].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='AppleCrispCremeFrap' wx:else></view>{{RSB[15].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="苹果、红糖、咖啡、牛奶和冰混合在一起，再用香苹果和鲜奶油分层。" title="Apple Crisp Frappuccino® Blended Beverage 苹果脆片星冰乐饮料" thumb="https://globalassets.starbucks.com/assets/bbc7cc6d25be43728bc659d7f7da81bf.jpg?impolicy=1by1_wide_topcrop_630" price="4.95+" currency="$" >
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='AppleCrispFrap'wx:if="{{!newList[16].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='AppleCrispFrap'wx:else/> {{RSB[16].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='AppleCrispFrap' wx:if="{{!newList[16].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='AppleCrispFrap' wx:else></view>{{RSB[16].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="苹果和红糖的分层风味融合在一起，再加入浓咖啡、牛奶、冰块和焦糖" title="Iced Apple Crisp Macchiato 冰脆苹果玛奇朵" thumb="https://globalassets.starbucks.com/assets/15c21fdd92b04f9ab6dec5fb40201012.jpg?impolicy=1by1_wide_topcrop_630" price="4.85+" currency="$" >
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='IcedAppleCrispMacchi'wx:if="{{!newList[17].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='IcedAppleCrispMacchi'wx:else/> {{RSB[17].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='IcedAppleCrispMacchi' wx:if="{{!newList[17].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='IcedAppleCrispMacchi' wx:else></view>{{RSB[17].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="南瓜加上传统的秋季香料，再与咖啡、牛奶和冰混合，顶部是鲜奶油和南瓜派。" title="Pumpkin Spice Frappuccino® Blended Beverage 南瓜香料星冰乐" thumb="https://globalassets.starbucks.com/assets/f7a91d930a1d4964bd906f685d7cc485.jpg?impolicy=1by1_wide_topcrop_630"price="4.95+" currency="$" >
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='PumpkinSpiceFrap'wx:if="{{!newList[18].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='PumpkinSpiceFrap'wx:else/> {{RSB[18].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='PumpkinSpiceFrap' wx:if="{{!newList[18].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='PumpkinSpiceFrap' wx:else></view>{{RSB[18].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="浓缩咖啡制成，然后摇匀、冷冻、加上少量牛奶和甜味使其醇厚" title="Iced Shaken Espresso 冰摇浓缩咖啡" thumb="https://globalassets.starbucks.com/assets/4471d887a8fb4c15a4db4c668971b8aa.jpg?impolicy=1by1_wide_topcrop_630" price="3.45+" currency="$" >
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='IcedSE'wx:if="{{!newList[19].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='IcedSE'wx:else/> {{RSB[19].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='IcedSE' wx:if="{{!newList[19].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='IcedSE' wx:else></view>{{RSB[19].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="苹果和红糖的分层风味融合在一起，再加入浓咖啡、牛奶、冰块和焦糖" title="Apple Crisp Macchiato 脆苹果玛奇朵" thumb="https://globalassets.starbucks.com/assets/216279bad2ca4dd193675475106a9f88.jpg?impolicy=1by1_wide_topcrop_630" price="4.85+" currency="$" >
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='AppleCrispMacchi'wx:if="{{!newList[20].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='AppleCrispMacchi'wx:else/> {{RSB[20].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='AppleCrispMacchi' wx:if="{{!newList[20].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='AppleCrispMacchi' wx:else></view>{{RSB[20].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="招牌意式浓缩咖啡融合了白巧克力酱、薄荷味糖浆和牛奶三种口味，加冰饮用，顶部配以鲜奶油和黑巧克力" title="Iced Peppermint White Chocolate Mocha 冰薄荷白巧克力摩卡" thumb="https://globalassets.starbucks.com/assets/61b8b9d84d2241f298dc2d24a0a203ad.jpg?impolicy=1by1_wide_topcrop_630" price="4.85+" currency="$" >
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='IcedPeppermintWhiteChocMocha'wx:if="{{!newList[21].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='IcedPeppermintWhiteChocMocha'wx:else/> {{RSB[21].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='IcedPeppermintWhiteChocMocha' wx:if="{{!newList[21].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='IcedPeppermintWhiteChocMocha' wx:else></view>{{RSB[21].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="星冰乐烤咖啡、摩卡沙司、薄荷味糖浆、冰和牛奶中融入了巧克力与薄荷，再配以鲜奶油和黑巧克力。" title="Peppermint White Chocolate Mocha Frappuccino® Blended Beverage 薄荷白巧克力摩卡星冰乐混合饮料" thumb="https://globalassets.starbucks.com/assets/3408a37425274b6497f1c2f807d7bdca.jpg?impolicy=1by1_wide_topcrop_630" price="4.95+" currency="$" >
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='PeppermintWhiteChocMochaFrap'wx:if="{{!newList[22].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='PeppermintWhiteChocMochaFrap'wx:else/> {{RSB[22].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='PeppermintWhiteChocMochaFrap' wx:if="{{!newList[22].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='PeppermintWhiteChocMochaFrap' wx:else></view>{{RSB[22].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="浓缩咖啡配上白巧克力酱、薄荷味糖浆和蒸牛奶，再加上甜奶油和黑巧克力" title="Peppermint White Chocolate Mocha 薄荷白巧克力摩卡" thumb="https://globalassets.starbucks.com/assets/ce5bcd5f1ae549f69f57cf08157202a1.jpg?impolicy=1by1_wide_topcrop_630" price="4.85+" currency="$" >
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='PeppermintWhiteChocMocha'wx:if="{{!newList[23].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='PeppermintWhiteChocMocha'wx:else/> {{RSB[23].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='PeppermintWhiteChocMocha' wx:if="{{!newList[23].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='PeppermintWhiteChocMocha' wx:else></view>{{RSB[23].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="白巧克力摩卡沙司配上薄荷味糖浆和蒸牛奶，顶部是鲜奶油和黑巧克力。" title="Peppermint White Hot Chocolate 薄荷白热巧克力" thumb="https://globalassets.starbucks.com/assets/6d449ec196ce46fbaf2d6a3b244eeeae.jpg?impolicy=1by1_wide_topcrop_630" price="3.75+" currency="$" >
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='PeppermintWhiteHotChoc'wx:if="{{!newList[24].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='PeppermintWhiteHotChoc'wx:else/> {{RSB[24].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='PeppermintWhiteHotChoc' wx:if="{{!newList[24].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='PeppermintWhiteHotChoc' wx:else></view>{{RSB[24].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="将白巧克力摩卡酱、薄荷、牛奶、冰和糖浆混合在一起，配以鲜奶油和黑巧克力。" title="Peppermint White Chocolate Crème Frappuccino® Blended Beverage 薄荷白巧克力奶油星冰乐混合饮料" thumb="https://globalassets.starbucks.com/assets/6a0de67f00f04504905a16fae25d2962.jpg?impolicy=1by1_wide_topcrop_630" price="4.95+" currency="$" >
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='PeppermintWhiteChocCremeFrap'wx:if="{{!newList[25].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='PeppermintWhiteChocCremeFrap'wx:else/> {{RSB[25].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='PeppermintWhiteChocCremeFrap' wx:if="{{!newList[25].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='PeppermintWhiteChocCremeFrap' wx:else></view>{{RSB[25].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="星冰乐烤咖啡、牛奶和冰与浓郁的焦糖奶油沙司混合，再加上鲜奶油和松脆的焦糖奶油块" title="Caramel Brulée Frappuccino® Blended Beverage 焦糖Brulée星冰乐混合饮料" thumb="https://globalassets.starbucks.com/assets/2f2a9622e1c54674b0683c6ca0776604.jpg?impolicy=1by1_wide_topcrop_630" price="4.95+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='CaramelBruleeFrap'wx:if="{{!newList[26].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='CaramelBruleeFrap'wx:else/> {{RSB[26].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='CaramelBruleeFrap' wx:if="{{!newList[26].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='CaramelBruleeFrap' wx:else></view>{{RSB[26].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="丰富的焦糖奶油酱与牛奶和冰混合，再加上鲜奶油和松脆的焦糖，为您带来额外的美味。" title="Caramel Brulée Crème Frappuccino® Blended Beverage 焦糖奶油混合饮料" thumb="https://globalassets.starbucks.com/assets/439c44b8b5cc49528a664711b447374f.jpg?impolicy=1by1_wide_topcrop_630" price="4.95+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='CaramelBruleeCremeFrap'wx:if="{{!newList[27].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='CaramelBruleeCremeFrap'wx:else/> {{RSB[27].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='CaramelBruleeCremeFrap' wx:if="{{!newList[27].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='CaramelBruleeCremeFrap' wx:else></view>{{RSB[27].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="招牌意式浓缩咖啡、牛奶、冰和浓郁的焦糖奶油沙司配以鲜奶油和焦糖奶油。" title="Iced Caramel Brulée Latte 冰焦糖拿铁" thumb="https://globalassets.starbucks.com/assets/3dacf63a42ac40b4b6f6ed32f8422d0a.jpg?impolicy=1by1_wide_topcrop_630" price="4.85+" currency="$" >
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='IcedCaramelBruleeLatte'wx:if="{{!newList[28].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='IcedCaramelBruleeLatte'wx:else/> {{RSB[28].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='IcedCaramelBruleeLatte' wx:if="{{!newList[28].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='IcedCaramelBruleeLatte' wx:else></view>{{RSB[28].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="招牌意式浓缩咖啡、蒸牛奶和浓郁的焦糖奶油沙司配以鲜奶油和焦糖奶油" title="Caramel Brulée Latte 焦糖拿铁" thumb="https://globalassets.starbucks.com/assets/1039a0883ad548b69c5f93b9f76dbae2.jpg?impolicy=1by1_wide_topcrop_630" price="4.85+" currency="$" >
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='CaramelBruleeLatte'wx:if="{{!newList[29].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='CaramelBruleeLatte'wx:else/> {{RSB[29].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='CaramelBruleeLatte' wx:if="{{!newList[29].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='CaramelBruleeLatte' wx:else></view>{{RSB[29].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="星巴克冷泡，加入爱尔兰奶油糖浆，顶部添加香草甜奶油和一丝可可。" title="Irish Cream Cold Brew 爱尔兰奶油冷萃" thumb="https://globalassets.starbucks.com/assets/3abfc4b26c144afd9dd4eec001f0f252.jpg?impolicy=1by1_wide_topcrop_630" price="4.25+" currency="$" >
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='IrishCreamCB'wx:if="{{!newList[30].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='IrishCreamCB'wx:else/> {{RSB[30].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='IrishCreamCB' wx:if="{{!newList[30].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='IrishCreamCB' wx:else></view>{{RSB[30].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="招牌意式浓缩咖啡搭配焦糖化白巧克力、清蒸牛奶，再加上鲜奶油、节日糖果和酥脆的白珍珠带来一种甜蜜、愉快的享受。" title="Toasted White Chocolate Mocha 烤白巧克力摩卡" thumb="https://globalassets.starbucks.com/assets/7a326fe84639496f87326d60fb6ef342.jpg?impolicy=1by1_wide_topcrop_630" price="4.85+" currency="$"  >
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='ToastedWhiteChocMocha'wx:if="{{!newList[31].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='ToastedWhiteChocMocha'wx:else/> {{RSB[31].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='ToastedWhiteChocMocha' wx:if="{{!newList[31].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='ToastedWhiteChocMocha' wx:else></view>{{RSB[31].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="金色意式咖啡烘焙，结合牛奶、冰块和焦糖白巧克力口味。顶部是鲜奶油、节日糖果和脆白珍珠。" title="Iced Starbucks Blonde Toasted White Chocolate Mocha 冰星巴克金烤白巧克力摩卡" thumb="https://globalassets.starbucks.com/assets/10f72c929639436893d29e4e3ada35c2.jpg?impolicy=1by1_wide_topcrop_630" price="4.85+" currency="$" >
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='IcedStarbucksBlondeToastedWhiteChocMocha'wx:if="{{!newList[32].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='IcedStarbucksBlondeToastedWhiteChocMocha'wx:else/> {{RSB[32].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='IcedStarbucksBlondeToastedWhiteChocMocha' wx:if="{{!newList[32].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='IcedStarbucksBlondeToastedWhiteChocMocha' wx:else></view>{{RSB[32].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="星冰乐烤咖啡、牛奶、冰和焦糖白巧克力的口味，加上鲜奶油、节日糖果和酥脆的白珍珠" title="Toasted White Chocolate Mocha Frappuccino Blended Beverage 烤白巧克力摩卡星冰乐混合饮料" thumb="https://globalassets.starbucks.com/assets/eacda97022ca470db92afd9870e948b3.jpg?impolicy=1by1_wide_topcrop_630" price="4.95+" currency="$" >
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='ToastedWhiteChocMochaFrap'wx:if="{{!newList[33].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='ToastedWhiteChocMochaFrap'wx:else/> {{RSB[33].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='ToastedWhiteChocMochaFrap' wx:if="{{!newList[33].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='ToastedWhiteChocMochaFrap' wx:else></view>{{RSB[33].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="特色浓缩咖啡、清蒸牛奶和焦糖白巧克力口味的完美融合，再配以鲜奶油、假日糖果和酥脆的白珍珠。" title="Toasted White Chocolate Crème Frappuccino Blended Beverage 烤白巧克力奶油星冰乐混合饮料" thumb="https://globalassets.starbucks.com/assets/8c21c791608a4d98b446fcbdfe479347.jpg?impolicy=1by1_wide_topcrop_630" price="4.95+" currency="$" >
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='ToastedWhiteChocCremeFrap'wx:if="{{!newList[34].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='ToastedWhiteChocCremeFrap'wx:else/> {{RSB[34].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='ToastedWhiteChocCremeFrap' wx:if="{{!newList[34].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='ToastedWhiteChocCremeFrap' wx:else></view>{{RSB[34].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="招牌意式浓缩咖啡和蒸牛奶，配以南瓜、肉桂、肉豆蔻和丁香，顶部配以鲜奶油和南瓜香料。" title="Pumpkin Spice Latte 南瓜香料拿铁" thumb="https://globalassets.starbucks.com/assets/4ea1c4c2b6734cd389208520969000f6.jpg?impolicy=1by1_wide_topcrop_630" price="4.85+" currency="$" >
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='PumpkinSpiceLatte'wx:if="{{!newList[35].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='PumpkinSpiceLatte'wx:else/> {{RSB[35].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='PumpkinSpiceLatte' wx:if="{{!newList[35].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='PumpkinSpiceLatte' wx:else></view>{{RSB[35].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="将蒸牛奶与南瓜、肉桂、肉豆蔻和丁香的味道结合在一起，然后再加上鲜奶油，打造出这款令人惊叹的咖啡。" title="Pumpkin Spice Crème 南瓜香料奶油" thumb="https://globalassets.starbucks.com/assets/56ea95b0384b42fda486e52a23ea21c4.jpg?impolicy=1by1_wide_topcrop_630" price="3.75+" currency="$" >
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='PumpkinSpiceCreme'wx:if="{{!newList[36].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='PumpkinSpiceCreme'wx:else/> {{RSB[36].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='PumpkinSpiceCreme' wx:if="{{!newList[36].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='PumpkinSpiceCreme' wx:else></view>{{RSB[36].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="清蒸牛奶和焦糖栗子的味道，再加上鲜奶油和果仁面包碎" title="Chestnut Praline Crème 栗子果仁奶油" thumb="https://globalassets.starbucks.com/assets/bf853a9f0ed349b686aee04a61fcb8ae.jpg?impolicy=1by1_wide_topcrop_630" price="3.75+" currency="$" >
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='ChestnutPralineCreme'wx:if="{{!newList[37].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='ChestnutPralineCreme'wx:else/> {{RSB[37].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='ChestnutPralineCreme' wx:if="{{!newList[37].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='ChestnutPralineCreme' wx:else></view>{{RSB[37].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="招牌意式浓缩咖啡和蒸牛奶，然后配以焦糖栗子，最后再加上节日奶油和果仁面包碎。" title="Chestnut Praline Latte 栗子果仁拿铁" thumb="https://globalassets.starbucks.com/assets/7202df9b83c4419b8748263e73b4742f.jpg?impolicy=1by1_wide_topcrop_630" price="4.85+" currency="$" >
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='ChestnutPralineLatte'wx:if="{{!newList[38].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='ChestnutPralineLatte'wx:else/> {{RSB[38].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='ChestnutPralineLatte' wx:if="{{!newList[38].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='ChestnutPralineLatte' wx:else></view>{{RSB[38].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="招牌浓缩咖啡、冰和牛奶，然后配以焦糖栗子，最后再加上奶油和果仁面包碎。" title="Iced Chestnut Praline Latte 冰栗子果仁拿铁" thumb="https://globalassets.starbucks.com/assets/549e854a0e4a45fc90f7c05ff85a20ae.jpg?impolicy=1by1_wide_topcrop_630" price="4.85+" currency="$" >
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='IcedChestnutPralineLatte'wx:if="{{!newList[39].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='IcedChestnutPralineLatte'wx:else/> {{RSB[39].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='IcedChestnutPralineLatte' wx:if="{{!newList[39].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='IcedChestnutPralineLatte' wx:else></view>{{RSB[39].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="焦糖栗子、牛奶与冰混合的节日风味，顶部再配以鲜奶油和果仁面包碎。" title="Chestnut Praline Crème Frappuccino® Blended Beverage 栗子果仁奶油星冰乐" thumb="https://globalassets.starbucks.com/assets/f54f3ea0a9184c728e8e2543d621d512.jpg?impolicy=1by1_wide_topcrop_630" price="4.95+" currency="$" >
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='ChestnutPralineCremeFrap'wx:if="{{!newList[40].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='ChestnutPralineCremeFrap'wx:else/> {{RSB[40].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='ChestnutPralineCremeFrap' wx:if="{{!newList[40].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='ChestnutPralineCremeFrap' wx:else></view>{{RSB[40].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="焦糖栗子、星冰乐烤咖啡、牛奶与冰混合的节日风味，顶部再配以鲜奶油和果仁面包碎。" title="Chestnut Praline Frappuccino® Blended Beverage 栗子果仁星冰乐" thumb="https://globalassets.starbucks.com/assets/b7d038b4aba84e4b8acf756e866820e1.jpg?impolicy=1by1_wide_topcrop_630" price="4.95+" currency="$" >
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='ChestnutPralineFrap'wx:if="{{!newList[41].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='ChestnutPralineFrap'wx:else/> {{RSB[41].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='ChestnutPralineFrap' wx:if="{{!newList[41].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='ChestnutPralineFrap' wx:else></view>{{RSB[41].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="南瓜混合了传统的秋季香料、牛奶和冰，顶部再配以鲜奶油和南瓜派。" title="Pumpkin Spice Crème Frappuccino® Blended Beverage 南瓜奶油星冰乐混合饮料" thumb="https://globalassets.starbucks.com/assets/a225ed46752740daa23ed75650c4248b.jpg?impolicy=1by1_wide_topcrop_630" price="4.95+" currency="$" >
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='PumpkinSpiceCremeFrap'wx:if="{{!newList[42].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='PumpkinSpiceCremeFrap'wx:else/> {{RSB[42].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='PumpkinSpiceCremeFrap' wx:if="{{!newList[42].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='PumpkinSpiceCremeFrap' wx:else></view>{{RSB[42].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="由真正的香草豆粉、椰子奶泡沫制成，然后再配以我们的招牌浓缩咖啡。" title="Vanilla Bean Coconutmilk Latte 香草椰子牛奶拿铁" thumb="https://globalassets.starbucks.com/assets/312c5077786a4ce6a5f902c067b76f0c.jpg?impolicy=1by1_wide_topcrop_630" price="4.65+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='VanillaBeanCoconutmilkLatte'wx:if="{{!newList[43].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='VanillaBeanCoconutmilkLatte'wx:else/> {{RSB[43].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='VanillaBeanCoconutmilkLatte' wx:if="{{!newList[43].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='VanillaBeanCoconutmilkLatte' wx:else></view>{{RSB[43].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="在一杯冰镇卡布奇诺咖啡洒上一点牛奶，一个在平衡的口感下，具有更强的浓缩咖啡味道和天鹅绒般的泡沫" title="Iced Cappuccino with Cold Foam 冷泡冰卡布奇诺" thumb="https://globalassets.starbucks.com/assets/1c4f9f7226a045df8eae89e5ec42f899.jpg?impolicy=1by1_wide_640" price="3.75+" currency="$" >
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='IcedCappwithCF'wx:if="{{!newList[44].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='IcedCappwithCF'wx:else/> {{RSB[44].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='IcedCappwithCF' wx:if="{{!newList[44].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='IcedCappwithCF' wx:else></view>{{RSB[44].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="超顺滑的金色浓缩咖啡和牛奶，加入榛子糖浆调味，最后浇在冰上" title="Starbucks Blonde® Hazelnut Latte 星巴克Blonde®榛子拿铁" thumb="https://globalassets.starbucks.com/assets/b635f407bbcd49e7b8dd9119ce33f76e.jpg?impolicy=1by1_wide_topcrop_630" price="4.25+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='StarbucksBlondeHazelnutLatte'wx:if="{{!newList[45].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='StarbucksBlondeHazelnutLatte'wx:else/> {{RSB[45].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='StarbucksBlondeHazelnutLatte' wx:if="{{!newList[45].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='StarbucksBlondeHazelnutLatte' wx:else></view>{{RSB[45].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="超顺滑的金色浓缩咖啡、天鹅绒般的蒸牛奶和香草糖浆结合在一起" title="Starbucks® Blonde Vanilla Latte 星巴克金色香草拿铁" thumb="https://globalassets.starbucks.com/assets/b635f407bbcd49e7b8dd9119ce33f76e.jpg?impolicy=1by1_wide_topcrop_630" price="4.45+" currency="$" >
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='StarbucksBlondeVanillaLatte'wx:if="{{!newList[46].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='StarbucksBlondeVanillaLatte'wx:else/> {{RSB[46].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='StarbucksBlondeVanillaLatte' wx:if="{{!newList[46].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='StarbucksBlondeVanillaLatte' wx:else></view>{{RSB[46].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="糖曲奇味的糖浆，结合星巴克Blonde®浓缩咖啡和蒸杏仁奶，顶部撒有红色和绿色的糖点。" title="Sugar Cookie Almondmilk Latte 糖曲奇杏仁牛奶拿铁" thumb="https://globalassets.starbucks.com/assets/49bd0d5969e64f63a81b74589ae9e803.jpg?impolicy=1by1_wide_topcrop_630" price="4.65+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='SugarCookieAlmondmilkLatte'wx:if="{{!newList[47].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='SugarCookieAlmondmilkLatte'wx:else/> {{RSB[47].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='SugarCookieAlmondmilkLatte' wx:if="{{!newList[47].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='SugarCookieAlmondmilkLatte' wx:else></view>{{RSB[47].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="糖曲奇味的糖浆，加上星巴克Blonde®浓缩咖啡、杏仁牛奶与冰，最后上面撒上红绿色的糖点。" title="Iced Sugar Cookie Almondmilk Latte 冰糖曲奇杏仁牛奶拿铁" thumb="https://globalassets.starbucks.com/assets/c59a4ee6bfa543de8788971494af3003.jpg?impolicy=1by1_wide_topcrop_630" price="4.85+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='IcedSugarCookieAlmondmilkLatte'wx:if="{{!newList[48].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='IcedSugarCookieAlmondmilkLatte'wx:else/> {{RSB[48].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='IcedSugarCookieAlmondmilkLatte' wx:if="{{!newList[48].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='IcedSugarCookieAlmondmilkLatte' wx:else></view>{{RSB[48].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="糖曲奇味的糖浆，与星冰乐烤咖啡、杏仁奶与冰混合，顶部撒有鲜奶油和红绿色的糖点。" title="Sugar Cookie Almondmilk Frappuccino® Blended Beverage 糖曲奇杏仁奶星冰乐混合饮料" thumb="https://globalassets.starbucks.com/assets/d50938db081948b8a23c81070a300ad8.jpg?impolicy=1by1_wide_topcrop_630" price="4.95+" currency="$" >
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='SugarCookieAlmondmilkFrap'wx:if="{{!newList[49].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='SugarCookieAlmondmilkFrap'wx:else/> {{RSB[49].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='SugarCookieAlmondmilkFrap' wx:if="{{!newList[49].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='SugarCookieAlmondmilkFrap' wx:else></view>{{RSB[49].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="糖曲奇味的糖浆、杏仁牛奶与冰混合，上面撒上鲜奶油和红绿色的糖点。" title="Sugar Cookie Almondmilk Crème Frappuccino® Blended Beverage 糖曲奇杏仁奶奶油星冰乐混合饮料" thumb="https://globalassets.starbucks.com/assets/38b1ea24aa3d4130a01b9b2c101e5738.jpg?impolicy=1by1_wide_topcrop_630" price="4.95+" currency="$" >
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='SugarCookieAlmondmilkCremeFrap'wx:if="{{!newList[50].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='SugarCookieAlmondmilkCremeFrap'wx:else/> {{RSB[50].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='SugarCookieAlmondmilkCremeFrap' wx:if="{{!newList[50].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='SugarCookieAlmondmilkCremeFrap' wx:else></view>{{RSB[50].Down}} </van-button> 
+        </view>
+      </foodCard>
+  </van-tab>
   <van-tab title="Coffee, Tea & More">
-      <foodCard desc="新鲜煮好的咖啡和蒸牛奶地混合在一起，就成了一种非常美味的咖啡饮料。" title="Caffè Misto Misto咖啡" thumb="https://globalassets.starbucks.com/assets/d668acbc691b47249548a3eeac449916.jpg?impolicy=1by1_wide_topcrop_630" price="3.15+" currency="$"/>
-      <foodCard desc="为那些喜欢喝黑咖啡的人精心酿制" title="Freshly Brewed Coffee 鲜煮咖啡" thumb="https://www.starbucks.co.id/media/27%20-%20Freshly%20Brewed%20Coffee_tcm33-46301_w1024_n.jpg" price="2.45+" currency="$"/>
-      <foodCard desc="顺滑的奶油抹茶和糖恰到好处，与蒸牛奶一起食用。这款最爱将带给你纯净绿色的愉悦感。" title="Matcha Tea Latte 抹茶拿铁" thumb="https://globalassets.starbucks.com/assets/8b1b6d808cca4787afd2b30cf8dd5676.jpg?impolicy=1by1_wide_topcrop_630" price="3.95+" currency="$"/>
-      <foodCard desc="红茶中加入了肉桂、丁香等其他香料，与蒸牛奶混合，并在上面撒上泡沫，以达到甜和辣的完美平衡。" title="Chai Tea Latte 印度茶拿铁" thumb="https://globalassets.starbucks.com/assets/2d52f16a22fb40ff898be1815ecc952e.jpg?impolicy=1by1_wide_topcrop_630" price="3.95+" currency="$"/>
-      <foodCard desc="" title="Teavana Brewed Tea 茶瓦纳煮茶" thumb="https://stories.starbucks.com/wp-content/uploads/2019/01/OWyYkT8S-5616-3744.jpg" price="2.45+" currency="$"/>
-      <foodCard desc="蒸牛奶和摩卡沙司，顶部配以鲜奶油和巧克力碎。这是一款永恒的经典之作" title="Hot Chocolate 热巧克力" thumb="https://globalassets.starbucks.com/assets/d39650cf28d44aa283a0f311581e3491.jpg?impolicy=1by1_wide_topcrop_630" price="3.25+" currency="$"/>
-      <foodCard desc="纯红茶与牛奶一起蒸，然后加糖，制成这种口感光滑的拿铁。" title="Black Tea Latte 红茶拿铁" thumb="https://globalassets.starbucks.com/assets/f7e0d7141a1c4b359c706b1128d96d4b.jpg?impolicy=1by1_wide_topcrop_630" price="3.95+" currency="$"/>
-      <foodCard desc="柑橘般的意大利佛手柑香味与淡淡的薰衣草、香草糖浆和蒸牛奶混合在一起，构成这款经典伯爵茶" title="London Fog Tea Latte 伦敦雾茶拿铁" thumb="https://globalassets.starbucks.com/assets/180da7ecb6fa4d2686babe5619fa7b84.jpg?impolicy=1by1_wide_topcrop_630" price="3.95+" currency="$"/>
-      <foodCard desc="新鲜酿制的冰咖啡混合饮料，冰镇后加糖饮用。" title="Iced Coffee 冰咖啡" thumb="https://globalassets.starbucks.com/assets/2c626225a4804e5abd8e93e7fd59a0a2.jpg?impolicy=1by1_wide_topcrop_630" price="3.25+" currency="$"/>
-      <foodCard desc="光滑的奶油抹茶和糖恰到好处，与牛奶一起加冰食用。" title="Iced Matcha Tea Latte 冰抹茶拿铁" thumb="https://globalassets.starbucks.com/assets/edd9729b27284845abb99aaa1646b4c4.jpg?impolicy=1by1_wide_topcrop_630" price="3.95+" currency="$"/>
-      <foodCard desc="手工制作，由我们定制的混合豆制成，经过长时间的浸泡和冷却，味道超级顺滑。" title="Starbucks® Cold Brew Coffee 星巴克冷萃咖啡" thumb="https://globalassets.starbucks.com/assets/83617bbfa2264197b745a1c2db04fa92.jpg?impolicy=1by1_wide_topcrop_630" price="3.45+" currency="$"/>
-      <foodCard desc="纯红茶在冰上摇动，加入牛奶和加糖，使其成为一款口感顺滑奶的茶拿铁。" title="Iced Black Tea Latte 冰红茶拿铁" thumb="https://globalassets.starbucks.com/assets/27af6b77bd774b7ba9eb87725d675733.jpg?impolicy=1by1_wide_topcrop_630" price="3.95+" currency="$"/>
-      <foodCard desc="红茶中加入了肉桂、丁香等其他香料，再与牛奶和冰混合，达到了甜与辣的完美平衡。" title="Iced Chai Tea Latte 冰印度茶拿铁" thumb="https://globalassets.starbucks.com/assets/7b51b01b4a394a829ff9df4ef9f3be3c.jpg?impolicy=1by1_wide_topcrop_630" price="3.95+" currency="$"/>
-    
+      <foodCard desc="新鲜煮好的咖啡和蒸牛奶地混合在一起，就成了一种非常美味的咖啡饮料。" title="Caffè Misto 密斯朵咖啡" thumb="https://globalassets.starbucks.com/assets/d668acbc691b47249548a3eeac449916.jpg?impolicy=1by1_wide_topcrop_630" price="3.15+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='CaffeMisto'wx:if="{{!newList[51].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='CaffeMisto'wx:else/> {{RSB[51].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='CaffeMisto' wx:if="{{!newList[51].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='CaffeMisto' wx:else></view>{{RSB[51].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="为那些喜欢喝黑咖啡的人精心酿制" title="Freshly Brewed Coffee 鲜煮咖啡" thumb="https://www.starbucks.co.id/media/27%20-%20Freshly%20Brewed%20Coffee_tcm33-46301_w1024_n.jpg" price="2.45+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='FreshlyBC'wx:if="{{!newList[52].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='FreshlyBC'wx:else/> {{RSB[52].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='FreshlyBC' wx:if="{{!newList[52].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='FreshlyBC' wx:else></view>{{RSB[52].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="顺滑的奶油抹茶和糖恰到好处，与蒸牛奶一起食用。这款最爱将带给你纯净绿色的愉悦感。" title="Matcha Tea Latte 抹茶拿铁" thumb="https://globalassets.starbucks.com/assets/8b1b6d808cca4787afd2b30cf8dd5676.jpg?impolicy=1by1_wide_topcrop_630" price="3.95+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='MatchaTeaLatte'wx:if="{{!newList[53].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='MatchaTeaLatte'wx:else/> {{RSB[53].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='MatchaTeaLatte' wx:if="{{!newList[53].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='MatchaTeaLatte' wx:else></view>{{RSB[53].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="红茶中加入了肉桂、丁香等其他香料，与蒸牛奶混合，并在上面撒上泡沫，以达到甜和辣的完美平衡。" title="Chai Tea Latte 印度茶拿铁" thumb="https://globalassets.starbucks.com/assets/2d52f16a22fb40ff898be1815ecc952e.jpg?impolicy=1by1_wide_topcrop_630" price="3.95+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='ChaiTeaLatte'wx:if="{{!newList[54].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='ChaiTeaLatte'wx:else/> {{RSB[54].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='ChaiTeaLatte' wx:if="{{!newList[54].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='ChaiTeaLatte' wx:else></view>{{RSB[54].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="" title="Teavana Brewed Tea 茶瓦纳煮茶" thumb="https://stories.starbucks.com/wp-content/uploads/2019/01/OWyYkT8S-5616-3744.jpg" price="2.45+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='TeavanaBT'wx:if="{{!newList[55].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='TeavanaBT'wx:else/> {{RSB[55].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='TeavanaBT' wx:if="{{!newList[55].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='TeavanaBT' wx:else></view>{{RSB[55].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="蒸牛奶和摩卡沙司，顶部配以鲜奶油和巧克力碎。这是一款永恒的经典之作" title="Hot Chocolate 热巧克力" thumb="https://globalassets.starbucks.com/assets/d39650cf28d44aa283a0f311581e3491.jpg?impolicy=1by1_wide_topcrop_630" price="3.25+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='HotChoc'wx:if="{{!newList[56].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='HotChoc'wx:else/> {{RSB[56].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='HotChoc' wx:if="{{!newList[56].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='HotChoc' wx:else></view>{{RSB[56].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="纯红茶与牛奶一起蒸，然后加糖，制成这种口感光滑的拿铁。" title="Black Tea Latte 红茶拿铁" thumb="https://globalassets.starbucks.com/assets/f7e0d7141a1c4b359c706b1128d96d4b.jpg?impolicy=1by1_wide_topcrop_630" price="3.95+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='BlackTeaLatte'wx:if="{{!newList[57].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='BlackTeaLatte'wx:else/> {{RSB[57].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='BlackTeaLatte' wx:if="{{!newList[57].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='BlackTeaLatte' wx:else></view>{{RSB[57].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="柑橘般的意大利佛手柑香味与淡淡的薰衣草、香草糖浆和蒸牛奶混合在一起，构成这款经典伯爵茶" title="London Fog Tea Latte 伦敦雾茶拿铁" thumb="https://globalassets.starbucks.com/assets/180da7ecb6fa4d2686babe5619fa7b84.jpg?impolicy=1by1_wide_topcrop_630" price="3.95+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='LondonFogTeaLatte'wx:if="{{!newList[58].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='LondonFogTeaLatte'wx:else/> {{RSB[58].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='LondonFogTeaLatte' wx:if="{{!newList[58].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='LondonFogTeaLatte' wx:else></view>{{RSB[58].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="新鲜酿制的冰咖啡混合饮料，冰镇后加糖饮用。" title="Iced Coffee 冰咖啡" thumb="https://globalassets.starbucks.com/assets/2c626225a4804e5abd8e93e7fd59a0a2.jpg?impolicy=1by1_wide_topcrop_630" price="3.25+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='IcedCoffee'wx:if="{{!newList[59].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='IcedCoffee'wx:else/> {{RSB[59].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='IcedCoffee' wx:if="{{!newList[59].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='IcedCoffee' wx:else></view>{{RSB[59].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="光滑的奶油抹茶和糖恰到好处，与牛奶一起加冰食用。" title="Iced Matcha Tea Latte 冰抹茶拿铁" thumb="https://globalassets.starbucks.com/assets/edd9729b27284845abb99aaa1646b4c4.jpg?impolicy=1by1_wide_topcrop_630" price="3.95+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='IcedMatchaTeaLatte'wx:if="{{!newList[60].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='IcedMatchaTeaLatte'wx:else/> {{RSB[60].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='IcedMatchaTeaLatte' wx:if="{{!newList[60].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='IcedMatchaTeaLatte' wx:else></view>{{RSB[60].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="手工制作，由我们定制的混合豆制成，经过长时间的浸泡和冷却，味道超级顺滑。" title="Starbucks® Cold Brew Coffee 星巴克冷萃咖啡" thumb="https://globalassets.starbucks.com/assets/83617bbfa2264197b745a1c2db04fa92.jpg?impolicy=1by1_wide_topcrop_630" price="3.45+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='StarbucksCBC'wx:if="{{!newList[61].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='StarbucksCBC'wx:else/> {{RSB[61].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='StarbucksCBC' wx:if="{{!newList[61].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='StarbucksCBC' wx:else></view>{{RSB[61].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="纯红茶在冰上摇动，加入牛奶和加糖，使其成为一款口感顺滑奶的茶拿铁。" title="Iced Black Tea Latte 冰红茶拿铁" thumb="https://globalassets.starbucks.com/assets/27af6b77bd774b7ba9eb87725d675733.jpg?impolicy=1by1_wide_topcrop_630" price="3.95+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='IcedBlackTeaLatte'wx:if="{{!newList[62].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='IcedBlackTeaLatte'wx:else/> {{RSB[62].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='IcedBlackTeaLatte' wx:if="{{!newList[62].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='IcedBlackTeaLatte' wx:else></view>{{RSB[62].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="红茶中加入了肉桂、丁香等其他香料，再与牛奶和冰混合，达到了甜与辣的完美平衡。" title="Iced Chai Tea Latte 冰印度茶拿铁" thumb="https://globalassets.starbucks.com/assets/7b51b01b4a394a829ff9df4ef9f3be3c.jpg?impolicy=1by1_wide_topcrop_630" price="3.95+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='IcedChaiTeaLatte'wx:if="{{!newList[63].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='IcedChaiTeaLatte'wx:else/> {{RSB[63].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='IcedChaiTeaLatte' wx:if="{{!newList[63].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='IcedChaiTeaLatte' wx:else></view>{{RSB[63].Down}} </van-button> 
+        </view>
+      </foodCard>
   </van-tab >
   <van-tab title="Espresso Beverages">
-      <foodCard desc="经典的意式浓缩咖啡慢慢地倒在牛奶上。" title="Latte Macchiato 拿铁玛奇朵" thumb="https://globalassets.starbucks.com/assets/6c114c2fd47a404a971b4cc406380853.jpg?impolicy=1by1_wide_640" price="4.25+" currency="$"/>
-      <foodCard desc="顺滑的意大利浓咖啡配上适量的蒸全脂牛奶，打造出恰到好处的味道。" title="Flat White 澳白咖啡" thumb="https://globalassets.starbucks.com/assets/fedee22e49724cd09fbcc7ee2e567377.jpg?impolicy=1by1_wide_topcrop_630" price="4.45+" currency="$"/>
-      <foodCard desc="新鲜蒸牛奶与香草味的糖浆结合，加上意式浓缩咖啡，最后淋上焦糖，回味甜美无比。" title="Caramel Macchiato 焦糖玛奇朵" thumb="https://globalassets.starbucks.com/assets/58db701349cb48738069e8c912e2b3ac.jpg?impolicy=1by1_wide_topcrop_630" price="4.45+" currency="$"/>
-      <foodCard desc="我们的招牌浓缩咖啡与白巧克力酱和蒸牛奶相结合，最后配以加糖的鲜奶油" title="White Chocolate Mocha 白巧克力摩卡" thumb="https://globalassets.starbucks.com/assets/4b621e63f6ba4c19a8618055284eca8d.jpg?impolicy=1by1_wide_topcrop_630" price="4.75+" currency="$"/>
-      <foodCard desc="浓郁的咖啡、摩卡沙司和清蒸牛奶，再加上甜奶油。经典的咖啡饮料，总是让人心满意足。" title="Caffè Mocha 摩卡咖啡" thumb="https://globalassets.starbucks.com/assets/f4ec500b34624242b15c2d29e53f3c48.jpg?impolicy=1by1_wide_topcrop_630" price="4.25+" currency="$"/>
-      <foodCard desc="摩卡沙司、浓缩咖啡和蒸脱脂牛奶在上面轻轻地撒上泡沫。" title="Skinny Mocha 脱脂摩卡" thumb="https://globalassets.starbucks.com/assets/38f360534a0b469ead27fab5bb217ee4.jpg?impolicy=1by1_wide_640" price="3.75+" currency="$"/>
-      <foodCard desc="经典的意式浓缩咖啡中加入新鲜蒸牛奶和肉桂糖浆，再加上加糖的鲜奶油，为您带来独特的享受。" title="Cinnamon Dolce Latte 肉桂拿铁" thumb="https://globalassets.starbucks.com/assets/9329c03ce24f4623be25dd24d7537db2.jpg?impolicy=1by1_wide_topcrop_630" price="4.75+" currency="$"/>
-      <foodCard desc="浓缩咖啡和蒸脱脂牛奶加上无糖肉桂糖浆" title="Skinny Cinnamon Dolce Latte 脱脂肉桂拿铁" thumb="https://globalassets.starbucks.com/assets/fa1392c42f6e4a2dab788b6c2ad25043.jpg?impolicy=1by1_wide_topcrop_630" price="4.75+" currency="$"/>
-      <foodCard desc="浓咖啡与蒸牛奶和浅层泡沫相平衡。" title="Caffè Latte 咖啡拿铁" thumb="https://globalassets.starbucks.com/assets/b635f407bbcd49e7b8dd9119ce33f76e.jpg?impolicy=1by1_wide_topcrop_630" price="3.75+" currency="$"/>
-      <foodCard desc="超顺滑的金色浓缩咖啡、天鹅绒般的蒸牛奶和香草糖浆结合在一起" title="Starbucks® Blonde Vanilla Latte 星巴克金色香草拿铁" thumb="https://globalassets.starbucks.com/assets/b635f407bbcd49e7b8dd9119ce33f76e.jpg?impolicy=1by1_wide_topcrop_630" price="4.45+" currency="$" />
-      <foodCard desc="深色的浓缩咖啡上面是平滑牛奶泡沫" title="Cappuccino 卡布奇诺" thumb="https://globalassets.starbucks.com/assets/5c515339667943ce84dc56effdf5fc1b.jpg?impolicy=1by1_wide_topcrop_630" price="3.75+" currency="$"/>
-      <foodCard desc="浓缩咖啡带着淡淡的乳酪味，最终形成了一种富有层次的口感" title="Caffè Americano 美式咖啡" thumb="https://globalassets.starbucks.com/assets/f12bc8af498d45ed92c5d6f1dac64062.jpg?impolicy=1by1_wide_topcrop_630" price="2.85+" currency="$"/>
-      <foodCard desc="招牌浓咖啡，味道浓郁，带有焦糖般的甜味。" title="Espresso 浓缩咖啡" thumb="https://globalassets.starbucks.com/assets/ec519dd5642c41629194192cce582135.jpg?impolicy=1by1_wide_topcrop_630" price="2.25+" currency="$"/>
-      <foodCard desc="浓郁浓缩咖啡制成，经过冷冻，并带有一丝牛奶和甜味。" title="Starbucks Doubleshot® on Ice 双份浓缩咖啡（冰）" thumb="https://globalassets.starbucks.com/assets/c8d2c8fa22ee4f4c864dee6dac5a1868.jpg?impolicy=1by1_wide_topcrop_630" price="2.95+" currency="$"/>
-      <foodCard desc="经典意式浓缩咖啡融合了全脂牛奶和冰块。" title="Iced Latte Macchiato 冰拿铁玛奇朵" thumb="https://globalassets.starbucks.com/assets/b622a419614e40e084c464d2af783df3.jpg?impolicy=1by1_wide_640" price="4.25+" currency="$"/>
-      <foodCard desc="顺滑的浓缩咖啡加入适量的全脂牛奶和冰块，打造出恰到好处的味道。" title="Iced Flat White 澳白咖啡" thumb="https://globalassets.starbucks.com/assets/ea360dd2ea0a4ab098fea38fc7e3752c.jpg?impolicy=1by1_wide_topcrop_630" price="4.45+" currency="$"/>
-      <foodCard desc="浓缩咖啡与香草口味的糖浆、牛奶和冰块混合在一起，最后淋上一点焦糖，回味甜美无比。" title="Iced Caramel Macchiato 冰焦糖玛奇朵" thumb="https://globalassets.starbucks.com/assets/79bfec31ab7447f691b3c48f39cc7661.jpg?impolicy=1by1_wide_topcrop_630" price="4.45+" currency="$"/>
-      <foodCard desc="招牌浓缩咖啡与白巧克力酱、牛奶和冰混合，最后配以加糖的鲜奶油" title="Iced White Chocolate Mocha 冰白巧克力摩卡" thumb="https://globalassets.starbucks.com/assets/2e2875445811469dac73223e31de6103.jpg?impolicy=1by1_wide_topcrop_630" price="4.75+" currency="$"/>
-      <foodCard desc="浓咖啡、摩卡沙司，牛奶和冰块，最后加上甜的鲜奶油。经典的冰咖啡饮料，总是让人心满意足。" title="Iced Caffè Mocha 冰摩卡咖啡" thumb="https://globalassets.starbucks.com/assets/7313a28bd5174ef5bd68f6c1d159797a.jpg?impolicy=1by1_wide_topcrop_630" price="4.25+" currency="$"/>
-      <foodCard desc="经典的意式浓缩咖啡和冰中加入鲜蒸牛奶和肉桂糖浆，再加上甜鲜奶油，为您带来一份独特的享受。" title="Iced Cinnamon Dolce Latte 冰肉桂拿铁" thumb="https://globalassets.starbucks.com/assets/2a7651bc593044ba9043e90ddc20e3f1.jpg?impolicy=1by1_wide_topcrop_630" price="4.75+" currency="$"/>
-      <foodCard desc="浓缩咖啡、脱脂牛奶、无糖肉桂糖浆和冰" title="Iced Skinny Cinnamon Dolce Latte 冰脱脂肉桂拿铁" thumb="https://globalassets.starbucks.com/assets/aaa6593666164ba2998fa7e420a51851.jpg?impolicy=1by1_wide_topcrop_630" price="4.75+" currency="$"/>
-      <foodCard desc="浓咖啡加牛奶，加冰饮用。" title="Iced Caffè Latte 冰拿铁咖啡" thumb="https://www.starbucks.com/weblx/images/product-placeholder.png" price="3.75+" currency="$"/>
-      <foodCard desc="星巴克金色浓缩咖啡、牛奶、冰块和香草糖浆完美融合，为深受喜爱的经典浓缩咖啡打造出令人愉悦的口感。" title="Iced Starbucks® Blonde Vanilla Latte 冰星巴克金色香草拿铁" thumb="https://globalassets.starbucks.com/assets/5cd1a64f00ed4f7ba5923cfa73a0e323.jpg?impolicy=1by1_wide_topcrop_630" price="3.75+" currency="$"/>
-      <foodCard desc="在一杯冰镇卡布奇诺咖啡洒上一点牛奶，一个在平衡的口感下，具有更强的浓缩咖啡味道和天鹅绒般的泡沫" title="Iced Cappuccino with Cold Foam 冷泡冰卡布奇诺" thumb="https://globalassets.starbucks.com/assets/1c4f9f7226a045df8eae89e5ec42f899.jpg?impolicy=1by1_wide_640" price="3.75+" currency="$" />
-      <foodCard desc="加上冷水的浓缩咖啡会产生一层薄薄的奶油来构成一种丰富的口感" title="Iced Caffè Americano 冰美式咖啡" thumb="https://globalassets.starbucks.com/assets/84ede138768e42ebb2e0366c2f09960a.jpg?impolicy=1by1_wide_topcrop_630" price="2.85+" currency="$"/>
-      <foodCard desc="招牌浓缩咖啡口感浓郁、带有焦糖般的甜味。我们提供的每一款手工浓缩咖啡的核心都是完美的配方。" title="Iced Espresso 冰浓缩咖啡" thumb="https://globalassets.starbucks.com/assets/6a320073ec4b47e7bb9e6eb9e5e74e96.jpg?impolicy=1by1_wide_topcrop_630" price="2.25+" currency="$"/>
+      <foodCard desc="经典的意式浓缩咖啡慢慢地倒在牛奶上。" title="Latte Macchiato 拿铁玛奇朵" thumb="https://globalassets.starbucks.com/assets/6c114c2fd47a404a971b4cc406380853.jpg?impolicy=1by1_wide_640" price="4.25+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='EspressoBeverage'wx:if="{{!newList[64].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='EspressoBeverage'wx:else/> {{RSB[64].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='EspressoBeverage' wx:if="{{!newList[64].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='EspressoBeverage' wx:else></view>{{RSB[64].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="顺滑的意大利浓咖啡配上适量的蒸全脂牛奶，打造出恰到好处的味道。" title="Flat White 澳白咖啡" thumb="https://globalassets.starbucks.com/assets/fedee22e49724cd09fbcc7ee2e567377.jpg?impolicy=1by1_wide_topcrop_630" price="4.45+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='FlatWhite'wx:if="{{!newList[65].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='FlatWhite'wx:else/> {{RSB[65].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='FlatWhite' wx:if="{{!newList[65].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='FlatWhite' wx:else></view>{{RSB[65].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="新鲜蒸牛奶与香草味的糖浆结合，加上意式浓缩咖啡，最后淋上焦糖，回味甜美无比。" title="Caramel Macchiato 焦糖玛奇朵" thumb="https://globalassets.starbucks.com/assets/58db701349cb48738069e8c912e2b3ac.jpg?impolicy=1by1_wide_topcrop_630" price="4.45+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='CaramelMacchi'wx:if="{{!newList[66].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='CaramelMacchi'wx:else/> {{RSB[66].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='CaramelMacchi' wx:if="{{!newList[66].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='CaramelMacchi' wx:else></view>{{RSB[66].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="我们的招牌浓缩咖啡与白巧克力酱和蒸牛奶相结合，最后配以加糖的鲜奶油" title="White Chocolate Mocha 白巧克力摩卡" thumb="https://globalassets.starbucks.com/assets/4b621e63f6ba4c19a8618055284eca8d.jpg?impolicy=1by1_wide_topcrop_630" price="4.75+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='WhiteChocMocha'wx:if="{{!newList[67].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='WhiteChocMocha'wx:else/> {{RSB[67].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='WhiteChocMocha' wx:if="{{!newList[67].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='WhiteChocMocha' wx:else></view>{{RSB[67].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="浓郁的咖啡、摩卡沙司和清蒸牛奶，再加上甜奶油。经典的咖啡饮料，总是让人心满意足。" title="Caffè Mocha 摩卡咖啡" thumb="https://globalassets.starbucks.com/assets/f4ec500b34624242b15c2d29e53f3c48.jpg?impolicy=1by1_wide_topcrop_630" price="4.25+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='CaffeMocha'wx:if="{{!newList[68].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='CaffeMocha'wx:else/> {{RSB[68].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='CaffeMocha' wx:if="{{!newList[68].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='CaffeMocha' wx:else></view>{{RSB[68].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="摩卡沙司、浓缩咖啡和蒸脱脂牛奶在上面轻轻地撒上泡沫。" title="Skinny Mocha 脱脂摩卡" thumb="https://globalassets.starbucks.com/assets/38f360534a0b469ead27fab5bb217ee4.jpg?impolicy=1by1_wide_640" price="3.75+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='SkinnyMocha'wx:if="{{!newList[69].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='SkinnyMocha'wx:else/> {{RSB[69].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='SkinnyMocha' wx:if="{{!newList[69].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='SkinnyMocha' wx:else></view>{{RSB[69].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="经典的意式浓缩咖啡中加入新鲜蒸牛奶和肉桂糖浆，再加上加糖的鲜奶油，为您带来独特的享受。" title="Cinnamon Dolce Latte 肉桂拿铁" thumb="https://globalassets.starbucks.com/assets/9329c03ce24f4623be25dd24d7537db2.jpg?impolicy=1by1_wide_topcrop_630" price="4.75+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='CinnamonDolceLatte'wx:if="{{!newList[70].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='CinnamonDolceLatte'wx:else/> {{RSB[70].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='CinnamonDolceLatte' wx:if="{{!newList[70].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='CinnamonDolceLatte' wx:else></view>{{RSB[70].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="浓缩咖啡和蒸脱脂牛奶加上无糖肉桂糖浆" title="Skinny Cinnamon Dolce Latte 脱脂肉桂拿铁" thumb="https://globalassets.starbucks.com/assets/fa1392c42f6e4a2dab788b6c2ad25043.jpg?impolicy=1by1_wide_topcrop_630" price="4.75+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='SkinnyCinnamonDolceLatte'wx:if="{{!newList[71].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='SkinnyCinnamonDolceLatte'wx:else/> {{RSB[71].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='SkinnyCinnamonDolceLatte' wx:if="{{!newList[71].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='SkinnyCinnamonDolceLatte' wx:else></view>{{RSB[71].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="浓咖啡与蒸牛奶和浅层泡沫相平衡。" title="Caffè Latte 咖啡拿铁" thumb="https://globalassets.starbucks.com/assets/b635f407bbcd49e7b8dd9119ce33f76e.jpg?impolicy=1by1_wide_topcrop_630" price="3.75+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='CaffeLatte'wx:if="{{!newList[72].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='CaffeLatte'wx:else/> {{RSB[72].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='CaffeLatte' wx:if="{{!newList[72].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='CaffeLatte' wx:else></view>{{RSB[72].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="超顺滑的金色浓缩咖啡、天鹅绒般的蒸牛奶和香草糖浆结合在一起" title="Starbucks® Blonde Vanilla Latte 星巴克金色香草拿铁" thumb="https://globalassets.starbucks.com/assets/b635f407bbcd49e7b8dd9119ce33f76e.jpg?impolicy=1by1_wide_topcrop_630" price="4.45+" currency="$" >
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='StarbucksBlondeVanillaLatte2'wx:if="{{!newList[73].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='StarbucksBlondeVanillaLatte2'wx:else/> {{RSB[73].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='StarbucksBlondeVanillaLatte2' wx:if="{{!newList[73].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='StarbucksBlondeVanillaLatte2' wx:else></view>{{RSB[73].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="深色的浓缩咖啡上面是平滑牛奶泡沫" title="Cappuccino 卡布奇诺" thumb="https://globalassets.starbucks.com/assets/5c515339667943ce84dc56effdf5fc1b.jpg?impolicy=1by1_wide_topcrop_630" price="3.75+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='Cappuccino'wx:if="{{!newList[74].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='Cappuccino'wx:else/> {{RSB[74].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='Cappuccino' wx:if="{{!newList[74].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='Cappuccino' wx:else></view>{{RSB[74].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="浓缩咖啡带着淡淡的乳酪味，最终形成了一种富有层次的口感" title="Caffè Americano 美式咖啡" thumb="https://globalassets.starbucks.com/assets/f12bc8af498d45ed92c5d6f1dac64062.jpg?impolicy=1by1_wide_topcrop_630" price="2.85+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='CaffeAmericano'wx:if="{{!newList[75].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='CaffeAmericano'wx:else/> {{RSB[75].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='CaffeAmericano' wx:if="{{!newList[75].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='CaffeAmericano' wx:else></view>{{RSB[75].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="招牌浓咖啡，味道浓郁，带有焦糖般的甜味。" title="Espresso 浓缩咖啡" thumb="https://globalassets.starbucks.com/assets/ec519dd5642c41629194192cce582135.jpg?impolicy=1by1_wide_topcrop_630" price="2.25+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='Espresso'wx:if="{{!newList[76].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='Espresso'wx:else/> {{RSB[76].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='Espresso' wx:if="{{!newList[76].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='Espresso' wx:else></view>{{RSB[76].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="浓郁浓缩咖啡制成，经过冷冻，并带有一丝牛奶和甜味。" title="Starbucks Doubleshot® on Ice 双份浓缩咖啡（冰）" thumb="https://globalassets.starbucks.com/assets/c8d2c8fa22ee4f4c864dee6dac5a1868.jpg?impolicy=1by1_wide_topcrop_630" price="2.95+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='StarbucksDoubleshotOnIce'wx:if="{{!newList[77].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='StarbucksDoubleshotOnIce'wx:else/> {{RSB[77].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='StarbucksDoubleshotOnIce' wx:if="{{!newList[77].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='StarbucksDoubleshotOnIce' wx:else></view>{{RSB[77].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="经典意式浓缩咖啡融合了全脂牛奶和冰块。" title="Iced Latte Macchiato 冰拿铁玛奇朵" thumb="https://globalassets.starbucks.com/assets/b622a419614e40e084c464d2af783df3.jpg?impolicy=1by1_wide_640" price="4.25+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='IcedLatteMacchi'wx:if="{{!newList[78].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='IcedLatteMacchi'wx:else/> {{RSB[78].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='IcedLatteMacchi' wx:if="{{!newList[78].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='IcedLatteMacchi' wx:else></view>{{RSB[78].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="顺滑的浓缩咖啡加入适量的全脂牛奶和冰块，打造出恰到好处的味道。" title="Iced Flat White 澳白咖啡" thumb="https://globalassets.starbucks.com/assets/ea360dd2ea0a4ab098fea38fc7e3752c.jpg?impolicy=1by1_wide_topcrop_630" price="4.45+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='IcedFlatWhite'wx:if="{{!newList[79].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='IcedFlatWhite'wx:else/> {{RSB[79].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='IcedFlatWhite' wx:if="{{!newList[79].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='IcedFlatWhite' wx:else></view>{{RSB[79].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="浓缩咖啡与香草口味的糖浆、牛奶和冰块混合在一起，最后淋上一点焦糖，回味甜美无比。" title="Iced Caramel Macchiato 冰焦糖玛奇朵" thumb="https://globalassets.starbucks.com/assets/79bfec31ab7447f691b3c48f39cc7661.jpg?impolicy=1by1_wide_topcrop_630" price="4.45+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='IcedCaramelMacchi'wx:if="{{!newList[80].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='IcedCaramelMacchi'wx:else/> {{RSB[80].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='IcedCaramelMacchi' wx:if="{{!newList[80].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='IcedCaramelMacchi' wx:else></view>{{RSB[80].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="招牌浓缩咖啡与白巧克力酱、牛奶和冰混合，最后配以加糖的鲜奶油" title="Iced White Chocolate Mocha 冰白巧克力摩卡" thumb="https://globalassets.starbucks.com/assets/2e2875445811469dac73223e31de6103.jpg?impolicy=1by1_wide_topcrop_630" price="4.75+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='IcedWhiteChocMocha'wx:if="{{!newList[81].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='IcedWhiteChocMocha'wx:else/> {{RSB[81].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='IcedWhiteChocMocha' wx:if="{{!newList[81].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='IcedWhiteChocMocha' wx:else></view>{{RSB[81].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="浓咖啡、摩卡沙司，牛奶和冰块，最后加上甜的鲜奶油。经典的冰咖啡饮料，总是让人心满意足。" title="Iced Caffè Mocha 冰摩卡咖啡" thumb="https://globalassets.starbucks.com/assets/7313a28bd5174ef5bd68f6c1d159797a.jpg?impolicy=1by1_wide_topcrop_630" price="4.25+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='IcedCaffeMocha'wx:if="{{!newList[82].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='IcedCaffeMocha'wx:else/> {{RSB[82].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='IcedCaffeMocha' wx:if="{{!newList[82].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='IcedCaffeMocha' wx:else></view>{{RSB[82].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="经典的意式浓缩咖啡和冰中加入鲜蒸牛奶和肉桂糖浆，再加上甜鲜奶油，为您带来一份独特的享受。" title="Iced Cinnamon Dolce Latte 冰肉桂拿铁" thumb="https://globalassets.starbucks.com/assets/2a7651bc593044ba9043e90ddc20e3f1.jpg?impolicy=1by1_wide_topcrop_630" price="4.75+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='IcedCinnamonDolceLatte'wx:if="{{!newList[83].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='IcedCinnamonDolceLatte'wx:else/> {{RSB[83].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='IcedCinnamonDolceLatte' wx:if="{{!newList[83].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='IcedCinnamonDolceLatte' wx:else></view>{{RSB[83].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="浓缩咖啡、脱脂牛奶、无糖肉桂糖浆和冰" title="Iced Skinny Cinnamon Dolce Latte 冰脱脂肉桂拿铁" thumb="https://globalassets.starbucks.com/assets/aaa6593666164ba2998fa7e420a51851.jpg?impolicy=1by1_wide_topcrop_630" price="4.75+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='IcedSkinnyCinnamonDolceLatte'wx:if="{{!newList[84].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='IcedSkinnyCinnamonDolceLatte'wx:else/> {{RSB[84].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='IcedSkinnyCinnamonDolceLatte' wx:if="{{!newList[84].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='IcedSkinnyCinnamonDolceLatte' wx:else></view>{{RSB[84].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="浓咖啡加牛奶，加冰饮用。" title="Iced Caffè Latte 冰拿铁咖啡" thumb="https://www.starbucks.com/weblx/images/product-placeholder.png" price="3.75+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='IcedCaffeLatte'wx:if="{{!newList[85].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='IcedCaffeLatte'wx:else/> {{RSB[85].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='IcedCaffeLatte' wx:if="{{!newList[85].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='IcedCaffeLatte' wx:else></view>{{RSB[85].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="星巴克金色浓缩咖啡、牛奶、冰块和香草糖浆完美融合，为深受喜爱的经典浓缩咖啡打造出令人愉悦的口感。" title="Iced Starbucks® Blonde Vanilla Latte 冰星巴克金色香草拿铁" thumb="https://globalassets.starbucks.com/assets/5cd1a64f00ed4f7ba5923cfa73a0e323.jpg?impolicy=1by1_wide_topcrop_630" price="3.75+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='IcedStarbucksBlondeVanillaLatte'wx:if="{{!newList[86].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='IcedStarbucksBlondeVanillaLatte'wx:else/> {{RSB[86].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='IcedStarbucksBlondeVanillaLatte' wx:if="{{!newList[86].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='IcedStarbucksBlondeVanillaLatte' wx:else></view>{{RSB[86].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="在一杯冰镇卡布奇诺咖啡洒上一点牛奶，一个在平衡的口感下，具有更强的浓缩咖啡味道和天鹅绒般的泡沫" title="Iced Cappuccino with Cold Foam 冷泡冰卡布奇诺" thumb="https://globalassets.starbucks.com/assets/1c4f9f7226a045df8eae89e5ec42f899.jpg?impolicy=1by1_wide_640" price="3.75+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='IcedCappWithCF2'wx:if="{{!newList[87].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='IcedCappWithCF2'wx:else/> {{RSB[87].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='IcedCappWithCF2' wx:if="{{!newList[87].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='IcedCappWithCF2' wx:else></view>{{RSB[87].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="加上冷水的浓缩咖啡会产生一层薄薄的奶油来构成一种丰富的口感" title="Iced Caffè Americano 冰美式咖啡" thumb="https://globalassets.starbucks.com/assets/84ede138768e42ebb2e0366c2f09960a.jpg?impolicy=1by1_wide_topcrop_630" price="2.85+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='IcedCaffeAmericano'wx:if="{{!newList[88].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='IcedCaffeAmericano'wx:else/> {{RSB[88].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='IcedCaffeAmericano' wx:if="{{!newList[88].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='IcedCaffeAmericano' wx:else></view>{{RSB[88].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="招牌浓缩咖啡口感浓郁、带有焦糖般的甜味。我们提供的每一款手工浓缩咖啡的核心都是完美的配方。" title="Iced Espresso 冰浓缩咖啡" thumb="https://globalassets.starbucks.com/assets/6a320073ec4b47e7bb9e6eb9e5e74e96.jpg?impolicy=1by1_wide_topcrop_630" price="2.25+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='IcedEspresso'wx:if="{{!newList[89].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='IcedEspresso'wx:else/> {{RSB[89].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='IcedEspresso' wx:if="{{!newList[89].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='IcedEspresso' wx:else></view>{{RSB[89].Down}} </van-button> 
+        </view>
+      </foodCard>
+
   </van-tab>
 
   <van-tab title="Frappuccino Blended Beverages">
-      <foodCard desc="焦糖糖浆、咖啡、牛奶和冰在搅拌机中相遇，顶部配以鲜奶油和黄油焦糖酱。" title="Caramel Frappuccino® Blended Beverage 焦糖星冰乐" thumb="https://globalassets.starbucks.com/assets/6ab7d70c4fff435faf090a2f1a6f30d5.jpg?impolicy=1by1_wide_topcrop_630" price="4.45+" currency="$"/>
-      <foodCard desc="白巧克力Frappuccino®烘焙咖啡、牛奶和冰块齐聚一堂，为您带来一天中最美好的体验。哦，上面还有鲜奶油。" title="White Chocolate Mocha Frappuccino® Blended Beverage 白巧克力摩卡星冰乐" thumb="https://globalassets.starbucks.com/assets/10292166b128460085e7f336907d6bea.jpg?impolicy=1by1_wide_topcrop_630" price="4.45+" currency="$"/>
-      <foodCard desc="摩卡沙司、Frappuccino®烤咖啡、牛奶和冰都融合在一起，打造出一款摩卡口味" title="Mocha Frappuccino® Blended Beverage 摩卡星冰乐" thumb="https://globalassets.starbucks.com/assets/fd4d97f22e8f476b874352258a3f0672.jpg?impolicy=1by1_wide_topcrop_630" price="4.45+" currency="$"/>
-      <foodCard desc="我们将摩卡沙司和咖啡、牛奶和冰混合，然后再加上鲜奶油和摩卡碎" title="Java Chip Frappuccino® Blended Beverage 巧克力可可碎片星冰乐" thumb="https://globalassets.starbucks.com/assets/87ab7a1c8b7b492cbc1d5c5d44e1007b.jpg?impolicy=1by1_wide_topcrop_630" price="4.45+" currency="$"/>
-      <foodCard desc="咖啡在搅拌器中与牛奶和冰混合，创造出我们最喜爱的Frappuccino®原始混合饮料之一。" title="Coffee Frappuccino® Blended Beverage 咖啡星冰乐" thumb="https://globalassets.starbucks.com/assets/2cf55066b3ec4547b452aebffe0870cf.jpg?impolicy=1by1_wide_topcrop_630" price="4.25+" currency="$"/>
-      <foodCard desc="这种香草豆、牛奶和冰淇淋混合而成的浓郁奶油，将香草的味道提升到了另一个层次。" title="Vanilla Bean Crème Frappuccino® Blended Beverage 香草奶油星冰乐" thumb="https://globalassets.starbucks.com/assets/b68fa7003557464a8abfaf3e04e2704b.jpg?impolicy=1by1_wide_topcrop_630" price="4.25+" currency="$"/>
-      <foodCard desc="浓郁的摩卡风味酱汁与巧克力片、牛奶和冰块相配，构成一场搅拌机狂欢。" title="Double Chocolaty Chip Crème Frappuccino® Blended Beverage 双倍巧克力可可星冰乐" thumb="https://globalassets.starbucks.com/assets/41daf68bcbf84ee68b7d23e0b820127f.jpg?impolicy=1by1_wide_topcrop_630" price="4.45+" currency="$"/>
-      <foodCard desc="这款由加糖的优质抹茶、牛奶和冰淇淋混合而成，再加上加糖的鲜奶油，美味且提神" title="Matcha Crème Frappuccino® Blended Beverage 抹茶星冰乐" thumb="https://globalassets.starbucks.com/assets/4de2afd14f3343b6a140c904e1b4a63a.jpg?impolicy=1by1_wide_topcrop_630" price="3.95+" currency="$"/>
-      
+      <foodCard desc="焦糖糖浆、咖啡、牛奶和冰在搅拌机中相遇，顶部配以鲜奶油和黄油焦糖酱。" title="Caramel Frappuccino® Blended Beverage 焦糖星冰乐" thumb="https://globalassets.starbucks.com/assets/6ab7d70c4fff435faf090a2f1a6f30d5.jpg?impolicy=1by1_wide_topcrop_630" price="4.45+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='CaramelFrap'wx:if="{{!newList[90].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='CaramelFrap'wx:else/> {{RSB[90].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='CaramelFrap' wx:if="{{!newList[90].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='CaramelFrap' wx:else></view>{{RSB[90].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="白巧克力Frappuccino®烘焙咖啡、牛奶和冰块齐聚一堂，为您带来一天中最美好的体验。哦，上面还有鲜奶油。" title="White Chocolate Mocha Frappuccino® Blended Beverage 白巧克力摩卡星冰乐" thumb="https://globalassets.starbucks.com/assets/10292166b128460085e7f336907d6bea.jpg?impolicy=1by1_wide_topcrop_630" price="4.45+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='WhiteChocMochaFrap'wx:if="{{!newList[91].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='WhiteChocMochaFrap'wx:else/> {{RSB[91].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='WhiteChocMochaFrap' wx:if="{{!newList[91].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='WhiteChocMochaFrap' wx:else></view>{{RSB[91].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="摩卡沙司、Frappuccino®烤咖啡、牛奶和冰都融合在一起，打造出一款摩卡口味" title="Mocha Frappuccino® Blended Beverage 摩卡星冰乐" thumb="https://globalassets.starbucks.com/assets/fd4d97f22e8f476b874352258a3f0672.jpg?impolicy=1by1_wide_topcrop_630" price="4.45+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='MochaFrap'wx:if="{{!newList[92].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='MochaFrap'wx:else/> {{RSB[92].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='MochaFrap' wx:if="{{!newList[92].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='MochaFrap' wx:else></view>{{RSB[92].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="我们将摩卡沙司和咖啡、牛奶和冰混合，然后再加上鲜奶油和摩卡碎" title="Java Chip Frappuccino® Blended Beverage 巧克力可可碎片星冰乐" thumb="https://globalassets.starbucks.com/assets/87ab7a1c8b7b492cbc1d5c5d44e1007b.jpg?impolicy=1by1_wide_topcrop_630" price="4.45+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='JavaChipFrap'wx:if="{{!newList[93].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='JavaChipFrap'wx:else/> {{RSB[93].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='JavaChipFrap' wx:if="{{!newList[93].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='JavaChipFrap' wx:else></view>{{RSB[93].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="咖啡在搅拌器中与牛奶和冰混合，创造出我们最喜爱的Frappuccino®原始混合饮料之一。" title="Coffee Frappuccino® Blended Beverage 咖啡星冰乐" thumb="https://globalassets.starbucks.com/assets/2cf55066b3ec4547b452aebffe0870cf.jpg?impolicy=1by1_wide_topcrop_630" price="4.25+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='CoffeeFrap'wx:if="{{!newList[94].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='CoffeeFrap'wx:else/> {{RSB[94].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='CoffeeFrap' wx:if="{{!newList[94].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='CoffeeFrap' wx:else></view>{{RSB[94].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="这种香草豆、牛奶和冰淇淋混合而成的浓郁奶油，将香草的味道提升到了另一个层次。" title="Vanilla Bean Crème Frappuccino® Blended Beverage 香草奶油星冰乐" thumb="https://globalassets.starbucks.com/assets/b68fa7003557464a8abfaf3e04e2704b.jpg?impolicy=1by1_wide_topcrop_630" price="4.25+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='VanillaBeanCremeFrap'wx:if="{{!newList[95].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='VanillaBeanCremeFrap'wx:else/> {{RSB[95].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='VanillaBeanCremeFrap' wx:if="{{!newList[95].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='VanillaBeanCremeFrap' wx:else></view>{{RSB[95].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="浓郁的摩卡风味酱汁与巧克力片、牛奶和冰块相配，构成一场搅拌机狂欢。" title="Double Chocolaty Chip Crème Frappuccino® Blended Beverage 双倍巧克力可可星冰乐" thumb="https://globalassets.starbucks.com/assets/41daf68bcbf84ee68b7d23e0b820127f.jpg?impolicy=1by1_wide_topcrop_630" price="4.45+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='DoubleChocChipCremeFrap'wx:if="{{!newList[96].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='DoubleChocChipCremeFrap'wx:else/> {{RSB[96].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='DoubleChocChipCremeFrap' wx:if="{{!newList[96].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='DoubleChocChipCremeFrap' wx:else></view>{{RSB[96].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="这款由加糖的优质抹茶、牛奶和冰淇淋混合而成，再加上加糖的鲜奶油，美味且提神" title="Matcha Crème Frappuccino® Blended Beverage 抹茶星冰乐" thumb="https://globalassets.starbucks.com/assets/4de2afd14f3343b6a140c904e1b4a63a.jpg?impolicy=1by1_wide_topcrop_630" price="3.95+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='MatchaCremeFrap'wx:if="{{!newList[97].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='MatchaCremeFrap'wx:else/> {{RSB[97].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='MatchaCremeFrap' wx:if="{{!newList[97].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='MatchaCremeFrap' wx:else></view>{{RSB[97].Down}} </van-button> 
+        </view>
+      </foodCard>
   </van-tab>
   <van-tab title="Starbucks Refreshers">
-      <foodCard desc="甜草莓口味，由草莓和巴西莓组成，含咖啡因的绿色咖啡提取物。" title="Strawberry Açaí Starbucks Refreshers® Beverage 草莓巴西莓冰摇沁爽" thumb="https://globalassets.starbucks.com/assets/17827bf308ad464a9ef8bf4030ca9b72.jpg?impolicy=1by1_wide_topcrop_630" price="3.45+" currency="$"/>
-      <foodCard desc="真正的果汁和整个黑莓与绿色咖啡提取物一起摇动，增加自然能量，加冰饮用。" title="Very Berry Hibiscus Starbucks Refreshers® Beverage 浆果芙蓉冰摇沁爽" thumb="https://globalassets.starbucks.com/assets/03e0fa75324b4d00aeca3b2d865cb830.jpg?impolicy=1by1_wide_topcrop_630" price="3.45+" currency="$"/>
-      <foodCard desc="以热带为灵感的提神饮料由甜芒果和龙果口味的清新组合精制而成，用冰块和一勺真正的火龙果手摇而成。" title="Mango Dragonfruit Starbucks Refreshers® Beverage 芒果火龙果冰摇沁爽" thumb="https://globalassets.starbucks.com/assets/c4f8851c2cb04e3b89f6cea4acae55b2.jpg?impolicy=1by1_wide_topcrop_630" price="3.45+" currency="$"/>
+      <foodCard desc="甜草莓口味，由草莓和巴西莓组成，含咖啡因的绿色咖啡提取物。" title="Strawberry Açaí Starbucks Refreshers® Beverage 草莓巴西莓冰摇沁爽" thumb="https://globalassets.starbucks.com/assets/17827bf308ad464a9ef8bf4030ca9b72.jpg?impolicy=1by1_wide_topcrop_630" price="3.45+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='StrawberryAcaiStarbucksRef'wx:if="{{!newList[98].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='StrawberryAcaiStarbucksRef'wx:else/> {{RSB[98].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='StrawberryAcaiStarbucksRef' wx:if="{{!newList[98].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='StrawberryAcaiStarbucksRef' wx:else></view>{{RSB[98].Down}} </van-button> 
+        </view>
+      </foodCard>
 
+      <foodCard desc="真正的果汁和整个黑莓与绿色咖啡提取物一起摇动，增加自然能量，加冰饮用。" title="Very Berry Hibiscus Starbucks Refreshers® Beverage 浆果芙蓉冰摇沁爽" thumb="https://globalassets.starbucks.com/assets/03e0fa75324b4d00aeca3b2d865cb830.jpg?impolicy=1by1_wide_topcrop_630" price="3.45+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='BerryHibiscusStarbucksRef'wx:if="{{!newList[99].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='BerryHibiscusStarbucksRef'wx:else/> {{RSB[99].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='BerryHibiscusStarbucksRef' wx:if="{{!newList[99].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='BerryHibiscusStarbucksRef' wx:else></view>{{RSB[99].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="以热带为灵感的提神饮料由甜芒果和龙果口味的清新组合精制而成，用冰块和一勺真正的火龙果手摇而成。" title="Mango Dragonfruit Starbucks Refreshers® Beverage 芒果火龙果冰摇沁爽" thumb="https://globalassets.starbucks.com/assets/c4f8851c2cb04e3b89f6cea4acae55b2.jpg?impolicy=1by1_wide_topcrop_630" price="3.45+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='MangoDragonfruitStarbucksRef'wx:if="{{!newList[100].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='MangoDragonfruitStarbucksRef'wx:else/> {{RSB[100].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='MangoDragonfruitStarbucksRef' wx:if="{{!newList[100].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='MangoDragonfruitStarbucksRef' wx:else></view>{{RSB[100].Down}} </van-button> 
+        </view>
+      </foodCard>
   </van-tab>
   <van-tab title="Smoothies">
-      <foodCard desc="一整根香蕉、天然葡萄浆果泥、牛奶、乳清蛋白和纤维的特殊混合粉与冰混合。" title="Strawberry Smoothie 草莓奶昔" thumb="https://hips.hearstapps.com/del.h-cdn.co/assets/17/31/1501622048-prod-offer-160174-300x300.jpg?crop=1xw:1.0xh;center,top&resize=768:*" price="4.25+" currency="$"/>
-      <foodCard desc="由一整根香蕉混合摩卡酱、乳清蛋白、纤维粉、牛奶和冰制成" title="Chocolate Smoothie" thumb="https://www.wellandgood.com/wp-content/uploads/2015/04/starbucks-chocolate-smoothie.jpg" price="4.25+" currency="$"/>
+      <foodCard desc="一整根香蕉、天然葡萄浆果泥、牛奶、乳清蛋白和纤维的特殊混合粉与冰混合。" title="Strawberry Smoothie 草莓奶昔" thumb="https://hips.hearstapps.com/del.h-cdn.co/assets/17/31/1501622048-prod-offer-160174-300x300.jpg?crop=1xw:1.0xh;center,top&resize=768:*" price="4.25+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='StrawberrySM'wx:if="{{!newList[101].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='StrawberrySM'wx:else/> {{RSB[101].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='StrawberrySM' wx:if="{{!newList[101].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='StrawberrySM' wx:else></view>{{RSB[101].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="由一整根香蕉混合摩卡酱、乳清蛋白、纤维粉、牛奶和冰制成" title="Chocolate Smoothie" thumb="https://www.wellandgood.com/wp-content/uploads/2015/04/starbucks-chocolate-smoothie.jpg" price="4.25+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='ChocSM'wx:if="{{!newList[102].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='ChocSM'wx:else/> {{RSB[102].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='ChocSM' wx:if="{{!newList[102].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='ChocSM' wx:else></view>{{RSB[102].Down}} </van-button> 
+        </view>
+      </foodCard>
   </van-tab>
 
   <van-tab title="Coffee Traveler">
-      <foodCard desc="一个方便的载体，非常适合会议、野餐聚会或任何需要咖啡的场合。" title="Coffee Traveler" thumb="https://globalassets.starbucks.com/assets/0992e70336d7446093fe8d50cb3377f2.jpg?impolicy=1by1_wide_topcrop_630" price="15.95" currency="$"/>
-      
+      <foodCard desc="一个方便的载体，非常适合会议、野餐聚会或任何需要咖啡的场合。" title="Coffee Traveler" thumb="https://globalassets.starbucks.com/assets/0992e70336d7446093fe8d50cb3377f2.jpg?impolicy=1by1_wide_topcrop_630" price="15.95" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='Traveler'wx:if="{{!newList[103].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='Traveler'wx:else/> {{RSB[103].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='Traveler' wx:if="{{!newList[103].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='Traveler' wx:else></view>{{RSB[103].Down}} </van-button> 
+        </view>
+      </foodCard>
   </van-tab>
 </van-tabs>
 
@@ -171,6 +782,15 @@
 <view class="realPart1">
   <view class="menuTitle">Comments</view>
 </view>
+
+<!-- Comment List -->
+<block class="remarksList">
+  <view wx:for="{{comments}}" wx:key="index" class="remarks">
+    <!-- 若不是该用户所发的评论，则不能删除 -->
+    <view class="name" data-index-of-item="{{index}}" bindtap="getNotice" >{{item.userName}}</view>
+    <view class="content" data-index-of-item="{{index}}" bindtap="getNotice" >{{item.content}}</view>
+  </view> 
+</block>
 
 <!-- Publish Comment -->
 <view class="last">
@@ -184,16 +804,6 @@
 </view>
 </view>
 
-<!-- Comment List -->
-<block class="remarksList">
-  <view wx:for="{{comments}}" wx:key="index" class="remarks">
-    <!-- 若不是该用户所发的评论，则不能删除 -->
-    <view class="name" data-index-of-item="{{index}}" bindtap="getNotice" >{{item.userName}}</view>
-    <view class="content" data-index-of-item="{{index}}" bindtap="getNotice" >{{item.content}}</view>
-  </view> 
-</block>
-
-<view style="height: 25px; background-color: white;"></view>
 
 
 

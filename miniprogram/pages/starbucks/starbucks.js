@@ -1,10 +1,21 @@
 //Popular_Time 表格: 目前分为“周中”和“周末”进行数据切换，数据源为Google，方法为“等比例缩放”
-const db = wx.cloud.database()
-const _ = db.command
 let content = '';
 import * as echarts from '../../ec-canvas/echarts';
 var util = require('../../utils/util.js');
 let chart = null;  
+
+const db = wx.cloud.database()
+const _ = db.command // 获取数据库操作符，通过 db.command 获取
+const SB = db.collection('UpDown').doc('Starbucks')
+
+let likeCollection = wx.getStorageSync('likeCollection') // 从本地缓存中同步获取指定 key 的内容
+    if(!likeCollection){
+      wx.setStorageSync('likeCollection', {})
+    }
+let caiCollection = wx.getStorageSync('caiCollection');
+  if(!caiCollection){
+    wx.setStorageSync('caiCollection', {})
+  }
 
 //Initial Chart的function
 function initChart(canvas, width, height, dpr) {  
@@ -47,7 +58,6 @@ function initChart(canvas, width, height, dpr) {
   return chart;
 }
 
-
 var app = getApp();
 Page({
     data: {
@@ -59,6 +69,15 @@ Page({
         thiscommentAuthorid: "",
         thiscommentID: 0,
         isYourComment: false,
+
+        // 点赞点踩
+      newList:[], // 全量Result
+      isLike:[],
+      isCai:[],
+      like_people:[],
+      cai_people:[],
+      comments:[],
+      RSB:[],
 
         //Popular Time_图表Data
         ec: {
@@ -156,6 +175,62 @@ Page({
          })
         }
       })
+
+      SB.get({
+        success: res => {
+        console.log("UpDown数据：", res)
+        that.setData({
+          newList: res.data.ItemList
+        })
+        
+        let iszan = that.data.isLike; // 已点赞合集
+        let iscai = that.data.isCai; // 已点踩合集
+        // 数据获取成功后，进行遍历，拿到所有已经点过赞的id
+        for (var i = 0; i < res.data.ItemList.length; i++) { 
+          for (let j = 0; j < res.data.ItemList[i].like_people.length; j++) {
+            if (res.data.ItemList[i].like_people[j] == that.data.openid) { 
+              iszan.push(res.data.ItemList[i].item) //根据改用户的数据找到已经点赞的，把id放入新建数组中
+            }
+          }
+          for (let j = 0; j < res.data.ItemList[i].cai_people.length; j++) {
+            if (res.data.ItemList[i].cai_people[j] == that.data.openid) { 
+              iscai.push(res.data.ItemList[i].item) //根据改用户的数据找到已经踩过的，把商品id放入新建数组中
+            }
+          }
+        }
+        // 初始化页面：显示用户过去点赞or点踩过的所有items
+        for (let i = 0; i < res.data.ItemList.length; i++) {
+          res.data.ItemList[i].like = false
+          res.data.ItemList[i].cai = false
+          for (let j = 0; j < iszan.length; j++) { //利用新建的iszan数组与list数组的id查找相同的item_id
+            if (res.data.ItemList[i].item == iszan[j]) { //双重循环遍历，有相同的id则点亮
+              res.data.ItemList[i].like = true
+            }
+          }
+          for (let j = 0; j < iscai.length; j++) { //利用新建的iszan数组与list数组的id查找相同的书籍id
+            if (res.data.ItemList[i].item == iscai[j]) { //双重循环遍历，有相同的id则点亮
+              res.data.ItemList[i].cai = true
+            }
+          }
+        }
+        that.setData({
+          // 该用户点过赞的所有items
+          isLike: this.data.iszan,
+          // 该用户点过踩的所有items
+          isCai:this.data.iscai,
+        })
+        wx.setStorageSync('zan', isZan);
+        wx.setStorageSync('cai', isCai);
+     }})
+
+     wx.cloud.database().collection('UpDown').doc('Starbucks').get().then(res=>{
+      console.log("RSB查询成功",res);
+      this.setData({
+        RSB: res.data.ItemList // 所有items全量信息
+      })
+      }).catch(err=>{
+        console.log("查询失败",err);
+      })
     
       // 获取用户name
       var userName = wx.getStorageSync('userName') || 'N/A';
@@ -189,6 +264,188 @@ Page({
     })
 // ************** 评论功能所需onLoad结束*************//
   }, 
+
+  //点踩function
+  downFunction(e){
+    var shareid = e.currentTarget.dataset.id
+    console.log("Food_id: " + shareid)
+    this.cai(shareid);
+  },
+  cai: function (item_id) {
+    let that = this;
+    let cookie_id = wx.getStorageSync('cai') || []; 
+    let zan_id = wx.getStorageSync('zan') || [];  
+    let openid = that.data.openid
+
+
+    for (var i = 0; i < that.data.newList.length; i++) { // 历变当前页面所有fooditems
+      if (that.data.newList[i].item == item_id) { //找到对应的id的food item (String Comparison)
+        let numD = that.data.newList[i].Down; //当前踩数量
+        let numU = that.data.newList[i].Up; //当前踩数量
+        // 若此用户已经踩过了，取消踩
+        if (cookie_id.includes(item_id) ) { 
+          console.log("取消踩的id: ", cookie_id)
+          for (var j in cookie_id) {
+            if (cookie_id[j] == item_id) {
+              cookie_id.splice(j, 1); //删除取消点赞的id
+            }
+          }
+          --numD; //踩数减1
+          if (numD < 0) { numD = 0}
+          that.setData({
+            [`newList[${i}].Down`]: numD, 
+            [`newList[${i}].cai`]: false // 数据中cai为'false'是未踩
+          })
+          wx.setStorageSync('cai', cookie_id); // 重新设置已踩id合集
+          wx.showToast({
+            title: "取消点踩",
+            icon: 'none'
+          })
+          this.data.newList[i].cai_people.pop(openid)
+
+        } else { 
+          // 若此用户点赞了该item，取消赞 + 点踩
+          if(zan_id.includes(item_id)){
+            //console.log("hhhhh")
+            for (var j in zan_id) {
+              if (zan_id[j] == item_id) {
+                zan_id.splice(j, 1); //删除取消点赞的id
+              }
+            }
+            
+            --numU; //点赞数减1
+            if (numU < 0) { numU = 0}
+            that.setData({
+              [`newList[${i}].Up`]: numU, //es6模板语法，常规写法报错
+              [`newList[${i}.].like`]: false //我的数据中like为'false'是未点赞
+            })
+            wx.setStorageSync('zan', zan_id);
+            this.data.newList[i].like_people.pop(openid)
+          }
+          // 进行点踩操作
+          ++numD; //踩数加1
+          that.setData({
+            [`newList[${i}].Down`]: numD,
+            [`newList[${i}].cai`]: true
+          })
+      
+          cookie_id.unshift(item_id); // 新增踩的id
+          wx.setStorageSync('cai', cookie_id);
+          wx.showToast({
+            title: "踩一下",
+            icon: 'none'
+          })
+          if(this.data.newList[i].cai_people == undefined) {
+            this.data.newList[i].cai_people = []
+          }
+          this.data.newList[i].cai_people.push(openid)
+        }
+        // 后台数据库同步
+        SB.update({
+          data: {
+           ItemList: this.data.newList
+          },
+          success: res => {
+            console.log("踩数据后台已同步",res)
+          }
+        })
+        // 动态刷新页面的最新点赞&点踩数
+          that.setData({
+            [`RSB[${i}].Up`]: numU,
+            [`RSB[${i}].Down`]: numD,
+          })
+      }
+    }
+  },
+
+  // 点赞函数
+  upFunction(e){
+    var shareid = e.currentTarget.dataset.id
+    console.log("shareid: "+shareid)
+    this.zan(shareid);
+  },
+  zan: function (item_id) {
+    var that = this;
+    var cookie_id = wx.getStorageSync('zan') || []; //获取全部点赞的id
+    var cai_id = wx.getStorageSync('cai') || [];
+    var openid = that.data.openid
+    console.log(that.data.newList)
+
+    for (var i = 0; i < that.data.newList.length; i++) {
+      if (that.data.newList[i].item == item_id) { //数据列表中找到对应的id
+        var numU = that.data.newList[i].Up; //当前点赞数
+        var numD = that.data.newList[i].Down;
+        // 若已经点过赞了，取消点赞    
+        if (cookie_id.includes(item_id) ) { 
+          for (var j in cookie_id) {
+            if (cookie_id[j] == item_id) {
+              cookie_id.splice(j, 1); //删除取消点赞的id
+            }
+          }
+          --numU; //点赞数减1
+          if (numU < 0) { numU = 0}
+          that.setData({
+            [`newList[${i}].Up`]: numU, 
+            [`newList[${i}.].like`]: false // 数据中like为'false'是未点赞
+          })
+          wx.setStorageSync('zan', cookie_id);
+          wx.showToast({
+            title: "取消点赞",
+            icon: 'none'
+          })
+          this.data.newList[i].like_people.pop(openid)
+        } else{
+          // 若用户已点踩，取消点踩，再点赞
+          if(cai_id.includes(item_id)){
+            for (var j in cai_id) {
+              if (cai_id[j] == item_id) {
+                cai_id.splice(j, 1); //删除取消点赞的id
+              }
+            }
+            --numD; //点踩数减1
+            if (numD < 0) { numD = 0}
+            that.setData({
+              [`newList[${i}].Down`]: numD, // 同步全量list信息
+              [`newList[${i}.].cai`]: false // 数据中like为'false'是未点赞
+            })
+            wx.setStorageSync('cai', cai_id); // 同步本地缓存key信息
+            this.data.newList[i].cai_people.pop(openid)
+          }
+          // 点赞操作
+          ++numU; // 点赞数加1
+          that.setData({
+            [`newList[${i}].Up`]: numU,
+            [`newList[${i}.].like`]: true
+          })
+          cookie_id.unshift(item_id); // 新增赞的id
+          wx.setStorageSync('zan', cookie_id);
+          wx.showToast({
+            title: "点赞成功",
+            icon: 'none'
+          })
+          if(this.data.newList[i].like_people == undefined) {
+            this.data.newList[i].like_people = []
+          }
+          this.data.newList[i].like_people.push(openid)
+        } 
+        // 后台数据同步
+        SB.update({
+          data: {
+           ItemList:this.data.newList,
+          },
+          success: res => {
+            console.log("点赞数据后台已同步",res)
+          }
+        })
+        // 更新点赞后的点赞数
+        that.setData({
+          [`RSB[${i}].Up`]: numU,
+          [`RSB[${i}].Down`]: numD,
+        })
+
+      }
+    }
+  },
 
 
     // 评论框：展示输入内容
