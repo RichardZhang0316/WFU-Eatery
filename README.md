@@ -1,4 +1,4 @@
-# Eatery@WFU
+# Eatery @ WFU
 Looking for somewhere to eat around Wake Forest University?  Eatery has your back! 🎩
 
 At Eatery, you could...
