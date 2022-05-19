@@ -117,8 +117,8 @@
   <van-tab title="Side">
     <foodCard title="Pork Dumpling 猪肉炸饺" desc="猪肉馅的炸饺" thumb="https://www.bentosushi.com/us/wp-content/uploads/sites/2/2019/02/Japanese-Pork-Dumplings-US.jpg" price="5" currency="$" />
       <foodCard title="Seaweed Salad 海藻沙拉" desc="海藻" thumb="https://www.bentosushi.com/wp-content/uploads/2019/02/Seaweed-Salad-Label-scaled.jpg" price="5" currency="$" />
-      <foodCard title="Karaage Chicken 炸鸡" desc="就是炸鸡" thumb="https://static01.nyt.com/images/2018/07/25/dining/HK-karaage-horizontal/merlin_141075300_74569dec-9fc2-4174-931d-019dddef3bb8-articleLarge.jpg" price="6" currency="$" />
-      <foodCard title="Tempura Shrimp 天妇罗" desc="就是天妇罗" thumb="https://www.bentosushi.com/wp-content/uploads/2019/02/Tempura-Shrimp-1.jpg" price="6" currency="$" />
+      <foodCard title="Karaage Chicken 炸鸡" desc="" thumb="https://static01.nyt.com/images/2018/07/25/dining/HK-karaage-horizontal/merlin_141075300_74569dec-9fc2-4174-931d-019dddef3bb8-articleLarge.jpg" price="6" currency="$" />
+      <foodCard title="Tempura Shrimp 天妇罗" desc="天妇罗虾" thumb="https://www.bentosushi.com/wp-content/uploads/2019/02/Tempura-Shrimp-1.jpg" price="6" currency="$" />
   </van-tab>
 </van-tabs>
 <view style="height: 25px; width: 100%; background-color:#ececec;"></view>

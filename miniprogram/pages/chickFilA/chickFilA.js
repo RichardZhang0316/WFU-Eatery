@@ -200,7 +200,7 @@ Page({
               // 该用户点过赞的所有items
               isLike: this.data.iszan,
               // 该用户点过踩的所有items
-              isCai:this.data.iscai,
+              isCai: this.data.iscai,
             })
             wx.setStorageSync('zan', iszan);
             wx.setStorageSync('cai', iscai);

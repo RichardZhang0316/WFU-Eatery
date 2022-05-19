@@ -192,6 +192,20 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/Bento/Bento",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/336Market/336Market",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }
