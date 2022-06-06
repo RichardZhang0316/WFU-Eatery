@@ -166,9 +166,9 @@ Page({
           name:'getOpenid',
           complete:res=>{
            console.log('云函数获取到的openid: ', res.result.openid)
-           that.setData({
-             openid: res.result.openid,
-           })
+          //  that.setData({
+          //    openid: res.result.openid,
+          //  })
  // **************** 点赞功能所需onLoad **************//
          // 发送请求获取Up_and_Down列表数据
            SUB.get({
@@ -213,6 +213,7 @@ Page({
                isLike: this.data.iszan,
                // 该用户点过踩的所有items
                isCai:this.data.iscai,
+               newList: res.data.ItemList,
              })
              wx.setStorageSync('zan', iszan);
              wx.setStorageSync('cai', iscai);

@@ -1,7 +1,7 @@
 <navigation title='' show_bol='{{false}}'></navigation> 
 
 <view class="topCard">
-<image mode="aspectFill" src="https://jojorecipes.com/assets/img/recipes/acai-bowl.jpg" style="height:100%; width:100%"></image>
+<image mode="aspectFill" src="https://dining.wfu.edu/wp-content/uploads/2021/01/salad-scaled-e1609953052327-1440x0-c-default.jpg" style="height:100%; width:100%"></image>
 <text class="head-text">Forest Green</text>
 </view>
 

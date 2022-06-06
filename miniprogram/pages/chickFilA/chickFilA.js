@@ -162,9 +162,9 @@ Page({
           CFA.get({
             success: res => {
             console.log("UpDown数据：", res)
-            that.setData({
-              newList: res.data.ItemList
-            })
+            // that.setData({
+            //   newList: res.data.ItemList
+            // })
             
             let iszan = that.data.isLike; // 已点赞合集
             let iscai = that.data.isCai; // 已点踩合集
@@ -190,7 +190,7 @@ Page({
                   res.data.ItemList[i].like = true
                 }
               }
-              for (let j = 0; j < iscai.length; j++) { //利用新建的iszan数组与list数组的id查找相同的书籍id
+              for (let j = 0; j < iscai.length; j++) { //利用新建的iszan数组与list数组的id查找相同的id
                 if (res.data.ItemList[i].item == iscai[j]) { //双重循环遍历，有相同的id则点亮
                   res.data.ItemList[i].cai = true
                 }
@@ -201,6 +201,7 @@ Page({
               isLike: this.data.iszan,
               // 该用户点过踩的所有items
               isCai: this.data.iscai,
+              newList: res.data.ItemList,
             })
             wx.setStorageSync('zan', iszan);
             wx.setStorageSync('cai', iscai);

@@ -299,7 +299,7 @@ Page({
             {
                 name: "Forest Greens",
                 address: "Benson University Center",
-                url: "https://jojorecipes.com/assets/img/recipes/acai-bowl.jpg",
+                url: "https://dining.wfu.edu/wp-content/uploads/2021/01/salad-scaled-e1609953052327-1440x0-c-default.jpg",
                 page: "/pages/ForestGreens/ForestGreens",
                 payment: {
                     mealSwipes: false,

@@ -179,9 +179,9 @@ Page({
       CB.get({
         success: res => {
         console.log("UpDown数据：", res)
-        that.setData({
-          newList: res.data.ItemList
-        })
+        // that.setData({
+        //   newList: res.data.ItemList
+        // })
         
         let iszan = that.data.isLike; // 已点赞合集
         let iscai = that.data.isCai; // 已点踩合集
@@ -218,6 +218,7 @@ Page({
           isLike: this.data.iszan,
           // 该用户点过踩的所有items
           isCai:this.data.iscai,
+          newList: res.data.ItemList,
         })
         wx.setStorageSync('zan', isZan);
         wx.setStorageSync('cai', isCai);
