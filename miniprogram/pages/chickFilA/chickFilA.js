@@ -217,7 +217,8 @@ Page({
         }).catch(err=>{
           console.log("查询失败",err);
         })
-
+        
+// **************** 评论功能所需onLoad **************//
       // 以下是CommentList函数
       wx.cloud.database().collection("comments").doc('chickFillA').get()
       .then(res=>{
@@ -229,7 +230,6 @@ Page({
         console.log("查询失败",err);
       })
 
-// **************** 评论功能所需onLoad **************//
         // 获取用户name
         var userName = wx.getStorageSync('userName') || 'N/A';
         if (userName === 'N/A') {

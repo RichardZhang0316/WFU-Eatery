@@ -206,6 +206,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/VillageJuice/VillageJuice",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

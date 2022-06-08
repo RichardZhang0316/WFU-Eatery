@@ -67,14 +67,14 @@ Page({
         thiscommentID: 0,
         isYourComment: false,
 
-          // 点赞点踩
-      newList:[], // 全量Result
-      isLike:[],
-      isCai:[],
-      like_people:[],
-      cai_people:[],
-      comments:[],
-      RCB:[],
+        // 点赞点踩
+        newList:[], // 全量Result
+        isLike:[],
+        isCai:[],
+        like_people:[],
+        cai_people:[],
+        comments:[],
+        RCB:[],
 
         //Popular Time_图表Data
         ec: {
@@ -162,109 +162,112 @@ Page({
      * 生命周期函数--监听页面加载
      */
         
-    onLoad: function (options) {
-      let that = this
-// **************** 评论功能所需onLoad **************//
-      // 获取用户openid
+    onLoad: function (options) { 
+      let that = this; 
+      // 云函数获取 openid 并使用 openid 初始化页面
       wx.cloud.callFunction({
         name:'getOpenid',
-        complete: res => {
+        complete:res=>{
          console.log('云函数获取到的openid: ', res.result.openid)
          that.setData({
            openid: res.result.openid,
          })
+      // **************** 点赞功能所需onLoad **************//
+      // 发送请求获取Up_and_Down列表数据
+      CB.get({
+           success: res => {
+           console.log("UpDown数据：", res)     
+           let iszan = that.data.isLike; // 已点赞合集
+           let iscai = that.data.isCai; // 已点踩合集
+           // 数据获取成功后，进行遍历，拿到所有已经点过赞的id
+           for (var i = 0; i < res.data.ItemList.length; i++) { 
+             for (let j = 0; j < res.data.ItemList[i].like_people.length; j++) {
+               if (res.data.ItemList[i].like_people[j] == that.data.openid) { 
+                 iszan.push(res.data.ItemList[i].item) //根据改用户的数据找到已经点赞的，把id放入新建数组中
+               }
+             }
+             for (let j = 0; j < res.data.ItemList[i].cai_people.length; j++) {
+               if (res.data.ItemList[i].cai_people[j] == that.data.openid) { 
+                 iscai.push(res.data.ItemList[i].item) //根据改用户的数据找到已经踩过的，把商品id放入新建数组中
+               }
+             }
+           }
+           // 初始化页面：显示用户过去点赞or点踩过的所有items
+           for (let i = 0; i < res.data.ItemList.length; i++) {
+             res.data.ItemList[i].like = false
+             res.data.ItemList[i].cai = false
+             for (let j = 0; j < iszan.length; j++) { //利用新建的iszan数组与list数组的id查找相同的item_id
+               if (res.data.ItemList[i].item == iszan[j]) { //双重循环遍历，有相同的id则点亮
+                 res.data.ItemList[i].like = true
+               }
+             }
+             for (let j = 0; j < iscai.length; j++) { //利用新建的iszan数组与list数组的id查找相同的id
+               if (res.data.ItemList[i].item == iscai[j]) { //双重循环遍历，有相同的id则点亮
+                 res.data.ItemList[i].cai = true
+               }
+             }
+           }
+           that.setData({
+             // 该用户点过赞的所有items
+             isLike: this.data.iszan,
+             // 该用户点过踩的所有items
+             isCai: this.data.iscai,
+             newList: res.data.ItemList,
+           })
+           wx.setStorageSync('zan', iszan);
+           wx.setStorageSync('cai', iscai);
         }
       })
-
-      CB.get({
-        success: res => {
-        console.log("UpDown数据：", res)
-        // that.setData({
-        //   newList: res.data.ItemList
-        // })
-        
-        let iszan = that.data.isLike; // 已点赞合集
-        let iscai = that.data.isCai; // 已点踩合集
-        // 数据获取成功后，进行遍历，拿到所有已经点过赞的id
-        for (var i = 0; i < res.data.ItemList.length; i++) { 
-          for (let j = 0; j < res.data.ItemList[i].like_people.length; j++) {
-            if (res.data.ItemList[i].like_people[j] == that.data.openid) { 
-              iszan.push(res.data.ItemList[i].item) //根据改用户的数据找到已经点赞的，把id放入新建数组中
-            }
-          }
-          for (let j = 0; j < res.data.ItemList[i].cai_people.length; j++) {
-            if (res.data.ItemList[i].cai_people[j] == that.data.openid) { 
-              iscai.push(res.data.ItemList[i].item) //根据改用户的数据找到已经踩过的，把商品id放入新建数组中
-            }
-          }
-        }
-        // 初始化页面：显示用户过去点赞or点踩过的所有items
-        for (let i = 0; i < res.data.ItemList.length; i++) {
-          res.data.ItemList[i].like = false
-          res.data.ItemList[i].cai = false
-          for (let j = 0; j < iszan.length; j++) { //利用新建的iszan数组与list数组的id查找相同的item_id
-            if (res.data.ItemList[i].item == iszan[j]) { //双重循环遍历，有相同的id则点亮
-              res.data.ItemList[i].like = true
-            }
-          }
-          for (let j = 0; j < iscai.length; j++) { //利用新建的iszan数组与list数组的id查找相同的书籍id
-            if (res.data.ItemList[i].item == iscai[j]) { //双重循环遍历，有相同的id则点亮
-              res.data.ItemList[i].cai = true
-            }
-          }
-        }
-        that.setData({
-          // 该用户点过赞的所有items
-          isLike: this.data.iszan,
-          // 该用户点过踩的所有items
-          isCai:this.data.iscai,
-          newList: res.data.ItemList,
-        })
-        wx.setStorageSync('zan', isZan);
-        wx.setStorageSync('cai', isCai);
      }})
 
-     wx.cloud.database().collection('UpDown').doc('CaminoBakery').get().then(res=>{
-      console.log("RCB查询成功",res);
-      this.setData({
-        RCB: res.data.ItemList // 所有items全量信息
-      })
-      }).catch(err=>{
-        console.log("查询失败",err);
-      })
-    
-      // 获取用户name
-      var userName = wx.getStorageSync('userName') || 'N/A';
-      if (userName === 'N/A') {
-        that.setData({
-          'name' : "Anonymous user",
-          isAuth: false,
-        })
-      } else {
-        that.setData({
-          'name' : userName,
-          isAuth: true,
-        })
-      }
-      // For Debug
-      // var userName = that.data.name
-      // var isAutho = that.data.isAuth
-      // console.log("用户授权状态: " + isAutho)
-      // console.log("用户昵称: " + userName)
+      wx.cloud.database().collection('UpDown').doc('CaminoBakery').get().then(res=>{
+       console.log("sb查询成功",res);
+       this.setData({
+         RCB: res.data.ItemList // 所有items全量信息
+       })
+       }).catch(err=>{
+         console.log("查询失败",err);
+       })
+       
+     // **************** 评论功能所需onLoad **************//
+     // 以下是CommentList函数
+     wx.cloud.database().collection("comments").doc('CaminoBakery').get()
+     .then(res=>{
+     console.log("CommentList查询成功",res);
+       this.setData({
+         comments:res.data.commentList
+       })
+     }).catch(err=>{
+       console.log("查询失败",err);
+     })
 
-      // 初始页面加载CommentList
-      wx.cloud.database().collection("comments").doc('CaminoBakery').get()
-      .then(res=>{
-      console.log("CommentList查询成功",res);
-      this.setData({
-        // initialize本页已存在的data
-        comments:res.data.commentList 
-      })
-    }).catch(err=>{
-      console.log("CommentList查询失败",err);
-    })
-// ************** 评论功能所需onLoad结束*************//
-    },  
+       // 获取用户name
+       var userName = wx.getStorageSync('userName') || 'N/A';
+       if (userName === 'N/A') {
+         that.setData({
+           'name' : "Anonymous user",
+           isAuth: false,
+         })
+       } else {
+         that.setData({
+           'name' : userName,
+           isAuth: true,
+         })
+       }
+
+     // 初始页面加载CommentList
+       wx.cloud.database().collection("comments").doc('CaminoBakery').get()
+       .then(res=>{
+       console.log("CommentList查询成功",res);
+       this.setData({
+         // initialize本页已存在的data
+         comments:res.data.commentList 
+       })
+     }).catch(err=>{
+       console.log("CommentList查询失败",err);
+     })
+     // ************** 评论功能所需onLoad结束*************//
+   },// 🙌 onLoad 结束
 
     //点踩function
   downFunction(e){

@@ -159,25 +159,21 @@ Page({
           })
       },
 
-    onLoad: function (options) { 
+      onLoad: function (options) { 
         let that = this; 
-        // 云函数获取openid
+        // 云函数获取 openid 并使用 openid 初始化页面
         wx.cloud.callFunction({
           name:'getOpenid',
           complete:res=>{
            console.log('云函数获取到的openid: ', res.result.openid)
-          //  that.setData({
-          //    openid: res.result.openid,
-          //  })
- // **************** 点赞功能所需onLoad **************//
-         // 发送请求获取Up_and_Down列表数据
-           SUB.get({
+           that.setData({
+             openid: res.result.openid,
+           })
+        // **************** 点赞功能所需onLoad **************//
+        // 发送请求获取Up_and_Down列表数据
+        SUB.get({
              success: res => {
-             console.log("UpDown数据：", res)
-             that.setData({
-               newList: res.data.ItemList
-             })
-             
+             console.log("UpDown数据：", res)     
              let iszan = that.data.isLike; // 已点赞合集
              let iscai = that.data.isCai; // 已点踩合集
              // 数据获取成功后，进行遍历，拿到所有已经点过赞的id
@@ -202,7 +198,7 @@ Page({
                    res.data.ItemList[i].like = true
                  }
                }
-               for (let j = 0; j < iscai.length; j++) { //利用新建的iszan数组与list数组的id查找相同的书籍id
+               for (let j = 0; j < iscai.length; j++) { //利用新建的iszan数组与list数组的id查找相同的id
                  if (res.data.ItemList[i].item == iscai[j]) { //双重循环遍历，有相同的id则点亮
                    res.data.ItemList[i].cai = true
                  }
@@ -212,7 +208,7 @@ Page({
                // 该用户点过赞的所有items
                isLike: this.data.iszan,
                // 该用户点过踩的所有items
-               isCai:this.data.iscai,
+               isCai: this.data.iscai,
                newList: res.data.ItemList,
              })
              wx.setStorageSync('zan', iszan);
@@ -220,18 +216,19 @@ Page({
           }
         })
        }})
- 
-       wx.cloud.database().collection('UpDown').doc('Subway').get().then(res=>{
-         console.log("RC查询成功",res);
+  
+        wx.cloud.database().collection('UpDown').doc('Subway').get().then(res=>{
+         console.log("sub查询成功",res);
          this.setData({
            RC: res.data.ItemList // 所有items全量信息
          })
          }).catch(err=>{
            console.log("查询失败",err);
          })
- 
+         
+       // **************** 评论功能所需onLoad **************//
        // 以下是CommentList函数
-       wx.cloud.database().collection("comments").doc('subway').get()
+       wx.cloud.database().collection("comments").doc('Subway').get()
        .then(res=>{
        console.log("CommentList查询成功",res);
          this.setData({
@@ -240,8 +237,7 @@ Page({
        }).catch(err=>{
          console.log("查询失败",err);
        })
- 
- // **************** 评论功能所需onLoad **************//
+  
          // 获取用户name
          var userName = wx.getStorageSync('userName') || 'N/A';
          if (userName === 'N/A') {
@@ -255,14 +251,9 @@ Page({
              isAuth: true,
            })
          }
-         // For Debug
-         // var userName = that.data.name
-         // var isAutho = that.data.isAuth
-         // console.log("用户授权状态: " + isAutho)
-         // console.log("用户昵称: " + userName)
- 
-         // 初始页面加载CommentList
-         wx.cloud.database().collection("comments").doc('subway').get()
+  
+       // 初始页面加载CommentList
+         wx.cloud.database().collection("comments").doc('Subway').get()
          .then(res=>{
          console.log("CommentList查询成功",res);
          this.setData({
@@ -272,8 +263,9 @@ Page({
        }).catch(err=>{
          console.log("CommentList查询失败",err);
        })
- // ************** 评论功能所需onLoad结束*************//
-     }, // 🙌 onLoad 结束
+       // ************** 评论功能所需onLoad结束*************//
+     },// 🙌 onLoad 结束
+  
 
     
     // 点踩函数
