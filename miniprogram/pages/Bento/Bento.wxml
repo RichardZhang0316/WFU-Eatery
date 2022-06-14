@@ -41,84 +41,481 @@
 
 <van-tabs active="{{ active }}" bind:change="onChange" swipeable ellipsis="{{false}}" color="#d6b160" title-active-color="#d6b160">
 <van-tab title="Bento Box">
-      <foodCard title="Beef Bento Box 牛肉饭" desc="米饭、牛肉、寿司、炸饺和海藻" thumb="https://www.bentosushi.com/wp-content/uploads/2020/02/Beef-Bento-Box.jpg" price="11" currency="$" />
-      <foodCard title="Chicken Bento Box 鸡肉饭" desc="米饭、鸡肉、寿司、炸饺和海藻" thumb="https://www.bentosushi.com/wp-content/uploads/2020/02/Karaage-Chicken-Bento-Box.jpg" price="11" currency="$" />
-      <foodCard title="Inari Tofu Bento Box 豆腐饭" desc="米饭、豆腐、寿司、炸饺和海藻" thumb="https://www.bentosushi.com/wp-content/uploads/2020/02/Inari-Tofu-Bento-Box-1024x663.jpg" price="11" currency="$" />
-      <foodCard title="Shrimp Tempura Bento Box 天妇罗饭" desc="米饭、天妇罗、寿司、炸饺和海藻" thumb="https://sumosushibento.com/documents/menugallery/thumb/1506319435352.jpg" price="11" currency="$" />
+      <foodCard title="Beef Bento Box 牛肉饭" desc="米饭、牛肉、寿司、炸饺和海藻" thumb="https://www.bentosushi.com/wp-content/uploads/2020/02/Beef-Bento-Box.jpg" price="11" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='BeefBB'wx:if="{{!newList[0].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='BeefBB'wx:else/> {{RBT[0].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='BeefBB' wx:if="{{!newList[0].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='BeefBB' wx:else></view>{{RBT[0].Down}} </van-button> 
+      </view>
+    </foodCard>
+
+      <foodCard title="Chicken Bento Box 鸡肉饭" desc="米饭、鸡肉、寿司、炸饺和海藻" thumb="https://www.bentosushi.com/wp-content/uploads/2020/02/Karaage-Chicken-Bento-Box.jpg" price="11" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='ChickenBB'wx:if="{{!newList[1].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='ChickenBB'wx:else/> {{RBT[1].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='ChickenBB' wx:if="{{!newList[1].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='ChickenBB' wx:else></view>{{RBT[1].Down}} </van-button> 
+      </view>
+    </foodCard>
+
+      <foodCard title="Inari Tofu Bento Box 豆腐饭" desc="米饭、豆腐、寿司、炸饺和海藻" thumb="https://www.bentosushi.com/wp-content/uploads/2020/02/Inari-Tofu-Bento-Box-1024x663.jpg" price="11" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='InariTofuBB'wx:if="{{!newList[2].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='InariTofuBB'wx:else/> {{RBT[2].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='InariTofuBB' wx:if="{{!newList[2].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='InariTofuBB' wx:else></view>{{RBT[2].Down}} </van-button> 
+      </view>
+    </foodCard>
+
+      <foodCard title="Shrimp Tempura Bento Box 天妇罗饭" desc="米饭、天妇罗、寿司、炸饺和海藻" thumb="https://sumosushibento.com/documents/menugallery/thumb/1506319435352.jpg" price="11" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='ShrimpTempuraBB'wx:if="{{!newList[3].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='ShrimpTempuraBB'wx:else/> {{RBT[3].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='ShrimpTempuraBB' wx:if="{{!newList[3].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='ShrimpTempuraBB' wx:else></view>{{RBT[3].Down}} </van-button> 
+      </view>
+    </foodCard>
   </van-tab>
   <van-tab title="Sushi">
-      <foodCard desc="阿拉斯加卷食材包括三文鱼，寿司饭，海藻，黄油和蟹肉" title="Alaska Roll 阿拉斯加卷" thumb="https://www.bentosushi.com/us/wp-content/uploads/sites/2/2019/02/Alaska-Roll-1.jpg" price="9" currency="$"/>
-      <foodCard desc="由新鲜的大西洋鲑鱼制成" title="Angel Combo 天使组合" thumb="https://www.bentosushi.com/us/wp-content/uploads/sites/2/2019/03/Angel-Combo-1.jpg"  price="8" currency="$"/>
-      <foodCard desc="由胡萝卜、牛油果、黄瓜、腌姜、芝麻和海藻制成" title="Vegetable California Roll 蔬菜加州卷" thumb="https://www.bentosushi.com/wp-content/uploads/2019/01/Veg-California-Roll_clear-pack-1024x1024.jpg" price="6.5" currency="$" />
-      <foodCard title="California Roll 加州卷" desc="由鱼糜、黄瓜、牛油果、芝麻和海藻制成(亦可选辣味加州卷）。" thumb="https://www.bentosushi.com/wp-content/uploads/2019/01/California-Roll_clear-pack-1024x1024.jpg" price="7" currency="$" />
-      <foodCard title="Spicy California Spring Roll 辣加州春卷" desc="把加州卷的料放春卷里" thumb="https://www.bentosushi.com/wp-content/uploads/2019/02/Spicy-Cali-Spring-Roll-V2-1024x1024.jpg" price="7" currency="$" />
-      <foodCard title="Vegetable Green Dragon Crunch Roll 蔬菜青龙卷" desc="由海藻沙拉、芝麻油、芝麻、黑木耳、辣椒、牛油果、黄瓜、胡萝卜和海藻制成" thumb="https://www.bentosushi.com/wp-content/uploads/2019/02/Veg-Green-Dragon-Crunch-Roll_clear-pack-scaled.jpg" price="7" currency="$" />
-      <foodCard title="Vegetable Spring Roll 蔬菜春卷" desc="由芒果、胡萝卜、黄瓜、生菜和鳄梨制成" thumb="https://www.bentosushi.com/wp-content/uploads/2019/02/Vege-Spring-Roll-V1-1024x1024.jpg" price="7" currency="$" />
-      <foodCard title="Spicy California Crunch Roll 加州香辣脆卷" desc="由鳕鱼、蛋黄酱、炒洋葱、辣椒酱和海藻制成" thumb="https://www.bentosushi.com/us/wp-content/uploads/sites/2/2020/11/Spicy-Cali-Crunch-Roll.jpg" price="8" currency="$" />
-      <foodCard title="Teriyaki Chicken Roll 红烧鸡肉卷" desc="由鸡胸肉、鳄梨、黄瓜、生菜和照烧酱制成" thumb="https://www.bentosushi.com/wp-content/uploads/2019/02/Teriyaki-Chicken-Roll.jpg" price="8" currency="$" />
-      <foodCard title="Philadelphia Roll 费城卷" desc="由烟熏大西洋鲑鱼、奶油奶酪、黄瓜、芝麻和海藻制成" thumb="https://www.bentosushi.com/wp-content/uploads/2019/08/Phila-Roll-Label-scaled.jpg" price="9" currency="$" />
-      <foodCard title="Salmon Avocado Roll 鲑鱼牛油果卷" desc="正如其名，由鲑鱼和牛油果制成" thumb="https://www.bentosushi.com/wp-content/uploads/2019/01/Salmon-Avocado-Roll_clear-pack-1024x1024.jpg" price="9" currency="$" />
-      <foodCard title="Shrimp Tempura Roll-USA 炸天妇罗卷" desc="用天妇罗做的寿司" thumb="https://www.bentosushi.com/us/wp-content/uploads/sites/2/2019/01/Spicy-Salmon-US_clear-pack-1024x1024.jpg" price="9" currency="$" />
-      <foodCard title="Spicy Salmon Roll 辣三文鱼卷" desc="辣的三文鱼做的卷" thumb="https://www.bentosushi.com/wp-content/uploads/2019/01/Spicy-Salmon-CA_clear-pack-scaled.jpg" price="9" currency="$" />
-      <foodCard title="Spicy Tuna Roll 辣金枪鱼卷" desc="辣的金枪鱼做的卷" thumb="https://www.bentosushi.com/wp-content/uploads/2019/01/Spicy-Tuna-CA_clear-pack-scaled.jpg" price="9" currency="$" />
-      <foodCard title="Tuna Avocado Roll 金枪鱼牛油果卷" desc="金枪鱼和牛油果做的卷" thumb="https://www.bentosushi.com/wp-content/uploads/2019/01/Tuna-Avocado-Roll_clear-pack-scaled.jpg" price="9" currency="$" />
-      <foodCard title="California Samurai Combo 加州武士组合" desc="三文鱼寿司和牛油果寿司" thumb="https://www.bentosushi.com/wp-content/uploads/2019/02/Cali-Samurai-Combo.jpg" price="10" currency="$" />
-      <foodCard title="Green Dragon Roll 青龙卷" desc="牛油果寿司上面放点芝麻" thumb="https://www.bentosushi.com/us/wp-content/uploads/sites/2/2019/05/Green-Dragon-Roll_clear-pack-1024x1024.jpg" price="10" currency="$" />
-      <foodCard title="Hikari Combo 希卡利组合" desc="由蟹肉、金枪鱼和三文鱼寿司组成" thumb="https://www.bentosushi.com/wp-content/uploads/2019/09/Hikari-Combo_Clear.jpg" price="10" currency="$" />
-      <foodCard title="Kodama Combo 儿玉（日本地名）组合" desc="金枪鱼卷三文鱼卷佐牛油果" thumb="https://www.bentosushi.com/wp-content/uploads/2019/09/Kodama-Combo_Clear-1.jpg" price="10" currency="$" />
-      <foodCard title="Nozomi Combo 希望号新干线组合" desc="天妇罗、金枪鱼寿司、三文鱼寿司、虾寿司佐牛油果" thumb="https://www.bentosushi.com/wp-content/uploads/2019/09/Nozomi-Combo_Clear.jpg" price="10" currency="$" />
-      <foodCard title="Salmon Samurai Combo 三文鱼武士组合" desc="三文鱼寿司和金枪鱼寿司配上一点牛油果" thumb="https://www.bentosushi.com/wp-content/uploads/2019/02/Salmon-Samurai-Combo-2.jpg" price="10" currency="$" />
-      <foodCard title="Simply Shrimp Roll 虾卷" desc="（可选辣的）" thumb="https://www.bentosushi.com/us/wp-content/uploads/sites/2/2019/09/Spicy-Shrimp-Mango-1024x1024.jpg" price="10" currency="$" />
-      <foodCard title="Inari Dragon Crunch Roll 神田龙脆卷" desc="由虾、稻濑（所以这是什么）、芒果、蛋黄酱、海草和酥脆炸葱制成" thumb="https://www.bentosushi.com/wp-content/uploads/2019/03/Inari-Dragon-Crunch-Roll_clear-pack-scaled.jpg" price="11" currency="$" />
-      <foodCard title="Salmon Volcano Roll 三文鱼火山卷" desc="由三文鱼、鱼子和脆炸洋葱制成" thumb="https://www.bentosushi.com/wp-content/uploads/2019/02/Salmon-Volcano.jpg" price="11" currency="$" />
-      <foodCard title="Rainbow Roll 彩虹卷" desc="由三文鱼、黄瓜、虾、金枪鱼和海藻制成" thumb="https://www.bentosushi.com/wp-content/uploads/2019/02/Rainbow-Roll_clear-pack-1024x1024.jpg" price="11.5" currency="$" />
-      <foodCard title="Nigiri Combo 生鱼片寿司组合" desc="三文鱼寿司、金枪鱼寿司和虾寿司" thumb="https://www.bentosushi.com/wp-content/uploads/2019/02/Nigiri-Combo-1.jpg" price="12" currency="$" />
-      <foodCard title="California Shogun Combo 加州幕府将军组合" desc="金枪鱼寿司、三文鱼寿司、虾寿" thumb="https://www.bentosushi.com/wp-content/uploads/2019/02/Cali-Shogun-Combo-2.jpg" price="12" currency="$" />
-      <foodCard title="Assorted Maki Boat 寿司船" desc="由黄瓜、鳄梨和胡萝卜制成" thumb="https://www.bentosushi.com/wp-content/uploads/2019/02/Assorted-Maki-Boat.jpg" price="13" currency="$" />
-      <foodCard title="Crunch Combo 脆卷组合" desc="由芝麻、蘑菇、鳄梨、胡萝卜和海藻制成" thumb="https://www.bentosushi.com/us/wp-content/uploads/sites/2/2019/05/Crunch-Combo_clear-pack-scaled.jpg" price="13" currency="$" />
-      <foodCard title="Deluxe Combo 豪华组合" desc="金枪鱼和三文鱼寿司" thumb="https://www.bentosushi.com/wp-content/uploads/2019/03/Deluxe-Combo.jpg" price="13" currency="$" />
-      <foodCard title="Fiji Combo 斐济组合" desc="由三文鱼、鱼子、虾、金枪鱼和脆炸洋葱制成" thumb="https://www.bentosushi.com/us/wp-content/uploads/sites/2/2019/05/Fiji-Combo.jpg" price="14" currency="$" />
-      <foodCard title="Tuna & Salmon Sashimi 金枪鱼&三文鱼刺身" desc="金枪鱼和三文鱼刺身" thumb="https://www.bentosushi.com/wp-content/uploads/2019/02/Sashimi-Combo-1024x1024.jpg" price="14" currency="$" />
+      <foodCard desc="阿拉斯加卷食材包括三文鱼，寿司饭，海藻，黄油和蟹肉" title="Alaska Roll 阿拉斯加卷" thumb="https://www.bentosushi.com/us/wp-content/uploads/sites/2/2019/02/Alaska-Roll-1.jpg" price="9" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='AlaskaR'wx:if="{{!newList[4].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='AlaskaR'wx:else/> {{RBT[4].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='AlaskaR' wx:if="{{!newList[4].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='AlaskaR' wx:else></view>{{RBT[4].Down}} </van-button> 
+      </view>
+    </foodCard>
+
+      <foodCard desc="由新鲜的大西洋鲑鱼制成" title="Angel Combo 天使组合" thumb="https://www.bentosushi.com/us/wp-content/uploads/sites/2/2019/03/Angel-Combo-1.jpg"  price="8" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='AngelCombo'wx:if="{{!newList[5].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='AngelCombo'wx:else/> {{RBT[5].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='AngelCombo' wx:if="{{!newList[5].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='AngelCombo' wx:else></view>{{RBT[5].Down}} </van-button> 
+      </view>
+    </foodCard>
+
+      <foodCard desc="由胡萝卜、牛油果、黄瓜、腌姜、芝麻和海藻制成" title="Vegetable California Roll 蔬菜加州卷" thumb="https://www.bentosushi.com/wp-content/uploads/2019/01/Veg-California-Roll_clear-pack-1024x1024.jpg" price="6.5" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='VegCaliR'wx:if="{{!newList[6].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='VegCaliR'wx:else/> {{RBT[6].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='VegCaliR' wx:if="{{!newList[6].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='VegCaliR' wx:else></view>{{RBT[6].Down}} </van-button> 
+      </view>
+    </foodCard>
+
+      <foodCard title="California Roll 加州卷" desc="由鱼糜、黄瓜、牛油果、芝麻和海藻制成(亦可选辣味加州卷）。" thumb="https://www.bentosushi.com/wp-content/uploads/2019/01/California-Roll_clear-pack-1024x1024.jpg" price="7" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='CaliR'wx:if="{{!newList[7].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='CaliR'wx:else/> {{RBT[7].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='CaliR' wx:if="{{!newList[7].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='CaliR' wx:else></view>{{RBT[7].Down}} </van-button> 
+      </view>
+    </foodCard>
+
+    <foodCard title="Spicy California Spring Roll 辣加州春卷" desc="把加州卷的料放春卷里" thumb="https://www.bentosushi.com/wp-content/uploads/2019/02/Spicy-Cali-Spring-Roll-V2-1024x1024.jpg" price="7" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='SpicyCaliSpR'wx:if="{{!newList[8].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='SpicyCaliSpR'wx:else/> {{RBT[8].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='SpicyCaliSpR' wx:if="{{!newList[8].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='SpicyCaliSpR' wx:else></view>{{RBT[8].Down}} </van-button> 
+      </view>
+    </foodCard>
+
+    <foodCard title="Vegetable Green Dragon Crunch Roll 蔬菜青龙卷" desc="由海藻沙拉、芝麻油、芝麻、黑木耳、辣椒、牛油果、黄瓜、胡萝卜和海藻制成" thumb="https://www.bentosushi.com/wp-content/uploads/2019/02/Veg-Green-Dragon-Crunch-Roll_clear-pack-scaled.jpg" price="7" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='VegGreenDragCR'wx:if="{{!newList[9].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='VegGreenDragCR'wx:else/> {{RBT[9].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='VegGreenDragCR' wx:if="{{!newList[9].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='VegGreenDragCR' wx:else></view>{{RBT[9].Down}} </van-button> 
+      </view>
+    </foodCard>
+
+    <foodCard title="Vegetable Spring Roll 蔬菜春卷" desc="由芒果、胡萝卜、黄瓜、生菜和鳄梨制成" thumb="https://www.bentosushi.com/wp-content/uploads/2019/02/Vege-Spring-Roll-V1-1024x1024.jpg" price="7" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='VegSR'wx:if="{{!newList[10].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='VegSR'wx:else/> {{RBT[10].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='VegSR' wx:if="{{!newList[10].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='VegSR' wx:else></view>{{RBT[10].Down}} </van-button> 
+      </view>
+    </foodCard>
+
+    <foodCard title="Spicy California Crunch Roll 加州香辣脆卷" desc="由鳕鱼、蛋黄酱、炒洋葱、辣椒酱和海藻制成" thumb="https://www.bentosushi.com/us/wp-content/uploads/sites/2/2020/11/Spicy-Cali-Crunch-Roll.jpg" price="8" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='SpicyCaliCR'wx:if="{{!newList[11].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='SpicyCaliCR'wx:else/> {{RBT[11].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='SpicyCaliCR' wx:if="{{!newList[11].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='SpicyCaliCR' wx:else></view>{{RBT[11].Down}} </van-button> 
+      </view>
+    </foodCard>
+
+      <foodCard title="Teriyaki Chicken Roll 红烧鸡肉卷" desc="由鸡胸肉、鳄梨、黄瓜、生菜和照烧酱制成" thumb="https://www.bentosushi.com/wp-content/uploads/2019/02/Teriyaki-Chicken-Roll.jpg" price="8" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='TeriChicR'wx:if="{{!newList[12].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='TeriChicR'wx:else/> {{RBT[12].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='TeriChicR' wx:if="{{!newList[12].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='TeriChicR' wx:else></view>{{RBT[12].Down}} </van-button> 
+      </view>
+    </foodCard>
+
+      <foodCard title="Philadelphia Roll 费城卷" desc="由烟熏大西洋鲑鱼、奶油奶酪、黄瓜、芝麻和海藻制成" thumb="https://www.bentosushi.com/wp-content/uploads/2019/08/Phila-Roll-Label-scaled.jpg" price="9" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='PhilR'wx:if="{{!newList[13].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='PhilR'wx:else/> {{RBT[13].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='PhilR' wx:if="{{!newList[13].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='PhilR' wx:else></view>{{RBT[13].Down}} </van-button> 
+      </view>
+    </foodCard>
+
+      <foodCard title="Salmon Avocado Roll 鲑鱼牛油果卷" desc="正如其名，由鲑鱼和牛油果制成" thumb="https://www.bentosushi.com/wp-content/uploads/2019/01/Salmon-Avocado-Roll_clear-pack-1024x1024.jpg" price="9" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='SalAvoR'wx:if="{{!newList[14].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='SalAvoR'wx:else/> {{RBT[14].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='SalAvoR' wx:if="{{!newList[14].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='SalAvoR' wx:else></view>{{RBT[14].Down}} </van-button> 
+      </view>
+    </foodCard>
+
+      <foodCard title="Shrimp Tempura Roll-USA 炸天妇罗卷" desc="用天妇罗做的寿司" thumb="https://www.bentosushi.com/us/wp-content/uploads/sites/2/2019/01/Spicy-Salmon-US_clear-pack-1024x1024.jpg" price="9" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='ShrimpTR'wx:if="{{!newList[15].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='ShrimpTR'wx:else/> {{RBT[15].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='ShrimpTR' wx:if="{{!newList[15].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='ShrimpTR' wx:else></view>{{RBT[15].Down}} </van-button> 
+      </view>
+    </foodCard>
+
+      <foodCard title="Spicy Salmon Roll 辣三文鱼卷" desc="辣的三文鱼做的卷" thumb="https://www.bentosushi.com/wp-content/uploads/2019/01/Spicy-Salmon-CA_clear-pack-scaled.jpg" price="9" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='SpicySalR'wx:if="{{!newList[16].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='SpicySalR'wx:else/> {{RBT[16].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='SpicySalR' wx:if="{{!newList[16].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='SpicySalR' wx:else></view>{{RBT[16].Down}} </van-button> 
+      </view>
+    </foodCard>
+
+      <foodCard title="Spicy Tuna Roll 辣金枪鱼卷" desc="辣的金枪鱼做的卷" thumb="https://www.bentosushi.com/wp-content/uploads/2019/01/Spicy-Tuna-CA_clear-pack-scaled.jpg" price="9" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='SpicyTunaR'wx:if="{{!newList[17].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='SpicyTunaR'wx:else/> {{RBT[17].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='SpicyTunaR' wx:if="{{!newList[17].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='SpicyTunaR' wx:else></view>{{RBT[17].Down}} </van-button> 
+      </view>
+    </foodCard>
+
+      <foodCard title="Tuna Avocado Roll 金枪鱼牛油果卷" desc="金枪鱼和牛油果做的卷" thumb="https://www.bentosushi.com/wp-content/uploads/2019/01/Tuna-Avocado-Roll_clear-pack-scaled.jpg" price="9" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='TunaAvoR'wx:if="{{!newList[18].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='TunaAvoR'wx:else/> {{RBT[18].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='TunaAvoR' wx:if="{{!newList[18].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='TunaAvoR' wx:else></view>{{RBT[18].Down}} </van-button> 
+      </view>
+    </foodCard>
+
+      <foodCard title="California Samurai Combo 加州武士组合" desc="三文鱼寿司和牛油果寿司" thumb="https://www.bentosushi.com/wp-content/uploads/2019/02/Cali-Samurai-Combo.jpg" price="10" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='CaliSamCombo'wx:if="{{!newList[19].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='CaliSamCombo'wx:else/> {{RBT[19].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='CaliSamCombo' wx:if="{{!newList[19].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='CaliSamCombo' wx:else></view>{{RBT[19].Down}} </van-button> 
+      </view>
+    </foodCard>
+
+      <foodCard title="Green Dragon Roll 青龙卷" desc="牛油果寿司上面放点芝麻" thumb="https://www.bentosushi.com/us/wp-content/uploads/sites/2/2019/05/Green-Dragon-Roll_clear-pack-1024x1024.jpg" price="10" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='GreenDragR'wx:if="{{!newList[20].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='GreenDragR'wx:else/> {{RBT[20].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='GreenDragR' wx:if="{{!newList[20].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='GreenDragR' wx:else></view>{{RBT[20].Down}} </van-button> 
+      </view>
+    </foodCard>
+
+      <foodCard title="Hikari Combo 希卡利组合" desc="由蟹肉、金枪鱼和三文鱼寿司组成" thumb="https://www.bentosushi.com/wp-content/uploads/2019/09/Hikari-Combo_Clear.jpg" price="10" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='HikariCombo'wx:if="{{!newList[21].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='HikariCombo'wx:else/> {{RBT[21].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='HikariCombo' wx:if="{{!newList[21].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='HikariCombo' wx:else></view>{{RBT[21].Down}} </van-button> 
+      </view>
+    </foodCard>
+
+
+      <foodCard title="Kodama Combo 儿玉（日本地名）组合" desc="金枪鱼卷三文鱼卷佐牛油果" thumb="https://www.bentosushi.com/wp-content/uploads/2019/09/Kodama-Combo_Clear-1.jpg" price="10" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='KodamaCombo'wx:if="{{!newList[22].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='KodamaCombo'wx:else/> {{RBT[22].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='KodamaCombo' wx:if="{{!newList[22].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='KodamaCombo' wx:else></view>{{RBT[22].Down}} </van-button> 
+      </view>
+    </foodCard>
+
+      <foodCard title="Nozomi Combo 希望号新干线组合" desc="天妇罗、金枪鱼寿司、三文鱼寿司、虾寿司佐牛油果" thumb="https://www.bentosushi.com/wp-content/uploads/2019/09/Nozomi-Combo_Clear.jpg" price="10" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='NozomiCombo'wx:if="{{!newList[23].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='NozomiCombo'wx:else/> {{RBT[23].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='NozomiCombo' wx:if="{{!newList[23].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='NozomiCombo' wx:else></view>{{RBT[23].Down}} </van-button> 
+      </view>
+    </foodCard>
+
+      <foodCard title="Salmon Samurai Combo 三文鱼武士组合" desc="三文鱼寿司和金枪鱼寿司配上一点牛油果" thumb="https://www.bentosushi.com/wp-content/uploads/2019/02/Salmon-Samurai-Combo-2.jpg" price="10" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='SalSamCombo'wx:if="{{!newList[24].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='SalSamCombo'wx:else/> {{RBT[24].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='SalSamCombo' wx:if="{{!newList[24].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='SalSamCombo' wx:else></view>{{RBT[24].Down}} </van-button> 
+      </view>
+    </foodCard>
+
+      <foodCard title="Simply Shrimp Roll 虾卷" desc="（可选辣的）" thumb="https://www.bentosushi.com/us/wp-content/uploads/sites/2/2019/09/Spicy-Shrimp-Mango-1024x1024.jpg" price="10" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='SimpShrimpR'wx:if="{{!newList[25].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='SimpShrimpR'wx:else/> {{RBT[25].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='SimpShrimpR' wx:if="{{!newList[25].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='SimpShrimpR' wx:else></view>{{RBT[25].Down}} </van-button> 
+      </view>
+    </foodCard>
+
+      <foodCard title="Inari Dragon Crunch Roll 神田龙脆卷" desc="由虾、稻濑（所以这是什么）、芒果、蛋黄酱、海草和酥脆炸葱制成" thumb="https://www.bentosushi.com/wp-content/uploads/2019/03/Inari-Dragon-Crunch-Roll_clear-pack-scaled.jpg" price="11" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='InaDragCR'wx:if="{{!newList[26].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='InaDragCR'wx:else/> {{RBT[26].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='InaDragCR' wx:if="{{!newList[26].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='InaDragCR' wx:else></view>{{RBT[26].Down}} </van-button> 
+      </view>
+    </foodCard>
+
+      <foodCard title="Salmon Volcano Roll 三文鱼火山卷" desc="由三文鱼、鱼子和脆炸洋葱制成" thumb="https://www.bentosushi.com/wp-content/uploads/2019/02/Salmon-Volcano.jpg" price="11" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='SalVolR'wx:if="{{!newList[27].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='SalVolR'wx:else/> {{RBT[27].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='SalVolR' wx:if="{{!newList[27].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='SalVolR' wx:else></view>{{RBT[27].Down}} </van-button> 
+      </view>
+    </foodCard>
       
+      <foodCard title="Rainbow Roll 彩虹卷" desc="由三文鱼、黄瓜、虾、金枪鱼和海藻制成" thumb="https://www.bentosushi.com/wp-content/uploads/2019/02/Rainbow-Roll_clear-pack-1024x1024.jpg" price="11.5" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='RainbowR'wx:if="{{!newList[28].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='RainbowR'wx:else/> {{RBT[28].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='RainbowR' wx:if="{{!newList[28].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='RainbowR' wx:else></view>{{RBT[28].Down}} </van-button> 
+      </view>
+    </foodCard>
+
+      <foodCard title="Nigiri Combo 生鱼片寿司组合" desc="三文鱼寿司、金枪鱼寿司和虾寿司" thumb="https://www.bentosushi.com/wp-content/uploads/2019/02/Nigiri-Combo-1.jpg" price="12" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='NigiCombo'wx:if="{{!newList[29].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='NigiCombo'wx:else/> {{RBT[29].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='NigiCombo' wx:if="{{!newList[29].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='NigiCombo' wx:else></view>{{RBT[29].Down}} </van-button> 
+      </view>
+    </foodCard>
+
+      <foodCard title="California Shogun Combo 加州幕府将军组合" desc="金枪鱼寿司、三文鱼寿司、虾寿" thumb="https://www.bentosushi.com/wp-content/uploads/2019/02/Cali-Shogun-Combo-2.jpg" price="12" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='CaliShoC'wx:if="{{!newList[30].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='CaliShoC'wx:else/> {{RBT[30].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='CaliShoC' wx:if="{{!newList[30].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='CaliShoC' wx:else></view>{{RBT[30].Down}} </van-button> 
+      </view>
+    </foodCard>
+
+      <foodCard title="Assorted Maki Boat 寿司船" desc="由黄瓜、鳄梨和胡萝卜制成" thumb="https://www.bentosushi.com/wp-content/uploads/2019/02/Assorted-Maki-Boat.jpg" price="13" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='AssortedMakiBoat'wx:if="{{!newList[31].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='AssortedMakiBoat'wx:else/> {{RBT[31].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='AssortedMakiBoat' wx:if="{{!newList[31].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='AssortedMakiBoat' wx:else></view>{{RBT[31].Down}} </van-button> 
+      </view>
+    </foodCard>
+
+      <foodCard title="Crunch Combo 脆卷组合" desc="由芝麻、蘑菇、鳄梨、胡萝卜和海藻制成" thumb="https://www.bentosushi.com/us/wp-content/uploads/sites/2/2019/05/Crunch-Combo_clear-pack-scaled.jpg" price="13" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='CrunchCombo'wx:if="{{!newList[32].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='CrunchCombo'wx:else/> {{RBT[32].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='CrunchCombo' wx:if="{{!newList[32].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='CrunchCombo' wx:else></view>{{RBT[32].Down}} </van-button> 
+      </view>
+    </foodCard>
+
+      <foodCard title="Deluxe Combo 豪华组合" desc="金枪鱼和三文鱼寿司" thumb="https://www.bentosushi.com/wp-content/uploads/2019/03/Deluxe-Combo.jpg" price="13" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='DeluxeCombo'wx:if="{{!newList[33].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='DeluxeCombo'wx:else/> {{RBT[33].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='DeluxeCombo' wx:if="{{!newList[33].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='DeluxeCombo' wx:else></view>{{RBT[33].Down}} </van-button> 
+      </view>
+    </foodCard>
+
+      <foodCard title="Fiji Combo 斐济组合" desc="由三文鱼、鱼子、虾、金枪鱼和脆炸洋葱制成" thumb="https://www.bentosushi.com/us/wp-content/uploads/sites/2/2019/05/Fiji-Combo.jpg" price="14" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='FijiCombo'wx:if="{{!newList[34].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='FijiCombo'wx:else/> {{RBT[34].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='FijiCombo' wx:if="{{!newList[34].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='FijiCombo' wx:else></view>{{RBT[34].Down}} </van-button> 
+      </view>
+    </foodCard>
+
+      <foodCard title="Tuna & Salmon Sashimi 金枪鱼&三文鱼刺身" desc="金枪鱼和三文鱼刺身" thumb="https://www.bentosushi.com/wp-content/uploads/2019/02/Sashimi-Combo-1024x1024.jpg" price="14" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='TunaSalmonSashimi'wx:if="{{!newList[35].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='TunaSalmonSashimi'wx:else/> {{RBT[35].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='TunaSalmonSashimi' wx:if="{{!newList[35].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='TunaSalmonSashimi' wx:else></view>{{RBT[35].Down}} </van-button> 
+      </view>
+    </foodCard>
   </van-tab>
   <van-tab title="Bowl">
-    <foodCard title="Teriyaki Beef Rice Bowl 牛肉碗" desc="牛肉和饭" thumb="https://www.bentosushi.com/wp-content/uploads/2021/01/Beef-Rice-Bowl.jpg" price="8" currency="$" />
-      <foodCard title="Teriyaki Chicken Rice Bowl 鸡肉碗" desc="鸡肉和饭" thumb="https://www.bentosushi.com/wp-content/uploads/2019/02/Chicken-Teriyaki-Rice-bowl.jpg" price="8" currency="$" />
-      <foodCard title="Salmon Poke Bowl 三文鱼波奇碗" desc="由三文鱼、海藻、黄瓜制成" thumb="https://www.bentosushi.com/us/wp-content/uploads/sites/2/2019/05/Salmon-Poke-Rice-Bowl.jpg" price="12" currency="$" />
-      <foodCard title="Spicy California Poke Bowl 辣波奇碗" desc="由鳕鱼、牛油果、海藻制成" thumb="https://www.bentosushi.com/wp-content/uploads/2021/06/Spicy-California-Poke.jpg" price="12" currency="$" />
-      <foodCard title="Spicy Shrimp Poke Bowl 香辣虾仁波奇碗" desc="由虾、牛油果和海藻制成" thumb="https://www.bentosushi.com/wp-content/uploads/2021/06/Spicy-Shrimp-Poke.jpg" price="12" currency="$" />
-      <foodCard title="Tuna Poke Bowl 金枪鱼波奇碗" desc="由金枪鱼、牛油果和海藻制成" thumb="https://www.bentosushi.com/us/wp-content/uploads/sites/2/2019/05/Tuna-Poke.jpg" price="12" currency="$" />
-      <foodCard title="Tofu Poke Bowl 豆腐波奇碗" desc="由豆腐、牛油果和海藻制成" thumb="https://www.bentosushi.com/wp-content/uploads/2021/09/Tofu-Poke-1024x1024.jpg" price="12" currency="$" />
+      <foodCard title="Teriyaki Beef Rice Bowl 牛肉碗" desc="牛肉和饭" thumb="https://www.bentosushi.com/wp-content/uploads/2021/01/Beef-Rice-Bowl.jpg" price="8" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='TeriyakiBeefRB'wx:if="{{!newList[36].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='TeriyakiBeefRB'wx:else/> {{RBT[36].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='TeriyakiBeefRB' wx:if="{{!newList[36].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='TeriyakiBeefRB' wx:else></view>{{RBT[36].Down}} </van-button> 
+      </view>
+    </foodCard>
+
+      <foodCard title="Teriyaki Chicken Rice Bowl 鸡肉碗" desc="鸡肉和饭" thumb="https://www.bentosushi.com/wp-content/uploads/2019/02/Chicken-Teriyaki-Rice-bowl.jpg" price="8" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='TeriyakiChicRB'wx:if="{{!newList[37].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='TeriyakiChicRB'wx:else/> {{RBT[37].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='TeriyakiChicRB' wx:if="{{!newList[37].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='TeriyakiChicRB' wx:else></view>{{RBT[37].Down}} </van-button> 
+      </view>
+    </foodCard>
+
+      <foodCard title="Salmon Poke Bowl 三文鱼波奇碗" desc="由三文鱼、海藻、黄瓜制成" thumb="https://www.bentosushi.com/us/wp-content/uploads/sites/2/2019/05/Salmon-Poke-Rice-Bowl.jpg" price="12" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='SalmonPB'wx:if="{{!newList[38].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='SalmonPB'wx:else/> {{RBT[38].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='SalmonPB' wx:if="{{!newList[38].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='SalmonPB' wx:else></view>{{RBT[38].Down}} </van-button> 
+      </view>
+    </foodCard>
+
+      <foodCard title="Spicy California Poke Bowl 辣波奇碗" desc="由鳕鱼、牛油果、海藻制成" thumb="https://www.bentosushi.com/wp-content/uploads/2021/06/Spicy-California-Poke.jpg" price="12" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='SpicyCaliPB'wx:if="{{!newList[39].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='SpicyCaliPB'wx:else/> {{RBT[39].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='SpicyCaliPB' wx:if="{{!newList[39].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='SpicyCaliPB' wx:else></view>{{RBT[39].Down}} </van-button> 
+      </view>
+    </foodCard>
+
+      <foodCard title="Spicy Shrimp Poke Bowl 香辣虾仁波奇碗" desc="由虾、牛油果和海藻制成" thumb="https://www.bentosushi.com/wp-content/uploads/2021/06/Spicy-Shrimp-Poke.jpg" price="12" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='SpicyShrimpPB'wx:if="{{!newList[40].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='SpicyShrimpPB'wx:else/> {{RBT[40].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='SpicyShrimpPB' wx:if="{{!newList[40].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='SpicyShrimpPB' wx:else></view>{{RBT[40].Down}} </van-button> 
+      </view>
+    </foodCard>
+
+      <foodCard title="Tuna Poke Bowl 金枪鱼波奇碗" desc="由金枪鱼、牛油果和海藻制成" thumb="https://www.bentosushi.com/us/wp-content/uploads/sites/2/2019/05/Tuna-Poke.jpg" price="12" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='TunaPB'wx:if="{{!newList[41].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='TunaPB'wx:else/> {{RBT[41].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='TunaPB' wx:if="{{!newList[41].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='TunaPB' wx:else></view>{{RBT[41].Down}} </van-button> 
+      </view>
+    </foodCard>
+
+      <foodCard title="Tofu Poke Bowl 豆腐波奇碗" desc="由豆腐、牛油果和海藻制成" thumb="https://www.bentosushi.com/wp-content/uploads/2021/09/Tofu-Poke-1024x1024.jpg" price="12" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='TofuPB'wx:if="{{!newList[42].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='TofuPB'wx:else/> {{RBT[42].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='TofuPB' wx:if="{{!newList[42].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='TofuPB' wx:else></view>{{RBT[42].Down}} </van-button> 
+      </view>
+    </foodCard>
   </van-tab>
   <van-tab title="Ramen">
-    <foodCard title="Beef Miso Ramen 牛肉味噌拉面" thumb="https://www.bentosushi.com/us/wp-content/uploads/sites/2/2018/12/Ramen-Noodle-Bowl.jpg" price="11" currency="$" />
-      <foodCard title="Beef Tonkotsu Ramen 牛肉豚骨拉面" thumb="https://www.bentosushi.com/wp-content/uploads/2019/02/Ramen-Noodle-Bowl-1024x1024.jpg" price="11" currency="$" />
-      <foodCard title="Chasu Miso Ramen 叉烧味噌拉面"  thumb="https://www.bentosushi.com/us/wp-content/uploads/sites/2/2018/12/Ramen-Noodle-Bowl.jpg" price="11" currency="$" />
-      <foodCard title="Chasu Tonkotsu Ramen 叉烧豚骨拉面"  thumb="https://www.bentosushi.com/us/wp-content/uploads/sites/2/2018/12/Ramen-Noodle-Bowl.jpg" price="11" currency="$" />
-      <foodCard title="Chicken Miso Ramen 鸡肉味噌拉面"  thumb="https://www.aheadofthyme.com/wp-content/uploads/2019/10/healthy-miso-ramen-with-chicken-6-1-rotated.jpg" price="11" currency="$" />
-      <foodCard title="Chicken Tonkotsu Ramen 鸡肉豚骨拉面"  thumb="https://cdn.shopify.com/s/files/1/1182/3584/products/Takeout-Kit-Japanese-Tonkotsu-Ramen-Meal-Kit_2000x.jpg?v=1593619909" price="11" currency="$" />
-      <foodCard title="Inari Miso Ramen 豆腐味噌拉面" thumb="https://littlespicejar.com/wp-content/uploads/2017/01/Spicy-Curry-Ramen-Bowls-with-Tofu-8.jpg" price="11" currency="$" />
-      <foodCard title="Inari Tonkotsu Ramen 豆腐豚骨拉面"  thumb="https://i.pinimg.com/originals/89/30/9d/89309d7be9d8b28db3312a9d8af590b0.jpg" price="11" currency="$" />
-      <foodCard title="Shrimp Miso Ramen 虾仁味噌拉面"  thumb="https://www.countrysidecravings.com/wp-content/uploads/2018/08/Easy-Shrimp-Ramen-Soup-picture.jpg" price="11" currency="$" />
-      <foodCard title="Shrimp Tonkotsu Ramen 虾仁豚骨拉面" thumb="https://www.countrysidecravings.com/wp-content/uploads/2018/08/Easy-Shrimp-Ramen-Soup-picture.jpg" price="11" currency="$" />
+      <foodCard title="Beef Miso Ramen 牛肉味噌拉面" thumb="https://www.bentosushi.com/us/wp-content/uploads/sites/2/2018/12/Ramen-Noodle-Bowl.jpg" price="11" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='BeefMisoRamen'wx:if="{{!newList[43].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='BeefMisoRamen'wx:else/> {{RBT[43].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='BeefMisoRamen' wx:if="{{!newList[43].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='BeefMisoRamen' wx:else></view>{{RBT[43].Down}} </van-button> 
+      </view>
+    </foodCard>
+
+      <foodCard title="Beef Tonkotsu Ramen 牛肉豚骨拉面" thumb="https://www.bentosushi.com/wp-content/uploads/2019/02/Ramen-Noodle-Bowl-1024x1024.jpg" price="11" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='BeefTonkotsuRamen'wx:if="{{!newList[44].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='BeefTonkotsuRamen'wx:else/> {{RBT[44].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='BeefTonkotsuRamen' wx:if="{{!newList[44].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='BeefTonkotsuRamen' wx:else></view>{{RBT[44].Down}} </van-button> 
+      </view>
+    </foodCard>
+
+      <foodCard title="Chasu Miso Ramen 叉烧味噌拉面"  thumb="https://www.bentosushi.com/us/wp-content/uploads/sites/2/2018/12/Ramen-Noodle-Bowl.jpg" price="11" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='ChasuMisoRamen'wx:if="{{!newList[45].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='ChasuMisoRamen'wx:else/> {{RBT[45].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='ChasuMisoRamen' wx:if="{{!newList[45].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='ChasuMisoRamen' wx:else></view>{{RBT[45].Down}} </van-button> 
+      </view>
+    </foodCard>
+
+      <foodCard title="Chasu Tonkotsu Ramen 叉烧豚骨拉面"  thumb="https://www.bentosushi.com/us/wp-content/uploads/sites/2/2018/12/Ramen-Noodle-Bowl.jpg" price="11" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='ChasuTonkotsuRamen'wx:if="{{!newList[46].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='ChasuTonkotsuRamen'wx:else/> {{RBT[46].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='ChasuTonkotsuRamen' wx:if="{{!newList[46].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='ChasuTonkotsuRamen' wx:else></view>{{RBT[46].Down}} </van-button> 
+      </view>
+    </foodCard>
+
+      <foodCard title="Chicken Miso Ramen 鸡肉味噌拉面"  thumb="https://www.aheadofthyme.com/wp-content/uploads/2019/10/healthy-miso-ramen-with-chicken-6-1-rotated.jpg" price="11" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='ChickenMisoRamen'wx:if="{{!newList[47].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='ChickenMisoRamen'wx:else/> {{RBT[47].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='ChickenMisoRamen' wx:if="{{!newList[47].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='ChickenMisoRamen' wx:else></view>{{RBT[47].Down}} </van-button> 
+      </view>
+    </foodCard>
+
+      <foodCard title="Chicken Tonkotsu Ramen 鸡肉豚骨拉面"  thumb="https://cdn.shopify.com/s/files/1/1182/3584/products/Takeout-Kit-Japanese-Tonkotsu-Ramen-Meal-Kit_2000x.jpg?v=1593619909" price="11" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='ChickenTonkotsuRamen'wx:if="{{!newList[48].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='ChickenTonkotsuRamen'wx:else/> {{RBT[48].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='ChickenTonkotsuRamen' wx:if="{{!newList[48].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='ChickenTonkotsuRamen' wx:else></view>{{RBT[48].Down}} </van-button> 
+      </view>
+    </foodCard>
+      
+      <foodCard title="Inari Miso Ramen 豆腐味噌拉面" thumb="https://littlespicejar.com/wp-content/uploads/2017/01/Spicy-Curry-Ramen-Bowls-with-Tofu-8.jpg" price="11" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='InariMisoRamen'wx:if="{{!newList[49].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='InariMisoRamen'wx:else/> {{RBT[49].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='InariMisoRamen' wx:if="{{!newList[49].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='InariMisoRamen' wx:else></view>{{RBT[49].Down}} </van-button> 
+      </view>
+    </foodCard>
+
+      <foodCard title="Inari Tonkotsu Ramen 豆腐豚骨拉面"  thumb="https://i.pinimg.com/originals/89/30/9d/89309d7be9d8b28db3312a9d8af590b0.jpg" price="11" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='InariTonkotsuRamen'wx:if="{{!newList[50].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='InariTonkotsuRamen'wx:else/> {{RBT[50].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='InariTonkotsuRamen' wx:if="{{!newList[50].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='InariTonkotsuRamen' wx:else></view>{{RBT[50].Down}} </van-button> 
+      </view>
+    </foodCard>
+
+      <foodCard title="Shrimp Miso Ramen 虾仁味噌拉面"  thumb="https://www.countrysidecravings.com/wp-content/uploads/2018/08/Easy-Shrimp-Ramen-Soup-picture.jpg" price="11" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='ShimpMisoRamen'wx:if="{{!newList[51].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='ShimpMisoRamen'wx:else/> {{RBT[51].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='ShimpMisoRamen' wx:if="{{!newList[51].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='ShimpMisoRamen' wx:else></view>{{RBT[51].Down}} </van-button> 
+      </view>
+    </foodCard>
+
+      <foodCard title="Shrimp Tonkotsu Ramen 虾仁豚骨拉面" thumb="https://www.countrysidecravings.com/wp-content/uploads/2018/08/Easy-Shrimp-Ramen-Soup-picture.jpg" price="11" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='ShrimpTonkotsuRamen'wx:if="{{!newList[52].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='ShrimpTonkotsuRamen'wx:else/> {{RBT[52].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='ShrimpTonkotsuRamen' wx:if="{{!newList[52].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='ShrimpTonkotsuRamen' wx:else></view>{{RBT[52].Down}} </van-button> 
+      </view>
+    </foodCard>
+
   </van-tab>
   <van-tab title="Yaki Udon">
-    <foodCard title="Beef Yaki Udon 牛肉乌冬面" thumb="https://s2.loli.net/2022/04/16/BWw2uZ4bVNdOQRl.jpg" price="9" currency="$" />
-      <foodCard title="Chicken Yaki Udon 鸡肉乌冬面"  thumb="https://www.bitesofberi.com/wp-content/uploads/2021/08/chicken-yaki-udon-1-500x500.jpg" price="9" currency="$" />
-      <foodCard title="Inari Yaki Udon 豆腐乌冬面" thumb="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fgurunavi.com%2Fzh-hans%2Fk821707%2Fimgs%2Fs_cm_01_049.jpg%3Fdt%3D1533304432&refer=http%3A%2F%2Fgurunavi.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1640755291&t=c3ecbca1987dc36e997620852fcffef1" price="9" currency="$" />
-      <foodCard title="Shrimp Yaki Udon 虾仁乌冬面"  thumb="https://images.japancentre.com/recipes/pics/213/main/photo_Yaki-Udon-Stir-fry-Noodles.jpg?1469572962" price="9" currency="$" />
-      <foodCard title="Chasu Yaki Udon 叉烧乌冬面"  thumb="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.alicdn.com%2Fimgextra%2Fi2%2F33170186%2FTB2QUDNqR8kpuFjSspeXXc7IpXa_%21%2133170186.jpg&refer=http%3A%2F%2Fimg.alicdn.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1640755409&t=db1a7fd05221b51ab4714cf6106db5ab" price="9" currency="$" />
-      <foodCard title="Beef Udon Soup 牛肉乌冬汤"  thumb="https://s2.loli.net/2022/04/16/DZLfzouAK8dHsek.jpg" price="9" currency="$" />
-      <foodCard title="Chicken Udon Soup 鸡肉乌冬汤"  thumb="https://omnivorescookbook.com/wp-content/uploads/2019/08/1405_Easy-Chicken-Udon-Soup_550.jpg" price="9" currency="$" />
-      <foodCard title="Inari Udon Soup 豆腐乌冬汤"  thumb="https://healthynibblesandbits.com/wp-content/uploads/2018/09/Ginger-Miso-Noodle-Soup-1.jpg" price="9" currency="$" />
-      <foodCard title="Shrimp Udon Soup 虾仁乌冬汤"  thumb="https://static.onecms.io/wp-content/uploads/sites/19/2009/09/15/udon-soup-ck-1924711-x.jpg" price="9" currency="$" />
-      <foodCard title="Chasu Udon Soup 叉烧乌冬汤"  thumb="https://christieathome.com/wp-content/uploads/2021/02/Char-Siu-Udon-Soup-1-b-scaled.jpg" price="9" currency="$" />
+    <foodCard title="Beef Yaki Udon 牛肉乌冬面" thumb="https://s2.loli.net/2022/04/16/BWw2uZ4bVNdOQRl.jpg" price="9" currency="$">
+      <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='BeefYakiUdon'wx:if="{{!newList[53].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='BeefYakiUdon'wx:else/> {{RBT[53].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='BeefYakiUdon' wx:if="{{!newList[53].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='BeefYakiUdon' wx:else></view>{{RBT[53].Down}} </van-button> 
+      </view>
+    </foodCard>
+
+      <foodCard title="Chicken Yaki Udon 鸡肉乌冬面"  thumb="https://www.bitesofberi.com/wp-content/uploads/2021/08/chicken-yaki-udon-1-500x500.jpg" price="9" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='ChicYakiUdon'wx:if="{{!newList[54].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='ChicYakiUdon'wx:else/> {{RBT[54].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='ChicYakiUdon' wx:if="{{!newList[54].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='ChicYakiUdon' wx:else></view>{{RBT[54].Down}} </van-button> 
+      </view>
+    </foodCard>
+
+      <foodCard title="Inari Yaki Udon 豆腐乌冬面" thumb="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fgurunavi.com%2Fzh-hans%2Fk821707%2Fimgs%2Fs_cm_01_049.jpg%3Fdt%3D1533304432&refer=http%3A%2F%2Fgurunavi.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1640755291&t=c3ecbca1987dc36e997620852fcffef1" price="9" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='InariYakiUdon'wx:if="{{!newList[55].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='InariYakiUdon'wx:else/> {{RBT[55].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='InariYakiUdon' wx:if="{{!newList[55].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='InariYakiUdon' wx:else></view>{{RBT[55].Down}} </van-button> 
+      </view>
+    </foodCard>
+      
+      <foodCard title="Shrimp Yaki Udon 虾仁乌冬面"  thumb="https://images.japancentre.com/recipes/pics/213/main/photo_Yaki-Udon-Stir-fry-Noodles.jpg?1469572962" price="9" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='ShrimpYakiUdon'wx:if="{{!newList[56].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='ShrimpYakiUdon'wx:else/> {{RBT[56].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='ShrimpYakiUdon' wx:if="{{!newList[56].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='ShrimpYakiUdon' wx:else></view>{{RBT[56].Down}} </van-button> 
+      </view>
+    </foodCard>
+
+      <foodCard title="Chasu Yaki Udon 叉烧乌冬面"  thumb="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.alicdn.com%2Fimgextra%2Fi2%2F33170186%2FTB2QUDNqR8kpuFjSspeXXc7IpXa_%21%2133170186.jpg&refer=http%3A%2F%2Fimg.alicdn.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1640755409&t=db1a7fd05221b51ab4714cf6106db5ab" price="9" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='ChasuYakiUdon'wx:if="{{!newList[57].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='ChasuYakiUdon'wx:else/> {{RBT[57].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='ChasuYakiUdon' wx:if="{{!newList[57].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='ChasuYakiUdon' wx:else></view>{{RBT[57].Down}} </van-button> 
+      </view>
+    </foodCard>
+
+      <foodCard title="Beef Udon Soup 牛肉乌冬汤"  thumb="https://s2.loli.net/2022/04/16/DZLfzouAK8dHsek.jpg" price="9" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='BeefUdonSoup'wx:if="{{!newList[58].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='BeefUdonSoup'wx:else/> {{RBT[58].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='BeefUdonSoup' wx:if="{{!newList[58].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='BeefUdonSoup' wx:else></view>{{RBT[58].Down}} </van-button> 
+      </view>
+    </foodCard>
+
+      <foodCard title="Chicken Udon Soup 鸡肉乌冬汤"  thumb="https://omnivorescookbook.com/wp-content/uploads/2019/08/1405_Easy-Chicken-Udon-Soup_550.jpg" price="9" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='ChicUdonSoup'wx:if="{{!newList[59].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='ChicUdonSoup'wx:else/> {{RBT[59].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='ChicUdonSoup' wx:if="{{!newList[59].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='ChicUdonSoup' wx:else></view>{{RBT[59].Down}} </van-button> 
+      </view>
+    </foodCard>
+
+      <foodCard title="Inari Udon Soup 豆腐乌冬汤"  thumb="https://healthynibblesandbits.com/wp-content/uploads/2018/09/Ginger-Miso-Noodle-Soup-1.jpg" price="9" currency="$">
+      <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='InariUdonSoup'wx:if="{{!newList[60].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='InariUdonSoup'wx:else/> {{RBT[60].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='InariUdonSoup' wx:if="{{!newList[60].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='InariUdonSoup' wx:else></view>{{RBT[60].Down}} </van-button> 
+      </view>
+    </foodCard>
+
+    <foodCard title="Shrimp Udon Soup 虾仁乌冬汤"  thumb="https://static.onecms.io/wp-content/uploads/sites/19/2009/09/15/udon-soup-ck-1924711-x.jpg" price="9" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='ShrimpUdonSoup'wx:if="{{!newList[61].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='ShrimpUdonSoup'wx:else/> {{RBT[61].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='ShrimpUdonSoup' wx:if="{{!newList[61].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='ShrimpUdonSoup' wx:else></view>{{RBT[61].Down}} </van-button> 
+      </view>
+    </foodCard>
+
+    <foodCard title="Chasu Udon Soup 叉烧乌冬汤"  thumb="https://christieathome.com/wp-content/uploads/2021/02/Char-Siu-Udon-Soup-1-b-scaled.jpg" price="9" currency="$">
+      <view slot="footer">
+        <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='ChasuUdonSoup'wx:if="{{!newList[62].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='ChasuUdonSoup'wx:else/> {{RBT[62].Up}} </van-button> 
+        <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='ChasuUdonSoup' wx:if="{{!newList[62].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='ChasuUdonSoup' wx:else></view>{{RBT[62].Down}} </van-button> 
+      </view>
+    </foodCard>
   </van-tab>
   <van-tab title="Side">
-    <foodCard title="Pork Dumpling 猪肉炸饺" desc="猪肉馅的炸饺" thumb="https://www.bentosushi.com/us/wp-content/uploads/sites/2/2019/02/Japanese-Pork-Dumplings-US.jpg" price="5" currency="$" />
-      <foodCard title="Seaweed Salad 海藻沙拉" desc="海藻" thumb="https://www.bentosushi.com/wp-content/uploads/2019/02/Seaweed-Salad-Label-scaled.jpg" price="5" currency="$" />
-      <foodCard title="Karaage Chicken 炸鸡" desc="" thumb="https://static01.nyt.com/images/2018/07/25/dining/HK-karaage-horizontal/merlin_141075300_74569dec-9fc2-4174-931d-019dddef3bb8-articleLarge.jpg" price="6" currency="$" />
-      <foodCard title="Tempura Shrimp 天妇罗" desc="天妇罗虾" thumb="https://www.bentosushi.com/wp-content/uploads/2019/02/Tempura-Shrimp-1.jpg" price="6" currency="$" />
+      <foodCard title="Pork Dumpling 猪肉炸饺" desc="猪肉馅的炸饺" thumb="https://www.bentosushi.com/us/wp-content/uploads/sites/2/2019/02/Japanese-Pork-Dumplings-US.jpg" price="5" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='PorkDumpling'wx:if="{{!newList[63].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='PorkDumpling'wx:else/> {{RBT[63].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='PorkDumpling' wx:if="{{!newList[63].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='PorkDumpling' wx:else></view>{{RBT[63].Down}} </van-button> 
+      </view>
+    </foodCard>
+
+      <foodCard title="Seaweed Salad 海藻沙拉" desc="海藻" thumb="https://www.bentosushi.com/wp-content/uploads/2019/02/Seaweed-Salad-Label-scaled.jpg" price="5" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='SeaweedSalad'wx:if="{{!newList[64].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='SeaweedSalad'wx:else/> {{RBT[64].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='SeaweedSalad' wx:if="{{!newList[64].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='SeaweedSalad' wx:else></view>{{RBT[64].Down}} </van-button> 
+      </view>
+    </foodCard>
+
+      <foodCard title="Karaage Chicken 炸鸡" desc="" thumb="https://static01.nyt.com/images/2018/07/25/dining/HK-karaage-horizontal/merlin_141075300_74569dec-9fc2-4174-931d-019dddef3bb8-articleLarge.jpg" price="6" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='KaraageChic'wx:if="{{!newList[65].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='KaraageChic'wx:else/> {{RBT[65].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='KaraageChic' wx:if="{{!newList[65].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='KaraageChic' wx:else></view>{{RBT[65].Down}} </van-button> 
+      </view>
+    </foodCard>
+
+      <foodCard title="Tempura Shrimp 天妇罗" desc="天妇罗虾" thumb="https://www.bentosushi.com/wp-content/uploads/2019/02/Tempura-Shrimp-1.jpg" price="6" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='TempuraShrimp'wx:if="{{!newList[66].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='TempuraShrimp'wx:else/> {{RBT[66].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='TempuraShrimp' wx:if="{{!newList[66].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='TempuraShrimp' wx:else></view>{{RBT[66].Down}} </van-button> 
+      </view>
+    </foodCard>
   </van-tab>
 </van-tabs>
 <view style="height: 25px; width: 100%; background-color:#ececec;"></view>
