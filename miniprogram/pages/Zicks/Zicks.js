@@ -97,7 +97,7 @@ Page({
         timeTable:[{realTimeTable:'Mon: 11:00 - 23:00'},{realTimeTable:'Tue: 11:00 - 23:00'},{realTimeTable:'Wed: 11:00 - 23:00'},{realTimeTable:'Thu: 11:00 - 2:00'},{realTimeTable:'Fri: 11:00 - 2:00'},{realTimeTable:'Sat: 11:00 - 2:00'},{realTimeTable:'Sun: 11:00 - 23:00'}],
       },
 
-      showContent: function (e) {
+    showContent: function (e) {
         // 用that取代this，防止setTimeout内使用this出错
         var that = this;
         // 创建一个动画实例
@@ -158,9 +158,10 @@ Page({
     },
 
 
+    // onLoad:页面加载时触发,一个页面只会调用一次
     onLoad: function (options) { 
       let that = this; 
-      // 云函数获取 openid 并使用 openid 初始化页面
+      // 云函数获取openid
       wx.cloud.callFunction({
         name:'getOpenid',
         complete:res=>{
@@ -168,107 +169,111 @@ Page({
          that.setData({
            openid: res.result.openid,
          })
-
-         // **************** 点赞功能所需onLoad **************//
-      // 发送请求获取Up_and_Down列表数据
-      ZK.get({
-        success: res => {
-        console.log("UpDown数据：", res)     
-        let iszan = that.data.isLike; // 已点赞合集
-        let iscai = that.data.isCai; // 已点踩合集
-        // 数据获取成功后，进行遍历，拿到所有已经点过赞的id
-        for (var i = 0; i < res.data.ItemList.length; i++) { 
-          for (let j = 0; j < res.data.ItemList[i].like_people.length; j++) {
-            if (res.data.ItemList[i].like_people[j] == that.data.openid) { 
-              iszan.push(res.data.ItemList[i].item) //根据改用户的数据找到已经点赞的，把id放入新建数组中
-            }
-          }
-          for (let j = 0; j < res.data.ItemList[i].cai_people.length; j++) {
-            if (res.data.ItemList[i].cai_people[j] == that.data.openid) { 
-              iscai.push(res.data.ItemList[i].item) //根据改用户的数据找到已经踩过的，把商品id放入新建数组中
-            }
-          }
+// **************** 点赞功能所需onLoad **************//
+       // 发送请求获取Up_and_Down列表数据
+         ZK.get({
+           success: res => {
+           console.log("UpDown数据：", res)
+           // that.setData({
+           //   newList: res.data.ItemList
+           // })
+           
+           let iszan = that.data.isLike; // 已点赞合集
+           let iscai = that.data.isCai; // 已点踩合集
+           // 数据获取成功后，进行遍历，拿到所有已经点过赞的id
+           for (var i = 0; i < res.data.ItemList.length; i++) { 
+             for (let j = 0; j < res.data.ItemList[i].like_people.length; j++) {
+               if (res.data.ItemList[i].like_people[j] == that.data.openid) { 
+                 iszan.push(res.data.ItemList[i].item) //根据改用户的数据找到已经点赞的，把id放入新建数组中
+               }
+             }
+             for (let j = 0; j < res.data.ItemList[i].cai_people.length; j++) {
+               if (res.data.ItemList[i].cai_people[j] == that.data.openid) { 
+                 iscai.push(res.data.ItemList[i].item) //根据改用户的数据找到已经踩过的，把商品id放入新建数组中
+               }
+             }
+           }
+           // 初始化页面：显示用户过去点赞or点踩过的所有items
+           for (let i = 0; i < res.data.ItemList.length; i++) {
+             res.data.ItemList[i].like = false
+             res.data.ItemList[i].cai = false
+             for (let j = 0; j < iszan.length; j++) { //利用新建的iszan数组与list数组的id查找相同的item_id
+               if (res.data.ItemList[i].item == iszan[j]) { //双重循环遍历，有相同的id则点亮
+                 res.data.ItemList[i].like = true
+               }
+             }
+             for (let j = 0; j < iscai.length; j++) { //利用新建的iszan数组与list数组的id查找相同的id
+               if (res.data.ItemList[i].item == iscai[j]) { //双重循环遍历，有相同的id则点亮
+                 res.data.ItemList[i].cai = true
+               }
+             }
+           }
+           that.setData({
+             // 该用户点过赞的所有items
+             isLike: this.data.iszan,
+             // 该用户点过踩的所有items
+             isCai: this.data.iscai,
+             newList: res.data.ItemList,
+           })
+           wx.setStorageSync('zan', iszan);
+           wx.setStorageSync('cai', iscai);
         }
-        // 初始化页面：显示用户过去点赞or点踩过的所有items
-        for (let i = 0; i < res.data.ItemList.length; i++) {
-          res.data.ItemList[i].like = false
-          res.data.ItemList[i].cai = false
-          for (let j = 0; j < iszan.length; j++) { //利用新建的iszan数组与list数组的id查找相同的item_id
-            if (res.data.ItemList[i].item == iszan[j]) { //双重循环遍历，有相同的id则点亮
-              res.data.ItemList[i].like = true
-            }
-          }
-          for (let j = 0; j < iscai.length; j++) { //利用新建的iszan数组与list数组的id查找相同的id
-            if (res.data.ItemList[i].item == iscai[j]) { //双重循环遍历，有相同的id则点亮
-              res.data.ItemList[i].cai = true
-            }
-          }
-        }
-        that.setData({
-          // 该用户点过赞的所有items
-          isLike: this.data.iszan,
-          // 该用户点过踩的所有items
-          isCai: this.data.iscai,
-          newList: res.data.ItemList,
-        })
-        wx.setStorageSync('zan', iszan);
-        wx.setStorageSync('cai', iscai);
-     }
-   })
-  }})
+      })
+     }})
 
-   wx.cloud.database().collection('UpDown').doc('Zicks').get().then(res=>{
-    console.log("查询成功",res);
-    this.setData({
-      RZK: res.data.ItemList // 所有items全量信息
-    })
-    }).catch(err=>{
-      console.log("查询失败",err);
-    })
+     wx.cloud.database().collection('UpDown').doc('Zicks').get().then(res=>{
+       console.log("ZK查询成功",res);
+       this.setData({
+        RZK: res.data.ItemList // 所有items全量信息
+       })
+       }).catch(err=>{
+         console.log("查询失败",err);
+       })
+       
 // **************** 评论功能所需onLoad **************//
-      // 获取用户openid
-      wx.cloud.callFunction({
-        name:'getOpenid',
-        complete: res => {
-         console.log('云函数获取到的openid: ', res.result.openid)
-         that.setData({
-           openid: res.result.openid,
-         })
-        }
-      })
-    
-      // 获取用户name
-      var userName = wx.getStorageSync('userName') || 'N/A';
-      if (userName === 'N/A') {
-        that.setData({
-          'name' : "Anonymous user",
-          isAuth: false,
-        })
-      } else {
-        that.setData({
-          'name' : userName,
-          isAuth: true,
-        })
-      }
-      // For Debug
-      // var userName = that.data.name
-      // var isAutho = that.data.isAuth
-      // console.log("用户授权状态: " + isAutho)
-      // console.log("用户昵称: " + userName)
+     // 以下是CommentList函数
+     wx.cloud.database().collection("comments").doc('chickFillA').get()
+     .then(res=>{
+     console.log("CommentList查询成功",res);
+       this.setData({
+         comments:res.data.commentList
+       })
+     }).catch(err=>{
+       console.log("查询失败",err);
+     })
 
-      // 初始页面加载CommentList
-      wx.cloud.database().collection("comments").doc('Zicks').get()
-      .then(res=>{
-      console.log("CommentList查询成功",res);
-      this.setData({
-        // initialize本页已存在的data
-        comments:res.data.commentList 
-      })
-    }).catch(err=>{
-      console.log("CommentList查询失败",err);
-    })
+       // 获取用户name
+       var userName = wx.getStorageSync('userName') || 'N/A';
+       if (userName === 'N/A') {
+         that.setData({
+           'name' : "Anonymous user",
+           isAuth: false,
+         })
+       } else {
+         that.setData({
+           'name' : userName,
+           isAuth: true,
+         })
+       }
+       // For Debug
+       // var userName = that.data.name
+       // var isAutho = that.data.isAuth
+       // console.log("用户授权状态: " + isAutho)
+       // console.log("用户昵称: " + userName)
+
+       // 初始页面加载CommentList
+       wx.cloud.database().collection("comments").doc('chickFillA').get()
+       .then(res=>{
+       console.log("CommentList查询成功",res);
+       this.setData({
+         // initialize本页已存在的data
+         comments:res.data.commentList 
+       })
+     }).catch(err=>{
+       console.log("CommentList查询失败",err);
+     })
 // ************** 评论功能所需onLoad结束*************//
-  }, 
+   }, // 🙌 onLoad 结束
 
     // 点踩函数
     downFunction(e){
@@ -309,7 +314,6 @@ Page({
           } else { 
             // 若此用户点赞了该item，取消赞 + 点踩
             if(zan_id.includes(item_id)){
-              //console.log("hhhhh")
               for (var j in zan_id) {
                 if (zan_id[j] == item_id) {
                   zan_id.splice(j, 1); //删除取消点赞的id
@@ -348,7 +352,7 @@ Page({
             ItemList: this.data.newList
             },
             success: res => {
-              console.log("踩数据后台已同步",res)
+              console.log("踩数据后台已同步")
             }
           })
           // 动态刷新页面的最新点赞&点踩数
@@ -360,94 +364,94 @@ Page({
       }
     },
 
-    // 点赞函数
+   // 点赞函数
     upFunction(e){
       var shareid = e.currentTarget.dataset.id
       console.log("shareid: "+shareid)
       this.zan(shareid);
     },
     zan: function (item_id) {
-      var that = this;
-      var cookie_id = wx.getStorageSync('zan') || []; //获取全部点赞的id
-      var cai_id = wx.getStorageSync('cai') || [];
-      var openid = that.data.openid
-      console.log(that.data.newList)
+    var that = this;
+    var cookie_id = wx.getStorageSync('zan') || []; //获取全部点赞的id
+    var cai_id = wx.getStorageSync('cai') || [];
+    var openid = that.data.openid
+    // console.log(that.data.newList)
 
-      for (var i = 0; i < that.data.newList.length; i++) {
-        if (that.data.newList[i].item == item_id) { //数据列表中找到对应的id
-          var numU = that.data.newList[i].Up; //当前点赞数
-          var numD = that.data.newList[i].Down;
-          // 若已经点过赞了，取消点赞    
-          if (cookie_id.includes(item_id) ) { 
-            for (var j in cookie_id) {
-              if (cookie_id[j] == item_id) {
-                cookie_id.splice(j, 1); //删除取消点赞的id
-              }
+    for (var i = 0; i < that.data.newList.length; i++) {
+      if (that.data.newList[i].item == item_id) { //数据列表中找到对应的id
+        var numU = that.data.newList[i].Up; //当前点赞数
+        var numD = that.data.newList[i].Down;
+        // 若已经点过赞了，取消点赞    
+        if (cookie_id.includes(item_id) ) { 
+          for (var j in cookie_id) {
+            if (cookie_id[j] == item_id) {
+              cookie_id.splice(j, 1); //删除取消点赞的id
             }
-            --numU; //点赞数减1
-            if (numU < 0) { numU = 0}
-            that.setData({
-              [`newList[${i}].Up`]: numU, 
-              [`newList[${i}.].like`]: false // 数据中like为'false'是未点赞
-            })
-            wx.setStorageSync('zan', cookie_id);
-            wx.showToast({
-              title: "取消点赞",
-              icon: 'none'
-            })
-            this.data.newList[i].like_people.pop(openid)
-          } else{
-            // 若用户已点踩，取消点踩，再点赞
-            if(cai_id.includes(item_id)){
-              for (var j in cai_id) {
-                if (cai_id[j] == item_id) {
-                  cai_id.splice(j, 1); //删除取消点赞的id
-                }
-              }
-              --numD; //点踩数减1
-              if (numD < 0) { numD = 0}
-              that.setData({
-                [`newList[${i}].Down`]: numD, // 同步全量list信息
-                [`newList[${i}.].cai`]: false // 数据中like为'false'是未点赞
-              })
-              wx.setStorageSync('cai', cai_id); // 同步本地缓存key信息
-              this.data.newList[i].cai_people.pop(openid)
-            }
-            // 点赞操作
-            ++numU; // 点赞数加1
-            that.setData({
-              [`newList[${i}].Up`]: numU,
-              [`newList[${i}.].like`]: true
-            })
-            cookie_id.unshift(item_id); // 新增赞的id
-            wx.setStorageSync('zan', cookie_id);
-            wx.showToast({
-              title: "点赞成功",
-              icon: 'none'
-            })
-            if(this.data.newList[i].like_people == undefined) {
-              this.data.newList[i].like_people = []
-            }
-            this.data.newList[i].like_people.push(openid)
-          } 
-          // 后台数据同步
-          ZK.update({
-            data: {
-             ItemList:this.data.newList,
-            },
-            success: res => {
-              console.log("点赞数据后台已同步",res)
-            }
-          })
-          // 更新点赞后的点赞数
+          }
+          --numU; //点赞数减1
+          if (numU < 0) { numU = 0}
           that.setData({
-            [`RZK[${i}].Up`]: numU,
-            [`RZK[${i}].Down`]: numD,
+            [`newList[${i}].Up`]: numU, 
+            [`newList[${i}.].like`]: false // 数据中like为'false'是未点赞
           })
+          wx.setStorageSync('zan', cookie_id);
+          wx.showToast({
+            title: "取消点赞",
+            icon: 'none'
+          })
+          this.data.newList[i].like_people.pop(openid)
+        } else{
+          // 若用户已点踩，取消点踩，再点赞
+          if(cai_id.includes(item_id)){
+            for (var j in cai_id) {
+              if (cai_id[j] == item_id) {
+                cai_id.splice(j, 1); //删除取消点赞的id
+              }
+            }
+            --numD; //点踩数减1
+            if (numD < 0) { numD = 0}
+            that.setData({
+              [`newList[${i}].Down`]: numD, // 同步全量list信息
+              [`newList[${i}.].cai`]: false // 数据中like为'false'是未点赞
+            })
+            wx.setStorageSync('cai', cai_id); // 同步本地缓存key信息
+            this.data.newList[i].cai_people.pop(openid)
+          }
+          // 点赞操作
+          ++numU; // 点赞数加1
+          that.setData({
+            [`newList[${i}].Up`]: numU,
+            [`newList[${i}.].like`]: true
+          })
+          cookie_id.unshift(item_id); // 新增赞的id
+          wx.setStorageSync('zan', cookie_id);
+          wx.showToast({
+            title: "点赞成功",
+            icon: 'none'
+          })
+          if(this.data.newList[i].like_people == undefined) {
+            this.data.newList[i].like_people = []
+          }
+          this.data.newList[i].like_people.push(openid)
+        } 
+        // 后台数据同步
+        ZK.update({
+          data: {
+           ItemList:this.data.newList,
+          },
+          success: res => {
+            console.log("点赞数据后台已同步")
+          }
+        })
+        // 更新点赞后的点赞数
+        that.setData({
+          [`RZK[${i}].Up`]: numU,
+          [`RZK[${i}].Down`]: numD,
+        })
 
-        }
       }
-    },
+    }
+  },
 
      
   

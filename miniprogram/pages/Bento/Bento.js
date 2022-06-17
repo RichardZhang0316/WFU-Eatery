@@ -306,7 +306,6 @@ Page({
         } else { 
           // 若此用户点赞了该item，取消赞 + 点踩
           if(zan_id.includes(item_id)){
-            //console.log("hhhhh")
             for (var j in zan_id) {
               if (zan_id[j] == item_id) {
                 zan_id.splice(j, 1); //删除取消点赞的id
@@ -361,7 +360,7 @@ Page({
   // 点赞函数
   upFunction(e){
     var shareid = e.currentTarget.dataset.id
-    console.log("shareid: "+shareid)
+    console.log("shareid: " + shareid)
     this.zan(shareid);
   },
   zan: function (item_id) {
@@ -375,7 +374,6 @@ Page({
       if (that.data.newList[i].item == item_id) { //数据列表中找到对应的id
         var numU = that.data.newList[i].Up; //当前点赞数
         var numD = that.data.newList[i].Down;
-        console.log("hhhhh")
         // 若已经点过赞了，取消点赞    
         if (cookie_id.includes(item_id) ) { 
           for (var j in cookie_id) {
@@ -420,7 +418,6 @@ Page({
             [`newList[${i}].Up`]: numU,
             [`newList[${i}.].like`]: true
           })
-          console.log("yyyy")
           cookie_id.unshift(item_id); // 新增赞的id
           wx.setStorageSync('zan', cookie_id);
           wx.showToast({

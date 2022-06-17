@@ -100,21 +100,21 @@
 
     <foodCard title="Spicy California Spring Roll 辣加州春卷" desc="把加州卷的料放春卷里" thumb="https://www.bentosushi.com/wp-content/uploads/2019/02/Spicy-Cali-Spring-Roll-V2-1024x1024.jpg" price="7" currency="$">
         <view slot="footer">
-          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='SpicyCaliSpR'wx:if="{{!newList[8].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='SpicyCaliSpR'wx:else/> {{RBT[8].Up}} </van-button> 
-          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='SpicyCaliSpR' wx:if="{{!newList[8].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='SpicyCaliSpR' wx:else></view>{{RBT[8].Down}} </van-button> 
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='SpicyCaliSpRoll'wx:if="{{!newList[8].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='SpicyCaliSpRoll'wx:else/> {{RBT[8].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='SpicyCaliSpRoll' wx:if="{{!newList[8].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='SpicyCaliSpRoll' wx:else></view>{{RBT[8].Down}} </van-button> 
       </view>
     </foodCard>
 
     <foodCard title="Vegetable Green Dragon Crunch Roll 蔬菜青龙卷" desc="由海藻沙拉、芝麻油、芝麻、黑木耳、辣椒、牛油果、黄瓜、胡萝卜和海藻制成" thumb="https://www.bentosushi.com/wp-content/uploads/2019/02/Veg-Green-Dragon-Crunch-Roll_clear-pack-scaled.jpg" price="7" currency="$">
-        <view slot="footer">
-          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='VegGreenDragCR'wx:if="{{!newList[9].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='VegGreenDragCR'wx:else/> {{RBT[9].Up}} </van-button> 
-          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='VegGreenDragCR' wx:if="{{!newList[9].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='VegGreenDragCR' wx:else></view>{{RBT[9].Down}} </van-button> 
+      <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='VegeGreenDragonCRoll'wx:if="{{!newList[9].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='VegeGreenDragonCRoll'wx:else/> {{RBT[9].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='VegeGreenDragonCRoll' wx:if="{{!newList[9].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='VegeGreenDragonCRoll' wx:else></view>{{RBT[9].Down}} </van-button> 
       </view>
     </foodCard>
 
     <foodCard title="Vegetable Spring Roll 蔬菜春卷" desc="由芒果、胡萝卜、黄瓜、生菜和鳄梨制成" thumb="https://www.bentosushi.com/wp-content/uploads/2019/02/Vege-Spring-Roll-V1-1024x1024.jpg" price="7" currency="$">
         <view slot="footer">
-          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='VegSR'wx:if="{{!newList[10].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='VegSR'wx:else/> {{RBT[10].Up}} </van-button> 
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='VegSR'wx:if="{{!newList[10].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='VegSR'wx:else/> {{RBT[10].Up}} </van-button> 
           <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='VegSR' wx:if="{{!newList[10].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='VegSR' wx:else></view>{{RBT[10].Down}} </van-button> 
       </view>
     </foodCard>

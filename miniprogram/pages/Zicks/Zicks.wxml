@@ -92,8 +92,8 @@
   <van-tab title="Zick's Signature">
     <foodCard desc="930卡路里 详情: 炸土豆、培根、烧烤酱、切达干酪、马苏里拉奶酪" title="Puff Daddy" thumb="https://spoonuniversity.com/wp-content/uploads/sites/100/2016/03/zicks-changes.jpg" price="8.79" currency="$">
       <view slot="footer">
-          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='Puffdaddy'wx:if="{{!newList[6].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='Puffdaddy'wx:else/> {{RZK[6].Up}} </van-button> 
-          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='Puffdaddy' wx:if="{{!newList[6].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='Puffdaddy' wx:else></view>{{RZK[6].Down}} </van-button> 
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='Puffdaddy'wx:if="{{!newList[7].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='Puffdaddy'wx:else/> {{RZK[7].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='Puffdaddy' wx:if="{{!newList[7].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='Puffdaddy' wx:else></view>{{RZK[7].Down}} </van-button> 
         </view>
       </foodCard>
 
