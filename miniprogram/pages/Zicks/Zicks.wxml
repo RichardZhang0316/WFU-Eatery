@@ -36,33 +36,142 @@
 
 <van-tabs active="{{ active }}" bind:change="onChange" swipeable ellipsis="{{false}}" color="#d6b160" title-active-color="#d6b160">
   <van-tab title="Starters">
-    <foodCard desc="540卡路里 详情：5根金脆炸马苏里拉棒配齐克酱" title="Mozzarella Sticks 马苏里拉芝士条" thumb="https://sugarspunrun.com/wp-content/uploads/2021/07/Homemade-Mozzarella-Sticks-Recipe-1-of-1.jpg" price="6.69" currency="$"/>
-    <foodCard desc="700卡路里 详情：Tater tots 淋上切达干酪、培根、西红柿和红洋葱，淋上牧场调料" title="Totchos" thumb="https://www.keyingredient.com/media/03/50/3cee1948cad642e9faaeaa07841dc1f61581.jpg/rh/loaded-totchos.jpg" price="6.69" currency="$"/>
-    <foodCard desc="630卡路里 详情：三个牛肉丸子配经典红酱、生乳清干酪、意大利辣香肠和烤面包屑" title="Meatball Trio 肉丸三重奏" thumb="https://media-cdn.tripadvisor.com/media/photo-s/12/26/71/6f/mellow-mushroom-meatball.jpg" price="6.99" currency="$"/>
-    <foodCard desc="620卡路里" title="Garlic Knots 大蒜结" thumb="https://www.whiskaffair.com/wp-content/uploads/2014/10/Garlic-Knots-3.jpg" price="5.19" currency="$"/>
+    <foodCard desc="540卡路里 详情：5根金脆炸马苏里拉棒配齐克酱" title="Mozzarella Sticks 马苏里拉芝士条" thumb="https://sugarspunrun.com/wp-content/uploads/2021/07/Homemade-Mozzarella-Sticks-Recipe-1-of-1.jpg" price="6.69" currency="$">
+    <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='Mozzarella'wx:if="{{!newList[0].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='Mozzarella'wx:else/> {{RZK[0].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='Mozzarella' wx:if="{{!newList[0].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='Mozzarella' wx:else></view>{{RZK[0].Down}} </van-button> 
+        </view>
+      </foodCard>
+  
+  <foodCard desc="700卡路里 详情：Tater tots 淋上切达干酪、培根、西红柿和红洋葱，淋上牧场调料" title="Totchos" thumb="https://www.keyingredient.com/media/03/50/3cee1948cad642e9faaeaa07841dc1f61581.jpg/rh/loaded-totchos.jpg" price="6.69" currency="$">
+
+  <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='Totchos'wx:if="{{!newList[1].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='Totchos'wx:else/> {{RZK[1].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='Totchos' wx:if="{{!newList[1].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='Totchos' wx:else></view>{{RZK[1].Down}} </van-button> 
+        </view>
+      </foodCard>
+ 
+    <foodCard desc="630卡路里 详情：三个牛肉丸子配经典红酱、生乳清干酪、意大利辣香肠和烤面包屑" title="Meatball Trio 肉丸三重奏" thumb="https://media-cdn.tripadvisor.com/media/photo-s/12/26/71/6f/mellow-mushroom-meatball.jpg" price="6.99" currency="$">
+
+    <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='MeatballTrio'wx:if="{{!newList[2].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='MeatballTrio'wx:else/> {{RZK[2].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='MeatballTrio' wx:if="{{!newList[2].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='MeatballTrio' wx:else></view>{{RZK[2].Down}} </van-button> 
+        </view>
+      </foodCard>
+    
+    <foodCard desc="620卡路里" title="Garlic Knots 大蒜结" thumb="https://www.whiskaffair.com/wp-content/uploads/2014/10/Garlic-Knots-3.jpg" price="5.19" currency="$">
+
+    <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='GarlicKnots'wx:if="{{!newList[3].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='GarlicKnots'wx:else/> {{RZK[3].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='GarlicKnots' wx:if="{{!newList[3].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='GarlicKnots' wx:else></view>{{RZK[3].Down}} </van-button> 
+        </view>
+      </foodCard>
+  
   </van-tab>
+
   <van-tab title="Slices">
-    <foodCard desc="450卡路里 详情：经典的18英尺披萨配 Zick 酱、新鲜马苏里拉奶酪、罗勒和橄榄油" title="Margherita Pizza 玛格丽塔披萨" thumb="https://cdn.loveandlemons.com/wp-content/uploads/2019/09/margherita-pizza.jpg" price="4.29" currency="$"/>
-    <foodCard desc="390卡路里 详情：经典的18英尺比萨配 Zick's 酱、马苏里拉奶酪和意大利辣香肠" title="Pepperoni Pizza 意大利香肠披萨" thumb="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F19%2F2014%2F07%2F10%2Fpepperoni-pizza-ck-x.jpg&q=85" price="4.29" currency="$"/>
-    <foodCard desc="490卡路里 详情：经典的18英尺披萨，配意大利乳清干酪和帕尔马干酪、香肠和蘑菇" title="White Pizza 白披萨" thumb="https://www.modernhoney.com/wp-content/uploads/2019/05/The-Best-3-Cheese-White-Pizza-3.jpg" price="4.29" currency="$"/>
+    <foodCard desc="450卡路里 详情：经典的18英尺披萨配 Zick 酱、新鲜马苏里拉奶酪、罗勒和橄榄油" title="Margherita Pizza 玛格丽塔披萨" thumb="https://cdn.loveandlemons.com/wp-content/uploads/2019/09/margherita-pizza.jpg" price="4.29" currency="$">
+    <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='MargheritaPizza'wx:if="{{!newList[4].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='MargheritaPizza'wx:else/> {{RZK[4].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='MargheritaPizza' wx:if="{{!newList[4].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='MargheritaPizza' wx:else></view>{{RZK[4].Down}} </van-button> 
+        </view>
+      </foodCard>
+    <foodCard desc="390卡路里 详情：经典的18英尺比萨配 Zick's 酱、马苏里拉奶酪和意大利辣香肠" title="Pepperoni Pizza 意大利香肠披萨" thumb="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F19%2F2014%2F07%2F10%2Fpepperoni-pizza-ck-x.jpg&q=85" price="4.29" currency="$">
+      <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='PepperoniPizza'wx:if="{{!newList[5].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='PepperoniPizza'wx:else/> {{RZK[5].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='PepperoniPizza' wx:if="{{!newList[5].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='PepperoniPizza' wx:else></view>{{RZK[5].Down}} </van-button> 
+        </view>
+      </foodCard>
+    <foodCard desc="490卡路里 详情：经典的18英尺披萨，配意大利乳清干酪和帕尔马干酪、香肠和蘑菇" title="White Pizza 白披萨" thumb="https://www.modernhoney.com/wp-content/uploads/2019/05/The-Best-3-Cheese-White-Pizza-3.jpg" price="4.29" currency="$">
+      <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='WhitePizza'wx:if="{{!newList[6].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='WhitePizza'wx:else/> {{RZK[6].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='WhitePizza' wx:if="{{!newList[6].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='WhitePizza' wx:else></view>{{RZK[6].Down}} </van-button> 
+        </view>
+      </foodCard>
   </van-tab>
   <van-tab title="Zick's Signature">
-    <foodCard desc="930卡路里 详情: 炸土豆、培根、烧烤酱、切达干酪、马苏里拉奶酪" title="Puff Daddy" thumb="https://spoonuniversity.com/wp-content/uploads/sites/100/2016/03/zicks-changes.jpg" price="8.79" currency="$"/>
-    <foodCard desc="500卡路里 详情: 罗勒青蒜酱、番茄干、马苏里拉奶酪" title="Couch Tomato" thumb="https://spoonuniversity.com/wp-content/uploads/sites/100/2016/03/zicks-changes.jpg" price="8.79" currency="$"/>
-    <foodCard desc="520卡路里 详情: 烤鸡、红洋葱、马苏里拉奶酪" title="Ken & Barbie" thumb="https://spoonuniversity.com/wp-content/uploads/sites/100/2016/03/zicks-changes.jpg" price="8.79" currency="$"/>
-    <foodCard desc="330卡路里 详情: Zick 披萨酱、鸡肉丁、烤大蒜、西兰花、马苏里拉奶酪和罗马诺奶酪" title="Chicken, Garlic & Broccoli 鸡肉、大蒜和西兰花披萨" thumb="https://spoonuniversity.com/wp-content/uploads/sites/100/2016/03/zicks-changes.jpg" price="8.79" currency="$"/>
-    <foodCard desc="530卡路里 详情: 阿尔弗雷多酱、烤土豆、培根、红洋葱、葱、切达干酪、马苏里拉奶酪、酸奶油" title="Loaded Potato 土豆披萨" thumb="https://spoonuniversity.com/wp-content/uploads/sites/100/2016/03/zicks-changes.jpg" price="8.79" currency="$"/>
-    <foodCard desc="450卡路里 详情: 阿尔弗雷多酱、鸡肉、火腿、瑞士、蓝纹奶酪" title="Chicken Cordon Bleu 鸡肉蓝纹奶酪披萨" thumb="https://spoonuniversity.com/wp-content/uploads/sites/100/2016/03/zicks-changes.jpg" price="8.79" currency="$"/>
-    <foodCard desc="390卡路里 详情: Zicks 披萨酱、菠菜、培根、红洋葱、烤大蒜和羊奶酪" title="Spinach 菠菜披萨" thumb="https://spoonuniversity.com/wp-content/uploads/sites/100/2016/03/zicks-changes.jpg" price="8.79" currency="$"/>
-    
+    <foodCard desc="930卡路里 详情: 炸土豆、培根、烧烤酱、切达干酪、马苏里拉奶酪" title="Puff Daddy" thumb="https://spoonuniversity.com/wp-content/uploads/sites/100/2016/03/zicks-changes.jpg" price="8.79" currency="$">
+      <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='Puffdaddy'wx:if="{{!newList[6].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='Puffdaddy'wx:else/> {{RZK[6].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='Puffdaddy' wx:if="{{!newList[6].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='Puffdaddy' wx:else></view>{{RZK[6].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+    <foodCard desc="500卡路里 详情: 罗勒青蒜酱、番茄干、马苏里拉奶酪" title="Couch Tomato" thumb="https://spoonuniversity.com/wp-content/uploads/sites/100/2016/03/zicks-changes.jpg" price="8.79" currency="$">
+    <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='CouchTomato'wx:if="{{!newList[8].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='CouchTomato'wx:else/> {{RZK[8].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='CouchTomato' wx:if="{{!newList[8].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='CouchTomato' wx:else></view>{{RZK[8].Down}} </van-button> 
+        </view>
+      </foodCard>
+    <foodCard desc="520卡路里 详情: 烤鸡、红洋葱、马苏里拉奶酪" title="Ken & Barbie" thumb="https://spoonuniversity.com/wp-content/uploads/sites/100/2016/03/zicks-changes.jpg" price="8.79" currency="$">
+    <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='Ken&Barbie'wx:if="{{!newList[9].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='Ken&Barbie'wx:else/> {{RZK[9].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='Ken&Barbie' wx:if="{{!newList[9].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='Ken&Barbie' wx:else></view>{{RZK[9].Down}} </van-button> 
+        </view>
+      </foodCard>
+   
+    <foodCard desc="330卡路里 详情: Zick 披萨酱、鸡肉丁、烤大蒜、西兰花、马苏里拉奶酪和罗马诺奶酪" title="Chicken, Garlic & Broccoli 鸡肉、大蒜和西兰花披萨" thumb="https://spoonuniversity.com/wp-content/uploads/sites/100/2016/03/zicks-changes.jpg" price="8.79" currency="$">
+    <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='Chicken&Garlic&Broccoli'wx:if="{{!newList[10].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='Chicken&Garlic&Broccoli'wx:else/> {{RZK[10].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='Chicken&Garlic&Broccoli' wx:if="{{!newList[10].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='Chicken&Garlic&Broccoli' wx:else></view>{{RZK[10].Down}} </van-button> 
+        </view>
+      </foodCard>
+    <foodCard desc="530卡路里 详情: 阿尔弗雷多酱、烤土豆、培根、红洋葱、葱、切达干酪、马苏里拉奶酪、酸奶油" title="Loaded Potato 土豆披萨" thumb="https://spoonuniversity.com/wp-content/uploads/sites/100/2016/03/zicks-changes.jpg" price="8.79" currency="$">
+    <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='LoadedPotato'wx:if="{{!newList[11].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='LoadedPotato'wx:else/> {{RZK[11].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='LoadedPotato' wx:if="{{!newList[11].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='LoadedPotato' wx:else></view>{{RZK[11].Down}} </van-button> 
+        </view>
+      </foodCard>
+    <foodCard desc="450卡路里 详情: 阿尔弗雷多酱、鸡肉、火腿、瑞士、蓝纹奶酪" title="Chicken Cordon Bleu 鸡肉蓝纹奶酪披萨" thumb="https://spoonuniversity.com/wp-content/uploads/sites/100/2016/03/zicks-changes.jpg" price="8.79" currency="$">
+      <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='ChickenCordonBleu'wx:if="{{!newList[12].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='ChickenCordonBleu'wx:else/> {{RZK[12].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='ChickenCordonBleu' wx:if="{{!newList[12].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='ChickenCordonBleu' wx:else></view>{{RZK[12].Down}} </van-button> 
+        </view>
+      </foodCard>
+    <foodCard desc="390卡路里 详情: Zicks 披萨酱、菠菜、培根、红洋葱、烤大蒜和羊奶酪" title="Spinach 菠菜披萨" thumb="https://spoonuniversity.com/wp-content/uploads/sites/100/2016/03/zicks-changes.jpg" price="8.79" currency="$">
+    <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='Spinach'wx:if="{{!newList[13].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='Spinach'wx:else/> {{RZK[13].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='Spinach' wx:if="{{!newList[13].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='Spinach' wx:else></view>{{RZK[13].Down}} </van-button> 
+        </view>
+      </foodCard>
   </van-tab>
   <van-tab title="Flying the Coop">
-    <foodCard desc="770卡路里" title="TLC Combo 1" thumb="https://i.loli.net/2021/11/28/FmJbgWHPLqenQBh.png" price="7.99"currency="$"/>
-    <foodCard desc="980卡路里" title="TLC Combo 2" thumb="https://i.loli.net/2021/11/28/FmJbgWHPLqenQBh.png" price="9.99"currency="$"/>
-    <foodCard desc="770卡路里 (有汉堡)" title="TLC Combo 3" thumb="https://i.loli.net/2021/11/28/FmJbgWHPLqenQBh.png" price="7.99"currency="$"/>
-    <foodCard desc="490卡路里 (可以换为Chipotle Honey风味)" title="FTC Chicken Tenders Sandwich 鸡肉三明治" thumb="https://user-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_1440,w_720,f_auto,q_auto/1408291/Web_Flew_The_Coop_Fare_Photo-19_scxbzv.jpg" price="4.29"currency="$"/>
-    <foodCard desc="490卡路里 (可以换为Chipotle Honey风味)" title="FTC Chicken Tenders (3 pc.)" thumb="https://food.fnr.sndimg.com/content/dam/images/food/plus/fullset/2020/02/04/0/GuysBigBash_TOUCHDOWN-TENDERS_0023_s4x3.jpg.rend.hgtvcom.406.305.suffix/1580853266209.jpeg" price="4.29"currency="$"/>
-    <foodCard desc="820卡路里 (可以换为Chipotle Honey风味)" title="FTC Chicken Tenders (5 pc.)" thumb="https://food.fnr.sndimg.com/content/dam/images/food/plus/fullset/2020/02/04/0/GuysBigBash_TOUCHDOWN-TENDERS_0023_s4x3.jpg.rend.hgtvcom.406.305.suffix/1580853266209.jpeg" price="5.79"currency="$"/>
+    <foodCard desc="770卡路里" title="TLC Combo 1" thumb="https://i.loli.net/2021/11/28/FmJbgWHPLqenQBh.png" price="7.99"currency="$">
+    <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='TLCCombo1'wx:if="{{!newList[14].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='TLCCombo1'wx:else/> {{RZK[14].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='TLCCombo1' wx:if="{{!newList[14].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='TLCCombo1' wx:else></view>{{RZK[14].Down}} </van-button> 
+        </view>
+      </foodCard>
+    <foodCard desc="980卡路里" title="TLC Combo 2" thumb="https://i.loli.net/2021/11/28/FmJbgWHPLqenQBh.png" price="9.99"currency="$">
+    <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='TLCComboII'wx:if="{{!newList[15].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='TLCComboII'wx:else/> {{RZK[15].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='TLCComboII' wx:if="{{!newList[15].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='TLCComboII' wx:else></view>{{RZK[15].Down}} </van-button> 
+        </view>
+      </foodCard>
+    <foodCard desc="770卡路里 (有汉堡)" title="TLC Combo 3" thumb="https://i.loli.net/2021/11/28/FmJbgWHPLqenQBh.png" price="7.99"currency="$">
+    <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='TLCCombo3'wx:if="{{!newList[16].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='TLCCombo3'wx:else/> {{RZK[16].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='TLCCombo3' wx:if="{{!newList[16].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='TLCCombo3' wx:else></view>{{RZK[16].Down}} </van-button> 
+        </view>
+      </foodCard>
+    <foodCard desc="490卡路里 (可以换为Chipotle Honey风味)" title="FTC Chicken Tenders Sandwich 鸡肉三明治" thumb="https://user-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_1440,w_720,f_auto,q_auto/1408291/Web_Flew_The_Coop_Fare_Photo-19_scxbzv.jpg" price="4.29"currency="$">
+    <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='FTCChickenTendersSandwich'wx:if="{{!newList[17].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='FTCChickenTendersSandwich'wx:else/> {{RZK[17].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='FTCChickenTendersSandwich' wx:if="{{!newList[17].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='FTCChickenTendersSandwich' wx:else></view>{{RZK[17].Down}} </van-button> 
+        </view>
+      </foodCard>
+    <foodCard desc="490卡路里 (可以换为Chipotle Honey风味)" title="FTC Chicken Tenders (3 pc.)" thumb="https://food.fnr.sndimg.com/content/dam/images/food/plus/fullset/2020/02/04/0/GuysBigBash_TOUCHDOWN-TENDERS_0023_s4x3.jpg.rend.hgtvcom.406.305.suffix/1580853266209.jpeg" price="4.29"currency="$">
+    <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='FTCChickenTenders3'wx:if="{{!newList[18].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='FTCChickenTenders3'wx:else/> {{RZK[18].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='FTCChickenTenders3' wx:if="{{!newList[18].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='FTCChickenTenders3' wx:else></view>{{RZK[18].Down}} </van-button> 
+        </view>
+      </foodCard>
+    <foodCard desc="820卡路里 (可以换为Chipotle Honey风味)" title="FTC Chicken Tenders (5 pc.)" thumb="https://food.fnr.sndimg.com/content/dam/images/food/plus/fullset/2020/02/04/0/GuysBigBash_TOUCHDOWN-TENDERS_0023_s4x3.jpg.rend.hgtvcom.406.305.suffix/1580853266209.jpeg" price="5.79"currency="$">
+    <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='FTCChickenTenders5'wx:if="{{!newList[19].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='FTCChickenTenders5'wx:else/> {{RZK[19].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='FTCChickenTenders5' wx:if="{{!newList[19].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='FTCChickenTenders5' wx:else></view>{{RZK[19].Down}} </van-button> 
+        </view>
+      </foodCard>
   </van-tab>
 </van-tabs>
 
