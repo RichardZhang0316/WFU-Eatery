@@ -36,103 +36,463 @@
 
 <van-tabs swipeable ellipsis="{{false}}" color="#d6b160" title-active-color="#d6b160">
   <van-tab title="Bagels">
-      <foodCard desc="简单却是永恒的经典" title="Plain bagel 原味贝果" thumb="https://www.einsteinbros.com/wp-content/uploads/2019/04/menu_items_new_ClassicBagel_Plain.jpg" price="1.39+" currency="$"/>
-      <foodCard desc="意大利进口奶酪，好吃到爆" title="Asiago Cheese Bagel 阿夏戈奶酪贝果" thumb="https://www.einsteinbros.com/wp-content/uploads/2019/04/menu_items_new_ClassicBagel_Asiago.jpg" price="1.39+" currency="$"/>
-      <foodCard desc="这里没有人工香料，只有可爱的浆果，每天早上都能让人提神。" title="Blueberry Bagel 蓝莓贝果" thumb="https://www.einsteinbros.com/wp-content/uploads/2019/04/menu_items_new_ClassicBagel_Blueberry.jpg" price="1.39+" currency="$"/>
-      <foodCard desc="将巧克力烤到完美融化程度，然后在每一口中都可以尽情享受乐趣" title="Chocolate Chip Bagel 巧克力碎贝果" thumb="https://www.einsteinbros.com/wp-content/uploads/2019/04/menu_items_new_ClassicBagel_ChocolateChip.jpg" price="1.39+" currency="$"/>
-      <foodCard desc="拥有香甜多汁的葡萄干，天国芳香的肉桂，像一个温暖、羞涩的拥抱，你可以尽情享受" title="Cinnamon Raisin Bagel 肉桂葡萄干贝果" thumb="https://www.einsteinbros.com/wp-content/uploads/2019/04/menu_items_new_ClassicBagel_CinnamonRaisin-1.jpg" price="1.39+" currency="$"/>
-      <foodCard desc="糖、香料和所有好吃的东西，都包在一个美味的贝果里！" title="Cinnamon Sugar 肉桂糖贝果" thumb="https://www.einsteinbros.com/wp-content/uploads/2019/04/menu_items_new_ClassicBagel_CinnamonSugar.jpg" price="1.39+" currency="$" />
-      <foodCard desc="用三种奶酪：马苏里拉干酪、普罗沃龙干酪和切达干酪混合而成，然后用更美味的亚洲干酪、帕尔马干酪和罗马诺干酪来结束。" title="Six-Cheese Bagel 六芝士贝果" thumb="https://www.einsteinbros.com/wp-content/uploads/2019/04/menu_items_new_GourmetBagel_SixCheese.jpg" price="1.39+" currency="$"/>
-      <foodCard desc="每一口令人垂涎欲滴的东西都能激发你的味蕾，香料组合包括：芝麻籽、洋葱、大蒜和盐" title="Everything Bagel 全能贝果" thumb="https://www.einsteinbros.com/wp-content/uploads/2019/04/menu_items_new_EverythingBagel_Website.jpg" price="1.39+" currency="$"/>
-      <foodCard desc="从健康的全麦面粉制成的贝果开始你的早晨，然后用蜂蜜和红糖达到极致。" title="Honey Whole Wheat Bagel 蜂蜜全麦贝果" thumb="https://www.einsteinbros.com/wp-content/uploads/2019/04/menu_items_new_ClassicBagel_HoneyWholeWheat.jpg" price="1.39+" currency="$" />
-      <foodCard desc="芝麻贝果既简单又可爱，是各地人们最喜欢的选择，如果你愿意的话，你会尝到一种松脆、令人满意的美妙味道！" title="Sesame Bagel 芝麻贝果" thumb="https://www.einsteinbros.com/wp-content/uploads/2019/04/menu_items_new_ClassicBagel_SesameSeed.jpg" price="1.39+" currency="$" />
+      <foodCard desc="简单却是永恒的经典" title="Plain bagel 原味贝果" thumb="https://www.einsteinbros.com/wp-content/uploads/2019/04/menu_items_new_ClassicBagel_Plain.jpg" price="1.39+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='PlainBg'wx:if="{{!newList[0].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='PlainBg'wx:else/> {{REB[0].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='PlainBg' wx:if="{{!newList[0].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='PlainBg' wx:else></view>{{REB[0].Down}} </van-button> 
+      </view>
+    </foodCard>
+
+      <foodCard desc="意大利进口奶酪，好吃到爆" title="Asiago Cheese Bagel 阿夏戈奶酪贝果" thumb="https://www.einsteinbros.com/wp-content/uploads/2019/04/menu_items_new_ClassicBagel_Asiago.jpg" price="1.39+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='AsiagoCheeseBg'wx:if="{{!newList[1].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='AsiagoCheeseBg'wx:else/> {{REB[1].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='AsiagoCheeseBg' wx:if="{{!newList[1].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='AsiagoCheeseBg' wx:else></view>{{REB[1].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="这里没有人工香料，只有可爱的浆果，每天早上都能让人提神。" title="Blueberry Bagel 蓝莓贝果" thumb="https://www.einsteinbros.com/wp-content/uploads/2019/04/menu_items_new_ClassicBagel_Blueberry.jpg" price="1.39+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='BlueberryBg'wx:if="{{!newList[2].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='BlueberryBg'wx:else/> {{REB[2].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='BlueberryBg' wx:if="{{!newList[2].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='BlueberryBg' wx:else></view>{{REB[2].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="将巧克力烤到完美融化程度，然后在每一口中都可以尽情享受乐趣" title="Chocolate Chip Bagel 巧克力碎贝果" thumb="https://www.einsteinbros.com/wp-content/uploads/2019/04/menu_items_new_ClassicBagel_ChocolateChip.jpg" price="1.39+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='ChocChipBg'wx:if="{{!newList[3].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='ChocChipBg'wx:else/> {{REB[3].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='ChocChipBg' wx:if="{{!newList[3].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='ChocChipBg' wx:else></view>{{REB[3].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="拥有香甜多汁的葡萄干，天国芳香的肉桂，像一个温暖、羞涩的拥抱，你可以尽情享受" title="Cinnamon Raisin Bagel 肉桂葡萄干贝果" thumb="https://www.einsteinbros.com/wp-content/uploads/2019/04/menu_items_new_ClassicBagel_CinnamonRaisin-1.jpg" price="1.39+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='CinnRaisinBg'wx:if="{{!newList[4].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='CinnRaisinBg'wx:else/> {{REB[4].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='CinnRaisinBg' wx:if="{{!newList[4].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='CinnRaisinBg' wx:else></view>{{REB[4].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="糖、香料和所有好吃的东西，都包在一个美味的贝果里！" title="Cinnamon Sugar Bagel 肉桂糖贝果" thumb="https://www.einsteinbros.com/wp-content/uploads/2019/04/menu_items_new_ClassicBagel_CinnamonSugar.jpg" price="1.39+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='CinnSugarBg'wx:if="{{!newList[5].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='CinnSugarBg'wx:else/> {{REB[5].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='CinnSugarBg' wx:if="{{!newList[5].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='CinnSugarBg' wx:else></view>{{REB[5].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="用三种奶酪：马苏里拉干酪、普罗沃龙干酪和切达干酪混合而成，然后用更美味的亚洲干酪、帕尔马干酪和罗马诺干酪来结束。" title="Six-Cheese Bagel 六芝士贝果" thumb="https://www.einsteinbros.com/wp-content/uploads/2019/04/menu_items_new_GourmetBagel_SixCheese.jpg" price="1.39+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='SixCheeseBg'wx:if="{{!newList[6].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='SixCheeseBg'wx:else/> {{REB[6].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='SixCheeseBg' wx:if="{{!newList[6].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='SixCheeseBg' wx:else></view>{{REB[6].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="每一口令人垂涎欲滴的东西都能激发你的味蕾，香料组合包括：芝麻籽、洋葱、大蒜和盐" title="Everything Bagel 全能贝果" thumb="https://www.einsteinbros.com/wp-content/uploads/2019/04/menu_items_new_EverythingBagel_Website.jpg" price="1.39+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='EverythingBg'wx:if="{{!newList[7].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='EverythingBg'wx:else/> {{REB[7].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='EverythingBg' wx:if="{{!newList[7].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='EverythingBg' wx:else></view>{{REB[7].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="从健康的全麦面粉制成的贝果开始你的早晨，然后用蜂蜜和红糖达到极致。" title="Honey Whole Wheat Bagel 蜂蜜全麦贝果" thumb="https://www.einsteinbros.com/wp-content/uploads/2019/04/menu_items_new_ClassicBagel_HoneyWholeWheat.jpg" price="1.39+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='HoneyWholeWheatBg'wx:if="{{!newList[8].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='HoneyWholeWheatBg'wx:else/> {{REB[8].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='HoneyWholeWheatBg' wx:if="{{!newList[8].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='HoneyWholeWheatBg' wx:else></view>{{REB[8].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="芝麻贝果既简单又可爱，是各地人们最喜欢的选择，如果你愿意的话，你会尝到一种松脆、令人满意的美妙味道！" title="Sesame Bagel 芝麻贝果" thumb="https://www.einsteinbros.com/wp-content/uploads/2019/04/menu_items_new_ClassicBagel_SesameSeed.jpg" price="1.39+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='SesameBg'wx:if="{{!newList[9].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='SesameBg'wx:else/> {{REB[9].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='SesameBg' wx:if="{{!newList[9].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='SesameBg' wx:else></view>{{REB[9].Down}} </van-button> 
+        </view>
+      </foodCard>
   </van-tab>
 
   <van-tab title="Box of Bagels">
-      <foodCard desc="13个贝果" title="Baker's Dozen 一打贝果" thumb="https://www.einsteinbros.com/wp-content/uploads/2019/04/menu_items_new_DozenBagelBox.jpg" price="15.99+" currency="$"/>
-      <foodCard desc="6个贝果" title="1/2 Dozen Bucket 半打贝果" thumb="https://www.einsteinbros.com/wp-content/uploads/2019/04/menu_items_new_HalfDozenBagelBox.jpg" price="9.49+" currency="$"/>
-    
+      <foodCard desc="13个贝果" title="Baker's Dozen 一打贝果" thumb="https://www.einsteinbros.com/wp-content/uploads/2019/04/menu_items_new_DozenBagelBox.jpg" price="15.99+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='BakerDozen'wx:if="{{!newList[10].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='BakerDozen'wx:else/> {{REB[10].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='BakerDozen' wx:if="{{!newList[10].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='BakerDozen' wx:else></view>{{REB[10].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="6个贝果" title="1/2 Dozen Bucket 半打贝果" thumb="https://www.einsteinbros.com/wp-content/uploads/2019/04/menu_items_new_HalfDozenBagelBox.jpg" price="9.49+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='DozenBucket'wx:if="{{!newList[11].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='DozenBucket'wx:else/> {{REB[11].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='DozenBucket' wx:if="{{!newList[11].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='DozenBucket' wx:else></view>{{REB[11].Down}} </van-button> 
+        </view>
+      </foodCard>
   </van-tab >
 
   <van-tab title="Shmear">
-      <foodCard desc="双倍搅打的shmear（涂抹的酱）加上大量的新鲜草莓，味道鲜美。每一口都有春天的味道" title="Strawberry Shmear 草莓酱" thumb="https://www.einsteinbros.com/wp-content/uploads/2019/04/menu_items_new_Shmear_Strawberry.jpg" price="1.6" currency="$"/>
-      <foodCard desc="双倍搅打着墨西哥风味，有墨西哥辣椒、番茄丁、红辣椒、洋葱和大蒜。" title="Jalapeno Salsa Shmear 墨西哥辣酱" thumb="https://www.einsteinbros.com/wp-content/uploads/2019/04/menu_items_new_Shmear_JalapenoSalsa.jpg" price="1.6" currency="$"/>
-      <foodCard desc="我们的双倍搅打着香甜甜甜的蜂蜜和健康的杏仁，轻盈可爱" title="Honey Almond Shmear 蜂蜜杏仁酱" thumb="https://www.einsteinbros.com/wp-content/uploads/2019/04/menu_items_new_Shmear_HoneyAlmond.jpg" price="1.6" currency="$"/>
-      <foodCard desc="少量的胡萝卜、甜椒、芹菜、洋葱和大葱会带来一种丰富的颜色和味道。" title=" Garden Veggie Shmear 蔬菜酱" thumb="https://www.einsteinbros.com/wp-content/uploads/2019/04/menu_items_new_Shmear_GardenVeggie.jpg" price="1.6" currency="$"/>
-      <foodCard desc="就像你最喜欢的一条牛仔裤一样，它永远不会过时" title="Plain Shmear 原味酱" thumb="https://www.einsteinbros.com/wp-content/uploads/2019/04/menu_items_new_Shmear_Plain.jpg" price="1.6" currency="$"/>
-    
+      <foodCard desc="双倍搅打的shmear（涂抹的酱）加上大量的新鲜草莓，味道鲜美。每一口都有春天的味道" title="Strawberry Shmear 草莓酱" thumb="https://www.einsteinbros.com/wp-content/uploads/2019/04/menu_items_new_Shmear_Strawberry.jpg" price="1.6" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='StrawberryS'wx:if="{{!newList[12].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='StrawberryS'wx:else/> {{REB[12].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='StrawberryS' wx:if="{{!newList[12].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='StrawberryS' wx:else></view>{{REB[12].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="双倍搅打着墨西哥风味，有墨西哥辣椒、番茄丁、红辣椒、洋葱和大蒜。" title="Jalapeno Salsa Shmear 墨西哥辣酱" thumb="https://www.einsteinbros.com/wp-content/uploads/2019/04/menu_items_new_Shmear_JalapenoSalsa.jpg" price="1.6" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='JalapenoSalsaS'wx:if="{{!newList[13].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='JalapenoSalsaS'wx:else/> {{REB[13].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='JalapenoSalsaS' wx:if="{{!newList[13].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='JalapenoSalsaS' wx:else></view>{{REB[13].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="我们的双倍搅打着香甜甜甜的蜂蜜和健康的杏仁，轻盈可爱" title="Honey Almond Shmear 蜂蜜杏仁酱" thumb="https://www.einsteinbros.com/wp-content/uploads/2019/04/menu_items_new_Shmear_HoneyAlmond.jpg" price="1.6" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='HoneyAlmondS'wx:if="{{!newList[14].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='HoneyAlmondS'wx:else/> {{REB[14].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='HoneyAlmondS' wx:if="{{!newList[14].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='HoneyAlmondS' wx:else></view>{{REB[14].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="少量的胡萝卜、甜椒、芹菜、洋葱和大葱会带来一种丰富的颜色和味道。" title=" Garden Veggie Shmear 蔬菜酱" thumb="https://www.einsteinbros.com/wp-content/uploads/2019/04/menu_items_new_Shmear_GardenVeggie.jpg" price="1.6" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='GardenVegS'wx:if="{{!newList[15].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='GardenVegS'wx:else/> {{REB[15].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='GardenVegS' wx:if="{{!newList[15].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='GardenVegS' wx:else></view>{{REB[15].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="就像你最喜欢的一条牛仔裤一样，它永远不会过时" title="Plain Shmear 原味酱" thumb="https://www.einsteinbros.com/wp-content/uploads/2019/04/menu_items_new_Shmear_Plain.jpg" price="1.6" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='PlainS'wx:if="{{!newList[16].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='PlainS'wx:else/> {{REB[16].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='PlainS' wx:if="{{!newList[16].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='PlainS' wx:else></view>{{REB[16].Down}} </van-button> 
+        </view>
+      </foodCard>
   </van-tab >
   <van-tab title="Breakfast Sandwiches">
-      <foodCard desc="鸡蛋上面是苹果木烟熏的厚切培根，最后是融化到完美的切达干酪。" title="Applewood Bacon & Cheddar Egg Sandwich 苹果木培根干酪三明治" thumb="https://www.einsteinbros.com/wp-content/uploads/2019/04/menu_items_new_ClassicSandwich_ApplewoodBaconCheddar.jpg" price="4.99+" currency="$"/>
-      <foodCard desc="鸡蛋和香喷喷的火鸡香肠搭配切达干酪，完美融合！" title="Turkey Sausage & Cheddar 火鸡香肠干酪三明治" thumb="https://www.einsteinbros.com/wp-content/uploads/2019/04/menu_items_new_ClassicSandwich_TurkeySausageCheddar.jpg" price="4.99+" currency="$"/>
-      <foodCard desc="经典早餐三明治——无笼鸡蛋，切片火腿和融化的瑞士奶酪。" title="Ham & Swiss Egg Sandwich 火腿奶酪鸡蛋三明治" thumb="https://www.einsteinbros.com/wp-content/uploads/2019/04/menu_items_new_ClassicSandwich_HamSwiss.jpg" price="4.99+" currency="$"/>
-      <foodCard desc="一个煮得完美的鸡蛋，再用刚好融化的切达奶酪点缀你的味蕾。" title="Egg & Cheddar Sandwich 鸡蛋干酪三明治" thumb="https://www.einsteinbros.com/wp-content/uploads/2019/04/menu_items_new_ClassicSandwich_CheddarCheese.jpg" price="4.69+" currency="$"/>
-      <foodCard desc="特色早餐三明治以鸡蛋、厚切培根、熏火腿和切达奶酪开始，然后以乡村辣椒酱配上奶酪结束" title="Farmhouse Egg Sandwich 农舍鸡蛋三明治" thumb="https://www.einsteinbros.com/wp-content/uploads/2020/01/DWFarmhouse_Website.jpg" price="5.69+" currency="$"/>
-      <foodCard desc="新鲜碎鸡蛋、鳄梨、多汁西红柿和新鲜菠菜，在新鲜烤贝果上涂抹烤西红柿。" title="Garden Avocado Sandwich 花园鳄梨三明治" thumb="https://www.einsteinbros.com/wp-content/uploads/2020/09/GardenAvocadoEgg_800x700.jpg" price="4.99+" currency="$"/>
-      <foodCard desc="奶酪杂烩，配以培根、鸡蛋和一份墨西哥辣椒蒜酱。" title="All-Nighter Sandwich 通宵者三明治" thumb="https://www.einsteinbros.com/wp-content/uploads/2019/11/AllNighter_800x700.jpg" price="6.29+" currency="$"/>
-      <foodCard desc="亚洲芝士贝果上有火鸡香肠、蛋清、切达芝士和我们的墨西哥辣椒沙拉酱。" title="Santa Fe Egg White Sandwich 圣菲蛋清三明治" thumb="https://www.einsteinbros.com/wp-content/uploads/2020/07/EBB-SantaFeEggWhiteCheddar_800x700-2-scaled.jpg" price="4.99+" currency="$"/>
-      <foodCard desc="贝果加上精心准备的蛋清，配上切片番茄、新鲜鳄梨和可口的烤番茄酱。" title="Bacon, Avocado, & Tomato Egg White Sandwich 培根鳄梨番茄蛋清三明治" thumb="https://www.einsteinbros.com/wp-content/uploads/2020/01/DWBaconAvoTom_Website.jpg" price="4.99+" currency="$"/>
-      
+      <foodCard desc="鸡蛋上面是苹果木烟熏的厚切培根，最后是融化到完美的切达干酪。" title="Applewood Bacon & Cheddar Egg Sandwich 苹果木培根干酪三明治" thumb="https://www.einsteinbros.com/wp-content/uploads/2019/04/menu_items_new_ClassicSandwich_ApplewoodBaconCheddar.jpg" price="4.99+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='ApplewoodBaconCheddarEggSand'wx:if="{{!newList[17].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='ApplewoodBaconCheddarEggSand'wx:else/> {{REB[17].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='ApplewoodBaconCheddarEggSand' wx:if="{{!newList[17].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='ApplewoodBaconCheddarEggSand' wx:else></view>{{REB[17].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="鸡蛋和香喷喷的火鸡香肠搭配切达干酪，完美融合！" title="Turkey Sausage & Cheddar Sandwich 火鸡香肠干酪三明治" thumb="https://www.einsteinbros.com/wp-content/uploads/2019/04/menu_items_new_ClassicSandwich_TurkeySausageCheddar.jpg" price="4.99+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='TurkeySausageCheddarSand'wx:if="{{!newList[18].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='TurkeySausageCheddarSand'wx:else/> {{REB[18].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='TurkeySausageCheddarSand' wx:if="{{!newList[18].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='TurkeySausageCheddarSand' wx:else></view>{{REB[18].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="经典早餐三明治——无笼鸡蛋，切片火腿和融化的瑞士奶酪。" title="Ham & Swiss Egg Sandwich 火腿奶酪鸡蛋三明治" thumb="https://www.einsteinbros.com/wp-content/uploads/2019/04/menu_items_new_ClassicSandwich_HamSwiss.jpg" price="4.99+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='HamSwissEggSand'wx:if="{{!newList[19].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='HamSwissEggSand'wx:else/> {{REB[19].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='HamSwissEggSand' wx:if="{{!newList[19].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='HamSwissEggSand' wx:else></view>{{REB[19].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="一个煮得完美的鸡蛋，再用刚好融化的切达奶酪点缀你的味蕾。" title="Egg & Cheddar Sandwich 鸡蛋干酪三明治" thumb="https://www.einsteinbros.com/wp-content/uploads/2019/04/menu_items_new_ClassicSandwich_CheddarCheese.jpg" price="4.69+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='EggCheddarSand'wx:if="{{!newList[20].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='EggCheddarSand'wx:else/> {{REB[20].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='EggCheddarSand' wx:if="{{!newList[20].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='EggCheddarSand' wx:else></view>{{REB[20].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="特色早餐三明治以鸡蛋、厚切培根、熏火腿和切达奶酪开始，然后以乡村辣椒酱配上奶酪结束" title="Farmhouse Egg Sandwich 农舍鸡蛋三明治" thumb="https://www.einsteinbros.com/wp-content/uploads/2020/01/DWFarmhouse_Website.jpg" price="5.69+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='FarmhouseEggSand'wx:if="{{!newList[21].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='FarmhouseEggSand'wx:else/> {{REB[21].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='FarmhouseEggSand' wx:if="{{!newList[21].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='FarmhouseEggSand' wx:else></view>{{REB[21].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="新鲜碎鸡蛋、鳄梨、多汁西红柿和新鲜菠菜，在新鲜烤贝果上涂抹烤西红柿。" title="Garden Avocado Sandwich 花园鳄梨三明治" thumb="https://www.einsteinbros.com/wp-content/uploads/2020/09/GardenAvocadoEgg_800x700.jpg" price="4.99+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='GardenAvocadoSand'wx:if="{{!newList[22].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='GardenAvocadoSand'wx:else/> {{REB[22].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='GardenAvocadoSand' wx:if="{{!newList[22].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='GardenAvocadoSand' wx:else></view>{{REB[22].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="奶酪杂烩，配以培根、鸡蛋和一份墨西哥辣椒蒜酱。" title="All-Nighter Sandwich 通宵者三明治" thumb="https://www.einsteinbros.com/wp-content/uploads/2019/11/AllNighter_800x700.jpg" price="6.29+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='AllNighterSand'wx:if="{{!newList[23].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='AllNighterSand'wx:else/> {{REB[23].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='AllNighterSand' wx:if="{{!newList[23].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='AllNighterSand' wx:else></view>{{REB[23].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="亚洲芝士贝果上有火鸡香肠、蛋清、切达芝士和我们的墨西哥辣椒沙拉酱。" title="Santa Fe Egg White Sandwich 圣菲蛋清三明治" thumb="https://www.einsteinbros.com/wp-content/uploads/2020/07/EBB-SantaFeEggWhiteCheddar_800x700-2-scaled.jpg" price="4.99+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='SantaFeEggWhiteSand'wx:if="{{!newList[24].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='SantaFeEggWhiteSand'wx:else/> {{REB[24].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='SantaFeEggWhiteSand' wx:if="{{!newList[24].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='SantaFeEggWhiteSand' wx:else></view>{{REB[24].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="贝果加上精心准备的蛋清，配上切片番茄、新鲜鳄梨和可口的烤番茄酱。" title="Bacon, Avocado, & Tomato Egg White Sandwich 培根鳄梨番茄蛋清三明治" thumb="https://www.einsteinbros.com/wp-content/uploads/2020/01/DWBaconAvoTom_Website.jpg" price="4.99+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='BaconAvocadoTomatoEggWhiteSand'wx:if="{{!newList[25].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='BaconAvocadoTomatoEggWhiteSand'wx:else/> {{REB[25].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='BaconAvocadoTomatoEggWhiteSand' wx:if="{{!newList[25].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='BaconAvocadoTomatoEggWhiteSand' wx:else></view>{{REB[25].Down}} </van-button> 
+        </view>
+      </foodCard>
   </van-tab>
   <van-tab title="Deli Lunch">
-      <foodCard desc="在贝果上放上一点什锦，一些松脆的红洋葱、美味的马槟榔、几片鲜亮的西红柿和温和甘美的诺瓦鲑鱼。" title="Nova Lox & Bagel 诺瓦鲑鱼贝果" thumb="https://www.einsteinbros.com/wp-content/uploads/2020/01/DWNovaLox_Website.jpg" price="6.99+" currency="$"/>
-      <foodCard desc="把烤火鸡和所有的调味品——菠菜、黄瓜、莴苣、西红柿、洋葱和香葱什锦——都用在了这里" title="Tasty Turkey Sandwich 美味火鸡三明治" thumb="https://www.einsteinbros.com/wp-content/uploads/2019/04/menu_items_new_SignatureSandwiches_TastyTurkey.jpg" price="6.99+" currency="$"/>
-      <foodCard desc="烤火鸡配上厚切培根、奶油鳄梨、生菜、西红柿和独特的烤西红柿酱，全部放在一个贝果上。" title="Turkey B.A.T Sandwich 火鸡鳄梨培根三明治" thumb="https://www.einsteinbros.com/wp-content/uploads/2020/10/EBB-TurkeyBaconAvocado-800x700-1.jpg" price="6.99+" currency="$"/>
-      <foodCard desc="这里有你想要的每一种酥脆、健康、美味的蔬菜（西红柿、莴苣、黄瓜和红洋葱）" title="Avocado Veg Out Sandwich 鳄梨蔬菜三明治" thumb="https://www.einsteinbros.com/wp-content/uploads/2020/05/EBB_AvocadoVegOut_800x700.jpg" price="6.59+" currency="$"/>
-      <foodCard desc="烟熏火腿、瑞士奶酪、脆生菜、红洋葱、西红柿、蛋黄酱和熟食芥末" title="Ham & Swiss Deli Sandwich 火腿奶酪熟食三明治" thumb="https://www.einsteinbros.com/wp-content/uploads/2020/10/EBB-HamSwissDeli-800x700-1.jpg" price="6.69+" currency="$"/>
-      <foodCard desc="烤火鸡、切达干酪、脆生菜、新鲜切片的西红柿和红洋葱，再加上蛋黄酱和熟食芥末，全都放在一个贝果上" title="Turkey & Cheddar Deli Sandwich 火鸡干酪熟食三明治" thumb="https://www.einsteinbros.com/wp-content/uploads/2020/10/EBB-TurkeyCheddarDeli-800x700-1.jpg" price="6.69+" currency="$"/>
-      <foodCard desc="生菜，西红柿，烤意式面包" title="Chicken Salad Sandwich 鸡肉沙拉三明治" thumb="https://upload.wikimedia.org/wikipedia/en/thumb/e/e8/Einstein_Bros._Bagels_%28logo%29.svg/1920px-Einstein_Bros._Bagels_%28logo%29.svg.png" price="6.69+" currency="$"/>
+      <foodCard desc="在贝果上放上一点什锦，一些松脆的红洋葱、美味的马槟榔、几片鲜亮的西红柿和温和甘美的诺瓦鲑鱼。" title="Nova Lox & Bagel 诺瓦鲑鱼贝果" thumb="https://www.einsteinbros.com/wp-content/uploads/2020/01/DWNovaLox_Website.jpg" price="6.99+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='NovaLoxBg'wx:if="{{!newList[26].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='NovaLoxBg'wx:else/> {{REB[26].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='NovaLoxBg' wx:if="{{!newList[26].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='NovaLoxBg' wx:else></view>{{REB[26].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="把烤火鸡和所有的调味品——菠菜、黄瓜、莴苣、西红柿、洋葱和香葱什锦——都用在了这里" title="Tasty Turkey Sandwich 美味火鸡三明治" thumb="https://www.einsteinbros.com/wp-content/uploads/2019/04/menu_items_new_SignatureSandwiches_TastyTurkey.jpg" price="6.99+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='TastyTurkeySand'wx:if="{{!newList[27].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='TastyTurkeySand'wx:else/> {{REB[27].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='TastyTurkeySand' wx:if="{{!newList[27].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='TastyTurkeySand' wx:else></view>{{REB[27].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="烤火鸡配上厚切培根、奶油鳄梨、生菜、西红柿和独特的烤西红柿酱，全部放在一个贝果上。" title="Turkey B.A.T Sandwich 火鸡鳄梨培根三明治" thumb="https://www.einsteinbros.com/wp-content/uploads/2020/10/EBB-TurkeyBaconAvocado-800x700-1.jpg" price="6.99+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='TurkeyBATSand'wx:if="{{!newList[28].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='TurkeyBATSand'wx:else/> {{REB[28].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='TurkeyBATSand' wx:if="{{!newList[28].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='TurkeyBATSand' wx:else></view>{{REB[28].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="这里有你想要的每一种酥脆、健康、美味的蔬菜（西红柿、莴苣、黄瓜和红洋葱）" title="Avocado Veg Out Sandwich 鳄梨蔬菜三明治" thumb="https://www.einsteinbros.com/wp-content/uploads/2020/05/EBB_AvocadoVegOut_800x700.jpg" price="6.59+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='AvocadoVegOutSand'wx:if="{{!newList[29].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='AvocadoVegOutSand'wx:else/> {{REB[29].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='AvocadoVegOutSand' wx:if="{{!newList[29].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='AvocadoVegOutSand' wx:else></view>{{REB[29].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="烟熏火腿、瑞士奶酪、脆生菜、红洋葱、西红柿、蛋黄酱和熟食芥末" title="Ham & Swiss Deli Sandwich 火腿奶酪熟食三明治" thumb="https://www.einsteinbros.com/wp-content/uploads/2020/10/EBB-HamSwissDeli-800x700-1.jpg" price="6.69+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='HamSwissDeliSand'wx:if="{{!newList[30].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='HamSwissDeliSand'wx:else/> {{REB[30].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='HamSwissDeliSand' wx:if="{{!newList[30].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='HamSwissDeliSand' wx:else></view>{{REB[30].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="烤火鸡、切达干酪、脆生菜、新鲜切片的西红柿和红洋葱，再加上蛋黄酱和熟食芥末，全都放在一个贝果上" title="Turkey & Cheddar Deli Sandwich 火鸡干酪熟食三明治" thumb="https://www.einsteinbros.com/wp-content/uploads/2020/10/EBB-TurkeyCheddarDeli-800x700-1.jpg" price="6.69+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='TurkeyCheddarDeliSand'wx:if="{{!newList[31].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='TurkeyCheddarDeliSand'wx:else/> {{REB[31].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='TurkeyCheddarDeliSand' wx:if="{{!newList[31].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='TurkeyCheddarDeliSand' wx:else></view>{{REB[31].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="生菜，西红柿，烤意式面包" title="Chicken Salad Sandwich 鸡肉沙拉三明治" thumb="https://upload.wikimedia.org/wikipedia/en/thumb/e/e8/Einstein_Bros._Bagels_%28logo%29.svg/1920px-Einstein_Bros._Bagels_%28logo%29.svg.png" price="6.69+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='ChicSaladSand'wx:if="{{!newList[32].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='ChicSaladSand'wx:else/> {{REB[32].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='ChicSaladSand' wx:if="{{!newList[32].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='ChicSaladSand' wx:else></view>{{REB[32].Down}} </van-button> 
+        </view>
+      </foodCard>
   </van-tab>
 
   <van-tab title="Hot & Toasty">
-      <foodCard desc="由培根、奶酪、生菜、西红柿、绿辣椒、原味酱制作而成" title="Albuquerque Turkey Sandwich 爱伯克奇火鸡三明治" thumb="data:image/jpeg;base64,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" price="6.99+" currency="$"/>
-      <foodCard desc="上面是马苏里拉干酪、普罗沃龙干酪和切达干酪，然后加了意大利香肠、一点比萨酱" title="Pizza Bagel Pepperoni 意大利香肠披萨贝果" thumb="https://www.einsteinbros.com/wp-content/uploads/2019/04/menu_items_new_HotSandwiches_PizzaBagelPepperoni.jpg" price="6.49+" currency="$"/>
-      <foodCard desc="由瑞士干酪，番茄，菠菜，烤面包制成" title="Cheesy Veggie Melt 奶酪蔬菜溶豆" thumb="https://upload.wikimedia.org/wikipedia/en/thumb/e/e8/Einstein_Bros._Bagels_%28logo%29.svg/1200px-Einstein_Bros._Bagels_%28logo%29.svg.png" price="6.49+" currency="$"/>
-      <foodCard desc="一个原味贝果上放了甜甜可口的奶酪，然后加了一点比萨酱作为最后的美味" title="Pizza Bagel Cheese 披萨奶酪贝果" thumb="https://www.einsteinbros.com/wp-content/uploads/2019/04/menu_items_new_HotSandwiches_PizzaBagelCheese-1.jpg" price="5.79+" currency="$"/>
-      <foodCard desc="" title="Spicy Chicken Bagel 辣鸡贝果" thumb="https://upload.wikimedia.org/wikipedia/en/thumb/e/e8/Einstein_Bros._Bagels_%28logo%29.svg/1200px-Einstein_Bros._Bagels_%28logo%29.svg.png" price="6.49+" currency="$"/>
-      
+      <foodCard desc="由培根、奶酪、生菜、西红柿、绿辣椒、原味酱制作而成" title="Albuquerque Turkey Sandwich 爱伯克奇火鸡三明治" thumb="data:image/jpeg;base64,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" price="6.99+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='AlbuquerqueTurkeySand'wx:if="{{!newList[33].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='AlbuquerqueTurkeySand'wx:else/> {{REB[33].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='AlbuquerqueTurkeySand' wx:if="{{!newList[33].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='AlbuquerqueTurkeySand' wx:else></view>{{REB[33].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="上面是马苏里拉干酪、普罗沃龙干酪和切达干酪，然后加了意大利香肠、一点比萨酱" title="Pizza Bagel Pepperoni 意大利香肠披萨贝果" thumb="https://www.einsteinbros.com/wp-content/uploads/2019/04/menu_items_new_HotSandwiches_PizzaBagelPepperoni.jpg" price="6.49+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='PizzaBgPepperoni'wx:if="{{!newList[34].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='PizzaBgPepperoni'wx:else/> {{REB[34].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='PizzaBgPepperoni' wx:if="{{!newList[34].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='PizzaBgPepperoni' wx:else></view>{{REB[34].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="由瑞士干酪，番茄，菠菜，烤面包制成" title="Cheesy Veggie Melt 奶酪蔬菜溶豆" thumb="https://upload.wikimedia.org/wikipedia/en/thumb/e/e8/Einstein_Bros._Bagels_%28logo%29.svg/1200px-Einstein_Bros._Bagels_%28logo%29.svg.png" price="6.49+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='CheesyVegMelt'wx:if="{{!newList[35].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='CheesyVegMelt'wx:else/> {{REB[35].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='CheesyVegMelt' wx:if="{{!newList[35].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='CheesyVegMelt' wx:else></view>{{REB[35].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="一个原味贝果上放了甜甜可口的奶酪，然后加了一点比萨酱作为最后的美味" title="Pizza Bagel Cheese 披萨奶酪贝果" thumb="https://www.einsteinbros.com/wp-content/uploads/2019/04/menu_items_new_HotSandwiches_PizzaBagelCheese-1.jpg" price="5.79+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='PizzaBgCheese'wx:if="{{!newList[36].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='PizzaBgCheese'wx:else/> {{REB[36].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='PizzaBgCheese' wx:if="{{!newList[36].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='PizzaBgCheese' wx:else></view>{{REB[36].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="" title="Spicy Chicken Bagel 辣鸡贝果" thumb="https://upload.wikimedia.org/wikipedia/en/thumb/e/e8/Einstein_Bros._Bagels_%28logo%29.svg/1200px-Einstein_Bros._Bagels_%28logo%29.svg.png" price="6.49+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='SpicyChicBg'wx:if="{{!newList[37].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='SpicyChicBg'wx:else/> {{REB[37].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='SpicyChicBg' wx:if="{{!newList[37].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='SpicyChicBg' wx:else></view>{{REB[37].Down}} </van-button> 
+        </view>
+      </foodCard>
   </van-tab>
   <van-tab title="Sweets">
-      <foodCard desc="460-500 cal" title="Blueberry Muffin 蓝莓麦芬" thumb="https://www.einsteinbros.com/wp-content/uploads/2019/04/menu_items_new_Sweets_BlueberryMuffin.jpg" price="2.39" currency="$"/>
-      <foodCard desc="110-690 cal" title="Chocolate Chip Cookie 巧克力碎曲奇" thumb="https://www.einsteinbros.com/wp-content/uploads/2019/04/menu_items_new_Sweets_ChocolateChunkCookie.jpg" price="1.89" currency="$"/>
-      <foodCard desc="550 cal" title="Chocolate Chip Coffee Cake 巧克力碎咖啡蛋糕" thumb="https://www.einsteinbros.com/wp-content/uploads/2019/04/menu_items_new_Sweets_ChocolateChipCoffeeCake.jpg" price="2.59+" currency="$"/>
-      <foodCard desc="690 cal" title="Chocolate Chunk Cookie Poppers 巧克力饼干块" thumb="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F4579224.jpg&w=380&h=380&c=sc&poi=face&q=85" price="2.99" currency="$"/>
-      <foodCard desc="350 cal" title="Cherry Pastry 樱桃糕" thumb="https://www.einsteinbros.com/wp-content/uploads/2019/04/menu_items_new_CherryPastry_Website.jpg" price="2.89+" currency="$"/>
-    
+      <foodCard desc="460-500 cal" title="Blueberry Muffin 蓝莓麦芬" thumb="https://www.einsteinbros.com/wp-content/uploads/2019/04/menu_items_new_Sweets_BlueberryMuffin.jpg" price="2.39" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='BlueberryMuffin'wx:if="{{!newList[38].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='BlueberryMuffin'wx:else/> {{REB[38].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='BlueberryMuffin' wx:if="{{!newList[38].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='BlueberryMuffin' wx:else></view>{{REB[38].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="110-690 cal" title="Chocolate Chip Cookie 巧克力碎曲奇" thumb="https://www.einsteinbros.com/wp-content/uploads/2019/04/menu_items_new_Sweets_ChocolateChunkCookie.jpg" price="1.89" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='ChocChipCookie'wx:if="{{!newList[39].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='ChocChipCookie'wx:else/> {{REB[39].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='ChocChipCookie' wx:if="{{!newList[39].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='ChocChipCookie' wx:else></view>{{REB[39].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="550 cal" title="Chocolate Chip Coffee Cake 巧克力碎咖啡蛋糕" thumb="https://www.einsteinbros.com/wp-content/uploads/2019/04/menu_items_new_Sweets_ChocolateChipCoffeeCake.jpg" price="2.59+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='ChocChipCoffeeCake'wx:if="{{!newList[40].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='ChocChipCoffeeCake'wx:else/> {{REB[40].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='ChocChipCoffeeCake' wx:if="{{!newList[40].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='ChocChipCoffeeCake' wx:else></view>{{REB[40].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="690 cal" title="Chocolate Chunk Cookie Poppers 巧克力饼干块" thumb="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F4579224.jpg&w=380&h=380&c=sc&poi=face&q=85" price="2.99" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='ChocChunkCookiePoppers'wx:if="{{!newList[41].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='ChocChunkCookiePoppers'wx:else/> {{REB[41].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='ChocChunkCookiePoppers' wx:if="{{!newList[41].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='ChocChunkCookiePoppers' wx:else></view>{{REB[41].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="350 cal" title="Cherry Pastry 樱桃糕" thumb="https://www.einsteinbros.com/wp-content/uploads/2019/04/menu_items_new_CherryPastry_Website.jpg" price="2.89+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='CherryPastry'wx:if="{{!newList[42].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='CherryPastry'wx:else/> {{REB[42].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='CherryPastry' wx:if="{{!newList[42].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='CherryPastry' wx:else></view>{{REB[42].Down}} </van-button> 
+        </view>
+      </foodCard>
   </van-tab>
 
   <van-tab title="Hot Beverages">
-      <foodCard desc="" title="Caramel Macchiato 焦糖玛奇朵" thumb="https://www.einsteinbros.com/wp-content/uploads/2020/01/CHR_Wood_web.jpg" price="3.99+" currency="$"/>
-      <foodCard desc="120-170 cal" title="Latte 拿铁" thumb="https://www.einsteinbros.com/wp-content/uploads/2020/01/Latte_Wood_web.jpg" price="3.99+" currency="$"/>
-      <foodCard desc="270-430 cal" title="Mocha 摩卡" thumb="https://www.einsteinbros.com/wp-content/uploads/2020/01/Mocha_Wood_web.jpg" price="4.49+" currency="$"/>
-      <foodCard desc="200-310 cal" title="Chai Tea Latte 印度茶拿铁" thumb="https://www.einsteinbros.com/wp-content/uploads/2020/01/HotChai_Wood_web.jpg" price="3.99+" currency="$"/>
-      <foodCard desc="90-160 cal" title="Cappuccino 卡布奇诺" thumb="https://www.einsteinbros.com/wp-content/uploads/2020/01/Capp_Wood_web2-1.jpg" price="3.99+" currency="$"/>
-      <foodCard desc="5 cal" title="Fresh-Brewed Coffee 鲜煮咖啡" thumb="https://www.einsteinbros.com/wp-content/uploads/2020/01/CoD_Wood_web.jpg" price="2.29+" currency="$"/>
-      <foodCard desc="270-430 cal" title="Hot Cocoa 热可可" thumb="https://www.einsteinbros.com/wp-content/uploads/2020/01/HotCho_Wood_web2.jpg" price="3.59+" currency="$"/>
-      <foodCard desc="5 cal" title="Premium Tea 热茶" thumb="https://www.einsteinbros.com/wp-content/uploads/2020/01/HotTea_Wood_web.jpg" price="1.99+" currency="$"/>
-    
+      <foodCard desc="" title="Caramel Macchiato 焦糖玛奇朵" thumb="https://www.einsteinbros.com/wp-content/uploads/2020/01/CHR_Wood_web.jpg" price="3.99+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='CaramelMacchi'wx:if="{{!newList[43].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='CaramelMacchi'wx:else/> {{REB[43].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='CaramelMacchi' wx:if="{{!newList[43].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='CaramelMacchi' wx:else></view>{{REB[43].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="120-170 cal" title="Latte 拿铁" thumb="https://www.einsteinbros.com/wp-content/uploads/2020/01/Latte_Wood_web.jpg" price="3.99+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='Latte'wx:if="{{!newList[44].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='Latte'wx:else/> {{REB[44].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='Latte' wx:if="{{!newList[44].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='Latte' wx:else></view>{{REB[44].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="270-430 cal" title="Mocha 摩卡" thumb="https://www.einsteinbros.com/wp-content/uploads/2020/01/Mocha_Wood_web.jpg" price="4.49+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='Mocha'wx:if="{{!newList[45].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='Mocha'wx:else/> {{REB[45].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='Mocha' wx:if="{{!newList[45].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='Mocha' wx:else></view>{{REB[45].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="200-310 cal" title="Chai Tea Latte 印度茶拿铁" thumb="https://www.einsteinbros.com/wp-content/uploads/2020/01/HotChai_Wood_web.jpg" price="3.99+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='ChaiTeaLatte'wx:if="{{!newList[46].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='ChaiTeaLatte'wx:else/> {{REB[46].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='ChaiTeaLatte' wx:if="{{!newList[46].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='ChaiTeaLatte' wx:else></view>{{REB[46].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="90-160 cal" title="Cappuccino 卡布奇诺" thumb="https://www.einsteinbros.com/wp-content/uploads/2020/01/Capp_Wood_web2-1.jpg" price="3.99+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='Cappuccino'wx:if="{{!newList[47].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='Cappuccino'wx:else/> {{REB[47].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='Cappuccino' wx:if="{{!newList[47].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='Cappuccino' wx:else></view>{{REB[47].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="5 cal" title="Fresh-Brewed Coffee 鲜煮咖啡" thumb="https://www.einsteinbros.com/wp-content/uploads/2020/01/CoD_Wood_web.jpg" price="2.29+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='FreshBrewedCoffee'wx:if="{{!newList[48].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='FreshBrewedCoffee'wx:else/> {{REB[48].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='FreshBrewedCoffee' wx:if="{{!newList[48].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='FreshBrewedCoffee' wx:else></view>{{REB[48].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="270-430 cal" title="Hot Cocoa 热可可" thumb="https://www.einsteinbros.com/wp-content/uploads/2020/01/HotCho_Wood_web2.jpg" price="3.59+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='HotCocoa'wx:if="{{!newList[49].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='HotCocoa'wx:else/> {{REB[49].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='HotCocoa' wx:if="{{!newList[49].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='HotCocoa' wx:else></view>{{REB[49].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="5 cal" title="Premium Tea 热茶" thumb="https://www.einsteinbros.com/wp-content/uploads/2020/01/HotTea_Wood_web.jpg" price="1.99+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='PremiumTea'wx:if="{{!newList[50].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='PremiumTea'wx:else/> {{REB[50].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='PremiumTea' wx:if="{{!newList[50].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='PremiumTea' wx:else></view>{{REB[50].Down}} </van-button> 
+        </view>
+      </foodCard>
   </van-tab>
 
   <van-tab title="Iced Beverages">
-      <foodCard desc="" title="Iced Caramel Macchiato 冰焦糖玛奇朵" thumb="https://www.einsteinbros.com/wp-content/uploads/2020/01/DWIcedCarHS_Website.jpg" price="4.99+" currency="$"/>
-      <foodCard desc="110-220 cal" title="Iced Latte 冰拿铁" thumb="https://www.einsteinbros.com/wp-content/uploads/2020/01/DWIcedLatte_Website.jpg" price="3.99+" currency="$"/>
-      <foodCard desc="250-650 cal" title="Iced Mocha 冰摩卡" thumb="https://www.einsteinbros.com/wp-content/uploads/2020/01/DWIcedMocha_Website.jpg" price="4.49+" currency="$"/>
-      <foodCard desc="200-310 cal" title="Iced Chai Tea Latte 冰印度茶拿铁" thumb="https://www.einsteinbros.com/wp-content/uploads/2020/01/DWIcedChaiLatte_Website.jpg" price="3.99+" currency="$"/>
-      <foodCard desc="35-50 cal" title="Iced Tea 冰茶" thumb="https://www.einsteinbros.com/wp-content/uploads/2020/01/IcedTea_Wood_Website.jpg" price="1.99+" currency="$"/>
-    
+      <foodCard desc="" title="Iced Caramel Macchiato 冰焦糖玛奇朵" thumb="https://www.einsteinbros.com/wp-content/uploads/2020/01/DWIcedCarHS_Website.jpg" price="4.99+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='IcedCaramelMacchi'wx:if="{{!newList[51].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='IcedCaramelMacchi'wx:else/> {{REB[51].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='IcedCaramelMacchi' wx:if="{{!newList[51].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='IcedCaramelMacchi' wx:else></view>{{REB[51].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="110-220 cal" title="Iced Latte 冰拿铁" thumb="https://www.einsteinbros.com/wp-content/uploads/2020/01/DWIcedLatte_Website.jpg" price="3.99+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='IcedLatte'wx:if="{{!newList[52].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='IcedLatte'wx:else/> {{REB[52].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='IcedLatte' wx:if="{{!newList[52].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='IcedLatte' wx:else></view>{{REB[52].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="250-650 cal" title="Iced Mocha 冰摩卡" thumb="https://www.einsteinbros.com/wp-content/uploads/2020/01/DWIcedMocha_Website.jpg" price="4.49+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='IcedMocha'wx:if="{{!newList[53].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='IcedMocha'wx:else/> {{REB[53].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='IcedMocha' wx:if="{{!newList[53].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='IcedMocha' wx:else></view>{{REB[53].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="200-310 cal" title="Iced Chai Tea Latte 冰印度茶拿铁" thumb="https://www.einsteinbros.com/wp-content/uploads/2020/01/DWIcedChaiLatte_Website.jpg" price="3.99+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='IcedChaiTeaLatte'wx:if="{{!newList[54].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='IcedChaiTeaLatte'wx:else/> {{REB[54].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='IcedChaiTeaLatte' wx:if="{{!newList[54].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='IcedChaiTeaLatte' wx:else></view>{{REB[54].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="35-50 cal" title="Iced Tea 冰茶" thumb="https://www.einsteinbros.com/wp-content/uploads/2020/01/IcedTea_Wood_Website.jpg" price="1.99+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='IcedTea'wx:if="{{!newList[55].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='IcedTea'wx:else/> {{REB[55].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='IcedTea' wx:if="{{!newList[55].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='IcedTea' wx:else></view>{{REB[55].Down}} </van-button> 
+        </view>
+      </foodCard>
   </van-tab>
 
   <van-tab title="Cold Brew Coffee">
-      <foodCard desc="" title="Classic Cold Brew 经典冷萃咖啡" thumb="https://www.einsteinbros.com/wp-content/uploads/2021/06/EBB-ColdBrew-Classic-800x700-1.jpg" price="3.19+" currency="$"/>
-      <foodCard desc="" title="Chocolate Cream Cold Brew 巧克力奶油冷萃" thumb="https://www.einsteinbros.com/wp-content/uploads/2021/06/EBB-ColdBrew-Chocolate-800x700-1.jpg" price="3.79+" currency="$"/>
-      <foodCard desc="" title="Vanilla Cold Brew 香草冷萃" thumb="https://www.einsteinbros.com/wp-content/uploads/2021/06/EBB-ColdBrew-Vanilla-800x700-1.jpg" price="3.79+" currency="$"/>
-      <foodCard desc="" title="Caramel Cold Brew 焦糖冷萃" thumb="https://www.einsteinbros.com/wp-content/uploads/2021/06/EBB-ColdBrew-Caramel-800x700-1.jpg" price="3.99+" currency="$"/>
+      <foodCard desc="" title="Classic Cold Brew 经典冷萃咖啡" thumb="https://www.einsteinbros.com/wp-content/uploads/2021/06/EBB-ColdBrew-Classic-800x700-1.jpg" price="3.19+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='ClassicColdBr'wx:if="{{!newList[56].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='ClassicColdBr'wx:else/> {{REB[56].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='ClassicColdBr' wx:if="{{!newList[56].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='ClassicColdBr' wx:else></view>{{REB[56].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="" title="Chocolate Cream Cold Brew 巧克力奶油冷萃" thumb="https://www.einsteinbros.com/wp-content/uploads/2021/06/EBB-ColdBrew-Chocolate-800x700-1.jpg" price="3.79+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='ChocCreamCB'wx:if="{{!newList[57].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='ChocCreamCB'wx:else/> {{REB[57].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='ChocCreamCB' wx:if="{{!newList[57].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='ChocCreamCB' wx:else></view>{{REB[57].Down}} </van-button> 
+        </view>
+      </foodCard>
+      
+      <foodCard desc="" title="Vanilla Cold Brew 香草冷萃" thumb="https://www.einsteinbros.com/wp-content/uploads/2021/06/EBB-ColdBrew-Vanilla-800x700-1.jpg" price="3.79+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='VanillaCB'wx:if="{{!newList[58].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='VanillaCB'wx:else/> {{REB[58].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='VanillaCB' wx:if="{{!newList[58].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='VanillaCB' wx:else></view>{{REB[58].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="" title="Caramel Cold Brew 焦糖冷萃" thumb="https://www.einsteinbros.com/wp-content/uploads/2021/06/EBB-ColdBrew-Caramel-800x700-1.jpg" price="3.99+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='CaramelCB'wx:if="{{!newList[59].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='CaramelCB'wx:else/> {{REB[59].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='CaramelCB' wx:if="{{!newList[59].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='CaramelCB' wx:else></view>{{REB[59].Down}} </van-button> 
+        </view>
+      </foodCard>
   </van-tab>
 
   <van-tab title="Cold Brew Shakes">
-      <foodCard desc="" title="Caramel Cream Shake 焦糖奶油奶昔" thumb="https://www.einsteinbros.com/wp-content/uploads/2021/06/EBB-ColdBrewShake-Caramel-800x700-1.jpg" price="4.59+" currency="$"/>
-      <foodCard desc="" title="Vanilla Cream Shake 香草奶油奶昔" thumb="https://www.einsteinbros.com/wp-content/uploads/2021/06/EBB-ColdBrewShake-Vanilla-800x700-1.jpg" price="4.59+" currency="$"/>
-      <foodCard desc="" title="Chocolate Cream Shake 巧克力奶油奶昔" thumb="https://www.einsteinbros.com/wp-content/uploads/2021/06/EBB-ColdBrewShake-Vanilla-800x700-1.jpg" price="4.59+" currency="$"/>
+      <foodCard desc="" title="Caramel Cream Shake 焦糖奶油奶昔" thumb="https://www.einsteinbros.com/wp-content/uploads/2021/06/EBB-ColdBrewShake-Caramel-800x700-1.jpg" price="4.59+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='CaramelCS'wx:if="{{!newList[60].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='CaramelCS'wx:else/> {{REB[60].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='CaramelCS' wx:if="{{!newList[60].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='CaramelCS' wx:else></view>{{REB[60].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="" title="Vanilla Cream Shake 香草奶油奶昔" thumb="https://www.einsteinbros.com/wp-content/uploads/2021/06/EBB-ColdBrewShake-Vanilla-800x700-1.jpg" price="4.59+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='VanillaCS'wx:if="{{!newList[61].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='VanillaCS'wx:else/> {{REB[61].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='VanillaCS' wx:if="{{!newList[61].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='VanillaCS' wx:else></view>{{REB[61].Down}} </van-button> 
+        </view>
+      </foodCard>
+
+      <foodCard desc="" title="Chocolate Cream Shake 巧克力奶油奶昔" thumb="https://www.einsteinbros.com/wp-content/uploads/2021/06/EBB-ColdBrewShake-Vanilla-800x700-1.jpg" price="4.59+" currency="$">
+        <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='ChocCS'wx:if="{{!newList[62].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='ChocCS'wx:else/> {{REB[62].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='ChocCS' wx:if="{{!newList[62].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='ChocCS' wx:else></view>{{REB[62].Down}} </van-button> 
+        </view>
+      </foodCard>
   </van-tab>
 
 </van-tabs>
