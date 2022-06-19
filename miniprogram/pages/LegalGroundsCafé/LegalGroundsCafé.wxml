@@ -35,39 +35,187 @@
 
 <van-tabs active="{{ active }}" bind:change="onChange" swipeable ellipsis="{{false}}" color="#d6b160" title-active-color="#d6b160">
   <van-tab title="Breakfast">
-    <foodCard title="Morning Sunrise Bagel 日出贝果" desc="培根、鸡蛋和车打芝士佐Plain Bagel或Everyth Bagel" thumb="https://cdn7.kiwilimon.com/recetaimagen/26259/1900x1080/23276.jpg.webp" price="5.19" currency="$" />
-    <foodCard title="Breakfast Burrito 早餐墨西哥卷" desc="鸡蛋、火鸡和车打芝士做的墨西哥卷" thumb="https://www.cookingclassy.com/wp-content/uploads/2019/08/breakfast-burrito-01.jpg" price="5.19" currency="$" />
-    <foodCard title="Healthy Start 健康贝果" desc="鸡蛋、菠菜、西红柿、牛油果、芝士佐全麦贝果" thumb="https://www.myeclecticbites.com/wp-content/uploads/2020/04/Breakfast-bagel-sandwich-11.jpg" price="5.29" currency="$" />
-    <foodCard title="Bagel 贝果" desc="平淡无奇的一只贝果，除了贝果什么也没有" thumb="https://bakingamoment.com/wp-content/uploads/2020/06/IMG_8813-bagel-recipe-500x375.jpg" price="2.29" currency="$" />
-    <foodCard title="Croissants/Muffins 可颂/麦芬" desc="可颂、麦芬或其他点心" thumb="https://bakerpedia.com/wp-content/uploads/2020/06/Pastry_baking-processes-e1593464950587-400x400.jpg" price="2.29+" currency="$" />
+    <foodCard title="Morning Sunrise Bagel 日出贝果" desc="培根、鸡蛋和车打芝士佐Plain Bagel或Everyth Bagel" thumb="https://cdn7.kiwilimon.com/recetaimagen/26259/1900x1080/23276.jpg.webp" price="5.19" currency="$"> 
+      <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='MorningSunriseBagel'wx:if="{{!newList[0].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='MorningSunriseBagel'wx:else/> {{RC[0].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='MorningSunriseBagel' wx:if="{{!newList[0].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='MorningSunriseBagel' wx:else></view>{{RC[0].Down}} </van-button> 
+        </view>   
+    </foodCard>
+
+    <foodCard title="Breakfast Burrito 早餐墨西哥卷" desc="鸡蛋、火鸡和车打芝士做的墨西哥卷" thumb="https://www.cookingclassy.com/wp-content/uploads/2019/08/breakfast-burrito-01.jpg" price="5.19" currency="$">
+      <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='BreakFastBurrito'wx:if="{{!newList[1].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='BreakFastBurrito'wx:else/> {{RC[1].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='BreakFastBurrito' wx:if="{{!newList[1].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='BreakFastBurrito' wx:else></view>{{RC[1].Down}} </van-button> 
+        </view> 
+    </foodCard>
+
+    <foodCard title="Healthy Start 健康贝果" desc="鸡蛋、菠菜、西红柿、牛油果、芝士佐全麦贝果" thumb="https://www.myeclecticbites.com/wp-content/uploads/2020/04/Breakfast-bagel-sandwich-11.jpg" price="5.29" currency="$">
+      <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='HealthyStart'wx:if="{{!newList[2].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='HealthyStart'wx:else/> {{RC[2].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='HealthyStart' wx:if="{{!newList[2].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='HealthyStart' wx:else></view>{{RC[2].Down}} </van-button> 
+        </view>
+    </foodCard>
+
+    <foodCard title="Bagel 贝果" desc="平淡无奇的一只贝果，除了贝果什么也没有" thumb="https://bakingamoment.com/wp-content/uploads/2020/06/IMG_8813-bagel-recipe-500x375.jpg" price="2.29" currency="$">
+      <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='Bagel'wx:if="{{!newList[3].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='Bagel'wx:else/> {{RC[3].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='Bagel' wx:if="{{!newList[3].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='Bagel' wx:else></view>{{RC[3].Down}}</van-button> 
+        </view>
+    </foodCard>
+
+    <foodCard title="Croissants/Muffins 可颂/麦芬" desc="可颂、麦芬或其他点心" thumb="https://bakerpedia.com/wp-content/uploads/2020/06/Pastry_baking-processes-e1593464950587-400x400.jpg" price="2.29+" currency="$">
+      <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='CroissantsMuffins'wx:if="{{!newList[4].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='CroissantsMuffins'wx:else/> {{RC[4].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='CroissantsMuffins' wx:if="{{!newList[4].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='CroissantsMuffins' wx:else></view>{{RC[4].Down}}</van-button> 
+        </view>
+    </foodCard>
   </van-tab>
+
   <van-tab title="Coffee & Tea">
-    <foodCard title="Espresso coffee 意式浓缩咖啡" desc="就苦呗" thumb="https://www.adityabirlacapital.com/healthinsurance/active-together/wp-content/uploads/2019/12/How-Are-Espressos-Good-For-Health_blog_lower_1.png" price="1.59+" currency="$" />
-    <foodCard title="Latte 拿铁" desc="可选regular和grande两种杯型，也可选择加脱脂牛奶或豆奶，也可选冰拿铁" thumb="https://coffeeaffection.com/wp-content/uploads/2021/05/Spanish-latte-milk-and-espresso-500x500.jpg" price="3.59" currency="$" />
-    <foodCard title="Chai Latte 印度茶拿铁" desc="可选regular和grande两种杯型，也可选择加脱脂牛奶或豆奶，也可选冰印度茶拿铁" thumb="https://insanelygoodrecipes.com/wp-content/uploads/2021/02/Homemade-Chai-Tea-Latte-in-a-Cup-500x500.png" price="3.59" currency="$" />
-    <foodCard title="Cappuccino 卡布奇诺" desc="可选regular和grande两种杯型，也可选择加脱脂牛奶或豆奶" thumb="https://vaya.in/recipes/wp-content/uploads/2019/02/Cappuccino.jpg" price="3.59" currency="$" />
-    <foodCard title="Brewed Coffee" desc="可选regular和grande两种杯型" thumb="https://s2.loli.net/2022/04/16/JXGA1bhuSvsNIk2.jpg" price="2.09" currency="$" />
-    <foodCard title="Hot tea 热红茶" desc="可选regular和grande两种杯型" thumb="https://tanoorhalalfood.com/wp-content/uploads/2019/09/hot-tea-1.jpg" price="2.09" currency="$" />
+    <foodCard title="Espresso coffee 意式浓缩咖啡" desc="就苦呗" thumb="https://www.adityabirlacapital.com/healthinsurance/active-together/wp-content/uploads/2019/12/How-Are-Espressos-Good-For-Health_blog_lower_1.png" price="1.59+" currency="$">
+      <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='Espresso'wx:if="{{!newList[5].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='Espresso'wx:else/> {{RC[5].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='Espresso' wx:if="{{!newList[5].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='Espresso' wx:else></view>{{RC[5].Down}}</van-button> 
+        </view>
+    </foodCard>
+
+    <foodCard title="Latte 拿铁" desc="可选regular和grande两种杯型，也可选择加脱脂牛奶或豆奶，也可选冰拿铁" thumb="https://coffeeaffection.com/wp-content/uploads/2021/05/Spanish-latte-milk-and-espresso-500x500.jpg" price="3.59" currency="$">
+      <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='Latte'wx:if="{{!newList[6].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='Latte'wx:else/> {{RC[6].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='Latte' wx:if="{{!newList[6].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='Latte' wx:else></view>{{RC[6].Down}}</van-button> 
+        </view>
+    </foodCard>
+
+    <foodCard title="Chai Latte 印度茶拿铁" desc="可选regular和grande两种杯型，也可选择加脱脂牛奶或豆奶，也可选冰印度茶拿铁" thumb="https://insanelygoodrecipes.com/wp-content/uploads/2021/02/Homemade-Chai-Tea-Latte-in-a-Cup-500x500.png" price="3.59" currency="$">
+      <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='ChaiLatte'wx:if="{{!newList[7].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='ChaiLatte'wx:else/> {{RC[7].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='ChaiLatte' wx:if="{{!newList[7].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='ChaiLatte' wx:else></view>{{RC[7].Down}}</van-button> 
+        </view>
+    </foodCard>
+
+    <foodCard title="Cappuccino 卡布奇诺" desc="可选regular和grande两种杯型，也可选择加脱脂牛奶或豆奶" thumb="https://vaya.in/recipes/wp-content/uploads/2019/02/Cappuccino.jpg" price="3.59" currency="$">
+      <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='Cappuccino'wx:if="{{!newList[8].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='Cappuccino'wx:else/> {{RC[8].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='Cappuccino' wx:if="{{!newList[8].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='Cappuccino' wx:else></view>{{RC[8].Down}}</van-button> 
+        </view>
+    </foodCard>
+
+    <foodCard title="Brewed Coffee" desc="可选regular和grande两种杯型" thumb="https://s2.loli.net/2022/04/16/JXGA1bhuSvsNIk2.jpg" price="2.09" currency="$">
+      <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='BrewedCafe'wx:if="{{!newList[9].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='BrewedCafe'wx:else/> {{RC[9].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='BrewedCafe' wx:if="{{!newList[9].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='BrewedCafe' wx:else></view>{{RC[9].Down}}</van-button> 
+        </view>
+    </foodCard>
+
+    <foodCard title="Hot tea 热红茶" desc="可选regular和grande两种杯型" thumb="https://tanoorhalalfood.com/wp-content/uploads/2019/09/hot-tea-1.jpg" price="2.09" currency="$">
+      <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='HotTea'wx:if="{{!newList[10].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='HotTea'wx:else/> {{RC[10].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='HotTea' wx:if="{{!newList[10].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='HotTea' wx:else></view>{{RC[10].Down}}</van-button> 
+        </view>
+    </foodCard>
   </van-tab>
+
   <van-tab title="Salads & Soups">
-    <foodCard title="Chicken Caesar Salad 鸡肉凯撒沙拉" desc="" thumb="https://s2.loli.net/2022/04/16/MZDKLqnSFpwV2Q3.jpg" price="6.69" currency="$" />
-    <foodCard title="Greek Yogurt Power Bowl 希腊酸奶能量碗" desc="希腊酸奶佐草莓、蓝莓" thumb="https://sharedappetite.com/wp-content/uploads/2019/02/breakfast-superfood-yogurt-bowls-12.jpg" price="6.69" currency="$" />
-    <foodCard title="Deacon Cobb Salad 执事考伯沙拉" desc="由鸡蛋、牛油果、西红柿、车打芝士、杏仁和洋葱制成" thumb="https://hips.hearstapps.com/delish/assets/18/11/1520887294-cobb-salad-delish.jpg" price="6.69" currency="$" />
-    <foodCard title="Daily Soup 例汤" thumb="https://heremag-prod-app-deps-s3heremagassets-bfie27mzpk03.s3.amazonaws.com/wp-content/uploads/2020/10/20151124/soup-recipes-annika-palmari-U_mm1wHzm1Q-unsplash-2-1200x800.jpg" price="4.29" currency="$" />
+    <foodCard title="Chicken Caesar Salad 鸡肉凯撒沙拉" desc="" thumb="https://s2.loli.net/2022/04/16/MZDKLqnSFpwV2Q3.jpg" price="6.69" currency="$">
+      <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='ChickenCaesarSalad'wx:if="{{!newList[11].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='ChickenCaesarSalad'wx:else/> {{RC[11].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='ChickenCaesarSalad' wx:if="{{!newList[11].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='ChickenCaesarSalad' wx:else></view>{{RC[11].Down}}</van-button> 
+        </view>
+    </foodCard>
+
+    <foodCard title="Greek Yogurt Power Bowl 希腊酸奶能量碗" desc="希腊酸奶佐草莓、蓝莓" thumb="https://sharedappetite.com/wp-content/uploads/2019/02/breakfast-superfood-yogurt-bowls-12.jpg" price="6.69" currency="$">
+      <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='GreekYogurtBowl'wx:if="{{!newList[12].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='GreekYogurtBowl'wx:else/> {{RC[12].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='GreekYogurtBowl' wx:if="{{!newList[12].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='GreekYogurtBowl' wx:else></view>{{RC[12].Down}}</van-button> 
+        </view>
+    </foodCard>
+
+    <foodCard title="Deacon Cobb Salad 执事考伯沙拉" desc="由鸡蛋、牛油果、西红柿、车打芝士、杏仁和洋葱制成" thumb="https://hips.hearstapps.com/delish/assets/18/11/1520887294-cobb-salad-delish.jpg" price="6.69" currency="$">
+      <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='DeaconCobbSalad'wx:if="{{!newList[13].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='DeaconCobbSalad'wx:else/> {{RC[13].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='DeaconCobbSalad' wx:if="{{!newList[13].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='DeaconCobbSalad' wx:else></view>{{RC[13].Down}}</van-button> 
+        </view>
+    </foodCard>
+
+    <foodCard title="Daily Soup 例汤" thumb="https://heremag-prod-app-deps-s3heremagassets-bfie27mzpk03.s3.amazonaws.com/wp-content/uploads/2020/10/20151124/soup-recipes-annika-palmari-U_mm1wHzm1Q-unsplash-2-1200x800.jpg" price="4.29" currency="$">
+      <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='DailySoup'wx:if="{{!newList[14].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='DailySoup'wx:else/> {{RC[14].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='DailySoup' wx:if="{{!newList[14].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='DailySoup' wx:else></view>{{RC[14].Down}}</van-button> 
+        </view>
+    </foodCard>
   </van-tab>
   <van-tab title="Sandwich">
-    <foodCard title="California Turkey BLT 加州火鸡培根三明治" desc="由火鸡、牛油果、培根制成" thumb="https://www.nutmegnanny.com/wp-content/uploads/2018/08/turkey-and-cheese-blt-sandwich-2.jpg" price="6.69" currency="$" />
-    <foodCard title="Chicken Caesar Salad Warap 鸡肉凯撒卷" thumb="https://www.tasteandtellblog.com/wp-content/uploads/2017/04/Chicken-Caesar-Wraps-tasteandtellblog.com-horizontal.jpg" price="6.19" currency="$" />
-    <foodCard title="Mozzarella Caprese Sandwich 马苏里拉芝士三明治" thumb="http://3.bp.blogspot.com/-Cx1PY6z6DUc/Vdv8BRKxHXI/AAAAAAAAWQ0/bul2lcw0V8c/s1600/caprese-sandwich-recipe-012x1.jpg" price="6.69" currency="$" />
-    <foodCard title="Hot Ham & Swiss 火腿佐瑞士硬干酪三明治" desc="" thumb="https://www.sargento.com/assets/Uploads/Recipe/Image/hamandcheese__FillWzExNzAsNTgzXQ.jpg" price="6.69" currency="$" />
-    <foodCard title="Chipotle Chicken Melt 鸡肉三明治" desc="烤鸡、芝士、洋葱、菠菜佐墨西哥辣椒蒜泥蛋黄酱" thumb="https://hostthetoast.com/wp-content/uploads/2018/10/Chipotle-Chicken-Avocado-Melt-6.jpg" price="6.89" currency="$" />
+    <foodCard title="California Turkey BLT 加州火鸡培根三明治" desc="由火鸡、牛油果、培根制成" thumb="https://www.nutmegnanny.com/wp-content/uploads/2018/08/turkey-and-cheese-blt-sandwich-2.jpg" price="6.69" currency="$">
+      <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='CaliforniaTurkeyBLT'wx:if="{{!newList[15].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='CaliforniaTurkeyBLT'wx:else/> {{RC[15].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='CaliforniaTurkeyBLT' wx:if="{{!newList[15].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='CaliforniaTurkeyBLT' wx:else></view>{{RC[15].Down}}</van-button> 
+        </view>
+    </foodCard>
+
+    <foodCard title="Chicken Caesar Salad Warap 鸡肉凯撒卷" thumb="https://www.tasteandtellblog.com/wp-content/uploads/2017/04/Chicken-Caesar-Wraps-tasteandtellblog.com-horizontal.jpg" price="6.19" currency="$">
+      <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='ChickenSaladWarap'wx:if="{{!newList[16].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='ChickenSaladWarap'wx:else/> {{RC[16].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='ChickenSaladWarap' wx:if="{{!newList[16].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='ChickenSaladWarap' wx:else></view>{{RC[16].Down}}</van-button> 
+        </view>
+    </foodCard>
+
+    <foodCard title="Mozzarella Caprese Sandwich 马苏里拉芝士三明治" thumb="http://3.bp.blogspot.com/-Cx1PY6z6DUc/Vdv8BRKxHXI/AAAAAAAAWQ0/bul2lcw0V8c/s1600/caprese-sandwich-recipe-012x1.jpg" price="6.69" currency="$">
+      <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='MozzarellaSandwich'wx:if="{{!newList[17].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='MozzarellaSandwich'wx:else/> {{RC[17].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='MozzarellaSandwich' wx:if="{{!newList[17].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='MozzarellaSandwich' wx:else></view>{{RC[17].Down}}</van-button> 
+        </view>
+    </foodCard>
+
+    <foodCard title="Hot Ham & Swiss 火腿佐瑞士硬干酪三明治" desc="" thumb="https://www.sargento.com/assets/Uploads/Recipe/Image/hamandcheese__FillWzExNzAsNTgzXQ.jpg" price="6.69" currency="$">
+      <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='HotHamSwiss'wx:if="{{!newList[18].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='HotHamSwiss'wx:else/> {{RC[18].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='HotHamSwiss' wx:if="{{!newList[18].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='HotHamSwiss' wx:else></view>{{RC[18].Down}}</van-button> 
+        </view>
+    </foodCard>
+
+    <foodCard title="Chipotle Chicken Melt 鸡肉三明治" desc="烤鸡、芝士、洋葱、菠菜佐墨西哥辣椒蒜泥蛋黄酱" thumb="https://hostthetoast.com/wp-content/uploads/2018/10/Chipotle-Chicken-Avocado-Melt-6.jpg" price="6.89" currency="$">
+      <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='ChipotleChickenMelt'wx:if="{{!newList[19].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='ChipotleChickenMelt'wx:else/> {{RC[19].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='ChipotleChickenMelt' wx:if="{{!newList[19].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='ChipotleChickenMelt' wx:else></view>{{RC[19].Down}}</van-button> 
+        </view>
+    </foodCard>
   </van-tab>
+
   <van-tab title="Snacks">
-    <foodCard title="Chips 薯片" desc="一种薯片" thumb="https://images.heb.com/is/image/HEBGrocery/001876588?fit=constrain,1&wid=800&hei=800&fmt=jpg&qlt=85,0&resMode=sharp2&op_usm=1.75,0.3,2,0" price="1.39" currency="$" />
-    <foodCard title="Cobani Yogurt 酸奶" desc="一种酸奶" thumb="https://images.heb.com/is/image/HEBGrocery/002084850" price="2.39" currency="$" />
-    <foodCard title="Sabra Classic Hummus 鹰嘴豆泥" desc="一种鹰嘴豆泥" thumb="https://jpg.breadberry.com/content/images/thumbs/0113101_sabra-classic-hummus-17-oz.jpeg" price="3.49" currency="$" />
-    <foodCard title="Sabra Roasted Red Pepper Hummus 烤红椒鹰嘴豆泥" thumb="https://i5.walmartimages.com/asr/0473f340-8d13-45dd-9d14-08764dc32f88.6e8c8085c1befcfd992c965c157c46f8.jpeg" price="3.49" currency="$" />
-    <foodCard title="Hashbrowns 薯饼" thumb="https://thumbor.thedailymeal.com/mLKOQg-3ILFNGOjKQyEOeoR_uyw=//https://www.thedailymeal.com/sites/default/files/recipe/2021/GettyImages-184839841.jpg" price="1.79" currency="$" />
+    <foodCard title="Chips 薯片" desc="一种薯片" thumb="https://images.heb.com/is/image/HEBGrocery/001876588?fit=constrain,1&wid=800&hei=800&fmt=jpg&qlt=85,0&resMode=sharp2&op_usm=1.75,0.3,2,0" price="1.39" currency="$">
+      <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='Chip'wx:if="{{!newList[20].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='Chip'wx:else/> {{RC[20].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='Chip' wx:if="{{!newList[20].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='Chip' wx:else></view>{{RC[20].Down}}</van-button> 
+        </view>
+    </foodCard>
+
+    <foodCard title="Cobani Yogurt 酸奶" desc="一种酸奶" thumb="https://images.heb.com/is/image/HEBGrocery/002084850" price="2.39" currency="$">
+      <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='CobaniYogurt'wx:if="{{!newList[21].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='CobaniYogurt'wx:else/> {{RC[21].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='CobaniYogurt' wx:if="{{!newList[21].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='CobaniYogurt' wx:else></view>{{RC[21].Down}}</van-button> 
+        </view>
+    </foodCard>
+
+    <foodCard title="Sabra Classic Hummus 鹰嘴豆泥" desc="一种鹰嘴豆泥" thumb="https://jpg.breadberry.com/content/images/thumbs/0113101_sabra-classic-hummus-17-oz.jpeg" price="3.49" currency="$">
+      <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='SabraClassicHummus'wx:if="{{!newList[22].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='SabraClassicHummus'wx:else/> {{RC[22].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='SabraClassicHummus' wx:if="{{!newList[22].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='SabraClassicHummus' wx:else></view>{{RC[22].Down}}</van-button> 
+        </view>
+    </foodCard>
+
+    <foodCard title="Sabra Roasted Red Pepper Hummus 烤红椒鹰嘴豆泥" thumb="https://i5.walmartimages.com/asr/0473f340-8d13-45dd-9d14-08764dc32f88.6e8c8085c1befcfd992c965c157c46f8.jpeg" price="3.49" currency="$">
+      <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='SabraRoastedRedPepperHummus'wx:if="{{!newList[23].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='SabraRoastedRedPepperHummus'wx:else/> {{RC[23].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='SabraRoastedRedPepperHummus' wx:if="{{!newList[23].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='SabraRoastedRedPepperHummus' wx:else></view>{{RC[23].Down}}</van-button> 
+        </view>
+    </foodCard>
+
+    <foodCard title="Hashbrowns 薯饼" thumb="https://thumbor.thedailymeal.com/mLKOQg-3ILFNGOjKQyEOeoR_uyw=//https://www.thedailymeal.com/sites/default/files/recipe/2021/GettyImages-184839841.jpg" price="1.79" currency="$">
+      <view slot="footer">
+          <van-button size="large"> <van-icon name="good-job-o" size="25px" bindtap="upFunction" data-id='Hashbrowns'wx:if="{{!newList[24].like}}"/><van-icon name="good-job" size="25px" bindtap="upFunction" data-id='Hashbrowns'wx:else/> {{RC[24].Up}} </van-button> 
+          <van-button size="large"> <view class="iconfont icon-cai"  bindtap="downFunction" data-id='Hashbrowns' wx:if="{{!newList[24].cai}}"></view><view class="iconfont icon-caishixin"  bindtap="downFunction" data-id='Hashbrowns' wx:else></view>{{RC[24].Down}}</van-button> 
+        </view>
+    </foodCard>
   </van-tab>
 </van-tabs>
 
